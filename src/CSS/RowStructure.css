@@ -1,0 +1,146 @@
+.portfolio-row {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 2%;
+    margin-right: 2%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    justify-content: center;
+}
+
+.portfolio-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.portfolio-row.intro-row {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Text content */
+.portfolio-text {
+    flex: 1;
+}
+
+.portfolio-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    line-height: 60px;
+}
+
+a.portfolio-title {
+    position: relative;
+    display: inline-block;
+    color: green;
+    text-decoration-line: none;
+}
+
+a.portfolio-title::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #E27689;
+    transition: width 0.3s ease;
+}
+
+a.portfolio-title:hover::after {
+    width: 100%;
+}
+
+.portfolio-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 0.6em;
+    margin-top: 0.1em;
+}
+
+.portfolio-description {
+    margin: 1em;
+    font-size: 24px;
+    white-space: pre-wrap;
+    /* Preserves newlines AND wraps text */
+    word-wrap: break-word;
+}
+
+.portfolio-description h3 {
+    margin: 0.75rem;
+    margin-top: 0;
+    color: #333;
+    font-weight: 600;
+}
+
+.portfolio-description ul {
+    margin: 0.5rem 0;
+    padding-left: 1.25rem;
+    list-style: none;
+}
+
+.portfolio-description li {
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+.portfolio-description li::before {
+    content: "✓ ";
+    color: #2a7f62;
+    font-weight: bold;
+}
+
+.portfolio-link {
+    margin-top: 10px;
+    background-color: lightblue;
+    width: 220px;
+    box-shadow: 10px 0 0 black;
+    border-radius: 0% 8px 8px 0%;
+}
+
+.cover {
+    width: 100%;
+    min-width: 100%;
+}
+
+.portfolio-link a {
+    font-size: larger;
+    margin-left: 4%;
+    color: black;
+}
+
+.portfolio-media {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .portfolio-row {
+        display: block;
+    }
+
+    .portfolio-row {
+        flex-direction: column;
+    }
+
+    .portfolio-image,
+    .portfolio-text {
+        width: 100%;
+    }
+}
+
+.floated-image {
+    float: right;
+    margin: 0 0 15px 15px;
+    max-width: 55%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
