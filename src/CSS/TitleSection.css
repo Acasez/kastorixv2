@@ -1,0 +1,23 @@
+.TitleSection {
+    position: relative;
+    background-color: whitesmoke;
+    margin-bottom: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    .TitleSection {
+        /* Dark mode: light text on dark background */
+        background-color: #1a1a1a;
+        color: whitesmoke;
+    }
+}
+
+.TitleSection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, #ff0000, transparent);
+}

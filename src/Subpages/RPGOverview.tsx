@@ -1,13 +1,10 @@
+import TitleSection from "../components/PageIntroFlair";
 import "../CSS/RowStructure.css";
 
 export default function RPGOverview() {
   return (
     <>
-      <header>
-        <h3 className="portfolio-title">Kastorix</h3>
-        <p className="portfolio-subtitle">TTRPG Overview</p>
-      </header>
-
+      <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />
       <section className="portfolio-row reverse">
         {" "}
         {/* Overview */}
