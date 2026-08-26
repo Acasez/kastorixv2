@@ -1,0 +1,34 @@
+.rules-box {
+    margin: 0 0 15px 15px;
+    padding: 10px;
+    border: 1px solid #8b4513;
+    background: #f9f5e8;
+    font-family: serif;
+    max-width: 300px;
+    align-self: center;
+}
+
+.rules-box.wide {
+    max-width: 450px;
+}
+
+.rules-box.wider {
+    max-width: 650px;
+}
+
+.rules-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.rule-title {
+    text-decoration: underline;
+    font-size: 28px;
+}
+
+.action-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
