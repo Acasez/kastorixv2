@@ -1,24 +1,32 @@
-import "../CSS/headerStyle.css";
 import { NavLink } from "react-router-dom";
+import { routes } from "../routes/config"; // Adjust the import path
 
 export default function MainHeader() {
+  // Filter routes that should appear in the header
+  const headerRoutes = routes.filter((route) => route.createHeader);
+
   return (
-    <>
-      <nav className="topnav" role="navigation">
-        <ul>
-          <li>
-            <NavLink to="/" end>
-              <u>RPG Overview</u>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/CharacterSheet">CharacterSheet</NavLink>
-          </li>
-          <li>
-            <NavLink to="/DMScreen">DM Screen</NavLink>
-          </li>
-        </ul>
-      </nav>
-    </>
+    <nav className="bg-bg-header text-text-light h-15" role="navigation">
+      <ul className="flex justify-center gap-5 text-3xl">
+        {headerRoutes.map((route) => {
+          // Extract the path for display (e.g., "/login" → "Login")
+          const displayName = route.path
+            .replace("/", "")
+            .replace("-", " ")
+            .replace(/\b\w/g, (char) => char.toUpperCase());
+
+          return (
+            <li key={route.path}>
+              <NavLink
+                to={route.path || "/"} // Handle empty path
+                end={route.path === "" || route.path === "/index"}
+              >
+                {displayName || "Dashboard"} {/* Fallback for empty path */}
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }

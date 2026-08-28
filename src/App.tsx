@@ -1,7 +1,7 @@
 // App.tsx
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Suspense, useEffect } from "react";
-import { routes } from "./Routes/config.ts";
+import { routes } from "./routes/config.ts";
 import MainHeader from "./components/MainHeader";
 import Footer from "./components/Footer.tsx";
 
