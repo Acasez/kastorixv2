@@ -4,8 +4,14 @@ import TitleSection from "../components/PageIntroFlair";
 import RowFrame from "../components/RowFrame";
 import RulesBox from "../components/RulesBox";
 import TextSection from "../components/TextSection";
+import { useActions } from "../hooks/useActions";
 
 export default function RPGOverview() {
+  const { actions, loading, error } = useActions();
+
+  if (loading) return <div>Loading actions...</div>;
+  if (error) return <div>{error}</div>;
+
   return (
     <>
       <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />
@@ -20,6 +26,7 @@ export default function RPGOverview() {
       </RowFrame>
       <RowFrame reverse={false}>
         <TextSection name="Actions" description={DESCRIPTIONS.actions} />
+        <ActionBox action="Stride" actionsList={actions} />
         <RulesBox
           name="Actions"
           rules={[
@@ -75,7 +82,7 @@ export default function RPGOverview() {
         />
       </RowFrame>
       <RowFrame reverse={true}>
-        <ActionBox action="Harness Mana" />
+        <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>
     </>
   );

@@ -1,5 +1,5 @@
+// src/components/ActionBox.tsx
 import "../CSS/RulesBox.css";
-import { useEffect, useState } from "react";
 
 interface Action {
   name: string;
@@ -9,53 +9,20 @@ interface Action {
   traits: string;
 }
 
-interface ActionProp {
+interface ActionBoxProps {
   action: string;
+  actionsList: Action[]; // Pass the full list of actions as a prop
 }
 
-export default function ActionBox({ action }: ActionProp) {
-  const [actionDetails, setActionDetails] = useState<Action | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchActionDetails = async () => {
-      try {
-        const response = await fetch("/json/actions.json");
-        if (!response.ok) {
-          throw new Error("Failed to fetch actions.json");
-        }
-        const data: Action[] = await response.json();
-        const matchedAction = data.find((item) => item.name === action);
-        if (matchedAction) {
-          setActionDetails(matchedAction);
-        } else {
-          setError("Action not found");
-        }
-      } catch (err) {
-        setError("Failed to load action details");
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchActionDetails();
-  }, [action]);
-
-  if (loading) {
-    return <div className="rules-box">Loading...</div>;
-  }
-
-  if (error) {
-    return <div className="rules-box">{error}</div>;
-  }
+export default function ActionBox({ action, actionsList }: ActionBoxProps) {
+  // Find the action details from the passed list
+  const actionDetails = actionsList.find((item) => item.name === action);
 
   if (!actionDetails) {
-    return <div className="rules-box">No details found</div>;
+    return <div className="rules-box">Action not found: {action}</div>;
   }
 
-  // Replace newlines with <br /> for proper rendering
+  // Format the description (replace newlines with <br />)
   const formattedDescription = actionDetails.description
     .split("\n")
     .map((line, i) => (
