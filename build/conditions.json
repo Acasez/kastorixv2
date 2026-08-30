@@ -1,0 +1,142 @@
+[
+    {
+        "name": "Exhausted",
+        "effect": "You have -X penalty to all D20 rolls",
+        "type": "Numeric",
+        "disappears": "-1 on long rests, -1 on first warm meal per day",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Frightened",
+        "effect": "You have -X penalty to all D20 rolls",
+        "type": "Numeric",
+        "disappears": "-1 per turn",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Quickened",
+        "effect": "You have X extra actions each turn\nYou have a +2X bonus on all D20 rolls made as part of reactions",
+        "type": "Numeric",
+        "disappears": "Timed/Conditional",
+        "neutrality": "Positive"
+    },
+    {
+        "name": "Slowed",
+        "effect": "You have X fewer actions each turn. \nYou have a -2X penalty on all D20 rolls made as part of reactions",
+        "type": "Numeric",
+        "disappears": "Timed/Conditional",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Mana Poisoned",
+        "effect": "You take X damage whenever you cast a spell or spend mana",
+        "type": "Numeric",
+        "disappears": "-1 per hour",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Dying",
+        "effect": "You only have one action per turn. \nAt the end of your turn you roll a Death Saving Throw, increasing dying on a failure and decreasing on success\nYou die if you reach Dying 4",
+        "type": "Numeric",
+        "disappears": "-1 per Successful Death Saving Throw",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Wounded",
+        "effect": "If you become you Dying you start at X more Dying",
+        "type": "Numeric",
+        "disappears": "-1 on long rests or successful Medicine checks",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Off-Guard",
+        "effect": "You have a -X penalty to all saves",
+        "type": "Numeric",
+        "disappears": "Timed/Conditional",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Prone",
+        "effect": "Your Off-Guard 3 and you have -3 penalty to attack rolls. \nYou can only move by Crawling 1 tile",
+        "type": "Binary",
+        "disappears": "When you stand up",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Grappled",
+        "effect": "You cannot move and are Off-Guard 2",
+        "type": "Binary",
+        "disappears": "Escape action",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Restrained",
+        "effect": "You cannot move and are Off-Guard 3. \nYou cannot add your DEX to spellshaping checks and have disadvantage attacks target other than the one that restrains you ",
+        "type": "Binary",
+        "disappears": "Escape action",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Stunned",
+        "effect": "You lose the next X actions. \nYou cannot take reactions while stunned",
+        "type": "Numeric",
+        "disappears": "Until the stun has worn off",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Dazzled",
+        "effect": "You have a -5 penalty visual perception checks and -2 penalty on ranged attacks and spells",
+        "type": "Binary",
+        "disappears": "Timed/Conditional",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Blinded",
+        "effect": "You cannot do visual visual perception checks. \nYou cannot target target creatures at range if you don't have another precise sense",
+        "type": "Binary",
+        "disappears": "Timed/Conditional",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Stupefied",
+        "effect": "You have -X penalty to all INT based D20 rolls",
+        "type": "Numeric",
+        "disappears": "-1 per turn",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Clumsy",
+        "effect": "You have -X penalty to all DEX based D20 rolls",
+        "type": "Numeric",
+        "disappears": "-1 per turn",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Weakened",
+        "effect": "You have -X penalty to all PHY based D20 rolls",
+        "type": "Numeric",
+        "disappears": "-1 per turn",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Drained",
+        "effect": "You have -X penalty to all WIL based D20 rolls",
+        "type": "Numeric",
+        "disappears": "-1 per turn",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Flanked",
+        "effect": "You are Off-Guard 2",
+        "type": "Binary",
+        "disappears": "",
+        "neutrality": "Negative"
+    },
+    {
+        "name": "Wet",
+        "effect": "You take half damage of any fire damage you would take.\nYou take 50% extra lightning and cold damage.",
+        "type": "Binary",
+        "disappears": "",
+        "neutrality": "Negative"
+    }
+]

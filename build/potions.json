@@ -1,0 +1,121 @@
+[
+    {
+        "name": "Lesser Elemental Resistance Potion",
+        "effect": "Gain resistance 3 to one type of elemental damage: fire, cold, electricity, acid or sonic.",
+        "duration": "10 Minute",
+        "price": "3 gp",
+        "level": "1"
+    },
+    {
+        "name": "Lesser Healing Potion",
+        "effect": "Restore 1d6 + 3 health",
+        "duration": "Instant",
+        "price": "2 gp",
+        "level": "1"
+    },
+    {
+        "name": "Lesser Mana Potion",
+        "effect": "Restore 1d8 + 3 mana. Make a Mana Poisoning check",
+        "duration": "Instant",
+        "price": "3 gp",
+        "level": "1"
+    },
+    {
+        "name": "Lesser Poison",
+        "effect": "Take 1d8 + 3 poison damage. Fortitude DC 12",
+        "duration": "Instant",
+        "price": "2 gp",
+        "level": "1"
+    },
+    {
+        "name": "Antidote",
+        "effect": "Make a check with a +2 bonus against all poisons affecting you, ",
+        "duration": "Instant",
+        "price": "12 gp",
+        "level": "3"
+    },
+    {
+        "name": "Minor Elemental Resistance Potion",
+        "effect": "Gain resistance 8 to one type of elemental damage: fire, cold, electricity, acid or sonic.",
+        "duration": "10 Minute",
+        "price": "15 gp",
+        "level": "3"
+    },
+    {
+        "name": "Minor Stamina Potion",
+        "effect": "Recover one level of exhaustion",
+        "duration": "Instant",
+        "price": "12 gp",
+        "level": "3"
+    },
+    {
+        "name": "Pure Lesser Mana Potion",
+        "effect": "Restore 1d8 + 3 mana.",
+        "duration": "Instant",
+        "price": "10 gp",
+        "level": "3"
+    },
+    {
+        "name": "Diratheen's Will",
+        "effect": "Increase your WIL by 2 for the duration",
+        "duration": "10 Minute",
+        "price": "15 gp",
+        "level": "4"
+    },
+    {
+        "name": "Drake's Cunning",
+        "effect": "Increase your INT by 2 for the duration",
+        "duration": "10 Minute",
+        "price": "15 gp",
+        "level": "4"
+    },
+    {
+        "name": "Griffin's Agility",
+        "effect": "Increase your DEX by 2 for the duration",
+        "duration": "10 Minute",
+        "price": "15 gp",
+        "level": "4"
+    },
+    {
+        "name": "Minor Mana Potion",
+        "effect": "Restore 2d8 + 7 mana. Make a Mana Poisoning check",
+        "duration": "Instant",
+        "price": "15 gp",
+        "level": "4"
+    },
+    {
+        "name": "Vitality Potion",
+        "effect": "Increase your max health by 1d6 + 2 for the duration. \n(You cannot be have your max health temporarily increased by two effects at once)",
+        "duration": "1 Hour",
+        "price": "15gp",
+        "level": "4"
+    },
+    {
+        "name": "Yeti's Strength",
+        "effect": "Increase your PHY by 2 for the duration",
+        "duration": "10 Minute",
+        "price": "15 gp",
+        "level": "4"
+    },
+    {
+        "name": "Pure Minor Mana Potion",
+        "effect": "Restore 2d8 + 7 mana.",
+        "duration": "Instant",
+        "price": "25 gp",
+        "level": "7"
+    },
+    {
+        "name": "Potion of Regeneration",
+        "effect": "Gain Fast Healing 10 for the duration",
+        "duration": "1 Minute",
+        "price": "60 gp",
+        "level": "8"
+    },
+    {
+        "name": "Greater Vitality Potion",
+        "effect": "Increase your max health by 2d6 + 4 for the duration. \n(You cannot be have your max health temporarily increased by two effects at once)",
+        "duration": "1 Hour",
+        "price": "60 gp",
+        "level": "8"
+    }
+]
