@@ -6,6 +6,7 @@
     font-family: serif;
     max-width: 300px;
     align-self: center;
+    display: grid;
 }
 
 .rules-box.wide {
@@ -42,4 +43,19 @@
     font-style: italic;
     color: #666;
     margin-top: 10px;
+}
+
+.action-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    justify-self: center;
+}
+
+.action-icon {
+    width: 24px;
+    /* Adjust size as needed */
+    height: 24px;
+    object-fit: contain;
 }

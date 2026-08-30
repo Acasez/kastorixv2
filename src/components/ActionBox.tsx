@@ -1,5 +1,6 @@
 // src/components/ActionBox.tsx
 import "../CSS/RulesBox.css";
+import { getActionIcons } from "../utils/actionUtils";
 
 interface Action {
   name: string;
@@ -11,18 +12,17 @@ interface Action {
 
 interface ActionBoxProps {
   action: string;
-  actionsList: Action[]; // Pass the full list of actions as a prop
+  actionsList: Action[];
 }
 
 export default function ActionBox({ action, actionsList }: ActionBoxProps) {
-  // Find the action details from the passed list
   const actionDetails = actionsList.find((item) => item.name === action);
-
   if (!actionDetails) {
     return <div className="rules-box">Action not found: {action}</div>;
   }
 
-  // Format the description (replace newlines with <br />)
+  const actionIcons = getActionIcons(actionDetails.actions);
+
   const formattedDescription = actionDetails.description
     .split("\n")
     .map((line, i) => (
@@ -34,7 +34,19 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
 
   return (
     <div className="rules-box">
-      <h2 className="rule-title">{action}</h2>
+      <div className="action-header">
+        <h2 className="rule-title">{action}</h2>
+        <div className="action-icons">
+          {actionIcons.map((icon, i) => (
+            <img
+              key={i}
+              src={icon}
+              alt={`${actionDetails.actions} action cost`}
+              className="action-icon"
+            />
+          ))}
+        </div>
+      </div>
       <div className="action-details">
         <p>{formattedDescription}</p>
         {actionDetails.traits && (
