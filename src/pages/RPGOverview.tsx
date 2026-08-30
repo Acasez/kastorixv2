@@ -1,3 +1,4 @@
+import ActionBox from "../components/ActionBox";
 import ImageDisplay from "../components/ImageDisplay";
 import TitleSection from "../components/PageIntroFlair";
 import RowFrame from "../components/RowFrame";
@@ -72,6 +73,9 @@ export default function RPGOverview() {
             },
           ]}
         />
+      </RowFrame>
+      <RowFrame reverse={true}>
+        <ActionBox action="Harness Mana" />
       </RowFrame>
     </>
   );
