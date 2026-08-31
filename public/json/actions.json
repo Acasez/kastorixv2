@@ -92,10 +92,10 @@
     },
     {
         "name": "Harness Mana",
-        "actions": "1-2",
+        "actions": "1-3",
         "trigger": "",
-        "description": "Attempt to absorb mana from the air, making a WIL check compared to mana density of the region. \nOn a success you recover some mana.\nOn a critical failure you gain one level of mana poisoning. \nYou have +2 to the check and the mana recovered is increased if you spent two actions to Harness Mana.",
-        "traits": "Magic"
+        "description": "Attempt to absorb mana from the air.\nMake a Mana Recovery Check (d20 + WIL) versus the DC based on the environment.\nOn a success you recover the specified amount of mana.\nOn a critical success you recover double the specified amount of mana.\nOn a critical failure you suffer one level of mana poisoning.\nYou may spend two actions on this action to have +2 bonus on the roll and recover twice the amount.\nIf you spend three actions on Harness Mana the bonus increases to +5 ",
+        "traits": "Magic, Mana"
     },
     {
         "name": "Stand Up",

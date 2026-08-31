@@ -33,7 +33,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
     ));
 
   return (
-    <div className="rules-box">
+    <div className="rules-box wide">
       <div className="action-header">
         <h2 className="rule-title">{action}</h2>
         <div className="action-icons">
