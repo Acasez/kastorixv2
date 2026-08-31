@@ -32,8 +32,16 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
       </span>
     ));
 
+  const wordCount = actionDetails.description.split(/\s+/).length;
+  const getWidthClass = () => {
+    if (wordCount > 20) return "wide"; // Apply 'wide' class for long descriptions
+    return ""; // No class for short descriptions
+  };
+
+  const widthClass = getWidthClass();
+
   return (
-    <div className="rules-box wide">
+    <div className={`rules-box ${widthClass}`}>
       <div className="action-header">
         <h2 className="rule-title">{action}</h2>
         <div className="action-icons">
