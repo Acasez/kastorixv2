@@ -5,7 +5,6 @@ interface RuleItem {
   ruleIcon?: string;
   description?: string; // For multi-line rules (e.g., mana recovery)
   isHeader?: boolean; // For section headers (e.g., "Physique (PHY)")
-  color?: string; // For custom styling (e.g., attribute colors)
 }
 
 interface RulesProp {
@@ -17,10 +16,9 @@ export default function RulesBox({ name, rules }: RulesProp) {
   return (
     <div className="rules-box">
       {name && <h2 className="rule-title">{name}</h2>}
-      {rules.map(({ rule, ruleIcon, description, isHeader, color }) => (
+      {rules.map(({ rule, ruleIcon, description, isHeader }) => (
         <div
           className={`rules-item ${isHeader ? "rules-item--header" : ""}`}
-          style={{ color }}
           key={rule}
         >
           {ruleIcon && <img className="action-icon" src={ruleIcon} alt="" />}

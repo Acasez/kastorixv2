@@ -23,6 +23,11 @@
     margin-bottom: 8px;
 }
 
+.rules-item-title {
+    font-size: 18px;
+    color: #8b4513
+}
+
 .rule-title {
     text-decoration: underline;
     font-size: 28px;
