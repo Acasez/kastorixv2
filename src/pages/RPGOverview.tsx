@@ -3,6 +3,7 @@ import ImageDisplay from "../components/ImageDisplay";
 import TitleSection from "../components/PageIntroFlair";
 import RowFrame from "../components/RowFrame";
 import RulesBox from "../components/RulesBox";
+import SkillRuleBox from "../components/SkillRuleBox";
 import TextSection from "../components/TextSection";
 import { useActions } from "../hooks/useActions";
 
@@ -86,6 +87,11 @@ export default function RPGOverview() {
         />
       </RowFrame>
       <RowFrame reverse={true}>
+        <TextSection name="Skills" description={DESCRIPTIONS.skills} />
+        <SkillRuleBox />
+      </RowFrame>
+      <RowFrame reverse={true}>
+        <TextSection name="Mana" description={DESCRIPTIONS.mana} />
         <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>
     </>
@@ -115,6 +121,13 @@ When it comes to mental stats, I’ve also cut one out. Will serves as a mix of 
 
 Intelligence is used in spellshaping modifiers (when not casting Attuned spells), and provides characters with extra spells and skill proficiencies. Unlike the other stats Int doesn’t have an associated saving throw. But instead Int is also used in many feats that either scale on or are locked behind high Int, with powerful feats like Studied Ahead providing adept spells ahead on curve requiring 3 or more Int. Int is also the stat with most connected skills, having more than double that of Phy and Dex
 `,
-  skills: ``,
+  skills: `Skills work similar to Pathfinder 2e, with the proficiency without levels variant. The proficiency bonus is +2 for trained, +4 for expert, +6 for master and +8 for legendary. At character creation you get training in 2 skills from your background and a number equal to your Int. The main source of skill increases is feats, which generally say something like “Your proficiency level in brawling increases (max Master)”, meaning you increase your proficiency level with that skill one step, up to the specified rank.
+
+My current game design principle has been to restrict Master level in a skill to feats level 4 or higher and Legendary level to feats level 10 or higher, with advantages and certain feats sometimes breaking those limits. Skill proficiencies are allowed to go to higher levels faster than other proficiencies since they aren’t used to directly attack and defend in combat.
+
+Also taken from pathfinder is the idea of Lore skills. Lore skills are specific skills that aren’t in the main list. They are more narrow and specific than the core skills and therefore more potent. Lore skills can for example be a field of magic (Alchemy Lore, Souls Lore), Lore about a certain nation, place or creature (Draconium Lore, Jungle Lore, Hydra Lore) or specific profession (Legal Lore, Academic Lore, Farming Lore). Making a check with a lore skill will be easier than using a broader skill and perhaps come with extra info, but by design be rarer. Lore skills are Int based by default, but you might make an Alchemy Lore (DEX) check to carefully mix ingredients in a potion or use Mining Lore (PHY) to dig out a secure tunnel.`,
   characterBuilding: ``,
+  mana: `There are no spell slots in Kastorix, Mana is the resource used to cast all spells. Casting spells costs mana depending on their rank and traits. Mages can cast spells beyond their natural mana limit, but doing so risks mana poisoning and possibly death.
+
+The rate of mana regeneration is based on the Mana Density of the location, but can be increased by certain feats and actions. Mages can generally recover all their mana during a long rest, but in low mana density areas this can take longer. You can read more about mana here`,
 } as const;

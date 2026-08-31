@@ -2,106 +2,127 @@
     {
         "name": "Acrobatics",
         "stat": "DEX",
-        "armorPenalties": "Light"
+        "armorPenalties": "Light",
+        "description": "Jumps, flips, gymnastics, walking on edges"
     },
     {
         "name": "Arcana",
         "stat": "INT",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Theoretical knowledge of magic and magical creatures"
     },
     {
         "name": "Athletics",
         "stat": "PHY",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Pushing, pulling, carrying, holding. Interacting with heavy things"
     },
     {
         "name": "Brawling",
         "stat": "PHY",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Grappling, shoving, tripping. Athletics against people"
     },
     {
         "name": "Channeling",
         "stat": "INT",
-        "armorPenalties": "Light"
+        "armorPenalties": "Light",
+        "description": "Precise movement of mana, \"unstructured magic\", using spells in unorthodox ways"
     },
     {
         "name": "Crafting",
         "stat": "INT",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Making and repairing things, artifice, technology"
     },
     {
         "name": "Deception",
         "stat": "WIL",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Lying, omitting the truth"
     },
     {
         "name": "History",
         "stat": "INT",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Knowledge of the past"
     },
     {
         "name": "Insight",
         "stat": "WIL",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Reading people"
     },
     {
         "name": "Intimidation",
         "stat": "PHY",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Scaring people"
     },
     {
         "name": "Investigation",
         "stat": "INT",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Figuring out connections between things."
     },
     {
         "name": "Mana Sensing",
         "stat": "WIL",
-        "armorPenalties": "Light"
+        "armorPenalties": "Light",
+        "description": "Sensing Mana, Auras and Magical Creatures and objects"
     },
     {
         "name": "Medicine",
         "stat": "INT",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Recognizing diseases and treating them. Fixing wounds. Anatomy"
     },
     {
         "name": "Nature",
         "stat": "INT",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Knowledge of plants and creatures"
     },
     {
         "name": "Perception",
         "stat": "INT",
-        "armorPenalties": "Heavy"
+        "armorPenalties": "Heavy",
+        "description": "Seeing, detecting, not missing things"
     },
     {
         "name": "Performance",
         "stat": "DEX",
-        "armorPenalties": "Heavy"
+        "armorPenalties": "Heavy",
+        "description": "Dancing, performing, singing"
     },
     {
         "name": "Persuasion",
         "stat": "WIL",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Debating, haggling, passing on the blame"
     },
     {
         "name": "Sleight of Hand",
         "stat": "DEX",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Stealing things, but also delicate touches"
     },
     {
         "name": "Society",
         "stat": "INT",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Reading and making maps. Knowledge of current cultures and events"
     },
     {
         "name": "Stealth",
         "stat": "DEX",
-        "armorPenalties": "Heavy"
+        "armorPenalties": "Heavy",
+        "description": "Hiding, sneaking"
     },
     {
         "name": "Survival",
         "stat": "WIL",
-        "armorPenalties": ""
+        "armorPenalties": "",
+        "description": "Finding tracks, not getting lost, \"Applied Nature\""
     }
 ]
