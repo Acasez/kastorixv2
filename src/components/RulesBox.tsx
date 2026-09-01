@@ -10,11 +10,15 @@ interface RuleItem {
 interface RulesProp {
   name?: string;
   rules: RuleItem[];
+  maxWidth?: number;
 }
 
-export default function RulesBox({ name, rules }: RulesProp) {
+export default function RulesBox({ name, rules, maxWidth }: RulesProp) {
   return (
-    <div className="rules-box">
+    <div
+      className="rules-box"
+      style={{ maxWidth: maxWidth ? `${maxWidth}px` : undefined }}
+    >
       {name && <h2 className="rule-title">{name}</h2>}
       {rules.map(({ rule, ruleIcon, description, isHeader }) => (
         <div

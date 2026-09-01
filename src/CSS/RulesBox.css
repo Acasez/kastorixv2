@@ -37,3 +37,26 @@
     text-align: center;
     width: 100%;
 }
+
+/* Collapsable */
+.collapsible-skills {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-toggle {
+    background: #8b4513;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: serif;
+    align-self: flex-start;
+    margin-bottom: 8px;
+    transition: background-color 0.2s;
+}
+
+.skills-toggle:hover {
+    background: #654321;
+}
