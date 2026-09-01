@@ -33,33 +33,7 @@
     font-size: 28px;
 }
 
-.action-icon {
-    width: 24px;
-    height: 24px;
-}
-
-.action-details {
-    margin-top: 10px;
-    line-height: 1.5;
-}
-
-.traits {
-    font-style: italic;
-    color: #666;
-    margin-top: 10px;
-}
-
-.action-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    justify-self: center;
-}
-
-.action-icon {
-    width: 24px;
-    /* Adjust size as needed */
-    height: 24px;
-    object-fit: contain;
+.rules-item-content {
+    text-align: center;
+    width: 100%;
 }

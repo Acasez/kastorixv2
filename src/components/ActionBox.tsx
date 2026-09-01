@@ -1,5 +1,6 @@
 // src/components/ActionBox.tsx
 import "../CSS/RulesBox.css";
+import "../CSS/ActionBox.css";
 import { getActionIcons } from "../utils/actionUtils";
 
 interface Action {

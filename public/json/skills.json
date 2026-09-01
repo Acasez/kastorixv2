@@ -45,7 +45,7 @@
         "name": "History",
         "stat": "INT",
         "armorPenalties": "",
-        "description": "Knowledge of the past"
+        "description": "Knowledge of the past."
     },
     {
         "name": "Insight",
