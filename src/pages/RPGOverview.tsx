@@ -30,63 +30,11 @@ export default function RPGOverview() {
       <RowFrame reverse={false}>
         <TextSection name="Actions" description={DESCRIPTIONS.actions} />
         <ActionBox action="Stride" actionsList={actions} />
-        <RulesBox
-          name="Actions"
-          rules={[
-            {
-              rule: "Single Action",
-              ruleIcon: "/images/Icons/OneAction.png",
-            },
-            {
-              rule: "Two-Action Activity",
-              ruleIcon: "/images/Icons/TwoActions.png",
-            },
-            {
-              rule: "Three-Action Activity",
-              ruleIcon: "/images/Icons/ThreeActions.png",
-            },
-            {
-              rule: "Reactions",
-              ruleIcon: "/images/Icons/Reaction.png",
-            },
-            {
-              rule: "Free Action",
-              ruleIcon: "/images/Icons/FreeAction.png",
-            },
-          ]}
-        />
+        <RulesBox name="Actions" rules={ACTION_RULES} />
       </RowFrame>
       <RowFrame reverse={true}>
         <TextSection name="Stats" description={DESCRIPTIONS.stats} />
-        <RulesBox
-          name="Attributes"
-          rules={[
-            {
-              rule: "Physique (PHY)",
-              description:
-                "Health, Fortitude saves, weapon attacks and damage rolls, carrying capacity, armor requirements.",
-              isHeader: true,
-            },
-            {
-              rule: "Dexterity (DEX)",
-              description:
-                "Reflex saving throws, spellshaping checks, finesse and ranged weapon attacks, initiative.",
-              isHeader: true,
-            },
-            {
-              rule: "Intelligence (INT)",
-              description:
-                "Spellshaping checks, free spells and skill proficiencies, feat bonuses and requirements, many connected skills.",
-              isHeader: true,
-            },
-            {
-              rule: "Will (WIL)",
-              description:
-                "Mana and aura amount, Will saves, attuned Spellshaping checks, mana recovery checks. ",
-              isHeader: true,
-            },
-          ]}
-        />
+        <RulesBox name="Attributes" rules={STATS_RULES} />
       </RowFrame>
       <RowFrame reverse={true}>
         <TextSection name="Skills" description={DESCRIPTIONS.skills} />
@@ -95,38 +43,10 @@ export default function RPGOverview() {
       <RowFrame vertical={true} reverse={false}>
         <TextSection
           name="Character building/Progression"
-          description="There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits."
+          description={DESCRIPTIONS.mageRanks}
         />
-        <RulesRow
-          rules={[
-            {
-              rule: "Arcane Feats",
-              description:
-                "come from your practice and learning of magic. You can pick one new arcane feat each level.",
-            },
-            {
-              rule: "General Feats",
-              description:
-                "come from your combat and general life experience. You can pick one new combat feat each level.",
-            },
-            {
-              rule: "Advantages",
-              description:
-                "are powerful feats that shape your character. You can pick one new advantage every fourth level.",
-            },
-            {
-              rule: "Ancestry Feats",
-              description:
-                "come from your species and its biology and cultural traditions. You can pick one new ancestry feat every fifth level.",
-            },
-            {
-              rule: "Stat Increases",
-              description:
-                "happen every third level. You can increase one of your core stats by 1, though you cannot pick the same stat twice in a row",
-            },
-          ]}
-        />
-        <TextSection description="Arcane feats are generally the main way of learning new spells, but spells can also be learned during downtime. Additionally when a character reaches a new mage rank they also learn spells of that rank equaling to their INT. " />
+        <RulesRow rules={PROGRESSION_RULES} />
+        <TextSection description={DESCRIPTIONS.learnSpells} />
         <LevelOneSetup />
       </RowFrame>
       <RowFrame reverse={true}>
@@ -165,8 +85,88 @@ Intelligence is used in spellshaping modifiers (when not casting Attuned spells)
 My current game design principle has been to restrict Master level in a skill to feats level 4 or higher and Legendary level to feats level 10 or higher, with advantages and certain feats sometimes breaking those limits. Skill proficiencies are allowed to go to higher levels faster than other proficiencies since they aren’t used to directly attack and defend in combat.
 
 Also taken from pathfinder is the idea of Lore skills. Lore skills are specific skills that aren’t in the main list. They are more narrow and specific than the core skills and therefore more potent. Lore skills can for example be a field of magic (Alchemy Lore, Souls Lore), Lore about a certain nation, place or creature (Draconium Lore, Jungle Lore, Hydra Lore) or specific profession (Legal Lore, Academic Lore, Farming Lore). Making a check with a lore skill will be easier than using a broader skill and perhaps come with extra info, but by design be rarer. Lore skills are Int based by default, but you might make an Alchemy Lore (DEX) check to carefully mix ingredients in a potion or use Mining Lore (PHY) to dig out a secure tunnel.`,
-  characterBuilding: ``,
+  mageRanks: `There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits.`,
+  learnSpells: ``,
   mana: `There are no spell slots in Kastorix, Mana is the resource used to cast all spells. Casting spells costs mana depending on their rank and traits. Mages can cast spells beyond their natural mana limit, but doing so risks mana poisoning and possibly death.
 
 The rate of mana regeneration is based on the Mana Density of the location, but can be increased by certain feats and actions. Mages can generally recover all their mana during a long rest, but in low mana density areas this can take longer. You can read more about mana here`,
+  nextOne: `Arcane feats are generally the main way of learning new spells, but spells can also be learned during downtime. Additionally when a character reaches a new mage rank they also learn spells of that rank equaling to their INT. `,
 } as const;
+
+const ACTION_RULES = [
+  {
+    rule: "Single Action",
+    ruleIcon: "/images/Icons/OneAction.png",
+  },
+  {
+    rule: "Two-Action Activity",
+    ruleIcon: "/images/Icons/TwoActions.png",
+  },
+  {
+    rule: "Three-Action Activity",
+    ruleIcon: "/images/Icons/ThreeActions.png",
+  },
+  {
+    rule: "Reactions",
+    ruleIcon: "/images/Icons/Reaction.png",
+  },
+  {
+    rule: "Free Action",
+    ruleIcon: "/images/Icons/FreeAction.png",
+  },
+];
+
+const STATS_RULES = [
+  {
+    rule: "Physique (PHY)",
+    description:
+      "Health, Fortitude saves, weapon attacks and damage rolls, carrying capacity, armor requirements.",
+    isHeader: true,
+  },
+  {
+    rule: "Dexterity (DEX)",
+    description:
+      "Reflex saving throws, spellshaping checks, finesse and ranged weapon attacks, initiative.",
+    isHeader: true,
+  },
+  {
+    rule: "Intelligence (INT)",
+    description:
+      "Spellshaping checks, free spells and skill proficiencies, feat bonuses and requirements, many connected skills.",
+    isHeader: true,
+  },
+  {
+    rule: "Will (WIL)",
+    description:
+      "Mana and aura amount, Will saves, attuned Spellshaping checks, mana recovery checks. ",
+    isHeader: true,
+  },
+];
+
+const PROGRESSION_RULES = [
+  {
+    rule: "Arcane Feats",
+    description:
+      "come from your practice and learning of magic. You can pick one new arcane feat each level.",
+  },
+  {
+    rule: "General Feats",
+    description:
+      "come from your combat and general life experience. You can pick one new combat feat each level.",
+  },
+  {
+    rule: "Advantages",
+    description:
+      "are powerful feats that shape your character. You can pick one new advantage every fourth level.",
+  },
+  {
+    rule: "Ancestry Feats",
+    description:
+      "come from your species and its biology and cultural traditions. You can pick one new ancestry feat every fifth level.",
+  },
+  {
+    rule: "Stat Increases",
+    description:
+      "happen every third level. You can increase one of your core stats by 1, though you cannot pick the same stat twice in a row",
+  },
+];
