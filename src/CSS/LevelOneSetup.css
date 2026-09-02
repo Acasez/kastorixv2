@@ -4,13 +4,13 @@
 ---------------------------------------------- */
 .level-one {
     --lo-accent: #6d4aff;
-    --lo-bg: #17141f;
+    --lo-bg: #f0f4f2;
     --lo-surface: #201b2e;
     --lo-border: rgba(255, 255, 255, 0.08);
-    --lo-text: #f2f0f7;
-    --lo-muted: #a49fb8;
+    --lo-text: #060607;
+    --lo-muted: #46415d;
 
-    max-width: 860px;
+    max-width: 1200px;
     margin: 3rem auto 0;
     border-radius: 16px;
     overflow: hidden;
