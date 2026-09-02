@@ -2,18 +2,25 @@ import "../CSS/LevelOneSetup.css";
 
 const setupSteps = [
   {
-    title: "Species",
-    detail: "Grants base mana & health, stat increases and special abilities.",
+    title: "Base Stats",
+    detail:
+      "Choose to distribute the standard array [3, 1, 0, −1] among your four core stats.",
   },
   {
-    title: "Base Stats",
-    detail: "Assign the standard array (3, 1, 0, −1) to your four core stats.",
+    title: "Species",
+    detail:
+      "Choose a species which sets your base health and mana, and provides some abilities",
   },
   {
     title: "Background",
-    detail: "Provides skill proficiencies and special abilities.",
+    detail:
+      "Provides skill proficiencies, starting equipment and a general feat",
   },
-  { title: "Advantage", detail: "Pick one — grants a special ability." },
+  {
+    title: "Advantage",
+    detail:
+      "Pick one advantage that differentiates your character from the rest",
+  },
 ];
 
 const featChoices = [
@@ -25,25 +32,29 @@ const featChoices = [
 const derivedGains = [
   { stat: "WIL", gain: "Mana", note: "Increase mana by your WIL" },
   { stat: "PHY", gain: "Health", note: "Increase health by your PHY" },
-  { stat: "INT", gain: "Skills", note: "Skill proficiencies based on INT" },
+  {
+    stat: "INT",
+    gain: "Skills",
+    note: "Become trained in a number of skills equal to INT",
+  },
   {
     stat: "INT",
     gain: "Spells",
-    note: "Extra spells based on INT — lost if INT is negative",
+    note: "Learn extra spells equal to INT, lose spells if your INT is negative",
   },
 ];
 
 export default function LevelOneSetup() {
   return (
     <section className="level-one" aria-labelledby="level-one-title">
-      <header className="level-one__header">
-        <div className="level-one__heading">
-          <span className="level-one__rank">Rank I · Apprentice</span>
+      <header className="level-one-header">
+        <div className="level-one-heading">
           <h2 id="level-one-title">Level One</h2>
           <p className="level-one__subtitle">
-            Everything a new character creates at first level.
+            All the choices for a level one character
           </p>
         </div>
+        <span className="level-one__rank">Rank I · Apprentice</span>
         <span className="level-one__level-badge">
           LV
           <br />

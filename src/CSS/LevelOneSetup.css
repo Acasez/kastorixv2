@@ -10,8 +10,8 @@
     --lo-text: #060607;
     --lo-muted: #46415d;
 
-    max-width: 1200px;
-    margin: 3rem auto 0;
+    max-width: 1300px;
+    margin: 2.5rem auto 1rem;
     border-radius: 16px;
     overflow: hidden;
     background: var(--lo-bg);
@@ -29,11 +29,12 @@
     background: linear-gradient(90deg, var(--lo-accent), #b39dff);
 }
 
-.level-one__header {
+.level-one-header {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1.75rem 2rem 1rem;
 }
 
@@ -81,9 +82,9 @@
 
 .level-one__body {
     display: grid;
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: 1.5rem;
-    padding: 1rem 2rem 2rem;
+    padding: 1rem 1rem 1rem;
 }
 
 /* --- Left column: creation checklist --- */
@@ -101,6 +102,8 @@
     display: flex;
     gap: 0.85rem;
     padding-left: 0.25rem;
+    border: 1px dashed purple;
+    border-radius: 1rem;
 }
 
 /* Vertical connector line between steps */
@@ -163,7 +166,7 @@
 /* --- Right column: derived bonuses --- */
 .level-one__gains {
     align-self: start;
-    padding: 1.25rem;
+    padding: 1rem;
     border-radius: 12px;
     background: rgba(109, 74, 255, 0.07);
     border: 1px dashed rgba(109, 74, 255, 0.4);
@@ -227,7 +230,6 @@
 }
 
 .level-one__gain p {
-    margin: 0.1rem 0 0;
     color: var(--lo-muted);
     font-size: 0.82rem;
     line-height: 1.4;
