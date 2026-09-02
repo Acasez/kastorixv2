@@ -1,5 +1,6 @@
 import ActionBox from "../components/ActionBox";
 import ImageDisplay from "../components/ImageDisplay";
+import LevelOneSetup from "../components/LevelOneCard";
 import TitleSection from "../components/PageIntroFlair";
 import RowFrame from "../components/RowFrame";
 import RulesBox from "../components/RulesBox";
@@ -126,6 +127,7 @@ export default function RPGOverview() {
           ]}
         />
         <TextSection description="Arcane feats are generally the main way of learning new spells, but spells can also be learned during downtime. Additionally when a character reaches a new mage rank they also learn spells of that rank equaling to their INT. " />
+        <LevelOneSetup />
       </RowFrame>
       <RowFrame reverse={true}>
         <TextSection name="Mana" description={DESCRIPTIONS.mana} />

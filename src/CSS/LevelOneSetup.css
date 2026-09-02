@@ -1,0 +1,249 @@
+/* ---------------------------------------------
+   Level One — character creation card
+   Pure CSS, no frameworks. Tune via variables.
+---------------------------------------------- */
+.level-one {
+    --lo-accent: #6d4aff;
+    --lo-bg: #17141f;
+    --lo-surface: #201b2e;
+    --lo-border: rgba(255, 255, 255, 0.08);
+    --lo-text: #f2f0f7;
+    --lo-muted: #a49fb8;
+
+    max-width: 860px;
+    margin: 3rem auto 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--lo-bg);
+    color: var(--lo-text);
+    border: 1px solid var(--lo-border);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Gradient rail along the top gives it presence
+   as the closing element of the progression section */
+.level-one::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, var(--lo-accent), #b39dff);
+}
+
+.level-one__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.75rem 2rem 1rem;
+}
+
+.level-one__rank {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lo-accent);
+    background: rgba(109, 74, 255, 0.14);
+    border: 1px solid rgba(109, 74, 255, 0.35);
+    padding: 0.25rem 0.65rem;
+    border-radius: 999px;
+    margin-bottom: 0.75rem;
+}
+
+.level-one__header h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.6rem;
+    line-height: 1.1;
+}
+
+.level-one__subtitle {
+    margin: 0;
+    color: var(--lo-muted);
+    font-size: 0.92rem;
+}
+
+.level-one__level-badge {
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 60px;
+    border-radius: 12px;
+    background: var(--lo-accent);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: 0.06em;
+}
+
+.level-one__body {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 1.5rem;
+    padding: 1rem 2rem 2rem;
+}
+
+/* --- Left column: creation checklist --- */
+.level-one__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.level-one__step {
+    position: relative;
+    display: flex;
+    gap: 0.85rem;
+    padding-left: 0.25rem;
+}
+
+/* Vertical connector line between steps */
+.level-one__step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 0.62rem;
+    top: 1.4rem;
+    bottom: -1rem;
+    width: 2px;
+    background: var(--lo-border);
+}
+
+.level-one__step-dot {
+    flex-shrink: 0;
+    width: 0.85rem;
+    height: 0.85rem;
+    margin-top: 0.3rem;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--lo-accent);
+}
+
+.level-one__step strong {
+    font-size: 0.98rem;
+}
+
+.level-one__step p {
+    margin: 0.15rem 0 0;
+    color: var(--lo-muted);
+    font-size: 0.88rem;
+    line-height: 1.45;
+}
+
+.level-one__feats {
+    list-style: none;
+    margin: 0.4rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.level-one__feats li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.82rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--lo-border);
+}
+
+.level-one__feat-count {
+    font-weight: 700;
+    color: var(--lo-accent);
+}
+
+/* --- Right column: derived bonuses --- */
+.level-one__gains {
+    align-self: start;
+    padding: 1.25rem;
+    border-radius: 12px;
+    background: rgba(109, 74, 255, 0.07);
+    border: 1px dashed rgba(109, 74, 255, 0.4);
+}
+
+.level-one__gains h3 {
+    margin: 0 0 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--lo-muted);
+}
+
+.level-one__gains>.level-one__gain:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.level-one__gain {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.level-one__gain:not(:last-child) {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--lo-border);
+}
+
+.level-one__gain+.level-one__gain {
+    margin-top: 1rem;
+}
+
+.level-one__gain:not(:last-child) {
+    padding-bottom: 1rem;
+}
+
+.level-one__gains .level-one__gain:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.level-one__gain-stat {
+    flex-shrink: 0;
+    min-width: 3rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: #fff;
+    background: var(--lo-accent);
+    border-radius: 8px;
+    padding: 0.35rem 0.4rem;
+}
+
+.level-one__gain div {
+    flex: 1;
+}
+
+.level-one__gain strong {
+    font-size: 0.92rem;
+}
+
+.level-one__gain p {
+    margin: 0.1rem 0 0;
+    color: var(--lo-muted);
+    font-size: 0.82rem;
+    line-height: 1.4;
+}
+
+/* --- Responsive --- */
+@media (max-width: 720px) {
+    .level-one__body {
+        grid-template-columns: 1fr;
+    }
+
+    .level-one__header {
+        padding: 1.5rem 1.25rem 1rem;
+    }
+
+    .level-one__body {
+        padding: 1rem 1.25rem 1.5rem;
+    }
+}
