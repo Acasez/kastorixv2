@@ -50,37 +50,37 @@ export default function LevelOneSetup() {
       <header className="level-one-header">
         <div className="level-one-heading">
           <h2 id="level-one-title">Level One</h2>
-          <p className="level-one__subtitle">
+          <p className="level-one-subtitle">
             All the choices for a level one character
           </p>
         </div>
-        <span className="level-one__rank">Rank I · Apprentice</span>
-        <span className="level-one__level-badge">
+        <span className="level-one-rank">Rank I · Apprentice</span>
+        <span className="level-one-level-badge">
           LV
           <br />
           01
         </span>
       </header>
 
-      <div className="level-one__body">
-        <ol className="level-one__steps">
+      <div className="level-one-body">
+        <ol className="level-one-steps">
           {setupSteps.map((step) => (
-            <li key={step.title} className="level-one__step">
-              <span className="level-one__step-dot" aria-hidden="true" />
+            <li key={step.title} className="level-one-step">
+              <span className="level-one-step-dot" aria-hidden="true" />
               <div>
                 <strong>{step.title}</strong>
                 <p>{step.detail}</p>
               </div>
             </li>
           ))}
-          <li className="level-one__step level-one__step--feats">
-            <span className="level-one__step-dot" aria-hidden="true" />
+          <li className="level-one-step level-one-step--feats">
+            <span className="level-one-step-dot" aria-hidden="true" />
             <div>
               <strong>Feats</strong>
-              <ul className="level-one__feats">
+              <ul className="level-one-feats">
                 {featChoices.map((f) => (
                   <li key={f.label}>
-                    <span className="level-one__feat-count">{f.count}×</span>{" "}
+                    <span className="level-one-feat-count">{f.count}×</span>{" "}
                     {f.label}
                   </li>
                 ))}
@@ -89,11 +89,11 @@ export default function LevelOneSetup() {
           </li>
         </ol>
 
-        <aside className="level-one__gains">
+        <aside className="level-one-gains">
           <h3>Then apply</h3>
           {derivedGains.map((g) => (
-            <div key={g.note} className="level-one__gain">
-              <span className="level-one__gain-stat">{g.stat}</span>
+            <div key={g.note} className="level-one-gain">
+              <span className="level-one-gain-stat">{g.stat}</span>
               <div>
                 <strong>+ {g.gain}</strong>
                 <p>{g.note}</p>

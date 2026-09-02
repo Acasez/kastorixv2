@@ -38,33 +38,33 @@
     padding: 1.75rem 2rem 1rem;
 }
 
-.level-one__rank {
+.level-one-rank {
     display: inline-block;
-    font-size: 0.72rem;
+    font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.10em;
     text-transform: uppercase;
     color: var(--lo-accent);
     background: rgba(109, 74, 255, 0.14);
     border: 1px solid rgba(109, 74, 255, 0.35);
-    padding: 0.25rem 0.65rem;
+    padding: 0.33rem 0.65rem;
     border-radius: 999px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
-.level-one__header h2 {
+.level-one-header h2 {
     margin: 0 0 0.25rem;
     font-size: 1.6rem;
     line-height: 1.1;
 }
 
-.level-one__subtitle {
+.level-one-subtitle {
     margin: 0;
     color: var(--lo-muted);
     font-size: 0.92rem;
 }
 
-.level-one__level-badge {
+.level-one-level-badge {
     flex-shrink: 0;
     display: grid;
     place-items: center;
@@ -80,7 +80,7 @@
     letter-spacing: 0.06em;
 }
 
-.level-one__body {
+.level-one-body {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     gap: 1.5rem;
@@ -88,7 +88,7 @@
 }
 
 /* --- Left column: creation checklist --- */
-.level-one__steps {
+.level-one-steps {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -97,7 +97,7 @@
     gap: 1rem;
 }
 
-.level-one__step {
+.level-one-step {
     position: relative;
     display: flex;
     gap: 0.85rem;
@@ -107,7 +107,7 @@
 }
 
 /* Vertical connector line between steps */
-.level-one__step:not(:last-child)::before {
+.level-one-step:not(:last-child)::before {
     content: "";
     position: absolute;
     left: 0.62rem;
@@ -117,7 +117,7 @@
     background: var(--lo-border);
 }
 
-.level-one__step-dot {
+.level-one-step-dot {
     flex-shrink: 0;
     width: 0.85rem;
     height: 0.85rem;
@@ -127,27 +127,26 @@
     border: 2px solid var(--lo-accent);
 }
 
-.level-one__step strong {
+.level-one-step strong {
     font-size: 0.98rem;
 }
 
-.level-one__step p {
+.level-one-step p {
     margin: 0.15rem 0 0;
     color: var(--lo-muted);
     font-size: 0.88rem;
     line-height: 1.45;
 }
 
-.level-one__feats {
+.level-one-feats {
     list-style: none;
-    margin: 0.4rem 0 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
-.level-one__feats li {
+.level-one-feats li {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
@@ -155,16 +154,17 @@
     padding: 0.3rem 0.7rem;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--lo-border);
+    border: 1px solid purple;
+    border-radius: 1rem;
 }
 
-.level-one__feat-count {
+.level-one-feat-count {
     font-weight: 700;
     color: var(--lo-accent);
 }
 
 /* --- Right column: derived bonuses --- */
-.level-one__gains {
+.level-one-gains {
     align-self: start;
     padding: 1rem;
     border-radius: 12px;
@@ -172,7 +172,7 @@
     border: 1px dashed rgba(109, 74, 255, 0.4);
 }
 
-.level-one__gains h3 {
+.level-one-gains h3 {
     margin: 0 0 1rem;
     font-size: 0.78rem;
     font-weight: 600;
@@ -181,34 +181,17 @@
     color: var(--lo-muted);
 }
 
-.level-one__gains>.level-one__gain:not(:last-child) {
-    margin-bottom: 1rem;
-}
-
-.level-one__gain {
+.level-one-gain {
     display: flex;
     gap: 0.75rem;
     align-items: flex-start;
 }
 
-.level-one__gain:not(:last-child) {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--lo-border);
-}
-
-.level-one__gain+.level-one__gain {
-    margin-top: 1rem;
-}
-
-.level-one__gain:not(:last-child) {
+.level-one-gain {
     padding-bottom: 1rem;
 }
 
-.level-one__gains .level-one__gain:not(:last-child) {
-    margin-bottom: 0;
-}
-
-.level-one__gain-stat {
+.level-one-gain-stat {
     flex-shrink: 0;
     min-width: 3rem;
     text-align: center;
@@ -221,15 +204,15 @@
     padding: 0.35rem 0.4rem;
 }
 
-.level-one__gain div {
+.level-one-gain div {
     flex: 1;
 }
 
-.level-one__gain strong {
+.level-one-gain strong {
     font-size: 0.92rem;
 }
 
-.level-one__gain p {
+.level-one-gain p {
     color: var(--lo-muted);
     font-size: 0.82rem;
     line-height: 1.4;
@@ -237,15 +220,15 @@
 
 /* --- Responsive --- */
 @media (max-width: 720px) {
-    .level-one__body {
+    .level-one-body {
         grid-template-columns: 1fr;
     }
 
-    .level-one__header {
+    .level-one-header {
         padding: 1.5rem 1.25rem 1rem;
     }
 
-    .level-one__body {
+    .level-one-body {
         padding: 1rem 1.25rem 1.5rem;
     }
 }
