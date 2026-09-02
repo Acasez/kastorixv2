@@ -1,0 +1,15 @@
+.rules-row {
+    background: #f9f5e8;
+    border-color: #8b4513;
+    width: 95%;
+    border-left: solid;
+    margin-bottom: 1rem;
+    font-size: 25px;
+    padding: 1rem;
+}
+
+.rules-row-title {
+    text-decoration: underline;
+    color: #8b4513;
+    margin: 0.5rem;
+}

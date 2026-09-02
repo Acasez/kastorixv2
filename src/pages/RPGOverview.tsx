@@ -3,6 +3,7 @@ import ImageDisplay from "../components/ImageDisplay";
 import TitleSection from "../components/PageIntroFlair";
 import RowFrame from "../components/RowFrame";
 import RulesBox from "../components/RulesBox";
+import RulesRow from "../components/RulesRow";
 import SkillRuleBox from "../components/SkillRuleBox";
 import TextSection from "../components/TextSection";
 import { useActions } from "../hooks/useActions";
@@ -89,6 +90,36 @@ export default function RPGOverview() {
       <RowFrame reverse={true}>
         <TextSection name="Skills" description={DESCRIPTIONS.skills} />
         <SkillRuleBox />
+      </RowFrame>
+      <RowFrame vertical={true} reverse={false}>
+        <TextSection
+          name="Character building/Progression"
+          description="There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits."
+        />
+        <RulesRow
+          rules={[
+            {
+              rule: "Arcane Feats",
+              description:
+                "come from your practice and learning of magic. You can pick one new arcane feat each level.",
+            },
+            {
+              rule: "General Feats",
+              description:
+                "come from your combat and general life experience. You can pick one new combat feat each level.",
+            },
+            {
+              rule: "Advantages",
+              description:
+                "are powerful feats that shape your character. You can pick one new advantage every fourth level.",
+            },
+            {
+              rule: "Ancestry Feats",
+              description:
+                "come from your species and its biology and cultural traditions. You can pick one new ancestry feat every fifth level.",
+            },
+          ]}
+        />
       </RowFrame>
       <RowFrame reverse={true}>
         <TextSection name="Mana" description={DESCRIPTIONS.mana} />

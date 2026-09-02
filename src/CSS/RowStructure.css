@@ -21,6 +21,10 @@
     color: black;
 }
 
+.portfolio-row.vertical-row {
+    flex-direction: column;
+}
+
 /* Text content */
 .portfolio-text {
     flex: 1;

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import "../CSS/RowStructure.css";
 
-interface PortFolioProps {
+interface TextSectionProps {
   name?: string;
   projectPageLink?: string;
   description: string;
@@ -11,7 +11,7 @@ export default function TextImageSection({
   name,
   projectPageLink,
   description,
-}: PortFolioProps) {
+}: TextSectionProps) {
   return (
     <>
       <div className="portfolio-text">
