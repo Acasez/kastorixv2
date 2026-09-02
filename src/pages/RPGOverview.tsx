@@ -118,8 +118,14 @@ export default function RPGOverview() {
               description:
                 "come from your species and its biology and cultural traditions. You can pick one new ancestry feat every fifth level.",
             },
+            {
+              rule: "Stat Increases",
+              description:
+                "happen every third level. You can increase one of your core stats by 1, though you cannot pick the same stat twice in a row",
+            },
           ]}
         />
+        <TextSection description="Arcane feats are generally the main way of learning new spells, but spells can also be learned during downtime. Additionally when a character reaches a new mage rank they also learn spells of that rank equaling to their INT. " />
       </RowFrame>
       <RowFrame reverse={true}>
         <TextSection name="Mana" description={DESCRIPTIONS.mana} />
