@@ -5,12 +5,14 @@ interface TextSectionProps {
   name?: string;
   projectPageLink?: string;
   description: string;
+  cursive?: boolean;
 }
 
-export default function TextImageSection({
+export default function TextSection({
   name,
   projectPageLink,
   description,
+  cursive,
 }: TextSectionProps) {
   return (
     <>
@@ -22,7 +24,10 @@ export default function TextImageSection({
         ) : (
           <h1 className="portfolio-title">{name}</h1>
         )}
-        <p className="portfolio-description">{description}</p>
+
+        <p className={`rules-item ${cursive ? "cursive" : ""}`}>
+          {description}
+        </p>
       </div>
     </>
   );

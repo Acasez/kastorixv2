@@ -49,8 +49,20 @@ export default function RPGOverview() {
         <TextSection description={DESCRIPTIONS.learnSpells} />
         <LevelOneSetup />
       </RowFrame>
+      <RowFrame reverse={false}>
+        <ImageDisplay
+          imageLocation="/images/ManaIcon.png"
+          altText="Mana Icon"
+          coverImage={false}
+        />
+        <TextSection
+          name="Mana"
+          description={DESCRIPTIONS.manaFlavor}
+          cursive={true}
+        />
+      </RowFrame>
       <RowFrame reverse={true}>
-        <TextSection name="Mana" description={DESCRIPTIONS.mana} />
+        <TextSection description={DESCRIPTIONS.mana} />
         <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>
     </>
@@ -87,6 +99,7 @@ My current game design principle has been to restrict Master level in a skill to
 Also taken from pathfinder is the idea of Lore skills. Lore skills are specific skills that aren’t in the main list. They are more narrow and specific than the core skills and therefore more potent. Lore skills can for example be a field of magic (Alchemy Lore, Souls Lore), Lore about a certain nation, place or creature (Draconium Lore, Jungle Lore, Hydra Lore) or specific profession (Legal Lore, Academic Lore, Farming Lore). Making a check with a lore skill will be easier than using a broader skill and perhaps come with extra info, but by design be rarer. Lore skills are Int based by default, but you might make an Alchemy Lore (DEX) check to carefully mix ingredients in a potion or use Mining Lore (PHY) to dig out a secure tunnel.`,
   mageRanks: `There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits.`,
   learnSpells: ``,
+  manaFlavor: `Mana exists in all living things and is necessary for life. Creatures absorb mana from their surroundings, into their mana well. Larger and more magical creatures generally have larger mana wells. Magical creatures use mana to fuel their magical abilities, like a dragon's breath or a coatls flight. Spellcasting relies on using the mana in one’s mana well to cast spells. As mana is used, the mana well depletes, and must be refilled by absorbing mana from the nearby area. Doing this will over time grow the mana well, allowing more mana to be stored. However if a creature's mana well runs out of mana, the creature will quickly die.`,
   mana: `There are no spell slots in Kastorix, Mana is the resource used to cast all spells. Casting spells costs mana depending on their rank and traits. Mages can cast spells beyond their natural mana limit, but doing so risks mana poisoning and possibly death.
 
 The rate of mana regeneration is based on the Mana Density of the location, but can be increased by certain feats and actions. Mages can generally recover all their mana during a long rest, but in low mana density areas this can take longer. You can read more about mana here`,

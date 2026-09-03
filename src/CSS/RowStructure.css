@@ -25,6 +25,10 @@
     flex-direction: column;
 }
 
+.cursive {
+    font-style: italic;
+}
+
 /* Text content */
 .portfolio-text {
     flex: 1;
