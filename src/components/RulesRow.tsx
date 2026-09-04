@@ -13,7 +13,7 @@ interface RulesProp {
 
 export default function RulesBox({ name, rules }: RulesProp) {
   return (
-    <div className="rules-row">
+    <div className="rules-row ml-4">
       {name && <h2 className="rule-title">{name}</h2>}
       {rules.map(({ rule, description, isHeader }) => (
         <div

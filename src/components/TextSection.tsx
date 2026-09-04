@@ -26,7 +26,7 @@ export default function TextSection({
         </h1>
       )}
       <p
-        className={`text-center text-xl m-2 text-text ${cursive ? "italic" : ""}`}
+        className={`text-center text-xl m-2 text-text-flavor ${cursive ? "italic text-text" : ""}`}
       >
         <ReactMarkdown>{description}</ReactMarkdown>
       </p>

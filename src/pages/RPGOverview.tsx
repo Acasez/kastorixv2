@@ -1,4 +1,5 @@
 import ActionBox from "../components/ActionBox";
+import Icon from "../components/Icon";
 import ImageDisplay from "../components/ImageDisplay";
 import LevelOneSetup from "../components/LevelOneCard";
 import TitleSection from "../components/PageIntroFlair";
@@ -50,18 +51,14 @@ export default function RPGOverview() {
         <LevelOneSetup />
       </RowFrame>
       <RowFrame reverse={false}>
-        <ImageDisplay
-          imageLocation="/images/ManaIcon.png"
-          altText="Mana Icon"
-          coverImage={false}
-        />
+        <Icon imageLocation="/images/ManaIcon.png" altText="Mana Icon" />
         <TextSection
           name="Mana"
           description={DESCRIPTIONS.manaFlavor}
           cursive={true}
         />
       </RowFrame>
-      <RowFrame reverse={true}>
+      <RowFrame reverse={false}>
         <TextSection description={DESCRIPTIONS.mana} />
         <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>

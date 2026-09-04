@@ -4,8 +4,15 @@
     --color-bg: #eceff4;
     --color-bg-rules: #f9f5e8;
 
-    --color-text: #0f0f0f;
+    --color-text: #888888;
     --color-text-rule: #c8a78a;
+    --color-text-flavor: #292826;
     --color-header: #ff6900;
     --color-traits: #868582;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    line-height: 1.75em;
 }
