@@ -45,7 +45,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
     <div className={`rules-box ${widthClass}`}>
       <div className="action-header">
         <h2 className="rule-title">{action}</h2>
-        <div className="action-icons">
+        <div className="max-w-8 max-h-8 flex flex-row">
           {actionIcons.map((icon, i) => (
             <img
               key={i}
@@ -56,7 +56,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
           ))}
         </div>
       </div>
-      <div className="action-details">
+      <div className="text-center text-base">
         <p>{formattedDescription}</p>
         {actionDetails.traits && (
           <p className="traits">Traits: {actionDetails.traits}</p>

@@ -19,7 +19,7 @@ export default function RulesBox({ name, rules, maxWidth }: RulesProp) {
       className="rules-box"
       style={{ maxWidth: maxWidth ? `${maxWidth}px` : undefined }}
     >
-      {name && <h2 className="rule-title">{name}</h2>}
+      {name && <h2 className="rule-title text-center">{name}</h2>}
       {rules.map(({ rule, ruleIcon, description, isHeader }) => (
         <div
           className={`rules-item ${isHeader ? "rules-item--header" : ""}`}

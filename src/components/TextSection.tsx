@@ -17,7 +17,7 @@ export default function TextSection({
   return (
     <div className="portfolio-text">
       {projectPageLink ? (
-        <NavLink className="text-2xl text-orange-500" to={projectPageLink}>
+        <NavLink className="text-2xl text-header" to={projectPageLink}>
           {name}
         </NavLink>
       ) : (
@@ -25,7 +25,9 @@ export default function TextSection({
           {name}
         </h1>
       )}
-      <p className={`text-center text-xl mt-2 ${cursive ? "italic" : ""}`}>
+      <p
+        className={`text-center text-xl m-2 text-text ${cursive ? "italic" : ""}`}
+      >
         <ReactMarkdown>{description}</ReactMarkdown>
       </p>
     </div>
