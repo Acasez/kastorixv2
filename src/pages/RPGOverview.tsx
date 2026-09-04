@@ -62,6 +62,19 @@ export default function RPGOverview() {
         <TextSection description={DESCRIPTIONS.mana} />
         <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>
+      <RowFrame reverse={false}>
+        <Icon imageLocation="/images/Eldritch.png" altText="Aura Icon" />
+        <TextSection
+          name="Mana"
+          description={DESCRIPTIONS.auraFlavor}
+          cursive={true}
+        />
+      </RowFrame>
+      <RowFrame reverse={false}>
+        <TextSection description={DESCRIPTIONS.aura} />
+        <ActionBox action="Aura Block" actionsList={actions} />
+        <ActionBox action="Reinforce Aura" actionsList={actions} />
+      </RowFrame>
     </>
   );
 }
@@ -117,12 +130,19 @@ My current game design principle has been to restrict Master level in a skill to
 
 Also taken from pathfinder is the idea of Lore skills. Lore skills are specific skills that aren’t in the main list. They are more narrow and specific than the core skills and therefore more potent. Lore skills can for example be a field of magic (Alchemy Lore, Souls Lore), Lore about a certain nation, place or creature (Draconium Lore, Jungle Lore, Hydra Lore) or specific profession (Legal Lore, Academic Lore, Farming Lore). Making a check with a lore skill will be easier than using a broader skill and perhaps come with extra info, but by design be rarer. Lore skills are Int based by default, but you might make an Alchemy Lore (DEX) check to carefully mix ingredients in a potion or use Mining Lore (PHY) to dig out a secure tunnel.`,
   mageRanks: `There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits.`,
-  learnSpells: ``,
+  learnSpells: `Arcane feats are generally the main way of learning new spells, but spells can also be learned during downtime. Additionally when a character reaches a new mage rank they also learn spells of that rank equaling to their INT.`,
   manaFlavor: `Mana exists in all living things and is necessary for life. Creatures absorb mana from their surroundings, into their mana well. Larger and more magical creatures generally have larger mana wells. Magical creatures use mana to fuel their magical abilities, like a dragon's breath or a coatls flight. Spellcasting relies on using the mana in one’s mana well to cast spells. As mana is used, the mana well depletes, and must be refilled by absorbing mana from the nearby area. Doing this will over time grow the mana well, allowing more mana to be stored. However if a creature's mana well runs out of mana, the creature will quickly die.`,
   mana: `There are no spell slots in Kastorix, Mana is the resource used to cast all spells. Casting spells costs mana depending on their rank and traits. Mages can cast spells beyond their natural mana limit, but doing so risks mana poisoning and possibly death.
 
 The rate of mana regeneration is based on the Mana Density of the location, but can be increased by certain feats and actions. Mages can generally recover all their mana during a long rest, but in low mana density areas this can take longer. You can read more about mana here`,
-  nextOne: `Arcane feats are generally the main way of learning new spells, but spells can also be learned during downtime. Additionally when a character reaches a new mage rank they also learn spells of that rank equaling to their INT. `,
+  aura: `All creatures have an Aura Health with a max equal to their Max Mana. Whenever they take damage, half of that is absorbed by their aura, which can be restored far easier than normal health. For example if a creature were to take 12 damage it would take 6 aura damage and 6 health damage. If the damage amount is uneven the creature can choose whether the aura or their health should take higher half. If a creature's Aura reaches zero, that creature takes full damage until the Aura Health is restored. Vital damage bypasses auras, as do ingested and contact poisons (but not effects like poison clouds).
+
+  &nbsp;
+
+Mages can spend three actions to raise or lower their aura. While down it won't protect them, but it also can't be detected by mana sensing. They also have the Aura Block reaction and the Reinforce Aura action
+`,
+  auraFlavor: `Just as we breathe out carbon, mana not used by the soul is also expelled. This forms what's known as an aura, clinging to the creature like breath on a cold day. Auras are invisible to most, but mages can learn to see them, and some creatures can naturally see them. They provide a weak magical shield around the creature, protecting them from harm. As mana wells grow, so do auras, becoming stronger and more protective. Mages can also learn to manipulate their auras, shaping them and using them for magical effects.`,
+  next: ``,
 } as const;
 
 const ACTION_RULES = [

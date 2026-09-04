@@ -35,7 +35,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
 
   const wordCount = actionDetails.description.split(/\s+/).length;
   const getWidthClass = () => {
-    if (wordCount > 20) return "wide"; // Apply 'wide' class for long descriptions
+    if (wordCount > 40) return "wide"; // Apply 'wide' class for long descriptions
     return ""; // No class for short descriptions
   };
 
