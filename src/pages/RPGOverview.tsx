@@ -87,6 +87,24 @@ export default function RPGOverview() {
         <ActionBox action="Cast a Spell" actionsList={actions} />
         <ActionBox action="Sustain" actionsList={actions} />
       </RowFrame>
+      <RowFrame reverse={false}>
+        <TextSection
+          name="Focus Points"
+          description={DESCRIPTIONS.focusPoints}
+        />
+      </RowFrame>
+      <RowFrame reverse={false}>
+        <TextSection
+          name="Opposed Rolls"
+          description={DESCRIPTIONS.opposedRolls}
+        />
+      </RowFrame>
+      <RowFrame reverse={false}>
+        <TextSection
+          name="Targeted Attacks"
+          description={DESCRIPTIONS.targetedAttacks}
+        />
+      </RowFrame>
     </>
   );
 }
@@ -155,12 +173,19 @@ Mages can spend three actions to raise or lower their aura. While down it won't 
 `,
   auraFlavor: `Just as we breathe out carbon, mana not used by the soul is also expelled. This forms what's known as an aura, clinging to the creature like breath on a cold day. Auras are invisible to most, but mages can learn to see them, and some creatures can naturally see them. They provide a weak magical shield around the creature, protecting them from harm. As mana wells grow, so do auras, becoming stronger and more protective. Mages can also learn to manipulate their auras, shaping them and using them for magical effects.`,
   spellFlavor: `Spells are the tools of mages, allowing them to manipulate the world around them. Spells are learned through study and practice, and can be modified and changed by the mage. Spells are cast by expending mana, shaping it into the desired effect. Spells can be cast quickly in the heat of battle, or prepared ahead of time for more complex effects. Some spells are simple and straightforward, while others are complex and require careful planning. Spells are invented, refined, and recorded by spellcasters around the world, resulting in thousands of spells and variants. Many spells have been independently invented by different cultures and individuals across Kastorix. `,
-  spellcasting: `o cast any spell in Kastorix you need to pay the mana cost and make a spellshaping check to see if you succeed. The difficulty of the check depends on the complexity and rank of the spell you are casting and the characters may have many bonuses and penalties to the roll. In general spellcasting checks are designed so that you succeed most of the time. The result of the spellcasting check also serves as the "Spell Save DC" of other systems.
+  spellcasting: `To cast any spell in Kastorix you need to pay the mana cost and make a spellshaping check to see if you succeed. The difficulty of the check depends on the complexity and rank of the spell you are casting and the characters may have many bonuses and penalties to the roll. In general spellcasting checks are designed so that you succeed most of the time. The result of the spellcasting check also serves as the "Spell Save DC" of other systems.
 Spells have a vocal and somatic component, which adds INT and DEX to the spellcasting check respectively. Attempting to cast a spell while silenced or restrained means casting without that component. Attuned creatures can use their WIL instead of INT when casting spells of their attuned aspect as they channeling it innately instead of using their knowledge of magic
 
   &nbsp;
 
 Many spells can be sustained to maintain them. This is done via the Sustain action. Spells can be modified with metamagics, which changes the spellshaping DC and adds extra effects to spell. By default you can only use one metamagic per spell, but feats and abilities may allow you to use more.`,
+  focusPoints: `Focus points are the main non-magical resource in Kastorix. Players gain a new one every four levels, and recover spent ones by simply taking a 10 minute rest. By default they can only be used to gain advantage on Death Saving Throws, but feats and advantages unlock new ways to spend them such as combat maneuvers and other abilities, as well as empowering other actions. Certain feats also provide new ways to recover or gain temporary focus points. `,
+  opposedRolls: `Kastorix works based on opposed rolls, meaning for every action both combatants roll dice. So there is no more "do I roll a dice? no its a spell so I roll against your saving throw". Every spell cast requires a spellshaping check
+
+Basic attacks also use opposed rolls. Instead of having an armor class, characters make Reflex saves against attack rolls. Attacks hit if the attacker rolls higher than the defender. Armor instead provides resistance to different types of damage, making it easier to survive hits and allowing armored characters to shrug off weak attacks. `,
+  targetedAttacks: `When making attacks or casting spells with the Targeting trait, attackers can choose to target a specific part of the body. This can inflict special conditions, like blinding or slowing the target, but makes the attack harder to hit.
+
+Creatures gain a bonus to their Reflex saves based on the part of the body being targeted. Attacks with a weapon or spell with the Precision trait reduce this bonus by 2. On a critical success the penalty is doubled.Some creatures have special body parts that can be targeted, like a dragon's wings or Losungi's venom fangs. But there are some common weak points on most sapient creatures: `,
 } as const;
 
 const ACTION_RULES = [
