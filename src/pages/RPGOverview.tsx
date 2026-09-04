@@ -78,14 +78,22 @@ There are no classes; instead, options come from feats and spells.
 In a sense, everyone is a mage, though there is considerable difference between mages based on the feats chosen.
 To start making a character, players pick their species, then select feats and spells.
 
+&nbsp;  
+
 The world and magic of Kastorix are inspired by magitech settings like Eberron, Ravnica, Runeterra, and Avishkar,
 as well as progression fantasy worlds and stories like *Arcane Ascension*, *Mother of Learning*, and *The Journals of Evander Tailor*.
 By design, all powerful characters are magic users and rely on their *auras* instead of superhuman durability,
 though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.
   `,
-  actions: `Kastorix uses a 3-action system similar to Pathfinder 2e. On each turn, players (and creatures) have three actions to spend on any activity. Common actions include Stride, Step, and Strike, but many more exist. Some activities, like spellcasting, cost 2 or 3 actions. The Quickened and Slowed status effects modify the number of actions a player starts with.
+  actions: `Kastorix uses a 3-action system similar to Pathfinder 2e. 
+  On each turn, players (and creatures) have three actions to spend on any activity. 
+  Common actions include *Stride*, *Step*, and *Strike*, but many more exist. 
+  Some activities, like spellcasting, cost 2 or 3 actions. 
+  The *Quickened* and *Slowed* status effects modify the number of actions a player starts with.
 
-Creatures also have one reaction per round, usable on other players’ turns.
+  Creatures also have one reaction per round, usable on other players’ turns.
+
+&nbsp;  
 
 Some rare activities like casting powerful spells or rare rituals may cost more than 3 actions. To do these, the creature needs to be hastened or perform the activity over multiple turns without interruption.`,
   stats: `There are 4 (yes only four) primary stats in the game. They are designed to all be useful in some way, so you can’t “dump” a stat without consequences.
