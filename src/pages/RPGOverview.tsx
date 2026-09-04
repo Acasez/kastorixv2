@@ -70,13 +70,19 @@ export default function RPGOverview() {
 }
 
 const DESCRIPTIONS = {
-  overview: `Kastorix is the name of both the TTRPG and the world it's set in. It's a D20-based system heavily inspired by Pathfinder 2e.
+  overview: `
+**Kastorix** is the name of both the TTRPG and the world it's set in.
+It's a D20-based system heavily inspired by Pathfinder 2e.
+In Kastorix, magic is commonplace and mages are one of the main sources of power for nations.
+There are no classes; instead, options come from feats and spells.
+In a sense, everyone is a mage, though there is considerable difference between mages based on the feats chosen.
+To start making a character, players pick their species, then select feats and spells.
 
-In Kastorix, magic is commonplace and mages are one of the main sources of power for nations. There are no classes; instead, options come from feats and spells. In a sense, everyone is a mage, though there is considerable difference between mages based on the feats chosen. To start making a character, players pick their species, then select feats and spells.
-
-The world and magic of Kastorix are inspired by magitech settings like Eberron, Ravnica, Runeterra, and Avishkar, as well as progression fantasy worlds and stories like *Arcane Ascension*, *Mother of Learning*, and *The Journals of Evander Tailor*.
-
-By design, all powerful characters are magic users and rely on their auras instead of superhuman durability, though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.`,
+The world and magic of Kastorix are inspired by magitech settings like Eberron, Ravnica, Runeterra, and Avishkar,
+as well as progression fantasy worlds and stories like *Arcane Ascension*, *Mother of Learning*, and *The Journals of Evander Tailor*.
+By design, all powerful characters are magic users and rely on their *auras* instead of superhuman durability,
+though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.
+  `,
   actions: `Kastorix uses a 3-action system similar to Pathfinder 2e. On each turn, players (and creatures) have three actions to spend on any activity. Common actions include Stride, Step, and Strike, but many more exist. Some activities, like spellcasting, cost 2 or 3 actions. The Quickened and Slowed status effects modify the number of actions a player starts with.
 
 Creatures also have one reaction per round, usable on other players’ turns.

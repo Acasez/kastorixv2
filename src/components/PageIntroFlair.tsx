@@ -13,7 +13,7 @@ export default function TitleSection({
   return (
     <>
       <div className="TitleSection">
-        <h1 className="TitleText">{title} </h1>
+        <h1 className="TitleText text-6xl text-center ">{title} </h1>
         <h2>{subtitle} </h2>
         {extraLine && <h3>{extraLine} </h3>}
       </div>
