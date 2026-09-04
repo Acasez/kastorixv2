@@ -65,7 +65,7 @@ export default function RPGOverview() {
       <RowFrame reverse={false}>
         <Icon imageLocation="/images/Eldritch.png" altText="Aura Icon" />
         <TextSection
-          name="Mana"
+          name="Aura"
           description={DESCRIPTIONS.auraFlavor}
           cursive={true}
         />
@@ -74,6 +74,18 @@ export default function RPGOverview() {
         <TextSection description={DESCRIPTIONS.aura} />
         <ActionBox action="Aura Block" actionsList={actions} />
         <ActionBox action="Reinforce Aura" actionsList={actions} />
+      </RowFrame>
+      <RowFrame reverse={false}>
+        <TextSection
+          name="Spellcasting"
+          description={DESCRIPTIONS.spellFlavor}
+          cursive={true}
+        />
+      </RowFrame>
+      <RowFrame reverse={false}>
+        <TextSection description={DESCRIPTIONS.spellcasting} />
+        <ActionBox action="Cast a Spell" actionsList={actions} />
+        <ActionBox action="Sustain" actionsList={actions} />
       </RowFrame>
     </>
   );
@@ -142,7 +154,13 @@ The rate of mana regeneration is based on the Mana Density of the location, but 
 Mages can spend three actions to raise or lower their aura. While down it won't protect them, but it also can't be detected by mana sensing. They also have the Aura Block reaction and the Reinforce Aura action
 `,
   auraFlavor: `Just as we breathe out carbon, mana not used by the soul is also expelled. This forms what's known as an aura, clinging to the creature like breath on a cold day. Auras are invisible to most, but mages can learn to see them, and some creatures can naturally see them. They provide a weak magical shield around the creature, protecting them from harm. As mana wells grow, so do auras, becoming stronger and more protective. Mages can also learn to manipulate their auras, shaping them and using them for magical effects.`,
-  next: ``,
+  spellFlavor: `Spells are the tools of mages, allowing them to manipulate the world around them. Spells are learned through study and practice, and can be modified and changed by the mage. Spells are cast by expending mana, shaping it into the desired effect. Spells can be cast quickly in the heat of battle, or prepared ahead of time for more complex effects. Some spells are simple and straightforward, while others are complex and require careful planning. Spells are invented, refined, and recorded by spellcasters around the world, resulting in thousands of spells and variants. Many spells have been independently invented by different cultures and individuals across Kastorix. `,
+  spellcasting: `o cast any spell in Kastorix you need to pay the mana cost and make a spellshaping check to see if you succeed. The difficulty of the check depends on the complexity and rank of the spell you are casting and the characters may have many bonuses and penalties to the roll. In general spellcasting checks are designed so that you succeed most of the time. The result of the spellcasting check also serves as the "Spell Save DC" of other systems.
+Spells have a vocal and somatic component, which adds INT and DEX to the spellcasting check respectively. Attempting to cast a spell while silenced or restrained means casting without that component. Attuned creatures can use their WIL instead of INT when casting spells of their attuned aspect as they channeling it innately instead of using their knowledge of magic
+
+  &nbsp;
+
+Many spells can be sustained to maintain them. This is done via the Sustain action. Spells can be modified with metamagics, which changes the spellshaping DC and adds extra effects to spell. By default you can only use one metamagic per spell, but feats and abilities may allow you to use more.`,
 } as const;
 
 const ACTION_RULES = [
