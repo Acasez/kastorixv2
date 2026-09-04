@@ -18,14 +18,16 @@ export default function TextSection({
     <>
       <div className="portfolio-text">
         {projectPageLink ? (
-          <NavLink className="portfolio-title" to={projectPageLink}>
+          <NavLink className="text-2xl text-orange-500" to={projectPageLink}>
             {name}
           </NavLink>
         ) : (
-          <h1 className="portfolio-title">{name}</h1>
+          <h1 className="text-5xl text-orange-500 text-center font-bold">
+            {name}
+          </h1>
         )}
 
-        <p className={`rules-item ${cursive ? "cursive" : ""}`}>
+        <p className={`text-center text-xl mt-2 ${cursive ? "italic" : ""}`}>
           {description}
         </p>
       </div>
