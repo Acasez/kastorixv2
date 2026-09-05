@@ -25,11 +25,11 @@ export default function TextSection({
           {name}
         </h1>
       )}
-      <p
+      <div
         className={`text-center text-xl m-2 text-text-flavor ${cursive ? "italic text-text" : ""}`}
       >
         <ReactMarkdown>{description}</ReactMarkdown>
-      </p>
+      </div>
     </div>
   );
 }
