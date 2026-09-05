@@ -1,3 +1,5 @@
+### Overview
+
 **Kastorix** is the name of both the TTRPG and the world it's set in.
 It's a D20-based system heavily inspired by Pathfinder 2e.
 
@@ -15,7 +17,7 @@ as well as progression fantasy worlds and stories like _Arcane Ascension_, _Moth
 By design, all powerful characters are magic users and rely on their _auras_ instead of superhuman durability,
 though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.
 
----
+### Actions
 
 Kastorix uses a 3-action system similar to Pathfinder 2e.
 On each turn, players (and creatures) have three actions to spend on any activity.
@@ -29,7 +31,7 @@ Creatures also have one reaction per round, usable on other players’ turns.
 
 Some rare activities like casting powerful spells or rare rituals may cost more than 3 actions. To do these, the creature needs to be hastened or perform the activity over multiple turns without interruption.
 
----
+### Stats
 
 There are 4 (yes only four) primary stats in the game. They are designed to all be useful in some way, so you can’t “dump” a stat without consequences.
 
@@ -49,7 +51,7 @@ When it comes to mental stats, I’ve also cut one out. Will serves as a mix of 
 
 Intelligence is used in spellshaping modifiers (when not casting Attuned spells), and provides characters with extra spells and skill proficiencies. Unlike the other stats Int doesn’t have an associated saving throw. But instead Int is also used in many feats that either scale on or are locked behind high Int, with powerful feats like Studied Ahead providing adept spells ahead on curve requiring 3 or more Int. Int is also the stat with most connected skills, having more than double that of Phy and Dex
 
----
+### Skills
 
 Skills work similar to Pathfinder 2e, with the proficiency without levels variant. The proficiency bonus is +2 for trained, +4 for expert, +6 for master and +8 for legendary. At character creation you get training in 2 skills from your background and a number equal to your Int. The main source of skill increases is feats, which generally say something like “Your proficiency level in brawling increases (max Master)”, meaning you increase your proficiency level with that skill one step, up to the specified rank.
 
@@ -61,6 +63,6 @@ My current game design principle has been to restrict Master level in a skill to
 
 Also taken from pathfinder is the idea of Lore skills. Lore skills are specific skills that aren’t in the main list. They are more narrow and specific than the core skills and therefore more potent. Lore skills can for example be a field of magic (Alchemy Lore, Souls Lore), Lore about a certain nation, place or creature (Draconium Lore, Jungle Lore, Hydra Lore) or specific profession (Legal Lore, Academic Lore, Farming Lore). Making a check with a lore skill will be easier than using a broader skill and perhaps come with extra info, but by design be rarer. Lore skills are Int based by default, but you might make an Alchemy Lore (DEX) check to carefully mix ingredients in a potion or use Mining Lore (PHY) to dig out a secure tunnel.
 
----
+### MageRanks
 
 There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits.
