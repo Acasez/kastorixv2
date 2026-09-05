@@ -10,9 +10,9 @@ import SkillRuleBox from "../components/SkillRuleBox";
 import TextSection from "../components/TextSection";
 import { useActions } from "../hooks/useActions";
 import overviewMarkdown from "../markdown/Overview.md?raw";
-const DESC = {
-  overview: overviewMarkdown,
-} as const;
+import { parseMarkdownByHeaders } from "../utils/parseMarkdown";
+
+const DESC = parseMarkdownByHeaders(overviewMarkdown);
 
 export default function RPGOverview() {
   const { actions, loading, error } = useActions();
@@ -24,7 +24,7 @@ export default function RPGOverview() {
     <>
       <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />
       <RowFrame reverse={false}>
-        <TextSection description={DESC.overview} />
+        <TextSection description={DESC.Overview} />
         <ImageDisplay
           imageLocation="/images/Maps/Kastorix.jpg"
           altText="Kastorix World Map"
@@ -33,7 +33,7 @@ export default function RPGOverview() {
         />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection name="Actions" description={DESCRIPTIONS.actions} />
+        <TextSection name="Actions" description={DESC.Actions} />
         <ActionBox action="Stride" actionsList={actions} />
         <RulesBox name="Actions" rules={ACTION_RULES} />
       </RowFrame>
@@ -114,21 +114,6 @@ export default function RPGOverview() {
 }
 
 const DESCRIPTIONS = {
-  overview: `
-**Kastorix** is the name of both the TTRPG and the world it's set in.
-It's a D20-based system heavily inspired by Pathfinder 2e.
-In Kastorix, magic is commonplace and mages are one of the main sources of power for nations.
-There are no classes; instead, options come from feats and spells.
-In a sense, everyone is a mage, though there is considerable difference between mages based on the feats chosen.
-To start making a character, players pick their species, then select feats and spells.
-
-&nbsp;  
-
-The world and magic of Kastorix are inspired by magitech settings like Eberron, Ravnica, Runeterra, and Avishkar,
-as well as progression fantasy worlds and stories like *Arcane Ascension*, *Mother of Learning*, and *The Journals of Evander Tailor*.
-By design, all powerful characters are magic users and rely on their *auras* instead of superhuman durability,
-though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.
-  `,
   actions: `Kastorix uses a 3-action system similar to Pathfinder 2e. 
   On each turn, players (and creatures) have three actions to spend on any activity. 
   Common actions include *Stride*, *Step*, and *Strike*, but many more exist. 
