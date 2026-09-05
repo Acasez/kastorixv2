@@ -115,10 +115,14 @@ Focus points are the main non-magical resource in Kastorix. Players gain a new o
 
 Kastorix works based on opposed rolls, meaning for every action both combatants roll dice. So there is no more "do I roll a dice? no its a spell so I roll against your saving throw". Every spell cast requires a spellshaping check
 
+&nbsp;
+
 Basic attacks also use opposed rolls. Instead of having an armor class, characters make Reflex saves against attack rolls. Attacks hit if the attacker rolls higher than the defender. Armor instead provides resistance to different types of damage, making it easier to survive hits and allowing armored characters to shrug off weak attacks.
 
 ### TargetedAttacks
 
 When making attacks or casting spells with the Targeting trait, attackers can choose to target a specific part of the body. This can inflict special conditions, like blinding or slowing the target, but makes the attack harder to hit.
+
+&nbsp;
 
 Creatures gain a bonus to their Reflex saves based on the part of the body being targeted. Attacks with a weapon or spell with the Precision trait reduce this bonus by 2. On a critical success the penalty is doubled.Some creatures have special body parts that can be targeted, like a dragon's wings or Losungi's venom fangs. But there are some common weak points on most sapient creatures as seen in the table below. Critical hits double the penalties

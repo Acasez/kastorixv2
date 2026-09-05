@@ -7,6 +7,7 @@ import RowFrame from "../components/RowFrame";
 import RulesBox from "../components/RulesBox";
 import RulesRow from "../components/RulesRow";
 import SkillRuleBox from "../components/SkillRuleBox";
+import { TargetedAttacksTable } from "../components/Table";
 import TextSection from "../components/TextSection";
 import { ACTION_RULES } from "../constants/ActionRules";
 import { PROGRESSION_RULES } from "../constants/ProgressionRules";
@@ -97,6 +98,7 @@ export default function RPGOverview() {
           name="Targeted Attacks"
           description={DESC.TargetedAttacks}
         />
+        <TargetedAttacksTable />
       </RowFrame>
     </>
   );
