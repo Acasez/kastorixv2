@@ -9,6 +9,10 @@ import RulesRow from "../components/RulesRow";
 import SkillRuleBox from "../components/SkillRuleBox";
 import TextSection from "../components/TextSection";
 import { useActions } from "../hooks/useActions";
+import overviewMarkdown from "../markdown/Overview.md?raw";
+const DESC = {
+  overview: overviewMarkdown,
+} as const;
 
 export default function RPGOverview() {
   const { actions, loading, error } = useActions();
@@ -20,7 +24,7 @@ export default function RPGOverview() {
     <>
       <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />
       <RowFrame reverse={false}>
-        <TextSection description={DESCRIPTIONS.overview} />
+        <TextSection description={DESC.overview} />
         <ImageDisplay
           imageLocation="/images/Maps/Kastorix.jpg"
           altText="Kastorix World Map"
