@@ -10,11 +10,13 @@ export const routes = [
   {
     path: "/index",
     component: lazy(() => import("../pages/RPGOverview")),
+    header: "Overview",
     createHeader: true,
   },
   {
     path: "/characterSheet",
     component: lazy(() => import("../pages/CharacterSheet")),
+    header: "Character Sheet",
     createHeader: true,
   },
 ];

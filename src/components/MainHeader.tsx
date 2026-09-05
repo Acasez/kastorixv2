@@ -11,18 +11,15 @@ export default function MainHeader() {
       <ul className="flex justify-center gap-5 text-3xl">
         {headerRoutes.map((route) => {
           // Extract the path for display (e.g., "/login" → "Login")
-          const displayName = route.path
-            .replace("/", "")
-            .replace("-", " ")
-            .replace(/\b\w/g, (char) => char.toUpperCase());
 
           return (
             <li key={route.path}>
               <NavLink
                 to={route.path || "/"} // Handle empty path
                 end={route.path === "" || route.path === "/index"}
+                className={"text-2xl"}
               >
-                {displayName || "Dashboard"} {/* Fallback for empty path */}
+                {route.header || "Dashboard"} {/* Fallback for empty path */}
               </NavLink>
             </li>
           );
