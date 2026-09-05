@@ -51,96 +51,53 @@ export default function RPGOverview() {
           description={DESC.MageRanks}
         />
         <RulesRow rules={PROGRESSION_RULES} />
-        <TextSection description={DESCRIPTIONS.learnSpells} />
+        <TextSection description={DESC.LearnSpells} />
         <LevelOneSetup />
       </RowFrame>
       <RowFrame reverse={false}>
         <Icon imageLocation="/images/ManaIcon.png" altText="Mana Icon" />
-        <TextSection
-          name="Mana"
-          description={DESCRIPTIONS.manaFlavor}
-          cursive={true}
-        />
+        <TextSection name="Mana" description={DESC.ManaFlavor} cursive={true} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection description={DESCRIPTIONS.mana} />
+        <TextSection description={DESC.Mana} />
         <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>
       <RowFrame reverse={false}>
         <Icon imageLocation="/images/Eldritch.png" altText="Aura Icon" />
-        <TextSection
-          name="Aura"
-          description={DESCRIPTIONS.auraFlavor}
-          cursive={true}
-        />
+        <TextSection name="Aura" description={DESC.AuraFlavor} cursive={true} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection description={DESCRIPTIONS.aura} />
+        <TextSection description={DESC.Aura} />
         <ActionBox action="Aura Block" actionsList={actions} />
         <ActionBox action="Reinforce Aura" actionsList={actions} />
       </RowFrame>
       <RowFrame reverse={false}>
         <TextSection
           name="Spellcasting"
-          description={DESCRIPTIONS.spellFlavor}
+          description={DESC.SpellcastingFlavor}
           cursive={true}
         />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection description={DESCRIPTIONS.spellcasting} />
+        <TextSection description={DESC.Spellcasting} />
         <ActionBox action="Cast a Spell" actionsList={actions} />
         <ActionBox action="Sustain" actionsList={actions} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection
-          name="Focus Points"
-          description={DESCRIPTIONS.focusPoints}
-        />
+        <TextSection name="Focus Points" description={DESC.FocusPoints} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection
-          name="Opposed Rolls"
-          description={DESCRIPTIONS.opposedRolls}
-        />
+        <TextSection name="Opposed Rolls" description={DESC.OpposedRolls} />
       </RowFrame>
       <RowFrame reverse={false}>
         <TextSection
           name="Targeted Attacks"
-          description={DESCRIPTIONS.targetedAttacks}
+          description={DESC.TargetedAttacks}
         />
       </RowFrame>
     </>
   );
 }
-
-const DESCRIPTIONS = {
-  learnSpells: `Arcane feats are generally the main way of learning new spells, but spells can also be learned during downtime. Additionally when a character reaches a new mage rank they also learn spells of that rank equaling to their INT.`,
-  manaFlavor: `Mana exists in all living things and is necessary for life. Creatures absorb mana from their surroundings, into their mana well. Larger and more magical creatures generally have larger mana wells. Magical creatures use mana to fuel their magical abilities, like a dragon's breath or a coatls flight. Spellcasting relies on using the mana in one’s mana well to cast spells. As mana is used, the mana well depletes, and must be refilled by absorbing mana from the nearby area. Doing this will over time grow the mana well, allowing more mana to be stored. However if a creature's mana well runs out of mana, the creature will quickly die.`,
-  mana: `There are no spell slots in Kastorix, Mana is the resource used to cast all spells. Casting spells costs mana depending on their rank and traits. Mages can cast spells beyond their natural mana limit, but doing so risks mana poisoning and possibly death.
-
-The rate of mana regeneration is based on the Mana Density of the location, but can be increased by certain feats and actions. Mages can generally recover all their mana during a long rest, but in low mana density areas this can take longer. You can read more about mana here`,
-  aura: `All creatures have an Aura Health with a max equal to their Max Mana. Whenever they take damage, half of that is absorbed by their aura, which can be restored far easier than normal health. For example if a creature were to take 12 damage it would take 6 aura damage and 6 health damage. If the damage amount is uneven the creature can choose whether the aura or their health should take higher half. If a creature's Aura reaches zero, that creature takes full damage until the Aura Health is restored. Vital damage bypasses auras, as do ingested and contact poisons (but not effects like poison clouds).
-
-  &nbsp;
-
-Mages can spend three actions to raise or lower their aura. While down it won't protect them, but it also can't be detected by mana sensing. They also have the Aura Block reaction and the Reinforce Aura action
-`,
-  auraFlavor: `Just as we breathe out carbon, mana not used by the soul is also expelled. This forms what's known as an aura, clinging to the creature like breath on a cold day. Auras are invisible to most, but mages can learn to see them, and some creatures can naturally see them. They provide a weak magical shield around the creature, protecting them from harm. As mana wells grow, so do auras, becoming stronger and more protective. Mages can also learn to manipulate their auras, shaping them and using them for magical effects.`,
-  spellFlavor: `Spells are the tools of mages, allowing them to manipulate the world around them. Spells are learned through study and practice, and can be modified and changed by the mage. Spells are cast by expending mana, shaping it into the desired effect. Spells can be cast quickly in the heat of battle, or prepared ahead of time for more complex effects. Some spells are simple and straightforward, while others are complex and require careful planning. Spells are invented, refined, and recorded by spellcasters around the world, resulting in thousands of spells and variants. Many spells have been independently invented by different cultures and individuals across Kastorix. `,
-  spellcasting: `To cast any spell in Kastorix you need to pay the mana cost and make a spellshaping check to see if you succeed. The difficulty of the check depends on the complexity and rank of the spell you are casting and the characters may have many bonuses and penalties to the roll. In general spellcasting checks are designed so that you succeed most of the time. The result of the spellcasting check also serves as the "Spell Save DC" of other systems.
-Spells have a vocal and somatic component, which adds INT and DEX to the spellcasting check respectively. Attempting to cast a spell while silenced or restrained means casting without that component. Attuned creatures can use their WIL instead of INT when casting spells of their attuned aspect as they channeling it innately instead of using their knowledge of magic
-
-  &nbsp;
-
-Many spells can be sustained to maintain them. This is done via the Sustain action. Spells can be modified with metamagics, which changes the spellshaping DC and adds extra effects to spell. By default you can only use one metamagic per spell, but feats and abilities may allow you to use more.`,
-  focusPoints: `Focus points are the main non-magical resource in Kastorix. Players gain a new one every four levels, and recover spent ones by simply taking a 10 minute rest. By default they can only be used to gain advantage on Death Saving Throws, but feats and advantages unlock new ways to spend them such as combat maneuvers and other abilities, as well as empowering other actions. Certain feats also provide new ways to recover or gain temporary focus points. `,
-  opposedRolls: `Kastorix works based on opposed rolls, meaning for every action both combatants roll dice. So there is no more "do I roll a dice? no its a spell so I roll against your saving throw". Every spell cast requires a spellshaping check
-
-Basic attacks also use opposed rolls. Instead of having an armor class, characters make Reflex saves against attack rolls. Attacks hit if the attacker rolls higher than the defender. Armor instead provides resistance to different types of damage, making it easier to survive hits and allowing armored characters to shrug off weak attacks. `,
-  targetedAttacks: `When making attacks or casting spells with the Targeting trait, attackers can choose to target a specific part of the body. This can inflict special conditions, like blinding or slowing the target, but makes the attack harder to hit.
-
-Creatures gain a bonus to their Reflex saves based on the part of the body being targeted. Attacks with a weapon or spell with the Precision trait reduce this bonus by 2. On a critical success the penalty is doubled.Some creatures have special body parts that can be targeted, like a dragon's wings or Losungi's venom fangs. But there are some common weak points on most sapient creatures: `,
-} as const;
 
 const ACTION_RULES = [
   {
