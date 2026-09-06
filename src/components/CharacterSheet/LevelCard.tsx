@@ -60,7 +60,6 @@ interface LevelCardProps {
 
 export default function LevelCard({ level }: LevelCardProps) {
   const actions = getLevelActions(level);
-  /* const isStatIncreaseLevel = level % 3 === 0 && level !== 0; */
 
   return (
     <div className="bg-blue-200 rounded-lg p-4 mb-4 shadow-sm border border-blue-300">

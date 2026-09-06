@@ -1,4 +1,4 @@
-import LevelSidebar from "../components/LevelSidebar";
+import LevelSidebar from "../components/CharacterSheet/LevelSidebar";
 
 export default function RPGOverview() {
   return (
