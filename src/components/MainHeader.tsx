@@ -10,8 +10,6 @@ export default function MainHeader() {
     <nav className="bg-bg-header text-text-light h-15 topnav" role="navigation">
       <ul className="flex justify-center gap-5 text-3xl">
         {headerRoutes.map((route) => {
-          // Extract the path for display (e.g., "/login" → "Login")
-
           return (
             <li key={route.path}>
               <NavLink
