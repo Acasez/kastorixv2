@@ -24,10 +24,9 @@ export default function CharacterPanel() {
   };
 
   return (
-    <div className="bg-blue-100 rounded-lg p-4 mb-4 shadow-sm border border-blue-300 w-full">
+    <div className="bg-blue-100 rounded-lg p-2 mb-4 shadow-sm border border-blue-300 w-full">
       {/* Character Metadata */}
-      <div className="mb-4">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Name</h2>
+      <div className="mb-2">
         <input
           type="text"
           value={characterName}
@@ -37,7 +36,7 @@ export default function CharacterPanel() {
         />
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-1">
         <ActionButton label="Select Species" />
         <ActionButton label="Set Base Stats" />
       </div>

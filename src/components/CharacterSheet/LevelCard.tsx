@@ -63,7 +63,7 @@ export default function LevelCard({ level }: LevelCardProps) {
 
   return (
     <div className="bg-blue-200 rounded-lg p-2 mb-3 shadow-sm border border-blue-300">
-      <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+      <h3 className="text-xl font-bold text-gray-800 mb-1 text-center">
         Level {level}
       </h3>
       <div className="space-y-2">
