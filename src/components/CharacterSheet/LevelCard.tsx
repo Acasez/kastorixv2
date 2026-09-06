@@ -62,8 +62,10 @@ export default function LevelCard({ level }: LevelCardProps) {
   const actions = getLevelActions(level);
 
   return (
-    <div className="bg-blue-200 rounded-lg p-4 mb-4 shadow-sm border border-blue-300">
-      <h3 className="text-xl font-bold text-gray-800 mb-3">Level {level}</h3>
+    <div className="bg-blue-200 rounded-lg p-2 mb-3 shadow-sm border border-blue-300">
+      <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+        Level {level}
+      </h3>
       <div className="space-y-2">
         {actions.map((action, index) => {
           const isHighlighted = action === "Increase One Stat";
