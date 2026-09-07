@@ -8,12 +8,21 @@ import {
 import type { ProficiencyTierName } from "../constants/Proficiency";
 
 export type Character = {
-  skillProficiencies: Record<string, ProficiencyTierName>;
   name: string;
   level: number;
   feats: string[];
   species: string;
   baseStats: Record<string, number>;
+  skillProficiencies: Record<string, ProficiencyTierName>;
+  saveProficiencies: Record<string, ProficiencyTierName>;
+  health: Track;
+  aura: Track;
+  mana: Track;
+};
+
+export type Track = {
+  current: number;
+  max: number;
 };
 
 export type CharacterContextType = {

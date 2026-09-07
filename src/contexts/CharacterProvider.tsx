@@ -7,8 +7,12 @@ const defaultCharacter: Character = {
   level: 1,
   feats: [],
   species: "",
-  baseStats: {},
+  baseStats: { PHY: 0, DEX: 0, INT: 0, WIL: 0 },
   skillProficiencies: {},
+  saveProficiencies: {},
+  health: { current: 10, max: 10 },
+  aura: { current: 10, max: 10 },
+  mana: { current: 10, max: 10 },
 };
 
 export function CharacterProvider({ children }: { children: ReactNode }) {
