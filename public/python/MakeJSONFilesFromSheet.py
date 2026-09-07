@@ -8,7 +8,7 @@ import gspread
 
 SPREADSHEET_ID = "1rj8eEdbHBlXsfaX9SepSxknKQ26-ZqLBvH_bKkpsvaI"
 CREDENTIALS_FILE = r"C:/Users/Edvin/Documents/GoogleAPI/GoogleAPI.json"
-BUILD_DIR = "src/json"
+BUILD_DIR = "src/JSON"
 
 ACTION_ICONS = {
     "1": '<img class="action-icon-modalList" src="/images/Kastorix/Icons/OneAction.png" alt="1 Action"/>',
