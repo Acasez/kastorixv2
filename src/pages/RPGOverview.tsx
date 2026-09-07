@@ -12,18 +12,13 @@ import TextSection from "../components/TextSection";
 import { ACTION_RULES } from "../constants/ActionRules";
 import { PROGRESSION_RULES } from "../constants/ProgressionRules";
 import { STATS_RULES } from "../constants/StatsRules";
-import { useActions } from "../hooks/useActions";
 import overviewMarkdown from "../markdown/Overview.md?raw";
 import { parseMarkdownByHeaders } from "../utils/parseMarkdown";
+import actions from "../json/actions.json";
 
 const DESC = parseMarkdownByHeaders(overviewMarkdown);
 
 export default function RPGOverview() {
-  const { actions, loading, error } = useActions();
-
-  if (loading) return <div>Loading actions...</div>;
-  if (error) return <div>{error}</div>;
-
   return (
     <>
       <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />

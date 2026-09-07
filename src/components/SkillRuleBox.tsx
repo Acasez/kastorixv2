@@ -1,5 +1,6 @@
 import RulesBox from "./RulesBox";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import skills from "../json/skills.json";
 
 interface Skill {
   name: string;
@@ -8,36 +9,7 @@ interface Skill {
 }
 
 export default function SkillRuleBox() {
-  const [skills, setSkills] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false); // Collapsible state
-
-  useEffect(() => {
-    fetch("/json/skills.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to load skills");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setSkills(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  if (loading) {
-    return <div>Loading skills...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   const skillRules = skills.map((skill: Skill) => ({
     rule: `${skill.name} (${skill.stat})`,
