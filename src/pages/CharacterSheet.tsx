@@ -1,5 +1,5 @@
 import LevelSidebar from "../components/CharacterSheet/LevelSidebar";
-import { CharacterProvider } from "../components/CharacterSheet/CharacterProvider";
+import { CharacterProvider } from "../contexts/CharacterProvider";
 
 export default function RPGOverview() {
   return (

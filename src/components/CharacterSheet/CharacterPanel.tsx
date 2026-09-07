@@ -1,5 +1,5 @@
 import ActionButton from "./ActionButton";
-import { useCharacter } from "./CharacterContext";
+import { useCharacter } from "../../contexts/CharacterContext";
 
 export default function CharacterPanel() {
   const { character, handleNameChange, handleLevelChange } = useCharacter();
