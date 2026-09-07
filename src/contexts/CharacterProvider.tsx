@@ -8,6 +8,7 @@ const defaultCharacter: Character = {
   feats: [],
   species: "",
   baseStats: {},
+  skillProficiencies: {},
 };
 
 export function CharacterProvider({ children }: { children: ReactNode }) {

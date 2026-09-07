@@ -5,8 +5,10 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
+import type { ProficiencyTierName } from "../constants/Proficiency";
 
 export type Character = {
+  skillProficiencies: Record<string, ProficiencyTierName>;
   name: string;
   level: number;
   feats: string[];
