@@ -4,6 +4,7 @@ import { useCharacter } from "../../contexts/CharacterContext";
 import { getProficiency } from "../../constants/Proficiency";
 import ProficiencyMarker from "./ProficiencyMarker";
 import { STAT_COLORS } from "../../constants/Stats";
+import { STRING_TO_STATKEY } from "../../constants/StatKey";
 
 export default function SkillsTable() {
   const { character } = useCharacter();
@@ -22,7 +23,9 @@ export default function SkillsTable() {
           const tierName =
             character.skillProficiencies[skill.name] ?? "Untrained";
           const tier = getProficiency(tierName);
-          const bonus = tier.bonus;
+          const statValue =
+            character.baseStats[STRING_TO_STATKEY[skill.stat]] ?? 0;
+          const total = statValue + tier.bonus;
 
           return (
             <tr
@@ -45,7 +48,7 @@ export default function SkillsTable() {
                   <span
                     className={i % 2 === 0 ? "text-gray-700" : "text-gray-200"}
                   >
-                    {bonus > 0 ? `+${bonus}` : bonus}
+                    {total > 0 ? `+${total}` : total}
                   </span>
                 </div>
               </td>

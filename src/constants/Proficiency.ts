@@ -1,3 +1,6 @@
+import type { Character } from "../contexts/CharacterContext";
+import type { StatKey } from "./StatKey";
+
 // constants/proficiency.ts
 export type ProficiencyTierName =
   | "Untrained"
@@ -27,4 +30,15 @@ export function getProficiency(name: string): Proficiency {
     throw new Error(`Unknown proficiency tier: "${name}"`);
   }
   return level;
+}
+
+export function skillModifier(
+  character: Character,
+  skillName: string,
+  stat: StatKey,
+): number {
+  const tier = getProficiency(
+    character.skillProficiencies[skillName] ?? "Untrained",
+  );
+  return (character.baseStats[stat] ?? 0) + tier.bonus;
 }
