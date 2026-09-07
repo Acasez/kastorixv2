@@ -26,8 +26,12 @@ export default function StatsSection() {
               {key}
             </span>
             <NumberInput
-              value={character.baseStats[key] ?? -5}
-              onChange={(value) => updateCharacter({ [key]: value })}
+              value={character.baseStats[key] ?? 0}
+              onChange={(value) =>
+                updateCharacter({
+                  baseStats: { ...character.baseStats, [key]: value },
+                })
+              }
             />
           </div>
         </div>
