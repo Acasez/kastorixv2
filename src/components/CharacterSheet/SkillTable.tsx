@@ -3,13 +3,7 @@ import skills from "../../json/skills.json";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { getProficiency } from "../../constants/Proficiency";
 import ProficiencyMarker from "./ProficiencyMarker";
-
-const STAT_COLORS: Record<string, string> = {
-  DEX: "text-amber-500",
-  INT: "text-blue-500",
-  PHY: "text-fuchsia-600",
-  WIL: "text-emerald-600",
-};
+import { STAT_COLORS } from "../../constants/Stats";
 
 export default function SkillsTable() {
   const { character } = useCharacter();
