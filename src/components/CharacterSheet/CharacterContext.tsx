@@ -1,66 +1,35 @@
-import { useState, type ReactNode, type ChangeEvent } from "react";
-import { CharacterContext } from "./CharacterContextDefault";
+// CharacterContext.tsx — types, context, and hook. No components!
+import {
+  createContext,
+  useContext,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 
-// Define the type for the character data
-export type CharacterContextType = {
-  characterName: string;
-  setCharacterName: (name: string) => void;
+export type Character = {
+  name: string;
   level: number;
-  setLevel: (level: number) => void;
   feats: string[];
-  setFeats: (feats: string[]) => void;
   species: string;
-  setSpecies: (species: string) => void;
   baseStats: Record<string, number>;
-  setBaseStats: (stats: Record<string, number>) => void;
-  handleLevelChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  handleNameChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-// Define the provider props
-type CharacterProviderProps = {
-  children: ReactNode;
+export type CharacterContextType = {
+  character: Character;
+  setCharacter: Dispatch<SetStateAction<Character>>;
+  updateCharacter: (patch: Partial<Character>) => void;
+  handleLevelChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-// Create the provider component
-export function CharacterProvider({ children }: CharacterProviderProps) {
-  const [characterName, setCharacterName] = useState<string>("");
-  const [level, setLevel] = useState<number>(1);
-  const [feats, setFeats] = useState<string[]>([]);
-  const [species, setSpecies] = useState<string>("");
-  const [baseStats, setBaseStats] = useState<Record<string, number>>({});
+export const CharacterContext = createContext<CharacterContextType | undefined>(
+  undefined,
+);
 
-  // Handle level change with proper typing
-  const handleLevelChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newLevel = Number(e.target.value);
-    if (newLevel >= 0 && newLevel <= 20) {
-      setLevel(newLevel);
-    }
-  };
-
-  // Handle name change with proper typing
-  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setCharacterName(e.target.value);
-  };
-
-  return (
-    <CharacterContext.Provider
-      value={{
-        characterName,
-        setCharacterName,
-        level,
-        setLevel,
-        feats,
-        setFeats,
-        species,
-        setSpecies,
-        baseStats,
-        setBaseStats,
-        handleLevelChange,
-        handleNameChange,
-      }}
-    >
-      {children}
-    </CharacterContext.Provider>
-  );
+export function useCharacter(): CharacterContextType {
+  const context = useContext(CharacterContext);
+  if (!context) {
+    throw new Error("useCharacter must be used within a CharacterProvider");
+  }
+  return context;
 }

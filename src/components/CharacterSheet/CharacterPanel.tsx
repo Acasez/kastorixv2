@@ -1,16 +1,15 @@
 import ActionButton from "./ActionButton";
-import { useCharacter } from "./useCharacter";
+import { useCharacter } from "./CharacterContext";
 
 export default function CharacterPanel() {
-  const { characterName, level, handleNameChange, handleLevelChange } =
-    useCharacter();
+  const { character, handleNameChange, handleLevelChange } = useCharacter();
 
   return (
     <div className="bg-blue-100 rounded-lg p-2 mb-4 shadow-sm border border-blue-300 w-full">
       <div className="mb-3">
         <input
           type="text"
-          value={characterName}
+          value={character.name}
           onChange={handleNameChange}
           placeholder="Character Name"
           className="w-full px-2 py-1 rounded-lg border-2 border-blue-400 text-xl font-bold text-center bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -26,7 +25,7 @@ export default function CharacterPanel() {
         <span className="text-xl font-bold text-gray-800">Level</span>
         <input
           type="number"
-          value={level}
+          value={character.level}
           onChange={handleLevelChange}
           min="0"
           max="20"

@@ -1,15 +1,15 @@
+import { useCharacter } from "./CharacterContext";
 import CharacterPanel from "./CharacterPanel";
 import LevelCard from "./LevelCard";
 import SaveLoadButtons from "./SaveLoadButtons";
-import { useCharacter } from "./useCharacter";
 
 export default function LevelSidebar() {
   const levels = Array.from({ length: 21 }, (_, i) => i); // 0 to 20
-  const { characterName } = useCharacter();
+  const { character } = useCharacter();
 
   return (
     <div className="w-80 p-4 bg-gray-100 rounded-lg shadow-lg overflow-y-auto max-h-screen">
-      <h1>{characterName}</h1> {/* Test, works */}
+      <h1>{character.name}</h1> {/* How do I get the name?*/}
       <SaveLoadButtons />
       <CharacterPanel />
       <div className="space-y-3">
