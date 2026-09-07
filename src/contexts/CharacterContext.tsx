@@ -6,13 +6,14 @@ import {
   type SetStateAction,
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
+import type { StatKey } from "../constants/StatKey";
 
 export type Character = {
   name: string;
   level: number;
   feats: string[];
   species: string;
-  baseStats: Record<string, number>;
+  baseStats: Record<StatKey, number>;
   skillProficiencies: Record<string, ProficiencyTierName>;
   saveProficiencies: Record<string, ProficiencyTierName>;
   health: Track;

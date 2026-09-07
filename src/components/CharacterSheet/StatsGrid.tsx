@@ -1,9 +1,10 @@
+import type { StatKey } from "../../constants/StatKey";
 import { STAT_COLORS } from "../../constants/Stats";
 import { useCharacter } from "../../contexts/CharacterContext";
 import NumberInput from "../NumberInput";
 
 // StatsGrid.tsx
-const STATS: { key: string; name: string }[] = [
+const STATS: { key: StatKey; name: string }[] = [
   { key: "PHY", name: "Physique" },
   { key: "DEX", name: "Dexterity" },
   { key: "INT", name: "Intelligence" },
