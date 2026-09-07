@@ -1,16 +1,17 @@
 // SkillsTable.tsx
 import skills from "../../json/skills.json";
 import { useCharacter } from "../../contexts/CharacterContext";
-import { getProficiency } from "../../constants/Proficiency";
+import { getProficiency, signed } from "../../constants/Proficiency";
 import ProficiencyMarker from "./ProficiencyMarker";
 import { STAT_COLORS } from "../../constants/Stats";
 import { STRING_TO_STATKEY } from "../../constants/StatKey";
+import Tooltip from "../Tooltip";
 
 export default function SkillsTable() {
   const { character } = useCharacter();
 
   return (
-    <table className="w-70 -mt-2 border-collapse overflow-hidden rounded-lg">
+    <table className="w-70 -mt-2 border-collapse rounded-lg">
       <thead>
         <tr className="bg-gray-900 text-white">
           <th className="px-3 py-2 text-left">Skill</th>
@@ -45,11 +46,18 @@ export default function SkillsTable() {
               <td className="w-20 px-3 py-2">
                 <div className="flex items-center gap-2">
                   <ProficiencyMarker skillName={skill.name} />
-                  <span
-                    className={i % 2 === 0 ? "text-gray-700" : "text-gray-200"}
+                  <Tooltip
+                    align="center"
+                    content={`${skill.stat} ${statValue} + ${tier.fullName} ${tier.bonus}`}
                   >
-                    {total > 0 ? `+${total}` : total}
-                  </span>
+                    <span
+                      className={
+                        i % 2 === 0 ? "text-gray-700" : "text-gray-200"
+                      }
+                    >
+                      {signed(total)}
+                    </span>
+                  </Tooltip>
                 </div>
               </td>
             </tr>
