@@ -13,7 +13,7 @@ export default function SkillsTable() {
       <thead>
         <tr className="bg-gray-900 text-white">
           <th className="px-3 py-2 text-left">Skill</th>
-          <th className="px-3 py-2 text-left">Stat</th>
+          <th className="px-2 py-2 text-left">Stat</th>
           <th className="px-3 py-2 text-left">Mod</th>
         </tr>
       </thead>
@@ -30,12 +30,12 @@ export default function SkillsTable() {
               className={i % 2 === 0 ? "bg-sky-100" : "bg-gray-800"}
             >
               <td
-                className={`px-3 py-2 ${i % 2 === 0 ? "text-gray-700" : "text-gray-200"}`}
+                className={`px-2 ${i % 2 === 0 ? "text-gray-700" : "text-gray-200"}`}
               >
                 {skill.name}
               </td>
               <td
-                className={`px-3 py-2 font-semibold ${STAT_COLORS[skill.stat] ?? ""}`}
+                className={`px-2 py-2 font-semibold ${STAT_COLORS[skill.stat] ?? ""}`}
               >
                 {skill.stat}
               </td>
