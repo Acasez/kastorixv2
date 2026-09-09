@@ -25,7 +25,7 @@ export default function SavingThrowDisplay() {
               className="flex items-center gap-1.5 rounded border border-blue-300 px-2 py-1 text-sm"
             >
               <span className="text-blue-300">{save.name}</span>
-              <ProficiencyMarker skillName={save.name} />
+              <ProficiencyMarker skillName={save.name} category="saves" />
               <span>{bonus}</span>
             </div>
           );

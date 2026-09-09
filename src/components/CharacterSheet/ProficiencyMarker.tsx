@@ -8,6 +8,7 @@ import {
 
 type ProficiencyMarkerProps = {
   skillName: string;
+  category?: "skills" | "saves";
 };
 
 function cycle(
@@ -25,36 +26,37 @@ function cycle(
 
 export default function ProficiencyMarker({
   skillName,
+  category = "skills",
 }: ProficiencyMarkerProps) {
   const { character, updateCharacter } = useCharacter();
 
+  const proficiencies =
+    category === "saves"
+      ? character.saveProficiencies
+      : character.skillProficiencies;
+
   const currentTierName: ProficiencyTierName =
-    character.skillProficiencies[skillName] ?? "Untrained";
+    proficiencies[skillName] ?? "Untrained";
   const currentTier = getProficiency(currentTierName);
 
-  const advance = () => {
+  const update = (direction: 1 | -1) => {
     updateCharacter({
-      skillProficiencies: {
-        ...character.skillProficiencies,
-        [skillName]: cycle(currentTierName, 1),
+      [category === "skills" ? "skillProficiencies" : "saveProficiencies"]: {
+        ...proficiencies,
+        [skillName]: cycle(currentTierName, direction),
       },
     });
   };
 
   const retreat = (e: React.MouseEvent) => {
     e.preventDefault(); // stops the browser context menu from opening
-    updateCharacter({
-      skillProficiencies: {
-        ...character.skillProficiencies,
-        [skillName]: cycle(currentTierName, -1),
-      },
-    });
+    update(-1);
   };
 
   return (
     <button
       type="button"
-      onClick={(e) => (e.shiftKey ? retreat(e) : advance())}
+      onClick={(e) => (e.shiftKey ? retreat(e) : update(1))}
       onContextMenu={retreat}
       title={`${skillName}: ${currentTier.fullName} (right-click or Shift+click to decrease)`}
       aria-label={`${skillName} proficiency: ${currentTier.fullName}`}
