@@ -21,15 +21,15 @@ export default function TrackBar({
   );
 
   return (
-    <div className="flex flex-col items-center gap-2 p-2">
-      <div className="h-3 w-9/10 overflow-hidden rounded-full bg-gray-700">
+    <div className="flex flex-col items-center gap-2 p-1">
+      <div className="h-4 w-9/10 overflow-hidden rounded-full bg-gray-700 mb-1">
         <div
           className="h-full rounded-full transition-all duration-200"
           style={{ width: `${percentage}%`, backgroundColor: color }}
         />
       </div>
-      <div className="">
-        <span className="font-bold text-gray-200">{label}:</span>
+      <div>
+        <span className="font-bold text-gray-200 pr-1">{label}:</span>
         <NumberInput
           value={track.current}
           min={0}

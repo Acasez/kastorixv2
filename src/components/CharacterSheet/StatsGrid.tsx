@@ -25,9 +25,13 @@ export default function StatsSection() {
             key={key}
             className="rounded-md border-2 border-orange-400 bg-sky-100 p-2 text-center"
           >
-            <div className="mb-1 font-semibold text-sky-600">{name}</div>
+            <div className="mb-1 font-semibold text-sky-600 text-xl">
+              {name}
+            </div>
             <div className="flex items-center justify-between gap-2 rounded bg-white px-2 py-1">
-              <span className={`font-bold ${STAT_COLORS[key]}`}>{key}</span>
+              <span className={`font-bold text-lg ${STAT_COLORS[key]}`}>
+                {key}
+              </span>
               <NumberInput
                 value={character.baseStats[key] ?? 0}
                 onChange={(value) =>

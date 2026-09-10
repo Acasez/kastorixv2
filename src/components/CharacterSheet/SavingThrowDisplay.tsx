@@ -31,7 +31,7 @@ export default function SavingThrowDisplay() {
                 {save.name} ({save.stat}):
               </span>
               <ProficiencyMarker skillName={save.name} category="saves" />
-              <span className="text-2xl">{bonus}</span>
+              <span className="text-2xl text-text-light">{bonus}</span>
             </div>
           );
         })}
