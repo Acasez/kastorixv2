@@ -6,6 +6,7 @@ type TrackBarProps = {
   label: string;
   color: string;
   track: Track;
+  max?: number;
   onChange: (next: Track) => void;
 };
 
@@ -13,6 +14,7 @@ export default function TrackBar({
   label,
   color,
   track,
+  max,
   onChange,
 }: TrackBarProps) {
   const percentage = Math.min(
@@ -40,7 +42,7 @@ export default function TrackBar({
         <NumberInput
           value={track.max}
           min={1}
-          max={999}
+          max={max}
           onChange={(v) => onChange({ ...track, max: v })}
         />
       </div>
