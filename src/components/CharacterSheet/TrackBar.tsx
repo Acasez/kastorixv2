@@ -21,7 +21,7 @@ export default function TrackBar({
   );
 
   return (
-    <div className="flex flex-col items-center gap-2 border-2 border-blue-300">
+    <div className="flex flex-col items-center gap-2 border-2 border-header rounded-lg m-2">
       <div className="h-3 w-9/10 overflow-hidden rounded-full bg-gray-700">
         <div
           className="h-full rounded-full transition-all duration-200"

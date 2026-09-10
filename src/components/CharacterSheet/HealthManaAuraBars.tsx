@@ -6,7 +6,7 @@ export default function HealthManaAuraBars() {
   const { character, updateCharacter } = useCharacter();
 
   return (
-    <div className="flex items-center justify-center gap-6 mt-2">
+    <div className="flex items-center justify-center">
       <TrackBar
         label="Health"
         color="#f87171"

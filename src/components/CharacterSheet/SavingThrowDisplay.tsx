@@ -22,11 +22,15 @@ export default function SavingThrowDisplay() {
           return (
             <div
               key={save.name}
-              className="flex items-center gap-1.5 rounded border border-blue-300 px-2 py-1 text-sm"
+              className="flex items-center gap-1.5 rounded border border-striking px-2 py-1 text-lg"
             >
-              <span className="text-blue-300">{save.name}</span>
-              <ProficiencyMarker skillName={save.name} category="saves" />
-              <span>{bonus}</span>
+              <span className="text-text-calm text-2xl">{save.name}</span>
+              <ProficiencyMarker
+                text-gray-200
+                skillName={save.name}
+                category="saves"
+              />
+              <span className="text-text-light text-2xl">{bonus}</span>
             </div>
           );
         })}
