@@ -1,24 +1,24 @@
-import ActionButton from "./ActionButton";
+import OpenModalButton from "./OpenModalButton";
 
 export default function SaveLoadButtons() {
   return (
     <div className="grid grid-cols-2 gap-2 mb-4">
-      <ActionButton
+      <OpenModalButton
         label="Save Character"
         isHighlighted={true}
         className="text-xs px-2 py-1"
       />
-      <ActionButton
+      <OpenModalButton
         label="Load Character"
         isHighlighted={true}
         className="text-xs px-2 py-1"
       />
-      <ActionButton
+      <OpenModalButton
         label="Export Character"
         isHighlighted={true}
         className="text-xs px-1 py-1"
       />
-      <ActionButton
+      <OpenModalButton
         label="Import Character"
         isHighlighted={true}
         className="text-xs px-2 py-1"

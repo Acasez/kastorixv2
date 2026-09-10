@@ -1,12 +1,12 @@
 // HealthManaAuraBars.tsx
-import { useCharacter } from "../../contexts/CharacterContext";
-import TrackBar from "./TrackBar";
+import { useCharacter } from "../../../contexts/CharacterContext";
+import TrackBar from "../../TrackBar";
 
 export default function HealthManaAuraBars() {
   const { character, updateCharacter } = useCharacter();
 
   return (
-    <div className="flex items-end justify-center gap-3">
+    <div className="flex items-end justify-center gap-3 ">
       <TrackBar
         label="Health"
         color="#ef4444"

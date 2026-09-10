@@ -1,4 +1,4 @@
-import ActionButton from "./ActionButton";
+import OpenModalButton from "./OpenModalButton";
 import { useCharacter } from "../../contexts/CharacterContext";
 
 export default function CharacterPanel() {
@@ -17,8 +17,8 @@ export default function CharacterPanel() {
       </div>
 
       <div className="space-y-1">
-        <ActionButton label="Select Species" />
-        <ActionButton label="Set Base Stats" />
+        <OpenModalButton label="Select Species" />
+        <OpenModalButton label="Set Base Stats" />
       </div>
 
       <div className="flex items-center justify-center space-x-3 mt-2 p-1 bg-blue-200 rounded-lg border border-blue-400">

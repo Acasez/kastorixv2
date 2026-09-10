@@ -1,6 +1,6 @@
 // TrackBar.tsx
-import type { Track } from "../../contexts/CharacterContext";
-import NumberInput from "../NumberInput";
+import type { Track } from "../contexts/CharacterContext";
+import NumberInput from "./NumberInput";
 
 type TrackBarProps = {
   label: string;

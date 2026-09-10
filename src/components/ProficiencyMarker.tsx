@@ -1,10 +1,10 @@
 // ProficiencyMarker.tsx
-import { useCharacter } from "../../contexts/CharacterContext";
+import { useCharacter } from "../contexts/CharacterContext";
 import {
   PROFICIENCY_LEVELS,
   getProficiency,
   type ProficiencyTierName,
-} from "../../constants/Proficiency";
+} from "../constants/Proficiency";
 
 type ProficiencyMarkerProps = {
   skillName: string;

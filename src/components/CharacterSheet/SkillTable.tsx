@@ -2,7 +2,7 @@
 import skills from "../../json/skills.json";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { getProficiency, signed } from "../../constants/Proficiency";
-import ProficiencyMarker from "./ProficiencyMarker";
+import ProficiencyMarker from "../ProficiencyMarker";
 import { STAT_COLORS } from "../../constants/Stats";
 import { STRING_TO_STATKEY } from "../../constants/StatKey";
 import Tooltip from "../Tooltip";

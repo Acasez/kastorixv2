@@ -1,4 +1,4 @@
-import ActionButton from "./ActionButton";
+import OpenModalButton from "./OpenModalButton";
 
 const PROGRESSION_RULES = [
   {
@@ -70,7 +70,7 @@ export default function LevelCard({ level }: LevelCardProps) {
         {actions.map((action, index) => {
           const isHighlighted = action === "Increase One Stat";
           return (
-            <ActionButton
+            <OpenModalButton
               key={index}
               label={action}
               isHighlighted={isHighlighted}

@@ -1,8 +1,8 @@
 /* CoreStatsSection.tsx; */
-import { getProficiency } from "../../constants/Proficiency";
-import { STRING_TO_STATKEY } from "../../constants/StatKey";
-import { useCharacter } from "../../contexts/CharacterContext";
-import ProficiencyMarker from "./ProficiencyMarker";
+import { getProficiency } from "../../../constants/Proficiency";
+import { STRING_TO_STATKEY } from "../../../constants/StatKey";
+import { useCharacter } from "../../../contexts/CharacterContext";
+import ProficiencyMarker from "../../ProficiencyMarker";
 
 export default function SavingThrowDisplay() {
   const { character } = useCharacter();

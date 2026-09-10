@@ -1,5 +1,6 @@
-import CoreStatSection from "../components/CharacterSheet/CoreStatsSection";
+import CoreStatSection from "../components/CharacterSheet/CoreStatSection/CoreStatsSection";
 import LevelSidebar from "../components/CharacterSheet/LevelSidebar";
+import OtherStatSection from "../components/CharacterSheet/OtherStatSection";
 import SkillsTable from "../components/CharacterSheet/SkillTable";
 import { CharacterProvider } from "../contexts/CharacterProvider";
 
@@ -11,6 +12,7 @@ export default function RPGOverview() {
           <LevelSidebar />
           <SkillsTable />
           <CoreStatSection />
+          <OtherStatSection />
         </div>
       </CharacterProvider>
     </>
