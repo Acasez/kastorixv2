@@ -60,7 +60,7 @@ export default function ProficiencyMarker({
       onContextMenu={retreat}
       title={`${skillName}: ${currentTier.fullName} (right-click or Shift+click to decrease)`}
       aria-label={`${skillName} proficiency: ${currentTier.fullName}`}
-      className="inline-flex h-5 w-5 cursor-pointer select-none items-center justify-center rounded border border-gray-500 text-[10px] font-bold text-gray-900"
+      className="inline-flex h-5.5 w-5.5 cursor-pointer select-none items-center justify-center rounded border border-gray-500 text-[12px] font-bold text-gray-900"
       style={{ backgroundColor: currentTier.color }}
     >
       {currentTier.name}

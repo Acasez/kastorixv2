@@ -29,7 +29,7 @@ export default function TrackBar({
         />
       </div>
       <div>
-        <span className="font-bold text-gray-200 pr-1">{label}:</span>
+        <span className="font-bold text-gray-200 pr-1 text-xl">{label}:</span>
         <NumberInput
           value={track.current}
           min={0}

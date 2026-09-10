@@ -17,7 +17,7 @@ export type Proficiency = {
 };
 
 export const PROFICIENCY_LEVELS: Proficiency[] = [
-  { name: "U", bonus: 0, fullName: "Untrained", color: "#cccccc" },
+  { name: "U", bonus: 0, fullName: "Untrained", color: "#ffffff" },
   { name: "T", bonus: 2, fullName: "Trained", color: "#47d147" },
   { name: "E", bonus: 4, fullName: "Expert", color: "#66b3ff" },
   { name: "M", bonus: 6, fullName: "Master", color: "#cc66ff" },
