@@ -8,6 +8,9 @@ export default function SavingThrowDisplay() {
   const { character } = useCharacter();
   return (
     <div>
+      <h1 className="text-3xl text-striking text-center underline mb-2">
+        Saving Throws
+      </h1>
       <div className="flex items-center justify-center gap-3">
         {[
           { name: "Fortitude", stat: "PHY" },
@@ -22,15 +25,13 @@ export default function SavingThrowDisplay() {
           return (
             <div
               key={save.name}
-              className="flex items-center gap-1.5 rounded border border-striking px-2 py-1 text-lg"
+              className="flex items-center gap-1.5 rounded border-2 border-red-500 px-2 py-1 text-lg"
             >
-              <span className="text-text-calm text-2xl">{save.name}</span>
-              <ProficiencyMarker
-                text-gray-200
-                skillName={save.name}
-                category="saves"
-              />
-              <span className="text-text-light text-2xl">{bonus}</span>
+              <span className="text-sky-500 font-semibold">
+                {save.name} ({save.stat}):
+              </span>
+              <ProficiencyMarker skillName={save.name} category="saves" />
+              <span className="text-2xl">{bonus}</span>
             </div>
           );
         })}

@@ -16,17 +16,17 @@ export default function StatsSection() {
 
   return (
     <div>
-      <h1 className="text-3xl text-striking text-center underline mb-2">
+      <h1 className="text-3xl text-orange-600 text-center underline mb-2">
         Stats
       </h1>
-      <div className="flex gap-4 justify-center">
+      <div className="grid grid-cols-4 gap-4 px-4">
         {STATS.map(({ key, name }) => (
           <div
             key={key}
-            className="rounded-lg border border-striking p-2 text-center"
+            className="rounded-md border-2 border-orange-400 bg-sky-100 p-2 text-center"
           >
-            <div className="mb-1 font-semibold text-blue-400">{name}</div>
-            <div className="flex items-center gap-2">
+            <div className="mb-1 font-semibold text-sky-600">{name}</div>
+            <div className="flex items-center justify-between gap-2 rounded bg-white px-2 py-1">
               <span className={`font-bold ${STAT_COLORS[key]}`}>{key}</span>
               <NumberInput
                 value={character.baseStats[key] ?? 0}
