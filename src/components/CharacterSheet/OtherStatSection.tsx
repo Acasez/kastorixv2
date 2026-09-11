@@ -1,16 +1,23 @@
 import { useState } from "react";
 import conditions from "../../json/conditions.json";
 import ConditionMarker from "./ConditionMarker";
+import type { Condition } from "../../constants/Condition";
 
 export default function OtherStatSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedConditions, setSelectedConditions] = useState<string[]>([]);
+  const [selectedConditions, setSelectedConditions] = useState<Condition[]>([]);
 
-  const handleAddCondition = (conditionName: string) => {
-    if (!selectedConditions.includes(conditionName)) {
-      setSelectedConditions([...selectedConditions, conditionName]);
+  const handleAddCondition = (condition: Condition) => {
+    if (!selectedConditions.some((c) => c.name === condition.name)) {
+      setSelectedConditions([...selectedConditions, condition]);
     }
-    setIsDropdownOpen(false); // Close the dropdown after selection
+    setIsDropdownOpen(false);
+  };
+
+  const handleRemoveCondition = (conditionToRemove: Condition) => {
+    setSelectedConditions(
+      selectedConditions.filter((c) => c.name !== conditionToRemove.name),
+    );
   };
 
   return (
@@ -31,7 +38,7 @@ export default function OtherStatSection() {
               {conditions.map((condition) => (
                 <button
                   key={condition.name}
-                  onClick={() => handleAddCondition(condition.name)}
+                  onClick={() => handleAddCondition(condition as Condition)}
                   className="w-full text-left px-4 py-2 text-text-light hover:bg-gray-600 rounded-lg"
                 >
                   {condition.name}
@@ -42,7 +49,11 @@ export default function OtherStatSection() {
         </div>
         <div className="flex flex-wrap gap-1">
           {selectedConditions.map((condition) => (
-            <ConditionMarker condition={condition} />
+            <ConditionMarker
+              key={condition.name} // Use condition.name as the key
+              condition={condition}
+              onRemove={handleRemoveCondition}
+            />
           ))}
         </div>
       </div>
