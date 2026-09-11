@@ -1,5 +1,6 @@
 import { useState } from "react";
 import conditions from "../../json/conditions.json";
+import ConditionMarker from "./ConditionMarker";
 
 export default function OtherStatSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -39,14 +40,9 @@ export default function OtherStatSection() {
             </div>
           )}
         </div>
-        <div className="flex flex-wrap gap-1 ml-2">
+        <div className="flex flex-wrap gap-1">
           {selectedConditions.map((condition) => (
-            <span
-              key={condition}
-              className="bg-gray-600 text-text-light px-3 py-1 rounded-lg text-sm"
-            >
-              {condition}
-            </span>
+            <ConditionMarker condition={condition} />
           ))}
         </div>
       </div>
