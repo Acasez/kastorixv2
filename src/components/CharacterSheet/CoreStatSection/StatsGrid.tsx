@@ -16,7 +16,7 @@ export default function StatsSection() {
 
   return (
     <div>
-      <h1 className="text-3xl text-orange-600 text-center underline mb-2">
+      <h1 className="text-3xl text-striking text-center underline mb-2">
         Stats
       </h1>
       <div className="grid grid-cols-4 gap-4 px-4">
