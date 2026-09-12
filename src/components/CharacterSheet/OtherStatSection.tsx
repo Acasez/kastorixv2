@@ -15,9 +15,15 @@ export default function OtherStatSection() {
             Speed
           </h1>
           <div className="flex flex-row m-2 gap-2">
-            <h2 className="text-text-light text-lg">
-              Speed: {character.speeds["Land"]}
-            </h2>
+            <div className="flex flex-row m-2 gap-2">
+              {Object.entries(character.speeds)
+                .filter(([, value]) => value > 0)
+                .map(([type, value]) => (
+                  <h2 key={type} className="text-text-light text-lg">
+                    {type}: {value}
+                  </h2>
+                ))}
+            </div>
           </div>
         </div>
         <div>
