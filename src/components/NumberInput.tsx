@@ -22,7 +22,7 @@ export default function NumberInput({
       min={min}
       max={max}
       onChange={(e) => onChange(clamp(Number(e.target.value)))}
-      className="w-16 rounded border border-orange-300 bg-white px-1 py-0.5 text-center font-bold"
+      className="w-16 rounded border border-orange-300 bg-white text-text-flavor px-1 py-0.5 text-center font-bold"
     />
   );
 }

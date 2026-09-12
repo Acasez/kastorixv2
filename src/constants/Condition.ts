@@ -1,9 +1,10 @@
 export type Condition = {
-  name: string; // single-letter display: "U", "T", ...
+  name: string;
   effect: string;
   type: ConditionTypes;
   disappears: string;
   neutrality: ConditionNeutrality;
+  level: number;
 };
 
 export type ConditionTypes = "Binary" | "Numeric";

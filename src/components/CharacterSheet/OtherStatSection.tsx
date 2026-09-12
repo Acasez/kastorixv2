@@ -21,6 +21,14 @@ export default function OtherStatSection() {
     );
   };
 
+  const handleLevelChange = (conditionName: string, newLevel: number) => {
+    setSelectedConditions(
+      selectedConditions.map((c) =>
+        c.name === conditionName ? { ...c, level: newLevel } : c,
+      ),
+    );
+  };
+
   return (
     <div className="flex flex-col bg-gray-800 h-90 w-165 gap-3 border-x-2 rounded-lg -mt-2">
       <h1 className="text-striking text-center text-3xl underline">
@@ -50,11 +58,16 @@ export default function OtherStatSection() {
         </div>
         <div className="flex flex-wrap gap-1">
           {selectedConditions.map((condition) => (
-            <Tooltip align="center" content={condition.effect}>
+            <Tooltip
+              align="center"
+              content={condition.effect}
+              key={condition.name}
+            >
               <ConditionMarker
                 key={condition.name} // Use condition.name as the key
                 condition={condition}
                 onRemove={handleRemoveCondition}
+                onLevelChange={handleLevelChange}
               />
             </Tooltip>
           ))}
