@@ -7,6 +7,7 @@ import {
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { StatKey } from "../constants/StatKey";
+import type { SpeedTypes } from "../constants/SpeedTypes";
 
 export type Character = {
   name: string;
@@ -19,6 +20,7 @@ export type Character = {
   health: Track;
   aura: Track;
   mana: Track;
+  speeds: Record<SpeedTypes, number>;
 };
 
 export type Track = {
@@ -32,6 +34,8 @@ export type CharacterContextType = {
   updateCharacter: (patch: Partial<Character>) => void;
   handleLevelChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  passivePerception: number;
+  passiveManasense: number;
 };
 
 export const CharacterContext = createContext<CharacterContextType | undefined>(

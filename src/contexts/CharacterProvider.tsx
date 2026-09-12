@@ -1,6 +1,8 @@
 // CharacterProvider.tsx — the only file exporting a component
-import { useState, type ReactNode, type ChangeEvent } from "react";
+import { useState, type ReactNode, type ChangeEvent, useMemo } from "react";
 import { CharacterContext, type Character } from "./CharacterContext";
+import { getProficiency } from "../constants/Proficiency";
+import type { StatKey } from "../constants/StatKey";
 
 const defaultCharacter: Character = {
   name: "",
@@ -13,6 +15,7 @@ const defaultCharacter: Character = {
   health: { current: 10, max: 10 },
   aura: { current: 10, max: 10 },
   mana: { current: 10, max: 10 },
+  speeds: { Land: 5, Swim: 0, Climb: 0, Burrow: 0, Glide: 0, Fly: 0 },
 };
 
 export function CharacterProvider({ children }: { children: ReactNode }) {
@@ -29,6 +32,20 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) =>
     updateCharacter({ name: e.target.value });
 
+  // Combined derived stats
+  const derivedStats = useMemo(() => {
+    const getPassive = (skill: string, stat: StatKey) => {
+      const proficiency = character.skillProficiencies[skill] || "Untrained";
+      const tier = getProficiency(proficiency);
+      return 10 + (tier.bonus || 0) + character.baseStats[stat];
+    };
+
+    return {
+      passivePerception: getPassive("Perception", "INT"),
+      passiveManasense: getPassive("Manasense", "WIL"),
+    };
+  }, [character.skillProficiencies, character.baseStats]);
+
   return (
     <CharacterContext.Provider
       value={{
@@ -37,6 +54,7 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
         updateCharacter,
         handleLevelChange,
         handleNameChange,
+        ...derivedStats,
       }}
     >
       {children}
