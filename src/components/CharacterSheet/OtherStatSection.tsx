@@ -2,6 +2,7 @@ import { useState } from "react";
 import conditions from "../../json/conditions.json";
 import ConditionMarker from "./ConditionMarker";
 import type { Condition } from "../../constants/Condition";
+import Tooltip from "../Tooltip";
 
 export default function OtherStatSection() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -49,11 +50,13 @@ export default function OtherStatSection() {
         </div>
         <div className="flex flex-wrap gap-1">
           {selectedConditions.map((condition) => (
-            <ConditionMarker
-              key={condition.name} // Use condition.name as the key
-              condition={condition}
-              onRemove={handleRemoveCondition}
-            />
+            <Tooltip align="center" content={condition.effect}>
+              <ConditionMarker
+                key={condition.name} // Use condition.name as the key
+                condition={condition}
+                onRemove={handleRemoveCondition}
+              />
+            </Tooltip>
           ))}
         </div>
       </div>
