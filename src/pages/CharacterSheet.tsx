@@ -1,3 +1,4 @@
+import ActionSection from "../components/CharacterSheet/ActionSection";
 import CoreStatSection from "../components/CharacterSheet/CoreStatSection/CoreStatsSection";
 import LevelSidebar from "../components/CharacterSheet/LevelSidebar";
 import OtherStatSection from "../components/CharacterSheet/OtherStatSection";
@@ -11,8 +12,13 @@ export default function RPGOverview() {
         <div className="flex flex-row">
           <LevelSidebar />
           <SkillsTable />
-          <CoreStatSection />
-          <OtherStatSection />
+          <div>
+            <div className="flex flex-row">
+              <CoreStatSection />
+              <OtherStatSection />
+            </div>
+            <ActionSection />
+          </div>
         </div>
       </CharacterProvider>
     </>
