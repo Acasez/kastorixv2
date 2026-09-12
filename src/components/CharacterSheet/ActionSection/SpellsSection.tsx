@@ -19,8 +19,18 @@ export default function SpellsSection() {
   // Calculate the spellshaping bonus
   const calculateBonus = () => {
     const proficiency = parseInt(character.spellShaping.proficiency) || 0;
-    const verbalBonus = useVerbal ? character.baseStats.INT : 0;
-    const somaticBonus = useSomatic ? character.baseStats.DEX : 0;
+    let verbalBonus = 0;
+    if (useVerbal == "Standard") {
+      verbalBonus = character.baseStats.INT;
+    } else if (useVerbal == "Attuned") {
+      verbalBonus = character.baseStats.WIL;
+    }
+    let somaticBonus = 0;
+    if (useSomatic == "One Handed") {
+      somaticBonus = character.baseStats.DEX / 2;
+    } else if (useSomatic == "Two Handed") {
+      somaticBonus = character.baseStats.WIL;
+    }
     return proficiency + verbalBonus + somaticBonus;
   };
 
