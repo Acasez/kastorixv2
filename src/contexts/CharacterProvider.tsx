@@ -18,8 +18,8 @@ const defaultCharacter: Character = {
   speeds: { Land: 5, Swim: 0, Climb: 0, Burrow: 0, Glide: 0, Fly: 0 },
   spellShaping: {
     proficiency: "2",
-    verbal: false,
-    somatic: false,
+    verbal: "Standard",
+    somatic: "Two Handed",
     totalBonus: "",
   },
 };

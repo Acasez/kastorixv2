@@ -3,6 +3,11 @@ import {
   useCharacter,
   type Character,
 } from "../../../contexts/CharacterContext";
+import { ThreeOptionSwitch } from "../../ThreeOptionSwitch";
+import type {
+  SomaticComponent,
+  VerbalComponent,
+} from "../../../types/Spellshaping";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
@@ -46,21 +51,18 @@ export default function SpellsSection() {
         <h2 className="text-xl">Spellshaping Bonus: {spellshapingBonus}</h2>
         <div className="flex gap-2">
           <label className="flex items-center gap-1">
-            <input
-              type="checkbox"
-              checked={useVerbal}
-              onChange={() => setUseVerbal(!useVerbal)}
-              className="w-4 h-4"
+            <ThreeOptionSwitch<VerbalComponent>
+              options={["None", "Standard", "Attuned"]}
+              value={useVerbal}
+              onChange={setUseVerbal}
             />
-            Verbal (INT)
+            Somatic (INT/WIL)
           </label>
           <label className="flex items-center gap-1">
-            <input
-              type="checkbox"
-              checked={useSomatic}
-              onChange={() => setUseSomatic(!useSomatic)}
-              className="w-4 h-4"
-              defaultChecked={true}
+            <ThreeOptionSwitch<SomaticComponent>
+              options={["None", "One Handed", "Two Handed"]}
+              value={useSomatic}
+              onChange={setUseSomatic}
             />
             Somatic (DEX)
           </label>
