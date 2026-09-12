@@ -1,6 +1,6 @@
 /* CoreStatsSection.tsx; */
 import { getProficiency } from "../../../constants/Proficiency";
-import { STRING_TO_STATKEY } from "../../../constants/StatKey";
+import { STRING_TO_STATKEY } from "../../../types/StatKey";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import ProficiencyMarker from "../../ProficiencyMarker";
 

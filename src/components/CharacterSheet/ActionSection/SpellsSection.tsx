@@ -60,6 +60,7 @@ export default function SpellsSection() {
               checked={useSomatic}
               onChange={() => setUseSomatic(!useSomatic)}
               className="w-4 h-4"
+              defaultChecked={true}
             />
             Somatic (DEX)
           </label>

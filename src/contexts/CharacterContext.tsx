@@ -6,9 +6,9 @@ import {
   type SetStateAction,
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
-import type { StatKey } from "../constants/StatKey";
-import type { SpeedTypes } from "../constants/SpeedTypes";
-import type { Spellshaping } from "../constants/Spellshaping";
+import type { StatKey } from "../types/StatKey";
+import type { SpeedTypes } from "../types/SpeedTypes";
+import type { Spellshaping } from "../types/Spellshaping";
 
 export type Character = {
   name: string;

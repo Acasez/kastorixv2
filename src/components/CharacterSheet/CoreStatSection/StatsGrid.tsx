@@ -1,4 +1,4 @@
-import type { StatKey } from "../../../constants/StatKey";
+import type { StatKey } from "../../../types/StatKey";
 import { STAT_COLORS } from "../../../constants/Stats";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import NumberInput from "../../NumberInput";

@@ -2,7 +2,7 @@
 import { useState, type ReactNode, type ChangeEvent, useMemo } from "react";
 import { CharacterContext, type Character } from "./CharacterContext";
 import { getProficiency } from "../constants/Proficiency";
-import type { StatKey } from "../constants/StatKey";
+import type { StatKey } from "../types/StatKey";
 
 const defaultCharacter: Character = {
   name: "",

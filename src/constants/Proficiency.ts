@@ -1,5 +1,5 @@
 import type { Character } from "../contexts/CharacterContext";
-import type { StatKey } from "./StatKey";
+import type { StatKey } from "../types/StatKey";
 
 // constants/proficiency.ts
 export type ProficiencyTierName =
