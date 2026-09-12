@@ -1,8 +1,8 @@
 import { useState } from "react";
-import conditions from "../../json/conditions.json";
+import conditions from "../../../json/conditions.json";
 import ConditionMarker from "./ConditionMarker";
-import type { Condition } from "../../constants/Condition";
-import Tooltip from "../Tooltip";
+import type { Condition } from "../../../constants/Condition";
+import Tooltip from "../../Tooltip";
 
 export default function ConditionDisplay() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

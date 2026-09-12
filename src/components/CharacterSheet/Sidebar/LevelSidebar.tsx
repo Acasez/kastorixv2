@@ -1,6 +1,6 @@
-import { useCharacter } from "../../contexts/CharacterContext";
+import { useCharacter } from "../../../contexts/CharacterContext";
 import CharacterPanel from "./CharacterPanel";
-import LevelCard from "./LevelCard";
+import LevelCard from "./../LevelCard";
 import SaveLoadButtons from "./SaveLoadButtons";
 
 export default function LevelSidebar() {

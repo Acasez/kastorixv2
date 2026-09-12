@@ -1,4 +1,4 @@
-import { useCharacter } from "../../contexts/CharacterContext";
+import { useCharacter } from "../../../contexts/CharacterContext";
 import ConditionDisplay from "./ConditionDisplay";
 
 export default function OtherStatSection() {

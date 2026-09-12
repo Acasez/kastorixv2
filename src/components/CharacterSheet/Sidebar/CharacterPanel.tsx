@@ -1,5 +1,5 @@
-import OpenModalButton from "./OpenModalButton";
-import { useCharacter } from "../../contexts/CharacterContext";
+import OpenModalButton from "../OpenModalButton";
+import { useCharacter } from "../../../contexts/CharacterContext";
 
 export default function CharacterPanel() {
   const { character, handleNameChange, handleLevelChange } = useCharacter();

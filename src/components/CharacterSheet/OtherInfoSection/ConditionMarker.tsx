@@ -1,5 +1,5 @@
-import type { Condition } from "../../constants/Condition";
-import NumberInput from "../NumberInput";
+import type { Condition } from "../../../constants/Condition";
+import NumberInput from "../../NumberInput";
 
 interface ConditionMarkerProps {
   condition: Condition;
