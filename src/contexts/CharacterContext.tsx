@@ -8,6 +8,7 @@ import {
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { StatKey } from "../constants/StatKey";
 import type { SpeedTypes } from "../constants/SpeedTypes";
+import type { Spellshaping } from "../constants/Spellshaping";
 
 export type Character = {
   name: string;
@@ -21,6 +22,7 @@ export type Character = {
   aura: Track;
   mana: Track;
   speeds: Record<SpeedTypes, number>;
+  spellShaping: Spellshaping;
 };
 
 export type Track = {

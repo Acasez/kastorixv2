@@ -16,6 +16,12 @@ const defaultCharacter: Character = {
   aura: { current: 10, max: 10 },
   mana: { current: 10, max: 10 },
   speeds: { Land: 5, Swim: 0, Climb: 0, Burrow: 0, Glide: 0, Fly: 0 },
+  spellShaping: {
+    proficiency: "2",
+    verbal: false,
+    somatic: false,
+    totalBonus: "",
+  },
 };
 
 export function CharacterProvider({ children }: { children: ReactNode }) {
