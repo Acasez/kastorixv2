@@ -2,15 +2,18 @@ interface OpenModalButtonProps {
   label: string;
   isHighlighted?: boolean;
   className?: string;
+  onClick?: () => void;
 }
 
 export default function OpenModalButton({
   label,
   isHighlighted = false,
   className = "",
+  onClick = () => {},
 }: OpenModalButtonProps) {
   return (
     <button
+      onClick={onClick}
       className={`w-full px-2 py-1.5 rounded-md text-sm font-medium text-white ${
         isHighlighted ? "bg-green-500" : "bg-teal-700"
       } ${className}`}
