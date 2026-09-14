@@ -10,11 +10,11 @@ export default function ModalWrapper({
   return (
     <>
       <div
-        className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
         onClick={closeModal}
       >
         <div
-          className="bg-white rounded-lg p-8 max-w-4xl w-11/12 max-h-[90vh] overflow-auto shadow-2xl border border-gray-300"
+          className="bg-white rounded-lg p-8 max-w-6xl w-11/12 max-h-[90vh] overflow-auto shadow-2xl border border-gray-300"
           onClick={(e) => e.stopPropagation()}
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
