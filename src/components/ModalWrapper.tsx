@@ -1,33 +1,11 @@
 import species from ".././JSON/species.json";
 import { useState } from "react";
-import { splitTraitDescription } from "../utils/splitTraitDesc";
+import TraitRow from "./TraitRow";
 
 interface ModalWrapperProps {
   openModalLabel: string;
   closeModal: () => void;
 }
-
-interface TraitRowProps {
-  traitName: string;
-  traitDescription: string;
-}
-
-const TraitRow: React.FC<TraitRowProps> = ({ traitName, traitDescription }) => {
-  const { flavor, mechanics } = splitTraitDescription(traitDescription);
-
-  return (
-    <div>
-      <h3 className="font-semibold">{traitName}</h3>
-      {flavor && <p className="italic mb-1">{flavor}.</p>}
-      {mechanics && (
-        <p>
-          {mechanics}
-          {mechanics.endsWith(".") ? "" : "."}
-        </p>
-      )}
-    </div>
-  );
-};
 
 export default function ModalWrapper({
   openModalLabel,
@@ -42,7 +20,7 @@ export default function ModalWrapper({
         onClick={closeModal}
       >
         <div
-          className="bg-white rounded-lg p-8 max-w-6xl w-11/12 max-h-[90vh] overflow-auto shadow-2xl border border-gray-300"
+          className="bg-white rounded-lg p-8 max-w-6xl w-11/12 h-[85vh] overflow-auto shadow-2xl border border-gray-300"
           onClick={(e) => e.stopPropagation()}
         >
           <h2 className="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-striking">
