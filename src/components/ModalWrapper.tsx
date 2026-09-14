@@ -1,10 +1,33 @@
 import species from ".././JSON/species.json";
 import { useState } from "react";
+import { splitTraitDescription } from "../utils/splitTraitDesc";
 
 interface ModalWrapperProps {
   openModalLabel: string;
   closeModal: () => void;
 }
+
+interface TraitRowProps {
+  traitName: string;
+  traitDescription: string;
+}
+
+const TraitRow: React.FC<TraitRowProps> = ({ traitName, traitDescription }) => {
+  const { flavor, mechanics } = splitTraitDescription(traitDescription);
+
+  return (
+    <div>
+      <h3 className="font-semibold">{traitName}</h3>
+      {flavor && <p className="italic mb-1">{flavor}.</p>}
+      {mechanics && (
+        <p>
+          {mechanics}
+          {mechanics.endsWith(".") ? "" : "."}
+        </p>
+      )}
+    </div>
+  );
+};
 
 export default function ModalWrapper({
   openModalLabel,
@@ -64,30 +87,22 @@ export default function ModalWrapper({
                   </div>
 
                   <div className="mt-4 space-y-4">
-                    <div>
-                      <h3 className="font-semibold">
-                        {selectedSpecies.traitOne}
-                      </h3>
-                      <p>{selectedSpecies.traitOneDesc}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">
-                        {selectedSpecies.traitTwo}
-                      </h3>
-                      <p>{selectedSpecies.traitTwoDesc}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">
-                        {selectedSpecies.traitThree}
-                      </h3>
-                      <p>{selectedSpecies.traitThreeDesc}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold">
-                        {selectedSpecies.traitFour}
-                      </h3>
-                      <p>{selectedSpecies.traitFourDesc}</p>
-                    </div>
+                    <TraitRow
+                      traitName={selectedSpecies.traitOne}
+                      traitDescription={selectedSpecies.traitOneDesc}
+                    />
+                    <TraitRow
+                      traitName={selectedSpecies.traitTwo}
+                      traitDescription={selectedSpecies.traitTwoDesc}
+                    />
+                    <TraitRow
+                      traitName={selectedSpecies.traitThree}
+                      traitDescription={selectedSpecies.traitThreeDesc}
+                    />
+                    <TraitRow
+                      traitName={selectedSpecies.traitFour}
+                      traitDescription={selectedSpecies.traitFourDesc}
+                    />
                   </div>
 
                   <button
