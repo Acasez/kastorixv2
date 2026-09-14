@@ -1,4 +1,4 @@
-import "../CSS/PageIntroFlair.css";
+import "../../CSS/PageintroFlair.css";
 interface TitleSectionProps {
   title: string;
   subtitle: string;

@@ -1,4 +1,4 @@
-import "../CSS/LevelOneSetup.css";
+import "../../CSS/LevelOneSetup.css";
 
 const setupSteps = [
   {
