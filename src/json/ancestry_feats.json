@@ -100,7 +100,7 @@
     },
     {
         "name": "Fruits of Civilization",
-        "description": "The Draconium is the center of civilization and your pride comes it's glory\nWhen you use Proud Bearing the bonus increases to 3 if you are expert in the check, 4 for master and 5 for legendary\nYou can use Proud Bearing one more time per day.",
+        "description": "The Draconium is the center of civilization and your pride comes it's glory\nWhen you use Proud Bearing the bonus increases to 3 if you are expert in the check, 4 for master and 5 for legendary\nYou can use Proud Bearing one more time per hour.",
         "unlockedAction": "",
         "type": "Cultural",
         "prerequisites": "Dragonkin",
@@ -243,7 +243,7 @@
     },
     {
         "name": "Inspiring Presence",
-        "description": "Your pride inspires your companions.\nAfter you use Proud Bearing up to 5 nearby allies gets +1 to their next roll. This bonus increases to +2 if you succeed on the roll, or +3 if you critically succeed.\nYou can use Proud Bearing one more time per day.",
+        "description": "Your pride inspires your companions.\nAfter you use Proud Bearing up to 5 nearby allies gets +1 to their next roll. This bonus increases to +2 if you succeed on the roll, or +3 if you critically succeed.\nYou can use Proud Bearing one more time per hour.",
         "unlockedAction": "",
         "type": "Cultural",
         "prerequisites": "Dragonkin",

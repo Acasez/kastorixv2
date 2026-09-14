@@ -1,5 +1,5 @@
 import species from ".././JSON/species.json";
-/* import type { Species } from ".././types/Species"; */
+import { useState } from "react";
 
 interface ModalWrapperProps {
   openModalLabel: string;
@@ -10,6 +10,8 @@ export default function ModalWrapper({
   openModalLabel,
   closeModal,
 }: ModalWrapperProps) {
+  const [selectedSpecies, setSelectedSpecies] = useState(species[0]); // Default to first species
+
   return (
     <>
       <div
@@ -24,27 +26,80 @@ export default function ModalWrapper({
             {openModalLabel}
           </h2>
           <div className="flex flex-row gap-3">
+            {/* Species Selection Panel */}
             <div className="flex flex-col w-40 gap-1">
-              {species.map((species) => (
-                <button className="text-xl border-2 border-amber-200 bg-bg-rules text-text-dark">
-                  {species.name}
+              {species.map((speciesItem) => (
+                <button
+                  key={speciesItem.name}
+                  className={`text-xl border-2 ${
+                    selectedSpecies?.name === speciesItem.name
+                      ? "border-purple-500 bg-purple-100"
+                      : "border-amber-200 bg-bg-rules"
+                  } text-text-dark`}
+                  onClick={() => setSelectedSpecies(speciesItem)}
+                >
+                  {speciesItem.name}
                 </button>
               ))}
             </div>
-            <div className="border-amber-200 border-2 p-3">
-              <h1 className="text-2xl underline">Naga</h1>
-              <p>
-                Nagas unique form leave them well adapted for grappling When you
-                have a target grappled, your hands are still free. You have +3
-                saves to saves against becoming and escaping grappled or
-                restrained.
-              </p>
-              <button
-                className="bg-lime-300 p-1 rounded-md"
-                onClick={closeModal}
-              >
-                Select Species
-              </button>
+
+            {/* Species Info Panel */}
+            <div className="border-amber-200 border-2 p-3 flex-1">
+              {selectedSpecies ? (
+                <>
+                  <h1 className="text-2xl underline">{selectedSpecies.name}</h1>
+
+                  <div className="grid grid-cols-2 gap-4 mt-4">
+                    <div>
+                      <p>
+                        <strong>Size:</strong> {selectedSpecies.size}
+                      </p>
+                      <p>
+                        <strong>Health:</strong> {selectedSpecies.health}
+                      </p>
+                      <p>
+                        <strong>Mana:</strong> {selectedSpecies.mana}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 space-y-4">
+                    <div>
+                      <h3 className="font-semibold">
+                        {selectedSpecies.traitOne}
+                      </h3>
+                      <p>{selectedSpecies.traitOneDesc}</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">
+                        {selectedSpecies.traitTwo}
+                      </h3>
+                      <p>{selectedSpecies.traitTwoDesc}</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">
+                        {selectedSpecies.traitThree}
+                      </h3>
+                      <p>{selectedSpecies.traitThreeDesc}</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold">
+                        {selectedSpecies.traitFour}
+                      </h3>
+                      <p>{selectedSpecies.traitFourDesc}</p>
+                    </div>
+                  </div>
+
+                  <button
+                    className="bg-lime-300 p-1 rounded-md mt-4"
+                    onClick={() => closeModal()}
+                  >
+                    Select Species
+                  </button>
+                </>
+              ) : (
+                <p>Select a species from the left panel</p>
+              )}
             </div>
           </div>
         </div>
