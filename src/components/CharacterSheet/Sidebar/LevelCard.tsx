@@ -74,6 +74,7 @@ export default function LevelCard({ level }: LevelCardProps) {
               key={index}
               label={action}
               isHighlighted={isHighlighted}
+              /* onClick={() => setOpenModalLabel(action)} */
             />
           );
         })}
