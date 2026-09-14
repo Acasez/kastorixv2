@@ -1,9 +1,7 @@
-# pip install gspread
-
 import json
 import os
 import re
-
+import argparse
 import gspread
 
 SPREADSHEET_ID = "1rj8eEdbHBlXsfaX9SepSxknKQ26-ZqLBvH_bKkpsvaI"
@@ -202,17 +200,43 @@ def save_json(data, filename):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Export Google Sheets to JSON")
+    parser.add_argument(
+        "--sheet", "-s",
+        help="Export only this specific sheet (default: all sheets)"
+    )
+    parser.add_argument(
+        "--all-sheets", "-a",
+        action="store_true",
+        help="Export all sheets (default behavior)"
+    )
+    parser.add_argument(
+        "--credentials", "-c",
+        default=CREDENTIALS_FILE,
+        help=f"Path to credentials JSON file (default: {CREDENTIALS_FILE})"
+    )
+    
+    args = parser.parse_args()
+    
     os.makedirs(BUILD_DIR, exist_ok=True)
-
+    
     try:
-        client = gspread.service_account(filename=CREDENTIALS_FILE)
+        client = gspread.service_account(filename=args.credentials)
         spreadsheet = client.open_by_key(SPREADSHEET_ID)
     except Exception as exc:
         raise SystemExit(f"Could not open spreadsheet: {exc}")
-
+    
     config_by_sheet = {config["sheet_name"]: config for config in SHEET_CONFIGS}
-
-    for sheet_name in SHEETS:
+    
+    # Determine which sheets to process
+    if args.sheet:
+        sheets_to_process = [args.sheet]
+        print(f"Processing single sheet: {args.sheet}")
+    else:
+        sheets_to_process = SHEETS
+        print(f"Processing all {len(SHEETS)} sheets")
+    
+    for sheet_name in sheets_to_process:
         try:
             worksheet = spreadsheet.worksheet(sheet_name)
             values = worksheet.get_all_values()
