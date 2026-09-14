@@ -1,4 +1,6 @@
+import { useState } from "react";
 import OpenModalButton from "../OpenModalButton";
+import ModalWrapper from "../../ModalWrapper";
 
 const PROGRESSION_RULES = [
   {
@@ -60,7 +62,9 @@ interface LevelCardProps {
 
 export default function LevelCard({ level }: LevelCardProps) {
   const actions = getLevelActions(level);
+  const [openModalLabel, setOpenModalLabel] = useState<string | null>(null);
 
+  const closeModal = () => setOpenModalLabel(null);
   return (
     <div className="bg-blue-200 rounded-lg p-2 mb-3 shadow-sm border border-blue-300">
       <h3 className="text-xl font-bold text-gray-800 -mt-1.5 mb-1 text-center">
@@ -74,11 +78,15 @@ export default function LevelCard({ level }: LevelCardProps) {
               key={index}
               label={action}
               isHighlighted={isHighlighted}
-              /* onClick={() => setOpenModalLabel(action)} */
+              onClick={() => setOpenModalLabel(action)}
             />
           );
         })}
       </div>
+      {/* Modal Overlay */}
+      {openModalLabel && (
+        <ModalWrapper openModalLabel={openModalLabel} closeModal={closeModal} />
+      )}
     </div>
   );
 }
