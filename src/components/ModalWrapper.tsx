@@ -39,6 +39,12 @@ export default function ModalWrapper({
                 saves to saves against becoming and escaping grappled or
                 restrained.
               </p>
+              <button
+                className="bg-lime-300 p-1 rounded-md"
+                onClick={closeModal}
+              >
+                Select Species
+              </button>
             </div>
           </div>
         </div>
