@@ -1,3 +1,6 @@
+import species from "../../../json/species.json";
+import type { Species } from "../../../types/Species";
+
 interface ModalWrapperProps {
   openModalLabel: string;
   closeModal: () => void;
