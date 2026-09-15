@@ -19,6 +19,7 @@ const defaultCharacter: Character = {
   ancestryFeats: [],
   knownSpells: [],
   weapons: [],
+  selections: {},
   background: null,
   species: null,
   baseStats: { PHY: 0, DEX: 0, INT: 0, WIL: 0 },

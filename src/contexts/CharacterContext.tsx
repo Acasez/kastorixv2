@@ -19,6 +19,7 @@ export type Character = {
   ancestryFeats: string[];
   knownSpells: string[];
   weapons: string[];
+  selections: Record<string, string>;
   background: string | null;
   species: string | null;
   baseStats: Record<StatKey, number>;

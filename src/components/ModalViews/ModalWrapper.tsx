@@ -36,29 +36,23 @@ export default function ModalWrapper({
 
   const getCurrentValue = () => {
     if (request.type === "background") return character.background;
-    if (request.type === "generalFeat")
-      return character.generalFeats[0] ?? null;
-    if (request.type === "arcaneFeat") return character.arcaneFeats[0] ?? null;
-    if (request.type === "advantage") return character.advantages[0] ?? null;
-    if (request.type === "ancestryFeat")
-      return character.ancestryFeats[0] ?? null;
-    if (request.type === "spell") return character.knownSpells[0] ?? null;
-    if (request.type === "weapon") return character.weapons[0] ?? null;
+    if (request.type !== "species" && request.type !== "baseStats") {
+      return character.selections[request.selectionKey] ?? null;
+    }
     return null;
   };
 
   const confirmChoice = (value: string) => {
-    if (request.type === "background") updateCharacter({ background: value });
-    if (request.type === "generalFeat")
-      updateCharacter({ generalFeats: [value] });
-    if (request.type === "arcaneFeat")
-      updateCharacter({ arcaneFeats: [value] });
-    if (request.type === "advantage") updateCharacter({ advantages: [value] });
-    if (request.type === "ancestryFeat")
-      updateCharacter({ ancestryFeats: [value] });
-    if (request.type === "spell") updateCharacter({ knownSpells: [value] });
-    if (request.type === "weapon") updateCharacter({ weapons: [value] });
-    console.log("Updated character", character);
+    if (request.type === "background") {
+      updateCharacter({
+        background: value,
+        selections: { ...character.selections, [request.selectionKey]: value },
+      });
+    } else if (request.type !== "species" && request.type !== "baseStats") {
+      updateCharacter({
+        selections: { ...character.selections, [request.selectionKey]: value },
+      });
+    }
     closeModal();
   };
 
