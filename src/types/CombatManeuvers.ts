@@ -3,7 +3,7 @@ import type { ActionCost } from "./Action";
 export type CombatManeuvers = {
   name: string;
   action: ActionCost;
-  traits: CombatManeuverTrait;
+  traits: CombatManeuverTrait[];
   description: string;
   prerequisites: string;
   type: CombatManeuverType;
