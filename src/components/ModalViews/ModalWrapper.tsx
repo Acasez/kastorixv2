@@ -67,6 +67,7 @@ export default function ModalWrapper({
           items={choiceData[request.type]}
           confirmLabel={request.title}
           initialValue={getCurrentValue()}
+          maxLevel={request.level}
           onConfirm={confirmChoice}
         />
       );

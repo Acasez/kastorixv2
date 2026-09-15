@@ -33,6 +33,7 @@ export default function LevelCard({ level }: LevelCardProps) {
         type,
         title: action,
         selectionKey: `${type}:${level}`,
+        level,
       });
     }
   };

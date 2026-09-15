@@ -4,12 +4,14 @@ export interface ChoiceItem {
   name: string;
   description?: string;
   effect?: string;
+  level?: number | string;
 }
 
 interface ChoiceModalProps {
   items: ChoiceItem[];
   confirmLabel: string;
   initialValue: string | null;
+  maxLevel: number;
   onConfirm: (value: string) => void;
 }
 
@@ -17,6 +19,7 @@ export default function ChoiceModal({
   items,
   confirmLabel,
   initialValue,
+  maxLevel,
   onConfirm,
 }: ChoiceModalProps) {
   const [search, setSearch] = useState("");
@@ -24,10 +27,15 @@ export default function ChoiceModal({
     () => initialValue ?? items[0]?.name ?? "",
   );
 
-  const filteredItems = items.filter((item) =>
+  const availableItems = items.filter(
+    (item) => item.level === undefined || Number(item.level) <= maxLevel,
+  );
+  const filteredItems = availableItems.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase()),
   );
-  const selectedItem = items.find((item) => item.name === selectedName);
+  const selectedItem = availableItems.find(
+    (item) => item.name === selectedName,
+  );
 
   return (
     <div className="flex flex-col gap-4">
@@ -53,6 +61,7 @@ export default function ChoiceModal({
               onClick={() => setSelectedName(item.name)}
             >
               {item.name}
+              {item.level !== undefined && ` [Level ${item.level}]`}
             </button>
           ))}
           {filteredItems.length === 0 && (
