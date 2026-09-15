@@ -1,7 +1,7 @@
 import { useState } from "react";
 import OpenModalButton from "../OpenModalButton";
 import { useCharacter } from "../../../contexts/CharacterContext";
-import ModalWrapper from "../../ModalWrapper";
+import ModalWrapper from "../../ModalViews/ModalWrapper";
 
 export default function CharacterPanel() {
   const { character, handleNameChange, handleLevelChange } = useCharacter();

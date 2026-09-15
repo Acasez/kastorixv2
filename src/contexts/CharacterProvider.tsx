@@ -13,8 +13,8 @@ import type { StatKey } from "../types/StatKey";
 const defaultCharacter: Character = {
   name: "",
   level: 1,
-  feats: [],
-  species: "",
+  generalFeats: [],
+  species: null,
   baseStats: { PHY: 0, DEX: 0, INT: 0, WIL: 0 },
   skillProficiencies: {},
   saveProficiencies: {},

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import OpenModalButton from "../OpenModalButton";
-import ModalWrapper from "../../ModalWrapper";
+import ModalWrapper from "../../ModalViews/ModalWrapper";
 import { getLevelActions } from "../../../utils/LevelCardUtils";
 
 interface LevelCardProps {
