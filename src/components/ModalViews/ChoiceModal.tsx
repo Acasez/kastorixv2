@@ -23,19 +23,18 @@ export default function ChoiceModal({
   onConfirm,
 }: ChoiceModalProps) {
   const [search, setSearch] = useState("");
+  const effectiveMaxLevel = Math.max(1, maxLevel);
+  const isWithinLevel = (item: ChoiceItem) =>
+    item.level === undefined || Number(item.level) <= effectiveMaxLevel;
+  const firstSelectableItem = items.find(isWithinLevel);
   const [selectedName, setSelectedName] = useState(
-    () => initialValue ?? items[0]?.name ?? "",
+    () => initialValue ?? firstSelectableItem?.name ?? items[0]?.name ?? "",
   );
 
-  const availableItems = items.filter(
-    (item) => item.level === undefined || Number(item.level) <= maxLevel,
-  );
-  const filteredItems = availableItems.filter((item) =>
+  const filteredItems = items.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase()),
   );
-  const selectedItem = availableItems.find(
-    (item) => item.name === selectedName,
-  );
+  const selectedItem = items.find((item) => item.name === selectedName);
 
   return (
     <div className="flex flex-col gap-4">
@@ -53,11 +52,14 @@ export default function ChoiceModal({
             <button
               type="button"
               key={item.name}
+              disabled={!isWithinLevel(item)}
               className={`text-left border-2 px-2 py-1 ${
-                selectedName === item.name
-                  ? "border-purple-500 bg-purple-100"
-                  : "border-amber-200 bg-bg-rules"
-              } text-text-dark`}
+                !isWithinLevel(item)
+                  ? "border-gray-300 bg-gray-200 text-gray-400 cursor-not-allowed"
+                  : selectedName === item.name
+                    ? "border-purple-500 bg-purple-100"
+                    : "border-amber-200 bg-bg-rules text-text-dark"
+              }`}
               onClick={() => setSelectedName(item.name)}
             >
               {item.name}
@@ -79,7 +81,8 @@ export default function ChoiceModal({
               </p>
               <button
                 type="button"
-                className="bg-lime-300 p-1 rounded-md mt-4"
+                disabled={!isWithinLevel(selectedItem)}
+                className="bg-lime-300 p-1 rounded-md mt-4 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
                 onClick={() => onConfirm(selectedItem.name)}
               >
                 {confirmLabel}
