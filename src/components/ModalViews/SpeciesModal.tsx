@@ -1,23 +1,25 @@
 import species from "../../JSON/species.json";
 import { useState } from "react";
 import TraitRow from "../TraitRow";
+import { useCharacter } from "../../contexts/CharacterContext";
 
-interface ModalWrapperProps {
-  openModalLabel: string;
+interface SpeciesModalProps {
   closeModal: () => void;
 }
 
-export default function SpeciesModal({
-  openModalLabel,
-  closeModal,
-}: ModalWrapperProps) {
-  const [selectedSpecies, setSelectedSpecies] = useState(species[0]); // Default to first species
+export default function SpeciesModal({ closeModal }: SpeciesModalProps) {
+  const { character, updateCharacter } = useCharacter();
+  const [selectedSpecies, setSelectedSpecies] = useState(
+    () => species.find((item) => item.name === character.species) ?? species[0],
+  );
+
+  const confirmSpecies = () => {
+    updateCharacter({ species: selectedSpecies.name });
+    closeModal();
+  };
 
   return (
     <>
-      <h2 className="text-3xl font-bold text-gray-800 mb-4 border-b-2 border-striking">
-        {openModalLabel}
-      </h2>
       <div className="flex flex-row gap-3">
         {/* Species Selection Panel */}
         <div className="flex flex-col w-40 gap-1">
@@ -80,7 +82,7 @@ export default function SpeciesModal({
 
               <button
                 className="bg-lime-300 p-1 rounded-md mt-4"
-                onClick={() => closeModal()}
+                onClick={confirmSpecies}
               >
                 Select Species
               </button>
