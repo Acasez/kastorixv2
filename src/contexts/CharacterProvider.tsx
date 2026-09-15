@@ -1,5 +1,11 @@
 // CharacterProvider.tsx — the only file exporting a component
-import { useState, type ReactNode, type ChangeEvent, useMemo } from "react";
+import {
+  useState,
+  type ReactNode,
+  type ChangeEvent,
+  useMemo,
+  useCallback,
+} from "react";
 import { CharacterContext, type Character } from "./CharacterContext";
 import { getProficiency } from "../constants/Proficiency";
 import type { StatKey } from "../types/StatKey";
@@ -27,8 +33,11 @@ const defaultCharacter: Character = {
 export function CharacterProvider({ children }: { children: ReactNode }) {
   const [character, setCharacter] = useState<Character>(defaultCharacter);
 
-  const updateCharacter = (patch: Partial<Character>) =>
-    setCharacter((prev) => ({ ...prev, ...patch }));
+  const updateCharacter = useCallback(
+    (patch: Partial<Character>) =>
+      setCharacter((prev) => ({ ...prev, ...patch })),
+    [],
+  );
 
   const handleLevelChange = (e: ChangeEvent<HTMLInputElement>) =>
     updateCharacter({
