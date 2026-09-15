@@ -9,14 +9,12 @@
         "resistances": "6",
         "speeds": "4",
         "featureOne": "",
-        "featureOneDescription": "",
-        "featureTwo": "",
-        "featureTwoDescription": "",
+        "featureOneDesc": "",
         "skills": "Brawling",
         "saves": "Fortitude",
         "weapons": "",
         "naturalWeapon": "Slam",
-        "naturalWeaponDescription": "(PHY + trained), 1d10 + PHY bludgeoning damage"
+        "naturalWeaponDesc": "(PHY + trained), 1d10 + PHY bludgeoning damage"
     },
     {
         "name": "Soldier",
@@ -25,17 +23,15 @@
         "dex": "2",
         "int": "-3",
         "wil": "-5",
-        "resistances": "2",
+        "resistances": "4",
         "speeds": "4",
         "featureOne": "",
-        "featureOneDescription": "",
-        "featureTwo": "",
-        "featureTwoDescription": "",
+        "featureOneDesc": "",
         "skills": "Two of Athletics, Brawling, Intimidation and Stealth",
         "saves": "Reflex",
         "weapons": "Simple weapons, shields and one weapon group",
         "naturalWeapon": "",
-        "naturalWeaponDescription": ""
+        "naturalWeaponDesc": ""
     },
     {
         "name": "Quadruped",
@@ -47,14 +43,12 @@
         "resistances": "4",
         "speeds": "6",
         "featureOne": "",
-        "featureOneDescription": "",
-        "featureTwo": "",
-        "featureTwoDescription": "",
+        "featureOneDesc": "",
         "skills": "Athletics",
         "saves": "Fortitude or Reflex",
         "weapons": "",
         "naturalWeapon": "Stomp",
-        "naturalWeaponDescription": "(PHY + trained), 1d8 + PHY bludgeoning damage. Deadly d6."
+        "naturalWeaponDesc": "(PHY + trained), 1d8 + PHY bludgeoning damage. Deadly d6."
     },
     {
         "name": "Scout",
@@ -63,16 +57,14 @@
         "dex": "3",
         "int": "-3",
         "wil": "-5",
-        "resistances": "",
+        "resistances": "2",
         "speeds": "5",
         "featureOne": "Nimble",
-        "featureOneDescription": "Ignores difficult terrain and treats greater difficult terrain as difficult terrain",
-        "featureTwo": "Sentry",
-        "featureTwoDescription": "It’s trained in perception and can use your INT as its modifier when making perception checks.",
+        "featureOneDesc": "Ignores difficult terrain and treats greater difficult terrain as difficult terrain",
         "skills": "Two of Acrobatics, Performance, Sleight of hand or Stealth",
         "saves": "Reflex",
         "weapons": "Simple weapons and one weapon group",
         "naturalWeapon": "",
-        "naturalWeaponDescription": ""
+        "naturalWeaponDesc": ""
     }
 ]

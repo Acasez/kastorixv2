@@ -55,7 +55,7 @@
     },
     {
         "name": "Vital",
-        "damageGroup": "None",
+        "damageGroup": "Exotic",
         "resistance": "None",
         "rarity": "Very Rare"
     }

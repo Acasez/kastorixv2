@@ -3,6 +3,7 @@
         "name": "Strike",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Make an unarmed or weapon attack, rolling against a Reflex saving throw of the target. \nAttacks after the first each turn take a stacking multiple attack penalty",
         "traits": "Attack"
     },
@@ -10,6 +11,7 @@
         "name": "Stride",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Move a number of tiles up to your land speed",
         "traits": "Move, Traverse"
     },
@@ -17,6 +19,7 @@
         "name": "Leap",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Jump up to 3 tiles horizontally.\nYou may attempt a athletics check to jump farther, DC is 15 for 4 tiles and increases by 5 for each additional tile.",
         "traits": "Move"
     },
@@ -24,6 +27,7 @@
         "name": "Step",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Move one tile without triggering reactions. \nYou cannot Step into difficult terrain",
         "traits": "Move"
     },
@@ -31,6 +35,7 @@
         "name": "Fly",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Move a number of tiles up to your fly speed. \nFlying one tile upwards costs two movement, opposite for downwards",
         "traits": "Move, Traverse"
     },
@@ -38,6 +43,7 @@
         "name": "Glide",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Move a number of tiles up to your glide speed. \nYou cannot Glide upwards and you fall one tile downwards per four you fly forwards (minimum one per round). ",
         "traits": "Move, Traverse"
     },
@@ -45,6 +51,7 @@
         "name": "Swim",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Move a number of tiles up to your swim speed. \nIf you don't have a Swim speed you can make a Athletics check, moving half you land speed on Success",
         "traits": "Move, Traverse"
     },
@@ -52,6 +59,7 @@
         "name": "Glide",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Move a number of tiles up to your glide speed. ",
         "traits": "Move, Traverse"
     },
@@ -59,13 +67,15 @@
         "name": "Sneak",
         "actions": "1-3",
         "trigger": "",
+        "requirement": "",
         "description": "Make a stealth check. \nOn a success you can move at half speed while staying hidden\nYou attempt a stealth check with a -5 penalty to move at full speed",
-        "traits": "Move, Stealth"
+        "traits": "Move"
     },
     {
         "name": "Crawl",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Move one tile. ",
         "traits": "Move"
     },
@@ -73,6 +83,7 @@
         "name": "Cast a Spell",
         "actions": "1-3",
         "trigger": "",
+        "requirement": "",
         "description": "Make a spellshaping check (Int + Dex + Proficiency) compared to the difficulty of the spell. On a success the spell is cast and the result of spellshaping check is used for the DC of any saving throws imposed by the spell",
         "traits": "Spellcasting, Magic"
     },
@@ -80,6 +91,7 @@
         "name": "Reinforce Aura",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Spend mana up to your level + your Wil times 2, and restore aura health by that amount.",
         "traits": "Aura, Magic"
     },
@@ -87,6 +99,7 @@
         "name": "Aura Block",
         "actions": "Reaction",
         "trigger": "When you would partially block damage with your aura.",
+        "requirement": "",
         "description": "Block the force of the attack with your Aura, making it take all of the damage. If it breaks your aura, you take the remaining damage.",
         "traits": "Aura, Magic"
     },
@@ -94,6 +107,7 @@
         "name": "Harness Mana",
         "actions": "1-3",
         "trigger": "",
+        "requirement": "",
         "description": "Attempt to absorb mana from the air.\nMake a Mana Recovery Check (d20 + WIL) versus the DC based on the environment.\nOn a success you recover the specified amount of mana.\nOn a critical success you recover double the specified amount of mana.\nOn a critical failure you suffer one level of mana poisoning.\nYou may spend two actions on this action to have +2 bonus on the roll and recover twice the amount.\nIf you spend three actions on Harness Mana the bonus increases to +5 ",
         "traits": "Magic, Mana"
     },
@@ -101,6 +115,7 @@
         "name": "Stand Up",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Stand up from Prone",
         "traits": "Move"
     },
@@ -108,6 +123,7 @@
         "name": "Drop",
         "actions": "0",
         "trigger": "",
+        "requirement": "",
         "description": "Become Prone.",
         "traits": "Move"
     },
@@ -115,6 +131,7 @@
         "name": "Escape",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Attempt to become free from being Grappled or Restrained. \nRoll Brawling or Acrobatics, one a success you become grappled instead of restrained or free if already grappled.\nOn a critical success you immediately become free",
         "traits": "Attack"
     },
@@ -122,6 +139,7 @@
         "name": "Take Cover",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Gain cover or upgrade cover to Greater Cover",
         "traits": ""
     },
@@ -129,27 +147,31 @@
         "name": "Identify Spell",
         "actions": "Reaction",
         "trigger": "You see a spell being cast",
+        "requirement": "",
         "description": "Make an Arcana check against the spells unmodified spellshaping DC. \nOn a critical success you gain a +2 bonus to saves against the spell",
-        "traits": "Skill, Arcana"
+        "traits": "Skill"
     },
     {
         "name": "Stabilize",
         "actions": "1",
-        "trigger": "You are holding a medicine kit",
+        "trigger": "",
+        "requirement": "You are holding a medicine kit",
         "description": "Make a Medicine check, DC 10 + Creature's dying Value.\nOn a success the creature reduces its dying by 2, or 4 on a Critical Success",
-        "traits": "Medicine, Skill"
+        "traits": "Skill"
     },
     {
         "name": "Drink Potion",
         "actions": "1",
-        "trigger": "You are holding a potion or have one on a potion belt",
+        "trigger": "",
+        "requirement": "You are holding a potion or have one on a potion belt",
         "description": "Gain the benefits of the potion",
         "traits": "Item"
     },
     {
         "name": "Feed Potion",
         "actions": "1",
-        "trigger": "You are holding a potion or have one on a potion belt",
+        "trigger": "",
+        "requirement": "You are holding a potion or have one on a potion belt",
         "description": "Feed an willing adjacent creature a potion, giving them the benefits",
         "traits": "Item"
     },
@@ -157,6 +179,7 @@
         "name": "Sustain",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Extends the duration of a spell that you are sustaining by 1 turn When you sustain a spell make a spellshaping roll as if you were casting the spell. You cannot fail the spell when sustaining it, but the DC changes to the new spellshaping result Some spells have effects that happen when you sustain such as moving the spell. You cannot sustain a spell more than once per turn, but you can sustain multiple spells in the same turn using multiple sustain actions",
         "traits": "Spellcasting, Magic"
     },
@@ -164,6 +187,7 @@
         "name": "High Jump",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Jump up to 2 tiles vertically\nYou may attempt a athletics check to jump higher, DC is 18 for 3 tiles and increases by 8 for each additional tile.",
         "traits": ""
     },
@@ -171,28 +195,32 @@
         "name": "Recall Knowledge",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "Make an Arcana, Crafting, History, Nature or Society to find out what you know about a creature, place or organisation.",
         "traits": "Skill"
     },
     {
         "name": "Battlefield Medicine",
         "actions": "2",
-        "trigger": "You are holding a medicine kit",
+        "trigger": "",
+        "requirement": "You are holding a medicine kit",
         "description": "Make a Mend Wounds Check, but without removing wounded. \nCreatures can only have their health restored by Battlefield Medicine once per day",
-        "traits": "Medicine, Skill"
+        "traits": "Skill"
     },
     {
         "name": "Mend Wounds",
         "actions": "10 Minutes",
-        "trigger": "You are holding a medicine kit",
+        "trigger": "",
+        "requirement": "You are holding a medicine kit",
         "description": "Make a DC 10 medicine check on a target.\nOn a success you restore 1d6 + 2 health to the creature and reduce it's wounded value by 1. \nOn a critical success restore twice the amount and reduce wounded by 2.",
-        "traits": "Medicine, Skill"
+        "traits": "Skill"
     },
     {
         "name": "Intimidate",
         "actions": "1",
         "trigger": "",
+        "requirement": "",
         "description": "With threatening words or gestures, attempt to frighten a foe.\nMake a Intimidation check against their Will save. \nOn a success they are Frightened 1, on a critical success they are Frightened 2",
-        "traits": "Skill, Intimidation "
+        "traits": "Skill"
     }
 ]
