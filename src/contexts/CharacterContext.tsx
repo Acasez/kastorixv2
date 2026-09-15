@@ -8,7 +8,7 @@ import {
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { StatKey } from "../types/StatKey";
 import type { SpeedTypes } from "../types/SpeedTypes";
-import type { Spellshaping } from "../types/Spellshaping";
+import type { Spellshaping } from "../types/Spells";
 
 export type Character = {
   name: string;

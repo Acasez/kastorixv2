@@ -1,10 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import { ThreeOptionSwitch } from "../../ThreeOptionSwitch";
-import type {
-  SomaticComponent,
-  VerbalComponent,
-} from "../../../types/Spellshaping";
+import type { SomaticComponent, VerbalComponent } from "../../../types/Spells";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
