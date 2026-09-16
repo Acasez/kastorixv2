@@ -9,14 +9,19 @@ import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { StatKey } from "../types/StatKey";
 import type { SpeedTypes } from "../types/SpeedTypes";
 import type { Spellshaping } from "../types/Spells";
-import type { Species } from "../types/Species";
-import type { GeneralFeat } from "../types/Feats";
 
 export type Character = {
   name: string;
   level: number;
-  generalFeats: GeneralFeat[];
-  species: Species | null;
+  generalFeats: string[];
+  arcaneFeats: string[];
+  advantages: string[];
+  ancestryFeats: string[];
+  knownSpells: string[];
+  weapons: string[];
+  selections: Record<string, string>;
+  background: string | null;
+  species: string | null;
   baseStats: Record<StatKey, number>;
   skillProficiencies: Record<string, ProficiencyTierName>;
   saveProficiencies: Record<string, ProficiencyTierName>;

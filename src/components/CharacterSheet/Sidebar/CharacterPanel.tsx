@@ -2,12 +2,13 @@ import { useState } from "react";
 import OpenModalButton from "../OpenModalButton";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
+import type { ModalRequest } from "../../ModalViews/modalTypes";
 
 export default function CharacterPanel() {
   const { character, handleNameChange, handleLevelChange } = useCharacter();
-  const [openModalLabel, setOpenModalLabel] = useState<string | null>(null);
+  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
 
-  const closeModal = () => setOpenModalLabel(null);
+  const closeModal = () => setModalRequest(null);
 
   return (
     <div className="bg-blue-100 rounded-lg p-2 mb-4 shadow-sm border border-blue-300 w-full">
@@ -24,11 +25,15 @@ export default function CharacterPanel() {
       <div className="space-y-1">
         <OpenModalButton
           label="Select Species"
-          onClick={() => setOpenModalLabel("Select Species")}
+          onClick={() =>
+            setModalRequest({ type: "species", title: "Select Species" })
+          }
         />
         <OpenModalButton
           label="Set Base Stats"
-          onClick={() => setOpenModalLabel("Set Base Stats")}
+          onClick={() =>
+            setModalRequest({ type: "baseStats", title: "Set Base Stats" })
+          }
         />
       </div>
 
@@ -45,8 +50,8 @@ export default function CharacterPanel() {
       </div>
 
       {/* Modal Overlay */}
-      {openModalLabel && (
-        <ModalWrapper openModalLabel={openModalLabel} closeModal={closeModal} />
+      {modalRequest && (
+        <ModalWrapper request={modalRequest} closeModal={closeModal} />
       )}
     </div>
   );
