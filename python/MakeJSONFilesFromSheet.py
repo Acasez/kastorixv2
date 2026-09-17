@@ -9,11 +9,11 @@ CREDENTIALS_FILE = r"C:/Users/Edvin/Documents/GoogleAPI/GoogleAPI.json"
 BUILD_DIR = "src/JSON"
 
 ACTION_ICONS = {
-    "1": '<img class="action-icon-modalList" src="/images/Kastorix/Icons/OneAction.png" alt="1 Action"/>',
-    "2": '<img class="action-icon-modalList" src="/images/Kastorix/Icons/TwoActions.png" alt="2 Actions"/>',
+    "1": '<img class="action-icon-modalList" src="./images/Kastorix/Icons/OneAction.png" alt="1 Action"/>',
+    "2": '<img class="action-icon-modalList" src="./images/Kastorix/Icons/TwoActions.png" alt="2 Actions"/>',
     "3": '<img class="action-icon-modalList" src="/images/Kastorix/Icons/ThreeActions.png" alt="3 Actions"/>',
-    "Reaction": '<img class="action-icon-modalList" src="/images/Kastorix/Icons/Reaction.png" alt="Reaction Symbol"/>',
-    "0": '<img class="action-icon-modalList" src="/images/Kastorix/Icons/FreeAction.png" alt="Free Action"/>',
+    "Reaction": '<img class="action-icon-modalList" src="./images/Kastorix/Icons/Reaction.png" alt="Reaction Symbol"/>',
+    "0": '<img class="action-icon-modalList" src="./images/Kastorix/Icons/FreeAction.png" alt="Free Action"/>',
 }
 
 SHEETS = [
