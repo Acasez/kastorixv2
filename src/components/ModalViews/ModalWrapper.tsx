@@ -42,7 +42,40 @@ export default function ModalWrapper({
     return null;
   };
 
+  const getBlockedChoiceNames = () => {
+    if (request.type === "species" || request.type === "baseStats") {
+      return [];
+    }
+
+    const ownedNames = new Set<string>();
+    Object.entries(character.selections).forEach(([key, selectedValue]) => {
+      if (key !== request.selectionKey && key.startsWith(`${request.type}:`)) {
+        ownedNames.add(selectedValue);
+      }
+    });
+
+    return choiceData[request.type]
+      .filter((item) => {
+        const repeatableValue = item.repeatable;
+        const isRepeatable =
+          repeatableValue === true ||
+          repeatableValue === 1 ||
+          repeatableValue === "1";
+        return ownedNames.has(item.name) && !isRepeatable;
+      })
+      .map((item) => item.name);
+  };
+
   const confirmChoice = (value: string) => {
+    const isBlockedDuplicate =
+      request.type !== "species" &&
+      request.type !== "baseStats" &&
+      getBlockedChoiceNames().includes(value);
+
+    if (isBlockedDuplicate) {
+      return;
+    }
+
     if (request.type === "background") {
       const selectedBackground = backgrounds.find(
         (background) => background.name === value,
@@ -79,6 +112,7 @@ export default function ModalWrapper({
           confirmLabel={request.title}
           initialValue={getCurrentValue()}
           maxLevel={request.level}
+          disabledNames={getBlockedChoiceNames()}
           onConfirm={confirmChoice}
         />
       );

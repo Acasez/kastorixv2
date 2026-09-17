@@ -5,6 +5,7 @@ export interface ChoiceItem {
   description?: string;
   effect?: string;
   level?: number | string;
+  repeatable?: string | number | boolean;
 }
 
 interface ChoiceModalProps {
@@ -12,6 +13,7 @@ interface ChoiceModalProps {
   confirmLabel: string;
   initialValue: string | null;
   maxLevel: number;
+  disabledNames?: string[];
   onConfirm: (value: string) => void;
 }
 
@@ -20,13 +22,20 @@ export default function ChoiceModal({
   confirmLabel,
   initialValue,
   maxLevel,
+  disabledNames = [],
   onConfirm,
 }: ChoiceModalProps) {
   const [search, setSearch] = useState("");
   const effectiveMaxLevel = Math.max(1, maxLevel);
+  const disabledNameSet = new Set(disabledNames);
   const isWithinLevel = (item: ChoiceItem) =>
     item.level === undefined || Number(item.level) <= effectiveMaxLevel;
-  const firstSelectableItem = items.find(isWithinLevel);
+  const isDisabled = (item: ChoiceItem) => {
+    const duplicateBlocked =
+      disabledNameSet.has(item.name) && item.name !== initialValue;
+    return !isWithinLevel(item) || duplicateBlocked;
+  };
+  const firstSelectableItem = items.find((item) => !isDisabled(item));
   const [selectedName, setSelectedName] = useState(
     () => initialValue ?? firstSelectableItem?.name ?? items[0]?.name ?? "",
   );
@@ -52,9 +61,9 @@ export default function ChoiceModal({
             <button
               type="button"
               key={item.name}
-              disabled={!isWithinLevel(item)}
+              disabled={isDisabled(item)}
               className={`text-left border-2 px-2 py-1 ${
-                !isWithinLevel(item)
+                isDisabled(item)
                   ? "border-gray-300 bg-gray-200 text-gray-400 cursor-not-allowed"
                   : selectedName === item.name
                     ? "border-purple-500 bg-purple-100"
@@ -81,7 +90,7 @@ export default function ChoiceModal({
               </p>
               <button
                 type="button"
-                disabled={!isWithinLevel(selectedItem)}
+                disabled={isDisabled(selectedItem)}
                 className="bg-lime-300 p-1 rounded-md mt-4 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
                 onClick={() => onConfirm(selectedItem.name)}
               >
