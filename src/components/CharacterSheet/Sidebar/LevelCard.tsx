@@ -84,7 +84,7 @@ interface LevelCardProps {
 
 export default function LevelCard({ level }: LevelCardProps) {
   const actions = getLevelActions(level);
-  const { character } = useCharacter();
+  const { character, updateCharacter } = useCharacter();
   const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
 
   const closeModal = () => setModalRequest(null);
@@ -96,6 +96,30 @@ export default function LevelCard({ level }: LevelCardProps) {
     choiceLevel: number,
   ) => {
     setModalRequest({ type, title, selectionKey, level: choiceLevel });
+  };
+
+  const clearSelection = (selectionKey: string, type: ChoiceType) => {
+    const selections = Object.fromEntries(
+      Object.entries(character.selections).filter(
+        ([key]) =>
+          key !== selectionKey &&
+          !key.startsWith(`${selectionKey}:unlocked:`),
+      ),
+    );
+
+    updateCharacter({
+      selections,
+      ...(type === "background" ? { background: null } : {}),
+    });
+  };
+
+  const handleContextMenu = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    selectionKey: string,
+    type: ChoiceType,
+  ) => {
+    event.preventDefault();
+    clearSelection(selectionKey, type);
   };
 
   const openActionModal = (action: string) => {
@@ -209,6 +233,12 @@ export default function LevelCard({ level }: LevelCardProps) {
                     choice.level,
                   )
           }
+          onContextMenu={
+            choice.fixedValue
+              ? undefined
+              : (event) =>
+                  handleContextMenu(event, choice.selectionKey, choice.type)
+          }
         />
         {choice.children.length > 0 && (
           <div
@@ -241,6 +271,12 @@ export default function LevelCard({ level }: LevelCardProps) {
                 isHighlighted={isHighlighted}
                 onClick={() => openActionModal(action)}
                 itemChosen={hasChosenItem(action)}
+                onContextMenu={(event) => {
+                  const type = actionTypes[action];
+                  if (type && type !== "baseStats") {
+                    handleContextMenu(event, `${type}:${level}`, type);
+                  }
+                }}
               />
               {unlockedChoices.length > 0 && (
                 <div className="ml-6 pl-2 border-l-2 border-teal-700 space-y-1">
