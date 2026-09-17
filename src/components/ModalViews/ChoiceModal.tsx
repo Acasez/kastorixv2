@@ -55,8 +55,10 @@ export default function ChoiceModal({
         aria-label="Search choices"
         className="border-2 border-gray-300 rounded-md px-3 py-2"
       />
-      <div className="flex flex-row gap-3 min-h-80">
-        <div className="flex flex-col w-56 gap-1 overflow-y-auto">
+      {/* Key change: Wrap content area with constrained height */}
+      <div className="flex flex-row gap-3 h-155">
+        {/* List panel - scrollable */}
+        <div className="flex flex-col w-56 gap-1 overflow-y-auto pr-1">
           {filteredItems.map((item) => (
             <button
               type="button"
@@ -72,18 +74,19 @@ export default function ChoiceModal({
               onClick={() => setSelectedName(item.name)}
             >
               {item.name}
-              {item.level !== undefined && ` [Level ${item.level}]`}
+              {item.level !== undefined && ` [${item.level}]`}
             </button>
           ))}
           {filteredItems.length === 0 && (
             <p className="text-gray-600">No matching choices.</p>
           )}
         </div>
-        <div className="border-amber-200 border-2 p-3 flex-1">
+        {/* Description panel - NO scroll, static height */}
+        <div className="border-amber-200 border-2 p-3 flex-1 overflow-hidden">
           {selectedItem ? (
-            <>
+            <div className="flex flex-col h-full">
               <h3 className="text-2xl underline">{selectedItem.name}</h3>
-              <p className="mt-3 whitespace-pre-line">
+              <p className="mt-3 whitespace-pre-line flex-1 overflow-y-auto">
                 {selectedItem.description ??
                   selectedItem.effect ??
                   "No description available."}
@@ -91,12 +94,12 @@ export default function ChoiceModal({
               <button
                 type="button"
                 disabled={isDisabled(selectedItem)}
-                className="bg-lime-300 p-1 rounded-md mt-4 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
+                className="bg-lime-300 p-1 rounded-md mt-4 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed self-start"
                 onClick={() => onConfirm(selectedItem.name)}
               >
                 {confirmLabel}
               </button>
-            </>
+            </div>
           ) : (
             <p>Select a choice from the list.</p>
           )}
