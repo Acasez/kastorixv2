@@ -13,7 +13,7 @@ export const getActionIcons = (actionCost: string): string[] => {
     if (min === "3") icons.push("./images/Icons/ThreeActions.png");
 
     // Add the line separator
-    icons.push("/images/Icons/Line.png");
+    icons.push("./images/Icons/Line.png");
 
     // Add the maximum action icon
     if (max === "1") icons.push("./images/Icons/OneAction.png");
@@ -29,7 +29,7 @@ export const getActionIcons = (actionCost: string): string[] => {
     if (min === "3") icons.push("./images/Icons/ThreeActions.png");
 
     // Add the line separator
-    icons.push("/images/Icons/SlashLine.png");
+    icons.push("./images/Icons/SlashLine.png");
 
     // Add the maximum action icon
     if (max === "1") icons.push("./images/Icons/OneAction.png");

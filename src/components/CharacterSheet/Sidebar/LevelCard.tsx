@@ -8,12 +8,14 @@ import generalFeats from "../../../JSON/general_feats.json";
 import arcaneFeats from "../../../JSON/arcane_feats.json";
 import advantages from "../../../JSON/advantages.json";
 import ancestryFeats from "../../../JSON/ancestry_feats.json";
+import backgrounds from "../../../JSON/backgrounds.json";
 
 type ChoiceType = Exclude<ModalRequest["type"], "species" | "baseStats">;
 
 type UnlockableItem = {
   name: string;
   unlockedFeats?: string;
+  generalFeat?: string;
 };
 
 type UnlockedChoice = {
@@ -21,6 +23,7 @@ type UnlockedChoice = {
   title: string;
   level: number;
   selectionKey: string;
+  fixedValue?: string;
 };
 
 type ParsedUnlockedChoice = Omit<UnlockedChoice, "selectionKey">;
@@ -30,6 +33,7 @@ const unlockableData: Record<string, UnlockableItem[]> = {
   arcaneFeat: arcaneFeats,
   advantage: advantages,
   ancestryFeat: ancestryFeats,
+  background: backgrounds,
 };
 
 const actionTypes: Record<string, ChoiceType | "baseStats"> = {
@@ -97,6 +101,12 @@ export default function LevelCard({ level }: LevelCardProps) {
     }
   };
 
+  const getSelectionKey = (type: ChoiceType, parentLevel = level) =>
+    `${type}:${parentLevel}`;
+
+  const getUnlockedSelectionKey = (type: ChoiceType, parentLevel = level) =>
+    `${getSelectionKey(type, parentLevel)}:unlocked:0`;
+
   const getSelectedActionLabel = (action: string) => {
     const type = actionTypes[action];
     if (!type || type === "baseStats") return action;
@@ -115,13 +125,27 @@ export default function LevelCard({ level }: LevelCardProps) {
     const type = actionTypes[action];
     if (!type || type === "baseStats") return [];
 
-    const selectionKey = `${type}:${level}`;
+    const selectionKey = getSelectionKey(type);
     const selectedName = character.selections[selectionKey];
     if (!selectedName) return [];
 
     const selectedItem = unlockableData[type]?.find(
       (item) => item.name === selectedName,
     );
+    if (type === "background" && selectedItem?.generalFeat) {
+      const generalFeat = selectedItem.generalFeat;
+
+      return [
+        {
+          type: "generalFeat",
+          title: "Select General Feat",
+          level: 1,
+          selectionKey: getUnlockedSelectionKey(type),
+          fixedValue: generalFeat,
+        },
+      ];
+    }
+
     if (!selectedItem?.unlockedFeats) return [];
 
     return selectedItem.unlockedFeats
@@ -166,13 +190,16 @@ export default function LevelCard({ level }: LevelCardProps) {
                     key={choice.selectionKey}
                     label={selectedName ?? choice.title}
                     itemChosen={Boolean(selectedName)}
-                    onClick={() =>
-                      openChoiceModal(
-                        choice.type,
-                        choice.title,
-                        choice.selectionKey,
-                        choice.level,
-                      )
+                    onClick={
+                      choice.fixedValue
+                        ? undefined
+                        : () =>
+                            openChoiceModal(
+                              choice.type,
+                              choice.title,
+                              choice.selectionKey,
+                              choice.level,
+                            )
                     }
                     className="flex-1"
                   />

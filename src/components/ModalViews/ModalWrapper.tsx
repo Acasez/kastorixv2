@@ -44,9 +44,20 @@ export default function ModalWrapper({
 
   const confirmChoice = (value: string) => {
     if (request.type === "background") {
+      const selectedBackground = backgrounds.find(
+        (background) => background.name === value,
+      );
+      const backgroundFeatKey = `${request.selectionKey}:unlocked:0`;
+
       updateCharacter({
         background: value,
-        selections: { ...character.selections, [request.selectionKey]: value },
+        selections: {
+          ...character.selections,
+          [request.selectionKey]: value,
+          ...(selectedBackground?.generalFeat
+            ? { [backgroundFeatKey]: selectedBackground.generalFeat }
+            : {}),
+        },
       });
     } else if (request.type !== "species" && request.type !== "baseStats") {
       updateCharacter({
