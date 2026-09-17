@@ -28,6 +28,12 @@ type UnlockedChoice = {
 
 type ParsedUnlockedChoice = Omit<UnlockedChoice, "selectionKey">;
 
+type ChoiceNode = UnlockedChoice & {
+  children: ChoiceNode[];
+};
+
+const MAX_UNLOCK_DEPTH = 3;
+
 const unlockableData: Record<string, UnlockableItem[]> = {
   generalFeat: generalFeats,
   arcaneFeat: arcaneFeats,
@@ -104,9 +110,6 @@ export default function LevelCard({ level }: LevelCardProps) {
   const getSelectionKey = (type: ChoiceType, parentLevel = level) =>
     `${type}:${parentLevel}`;
 
-  const getUnlockedSelectionKey = (type: ChoiceType, parentLevel = level) =>
-    `${getSelectionKey(type, parentLevel)}:unlocked:0`;
-
   const getSelectedActionLabel = (action: string) => {
     const type = actionTypes[action];
     if (!type || type === "baseStats") return action;
@@ -121,46 +124,104 @@ export default function LevelCard({ level }: LevelCardProps) {
     return Boolean(character.selections[`${type}:${level}`]);
   };
 
-  const getUnlockedChoices = (action: string): UnlockedChoice[] => {
+  const getUnlockedChoices = (
+    type: ChoiceType,
+    selectionKey: string,
+    selectedName: string,
+    parentDepth: number,
+  ): ChoiceNode[] => {
+    if (parentDepth >= MAX_UNLOCK_DEPTH) return [];
+
+    const selectedItem = unlockableData[type]?.find(
+      (item) => item.name === selectedName,
+    );
+    if (!selectedItem) return [];
+
+    const choices: UnlockedChoice[] = [];
+    if (type === "background" && selectedItem.generalFeat) {
+      choices.push({
+        type: "generalFeat",
+        title: "Select General Feat",
+        level: 1,
+        selectionKey: `${selectionKey}:unlocked:0`,
+        fixedValue: selectedItem.generalFeat,
+      });
+    } else if (selectedItem.unlockedFeats) {
+      selectedItem.unlockedFeats
+        .split(",")
+        .map(parseUnlockedChoice)
+        .forEach((choice, index) => {
+          if (choice) {
+            choices.push({
+              ...choice,
+              selectionKey: `${selectionKey}:unlocked:${index}`,
+            });
+          }
+        });
+    }
+
+    return choices.map((choice) => {
+      const childSelectedName =
+        character.selections[choice.selectionKey] ?? choice.fixedValue;
+
+      return {
+        ...choice,
+        children: childSelectedName
+          ? getUnlockedChoices(
+              choice.type,
+              choice.selectionKey,
+              childSelectedName,
+              parentDepth + 1,
+            )
+          : [],
+      };
+    });
+  };
+
+  const getActionUnlockedChoices = (action: string) => {
     const type = actionTypes[action];
     if (!type || type === "baseStats") return [];
 
     const selectionKey = getSelectionKey(type);
     const selectedName = character.selections[selectionKey];
-    if (!selectedName) return [];
+    return selectedName
+      ? getUnlockedChoices(type, selectionKey, selectedName, 0)
+      : [];
+  };
 
-    const selectedItem = unlockableData[type]?.find(
-      (item) => item.name === selectedName,
+  const renderUnlockedChoice = (choice: ChoiceNode, depth: number) => {
+    const selectedName =
+      character.selections[choice.selectionKey] ?? choice.fixedValue;
+
+    return (
+      <div key={choice.selectionKey} className="space-y-1">
+        <OpenModalButton
+          label={selectedName ?? choice.title}
+          itemChosen={Boolean(selectedName)}
+          onClick={
+            choice.fixedValue
+              ? undefined
+              : () =>
+                  openChoiceModal(
+                    choice.type,
+                    choice.title,
+                    choice.selectionKey,
+                    choice.level,
+                  )
+          }
+        />
+        {choice.children.length > 0 && (
+          <div
+            className="ml-6 pl-2 border-l-2 border-teal-700 space-y-1"
+            data-unlock-depth={depth + 1}
+          >
+            {choice.children.map((child) =>
+              renderUnlockedChoice(child, depth + 1),
+            )}
+          </div>
+        )}
+      </div>
     );
-    if (type === "background" && selectedItem?.generalFeat) {
-      const generalFeat = selectedItem.generalFeat;
-
-      return [
-        {
-          type: "generalFeat",
-          title: "Select General Feat",
-          level: 1,
-          selectionKey: getUnlockedSelectionKey(type),
-          fixedValue: generalFeat,
-        },
-      ];
-    }
-
-    if (!selectedItem?.unlockedFeats) return [];
-
-    return selectedItem.unlockedFeats
-      .split(",")
-      .map(parseUnlockedChoice)
-      .flatMap((choice, index) =>
-        choice
-          ? [
-              {
-                ...choice,
-                selectionKey: `${selectionKey}:unlocked:${index}`,
-              },
-            ]
-          : [],
-      );
   };
 
   return (
@@ -171,40 +232,23 @@ export default function LevelCard({ level }: LevelCardProps) {
       <div className="space-y-2">
         {actions.map((action, index) => {
           const isHighlighted = action === "Increase One Stat";
-          const unlockedChoices = getUnlockedChoices(action);
+          const unlockedChoices = getActionUnlockedChoices(action);
 
           return (
-            <div key={index} className="flex flex-col items-center gap-1">
+            <div key={index} className="flex flex-col gap-1">
               <OpenModalButton
                 label={getSelectedActionLabel(action)}
                 isHighlighted={isHighlighted}
                 onClick={() => openActionModal(action)}
                 itemChosen={hasChosenItem(action)}
-                className={unlockedChoices.length > 0 ? "flex-1" : ""}
               />
-              {unlockedChoices.map((choice) => {
-                const selectedName = character.selections[choice.selectionKey];
-
-                return (
-                  <OpenModalButton
-                    key={choice.selectionKey}
-                    label={selectedName ?? choice.title}
-                    itemChosen={Boolean(selectedName)}
-                    onClick={
-                      choice.fixedValue
-                        ? undefined
-                        : () =>
-                            openChoiceModal(
-                              choice.type,
-                              choice.title,
-                              choice.selectionKey,
-                              choice.level,
-                            )
-                    }
-                    className="flex-1"
-                  />
-                );
-              })}
+              {unlockedChoices.length > 0 && (
+                <div className="ml-6 pl-2 border-l-2 border-teal-700 space-y-1">
+                  {unlockedChoices.map((choice) =>
+                    renderUnlockedChoice(choice, 1),
+                  )}
+                </div>
+              )}
             </div>
           );
         })}
