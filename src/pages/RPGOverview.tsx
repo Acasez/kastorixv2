@@ -25,7 +25,7 @@ export default function RPGOverview() {
       <RowFrame reverse={false}>
         <TextSection description={DESC.Overview} />
         <ImageDisplay
-          imageLocation="/images/Maps/Kastorix.jpg"
+          imageLocation="./images/Maps/Kastorix.jpg"
           altText="Kastorix World Map"
           imageCaption="Kastorix World Map"
           coverImage={false}
@@ -54,7 +54,7 @@ export default function RPGOverview() {
         <LevelOneSetup />
       </RowFrame>
       <RowFrame reverse={false}>
-        <Icon imageLocation="/images/ManaIcon.png" altText="Mana Icon" />
+        <Icon imageLocation="./images/ManaIcon.png" altText="Mana Icon" />
         <TextSection name="Mana" description={DESC.ManaFlavor} cursive={true} />
       </RowFrame>
       <RowFrame reverse={false}>
@@ -62,7 +62,7 @@ export default function RPGOverview() {
         <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <Icon imageLocation="/images/Eldritch.png" altText="Aura Icon" />
+        <Icon imageLocation="./images/Eldritch.png" altText="Aura Icon" />
         <TextSection name="Aura" description={DESC.AuraFlavor} cursive={true} />
       </RowFrame>
       <RowFrame reverse={false}>
