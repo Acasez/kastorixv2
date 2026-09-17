@@ -51,7 +51,7 @@
         "name": "Voidchild",
         "description": "Marked by the void, feared by living.\nYou ignore the Complex trait on spells with the Void trait.\nYou learn spells equal to your INT\nYou have +3 bonus on saves against effects with the Void or Soul traits\nVoidchildren have starry purple eyes and faintly glowing skin\nNOTE: Voidchildren are outlawed in the Draconium and some other countries and will be hunted on sight",
         "unlockedAction": "",
-        "level": "",
+        "level": "1",
         "unlockedFeats": "",
         "speeds": "",
         "resistances": "",

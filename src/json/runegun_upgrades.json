@@ -37,7 +37,7 @@
     },
     {
         "name": "Mighty Blast",
-        "description": "You have modified your runegun so you can project a cone of thundering force in front of you\nWhen firing your runegun you can spend 4 mana to deal a d8 of thunder damage in a 3 tile cone",
+        "description": "You have modified your runegun so you can project a cone of thundering force in front of you\nWhen firing your runegun you can spend 4 mana to deal a d8 of thunder damage to creatures in a 3 tile cone (Fortitude save)",
         "prerequisites": "Incompatible with Pistol Runegun",
         "level": "6"
     },
@@ -67,7 +67,7 @@
     },
     {
         "name": "Stabilizer",
-        "description": "When stabilized and aiming at stationary targets you almost can't miss\nIf you've taken the Aim action and your target hasn't moved since last turn the bonus increases to +5",
+        "description": "When stabilized and aiming at stationary targets you almost can't miss.\nIf you've taken the Aim action and your target hasn't moved since last turn the bonus increases to +5",
         "prerequisites": "[Scope]",
         "level": "8"
     },

@@ -533,9 +533,9 @@
         "gadgets": ""
     },
     {
-        "name": "Drain Attuned Spell",
-        "description": "When others attempt to use spells of your element, you can take control.\nYou have the Drain Attuned Spell action",
-        "unlockedAction": "Drain Attuned Spell - 1 Action\nTarget a creature maintaining a spell of your attunement within 5 tiles. Spend a focus point and mana equal to the cost of the spell. \nMake a Spellshaping Check against the creature's spellshaping check. \nOn a success you take over the spell, getting the benefits as if you were the caster.\nOn a critical success you recover the mana you spent\nIf the spells needs to be sustained you still need to sustain in future turns.",
+        "name": "Steal Attuned Spell",
+        "description": "When others attempt to use spells of your element, you can take control.\nYou have the Steal Attuned Spell action",
+        "unlockedAction": "Steal Attuned Spell - 1 Action\nTarget a creature maintaining a spell of your attunement within 5 tiles. Spend a focus point and mana equal to the cost of the spell. \nMake a Spellshaping Check against the creature's spellshaping check. \nOn a success you take over the spell, getting the benefits as if you were the caster.\nOn a critical success you recover the mana you spent\nIf the spells needs to be sustained you still need to sustain in future turns.",
         "prerequisites": "[Attunement]",
         "level": "6",
         "repeatable": "",

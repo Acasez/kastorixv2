@@ -49,7 +49,7 @@
     },
     {
         "name": "Drums of War",
-        "description": "Music is important to the Brannur and you've learned the tools of your people. Your proficiency level in Performance increases (max Expert). \nYou have the Drums of War action. ",
+        "description": "Music is important to the Brannur and you've learned the tools of your people. \nYour proficiency level in Performance increases (max Expert). \nYou have the Drums of War action which you can use once per day",
         "unlockedAction": "Drums of War - 1 Action - Can be used once per Day \nMake a warchant to hype yourself and your allies up for battle. \nYou and allies within 5 tiles gain temporary hit points equal to your WIL plus half your level which last up to a minute",
         "type": "Cultural",
         "species": "Brannur",

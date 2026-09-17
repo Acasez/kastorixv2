@@ -31,9 +31,9 @@
     },
     {
         "name": "Integrated Weapon",
-        "description": "You've designed your golem to allow it to integrate a weapon into one of its arm\nYou can spend a minute to attach a weapon.\nWhile attached it cannot be disarmed and has +1 bonus to attack.",
-        "prerequisites": "",
-        "level": ""
+        "description": "You've designed your golem to allow it to integrate a weapon into one of its arm\nYou can spend a minute to attach a weapon.\nWhile attached it cannot be disarmed and has +1 bonus to attack rolls",
+        "prerequisites": "Soldier or Scout Golem Model",
+        "level": "4"
     },
     {
         "name": "Programmed Tactics",
@@ -58,6 +58,12 @@
         "description": "Your golem becomes trained in two weapon groups.\nYou may choose an Advanced Weapon instead of a weapon group",
         "prerequisites": "Soldier or Scout Golem Model",
         "level": "4"
+    },
+    {
+        "name": "Sentry Protocol",
+        "description": "You set up a polished lens to allow your golem to watch as if it were an alert sentry.\nYour golem becomes trained in Perception and can your INT modifier for Perception\nWhen your golem detects a threat you will be alerted to as long as its within Soul Link range.",
+        "prerequisites": "[Soul Link]",
+        "level": "6"
     },
     {
         "name": "Defense Protocol",

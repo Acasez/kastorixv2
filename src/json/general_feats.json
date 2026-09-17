@@ -546,7 +546,7 @@
         "choice": ""
     },
     {
-        "name": "Like Shooting Fish...",
+        "name": "Like Shooting Fish in a Barrel",
         "description": "You can keep reloading as you deal with your foes\nOnce per turn, when you kill or knock out a creature your may reload an held weapon as a free action",
         "unlockedAction": "",
         "prerequisites": "",
@@ -743,7 +743,7 @@
     },
     {
         "name": "Strike The Unwary",
-        "description": "Your always taking every opportunity to strike your foes\nYou can now use Opportunity Attacks on creatures using actions with the Spellcasting or Manipulate Traits",
+        "description": "Your always taking every opportunity to strike your foes\nYou can use Opportunity Attacks on creatures using casting spells using somatic component and actions with the Manipulate Trait",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
