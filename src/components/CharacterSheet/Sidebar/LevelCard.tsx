@@ -102,8 +102,7 @@ export default function LevelCard({ level }: LevelCardProps) {
     const selections = Object.fromEntries(
       Object.entries(character.selections).filter(
         ([key]) =>
-          key !== selectionKey &&
-          !key.startsWith(`${selectionKey}:unlocked:`),
+          key !== selectionKey && !key.startsWith(`${selectionKey}:unlocked:`),
       ),
     );
 
