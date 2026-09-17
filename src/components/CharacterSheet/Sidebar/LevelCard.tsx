@@ -238,6 +238,7 @@ export default function LevelCard({ level }: LevelCardProps) {
               : (event) =>
                   handleContextMenu(event, choice.selectionKey, choice.type)
           }
+          fixedChoice={choice.fixedValue != undefined}
         />
         {choice.children.length > 0 && (
           <div

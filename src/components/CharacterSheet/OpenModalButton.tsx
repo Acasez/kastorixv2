@@ -7,6 +7,7 @@ interface OpenModalButtonProps {
   onClick?: () => void;
   onContextMenu?: MouseEventHandler<HTMLButtonElement>;
   itemChosen?: boolean;
+  fixedChoice?: boolean;
 }
 
 export default function OpenModalButton({
@@ -15,6 +16,7 @@ export default function OpenModalButton({
   className = "",
   onClick = () => {},
   itemChosen = false,
+  fixedChoice = false,
   onContextMenu,
 }: OpenModalButtonProps) {
   return (
@@ -24,9 +26,11 @@ export default function OpenModalButton({
       className={`w-full px-2 py-1 rounded-md text-base font-medium text-white ${
         isHighlighted
           ? "bg-green-500"
-          : itemChosen
-            ? "bg-blue-500"
-            : "bg-teal-700"
+          : fixedChoice
+            ? "bg-lime-500"
+            : itemChosen
+              ? "bg-blue-500"
+              : "bg-teal-700"
       } ${className}`}
     >
       {label}
