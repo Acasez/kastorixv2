@@ -16,7 +16,8 @@
         "spellsLearned": "(2) Apprentice",
         "speeds": "(-1) Land",
         "resistances": "",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     },
     {
         "name": "Yirte",
@@ -35,7 +36,8 @@
         "spellsLearned": "",
         "speeds": "(1) Land, (4) Climb",
         "resistances": "",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     },
     {
         "name": "Gnome",
@@ -43,7 +45,7 @@
         "health": "6",
         "mana": "14",
         "traitOne": "Absorb magic",
-        "traitOneDesc": "Gnomes natural connection to magic allow them to absorb magical effects.\nReaction, when you take elemental damage reduce it by 1d6. Twice per day.",
+        "traitOneDesc": "Gnomes natural connection to magic allow them to absorb magical effects.\nYou have the Absorb Magic reaction which you can use twice per day.",
         "traitTwo": "Font of Knowledge",
         "traitTwoDesc": "Gnomes have impressives memories and can easily remember facts and figures.\nBecome trained in one intelligence skill of your choice. Can change it on level up",
         "traitThree": "Ever Tinkerers",
@@ -54,7 +56,8 @@
         "spellsLearned": "",
         "speeds": "",
         "resistances": "",
-        "gadgets": "(1) Gadget"
+        "gadgets": "(1) Gadget",
+        "unlockedAction": "Absorb Magic"
     },
     {
         "name": "Vesper",
@@ -73,7 +76,8 @@
         "spellsLearned": "",
         "speeds": "(5) Fly",
         "resistances": "",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     },
     {
         "name": "Human",
@@ -92,7 +96,8 @@
         "spellsLearned": "",
         "speeds": "",
         "resistances": "",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     },
     {
         "name": "Dragonkin",
@@ -111,7 +116,8 @@
         "spellsLearned": "",
         "speeds": "",
         "resistances": "",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     },
     {
         "name": "Aruna",
@@ -130,7 +136,8 @@
         "spellsLearned": "",
         "speeds": "(6) Glide, (4) Swim",
         "resistances": "",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     },
     {
         "name": "Troll",
@@ -149,7 +156,8 @@
         "spellsLearned": "",
         "speeds": "",
         "resistances": "(2) Physical",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     },
     {
         "name": "Brannur",
@@ -168,6 +176,7 @@
         "spellsLearned": "",
         "speeds": "",
         "resistances": "",
-        "gadgets": ""
+        "gadgets": "",
+        "unlockedAction": ""
     }
 ]

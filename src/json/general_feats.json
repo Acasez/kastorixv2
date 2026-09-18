@@ -86,7 +86,7 @@
     {
         "name": "Calculate The Odds",
         "description": "You take a moment to think and calculate your next move.\nYou learn the Calculate The Odds action",
-        "unlockedAction": "Calculate The Odds - 1 Action (Mental)\nDeclare an action that requires a D20 roll. Roll a d20. \nIf your next action afterwards is to do that action, use that roll\nYou may use this a number of times equaling to your INT per day",
+        "unlockedAction": "Calculate The Odds",
         "prerequisites": "",
         "level": "1",
         "repeatable": "",
@@ -198,7 +198,7 @@
     {
         "name": "Inspiring Leader",
         "description": "You have a way with words and can inspire those around you. \nYou can use the Inspire Courage action once per day. ",
-        "unlockedAction": "Inspire Courage  - 1 Action\nYou give a rousing speech or perform an act that inspires your allies in a 5 tile wide aura \nAll allies in the aura gain a +1 bonus to attack rolls and saving throws against fear effects for the duration. \nThis bonus increases to +2 at level 10 and +3 at level 15. The aura lasts for one minute or until you are incapacitated.",
+        "unlockedAction": "Inspire Courage",
         "prerequisites": "",
         "level": "1",
         "repeatable": "",
@@ -338,7 +338,7 @@
     {
         "name": "Quip",
         "description": "You've learn to banter and quip in the middle of battle to distract your enemies.\nYou have the Quip action \nYour proficiency level in Persuasion increases (max Expert). ",
-        "unlockedAction": "Quip - 1 Action (Mental)\nMake a Persuasion roll versus a creature Will Save.\nIf you succeed the target becomes Off-Guard 1 until the end of its next turn as it distracts them.\nOn a critical success it becomes Off-Guard 2 instead.\nRegardless of the roll the target is immune to Quip for an hour",
+        "unlockedAction": "Quip",
         "prerequisites": "",
         "level": "1",
         "repeatable": "",
@@ -730,7 +730,7 @@
     {
         "name": "Spot Weak Point",
         "description": "Your knowlegde in medicine allows you to spot weak points on creatures.\nYou have the spot weak point action\nYour proficiency level in medicine increases (max Master). ",
-        "unlockedAction": "Spot Weak Point - 1 Action (Mental)\nMake a Medicine check against a creatures Fortitude Save.\nOn a success you spot a weak spot, that can be attacked by your or your allies to deal extra damage to the creature.\nThe creature has a +2 bonus when targeting its weak point, but attacks to it deal an extra d6 damage\nAfter dealing 20 damage with this the weak point disappears and the creature becomes immune to Spot Weak Point for the day",
+        "unlockedAction": "Spot Weak Point",
         "prerequisites": "Trained in Medicine",
         "level": "4",
         "repeatable": "",
@@ -856,7 +856,7 @@
     {
         "name": "Shield Specialization",
         "description": "You know how to use shields to their fullest extent.\nWhile you are holding bucklers you may cast spells as normal with that hand. \nYou learn the shield bash combat combat maneuver\nYou learn the Steady Shield action for tower shield",
-        "unlockedAction": "Steady Shield - 1 Action\nStick a tower shield you are holding in the ground in from you.\nSteadied shields provide greater cover to creatures behind them\nYou need to spend an action to recover a steadied tower shield.",
+        "unlockedAction": "Steady Shield",
         "prerequisites": "",
         "level": "6",
         "repeatable": "",

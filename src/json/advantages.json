@@ -86,7 +86,7 @@
     {
         "name": "Soulsight",
         "description": "You posses the rare gift of natural soulsight, allowing you to see souls. Souls appear as tiny dots of light in the center of living creatures. \nYou have the Inspect Soul action. You may spend a focus point to use it as a free action",
-        "unlockedAction": "Inspect Soul - 1 Action\nTarget one creature you can see within 6 tiles. Looking at a creatures soul you perceive a few details about it. You learn if it has\nAn attunement, and if so which aspect.\nA soulbond. You can make a DC 20 arcana check to try to figure out the nature of the soulbond.\nWhether any other soul magic is affecting the target, though you don't know what type it is.\nIf the creature is an illusion, or a object or golem made to look like a creature you get no information about it, but see that it's not a creature",
+        "unlockedAction": "Inspect Soul",
         "level": "1",
         "unlockedFeats": "",
         "speeds": "",

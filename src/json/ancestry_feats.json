@@ -26,7 +26,7 @@
     {
         "name": "Coil Up",
         "description": "You learned to coil your body up, to later move in burst of speed.\nYou have the Coil Up action",
-        "unlockedAction": "Coil Up - 1 Action\nNext turn you may Step or Stride once as free action. \nIf you move or are knocked prone, this bonus is lost",
+        "unlockedAction": "Coil Up",
         "type": "Biological",
         "species": "Naga",
         "prerequisites": "",
@@ -38,7 +38,7 @@
     {
         "name": "Combat Regeneration",
         "description": "You've learned how to use your regenerative abilities in combat.\nYou learn the Combat Regeneration action",
-        "unlockedAction": "Combat Regeneration - 2 Action\nUse one of regeneration charges\nYou cannot use this if you took fire, lightning or acid damage since your last turn",
+        "unlockedAction": "Combat Regeneration",
         "type": "Biological",
         "species": "Troll",
         "prerequisites": "",
@@ -50,7 +50,7 @@
     {
         "name": "Drums of War",
         "description": "Music is important to the Brannur and you've learned the tools of your people. \nYour proficiency level in Performance increases (max Expert). \nYou have the Drums of War action which you can use once per day",
-        "unlockedAction": "Drums of War - 1 Action - Can be used once per Day \nMake a warchant to hype yourself and your allies up for battle. \nYou and allies within 5 tiles gain temporary hit points equal to your WIL plus half your level which last up to a minute",
+        "unlockedAction": "Drums of War",
         "type": "Cultural",
         "species": "Brannur",
         "prerequisites": "",
@@ -74,7 +74,7 @@
     {
         "name": "Powerful Wingflap",
         "description": "Aruna wings don't generally provide enough lift to fly, but with enough strength and the right technique you can temporary take off.\nYou have the Take Off action. You can use it a number of times equal to PHY each day.",
-        "unlockedAction": "Take Off - 1 Action\nFly a number of spaces equal to your glide speed",
+        "unlockedAction": "Take Off",
         "type": "Biological",
         "species": "Aruna",
         "prerequisites": "",
@@ -134,7 +134,7 @@
     {
         "name": "Lesser Dragonbreath",
         "description": "You've learned to use your attunement to imitate the breath of your draconic ancestor. \nYou gain the Dragonbreath action, breathing out a cone of magic connected to your attunement",
-        "unlockedAction": "Dragonbreath - 2 Action, 7 mana\nBreathe out a 5 tile cone of elemental force. \nCreatures inside the cone need to make a basic Reflex save. \nOn a failure they take 3d6 damage. ",
+        "unlockedAction": "Dragonbreath",
         "type": "Biological",
         "species": "Dragonkin",
         "prerequisites": "[Attunement]",

@@ -223,7 +223,7 @@
     {
         "name": "Extend Aura",
         "description": "You have learned to protect others with your aura. \nYou have the Extend Aura reaction",
-        "unlockedAction": "Extend Aura - R Action, when a friendly creatures within 3 tiles takes damage\nExpand your aura to cover the creature. \nYou aura takes half the damage they would take.",
+        "unlockedAction": "Extend Aura",
         "prerequisites": "",
         "level": "2",
         "repeatable": "",
@@ -236,7 +236,7 @@
     {
         "name": "Mana Thread",
         "description": "You've figured out how to draw a thread of mana to a target, allowing you to target them with magic at a range.\nYou have the Draw Mana Thread action",
-        "unlockedAction": "Draw Mana Thread - 1 Action, 1 Mana\nTouch a creature. If unwilling, it may make a Reflex save against your Channeling roll. On a success, you connect an invisible mana thread to it.\nWhile the thread is up you can cast spells on the creature as if you were adjacent to it and you know its exact position\nThe thread consumes 1 mana/turn and breaks if:\nThe target moves 6+ tiles away, it gains full cover, or you break it as a free action.\nCreatures with Truesight or passive Manasense higher than your roll can sense the thread. \nCreatures aware of it may spend an action and mana equal your WIL to break it.",
+        "unlockedAction": "Draw Mana Thread",
         "prerequisites": "Trained in Channeling",
         "level": "2",
         "repeatable": "",
@@ -327,7 +327,7 @@
     {
         "name": "Elemental Aura",
         "description": "You've learned to infuse elemental magic into your aura.\nYou learn the Elemental Aura action, which you can use with any aspects you have at least Basic Elemental Magic with",
-        "unlockedAction": "Elemental Aura - 1 Action, 5 mana.\nInfuse your aura with an aspect, giving it resistance 5 to damage of that aspect and a bonus based on the chosen aspect.\nWhile you have your Elemental Aura up, you can force any creature that end its turn next to you to make a Reflex or Fortitude Save against a WIL check. \nOn a higher roll you deal 2d6 damage to them.\nYou can sustain your elemental aura as an action for 3 mana, as if it were a spell.\nYou can also drop it as a reaction or free action on your turn.",
+        "unlockedAction": "Elemental Aura",
         "prerequisites": "",
         "level": "4",
         "repeatable": "",
@@ -366,7 +366,7 @@
     {
         "name": "Incanter's Stance",
         "description": "You've learned how to enter a stance were you put all your focus on your magic, ignoring the outside world. \nYou have the Incanter's Stance action",
-        "unlockedAction": "Incanter's Stance - 1 Action (Stance)\nWhile in this stance and cast spells using a verbal component your INT or WIL counts twice\nYou also have advantage on Channeling and Mana Sensing Checks. \nHowever, you are off-guard 2 and have disadvantage on perception checks.",
+        "unlockedAction": "Incanter's Stance",
         "prerequisites": "",
         "level": "4",
         "repeatable": "",
@@ -470,7 +470,7 @@
     {
         "name": "Spellbreaking",
         "description": "You have studied the art of Spellbreaking, tearing apart spells before they get formed. \nYou learn the Spellbreak reaction.",
-        "unlockedAction": "Spellbreak - R Action,  when you successfully identify a spell being cast within 3 tiles of you. \nSpend mana equal to half the spells cost and make a check against the Spellshaping Check of the caster.\nIf you know the spell being cast you may add your profficiency in the spell to the roll\nIf you got a critical success on the Identify Spell Check you may add your INT or DEX (min 1) to the roll.\nIf you roll higher than the caster you prevent the spell from being cast.",
+        "unlockedAction": "Spellbreak",
         "prerequisites": "Trained in Arcana",
         "level": "4",
         "repeatable": "",
@@ -483,7 +483,7 @@
     {
         "name": "Stabilize Spell",
         "description": "When you fail at spellcasting you can put some extra effort in to stabilize them.\nYou learn the Stabilize Spell reaction",
-        "unlockedAction": "Stabilize Spell - R Action,  When you fail a spellshaping check by your INT or less\nSpend a focus point and the amount you failed by in mana to turn the spell into a success.\nThe spells spellcasting DC is still the rolled number",
+        "unlockedAction": "Stabilize Spell",
         "prerequisites": "",
         "level": "4",
         "repeatable": "",
@@ -535,7 +535,7 @@
     {
         "name": "Steal Attuned Spell",
         "description": "When others attempt to use spells of your element, you can take control.\nYou have the Steal Attuned Spell action",
-        "unlockedAction": "Steal Attuned Spell - 1 Action\nTarget a creature maintaining a spell of your attunement within 5 tiles. Spend a focus point and mana equal to the cost of the spell. \nMake a Spellshaping Check against the creature's spellshaping check. \nOn a success you take over the spell, getting the benefits as if you were the caster.\nOn a critical success you recover the mana you spent\nIf the spells needs to be sustained you still need to sustain in future turns.",
+        "unlockedAction": "Steal Attuned Spell",
         "prerequisites": "[Attunement]",
         "level": "6",
         "repeatable": "",
@@ -587,7 +587,7 @@
     {
         "name": "Expand Aura",
         "description": "You can now expand your aura to protect your allies from a distance. \nYou learn the Expand Aura action.",
-        "unlockedAction": "Expand Aura - 1 action.\nExpand your aura an amount of tiles equal to your WIL away from you. \nAny attacks that hit or pass though that space automatically hits your aura, blocking half the damage.\nYou may Aura Block as normal, absorbing the entire attack\nKeeping your aura expanded costs 3 mana per turn",
+        "unlockedAction": "Expand Aura",
         "prerequisites": "[Extend Aura]",
         "level": "6",
         "repeatable": "",
@@ -899,7 +899,7 @@
     {
         "name": "Master of Threads",
         "description": "With your mana threads you can ensure no one escapes your spells.\nYou learn the Hold By Thread action\nYour proficiency level in Channeling increases (max Legendary). ",
-        "unlockedAction": "Hold By Thread - R Action, when a creature attached by a mana thread attempts to leave its range\nMake a WIL roll against the creatures Athletics roll.\nIf the creature is moving via spell, use their Spellshaping roll instead.\nIf they are moving by another way, use a fitting roll\nIf you roll higher, you hold them and prevent the movement.",
+        "unlockedAction": "Hold By Thread",
         "prerequisites": "[Ethereal Threads]",
         "level": "14",
         "repeatable": "",
