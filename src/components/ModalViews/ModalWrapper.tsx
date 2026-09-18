@@ -7,6 +7,7 @@ import generalFeats from "../../JSON/general_feats.json";
 import arcaneFeats from "../../JSON/arcane_feats.json";
 import advantages from "../../JSON/advantages.json";
 import ancestryFeats from "../../JSON/ancestry_feats.json";
+import golemUpgrades from "../../JSON/golem_upgrades.json";
 import spells from "../../JSON/spells.json";
 import weapons from "../../JSON/weapons.json";
 
@@ -30,6 +31,7 @@ export default function ModalWrapper({
     arcaneFeat: arcaneFeats,
     advantage: advantages,
     ancestryFeat: ancestryFeats,
+    golemUpgrade: golemUpgrades,
     spell: spells,
     weapon: weapons,
   };

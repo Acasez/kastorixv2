@@ -9,6 +9,7 @@ import arcaneFeats from "../../../JSON/arcane_feats.json";
 import advantages from "../../../JSON/advantages.json";
 import ancestryFeats from "../../../JSON/ancestry_feats.json";
 import backgrounds from "../../../JSON/backgrounds.json";
+import golemUpgrades from "../../../JSON/golem_upgrades.json";
 
 type ChoiceType = Exclude<ModalRequest["type"], "species" | "baseStats">;
 
@@ -39,6 +40,7 @@ const unlockableData: Record<string, UnlockableItem[]> = {
   arcaneFeat: arcaneFeats,
   advantage: advantages,
   ancestryFeat: ancestryFeats,
+  golemUpgrade: golemUpgrades,
   background: backgrounds,
 };
 
@@ -57,12 +59,16 @@ const choiceTitles: Record<ChoiceType, string> = {
   arcaneFeat: "Select Arcane Feat",
   advantage: "Select Advantage",
   ancestryFeat: "Select Ancestry Feat",
+  golemUpgrade: "Select Golem Upgrade",
   spell: "Select Spell",
   weapon: "Select Weapon",
 };
 
-function parseUnlockedChoice(value: string): ParsedUnlockedChoice | null {
-  const match = value.trim().match(/^(.+?)\s*-\s*Level\s*(\d+)$/i);
+function parseUnlockedChoice(
+  value: string,
+  fallbackLevel: number,
+): ParsedUnlockedChoice | null {
+  const match = value.trim().match(/^(.+?)\s*-\s*Level\s*(\d+|X)$/i);
   if (!match) return null;
 
   const type = Object.entries(choiceTitles).find(
@@ -74,7 +80,7 @@ function parseUnlockedChoice(value: string): ParsedUnlockedChoice | null {
   return {
     type,
     title: choiceTitles[type],
-    level: Number(match[2]),
+    level: match[2].toUpperCase() === "X" ? fallbackLevel : Number(match[2]),
   };
 }
 
@@ -172,7 +178,7 @@ export default function LevelCard({ level }: LevelCardProps) {
     } else if (selectedItem.unlockedFeats) {
       selectedItem.unlockedFeats
         .split(",")
-        .map(parseUnlockedChoice)
+        .map((unlockedFeat) => parseUnlockedChoice(unlockedFeat, level))
         .forEach((choice, index) => {
           if (choice) {
             choices.push({
