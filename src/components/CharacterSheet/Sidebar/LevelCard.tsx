@@ -11,6 +11,8 @@ import ancestryFeats from "../../../JSON/ancestry_feats.json";
 import backgrounds from "../../../JSON/backgrounds.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
 import runegunUpgrades from "../../../JSON/runegun_upgrades.json";
+import spells from "../../../JSON/spells.json";
+import weapons from "../../../JSON/weapons.json";
 
 type ChoiceType = Exclude<ModalRequest["type"], "species" | "baseStats">;
 
@@ -36,14 +38,22 @@ type ChoiceNode = UnlockedChoice & {
 
 const MAX_UNLOCK_DEPTH = 3;
 
-const unlockableData: Record<string, UnlockableItem[]> = {
-  generalFeat: generalFeats,
-  arcaneFeat: arcaneFeats,
-  advantage: advantages,
-  ancestryFeat: ancestryFeats,
-  golemUpgrade: golemUpgrades,
-  runegunUpgrade: runegunUpgrades,
-  background: backgrounds,
+const choiceConfig: Record<
+  ChoiceType,
+  { title: string; items: UnlockableItem[] }
+> = {
+  background: { title: "Select Background", items: backgrounds },
+  generalFeat: { title: "Select General Feat", items: generalFeats },
+  arcaneFeat: { title: "Select Arcane Feat", items: arcaneFeats },
+  advantage: { title: "Select Advantage", items: advantages },
+  ancestryFeat: { title: "Select Ancestry Feat", items: ancestryFeats },
+  golemUpgrade: { title: "Select Golem Upgrade", items: golemUpgrades },
+  runegunUpgrade: {
+    title: "Select Runegun Upgrade",
+    items: runegunUpgrades,
+  },
+  spell: { title: "Select Spell", items: spells },
+  weapon: { title: "Select Weapon", items: weapons },
 };
 
 const actionTypes: Record<string, ChoiceType | "baseStats"> = {
@@ -55,18 +65,6 @@ const actionTypes: Record<string, ChoiceType | "baseStats"> = {
   "Increase One Stat": "baseStats",
 };
 
-const choiceTitles: Record<ChoiceType, string> = {
-  background: "Select Background",
-  generalFeat: "Select General Feat",
-  arcaneFeat: "Select Arcane Feat",
-  advantage: "Select Advantage",
-  ancestryFeat: "Select Ancestry Feat",
-  golemUpgrade: "Select Golem Upgrade",
-  runegunUpgrade: "Select Runegun Upgrade",
-  spell: "Select Spell",
-  weapon: "Select Weapon",
-};
-
 function parseUnlockedChoice(
   value: string,
   fallbackLevel: number,
@@ -74,15 +72,15 @@ function parseUnlockedChoice(
   const match = value.trim().match(/^(.+?)\s*-\s*Level\s*(\d+|X)$/i);
   if (!match) return null;
 
-  const type = Object.entries(choiceTitles).find(
-    ([, title]) => title.replace(/^Select\s+/i, "") === match[1].trim(),
+  const type = Object.entries(choiceConfig).find(
+    ([, config]) => config.title.replace(/^Select\s+/i, "") === match[1].trim(),
   )?.[0] as ChoiceType | undefined;
 
   if (!type) return null;
 
   return {
     type,
-    title: choiceTitles[type],
+    title: choiceConfig[type].title,
     level: match[2].toUpperCase() === "X" ? fallbackLevel : Number(match[2]),
   };
 }
@@ -164,7 +162,7 @@ export default function LevelCard({ level }: LevelCardProps) {
   ): ChoiceNode[] => {
     if (parentDepth >= MAX_UNLOCK_DEPTH) return [];
 
-    const selectedItem = unlockableData[type]?.find(
+    const selectedItem = choiceConfig[type].items.find(
       (item) => item.name === selectedName,
     );
     if (!selectedItem) return [];
