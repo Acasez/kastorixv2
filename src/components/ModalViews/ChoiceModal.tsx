@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ActionBox from "../ActionBox";
+import actions from "../../json/actions.json";
 
 export interface ChoiceItem {
   name: string;
@@ -6,6 +8,7 @@ export interface ChoiceItem {
   effect?: string;
   level?: number | string;
   repeatable?: string | number | boolean;
+  unlockedAction?: string;
 }
 
 interface ChoiceModalProps {
@@ -91,6 +94,12 @@ export default function ChoiceModal({
                   selectedItem.effect ??
                   "No description available."}
               </p>
+              {selectedItem.unlockedAction && (
+                <ActionBox
+                  action={selectedItem.unlockedAction}
+                  actionsList={actions}
+                />
+              )}
               <button
                 type="button"
                 disabled={isDisabled(selectedItem)}
