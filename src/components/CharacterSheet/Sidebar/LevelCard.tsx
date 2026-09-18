@@ -10,6 +10,7 @@ import advantages from "../../../JSON/advantages.json";
 import ancestryFeats from "../../../JSON/ancestry_feats.json";
 import backgrounds from "../../../JSON/backgrounds.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
+import runegunUpgrades from "../../../JSON/runegun_upgrades.json";
 
 type ChoiceType = Exclude<ModalRequest["type"], "species" | "baseStats">;
 
@@ -41,6 +42,7 @@ const unlockableData: Record<string, UnlockableItem[]> = {
   advantage: advantages,
   ancestryFeat: ancestryFeats,
   golemUpgrade: golemUpgrades,
+  runegunUpgrade: runegunUpgrades,
   background: backgrounds,
 };
 
@@ -60,6 +62,7 @@ const choiceTitles: Record<ChoiceType, string> = {
   advantage: "Select Advantage",
   ancestryFeat: "Select Ancestry Feat",
   golemUpgrade: "Select Golem Upgrade",
+  runegunUpgrade: "Select Runegun Upgrade",
   spell: "Select Spell",
   weapon: "Select Weapon",
 };

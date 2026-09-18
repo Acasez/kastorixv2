@@ -6,6 +6,12 @@ export type ModalRequest =
   | { type: "advantage"; title: string; selectionKey: string; level: number }
   | { type: "ancestryFeat"; title: string; selectionKey: string; level: number }
   | { type: "golemUpgrade"; title: string; selectionKey: string; level: number }
+  | {
+      type: "runegunUpgrade";
+      title: string;
+      selectionKey: string;
+      level: number;
+    }
   | { type: "spell"; title: string; selectionKey: string; level: number }
   | { type: "weapon"; title: string; selectionKey: string; level: number }
   | { type: "baseStats"; title: string };
