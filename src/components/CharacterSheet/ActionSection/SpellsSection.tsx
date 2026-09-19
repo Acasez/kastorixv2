@@ -6,6 +6,7 @@ import { SPELL_RANKS } from "../../../constants/SpellRanks";
 import SpellRankSection from "./SpellRankSection";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
+import spells from "../../../JSON/spells.json";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
@@ -84,6 +85,11 @@ export default function SpellsSection() {
             rankName={rank.name}
             baseDC={rank.DC}
             manaCost={rank.manaCost}
+            selectedSpells={spells.filter(
+              (spell) =>
+                spell.rank.endsWith(` ${rank.name}`) &&
+                character.knownSpells.includes(spell.name),
+            )}
             onAddSpell={openSpellModal}
           />
         ))}
