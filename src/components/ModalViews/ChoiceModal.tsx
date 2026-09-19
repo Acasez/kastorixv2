@@ -89,9 +89,8 @@ export default function ChoiceModal({
                     className="w-5 h-5 object-contain"
                   />
                 ))}
+                {item.level !== undefined && ` [${item.level}]`}
               </span>
-              {/* {item.action} */}
-              {item.level !== undefined && ` [${item.level}]`}
             </button>
           ))}
           {filteredItems.length === 0 && (

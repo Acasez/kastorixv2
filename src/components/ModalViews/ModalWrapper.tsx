@@ -45,10 +45,10 @@ export default function ModalWrapper({
 
   const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
     name: speciesItem.name,
-    description: [
-      `Size: ${speciesItem.size}`,
-      `Health: ${speciesItem.health}`,
-      `Mana: ${speciesItem.mana}`,
+    details: [
+      { label: "Size", value: speciesItem.size },
+      { label: "Starting Health", value: speciesItem.health },
+      { label: "Starting Mana", value: speciesItem.mana },
       ...[
         [speciesItem.traitOne, speciesItem.traitOneDesc],
         [speciesItem.traitTwo, speciesItem.traitTwoDesc],
@@ -56,11 +56,11 @@ export default function ModalWrapper({
         [speciesItem.traitFour, speciesItem.traitFourDesc],
       ]
         .filter(([traitName]) => traitName)
-        .map(
-          ([traitName, traitDescription]) =>
-            `${traitName}\n${traitDescription}`,
-        ),
-    ].join("\n\n"),
+        .map(([traitName, traitDescription]) => ({
+          label: String(traitName),
+          value: String(traitDescription),
+        })),
+    ],
     unlockedAction: speciesItem.unlockedAction,
   }));
 
