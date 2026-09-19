@@ -24,7 +24,8 @@ export default function CharacterPanel() {
 
       <div className="space-y-1">
         <OpenModalButton
-          label="Select Species"
+          label={character.species ?? "Select Species"}
+          itemChosen={Boolean(character.species)}
           onClick={() =>
             setModalRequest({ type: "species", title: "Select Species" })
           }

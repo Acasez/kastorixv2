@@ -1,4 +1,3 @@
-import SpeciesModal from "./SpeciesModal";
 import ChoiceModal, { type ChoiceItem } from "./ChoiceModal";
 import type { ModalRequest } from "./modalTypes";
 import { useCharacter } from "../../contexts/CharacterContext";
@@ -11,6 +10,7 @@ import golemUpgrades from "../../JSON/golem_upgrades.json";
 import runegunUpgrades from "../.././JSON/runegun_upgrades.json";
 import spells from "../../JSON/spells.json";
 import weapons from "../../JSON/weapons.json";
+import species from "../../JSON/species.json";
 
 interface ModalWrapperProps {
   request: ModalRequest;
@@ -23,10 +23,31 @@ export default function ModalWrapper({
 }: ModalWrapperProps) {
   const { character, updateCharacter } = useCharacter();
 
+  const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
+    name: speciesItem.name,
+    description: [
+      `Size: ${speciesItem.size}`,
+      `Health: ${speciesItem.health}`,
+      `Mana: ${speciesItem.mana}`,
+      ...[
+        [speciesItem.traitOne, speciesItem.traitOneDesc],
+        [speciesItem.traitTwo, speciesItem.traitTwoDesc],
+        [speciesItem.traitThree, speciesItem.traitThreeDesc],
+        [speciesItem.traitFour, speciesItem.traitFourDesc],
+      ]
+        .filter(([traitName]) => traitName)
+        .map(([traitName, traitDescription]) =>
+          `${traitName}\n${traitDescription}`,
+        ),
+    ].join("\n\n"),
+    unlockedAction: speciesItem.unlockedAction,
+  }));
+
   const choiceData: Record<
-    Exclude<ModalRequest["type"], "species" | "baseStats">,
+    Exclude<ModalRequest["type"], "baseStats">,
     ChoiceItem[]
   > = {
+    species: speciesItems,
     background: backgrounds,
     generalFeat: generalFeats,
     arcaneFeat: arcaneFeats,
@@ -39,8 +60,9 @@ export default function ModalWrapper({
   };
 
   const getCurrentValue = () => {
+    if (request.type === "species") return character.species;
     if (request.type === "background") return character.background;
-    if (request.type !== "species" && request.type !== "baseStats") {
+    if (request.type !== "baseStats") {
       return character.selections[request.selectionKey] ?? null;
     }
     return null;
@@ -80,7 +102,9 @@ export default function ModalWrapper({
       return;
     }
 
-    if (request.type === "background") {
+    if (request.type === "species") {
+      updateCharacter({ species: value });
+    } else if (request.type === "background") {
       const selectedBackground = backgrounds.find(
         (background) => background.name === value,
       );
@@ -96,7 +120,7 @@ export default function ModalWrapper({
             : {}),
         },
       });
-    } else if (request.type !== "species" && request.type !== "baseStats") {
+    } else if (request.type !== "baseStats") {
       updateCharacter({
         selections: { ...character.selections, [request.selectionKey]: value },
       });
@@ -105,17 +129,13 @@ export default function ModalWrapper({
   };
 
   const renderModalContent = () => {
-    if (request.type === "species") {
-      return <SpeciesModal closeModal={closeModal} />;
-    }
-
     if (request.type !== "baseStats") {
       return (
         <ChoiceModal
           items={choiceData[request.type]}
           confirmLabel={request.title}
           initialValue={getCurrentValue()}
-          maxLevel={request.level}
+          maxLevel={request.type === "species" ? Infinity : request.level}
           disabledNames={getBlockedChoiceNames()}
           onConfirm={confirmChoice}
         />
