@@ -9,6 +9,7 @@ interface SpellRankSectionProps {
   manaCost: number;
   onAddSpell: (rankName: string) => void;
   onReplaceSpell: (rankName: string, spellName: string) => void;
+  onRemoveSpell: (spellName: string) => void;
   selectedSpells: { name: string; actions: string }[];
   baseSpellshapingBonus: number;
 }
@@ -19,6 +20,7 @@ export default function SpellRankSection({
   manaCost,
   onAddSpell,
   onReplaceSpell,
+  onRemoveSpell,
   selectedSpells,
   baseSpellshapingBonus,
 }: SpellRankSectionProps) {
@@ -56,6 +58,11 @@ export default function SpellRankSection({
               if (event.key === "Enter" || event.key === " ") {
                 onReplaceSpell(rankName, spell.name);
               }
+            }}
+            onContextMenu={(event) => {
+              event.preventDefault();
+              if ((event.target as HTMLElement).closest("button")) return;
+              onRemoveSpell(spell.name);
             }}
             className="flex items-center gap-1 border border-gray-400 rounded px-2 py-1"
           >

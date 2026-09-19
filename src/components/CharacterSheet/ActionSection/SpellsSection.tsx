@@ -59,6 +59,12 @@ export default function SpellsSection() {
     });
   };
 
+  const removeSpell = (spellName: string) => {
+    updateCharacter({
+      knownSpells: character.knownSpells.filter((name) => name !== spellName),
+    });
+  };
+
   return (
     <div className="p-4 text-white">
       <div className="flex flex-row gap-3 mb-4">
@@ -99,6 +105,7 @@ export default function SpellsSection() {
             )}
             onAddSpell={openSpellModal}
             onReplaceSpell={openSpellModalForReplacement}
+            onRemoveSpell={removeSpell}
           />
         ))}
       </div>
