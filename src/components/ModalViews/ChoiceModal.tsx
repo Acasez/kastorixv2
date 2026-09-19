@@ -7,6 +7,7 @@ export interface ChoiceItem {
   description?: string;
   effect?: string;
   actionIcons?: string[];
+  details?: { label: string; value: string }[];
   level?: number | string;
   repeatable?: string | number | boolean;
   unlockedAction?: string;
@@ -113,11 +114,22 @@ export default function ChoiceModal({
                   />
                 ))}
               </div>
-              <p className="mt-3 whitespace-pre-line flex-1 overflow-y-auto">
-                {selectedItem.description ??
-                  selectedItem.effect ??
-                  "No description available."}
-              </p>
+              <div className="mt-3 flex-1 overflow-y-auto">
+                {selectedItem.details ? (
+                  selectedItem.details.map((detail) => (
+                    <p key={detail.label} className="whitespace-pre-line">
+                      <span className="font-bold">{detail.label}:</span>{" "}
+                      {detail.value}
+                    </p>
+                  ))
+                ) : (
+                  <p className="whitespace-pre-line">
+                    {selectedItem.description ??
+                      selectedItem.effect ??
+                      "No description available."}
+                  </p>
+                )}
+              </div>
               {selectedItem.unlockedAction && (
                 <ActionBox
                   action={selectedItem.unlockedAction}

@@ -29,17 +29,17 @@ export default function ModalWrapper({
       : spells
   ).map((spell) => ({
     ...spell,
-    description: [
-      `Aspects: ${spell.aspects}`,
-      `Traits: ${spell.traits}`,
-      `Range: ${spell.range}`,
-      `Target: ${spell.target}`,
-      spell.duration && `Duration: ${spell.duration}`,
-      `Effect: ${spell.effect}`,
-      spell.upcast && `Upcast: ${spell.upcast}`,
-    ]
-      .filter(Boolean)
-      .join("\n"),
+    details: [
+      { label: "Actions", value: spell.actions },
+      { label: "Aspects", value: spell.aspects },
+      { label: "Traits", value: spell.traits },
+      { label: "Range", value: String(spell.range) },
+      { label: "Target", value: spell.target },
+      { label: "Duration", value: spell.duration },
+      { label: "Effect", value: spell.effect },
+      { label: "Upcast", value: spell.upcast },
+      { label: "Rank", value: spell.rank },
+    ].filter((detail) => detail.value),
     actionIcons: getActionIcons(spell.actions),
   }));
 
