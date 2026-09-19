@@ -39,7 +39,7 @@ export default function ActionSection() {
   };
 
   return (
-    <div className="flex flex-col bg-gray-700 h-150 gap-3 border-x-2 rounded-lg">
+    <div className="flex flex-col bg-gray-700 gap-3 border-x-2 rounded-lg">
       {/* Tab Headers */}
       <div className="flex flex-row m-1 gap-5 border-b-3 border-striking">
         {tabs.map((tab) => (

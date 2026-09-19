@@ -2,6 +2,8 @@ import { useEffect, useMemo } from "react";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import { ThreeOptionSwitch } from "../../ThreeOptionSwitch";
 import type { SomaticComponent, VerbalComponent } from "../../../types/Spells";
+import { SPELL_RANKS } from "../../../constants/SpellRanks";
+import SpellRankSection from "./SpellRankSection";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
@@ -62,15 +64,15 @@ export default function SpellsSection() {
           }
         />
       </div>
-      <div className="bg-gray-800 p-4 rounded-lg">
-        <div className="flex justify-between items-center mb-4">
-          <span className="text-lg">Apprentice Spells</span>
-          <button className="bg-gray-600 text-white px-3 py-1 rounded">
-            +
-          </button>
-        </div>
-        <p>DC 12, Complex DC 15, Mana Cost 3</p>
-        <p>Selected Spells (0/0)</p>
+      <div className="flex flex-col gap-3">
+        {SPELL_RANKS.map((rank) => (
+          <SpellRankSection
+            key={rank.name}
+            rankName={rank.name}
+            baseDC={rank.DC}
+            manaCost={rank.manaCost}
+          />
+        ))}
       </div>
     </div>
   );
