@@ -22,6 +22,10 @@ export default function ModalWrapper({
   closeModal,
 }: ModalWrapperProps) {
   const { character, updateCharacter } = useCharacter();
+  const spellItems =
+    request.type === "spell" && request.rank
+      ? spells.filter((spell) => spell.rank.endsWith(` ${request.rank}`))
+      : spells;
 
   const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
     name: speciesItem.name,
@@ -36,8 +40,9 @@ export default function ModalWrapper({
         [speciesItem.traitFour, speciesItem.traitFourDesc],
       ]
         .filter(([traitName]) => traitName)
-        .map(([traitName, traitDescription]) =>
-          `${traitName}\n${traitDescription}`,
+        .map(
+          ([traitName, traitDescription]) =>
+            `${traitName}\n${traitDescription}`,
         ),
     ].join("\n\n"),
     unlockedAction: speciesItem.unlockedAction,
@@ -55,11 +60,12 @@ export default function ModalWrapper({
     ancestryFeat: ancestryFeats,
     golemUpgrade: golemUpgrades,
     runegunUpgrade: runegunUpgrades,
-    spell: spells,
+    spell: spellItems,
     weapon: weapons,
   };
 
   const getCurrentValue = () => {
+    if (request.type === "spell" && request.rank) return null;
     if (request.type === "species") return character.species;
     if (request.type === "background") return character.background;
     if (request.type !== "baseStats") {
@@ -69,6 +75,10 @@ export default function ModalWrapper({
   };
 
   const getBlockedChoiceNames = () => {
+    if (request.type === "spell" && request.rank) {
+      return character.knownSpells;
+    }
+
     if (request.type === "species" || request.type === "baseStats") {
       return [];
     }
@@ -119,6 +129,12 @@ export default function ModalWrapper({
             ? { [backgroundFeatKey]: selectedBackground.generalFeat }
             : {}),
         },
+      });
+    } else if (request.type === "spell" && request.rank) {
+      updateCharacter({
+        knownSpells: character.knownSpells.includes(value)
+          ? character.knownSpells
+          : [...character.knownSpells, value],
       });
     } else if (request.type !== "baseStats") {
       updateCharacter({

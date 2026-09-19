@@ -12,6 +12,12 @@ export type ModalRequest =
       selectionKey: string;
       level: number;
     }
-  | { type: "spell"; title: string; selectionKey: string; level: number }
+  | {
+      type: "spell";
+      title: string;
+      selectionKey: string;
+      level: number;
+      rank?: string;
+    }
   | { type: "weapon"; title: string; selectionKey: string; level: number }
   | { type: "baseStats"; title: string };

@@ -9,6 +9,7 @@ export interface ChoiceItem {
   level?: number | string;
   repeatable?: string | number | boolean;
   unlockedAction?: string;
+  actionCost?: string;
 }
 
 interface ChoiceModalProps {
@@ -56,7 +57,7 @@ export default function ChoiceModal({
         onChange={(event) => setSearch(event.target.value)}
         placeholder="Search by name"
         aria-label="Search choices"
-        className="border-2 border-gray-300 rounded-md px-3 py-2"
+        className="border-2 border-gray-300 rounded-md px-3 py-2 text-text-black"
       />
       {/* Key change: Wrap content area with constrained height */}
       <div className="flex flex-row gap-3 h-155">
@@ -67,7 +68,7 @@ export default function ChoiceModal({
               type="button"
               key={item.name}
               disabled={isDisabled(item)}
-              className={`text-left border-2 px-2 py-1 ${
+              className={`text-left text-text-black border-2 px-2 py-1 ${
                 isDisabled(item)
                   ? "border-gray-300 bg-gray-200 text-gray-400 cursor-not-allowed"
                   : selectedName === item.name
@@ -77,6 +78,7 @@ export default function ChoiceModal({
               onClick={() => setSelectedName(item.name)}
             >
               {item.name}
+              {/* {item.action} */}
               {item.level !== undefined && ` [${item.level}]`}
             </button>
           ))}
@@ -85,7 +87,7 @@ export default function ChoiceModal({
           )}
         </div>
         {/* Description panel - NO scroll, static height */}
-        <div className="border-amber-200 border-2 p-3 flex-1 overflow-hidden">
+        <div className="border-amber-200 border-2 p-3 flex-1 overflow-hidden  text-text-black">
           {selectedItem ? (
             <div className="flex flex-col h-full">
               <h3 className="text-2xl underline">{selectedItem.name}</h3>

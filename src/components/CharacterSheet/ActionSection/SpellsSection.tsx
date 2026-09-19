@@ -1,12 +1,15 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import { ThreeOptionSwitch } from "../../ThreeOptionSwitch";
 import type { SomaticComponent, VerbalComponent } from "../../../types/Spells";
 import { SPELL_RANKS } from "../../../constants/SpellRanks";
 import SpellRankSection from "./SpellRankSection";
+import ModalWrapper from "../../ModalViews/ModalWrapper";
+import type { ModalRequest } from "../../ModalViews/modalTypes";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
+  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
   const { verbal, somatic } = character.spellShaping;
 
   // Derived, never stored in local state
@@ -41,6 +44,16 @@ export default function SpellsSection() {
     });
   }, [bonusStr, character.spellShaping, updateCharacter]);
 
+  const openSpellModal = (rankName: string) => {
+    setModalRequest({
+      type: "spell",
+      title: `Select ${rankName} Spell`,
+      selectionKey: "",
+      level: 0,
+      rank: rankName,
+    });
+  };
+
   return (
     <div className="p-4 text-white">
       <div className="flex flex-row gap-3 mb-4">
@@ -71,9 +84,16 @@ export default function SpellsSection() {
             rankName={rank.name}
             baseDC={rank.DC}
             manaCost={rank.manaCost}
+            onAddSpell={openSpellModal}
           />
         ))}
       </div>
+      {modalRequest && (
+        <ModalWrapper
+          request={modalRequest}
+          closeModal={() => setModalRequest(null)}
+        />
+      )}
     </div>
   );
 }
