@@ -97,6 +97,7 @@ export default function SpellsSection() {
             rankName={rank.name}
             baseDC={rank.DC}
             manaCost={rank.manaCost}
+            unlockedAtLevel={rank.unlockedAtLevel}
             baseSpellshapingBonus={spellshapingBonus}
             selectedSpells={spells.filter(
               (spell) =>

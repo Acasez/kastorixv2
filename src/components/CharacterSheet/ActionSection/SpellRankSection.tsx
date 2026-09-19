@@ -7,6 +7,7 @@ interface SpellRankSectionProps {
   rankName: string;
   baseDC: number;
   manaCost: number;
+  unlockedAtLevel: number;
   onAddSpell: (rankName: string) => void;
   onReplaceSpell: (rankName: string, spellName: string) => void;
   onRemoveSpell: (spellName: string) => void;
@@ -18,6 +19,7 @@ export default function SpellRankSection({
   rankName,
   baseDC,
   manaCost,
+  unlockedAtLevel,
   onAddSpell,
   onReplaceSpell,
   onRemoveSpell,
@@ -25,7 +27,8 @@ export default function SpellRankSection({
   baseSpellshapingBonus,
 }: SpellRankSectionProps) {
   const { character } = useCharacter();
-  const maxKnownSpells = character.baseStats.INT;
+  const maxKnownSpells =
+    character.level >= unlockedAtLevel ? character.baseStats.INT : 0;
 
   return (
     <div className="bg-gray-800 p-4 rounded-lg">
