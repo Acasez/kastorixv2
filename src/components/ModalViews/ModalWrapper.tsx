@@ -81,7 +81,9 @@ export default function ModalWrapper({
   };
 
   const getCurrentValue = () => {
-    if (request.type === "spell" && request.rank) return null;
+    if (request.type === "spell" && request.rank) {
+      return request.replaceSpell ?? null;
+    }
     if (request.type === "species") return character.species;
     if (request.type === "background") return character.background;
     if (request.type !== "baseStats") {
@@ -122,7 +124,8 @@ export default function ModalWrapper({
     const isBlockedDuplicate =
       request.type !== "species" &&
       request.type !== "baseStats" &&
-      getBlockedChoiceNames().includes(value);
+      getBlockedChoiceNames().includes(value) &&
+      value !== (request.type === "spell" ? request.replaceSpell : undefined);
 
     if (isBlockedDuplicate) {
       return;
@@ -147,10 +150,13 @@ export default function ModalWrapper({
         },
       });
     } else if (request.type === "spell" && request.rank) {
+      const knownSpells = character.knownSpells.filter(
+        (spellName) => spellName !== request.replaceSpell,
+      );
       updateCharacter({
-        knownSpells: character.knownSpells.includes(value)
-          ? character.knownSpells
-          : [...character.knownSpells, value],
+        knownSpells: knownSpells.includes(value)
+          ? knownSpells
+          : [...knownSpells, value],
       });
     } else if (request.type !== "baseStats") {
       updateCharacter({

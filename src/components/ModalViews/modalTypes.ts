@@ -18,6 +18,7 @@ export type ModalRequest =
       selectionKey: string;
       level: number;
       rank?: string;
+      replaceSpell?: string;
     }
   | { type: "weapon"; title: string; selectionKey: string; level: number }
   | { type: "baseStats"; title: string };

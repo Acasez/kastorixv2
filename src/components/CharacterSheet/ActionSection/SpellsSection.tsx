@@ -40,12 +40,22 @@ export default function SpellsSection() {
   }, [bonusStr, character.spellShaping, updateCharacter]);
 
   const openSpellModal = (rankName: string) => {
+    openSpellModalForReplacement(rankName);
+  };
+
+  const openSpellModalForReplacement = (
+    rankName: string,
+    replaceSpell?: string,
+  ) => {
     setModalRequest({
       type: "spell",
-      title: `Select ${rankName} Spell`,
+      title: replaceSpell
+        ? `Replace ${replaceSpell}`
+        : `Select ${rankName} Spell`,
       selectionKey: "",
       level: 0,
       rank: rankName,
+      replaceSpell,
     });
   };
 
@@ -88,6 +98,7 @@ export default function SpellsSection() {
                 character.knownSpells.includes(spell.name),
             )}
             onAddSpell={openSpellModal}
+            onReplaceSpell={openSpellModalForReplacement}
           />
         ))}
       </div>

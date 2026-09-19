@@ -8,6 +8,7 @@ interface SpellRankSectionProps {
   baseDC: number;
   manaCost: number;
   onAddSpell: (rankName: string) => void;
+  onReplaceSpell: (rankName: string, spellName: string) => void;
   selectedSpells: { name: string; actions: string }[];
   baseSpellshapingBonus: number;
 }
@@ -17,6 +18,7 @@ export default function SpellRankSection({
   baseDC,
   manaCost,
   onAddSpell,
+  onReplaceSpell,
   selectedSpells,
   baseSpellshapingBonus,
 }: SpellRankSectionProps) {
@@ -44,6 +46,17 @@ export default function SpellRankSection({
         {selectedSpells.map((spell) => (
           <div
             key={spell.name}
+            role="button"
+            tabIndex={0}
+            onClick={(event) => {
+              if ((event.target as HTMLElement).closest("button")) return;
+              onReplaceSpell(rankName, spell.name);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                onReplaceSpell(rankName, spell.name);
+              }
+            }}
             className="flex items-center gap-1 border border-gray-400 rounded px-2 py-1"
           >
             <span>{spell.name}</span>
