@@ -25,6 +25,7 @@ export default function SpellRankSection({
   baseSpellshapingBonus,
 }: SpellRankSectionProps) {
   const { character } = useCharacter();
+  const maxKnownSpells = character.baseStats.INT;
 
   return (
     <div className="bg-gray-800 p-4 rounded-lg">
@@ -41,8 +42,17 @@ export default function SpellRankSection({
       <p>
         DC {baseDC}, Complex DC {baseDC + 3}, Mana Cost {manaCost}
       </p>
-      <p className="text-red-500 text-right">
-        Selected Spells ({selectedSpells.length}/0)
+
+      <p
+        className={`text-right ${
+          selectedSpells.length > maxKnownSpells
+            ? "text-red-500"
+            : selectedSpells.length < maxKnownSpells
+              ? "text-green-500"
+              : "text-text-light"
+        }`}
+      >
+        Selected Spells ({selectedSpells.length}/{maxKnownSpells})
       </p>
       <div className="flex flex-wrap gap-2 mt-3">
         {selectedSpells.map((spell) => (
