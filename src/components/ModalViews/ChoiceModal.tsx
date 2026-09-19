@@ -6,12 +6,12 @@ export interface ChoiceItem {
   name: string;
   description?: string;
   effect?: string;
+  actionIcons?: string[];
   level?: number | string;
   repeatable?: string | number | boolean;
   unlockedAction?: string;
   actionCost?: string;
 }
-
 interface ChoiceModalProps {
   items: ChoiceItem[];
   confirmLabel: string;
@@ -77,7 +77,18 @@ export default function ChoiceModal({
               }`}
               onClick={() => setSelectedName(item.name)}
             >
-              {item.name}
+              <span className="flex items-center gap-1">
+                {item.name}
+                {item.actionIcons?.map((icon, index) => (
+                  <img
+                    key={`${item.name}-action-${index}`}
+                    src={icon}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-5 h-5 object-contain"
+                  />
+                ))}
+              </span>
               {/* {item.action} */}
               {item.level !== undefined && ` [${item.level}]`}
             </button>
@@ -90,7 +101,18 @@ export default function ChoiceModal({
         <div className="border-amber-200 border-2 p-3 flex-1 overflow-hidden  text-text-black">
           {selectedItem ? (
             <div className="flex flex-col h-full">
-              <h3 className="text-2xl underline">{selectedItem.name}</h3>
+              <div className="flex items-center gap-2">
+                <h3 className="text-2xl underline">{selectedItem.name}</h3>
+                {selectedItem.actionIcons?.map((icon, index) => (
+                  <img
+                    key={`${selectedItem.name}-action-${index}`}
+                    src={icon}
+                    alt=""
+                    aria-hidden="true"
+                    className="w-6 h-6 object-contain"
+                  />
+                ))}
+              </div>
               <p className="mt-3 whitespace-pre-line flex-1 overflow-y-auto">
                 {selectedItem.description ??
                   selectedItem.effect ??

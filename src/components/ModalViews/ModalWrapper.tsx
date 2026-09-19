@@ -11,6 +11,7 @@ import runegunUpgrades from "../.././JSON/runegun_upgrades.json";
 import spells from "../../JSON/spells.json";
 import weapons from "../../JSON/weapons.json";
 import species from "../../JSON/species.json";
+import { getActionIcons } from "../../utils/actionUtils";
 
 interface ModalWrapperProps {
   request: ModalRequest;
@@ -22,10 +23,15 @@ export default function ModalWrapper({
   closeModal,
 }: ModalWrapperProps) {
   const { character, updateCharacter } = useCharacter();
-  const spellItems =
+  const spellItems: ChoiceItem[] = (
     request.type === "spell" && request.rank
       ? spells.filter((spell) => spell.rank.endsWith(` ${request.rank}`))
-      : spells;
+      : spells
+  ).map((spell) => ({
+    ...spell,
+    description: spell.effect,
+    actionIcons: getActionIcons(spell.actions),
+  }));
 
   const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
     name: speciesItem.name,
