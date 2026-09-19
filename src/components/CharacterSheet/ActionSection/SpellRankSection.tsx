@@ -1,4 +1,7 @@
 import { getActionIcons } from "../../../utils/actionUtils";
+import ProficiencyMarker from "../../ProficiencyMarker";
+import { getProficiency } from "../../../constants/Proficiency";
+import { useCharacter } from "../../../contexts/CharacterContext";
 
 interface SpellRankSectionProps {
   rankName: string;
@@ -6,6 +9,7 @@ interface SpellRankSectionProps {
   manaCost: number;
   onAddSpell: (rankName: string) => void;
   selectedSpells: { name: string; actions: string }[];
+  baseSpellshapingBonus: number;
 }
 
 export default function SpellRankSection({
@@ -14,7 +18,10 @@ export default function SpellRankSection({
   manaCost,
   onAddSpell,
   selectedSpells,
+  baseSpellshapingBonus,
 }: SpellRankSectionProps) {
+  const { character } = useCharacter();
+
   return (
     <div className="bg-gray-800 p-4 rounded-lg">
       <div className="flex justify-between items-center mb-4">
@@ -49,8 +56,15 @@ export default function SpellRankSection({
                 className="w-5 h-5 object-contain"
               />
             ))}
-            <span className="bg-green-500 px-1 text-black">T</span>
-            <span>(+2)</span>
+            <ProficiencyMarker skillName={spell.name} defaultTier="Trained" />
+            <span>
+              {`(+${
+                baseSpellshapingBonus +
+                getProficiency(
+                  character.skillProficiencies[spell.name] ?? "Trained",
+                ).bonus
+              })`}
+            </span>
           </div>
         ))}
       </div>

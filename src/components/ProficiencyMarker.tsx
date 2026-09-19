@@ -9,6 +9,7 @@ import {
 type ProficiencyMarkerProps = {
   skillName: string;
   category?: "skills" | "saves";
+  defaultTier?: ProficiencyTierName;
 };
 
 function cycle(
@@ -27,6 +28,7 @@ function cycle(
 export default function ProficiencyMarker({
   skillName,
   category = "skills",
+  defaultTier = "Untrained",
 }: ProficiencyMarkerProps) {
   const { character, updateCharacter } = useCharacter();
 
@@ -36,7 +38,7 @@ export default function ProficiencyMarker({
       : character.skillProficiencies;
 
   const currentTierName: ProficiencyTierName =
-    proficiencies[skillName] ?? "Untrained";
+    proficiencies[skillName] ?? defaultTier;
   const currentTier = getProficiency(currentTierName);
 
   const update = (direction: 1 | -1) => {

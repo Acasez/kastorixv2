@@ -15,7 +15,6 @@ export default function SpellsSection() {
 
   // Derived, never stored in local state
   const spellshapingBonus = useMemo(() => {
-    const proficiency = parseInt(character.spellShaping.proficiency) || 0;
     const verbalBonus =
       verbal === "Standard"
         ? character.baseStats.INT
@@ -24,17 +23,12 @@ export default function SpellsSection() {
           : 0;
     const somaticBonus =
       somatic === "One Handed"
-        ? character.baseStats.DEX / 2
+        ? Math.floor(character.baseStats.DEX / 2)
         : somatic === "Two Handed"
           ? character.baseStats.DEX
           : 0;
-    return proficiency + verbalBonus + somaticBonus;
-  }, [
-    character.spellShaping.proficiency,
-    verbal,
-    somatic,
-    character.baseStats,
-  ]);
+    return verbalBonus + somaticBonus;
+  }, [verbal, somatic, character.baseStats]);
 
   // Only sync when the computed bonus actually differs
   const bonusStr = String(spellshapingBonus);
@@ -58,7 +52,9 @@ export default function SpellsSection() {
   return (
     <div className="p-4 text-white">
       <div className="flex flex-row gap-3 mb-4">
-        <h1 className="text-2xl">Spellshaping bonus: {spellshapingBonus}</h1>
+        <h1 className="text-2xl">
+          Base Spellshaping bonus: {spellshapingBonus}
+        </h1>
         <ThreeOptionSwitch<VerbalComponent>
           options={["None", "Standard", "Attuned"]}
           value={verbal}
@@ -85,6 +81,7 @@ export default function SpellsSection() {
             rankName={rank.name}
             baseDC={rank.DC}
             manaCost={rank.manaCost}
+            baseSpellshapingBonus={spellshapingBonus}
             selectedSpells={spells.filter(
               (spell) =>
                 spell.rank.endsWith(` ${rank.name}`) &&

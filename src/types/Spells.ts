@@ -1,7 +1,6 @@
 import type { ActionCost } from "./Action";
 
 export type Spellshaping = {
-  proficiency: string;
   verbal: VerbalComponent;
   somatic: SomaticComponent;
   totalBonus: string;
