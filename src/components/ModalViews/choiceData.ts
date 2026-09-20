@@ -17,17 +17,95 @@ export type ChoiceData = Record<
   ChoiceItem[]
 >;
 
+export type DetailField = {
+  label: string;
+  valueKey: string;
+  italicFirstLine?: boolean;
+};
+
 function createDetails(
-  entries: Array<[label: string, value: unknown]>,
+  item: Record<string, unknown>,
+  fields: DetailField[],
 ): ChoiceDetail[] {
-  return entries.flatMap(([label, value]) => {
+  return fields.flatMap(({ label, valueKey, italicFirstLine }) => {
+    const value = item[valueKey];
     if (value === undefined || value === null || String(value).trim() === "") {
       return [];
     }
 
-    return [{ label, value: String(value) }];
+    return [{ label, value: String(value), italicFirstLine }];
   });
 }
+
+function createChoiceItems<T extends { name: string }>(
+  items: T[],
+  fields: DetailField[],
+): ChoiceItem[] {
+  return items.map((item) => ({
+    ...item,
+    details: createDetails(item as Record<string, unknown>, fields),
+  }));
+}
+
+const SPELL_FIELDS: DetailField[] = [
+  { label: "Actions", valueKey: "actions" },
+  { label: "Aspects", valueKey: "aspects" },
+  { label: "Traits", valueKey: "traits" },
+  { label: "Range", valueKey: "range" },
+  { label: "Target", valueKey: "target" },
+  { label: "Duration", valueKey: "duration" },
+  { label: "Effect", valueKey: "effect", italicFirstLine: true },
+  { label: "Upcast", valueKey: "upcast" },
+  { label: "Rank", valueKey: "rank" },
+];
+
+const GENERAL_FEAT_FIELDS: DetailField[] = [
+  { label: "Description", valueKey: "description", italicFirstLine: true },
+  { label: "Prerequisites", valueKey: "prerequisites" },
+  { label: "Level", valueKey: "level" },
+];
+
+const ARCANE_FEAT_FIELDS: DetailField[] = [
+  ...GENERAL_FEAT_FIELDS,
+  { label: "Choice", valueKey: "choice" },
+];
+
+const ADVANTAGE_FIELDS: DetailField[] = [
+  { label: "Description", valueKey: "description" },
+  { label: "Level", valueKey: "level" },
+  { label: "Choice", valueKey: "choice" },
+];
+
+const ANCESTRY_FEAT_FIELDS: DetailField[] = [
+  { label: "Description", valueKey: "description", italicFirstLine: true },
+  { label: "Type", valueKey: "type" },
+  { label: "Species", valueKey: "species" },
+  { label: "Prerequisites", valueKey: "prerequisites" },
+  { label: "Level", valueKey: "level" },
+];
+
+const UPGRADE_FIELDS: DetailField[] = [
+  { label: "Description", valueKey: "description" },
+  { label: "Prerequisites", valueKey: "prerequisites" },
+  { label: "Level", valueKey: "level" },
+];
+
+const BACKGROUND_FIELDS: DetailField[] = [
+  { label: "Description", valueKey: "description" },
+  { label: "Granted Feat", valueKey: "generalFeat" },
+];
+
+const WEAPON_FIELDS: DetailField[] = [
+  { label: "Description", valueKey: "description" },
+  { label: "Damage", valueKey: "dice" },
+  { label: "Damage Type", valueKey: "damageType" },
+  { label: "Hands", valueKey: "hands" },
+  { label: "Range", valueKey: "range" },
+  { label: "Traits", valueKey: "traits" },
+  { label: "Price", valueKey: "price" },
+  { label: "Type", valueKey: "type" },
+  { label: "Weapon Group", valueKey: "weaponGroup" },
+];
 
 export function getChoiceData(request: ModalRequest): ChoiceData {
   const spellItems: ChoiceItem[] = (
@@ -35,152 +113,53 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
       ? spells.filter((spell) => spell.rank.endsWith(` ${request.rank}`))
       : spells
   ).map((spell) => ({
-    ...spell,
+    ...createChoiceItems([spell], SPELL_FIELDS)[0],
     aspects: spell.aspects,
     traits: spell.traits,
-    details: [
-      ...createDetails([
-        ["Actions", spell.actions],
-        ["Aspects", spell.aspects],
-        ["Traits", spell.traits],
-        ["Range", spell.range],
-        ["Target", spell.target],
-        ["Duration", spell.duration],
-      ]),
-      ...createDetails([["Effect", spell.effect]]).map((detail) => ({
-        ...detail,
-        italicFirstLine: true,
-      })),
-      ...createDetails([
-        ["Upcast", spell.upcast],
-        ["Rank", spell.rank],
-      ]),
-    ],
     actionIcons: getActionIcons(spell.actions),
   }));
 
   const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
     name: speciesItem.name,
     details: [
-      ...createDetails([
-        ["Size", speciesItem.size],
-        ["Starting Health", speciesItem.health],
-        ["Starting Mana", speciesItem.mana],
+      ...createDetails(speciesItem, [
+        { label: "Size", valueKey: "size" },
+        { label: "Starting Health", valueKey: "health" },
+        { label: "Starting Mana", valueKey: "mana" },
       ]),
       ...[
         [speciesItem.traitOne, speciesItem.traitOneDesc],
         [speciesItem.traitTwo, speciesItem.traitTwoDesc],
         [speciesItem.traitThree, speciesItem.traitThreeDesc],
         [speciesItem.traitFour, speciesItem.traitFourDesc],
-      ].flatMap(([traitName, traitDescription]) =>
-        createDetails([[String(traitName), traitDescription]]).map(
-          (detail) => ({
-            ...detail,
+      ].flatMap(([traitName, traitDescription]) => {
+        if (!traitName) return [];
+        return createDetails({ value: traitDescription }, [
+          {
+            label: String(traitName),
+            valueKey: "value",
             italicFirstLine: true,
-          }),
-        ),
-      ),
+          },
+        ]);
+      }),
     ],
     unlockedAction: speciesItem.unlockedAction,
   }));
 
-  const generalFeatItems: ChoiceItem[] = generalFeats.map((featItem) => ({
-    ...featItem,
-    details: [
-      {
-        label: "Description",
-        value: featItem.description,
-        italicFirstLine: true,
-      },
-      ...createDetails([
-        ["Prerequisites", featItem.prerequisites],
-        ["Level", featItem.level],
-      ]),
-    ],
-  }));
-
-  const arcaneFeatItems: ChoiceItem[] = arcaneFeats.map((featItem) => ({
-    ...featItem,
-    details: [
-      {
-        label: "Description",
-        value: featItem.description,
-        italicFirstLine: true,
-      },
-      ...createDetails([
-        ["Prerequisites", featItem.prerequisites],
-        ["Level", featItem.level],
-        ["Choice", featItem.choice],
-      ]),
-    ],
-  }));
-
-  const advantageItems: ChoiceItem[] = advantages.map((item) => ({
-    ...item,
-    details: createDetails([
-      ["Description", item.description],
-      ["Level", item.level],
-      ["Choice", item.choice],
-    ]),
-  }));
-
-  const ancestryFeatItems: ChoiceItem[] = ancestryFeats.map((item) => ({
-    ...item,
-    details: [
-      {
-        label: "Description",
-        value: item.description,
-        italicFirstLine: true,
-      },
-      ...createDetails([
-        ["Type", item.type],
-        ["Species", item.species],
-        ["Prerequisites", item.prerequisites],
-        ["Level", item.level],
-      ]),
-    ],
-  }));
-
-  const golemUpgradeItems: ChoiceItem[] = golemUpgrades.map((item) => ({
-    ...item,
-    details: createDetails([
-      ["Description", item.description],
-      ["Prerequisites", item.prerequisites],
-      ["Level", item.level],
-    ]),
-  }));
-
-  const runegunUpgradeItems: ChoiceItem[] = runegunUpgrades.map((item) => ({
-    ...item,
-    details: createDetails([
-      ["Description", item.description],
-      ["Prerequisites", item.prerequisites],
-      ["Level", item.level],
-    ]),
-  }));
-
-  const backgroundItems: ChoiceItem[] = backgrounds.map((item) => ({
-    ...item,
-    details: createDetails([
-      ["Description", item.description],
-      ["Granted Feat", item.generalFeat],
-    ]),
-  }));
-
-  const weaponItems: ChoiceItem[] = weapons.map((item) => ({
-    ...item,
-    details: createDetails([
-      ["Description", item.description],
-      ["Damage", item.dice],
-      ["Damage Type", item.damageType],
-      ["Hands", item.hands],
-      ["Range", item.range],
-      ["Traits", item.traits],
-      ["Price", item.price],
-      ["Type", item.type],
-      ["Weapon Group", item.weaponGroup],
-    ]),
-  }));
+  const generalFeatItems = createChoiceItems(generalFeats, GENERAL_FEAT_FIELDS);
+  const arcaneFeatItems = createChoiceItems(arcaneFeats, ARCANE_FEAT_FIELDS);
+  const advantageItems = createChoiceItems(advantages, ADVANTAGE_FIELDS);
+  const ancestryFeatItems = createChoiceItems(
+    ancestryFeats,
+    ANCESTRY_FEAT_FIELDS,
+  );
+  const golemUpgradeItems = createChoiceItems(golemUpgrades, UPGRADE_FIELDS);
+  const runegunUpgradeItems = createChoiceItems(
+    runegunUpgrades,
+    UPGRADE_FIELDS,
+  );
+  const backgroundItems = createChoiceItems(backgrounds, BACKGROUND_FIELDS);
+  const weaponItems = createChoiceItems(weapons, WEAPON_FIELDS);
 
   return {
     species: speciesItems,
