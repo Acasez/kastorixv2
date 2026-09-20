@@ -1,4 +1,4 @@
-import { splitTraitDescription } from "../utils/splitTraitDesc";
+import { cursiveFlavorText } from "../utils/CursiveFlavorText";
 
 interface TraitRowProps {
   traitName: string;
@@ -8,7 +8,7 @@ export default function TraitRow({
   traitName,
   traitDescription,
 }: TraitRowProps) {
-  const { flavor, mechanics } = splitTraitDescription(traitDescription);
+  const { flavor, mechanics } = cursiveFlavorText(traitDescription);
 
   return (
     <div>

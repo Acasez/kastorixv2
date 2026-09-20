@@ -2,12 +2,18 @@ import { useState } from "react";
 import ActionBox from "../ActionBox";
 import actions from "../../json/actions.json";
 
+export interface ChoiceDetail {
+  label: string;
+  value: string;
+  italicFirstLine?: boolean;
+}
+
 export interface ChoiceItem {
   name: string;
   description?: string;
   effect?: string;
   actionIcons?: string[];
-  details?: { label: string; value: string }[];
+  details?: ChoiceDetail[];
   aspects?: string;
   traits?: string;
   level?: number | string;
@@ -169,12 +175,25 @@ export default function ChoiceModal({
               </div>
               <div className="mt-3 flex-1 overflow-y-auto">
                 {selectedItem.details ? (
-                  selectedItem.details.map((detail) => (
-                    <p key={detail.label} className="whitespace-pre-line">
-                      <span className="font-bold">{detail.label}:</span>{" "}
-                      {detail.value}
-                    </p>
-                  ))
+                  selectedItem.details.map((detail) => {
+                    const [firstLine, ...remainingLines] =
+                      detail.value.split("\n");
+
+                    return (
+                      <p key={detail.label} className="whitespace-pre-line">
+                        <span className="font-bold">{detail.label}:</span>{" "}
+                        {detail.italicFirstLine ? (
+                          <>
+                            <span className="italic">{firstLine}</span>
+                            {remainingLines.length > 0 &&
+                              `\n${remainingLines.join("\n")}`}
+                          </>
+                        ) : (
+                          detail.value
+                        )}
+                      </p>
+                    );
+                  })
                 ) : (
                   <p className="whitespace-pre-line">
                     {selectedItem.description ??

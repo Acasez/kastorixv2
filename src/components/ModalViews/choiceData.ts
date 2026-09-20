@@ -1,4 +1,4 @@
-import { type ChoiceItem } from "./ChoiceModal";
+import { type ChoiceDetail, type ChoiceItem } from "./ChoiceModal";
 import type { ModalRequest } from "./modalTypes";
 import backgrounds from "../../JSON/backgrounds.json";
 import generalFeats from "../../JSON/general_feats.json";
@@ -19,7 +19,7 @@ export type ChoiceData = Record<
 
 function createDetails(
   entries: Array<[label: string, value: unknown]>,
-): { label: string; value: string }[] {
+): ChoiceDetail[] {
   return entries.flatMap(([label, value]) => {
     if (value === undefined || value === null || String(value).trim() === "") {
       return [];
@@ -38,17 +38,24 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     ...spell,
     aspects: spell.aspects,
     traits: spell.traits,
-    details: createDetails([
-      ["Actions", spell.actions],
-      ["Aspects", spell.aspects],
-      ["Traits", spell.traits],
-      ["Range", spell.range],
-      ["Target", spell.target],
-      ["Duration", spell.duration],
-      ["Effect", spell.effect],
-      ["Upcast", spell.upcast],
-      ["Rank", spell.rank],
-    ]),
+    details: [
+      ...createDetails([
+        ["Actions", spell.actions],
+        ["Aspects", spell.aspects],
+        ["Traits", spell.traits],
+        ["Range", spell.range],
+        ["Target", spell.target],
+        ["Duration", spell.duration],
+      ]),
+      ...createDetails([["Effect", spell.effect]]).map((detail) => ({
+        ...detail,
+        italicFirstLine: true,
+      })),
+      ...createDetails([
+        ["Upcast", spell.upcast],
+        ["Rank", spell.rank],
+      ]),
+    ],
     actionIcons: getActionIcons(spell.actions),
   }));
 
@@ -73,21 +80,33 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
 
   const generalFeatItems: ChoiceItem[] = generalFeats.map((featItem) => ({
     ...featItem,
-    details: createDetails([
-      ["Description", featItem.description],
-      ["Prerequisites", featItem.prerequisites],
-      ["Level", featItem.level],
-    ]),
+    details: [
+      {
+        label: "Description",
+        value: featItem.description,
+        italicFirstLine: true,
+      },
+      ...createDetails([
+        ["Prerequisites", featItem.prerequisites],
+        ["Level", featItem.level],
+      ]),
+    ],
   }));
 
   const arcaneFeatItems: ChoiceItem[] = arcaneFeats.map((featItem) => ({
     ...featItem,
-    details: createDetails([
-      ["Description", featItem.description],
-      ["Prerequisites", featItem.prerequisites],
-      ["Level", featItem.level],
-      ["Choice", featItem.choice],
-    ]),
+    details: [
+      {
+        label: "Description",
+        value: featItem.description,
+        italicFirstLine: true,
+      },
+      ...createDetails([
+        ["Prerequisites", featItem.prerequisites],
+        ["Level", featItem.level],
+        ["Choice", featItem.choice],
+      ]),
+    ],
   }));
 
   const advantageItems: ChoiceItem[] = advantages.map((item) => ({
@@ -101,13 +120,19 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
 
   const ancestryFeatItems: ChoiceItem[] = ancestryFeats.map((item) => ({
     ...item,
-    details: createDetails([
-      ["Description", item.description],
-      ["Type", item.type],
-      ["Species", item.species],
-      ["Prerequisites", item.prerequisites],
-      ["Level", item.level],
-    ]),
+    details: [
+      {
+        label: "Description",
+        value: item.description,
+        italicFirstLine: true,
+      },
+      ...createDetails([
+        ["Type", item.type],
+        ["Species", item.species],
+        ["Prerequisites", item.prerequisites],
+        ["Level", item.level],
+      ]),
+    ],
   }));
 
   const golemUpgradeItems: ChoiceItem[] = golemUpgrades.map((item) => ({
