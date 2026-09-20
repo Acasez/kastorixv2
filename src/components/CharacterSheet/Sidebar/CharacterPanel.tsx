@@ -3,6 +3,8 @@ import OpenModalButton from "../OpenModalButton";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
+import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
+import { getChoiceItem } from "../../ModalViews/choiceData";
 
 export default function CharacterPanel() {
   const { character, handleNameChange, handleLevelChange } = useCharacter();
@@ -22,10 +24,18 @@ export default function CharacterPanel() {
         />
       </div>
 
-      <div className="space-y-1">
+      <div className="space-y-1 flex flex-col">
         <OpenModalButton
           label={character.species ?? "Select Species"}
           itemChosen={Boolean(character.species)}
+          tooltipContent={
+            character.species
+              ? (() => {
+                  const item = getChoiceItem("species", character.species);
+                  return item ? <ChoiceTooltip item={item} /> : undefined;
+                })()
+              : undefined
+          }
           onClick={() =>
             setModalRequest({ type: "species", title: "Select Species" })
           }

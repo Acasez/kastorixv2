@@ -13,6 +13,8 @@ import golemUpgrades from "../../../JSON/golem_upgrades.json";
 import runegunUpgrades from "../../../JSON/runegun_upgrades.json";
 import spells from "../../../JSON/spells.json";
 import weapons from "../../../JSON/weapons.json";
+import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
+import { getChoiceItem } from "../../ModalViews/choiceData";
 
 type ChoiceType = Exclude<ModalRequest["type"], "species" | "baseStats">;
 
@@ -246,6 +248,14 @@ export default function LevelCard({ level }: LevelCardProps) {
                   handleContextMenu(event, choice.selectionKey, choice.type)
           }
           fixedChoice={choice.fixedValue != undefined}
+          tooltipContent={
+            selectedName
+              ? (() => {
+                  const item = getChoiceItem(choice.type, selectedName);
+                  return item ? <ChoiceTooltip item={item} /> : undefined;
+                })()
+              : undefined
+          }
         />
         {choice.children.length > 0 && (
           <div
@@ -284,6 +294,15 @@ export default function LevelCard({ level }: LevelCardProps) {
                     handleContextMenu(event, `${type}:${level}`, type);
                   }
                 }}
+                tooltipContent={(() => {
+                  const selectedName = getSelectedActionLabel(action);
+                  const type = actionTypes[action];
+                  if (!type || type === "baseStats" || !hasChosenItem(action)) {
+                    return undefined;
+                  }
+                  const item = getChoiceItem(type, selectedName);
+                  return item ? <ChoiceTooltip item={item} /> : undefined;
+                })()}
               />
               {unlockedChoices.length > 0 && (
                 <div className="ml-6 pl-2 border-l-2 border-teal-700 space-y-1">

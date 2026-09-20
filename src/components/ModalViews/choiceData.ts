@@ -17,6 +17,8 @@ export type ChoiceData = Record<
   ChoiceItem[]
 >;
 
+export type ChoiceType = Exclude<ModalRequest["type"], "baseStats">;
+
 export type DetailField = {
   label: string;
   valueKey: string;
@@ -173,4 +175,21 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     spell: spellItems,
     weapon: weaponItems,
   };
+}
+
+export function getChoiceItem(
+  type: ChoiceType,
+  name: string,
+): ChoiceItem | undefined {
+  const request =
+    type === "species"
+      ? { type: "species" as const, title: "Select Species" }
+      : {
+          type,
+          title: "",
+          selectionKey: "",
+          level: 0,
+        };
+
+  return getChoiceData(request)[type].find((item) => item.name === name);
 }
