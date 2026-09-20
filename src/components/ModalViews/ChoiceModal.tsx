@@ -8,6 +8,8 @@ export interface ChoiceItem {
   effect?: string;
   actionIcons?: string[];
   details?: { label: string; value: string }[];
+  aspects?: string;
+  traits?: string;
   level?: number | string;
   repeatable?: string | number | boolean;
   unlockedAction?: string;
@@ -19,6 +21,7 @@ interface ChoiceModalProps {
   initialValue: string | null;
   maxLevel: number;
   disabledNames?: string[];
+  filterFields?: { label: string; value: string }[];
   onConfirm: (value: string) => void;
 }
 
@@ -28,9 +31,11 @@ export default function ChoiceModal({
   initialValue,
   maxLevel,
   disabledNames = [],
+  filterFields = [],
   onConfirm,
 }: ChoiceModalProps) {
   const [search, setSearch] = useState("");
+  const [filters, setFilters] = useState<Record<string, string>>({});
   const effectiveMaxLevel = Math.max(1, maxLevel);
   const disabledNameSet = new Set(disabledNames);
   const isWithinLevel = (item: ChoiceItem) =>
@@ -45,21 +50,70 @@ export default function ChoiceModal({
     () => initialValue ?? firstSelectableItem?.name ?? items[0]?.name ?? "",
   );
 
-  const filteredItems = items.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase()),
-  );
+  const filteredItems = items.filter((item) => {
+    const matchesName = item.name.toLowerCase().includes(search.toLowerCase());
+    const matchesFilters = filterFields.every(({ value }) => {
+      const selectedFilter = filters[value] ?? "";
+      if (!selectedFilter) return true;
+      const itemValue = item[value as "aspects" | "traits"] ?? "";
+      return itemValue
+        .toLowerCase()
+        .split(",")
+        .map((part) => part.trim())
+        .includes(selectedFilter.toLowerCase());
+    });
+    return matchesName && matchesFilters;
+  });
   const selectedItem = items.find((item) => item.name === selectedName);
 
   return (
     <div className="flex flex-col gap-4">
-      <input
-        type="search"
-        value={search}
-        onChange={(event) => setSearch(event.target.value)}
-        placeholder="Search by name"
-        aria-label="Search choices"
-        className="border-2 border-gray-300 rounded-md px-3 py-2 text-text-black"
-      />
+      <div className="flex flex-row">
+        <input
+          type="search"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          placeholder="Search by name"
+          aria-label="Search choices"
+          className="border-2 border-gray-300 rounded-md px-3 py-2 text-text-black w-2/3"
+        />
+        {filterFields.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {filterFields.map((field) => (
+              <select
+                key={field.value}
+                value={filters[field.value] ?? ""}
+                onChange={(event) =>
+                  setFilters((current) => ({
+                    ...current,
+                    [field.value]: event.target.value,
+                  }))
+                }
+                aria-label={`Filter by ${field.label}`}
+                className="rounded-md border-2 border-gray-300 px-3 py-2 text-text-black"
+              >
+                <option value="">All {field.label}</option>
+                {Array.from(
+                  new Set(
+                    items.flatMap((item) =>
+                      (item[field.value as "aspects" | "traits"] ?? "")
+                        .split(",")
+                        .map((part) => part.trim())
+                        .filter(Boolean),
+                    ),
+                  ),
+                )
+                  .sort()
+                  .map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+              </select>
+            ))}
+          </div>
+        )}
+      </div>
       {/* Key change: Wrap content area with constrained height */}
       <div className="flex flex-row gap-3 h-155">
         {/* List panel - scrollable */}

@@ -29,6 +29,8 @@ export default function ModalWrapper({
       : spells
   ).map((spell) => ({
     ...spell,
+    aspects: spell.aspects,
+    traits: spell.traits,
     details: [
       { label: "Actions", value: spell.actions },
       { label: "Aspects", value: spell.aspects },
@@ -175,6 +177,14 @@ export default function ModalWrapper({
           initialValue={getCurrentValue()}
           maxLevel={request.type === "species" ? Infinity : request.level}
           disabledNames={getBlockedChoiceNames()}
+          filterFields={
+            request.type === "spell"
+              ? [
+                  { label: "Aspects", value: "aspects" },
+                  { label: "Traits", value: "traits" },
+                ]
+              : undefined
+          }
           onConfirm={confirmChoice}
         />
       );
