@@ -1,5 +1,6 @@
 // HealthManaAuraBars.tsx
 import { useEffect } from "react";
+import species from "../../../JSON/species.json";
 import {
   useCharacter,
   type Character,
@@ -8,8 +9,18 @@ import TrackBar from "../../TrackBar";
 
 export default function HealthManaAuraBars() {
   const { character, updateCharacter } = useCharacter();
-  const maxHealth = 6 + character.baseStats.PHY;
-  const maxPool = 6 + (3 + character.baseStats.WIL) * character.level;
+  const selectedSpecies = species.find(
+    (speciesItem) => speciesItem.name === character.species,
+  );
+  const speciesHealth = Number(selectedSpecies?.health);
+  const baseHealth =
+    Number.isFinite(speciesHealth) && speciesHealth > 0 ? speciesHealth : 6;
+  const maxHealth = baseHealth + character.baseStats.PHY;
+
+  const speciesMana = Number(selectedSpecies?.mana);
+  const baseMana =
+    Number.isFinite(speciesMana) && speciesMana > 0 ? speciesMana : 6;
+  const maxPool = baseMana + (3 + character.baseStats.WIL) * character.level;
 
   useEffect(() => {
     const patch: Partial<Character> = {};
