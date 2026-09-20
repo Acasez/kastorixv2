@@ -40,7 +40,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
 
   return (
     <div
-      className={`mb-3.75 ml-3.75 p-2.5 border border-[#8b4513] bg-bg-rules font-serif ${widthClass} self-center grid`}
+      className={`mb-3.75 ml-3.75 p-2.5 border border-[#8b4513] bg-bg-rules font-serif text-text-black ${widthClass} self-center grid`}
     >
       <div className="flex items-center gap-2.5 mb-2.5 justify-self-center">
         <h2 className="underline text-[28px]">{action}</h2>
@@ -56,6 +56,11 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
         </div>
       </div>
       <div className="text-center text-base">
+        {actionDetails.trigger && (
+          <p>
+            <span className="font-bold">Trigger</span>: {actionDetails.trigger}
+          </p>
+        )}
         <p className="mt-2.5 leading-normal">{formattedDescription}</p>
         {actionDetails.traits && (
           <p className="italic text-[#666] mt-2.5">
