@@ -58,7 +58,7 @@ export default function ActionSection() {
       </div>
 
       {/* Tab Content */}
-      <div className="flex-1 overflow-auto p-2">{tabContent[activeTab]}</div>
+      <div className="flex-1 overflow-visible p-2">{tabContent[activeTab]}</div>
     </div>
   );
 }

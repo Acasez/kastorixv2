@@ -5,6 +5,7 @@ type TooltipProps = {
   content: ReactNode;
   children: ReactNode;
   align?: keyof AlignmentClassMap;
+  contentClassName?: string;
 };
 
 type AlignmentClassMap = Record<
@@ -12,7 +13,12 @@ type AlignmentClassMap = Record<
   { [key: string]: string }
 >;
 
-export default function Tooltip({ content, children, align }: TooltipProps) {
+export default function Tooltip({
+  content,
+  children,
+  align,
+  contentClassName = "",
+}: TooltipProps) {
   const alignment = align ?? "center";
   const positionClasses = {
     center: "left-1/2 -translate-x-1/2",
@@ -25,7 +31,7 @@ export default function Tooltip({ content, children, align }: TooltipProps) {
       {children}
       <span
         role="tooltip"
-        className={`pointer-events-none absolute bottom-full z-10 mb-1 hidden whitespace-nowrap rounded-md border border-gray-600 bg-gray-900 px-2 py-1 text-xs font-normal text-gray-100 shadow-lg group-hover:block ${positionClasses}`}
+        className={`pointer-events-none absolute bottom-full z-50 mb-1 hidden rounded-md border border-gray-600 bg-gray-900 px-2 py-1 text-xs font-normal text-gray-100 shadow-lg group-hover:block ${positionClasses} ${contentClassName}`}
       >
         {content}
       </span>
