@@ -1,5 +1,3 @@
-import type { ActionCost } from "./Action";
-
 export type Spellshaping = {
   verbal: VerbalComponent;
   somatic: SomaticComponent;
@@ -12,15 +10,15 @@ export type VerbalComponent = "None" | "Standard" | "Attuned";
 
 export type Spell = {
   name: string;
-  actions: ActionCost;
-  aspects: Aspect[];
-  traits: SpellTraits[];
+  actions: string;
+  aspects: string;
+  traits: string;
   range: number | string;
   target: string;
   duration: string;
   effect: string;
   upcast: string;
-  rank: SpellRank;
+  rank: string;
 };
 
 export type SpellRank =
