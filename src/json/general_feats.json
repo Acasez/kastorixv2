@@ -197,7 +197,7 @@
     },
     {
         "name": "Inspiring Leader",
-        "description": "You have a way with words and can inspire those around you. \nYou can use the Inspire Courage action once per day. ",
+        "description": "You have a way with words and can inspire those around you. \nYou can use the Inspire Courage action once per day. \nYour proficiency level in pesuasion or warfare lore increases (max Expert). ",
         "unlockedAction": "Inspire Courage",
         "prerequisites": "",
         "level": "1",

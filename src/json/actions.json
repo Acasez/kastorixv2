@@ -580,7 +580,7 @@
         "actions": "1",
         "trigger": "",
         "requirement": "",
-        "description": "Target one creature you can see within 6 tiles. Looking at a creatures soul you perceive a few details about it. You learn if it has\nAn attunement, and if so which aspect.\nA soulbond. You can make a DC 20 arcana check to try to figure out the nature of the soulbond.\nWhether any other soul magic is affecting the target, though you don't know what type it is.\nIf the creature is an illusion, or a object or golem made to look like a creature you get no information about it, but see that it's not a creature",
+        "description": "Target one creature you can see within 6 tiles. Looking at a creatures soul you perceive a few details about it. You learn if it has:\nAn attunement, and if so which aspect.\nA soulbond. You can make a DC 20 arcana check to try to figure out the nature of the soulbond.\nWhether any other soul magic is affecting the target, though you don't know what type it is.\nIf the creature is an illusion, or a object or golem made to look like a creature you get no information about it, but see that it's not a creature",
         "traits": "Magic, Soul",
         "skill": "",
         "sourceType": "Advantage",
@@ -756,7 +756,7 @@
         "Column 1": "Simple"
     },
     {
-        "name": "Powerful Wingflap",
+        "name": "Take Off",
         "actions": "1",
         "trigger": "",
         "requirement": "",
@@ -764,7 +764,7 @@
         "traits": "Move",
         "skill": "",
         "sourceType": "Ancestry Feat",
-        "source": "Take Off",
+        "source": "Powerful Wingflap",
         "Column 1": ""
     },
     {
@@ -1270,5 +1270,17 @@
         "sourceType": "Combat Manuever",
         "source": "",
         "Column 1": "Simple"
+    },
+    {
+        "name": "Siphon Mana",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "Your last action was a failed spellshape",
+        "description": "Recover half the spells mana cost",
+        "traits": "Mana",
+        "skill": "",
+        "sourceType": "",
+        "source": "",
+        "Column 1": ""
     }
 ]

@@ -170,7 +170,7 @@
     },
     {
         "name": "Siphon Mana",
-        "description": "You've learned to reuse magic from failed spells. \nYou learn the Siphon Mana action which you can use if your last action was a failed spellshape\n1 Action - Siphon Mana; recover half the spells mana cost",
+        "description": "You've learned to reuse magic from failed spells. \nYou learn the Siphon Mana action which you can use if your last action was a failed spellshape.\nYour proficiency level in channeling or mana sensing increases (max Expert). ",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -248,7 +248,7 @@
     },
     {
         "name": "Mana Purifier",
-        "description": "You learn how to make a Pure variants of Mana Potions you make. \nIf you make them as part of daily preparations you lock away one extra mana.\nYour proficiency level in Arcana, Mana sensing or Alchemy lore increases (max Expert).",
+        "description": "You learn how to make a Pure variants of Mana Potions you make. \nIf you make them as part of daily preparations you lock away one extra mana.\nYour proficiency level in arcana, mana sensing or alchemy lore increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "[Alchemy Training]",
         "level": "3",
