@@ -61,20 +61,26 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
 
   const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
     name: speciesItem.name,
-    details: createDetails([
-      ["Size", speciesItem.size],
-      ["Starting Health", speciesItem.health],
-      ["Starting Mana", speciesItem.mana],
+    details: [
+      ...createDetails([
+        ["Size", speciesItem.size],
+        ["Starting Health", speciesItem.health],
+        ["Starting Mana", speciesItem.mana],
+      ]),
       ...[
         [speciesItem.traitOne, speciesItem.traitOneDesc],
         [speciesItem.traitTwo, speciesItem.traitTwoDesc],
         [speciesItem.traitThree, speciesItem.traitThreeDesc],
         [speciesItem.traitFour, speciesItem.traitFourDesc],
-      ].map(
-        ([traitName, traitDescription]) =>
-          [String(traitName), traitDescription] as [string, unknown],
+      ].flatMap(([traitName, traitDescription]) =>
+        createDetails([[String(traitName), traitDescription]]).map(
+          (detail) => ({
+            ...detail,
+            italicFirstLine: true,
+          }),
+        ),
       ),
-    ]),
+    ],
     unlockedAction: speciesItem.unlockedAction,
   }));
 
