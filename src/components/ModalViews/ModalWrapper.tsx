@@ -1,17 +1,8 @@
-import ChoiceModal, { type ChoiceItem } from "./ChoiceModal";
+import ChoiceModal from "./ChoiceModal";
 import type { ModalRequest } from "./modalTypes";
+import { getChoiceData } from "./choiceData";
 import { useCharacter } from "../../contexts/CharacterContext";
 import backgrounds from "../../JSON/backgrounds.json";
-import generalFeats from "../../JSON/general_feats.json";
-import arcaneFeats from "../../JSON/arcane_feats.json";
-import advantages from "../../JSON/advantages.json";
-import ancestryFeats from "../../JSON/ancestry_feats.json";
-import golemUpgrades from "../../JSON/golem_upgrades.json";
-import runegunUpgrades from "../.././JSON/runegun_upgrades.json";
-import spells from "../../JSON/spells.json";
-import weapons from "../../JSON/weapons.json";
-import species from "../../JSON/species.json";
-import { getActionIcons } from "../../utils/actionUtils";
 
 interface ModalWrapperProps {
   request: ModalRequest;
@@ -23,64 +14,7 @@ export default function ModalWrapper({
   closeModal,
 }: ModalWrapperProps) {
   const { character, updateCharacter } = useCharacter();
-  const spellItems: ChoiceItem[] = (
-    request.type === "spell" && request.rank
-      ? spells.filter((spell) => spell.rank.endsWith(` ${request.rank}`))
-      : spells
-  ).map((spell) => ({
-    ...spell,
-    aspects: spell.aspects,
-    traits: spell.traits,
-    details: [
-      { label: "Actions", value: spell.actions },
-      { label: "Aspects", value: spell.aspects },
-      { label: "Traits", value: spell.traits },
-      { label: "Range", value: String(spell.range) },
-      { label: "Target", value: spell.target },
-      { label: "Duration", value: spell.duration },
-      { label: "Effect", value: spell.effect },
-      { label: "Upcast", value: spell.upcast },
-      { label: "Rank", value: spell.rank },
-    ].filter((detail) => detail.value),
-    actionIcons: getActionIcons(spell.actions),
-  }));
-
-  const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
-    name: speciesItem.name,
-    details: [
-      { label: "Size", value: speciesItem.size },
-      { label: "Starting Health", value: speciesItem.health },
-      { label: "Starting Mana", value: speciesItem.mana },
-      ...[
-        [speciesItem.traitOne, speciesItem.traitOneDesc],
-        [speciesItem.traitTwo, speciesItem.traitTwoDesc],
-        [speciesItem.traitThree, speciesItem.traitThreeDesc],
-        [speciesItem.traitFour, speciesItem.traitFourDesc],
-      ]
-        .filter(([traitName]) => traitName)
-        .map(([traitName, traitDescription]) => ({
-          label: String(traitName),
-          value: String(traitDescription),
-        })),
-    ],
-    unlockedAction: speciesItem.unlockedAction,
-  }));
-
-  const choiceData: Record<
-    Exclude<ModalRequest["type"], "baseStats">,
-    ChoiceItem[]
-  > = {
-    species: speciesItems,
-    background: backgrounds,
-    generalFeat: generalFeats,
-    arcaneFeat: arcaneFeats,
-    advantage: advantages,
-    ancestryFeat: ancestryFeats,
-    golemUpgrade: golemUpgrades,
-    runegunUpgrade: runegunUpgrades,
-    spell: spellItems,
-    weapon: weapons,
-  };
+  const choiceData = getChoiceData(request);
 
   const getCurrentValue = () => {
     if (request.type === "spell" && request.rank) {
