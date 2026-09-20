@@ -76,10 +76,19 @@ export default function SpellRankSection({
             content={
               <div className="w-96 max-w-[calc(100vw-2rem)] text-center">
                 <h3 className="mb-2 text-base font-normal text-yellow-300 underline">
-                  {spell.name} [Spell]
+                  {spell.name}
                 </h3>
-                <p>
-                  <strong>Actions:</strong> {spell.actions}
+                <p className="flex justify-center">
+                  <strong>Actions:</strong>{" "}
+                  {getActionIcons(spell.actions).map((icon, index) => (
+                    <img
+                      key={`${spell.name}-action-${index}`}
+                      src={icon}
+                      alt=""
+                      aria-hidden="true"
+                      className="w-5 h-5 object-contain"
+                    />
+                  ))}
                 </p>
                 <p>
                   <strong>Aspects:</strong> {spell.aspects}
@@ -98,7 +107,7 @@ export default function SpellRankSection({
                     <strong>Duration:</strong> {spell.duration}
                   </p>
                 )}
-                <p className="mt-2 whitespace-pre-line text-left">
+                <p className="mt-2 whitespace-pre-line">
                   <strong>Effect:</strong> {spell.effect}
                 </p>
                 {spell.upcast && (
