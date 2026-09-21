@@ -28,7 +28,7 @@ export type SpellRank =
   | "Grand Magus"
   | "Archmage";
 
-export type SpellTraits = {
+export type SpellTrait = {
   name: string;
   flavor: string;
   effect: string;
@@ -45,3 +45,11 @@ export type Aspect = {
 };
 
 export type AspectType = "Fundamental" | "Primal" | "Lesser";
+
+export type Metamagic = {
+  name: string;
+  spellType: string;
+  effect: string;
+  dc: string;
+  level: string;
+};

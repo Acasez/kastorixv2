@@ -21,4 +21,11 @@ export type ModalRequest =
       replaceSpell?: string;
     }
   | { type: "weapon"; title: string; selectionKey: string; level: number }
+  | {
+      type: "metamagic";
+      title: string;
+      selectionKey: string;
+      level: number;
+      replaceMetamagic?: string;
+    }
   | { type: "baseStats"; title: string };

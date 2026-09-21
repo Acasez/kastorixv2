@@ -7,6 +7,8 @@ import SpellRankSection from "./SpellRankSection";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import spells from "../../../JSON/spells.json";
+import metamagics from "../../../JSON/metamagic.json";
+import MetamagicsSection from "./MetamagicsSection";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
@@ -65,6 +67,28 @@ export default function SpellsSection() {
     });
   };
 
+  const removeMetamagic = (metamagic: string) => {
+    updateCharacter({
+      knownSpells: character.knownSpells.filter((name) => name !== metamagic),
+    });
+  };
+
+  const openMetamagicModal = () => {
+    openMetamagicModalForReplacement();
+  };
+
+  const openMetamagicModalForReplacement = (replaceMetamagic?: string) => {
+    setModalRequest({
+      type: "metamagic",
+      title: replaceMetamagic
+        ? `Replace ${replaceMetamagic}`
+        : `Select Metamagic`,
+      selectionKey: "",
+      level: 0,
+      replaceMetamagic: replaceMetamagic,
+    });
+  };
+
   return (
     <div className="p-4 text-white">
       <div className="flex flex-row gap-3 mb-4">
@@ -110,6 +134,14 @@ export default function SpellsSection() {
           />
         ))}
       </div>
+      <MetamagicsSection
+        onRemoveMetamagic={removeMetamagic}
+        onAddMetamagic={openMetamagicModal}
+        onReplaceMetamagic={openMetamagicModalForReplacement}
+        selectedMetamagics={metamagics.filter((metamagic) =>
+          character.metamagics.includes(metamagic.name),
+        )}
+      />
       {modalRequest && (
         <ModalWrapper
           request={modalRequest}

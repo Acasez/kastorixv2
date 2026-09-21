@@ -18,6 +18,7 @@ const defaultCharacter: Character = {
   advantages: [],
   ancestryFeats: [],
   knownSpells: [],
+  metamagics: [],
   weapons: [],
   selections: {},
   background: null,

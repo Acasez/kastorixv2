@@ -18,6 +18,7 @@ export type Character = {
   advantages: string[];
   ancestryFeats: string[];
   knownSpells: string[];
+  metamagics: string[];
   weapons: string[];
   selections: Record<string, string>;
   background: string | null;

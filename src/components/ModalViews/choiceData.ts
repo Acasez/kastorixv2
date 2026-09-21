@@ -10,6 +10,7 @@ import runegunUpgrades from "../../JSON/runegun_upgrades.json";
 import spells from "../../JSON/spells.json";
 import weapons from "../../JSON/weapons.json";
 import species from "../../JSON/species.json";
+import metamagics from "../../JSON/metamagic.json";
 import { getActionIcons } from "../../utils/actionUtils";
 
 export type ChoiceData = Record<
@@ -109,6 +110,12 @@ const WEAPON_FIELDS: DetailField[] = [
   { label: "Weapon Group", valueKey: "weaponGroup" },
 ];
 
+const METAMAGIC_FIELDS: DetailField[] = [
+  { label: "Spell Type", valueKey: "spellType" },
+  { label: "Effect", valueKey: "effect" },
+  { label: "DC increase", valueKey: "dc" },
+];
+
 export function getChoiceData(request: ModalRequest): ChoiceData {
   const spellItems: ChoiceItem[] = (
     request.type === "spell" && request.rank
@@ -162,6 +169,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   );
   const backgroundItems = createChoiceItems(backgrounds, BACKGROUND_FIELDS);
   const weaponItems = createChoiceItems(weapons, WEAPON_FIELDS);
+  const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
 
   return {
     species: speciesItems,
@@ -174,6 +182,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     runegunUpgrade: runegunUpgradeItems,
     spell: spellItems,
     weapon: weaponItems,
+    metamagic: metamagicItems,
   };
 }
 
