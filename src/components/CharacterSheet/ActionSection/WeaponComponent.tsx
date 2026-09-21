@@ -1,4 +1,5 @@
 import type { Weapon } from "../../../types/Weapons";
+import ProficiencyMarker from "../../ProficiencyMarker";
 import Tooltip from "../../Tooltip";
 
 interface WeaponComponentProps {
@@ -48,6 +49,7 @@ export default function WeaponComponent({
         className="flex items-center gap-1 border border-gray-400 rounded px-2 py-1"
       >
         <span>{weapon.name}</span>
+        <ProficiencyMarker skillName={weapon.name} defaultTier="Trained" />
       </div>
     </Tooltip>
   );
