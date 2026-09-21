@@ -16,6 +16,14 @@ export default function WeaponComponent({
   onRemoveWeapon,
 }: WeaponComponentProps) {
   const { character } = useCharacter();
+
+  const weaponTraits = weapon.traits.split(",").map((trait) => trait.trim());
+  const attackStat = weaponTraits.includes("Ranged")
+    ? character.baseStats.DEX
+    : weaponTraits.includes("Finesse")
+      ? Math.max(character.baseStats.DEX, character.baseStats.PHY)
+      : character.baseStats.PHY;
+
   return (
     <Tooltip
       key={weapon.name}
@@ -55,7 +63,7 @@ export default function WeaponComponent({
         <ProficiencyMarker skillName={weapon.name} defaultTier="Trained" />
         <span>
           {`(+${
-            character.baseStats.PHY +
+            attackStat +
             getProficiency(
               character.skillProficiencies[weapon.name] ?? "Trained",
             ).bonus
