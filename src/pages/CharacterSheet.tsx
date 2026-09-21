@@ -1,4 +1,4 @@
-import TabbedSection from "../components/CharacterSheet/ActionSection/TabbedSection";
+import TabbedSection from "../components/CharacterSheet/TabbedSection/TabbedSection";
 import CoreStatSection from "../components/CharacterSheet/CoreStatSection/CoreStatsSection";
 import OtherStatSection from "../components/CharacterSheet/OtherInfoSection/OtherStatSection";
 import LevelSidebar from "../components/CharacterSheet/Sidebar/LevelSidebar";
