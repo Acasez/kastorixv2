@@ -3,11 +3,26 @@ import { useCharacter } from "../../../contexts/CharacterContext";
 import type { Weapon } from "../../../types/Weapons";
 import ProficiencyMarker from "../../ProficiencyMarker";
 import Tooltip from "../../Tooltip";
+import weaponTraits from "../../../JSON/weapon_traits.json";
 
 interface WeaponComponentProps {
   weapon: Weapon;
   onReplaceWeapon: (weaponName: string) => void;
   onRemoveWeapon: (weaponName: string) => void;
+}
+
+function normalizeTraitName(traitName: string) {
+  return traitName
+    .replace(/\s*\([^)]*\)/g, "")
+    .trim()
+    .toLowerCase();
+}
+
+function getTraitDescription(traitName: string) {
+  const normalizedName = normalizeTraitName(traitName);
+  return weaponTraits.find(
+    (trait) => normalizeTraitName(trait.name) === normalizedName,
+  )?.effect;
 }
 
 export default function WeaponComponent({
@@ -117,12 +132,18 @@ export default function WeaponComponent({
         </div>
         <div className="flex flex-wrap gap-1">
           {weaponTraits.map((trait) => (
-            <span
+            <Tooltip
               key={trait}
-              className="rounded border border-sky-700 bg-sky-950/60 px-1.5 py-0.5 text-xs text-sky-100"
+              content={
+                getTraitDescription(trait) ?? "No description available."
+              }
+              align="left"
+              contentClassName="whitespace-pre-line"
             >
-              {trait}
-            </span>
+              <span className="rounded border border-sky-700 bg-sky-950/60 px-1.5 py-0.5 text-xs text-sky-100">
+                {trait}
+              </span>
+            </Tooltip>
           ))}
         </div>
       </div>
