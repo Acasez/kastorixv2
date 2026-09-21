@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SpellsSection from "./SpellsSection";
 import StrikesSection from "./StrikesSection";
+import ActionsSection from "./ActionsSection";
 
 export default function TabbedSection() {
   // State to track the active tab
@@ -20,12 +21,7 @@ export default function TabbedSection() {
   const tabContent = {
     Spells: <SpellsSection />,
     Strikes: <StrikesSection />,
-    Actions: (
-      <div className="p-4 text-white">
-        <h2 className="text-xl mb-2">Actions Content</h2>
-        <p>This is the Actions tab content.</p>
-      </div>
-    ),
+    Actions: <ActionsSection />,
     Inventory: (
       <div className="p-4 text-white">
         <h2 className="text-xl mb-2">Inventory Content</h2>
