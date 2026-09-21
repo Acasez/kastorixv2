@@ -1,3 +1,5 @@
+import { getProficiency } from "../../../constants/Proficiency";
+import { useCharacter } from "../../../contexts/CharacterContext";
 import type { Weapon } from "../../../types/Weapons";
 import ProficiencyMarker from "../../ProficiencyMarker";
 import Tooltip from "../../Tooltip";
@@ -13,6 +15,7 @@ export default function WeaponComponent({
   onReplaceWeapon,
   onRemoveWeapon,
 }: WeaponComponentProps) {
+  const { character } = useCharacter();
   return (
     <Tooltip
       key={weapon.name}
@@ -50,6 +53,14 @@ export default function WeaponComponent({
       >
         <span>{weapon.name}</span>
         <ProficiencyMarker skillName={weapon.name} defaultTier="Trained" />
+        <span>
+          {`(+${
+            character.baseStats.PHY +
+            getProficiency(
+              character.skillProficiencies[weapon.name] ?? "Trained",
+            ).bonus
+          })`}
+        </span>
       </div>
     </Tooltip>
   );
