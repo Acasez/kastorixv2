@@ -1,20 +1,85 @@
 import { useMemo, useState } from "react";
+import { useCharacter } from "../../../contexts/CharacterContext";
 import actions from "../../../json/actions.json";
+import advantages from "../../../JSON/advantages.json";
+import ancestryFeats from "../../../JSON/ancestry_feats.json";
+import arcaneFeats from "../../../JSON/arcane_feats.json";
+import generalFeats from "../../../JSON/general_feats.json";
 import { getActionIcons } from "../../../utils/actionUtils";
 
 const ACTION_COSTS = ["All", "0", "1", "2", "3", "Reaction"] as const;
 type ActionCost = (typeof ACTION_COSTS)[number];
 
 export default function ActionsSection() {
+  const { character } = useCharacter();
   const [search, setSearch] = useState("");
   const [costFilter, setCostFilter] = useState<ActionCost>("All");
   const [sortDescending, setSortDescending] = useState(false);
   const [expandedAction, setExpandedAction] = useState<string | null>(null);
 
-  const baseActions = useMemo(
+  const unlockedActionNames = useMemo(() => {
+    const selectedNamesByType = {
+      "General Feat": new Set([
+        ...character.generalFeats,
+        ...Object.entries(character.selections)
+          .filter(([key]) => key.startsWith("generalFeat:"))
+          .map(([, value]) => value),
+      ]),
+      "Arcane Feat": new Set([
+        ...character.arcaneFeats,
+        ...Object.entries(character.selections)
+          .filter(([key]) => key.startsWith("arcaneFeat:"))
+          .map(([, value]) => value),
+      ]),
+      Advantage: new Set([
+        ...character.advantages,
+        ...Object.entries(character.selections)
+          .filter(([key]) => key.startsWith("advantage:"))
+          .map(([, value]) => value),
+      ]),
+      "Ancestry Feat": new Set([
+        ...character.ancestryFeats,
+        ...Object.entries(character.selections)
+          .filter(([key]) => key.startsWith("ancestryFeat:"))
+          .map(([, value]) => value),
+      ]),
+    };
+
+    const featSources = [
+      ["General Feat", generalFeats],
+      ["Arcane Feat", arcaneFeats],
+      ["Advantage", advantages],
+      ["Ancestry Feat", ancestryFeats],
+    ] as const;
+
+    return new Set(
+      featSources.flatMap(([sourceType, featList]) =>
+        featList
+          .filter((feat) => selectedNamesByType[sourceType].has(feat.name))
+          .map((feat) => feat.unlockedAction)
+          .filter(Boolean),
+      ),
+    );
+  }, [
+    character.advantages,
+    character.arcaneFeats,
+    character.ancestryFeats,
+    character.generalFeats,
+    character.selections,
+  ]);
+
+  const availableActions = useMemo(
     () =>
-      actions
-        .filter((action) => action.sourceType === "Base")
+      actions.filter(
+        (action) =>
+          action.sourceType === "Base" || unlockedActionNames.has(action.name),
+      ),
+    [unlockedActionNames],
+  );
+
+  const filteredActions = useMemo(
+    () =>
+      availableActions
         .filter((action) => {
           const searchValue = search.trim().toLowerCase();
           if (!searchValue) return true;
@@ -29,7 +94,7 @@ export default function ActionsSection() {
           const comparison = first.name.localeCompare(second.name);
           return sortDescending ? -comparison : comparison;
         }),
-    [costFilter, search, sortDescending],
+    [availableActions, costFilter, search, sortDescending],
   );
 
   return (
@@ -74,8 +139,8 @@ export default function ActionsSection() {
               aria-pressed={costFilter === cost}
               className={`border px-3 py-1 text-sm transition-colors ${
                 costFilter === cost
-                  ? "border-[#4da6ff] bg-[#33475d] text-white"
-                  : "border-[#3a4350] text-gray-300 hover:border-[#4da6ff]"
+                  ? "border-text-calm bg-[#33475d] text-white"
+                  : "border-[#3a4350] text-gray-300 hover:border-text-calm"
               }`}
             >
               {cost === "All"
@@ -86,13 +151,13 @@ export default function ActionsSection() {
             </button>
           ))}
           <span className="ml-auto text-sm text-gray-400">
-            {baseActions.length}{" "}
-            {baseActions.length === 1 ? "action" : "actions"}
+            {filteredActions.length}{" "}
+            {filteredActions.length === 1 ? "action" : "actions"}
           </span>
         </div>
 
         <div className="divide-y divide-[#343d49] border-y border-[#343d49]">
-          {baseActions.map((action) => {
+          {filteredActions.map((action) => {
             const isExpanded = expandedAction === action.name;
             const actionIcons = getActionIcons(action.actions);
 
@@ -148,6 +213,11 @@ export default function ActionsSection() {
                         {action.traits}
                       </p>
                     )}
+                    {action.sourceType !== "Base" && action.source && (
+                      <p className="mt-2 text-gray-400">
+                        Source: {action.sourceType}
+                      </p>
+                    )}
                   </div>
                 )}
               </article>
@@ -155,9 +225,9 @@ export default function ActionsSection() {
           })}
         </div>
 
-        {baseActions.length === 0 && (
+        {filteredActions.length === 0 && (
           <p className="py-8 text-center text-gray-400">
-            No Base actions match these filters.
+            No available actions match these filters.
           </p>
         )}
       </div>
