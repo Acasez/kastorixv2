@@ -20,25 +20,28 @@ export default function MetamagicsSection({
     <div className="bg-gray-800 p-4 rounded-lg mt-3">
       <div className="flex justify-between items-center mb-4">
         <span className="text-lg underline">Metamagics</span>
-        <button
-          type="button"
-          className="bg-gray-600 text-white px-3 py-1 rounded"
-          onClick={() => onAddMetamagic()}
-        >
-          +
-        </button>
+        <div className="flex flex-row gap-2">
+          <p
+            className={`text-right ${
+              selectedMetamagics.length > maxKnownMetamagics
+                ? "text-red-500"
+                : selectedMetamagics.length < maxKnownMetamagics
+                  ? "text-green-500"
+                  : "text-text-light"
+            }`}
+          >
+            Metamagics Chosen ({selectedMetamagics.length}/{maxKnownMetamagics})
+          </p>
+          <button
+            type="button"
+            className="bg-gray-600 text-white px-3 py-1 rounded"
+            onClick={() => onAddMetamagic()}
+          >
+            +
+          </button>
+        </div>
       </div>
-      <p
-        className={`text-right ${
-          selectedMetamagics.length > maxKnownMetamagics
-            ? "text-red-500"
-            : selectedMetamagics.length < maxKnownMetamagics
-              ? "text-green-500"
-              : "text-text-light"
-        }`}
-      >
-        Metamagics Chosen ({selectedMetamagics.length}/{maxKnownMetamagics})
-      </p>
+
       <div className="flex flex-wrap gap-2 mt-3">
         {selectedMetamagics.map((metamagic) => (
           <MetamagicComponent
