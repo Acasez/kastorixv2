@@ -108,7 +108,7 @@ export default function ActionsSection() {
               value={search}
               onChange={(event) => setSearch(event.target.value)}
               placeholder="Search by name, trait, or text"
-              className="mt-1 block w-full border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none placeholder:text-gray-400 focus:border-[#4da6ff]"
+              className="mt-1 block w-full border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none placeholder:text-gray-400 focus:border-text-calm"
             />
           </label>
           <label className="text-sm text-gray-300">
@@ -118,7 +118,7 @@ export default function ActionsSection() {
               onChange={(event) =>
                 setSortDescending(event.target.value === "descending")
               }
-              className="mt-1 block border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none focus:border-[#4da6ff]"
+              className="mt-1 block border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none focus:border-text-calm"
             >
               <option value="ascending">Names A-Z</option>
               <option value="descending">Names Z-A</option>
@@ -215,7 +215,7 @@ export default function ActionsSection() {
                     )}
                     {action.sourceType !== "Base" && action.source && (
                       <p className="mt-2 text-gray-400">
-                        Source: {action.sourceType}
+                        Source: {action.sourceType} - {action.source}
                       </p>
                     )}
                   </div>
