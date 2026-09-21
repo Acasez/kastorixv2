@@ -94,6 +94,15 @@ export default function ModalWrapper({
           ? knownSpells
           : [...knownSpells, value],
       });
+    } else if (request.type === "metamagic") {
+      const metamagics = character.metamagics.filter(
+        (spellName) => spellName !== request.replaceMetamagic,
+      );
+      updateCharacter({
+        metamagics: metamagics.includes(value)
+          ? metamagics
+          : [...metamagics, value],
+      });
     } else if (request.type !== "baseStats") {
       updateCharacter({
         selections: { ...character.selections, [request.selectionKey]: value },

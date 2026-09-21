@@ -13,6 +13,19 @@ function isCharacter(value: unknown): value is Character {
   );
 }
 
+function mergeCharacter(current: Character, saved: Character): Character {
+  return {
+    ...current,
+    ...saved,
+    baseStats: { ...current.baseStats, ...saved.baseStats },
+    health: { ...current.health, ...saved.health },
+    aura: { ...current.aura, ...saved.aura },
+    mana: { ...current.mana, ...saved.mana },
+    speeds: { ...current.speeds, ...saved.speeds },
+    spellShaping: { ...current.spellShaping, ...saved.spellShaping },
+  };
+}
+
 export default function SaveLoadButtons() {
   const { character, setCharacter } = useCharacter();
   const importInputRef = useRef<HTMLInputElement>(null);
@@ -44,7 +57,12 @@ export default function SaveLoadButtons() {
     }
 
     try {
-      setCharacter(JSON.parse(savedCharacter));
+      const savedData: unknown = JSON.parse(savedCharacter);
+      if (!isCharacter(savedData)) {
+        throw new Error("Invalid character format");
+      }
+
+      setCharacter((current) => mergeCharacter(current, savedData));
     } catch {
       window.alert(`Saved character "${characterKey}" is invalid.`);
     }
@@ -79,7 +97,7 @@ export default function SaveLoadButtons() {
         throw new Error("Invalid character format");
       }
 
-      setCharacter(importedCharacter);
+      setCharacter((current) => mergeCharacter(current, importedCharacter));
     } catch {
       window.alert("The selected file is not a valid character JSON file.");
     }
