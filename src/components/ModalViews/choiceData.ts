@@ -168,7 +168,13 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     UPGRADE_FIELDS,
   );
   const backgroundItems = createChoiceItems(backgrounds, BACKGROUND_FIELDS);
-  const weaponItems = createChoiceItems(weapons, WEAPON_FIELDS);
+  const availableWeapons =
+    request.type === "weapon" && request.excludedTypes
+      ? weapons.filter(
+          (weapon) => !request.excludedTypes?.includes(weapon.type),
+        )
+      : weapons;
+  const weaponItems = createChoiceItems(availableWeapons, WEAPON_FIELDS);
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
 
   return {

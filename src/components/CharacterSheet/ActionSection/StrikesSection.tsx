@@ -20,6 +20,7 @@ export default function StrikesSection() {
       selectionKey: "",
       level: 0,
       replaceWeapon,
+      excludedTypes: ["Golem"],
     });
   };
 

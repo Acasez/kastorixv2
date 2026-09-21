@@ -26,6 +26,7 @@ export type ModalRequest =
       selectionKey: string;
       level: number;
       replaceWeapon?: string;
+      excludedTypes?: string[];
     }
   | {
       type: "metamagic";
