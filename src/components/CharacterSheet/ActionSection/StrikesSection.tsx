@@ -31,9 +31,19 @@ export default function StrikesSection() {
   };
   return (
     <div className="p-4 text-white">
-      <h2 className="text-xl mb-2">Weapons and Strikes</h2>
+      <div className="flex flex-row gap-4">
+        <h2 className="text-xl mb-2">Weapons and Strikes</h2>
+        <button
+          type="button"
+          className="bg-button-add text-white px-3 py-1 rounded border-2"
+          onClick={() => openWeaponModal()}
+        >
+          +
+        </button>
+      </div>
+
       <div className="flex justify-between items-center mb-4">
-        <div className="flex flex-wrap gap-2 mt-3">
+        <div className="flex flex-col gap-2 mt-3">
           {weapons
             .filter((weapon) => character.weapons.includes(weapon.name))
             .map((weapon) => (
@@ -44,16 +54,6 @@ export default function StrikesSection() {
                 onRemoveWeapon={onRemoveWeapon}
               />
             ))}
-        </div>
-
-        <div>
-          <button
-            type="button"
-            className="bg-button-add text-white px-3 py-1 rounded border-2"
-            onClick={() => openWeaponModal()}
-          >
-            +
-          </button>
         </div>
       </div>
       {modalRequest && (

@@ -28,6 +28,8 @@ export default function WeaponComponent({
     ? 0
     : character.baseStats.PHY;
 
+  const multiAttackPenalty = weaponTraits.includes("Agile") ? -4 : -5;
+
   return (
     <Tooltip
       key={weapon.name}
@@ -82,21 +84,47 @@ export default function WeaponComponent({
           if ((event.target as HTMLElement).closest("button")) return;
           onRemoveWeapon(weapon.name);
         }}
-        className="flex items-center gap-1 border border-gray-400 rounded px-2 py-1"
+        aria-label={`${weapon.name} strike. Click to replace or right-click to remove.`}
+        className="flex w-full flex-col gap-2 rounded-lg border border-gray-500 bg-gray-800 px-3 py-2 text-left shadow-sm transition-colors hover:border-gray-300"
       >
-        <span>{weapon.name}</span>
-        <ProficiencyMarker skillName={weapon.name} defaultTier="Trained" />
-        <span>
-          {`(+${
-            attackStat +
-            getProficiency(
-              character.skillProficiencies[weapon.name] ?? "Trained",
-            ).bonus
-          })`}
-        </span>
-        <span>
-          {weapon.dice + " + " + damageBonus + " " + weapon.damageType}
-        </span>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+          <span className="text-base font-semibold text-white">
+            {weapon.name}
+          </span>
+          <ProficiencyMarker skillName={weapon.name} defaultTier="Trained" />
+          <span className="text-sm text-gray-300">
+            Hit{" "}
+            <strong className="text-white">
+              +
+              {attackStat +
+                getProficiency(
+                  character.skillProficiencies[weapon.name] ?? "Trained",
+                ).bonus}
+            </strong>
+          </span>
+          <span className="text-sm text-gray-300">
+            MAP <strong className="text-white">{multiAttackPenalty}</strong>
+          </span>
+          <span className="text-sm text-gray-300">
+            Damage{" "}
+            <strong className="text-white">
+              {weapon.dice} + {damageBonus} {weapon.damageType}
+            </strong>
+          </span>
+          <span className="text-sm text-gray-300">
+            Range <strong className="text-white">{weapon.range}</strong>
+          </span>
+        </div>
+        <div className="flex flex-wrap gap-1">
+          {weaponTraits.map((trait) => (
+            <span
+              key={trait}
+              className="rounded border border-sky-700 bg-sky-950/60 px-1.5 py-0.5 text-xs text-sky-100"
+            >
+              {trait}
+            </span>
+          ))}
+        </div>
       </div>
     </Tooltip>
   );
