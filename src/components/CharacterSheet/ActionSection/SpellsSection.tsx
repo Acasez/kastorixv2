@@ -69,7 +69,7 @@ export default function SpellsSection() {
 
   const removeMetamagic = (metamagic: string) => {
     updateCharacter({
-      knownSpells: character.knownSpells.filter((name) => name !== metamagic),
+      metamagics: character.metamagics.filter((name) => name !== metamagic),
     });
   };
 

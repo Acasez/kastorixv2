@@ -17,7 +17,7 @@ export default function MetamagicComponent({
     <Tooltip
       key={metamagic.name}
       content={
-        <div className="w-96 max-w-[calc(100vw-2rem)] text-center">
+        <div className="w-70 max-w-[calc(100vw-2rem)] text-center">
           <h3 className="mb-2 text-base font-normal text-yellow-300 underline">
             {metamagic.name}
           </h3>
@@ -28,6 +28,9 @@ export default function MetamagicComponent({
           )}
           <p className="mt-2 whitespace-pre-line">
             <strong>Effect:</strong> {metamagic.effect}
+          </p>
+          <p className="mt-2 whitespace-pre-line">
+            <strong>DC Increase:</strong> {metamagic.dc}
           </p>
           <p>
             <strong>Level:</strong> {metamagic.level}
