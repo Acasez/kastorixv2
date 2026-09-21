@@ -142,7 +142,13 @@ export default function ModalWrapper({
                   { label: "Aspects", value: "aspects" },
                   { label: "Traits", value: "traits" },
                 ]
-              : undefined
+              : request.type === "weapon"
+                ? [
+                    { label: "Traits", value: "traits" },
+                    { label: "Types", value: "type" },
+                    { label: "Weapon Groups", value: "weaponGroup" },
+                  ]
+                : undefined
           }
           onConfirm={confirmChoice}
         />

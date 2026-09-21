@@ -16,6 +16,8 @@ export interface ChoiceItem {
   details?: ChoiceDetail[];
   aspects?: string;
   traits?: string;
+  type?: string;
+  weaponGroup?: string;
   level?: number | string;
   repeatable?: string | number | boolean;
   unlockedAction?: string;
@@ -61,8 +63,8 @@ export default function ChoiceModal({
     const matchesFilters = filterFields.every(({ value }) => {
       const selectedFilter = filters[value] ?? "";
       if (!selectedFilter) return true;
-      const itemValue = item[value as "aspects" | "traits"] ?? "";
-      return itemValue
+      const itemValue = item[value as keyof ChoiceItem];
+      return String(itemValue ?? "")
         .toLowerCase()
         .split(",")
         .map((part) => part.trim())
@@ -102,7 +104,7 @@ export default function ChoiceModal({
                 {Array.from(
                   new Set(
                     items.flatMap((item) =>
-                      (item[field.value as "aspects" | "traits"] ?? "")
+                      String(item[field.value as keyof ChoiceItem] ?? "")
                         .split(",")
                         .map((part) => part.trim())
                         .filter(Boolean),
