@@ -20,7 +20,13 @@ export type ModalRequest =
       rank?: string;
       replaceSpell?: string;
     }
-  | { type: "weapon"; title: string; selectionKey: string; level: number }
+  | {
+      type: "weapon";
+      title: string;
+      selectionKey: string;
+      level: number;
+      replaceWeapon?: string;
+    }
   | {
       type: "metamagic";
       title: string;

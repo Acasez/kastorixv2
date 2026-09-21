@@ -20,6 +20,9 @@ export default function ModalWrapper({
     if (request.type === "spell" && request.rank) {
       return request.replaceSpell ?? null;
     }
+    if (request.type === "weapon") {
+      return request.replaceWeapon ?? null;
+    }
     if (request.type === "species") return character.species;
     if (request.type === "background") return character.background;
     if (request.type !== "baseStats") {
@@ -31,6 +34,12 @@ export default function ModalWrapper({
   const getBlockedChoiceNames = () => {
     if (request.type === "spell" && request.rank) {
       return character.knownSpells;
+    }
+
+    if (request.type === "weapon") {
+      return character.weapons.filter(
+        (weaponName) => weaponName !== request.replaceWeapon,
+      );
     }
 
     if (request.type === "species" || request.type === "baseStats") {
@@ -93,6 +102,13 @@ export default function ModalWrapper({
         knownSpells: knownSpells.includes(value)
           ? knownSpells
           : [...knownSpells, value],
+      });
+    } else if (request.type === "weapon") {
+      const weapons = character.weapons.filter(
+        (weaponName) => weaponName !== request.replaceWeapon,
+      );
+      updateCharacter({
+        weapons: weapons.includes(value) ? weapons : [...weapons, value],
       });
     } else if (request.type === "metamagic") {
       const metamagics = character.metamagics.filter(

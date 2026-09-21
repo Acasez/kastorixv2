@@ -4,6 +4,19 @@ import type { DamageType } from "./DamageTypes";
 export type Weapon = {
   name: string;
   dice: string;
+  damageType: string;
+  hands: string;
+  range: string;
+  traits: string;
+  description: string;
+  price: string;
+  type: string;
+  weaponGroup: string;
+};
+
+export type WeaponTyped = {
+  name: string;
+  dice: string;
   damageType: DamageType;
   hands: number;
   range: number;
@@ -11,7 +24,7 @@ export type Weapon = {
   description: string;
   price: number;
   type: WeaponType;
-  group: WeaponGroup;
+  weaponGroup: WeaponGroup;
 };
 
 export type WeaponTrait = {

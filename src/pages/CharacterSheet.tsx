@@ -1,4 +1,4 @@
-import ActionSection from "../components/CharacterSheet/ActionSection/ActionSection";
+import TabbedSection from "../components/CharacterSheet/ActionSection/TabbedSection";
 import CoreStatSection from "../components/CharacterSheet/CoreStatSection/CoreStatsSection";
 import OtherStatSection from "../components/CharacterSheet/OtherInfoSection/OtherStatSection";
 import LevelSidebar from "../components/CharacterSheet/Sidebar/LevelSidebar";
@@ -17,7 +17,7 @@ export default function RPGOverview() {
               <CoreStatSection />
               <OtherStatSection />
             </div>
-            <ActionSection />
+            <TabbedSection />
           </div>
         </div>
       </CharacterProvider>
