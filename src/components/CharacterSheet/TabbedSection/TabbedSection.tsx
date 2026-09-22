@@ -2,6 +2,7 @@ import { useState } from "react";
 import SpellsSection from "./SpellsSection";
 import StrikesSection from "./StrikesSection";
 import ActionsSection from "./ActionsSection";
+import InventorySection from "./InventorySection";
 
 export default function TabbedSection() {
   // State to track the active tab
@@ -22,12 +23,7 @@ export default function TabbedSection() {
     Spells: <SpellsSection />,
     Strikes: <StrikesSection />,
     Actions: <ActionsSection />,
-    Inventory: (
-      <div className="p-4 text-white">
-        <h2 className="text-xl mb-2">Inventory Content</h2>
-        <p>This is the Inventory tab content.</p>
-      </div>
-    ),
+    Inventory: <InventorySection />,
   };
 
   return (

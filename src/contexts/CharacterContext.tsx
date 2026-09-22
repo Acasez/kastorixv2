@@ -31,6 +31,8 @@ export type Character = {
   mana: Track;
   speeds: Record<SpeedTypes, number>;
   spellShaping: Spellshaping;
+  gold: number;
+  inventory: string;
 };
 
 export type Track = {
@@ -46,6 +48,7 @@ export type CharacterContextType = {
   handleNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   passivePerception: number;
   passiveManasense: number;
+  handleGoldChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const CharacterContext = createContext<CharacterContextType | undefined>(

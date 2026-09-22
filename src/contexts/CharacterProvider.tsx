@@ -35,6 +35,8 @@ const defaultCharacter: Character = {
     somatic: "Two Handed",
     totalBonus: "",
   },
+  gold: 0,
+  inventory: "",
 };
 
 export function CharacterProvider({ children }: { children: ReactNode }) {
@@ -53,6 +55,11 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
 
   const handleNameChange = (e: ChangeEvent<HTMLInputElement>) =>
     updateCharacter({ name: e.target.value });
+
+  const handleGoldChange = (e: ChangeEvent<HTMLInputElement>) =>
+    updateCharacter({
+      gold: Math.min(99999, Math.max(0, Number(e.target.value))),
+    });
 
   // Combined derived stats
   const derivedStats = useMemo(() => {
@@ -77,6 +84,7 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
         handleLevelChange,
         handleNameChange,
         ...derivedStats,
+        handleGoldChange,
       }}
     >
       {children}
