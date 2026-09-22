@@ -1,8 +1,16 @@
+import { useState } from "react";
 import { useCharacter } from "../../../contexts/CharacterContext";
+import { getChoiceItem } from "../../ModalViews/choiceData";
+import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
+import OpenModalButton from "../OpenModalButton";
 import ConditionDisplay from "./ConditionDisplay";
+import type { ModalRequest } from "../../ModalViews/modalTypes";
+import ModalWrapper from "../../ModalViews/ModalWrapper";
 
 export default function OtherStatSection() {
   const { character, passivePerception, passiveManasense } = useCharacter();
+  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const closeModal = () => setModalRequest(null);
   return (
     <div className="flex flex-col bg-gray-800 h-90 w-165 gap-3 border-x-2 rounded-lg -mt-2">
       <h1 className="text-striking text-center text-3xl underline">
@@ -25,6 +33,26 @@ export default function OtherStatSection() {
                 ))}
             </div>
           </div>
+          <OpenModalButton
+            label={character.armor ?? "Select Armor"}
+            itemChosen={Boolean(character.armor)}
+            tooltipContent={
+              character.armor
+                ? (() => {
+                    const item = getChoiceItem("armor", character.armor);
+                    return item ? <ChoiceTooltip item={item} /> : undefined;
+                  })()
+                : undefined
+            }
+            onClick={() =>
+              setModalRequest({
+                type: "armor",
+                title: "Select Armor",
+                selectionKey: "Armor",
+                level: 1,
+              })
+            }
+          />
         </div>
         <div>
           <h1 className="text-striking text-center text-3xl underline">
@@ -40,6 +68,9 @@ export default function OtherStatSection() {
           </div>
         </div>
       </div>
+      {modalRequest && (
+        <ModalWrapper request={modalRequest} closeModal={closeModal} />
+      )}
     </div>
   );
 }

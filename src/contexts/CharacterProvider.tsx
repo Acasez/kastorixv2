@@ -20,6 +20,7 @@ const defaultCharacter: Character = {
   knownSpells: [],
   metamagics: [],
   weapons: [],
+  armor: "",
   selections: {},
   background: null,
   species: null,

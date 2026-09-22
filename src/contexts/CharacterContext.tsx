@@ -20,6 +20,7 @@ export type Character = {
   knownSpells: string[];
   metamagics: string[];
   weapons: string[];
+  armor: string;
   selections: Record<string, string>;
   background: string | null;
   species: string | null;

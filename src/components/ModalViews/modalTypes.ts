@@ -35,4 +35,5 @@ export type ModalRequest =
       level: number;
       replaceMetamagic?: string;
     }
+  | { type: "armor"; title: string; selectionKey: string; level: number }
   | { type: "baseStats"; title: string };

@@ -11,6 +11,7 @@ import spells from "../../JSON/spells.json";
 import weapons from "../../JSON/weapons.json";
 import species from "../../JSON/species.json";
 import metamagics from "../../JSON/metamagic.json";
+import armors from "../../JSON/armors.json";
 import { getActionIcons } from "../../utils/actionUtils";
 
 export type ChoiceData = Record<
@@ -116,6 +117,17 @@ const METAMAGIC_FIELDS: DetailField[] = [
   { label: "DC increase", valueKey: "dc" },
 ];
 
+const ARMOR_FIELDS: DetailField[] = [
+  { label: "Resistances", valueKey: "resistances" },
+  { label: "Weak Point Difficulty", valueKey: "weakPointDiff" },
+  { label: "Armor Penalties", valueKey: "penalties" },
+  { label: "Mana Recovery", valueKey: "manaRecovery" },
+  { label: "Description", valueKey: "description" },
+  { label: "Price", valueKey: "price" },
+  { label: "Type", valueKey: "type" },
+  { label: "Phy Required", valueKey: "phy" },
+];
+
 export function getChoiceData(request: ModalRequest): ChoiceData {
   const spellItems: ChoiceItem[] = (
     request.type === "spell" && request.rank
@@ -176,6 +188,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
       : weapons;
   const weaponItems = createChoiceItems(availableWeapons, WEAPON_FIELDS);
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
+  const armorItems = createChoiceItems(armors, ARMOR_FIELDS);
 
   return {
     species: speciesItems,
@@ -189,6 +202,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     spell: spellItems,
     weapon: weaponItems,
     metamagic: metamagicItems,
+    armor: armorItems,
   };
 }
 

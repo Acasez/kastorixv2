@@ -14,6 +14,7 @@ import runegunUpgrades from "../../../JSON/runegun_upgrades.json";
 import spells from "../../../JSON/spells.json";
 import weapons from "../../../JSON/weapons.json";
 import metamagics from "../../../JSON/metamagic.json";
+import armors from "../../../JSON/armors.json";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 
@@ -58,6 +59,7 @@ const choiceConfig: Record<
   spell: { title: "Select Spell", items: spells },
   weapon: { title: "Select Weapon", items: weapons },
   metamagic: { title: "Select Metamagic", items: metamagics },
+  armor: { title: "Select Armor", items: armors },
 };
 
 const actionTypes: Record<string, ChoiceType | "baseStats"> = {
