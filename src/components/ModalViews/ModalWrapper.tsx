@@ -23,6 +23,7 @@ export default function ModalWrapper({
     if (request.type === "weapon") {
       return request.replaceWeapon ?? null;
     }
+    if (request.type === "armor") return character.armor;
     if (request.type === "species") return character.species;
     if (request.type === "background") return character.background;
     if (request.type !== "baseStats") {
@@ -119,6 +120,8 @@ export default function ModalWrapper({
       updateCharacter({
         weapons: weapons.includes(value) ? weapons : [...weapons, value],
       });
+    } else if (request.type === "armor") {
+      updateCharacter({ armor: value });
     } else if (request.type === "metamagic") {
       const metamagics = character.metamagics.filter(
         (spellName) => spellName !== request.replaceMetamagic,
