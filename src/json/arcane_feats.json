@@ -1,7 +1,7 @@
 [
     {
         "name": "Alchemy Training",
-        "description": "Your proficiency level in crafting or alchemy lore increases (max Expert). \nEach morning you can make two temporary potions. \nFor each potion you prepare you lock away 1 mana from your mana well for the day and they expire after the day. \nThe potions can be [Lesser Health Potions], [Lesser Mana Potions] or [Lesser Elemental Resistance Potions].",
+        "description": "You know your way around brewing potions and can do the simple types by heart.\nYour proficiency level in crafting or alchemy lore increases (max Expert). \nEach morning you can make two temporary potions. \nFor each potion you prepare you lock away 1 mana from your mana well for the day and they expire after the day. \nThe potions can be [Lesser Health Potions], [Lesser Mana Potions] or [Lesser Elemental Resistance Potions].",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -40,7 +40,7 @@
     },
     {
         "name": "Aura Reinforcement",
-        "description": "You have trained your aura and can raise and lower it as a single action. \nWhen you use the Reinforce Aura action you can spend mana up to 3 times your level + your Will.",
+        "description": "You have trained your aura and can reinforce it faster.\nWhen you use the Reinforce Aura action you can spend mana up to 3 times your level + your Will.\nYou can also raise and lower your aura as a single action",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",

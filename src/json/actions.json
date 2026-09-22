@@ -206,7 +206,7 @@
     {
         "name": "Cut Down Projectile",
         "actions": "Reaction",
-        "trigger": "",
+        "trigger": "You are parrying and are forced to make Reflex save against a projectile",
         "requirement": "",
         "description": "Attempt to cut down the projectile. \nMake a melee attack against it, instead of a Reflex saving throw",
         "traits": "Combat Manuever, Defensive",
@@ -218,7 +218,7 @@
     {
         "name": "Cut Down Spell",
         "actions": "Reaction",
-        "trigger": "",
+        "trigger": "You are parrying and are forced to make Reflex save against a spell",
         "requirement": "",
         "description": "You've learned to cut down spells just like projectiles. \nMake a melee attack against it, instead of a Reflex saving throw",
         "traits": "Defensive, Combat Manuever",
@@ -662,8 +662,8 @@
     {
         "name": "Momentum Toss",
         "actions": "Reaction",
-        "trigger": "",
-        "requirement": "A creature misses you melee attack",
+        "trigger": "A creature misses you melee attack",
+        "requirement": "",
         "description": "Make a Brawling check against the creature's Brawling roll. \nIt may defend with a Reflex or Fortitude save instead, taking a -2 penalty to the roll\nIf they got a critical failure on their attack they have a -5 penalty the roll\nOn a success, you move the creature to another free square adjacent to you and it gets a -3 penalty on hitting you for the rest of the turn\nOn a critical success, the creature also falls prone. ",
         "traits": "Attack, Combat Manuever, Skill, Brawling",
         "skill": "Brawling",
@@ -756,18 +756,6 @@
         "Column 1": "Simple"
     },
     {
-        "name": "Take Off",
-        "actions": "1",
-        "trigger": "",
-        "requirement": "",
-        "description": "You can use it a number of times equal to PHY each day.",
-        "traits": "Move",
-        "skill": "",
-        "sourceType": "Ancestry Feat",
-        "source": "Powerful Wingflap",
-        "Column 1": ""
-    },
-    {
         "name": "Predict Their Movement",
         "actions": "1",
         "trigger": "",
@@ -806,7 +794,7 @@
     {
         "name": "Quick Parry",
         "actions": "Reaction",
-        "trigger": "",
+        "trigger": "You are forced to make a Reflex saving throw",
         "requirement": "",
         "description": "You draw your weapon in the blink of an eye and parry an opponent's strike.\nYou may draw a weapon with the Parry trait from a quick access slot.\nThen defend against the attack as if you had parried the turn before",
         "traits": "Defensive, Combat Manuever",
@@ -890,8 +878,8 @@
     {
         "name": "Riposte",
         "actions": "Reaction",
-        "trigger": "",
-        "requirement": "You are currently parrying and a creature missed you with a melee strike",
+        "trigger": "You are currently parrying and a creature missed you with a melee strike",
+        "requirement": "",
         "description": "Take advantage of the opening to attack your opponent. \nMake a Strike at that creature ",
         "traits": "Attack, Combat Manuever",
         "skill": "",
@@ -956,6 +944,18 @@
         "traits": "Attack, Skill, Brawling",
         "skill": "Brawling",
         "sourceType": "Base",
+        "source": "",
+        "Column 1": ""
+    },
+    {
+        "name": "Siphon Mana",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "Your last action was a failed spellshape",
+        "description": "Recover half the spells mana cost",
+        "traits": "Mana",
+        "skill": "",
+        "sourceType": "",
         "source": "",
         "Column 1": ""
     },
@@ -1065,6 +1065,18 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
+        "Column 1": ""
+    },
+    {
+        "name": "Steady by Tail",
+        "actions": "Reaction",
+        "trigger": "You would make a save against knocked prone, off-guard or moved against your will",
+        "requirement": "",
+        "description": "Add your PHY to the roll",
+        "traits": "Defensive",
+        "skill": "",
+        "sourceType": "Species",
+        "source": "Dragonkin",
         "Column 1": ""
     },
     {
@@ -1200,6 +1212,18 @@
         "Column 1": ""
     },
     {
+        "name": "Take Off",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "description": "You can use it a number of times equal to PHY each day.",
+        "traits": "Move",
+        "skill": "",
+        "sourceType": "Ancestry Feat",
+        "source": "Powerful Wingflap",
+        "Column 1": ""
+    },
+    {
         "name": "Throw Bomb",
         "actions": "1",
         "trigger": "",
@@ -1228,7 +1252,7 @@
         "actions": "1",
         "trigger": "",
         "requirement": "",
-        "description": "Specify the amount of mana you wish to transfer, then make a Channeling skill check against a DC of twice the amount mana to transfer. You can\nOn a critical success you transfer the mana chosen.\nOn a critical success you transfer the mana chosen, and the target gets one level of mana poisoning.\nOn a failure you transfer the half mana chosen, losing the rest and the target gets one level of mana poisoning.\nOn a critical failure you lose all the mana chosen and the target gets two levels of mana poisoning.\nYou may spend two actions on this action to have +2 bonus on the roll, or three actions to have a +5 bonus. ",
+        "description": "Transfer some of your mana to an adjcant creature. A fast but dangerous way to give a creature mana.\nSpecify the amount of mana you wish to transfer, then make a Channeling skill check against a DC of twice the amount mana to transfer. You can\nOn a critical success you transfer the mana chosen.\nOn a critical success you transfer the mana chosen, and the target gets one level of mana poisoning.\nOn a failure you transfer the half mana chosen, losing the rest and the target gets one level of mana poisoning.\nOn a critical failure you lose all the mana chosen and the target gets two levels of mana poisoning.\nYou may spend two actions on this action to have +2 bonus on the roll, or three actions to have a +5 bonus. ",
         "traits": "Mana, Skill",
         "skill": "Channeling",
         "sourceType": "Base",
@@ -1239,7 +1263,7 @@
         "name": "Trip",
         "actions": "1",
         "trigger": "",
-        "requirement": "You have one hand free.",
+        "requirement": "You have one hand free or are holding a weapon with the Trip trait",
         "description": "Make a Brawling check versus an creature's within reach Brawling roll. \nIt may defend with a Reflex or Fortitude save instead, taking a -2 penalty to the roll \nOn a success, the creature falls prone.\nOn a critical success, the creature also takes 1d6 bludgeoning damage.",
         "traits": "Attack, Skill, Brawling",
         "skill": "Brawling",
@@ -1270,17 +1294,5 @@
         "sourceType": "Combat Manuever",
         "source": "",
         "Column 1": "Simple"
-    },
-    {
-        "name": "Siphon Mana",
-        "actions": "1",
-        "trigger": "",
-        "requirement": "Your last action was a failed spellshape",
-        "description": "Recover half the spells mana cost",
-        "traits": "Mana",
-        "skill": "",
-        "sourceType": "",
-        "source": "",
-        "Column 1": ""
     }
 ]

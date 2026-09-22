@@ -15,7 +15,7 @@
     },
     {
         "name": "Alert",
-        "description": "With a watchful eye you are ready for danger\nYour proficiency level in perception increases (max Expert). \nYour can choose to roll initiative with your perception score instead of your DEX",
+        "description": "With a watchful eye you are ready for danger.\nYour proficiency level in perception increases (max Expert). \nYour can choose to roll initiative with your perception score instead of your DEX",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -211,7 +211,7 @@
     },
     {
         "name": "Item Thrower",
-        "description": "The range you can throw items, gadgets and potions increases by 3.\nAdditionally you may attempt a Sleight of Hand check to bounce thrown items around corners or through small openings.",
+        "description": "You are good at throwing items and gadgets, and can land them in ways that others cannot.\nThe range you can throw items, gadgets and potions increases by 3.\nAdditionally you may attempt a Sleight of Hand check to bounce thrown items around corners or through small openings.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -253,8 +253,8 @@
     },
     {
         "name": "Marksman",
-        "description": "You've trained in the art of aiming and shooting. \nYou learn the [Aim] Combat Maneuver. \nYou don't take a penalty when attacking with runeguns or crossbows while prone.",
-        "unlockedAction": "",
+        "description": "You've trained in the art of aiming and shooting. \nYou learn the Aim action.\nYou don't take a penalty when attacking with runeguns or crossbows while prone.",
+        "unlockedAction": "Aim",
         "prerequisites": "Trained with at least one type of ranged weapons",
         "level": "1",
         "repeatable": "",
@@ -575,7 +575,7 @@
     },
     {
         "name": "Always Ready",
-        "description": "When you roll initiative and aren't surprised you may add your INT or WIL to your roll.\nYour proficiency level in perception or insight increases (max Master). ",
+        "description": "Always ready.\nWhen you roll initiative and aren't surprised you may add your INT or WIL to your roll.\nYour proficiency level in perception or insight increases (max Master). ",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -589,7 +589,7 @@
     },
     {
         "name": "Armor Expertize",
-        "description": "When wearing armor the resistances it grants increases by 1, or 2 if its heavy armor.\nAdditionally your unarmed attacks when wearing heavy armor with gauntlets deal 1d4 bludgeoning damage.",
+        "description": "You know how to make the most of your armor\nWhen wearing armor the resistances it grants increases by 1, or 2 if its heavy armor.\nAdditionally your unarmed attacks when wearing heavy armor with gauntlets deal 1d4 bludgeoning damage.",
         "unlockedAction": "",
         "prerequisites": "Trained with Armor",
         "level": "4",
@@ -603,7 +603,7 @@
     },
     {
         "name": "Commanding Presence",
-        "description": "Your proficiency level in Will saves increases (max Expert). \nAllied creatures within 5 tiles have a +1 bonus to their Will saves",
+        "description": "Your strong mind steadies your allies\nYour proficiency level in Will saves increases (max Expert). \nAllied creatures within 6 tiles have a +1 bonus to their Will saves",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -617,7 +617,7 @@
     },
     {
         "name": "Evasion Expertize",
-        "description": "Your proficiency level in Reflex saves increases (max Expert). \nWhen you get a success on a reflex save you may use your reaction to turn it into a critical success ",
+        "description": "You know how evade even wide area attacks\nYour proficiency level in Reflex saves increases (max Expert). \nWhen you get a success on a reflex save you may use your reaction to turn it into a critical success ",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -659,7 +659,7 @@
     },
     {
         "name": "Magical Master",
-        "description": "You've focused even more on your magical skills\nGain one level 6 [Arcane Feats]",
+        "description": "You've focused even more on your magical skills\nGain one level 6 [Arcane Feat]",
         "unlockedAction": "",
         "prerequisites": "INT 2 or higher",
         "level": "4",
@@ -673,7 +673,7 @@
     },
     {
         "name": "Martial Expertize",
-        "description": "Your martial experience has increased with time. \nYour proficiency level in two weapon groups increases (max Expert). \nYou may learn one combat maneuver instead of picking a weapon group.\nYou may choose this feat multiple times",
+        "description": "Your martial experience has only increased with time. \nYour proficiency level in two weapon groups increases (max Expert). \nYou may learn one combat maneuver instead of picking a weapon group.\nYou may choose this feat multiple times",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -981,7 +981,7 @@
     },
     {
         "name": "Parrying Master",
-        "description": "You feel ready to take on the world with a blade your hand.\nYour bonus when parrying melee attacks increases to +3.\nYou can Parry with any melee weapon that does slashing or piercing damage, but you only get the +3 bonus to those with the Parry trait",
+        "description": "You feel ready to take on the world with a blade your hand.\nYour bonus when parrying melee attacks increases to +3.\nWhile Parrying you have an extra reaction",
         "unlockedAction": "",
         "prerequisites": "[Defensive Duelist]",
         "level": "12",

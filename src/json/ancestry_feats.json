@@ -157,7 +157,7 @@
     },
     {
         "name": "Powerful Tail",
-        "description": "You can use your powerful tail to block incoming attacks and whack foes\nYour tail is a natural weapon that deals 1d4 bludgeoning damage.\nIt has the Block 1 and Shove traits. ",
+        "description": "You can use your powerful tail to block incoming attacks and whack foes\nYour tail is a natural weapon that deals 1d4 bludgeoning damage.\nIt has the Block 1, Trip and Shove traits. ",
         "unlockedAction": "",
         "type": "Biological",
         "species": "Dragonkin, Naga",

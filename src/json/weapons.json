@@ -504,7 +504,7 @@
         "weaponGroup": "Unarmed"
     },
     {
-        "name": "Claw",
+        "name": "Metal Claw",
         "dice": "1d8",
         "damageType": "slashing",
         "hands": "1",
