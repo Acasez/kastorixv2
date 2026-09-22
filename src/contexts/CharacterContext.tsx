@@ -30,6 +30,7 @@ export type Character = {
   aura: Track;
   mana: Track;
   speeds: Record<SpeedTypes, number>;
+  resistances: Record<string, number>;
   spellShaping: Spellshaping;
   gold: number;
   inventory: string;
