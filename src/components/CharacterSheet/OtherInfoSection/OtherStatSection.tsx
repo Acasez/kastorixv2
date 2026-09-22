@@ -33,20 +33,25 @@ export default function OtherStatSection() {
                 ))}
             </div>
           </div>
-          <h1 className="text-striking text-center text-3xl underline">
-            Resistances
-          </h1>
-          <div className="flex flex-row m-2 gap-2">
-            <div className="flex flex-row m-2 gap-2">
-              {Object.entries(character.resistances)
-                .filter(([, value]) => value > 0)
-                .map(([type, value]) => (
-                  <h2 key={type} className="text-text-light text-lg">
-                    {type}: {value}
-                  </h2>
-                ))}
+
+          {Object.keys(character.resistances).length > 0 && (
+            <div>
+              <h1 className="text-striking text-center text-3xl underline">
+                Resistances
+              </h1>
+              <div className="flex flex-row m-2 gap-2">
+                <div className="flex flex-row m-2 gap-2">
+                  {Object.entries(character.resistances)
+                    .filter(([, value]) => value > 0)
+                    .map(([type, value]) => (
+                      <h2 key={type} className="text-text-light text-lg">
+                        {type}: {value}
+                      </h2>
+                    ))}
+                </div>
+              </div>
             </div>
-          </div>
+          )}
           <OpenModalButton
             label={character.armor ?? "Select Armor"}
             itemChosen={Boolean(character.armor)}
