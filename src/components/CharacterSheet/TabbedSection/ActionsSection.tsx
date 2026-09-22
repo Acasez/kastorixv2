@@ -186,7 +186,7 @@ export default function ActionsSection() {
                     {action.actions}
                   </span>
                   <span aria-hidden="true" className="text-gray-400">
-                    {isExpanded ? "−" : "+"}
+                    {isExpanded ? "-" : "+"}
                   </span>
                 </button>
 

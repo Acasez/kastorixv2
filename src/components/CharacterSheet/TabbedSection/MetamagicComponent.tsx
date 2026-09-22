@@ -12,7 +12,6 @@ export default function MetamagicComponent({
   onReplaceMetamagic,
   onRemoveMetamagic,
 }: MetamagicComponentProps) {
-  /* const { character } = useCharacter(); */
   return (
     <Tooltip
       key={metamagic.name}

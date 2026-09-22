@@ -14,7 +14,6 @@ export default function MetamagicsSection({
   onRemoveMetamagic,
   selectedMetamagics,
 }: MetamagicProps) {
-  /* const { character } = useCharacter(); */
   const maxKnownMetamagics = 0;
   return (
     <div className="bg-gray-800 p-4 rounded-lg mt-3">
