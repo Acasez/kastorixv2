@@ -46,9 +46,18 @@ export default function ModalWrapper({
       return [];
     }
 
+    const choiceNames = new Set(
+      choiceData[request.type].map((item) => item.name),
+    );
     const ownedNames = new Set<string>();
     Object.entries(character.selections).forEach(([key, selectedValue]) => {
-      if (key !== request.selectionKey && key.startsWith(`${request.type}:`)) {
+      const isSameTypeSelection = key.startsWith(`${request.type}:`);
+      const isNestedChoice = choiceNames.has(selectedValue);
+
+      if (
+        key !== request.selectionKey &&
+        (isSameTypeSelection || isNestedChoice)
+      ) {
         ownedNames.add(selectedValue);
       }
     });
