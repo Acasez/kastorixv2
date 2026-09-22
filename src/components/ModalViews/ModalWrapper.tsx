@@ -3,23 +3,10 @@ import type { ModalRequest } from "./modalTypes";
 import { getChoiceData } from "./choiceData";
 import { useCharacter } from "../../contexts/CharacterContext";
 import backgrounds from "../../JSON/backgrounds.json";
-import armors from "../../JSON/armors.json";
 
 interface ModalWrapperProps {
   request: ModalRequest;
   closeModal: () => void;
-}
-
-function getArmorResistances(armorName: string): Record<string, number> {
-  const armor = armors.find((item) => item.name === armorName);
-  if (!armor) return {};
-
-  return Object.fromEntries(
-    armor.resistances.split(",").flatMap((resistance) => {
-      const match = resistance.trim().match(/^\((\d+)\)\s+(.+)$/);
-      return match ? [[match[2], Number(match[1])]] : [];
-    }),
-  );
 }
 
 export default function ModalWrapper({
@@ -134,10 +121,7 @@ export default function ModalWrapper({
         weapons: weapons.includes(value) ? weapons : [...weapons, value],
       });
     } else if (request.type === "armor") {
-      updateCharacter({
-        armor: value,
-        resistances: getArmorResistances(value),
-      });
+      updateCharacter({ armor: value });
     } else if (request.type === "metamagic") {
       const metamagics = character.metamagics.filter(
         (spellName) => spellName !== request.replaceMetamagic,

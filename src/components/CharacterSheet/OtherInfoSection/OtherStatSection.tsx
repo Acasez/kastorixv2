@@ -6,6 +6,7 @@ import OpenModalButton from "../OpenModalButton";
 import ConditionDisplay from "./ConditionDisplay";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
+import { getCompactResistances } from "../../../utils/characterResistances";
 
 export default function OtherStatSection() {
   const { character, passivePerception, passiveManasense } = useCharacter();
@@ -34,14 +35,15 @@ export default function OtherStatSection() {
             </div>
           </div>
 
-          {Object.keys(character.resistances).length > 0 && (
+          {Object.keys(getCompactResistances(character.resistances)).length >
+            0 && (
             <div>
               <h1 className="text-striking text-center text-3xl underline">
                 Resistances
               </h1>
               <div className="flex flex-row m-2 gap-2">
                 <div className="flex flex-row m-2 gap-2">
-                  {Object.entries(character.resistances)
+                  {Object.entries(getCompactResistances(character.resistances))
                     .filter(([, value]) => value > 0)
                     .map(([type, value]) => (
                       <h2 key={type} className="text-text-light text-lg">

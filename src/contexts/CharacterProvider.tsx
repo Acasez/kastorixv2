@@ -9,6 +9,7 @@ import {
 import { CharacterContext, type Character } from "./CharacterContext";
 import { getProficiency } from "../constants/Proficiency";
 import type { StatKey } from "../types/StatKey";
+import { getCharacterResistances } from "../utils/characterResistances";
 
 const defaultCharacter: Character = {
   name: "",
@@ -77,10 +78,15 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
     };
   }, [character.skillProficiencies, character.baseStats]);
 
+  const characterWithResistances = {
+    ...character,
+    resistances: getCharacterResistances(character),
+  };
+
   return (
     <CharacterContext.Provider
       value={{
-        character,
+        character: characterWithResistances,
         setCharacter,
         updateCharacter,
         handleLevelChange,
