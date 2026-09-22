@@ -5,6 +5,7 @@ import advantages from "../../../JSON/advantages.json";
 import ancestryFeats from "../../../JSON/ancestry_feats.json";
 import arcaneFeats from "../../../JSON/arcane_feats.json";
 import generalFeats from "../../../JSON/general_feats.json";
+import species from "../../../JSON/species.json";
 import { getActionIcons } from "../../../utils/actionUtils";
 
 const ACTION_COSTS = ["All", "0", "1", "2", "3", "Reaction"] as const;
@@ -52,13 +53,20 @@ export default function ActionsSection() {
       ["Ancestry Feat", ancestryFeats],
     ] as const;
 
+    const selectedSpecies = species.find(
+      (speciesOption) => speciesOption.name === character.species,
+    );
+    const unlockedFeatActions = featSources.flatMap(([sourceType, featList]) =>
+      featList
+        .filter((feat) => selectedNamesByType[sourceType].has(feat.name))
+        .map((feat) => feat.unlockedAction)
+        .filter(Boolean),
+    );
+
     return new Set(
-      featSources.flatMap(([sourceType, featList]) =>
-        featList
-          .filter((feat) => selectedNamesByType[sourceType].has(feat.name))
-          .map((feat) => feat.unlockedAction)
-          .filter(Boolean),
-      ),
+      selectedSpecies?.unlockedAction
+        ? [...unlockedFeatActions, selectedSpecies.unlockedAction]
+        : unlockedFeatActions,
     );
   }, [
     character.advantages,
@@ -66,6 +74,7 @@ export default function ActionsSection() {
     character.ancestryFeats,
     character.generalFeats,
     character.selections,
+    character.species,
   ]);
 
   const availableActions = useMemo(
