@@ -41,12 +41,15 @@ export default function OtherStatSection() {
               <h1 className="text-striking text-center text-3xl underline">
                 Resistances
               </h1>
-              <div className="flex flex-row m-2 gap-2">
-                <div className="flex flex-row m-2 gap-2">
+              <div className="m-2 h-7 overflow-x-auto">
+                <div className="flex w-max flex-nowrap gap-2">
                   {Object.entries(getCompactResistances(character.resistances))
                     .filter(([, value]) => value > 0)
                     .map(([type, value]) => (
-                      <h2 key={type} className="text-text-light text-lg">
+                      <h2
+                        key={type}
+                        className="whitespace-nowrap text-text-light text-lg"
+                      >
                         {type}: {value}
                       </h2>
                     ))}
