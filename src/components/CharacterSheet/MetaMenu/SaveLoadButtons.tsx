@@ -156,19 +156,19 @@ export default function SaveLoadButtons() {
         onChange={handleSavedCharacterChange}
         className="text-xs px-1 py-1 bg-green-200"
       >
-        <option value="">Load Saved Character</option>
+        <option value="">Dropdown</option>
         {savedCharacterNames.map((name) => (
           <option key={name} value={name}>
             {name}
           </option>
         ))}
       </select>
-      <MetaButton label="Clear Character" onClick={clearCharacter} />
-      <MetaButton label="Save Character" onClick={saveCharacter} />
-      <MetaButton label="Load Character" onClick={loadCharacter} />
-      <MetaButton label="Export Character" onClick={exportCharacter} />
+      <MetaButton label="Clear" onClick={clearCharacter} />
+      <MetaButton label="Save" onClick={saveCharacter} />
+      <MetaButton label="Load" onClick={loadCharacter} />
+      <MetaButton label="Export" onClick={exportCharacter} />
       <MetaButton
-        label="Import Character"
+        label="Import"
         onClick={() => importInputRef.current?.click()}
       />
       <input
