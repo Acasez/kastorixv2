@@ -185,7 +185,7 @@ export default function SaveLoadButtons() {
       <select
         value={selectedCharacterName}
         onChange={handleSavedCharacterChange}
-        className="text-sm px-1 py-1 bg-green-200"
+        className="text-md px-1 bg-green-200"
       >
         <option value={CLEAR_CHARACTER}>Default</option>
         {savedCharacterNames.map((name) => (
