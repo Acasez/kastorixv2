@@ -58,7 +58,7 @@ export default function OtherStatSection() {
             </div>
           )}
           <OpenModalButton
-            label={character.armor ?? "Select Armor"}
+            label={character.armor != "" ? character.armor : "Select Armor"}
             itemChosen={Boolean(character.armor)}
             tooltipContent={
               character.armor
