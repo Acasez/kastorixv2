@@ -45,6 +45,7 @@ export type Track = {
 export type CharacterContextType = {
   character: Character;
   setCharacter: Dispatch<SetStateAction<Character>>;
+  resetCharacter: () => void;
   updateCharacter: (patch: Partial<Character>) => void;
   handleLevelChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

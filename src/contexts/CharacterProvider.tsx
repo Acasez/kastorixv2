@@ -45,6 +45,10 @@ const defaultCharacter: Character = {
 export function CharacterProvider({ children }: { children: ReactNode }) {
   const [character, setCharacter] = useState<Character>(defaultCharacter);
 
+  const resetCharacter = useCallback(() => {
+    setCharacter(defaultCharacter);
+  }, []);
+
   const updateCharacter = useCallback(
     (patch: Partial<Character>) =>
       setCharacter((prev) => ({ ...prev, ...patch })),
@@ -88,6 +92,7 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
       value={{
         character: characterWithResistances,
         setCharacter,
+        resetCharacter,
         updateCharacter,
         handleLevelChange,
         handleNameChange,

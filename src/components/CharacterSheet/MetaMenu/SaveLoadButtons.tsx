@@ -27,7 +27,7 @@ function mergeCharacter(current: Character, saved: Character): Character {
 }
 
 export default function SaveLoadButtons() {
-  const { character, setCharacter } = useCharacter();
+  const { character, setCharacter, resetCharacter } = useCharacter();
   const importInputRef = useRef<HTMLInputElement>(null);
 
   const getCharacterKey = () => character.name.trim();
@@ -103,8 +103,21 @@ export default function SaveLoadButtons() {
     }
   };
 
+  const clearCharacter = () => {
+    if (
+      !window.confirm(
+        "Clear the current character? Saved characters will not be affected.",
+      )
+    ) {
+      return;
+    }
+
+    resetCharacter();
+  };
+
   return (
     <div className="grid grid-cols-2 gap-2 mb-4">
+      <MetaButton label="Clear Character" onClick={clearCharacter} />
       <MetaButton label="Save Character" onClick={saveCharacter} />
       <MetaButton label="Load Character" onClick={loadCharacter} />
       <MetaButton label="Export Character" onClick={exportCharacter} />
