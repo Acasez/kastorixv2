@@ -1,4 +1,4 @@
-import { useRef, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import MetaButton from "./MetaButton";
 import {
   useCharacter,
@@ -11,6 +11,18 @@ function isCharacter(value: unknown): value is Character {
     value !== null &&
     typeof (value as { name?: unknown }).name === "string"
   );
+}
+
+function getSavedCharacterNames() {
+  return Object.keys(localStorage)
+    .filter((key) => {
+      try {
+        return isCharacter(JSON.parse(localStorage.getItem(key) ?? ""));
+      } catch {
+        return false;
+      }
+    })
+    .sort((firstName, secondName) => firstName.localeCompare(secondName));
 }
 
 function mergeCharacter(current: Character, saved: Character): Character {
@@ -29,6 +41,20 @@ function mergeCharacter(current: Character, saved: Character): Character {
 export default function SaveLoadButtons() {
   const { character, setCharacter, resetCharacter } = useCharacter();
   const importInputRef = useRef<HTMLInputElement>(null);
+  const [savedCharacterNames, setSavedCharacterNames] = useState(
+    getSavedCharacterNames,
+  );
+
+  const refreshSavedCharacters = () =>
+    setSavedCharacterNames(getSavedCharacterNames());
+
+  useEffect(() => {
+    const handleStorageChange = () =>
+      setSavedCharacterNames(getSavedCharacterNames());
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
   const getCharacterKey = () => character.name.trim();
 
@@ -40,11 +66,12 @@ export default function SaveLoadButtons() {
     }
 
     localStorage.setItem(characterKey, JSON.stringify(character));
+    refreshSavedCharacters();
     window.alert(`Saved character "${characterKey}".`);
   };
 
-  const loadCharacter = () => {
-    const characterKey = getCharacterKey();
+  const loadCharacter = (selectedKey = getCharacterKey()) => {
+    const characterKey = selectedKey;
     if (!characterKey) {
       window.alert("Enter a character name before loading.");
       return;
@@ -66,6 +93,13 @@ export default function SaveLoadButtons() {
     } catch {
       window.alert(`Saved character "${characterKey}" is invalid.`);
     }
+  };
+
+  const handleSavedCharacterChange = (
+    event: ChangeEvent<HTMLSelectElement>,
+  ) => {
+    const selectedKey = event.target.value;
+    if (selectedKey) loadCharacter(selectedKey);
   };
 
   const exportCharacter = () => {
@@ -117,6 +151,18 @@ export default function SaveLoadButtons() {
 
   return (
     <div className="grid grid-cols-2 gap-2 mb-4">
+      <select
+        value=""
+        onChange={handleSavedCharacterChange}
+        className="text-xs px-1 py-1 bg-green-200"
+      >
+        <option value="">Load Saved Character</option>
+        {savedCharacterNames.map((name) => (
+          <option key={name} value={name}>
+            {name}
+          </option>
+        ))}
+      </select>
       <MetaButton label="Clear Character" onClick={clearCharacter} />
       <MetaButton label="Save Character" onClick={saveCharacter} />
       <MetaButton label="Load Character" onClick={loadCharacter} />
