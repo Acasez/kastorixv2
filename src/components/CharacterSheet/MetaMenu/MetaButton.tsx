@@ -8,7 +8,7 @@ export default function OpenModalButton({
   onClick = () => {},
 }: OpenModalButtonProps) {
   return (
-    <button className="text-xs px-1 py-1 bg-green-200" onClick={onClick}>
+    <button className="text-sm px-1 py-1 bg-green-200" onClick={onClick}>
       {label}
     </button>
   );
