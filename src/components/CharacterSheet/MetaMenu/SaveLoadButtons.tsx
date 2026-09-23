@@ -25,6 +25,8 @@ function getSavedCharacterNames() {
     .sort((firstName, secondName) => firstName.localeCompare(secondName));
 }
 
+const CLEAR_CHARACTER = "__clear_character__";
+
 function mergeCharacter(current: Character, saved: Character): Character {
   return {
     ...current,
@@ -44,6 +46,7 @@ export default function SaveLoadButtons() {
   const [savedCharacterNames, setSavedCharacterNames] = useState(
     getSavedCharacterNames,
   );
+  const [selectedCharacterName, setSelectedCharacterName] = useState("");
 
   const refreshSavedCharacters = () =>
     setSavedCharacterNames(getSavedCharacterNames());
@@ -99,7 +102,35 @@ export default function SaveLoadButtons() {
     event: ChangeEvent<HTMLSelectElement>,
   ) => {
     const selectedKey = event.target.value;
-    if (selectedKey) loadCharacter(selectedKey);
+    if (selectedKey === CLEAR_CHARACTER) {
+      clearCharacter();
+      setSelectedCharacterName("");
+      return;
+    }
+
+    if (selectedKey) {
+      setSelectedCharacterName(selectedKey);
+      loadCharacter(selectedKey);
+    }
+  };
+
+  const deleteCharacter = () => {
+    if (!selectedCharacterName) {
+      window.alert("Select a saved character before deleting.");
+      return;
+    }
+
+    if (
+      !window.confirm(
+        `Delete saved character "${selectedCharacterName}"? This cannot be undone.`,
+      )
+    ) {
+      return;
+    }
+
+    localStorage.removeItem(selectedCharacterName);
+    setSelectedCharacterName("");
+    refreshSavedCharacters();
   };
 
   const exportCharacter = () => {
@@ -152,18 +183,19 @@ export default function SaveLoadButtons() {
   return (
     <div className="grid grid-cols-2 gap-2 mb-4">
       <select
-        value=""
+        value={selectedCharacterName}
         onChange={handleSavedCharacterChange}
         className="text-xs px-1 py-1 bg-green-200"
       >
-        <option value="">Dropdown</option>
+        <option value="">Saved Characters</option>
+        <option value={CLEAR_CHARACTER}>Default</option>
         {savedCharacterNames.map((name) => (
           <option key={name} value={name}>
             {name}
           </option>
         ))}
       </select>
-      <MetaButton label="Clear" onClick={clearCharacter} />
+      <MetaButton label="Delete" onClick={deleteCharacter} />
       <MetaButton label="Save" onClick={saveCharacter} />
       <MetaButton label="Load" onClick={loadCharacter} />
       <MetaButton label="Export" onClick={exportCharacter} />
