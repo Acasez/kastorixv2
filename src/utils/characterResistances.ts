@@ -4,8 +4,10 @@ import advantages from "../JSON/advantages.json";
 import damageTypes from "../JSON/damage_types.json";
 import generalFeats from "../JSON/general_feats.json";
 import species from "../JSON/species.json";
+import type { SpeedTypes } from "../types/SpeedTypes";
 
 type ResistanceSource = { name: string; resistances?: string };
+type SpeedSource = { name: string; speeds?: string };
 
 function addResistances(
   totals: Record<string, number>,
@@ -85,4 +87,43 @@ export function getCompactResistances(
   });
 
   return compact;
+}
+
+export function getCharacterSpeeds(character: {
+  species: string | null;
+  selections: Record<string, string>;
+}): Record<SpeedTypes, number> {
+  const speeds: Record<SpeedTypes, number> = {
+    Land: 5,
+    Swim: 0,
+    Climb: 0,
+    Burrow: 0,
+    Glide: 0,
+    Fly: 0,
+  };
+  const sources: SpeedSource[] = [
+    ...species,
+    ...ancestryFeats,
+    ...advantages,
+    ...generalFeats,
+  ];
+
+  [character.species, ...Object.values(character.selections)]
+    .filter((name): name is string => Boolean(name))
+    .forEach((name) => {
+      sources
+        .find((source) => source.name === name)
+        ?.speeds?.split(",")
+        .forEach((speed) => {
+          const match = speed.trim().match(/^\((-?\d+)\)\s+(.+)$/);
+          if (!match) return;
+
+          const [, value, type] = match;
+          if (type in speeds) {
+            speeds[type as SpeedTypes] += Number(value);
+          }
+        });
+    });
+
+  return speeds;
 }

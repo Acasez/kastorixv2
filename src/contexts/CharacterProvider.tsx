@@ -9,7 +9,10 @@ import {
 import { CharacterContext, type Character } from "./CharacterContext";
 import { getProficiency } from "../constants/Proficiency";
 import type { StatKey } from "../types/StatKey";
-import { getCharacterResistances } from "../utils/characterResistances";
+import {
+  getCharacterResistances,
+  getCharacterSpeeds,
+} from "../utils/characterResistances";
 
 const defaultCharacter: Character = {
   name: "",
@@ -84,6 +87,7 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
 
   const characterWithResistances = {
     ...character,
+    speeds: getCharacterSpeeds(character),
     resistances: getCharacterResistances(character),
   };
 
