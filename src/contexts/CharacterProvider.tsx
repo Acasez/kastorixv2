@@ -43,6 +43,7 @@ const defaultCharacter: Character = {
   },
   gold: 0,
   inventory: "",
+  quickAccessSlots: 0,
 };
 
 export function CharacterProvider({ children }: { children: ReactNode }) {

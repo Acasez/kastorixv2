@@ -35,6 +35,7 @@ export type Character = {
   spellShaping: Spellshaping;
   gold: number;
   inventory: string;
+  quickAccessSlots: number;
 };
 
 export type Track = {

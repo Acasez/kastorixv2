@@ -9,7 +9,12 @@ import ModalWrapper from "../../ModalViews/ModalWrapper";
 import { getCompactResistances } from "../../../utils/characterResistances";
 
 export default function OtherStatSection() {
-  const { character, passivePerception, passiveManasense } = useCharacter();
+  const {
+    character,
+    passivePerception,
+    passiveManasense,
+    updateCharacter,
+  } = useCharacter();
   const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
   const closeModal = () => setModalRequest(null);
   return (
@@ -89,6 +94,23 @@ export default function OtherStatSection() {
             <h2 className="text-text-light text-lg">
               Passive Manasense: {passiveManasense}
             </h2>
+          </div>
+          <div className="flex flex-col gap-2">
+            <button
+              className="bg-blue-500 text-text-light rounded-xl px-2 py-1"
+              onClick={() =>
+                updateCharacter({
+                  health: { ...character.health, current: character.health.max },
+                  mana: { ...character.mana, current: character.mana.max },
+                  aura: { ...character.aura, current: character.aura.max },
+                })
+              }
+            >
+              Long Rest
+            </button>
+            <button className="bg-blue-500 text-text-light rounded-xl px-2 py-1">
+              Short Rest
+            </button>
           </div>
         </div>
       </div>
