@@ -10,6 +10,9 @@ const STATS: { key: StatKey; label: string }[] = [
   { key: "WIL", label: "Willpower" },
 ];
 
+const isStatKey = (value: string | undefined): value is StatKey =>
+  value !== undefined && STATS.some(({ key }) => key === value);
+
 export function StatIncreaseModal({
   selectionKey,
   closeModal,
@@ -18,18 +21,36 @@ export function StatIncreaseModal({
   closeModal: () => void;
 }) {
   const { character, updateCharacter } = useCharacter();
+  const statIncreaseSelections = Object.entries(character.selections)
+    .filter(([key]) => key.startsWith("statIncrease:"))
+    .sort(
+      ([firstKey], [secondKey]) =>
+        Number(firstKey.split(":")[1]) - Number(secondKey.split(":")[1]),
+    );
+  const currentIndex = statIncreaseSelections.findIndex(
+    ([key]) => key === selectionKey,
+  );
+  const adjacentSelections = [
+    currentIndex > 0
+      ? statIncreaseSelections[currentIndex - 1]?.[1]
+      : currentIndex === -1
+        ? statIncreaseSelections.at(-1)?.[1]
+        : undefined,
+    currentIndex >= 0
+      ? statIncreaseSelections[currentIndex + 1]?.[1]
+      : undefined,
+  ];
+  const adjacentStats = new Set(adjacentSelections.filter(isStatKey));
   const [selectedStat, setSelectedStat] = useState<StatKey | null>(() => {
     const selected = character.selections[selectionKey];
-    return STATS.some(({ key }) => key === selected)
-      ? (selected as StatKey)
-      : null;
+    return isStatKey(selected) ? (selected as StatKey) : null;
   });
 
   const confirmIncrease = () => {
-    if (!selectedStat) return;
+    if (!selectedStat || adjacentStats.has(selectedStat)) return;
 
     const previousSelection = character.selections[selectionKey];
-    const previousStat = STATS.some(({ key }) => key === previousSelection)
+    const previousStat = isStatKey(previousSelection)
       ? (previousSelection as StatKey)
       : null;
 
@@ -62,10 +83,13 @@ export function StatIncreaseModal({
             key={key}
             type="button"
             onClick={() => setSelectedStat(key)}
+            disabled={adjacentStats.has(key)}
             className={`flex items-center justify-between rounded-md border-2 p-3 text-left transition ${
-              selectedStat === key
-                ? "border-blue-600 bg-blue-100"
-                : "border-gray-200 bg-sky-100 hover:border-orange-400 hover:bg-sky-200"
+              adjacentStats.has(key)
+                ? "cursor-not-allowed border-gray-200 bg-gray-100 opacity-50"
+                : selectedStat === key
+                  ? "border-blue-600 bg-blue-100"
+                  : "border-gray-200 bg-sky-100 hover:border-orange-400 hover:bg-sky-200"
             }`}
           >
             <span className="font-semibold text-gray-800">

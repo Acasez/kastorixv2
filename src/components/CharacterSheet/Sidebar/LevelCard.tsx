@@ -139,6 +139,30 @@ export default function LevelCard({ level }: LevelCardProps) {
     });
   };
 
+  const clearStatIncrease = (selectionKey: string) => {
+    const selectedStat = character.selections[selectionKey];
+    if (!selectedStat || !["PHY", "DEX", "INT", "WIL"].includes(selectedStat)) {
+      return;
+    }
+
+    const selections = Object.fromEntries(
+      Object.entries(character.selections).filter(
+        ([key]) => key !== selectionKey,
+      ),
+    );
+
+    updateCharacter({
+      baseStats: {
+        ...character.baseStats,
+        [selectedStat]:
+          (character.baseStats[
+            selectedStat as keyof typeof character.baseStats
+          ] ?? 0) - 1,
+      },
+      selections,
+    });
+  };
+
   const handleContextMenu = (
     event: React.MouseEvent<HTMLButtonElement>,
     selectionKey: string,
@@ -315,7 +339,10 @@ export default function LevelCard({ level }: LevelCardProps) {
                 itemChosen={hasChosenItem(action)}
                 onContextMenu={(event) => {
                   const type = actionTypes[action];
-                  if (type && type !== "baseStats" && type !== "statIncrease") {
+                  if (type === "statIncrease") {
+                    event.preventDefault();
+                    clearStatIncrease(`${type}:${level}`);
+                  } else if (type && type !== "baseStats") {
                     handleContextMenu(event, `${type}:${level}`, type);
                   }
                 }}
