@@ -6,6 +6,7 @@ import ProficiencyMarker from "../ProficiencyMarker";
 import { STAT_COLORS } from "../../constants/Stats";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import Tooltip from "../Tooltip";
+import armors from "../../JSON/armors.json";
 
 export default function SkillsTable() {
   const { character } = useCharacter();
@@ -27,7 +28,17 @@ export default function SkillsTable() {
             const tier = getProficiency(tierName);
             const statValue =
               character.baseStats[STRING_TO_STATKEY[skill.stat]] ?? 0;
-            const total = statValue + tier.bonus;
+            const selectedArmor = armors.find(
+              (armor) => armor.name === character.armor,
+            );
+            const armorPenalty = Number(selectedArmor?.penalties ?? 0);
+            const armorApplies =
+              selectedArmor?.type === "Heavy"
+                ? skill.armorPenalties === "Light" ||
+                  skill.armorPenalties === "Heavy"
+                : skill.armorPenalties === selectedArmor?.type;
+            const total =
+              statValue + tier.bonus + (armorApplies ? armorPenalty : 0);
 
             return (
               <tr
@@ -49,7 +60,7 @@ export default function SkillsTable() {
                     <ProficiencyMarker skillName={skill.name} />
                     <Tooltip
                       align="center"
-                      content={`${skill.stat} ${statValue} + ${tier.fullName} ${tier.bonus}`}
+                      content={`${skill.stat} ${statValue} + ${tier.fullName} ${tier.bonus}${armorApplies ? ` + ${character.armor} ${armorPenalty}` : ""}`}
                     >
                       <span
                         className={
