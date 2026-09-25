@@ -26,8 +26,10 @@ export default function SpellRankSection({
   baseSpellshapingBonus,
 }: SpellRankSectionProps) {
   const { character } = useCharacter();
-  const maxKnownSpells =
-    character.level >= unlockedAtLevel ? character.baseStats.INT : 0;
+  const maxKnownSpells = Math.max(
+    character.level >= unlockedAtLevel ? character.baseStats.INT : 0,
+    0,
+  );
 
   return (
     <div className="bg-gray-800 p-4 rounded-lg">
