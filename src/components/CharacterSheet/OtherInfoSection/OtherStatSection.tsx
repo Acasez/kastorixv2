@@ -37,7 +37,7 @@ export default function OtherStatSection() {
       </h1>
       <ConditionDisplay />
       <div className="flex flex-row justify-between mx-5">
-        <div>
+        <div className="max-w-100">
           <h1 className="text-striking text-center text-3xl underline">
             Speed
           </h1>
@@ -59,7 +59,7 @@ export default function OtherStatSection() {
               <h1 className="text-striking text-center text-3xl underline">
                 Resistances
               </h1>
-              <div className="m-2 h-7 overflow-x-auto">
+              <div className="m-2 h-7 overflow-x-auto scrollbar-none">
                 <div className="flex w-max flex-nowrap gap-2">
                   {Object.entries(getCompactResistances(character.resistances))
                     .filter(([, value]) => value > 0)
