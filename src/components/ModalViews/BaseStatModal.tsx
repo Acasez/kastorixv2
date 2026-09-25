@@ -1,9 +1,7 @@
-import { STAT_COLORS } from "../../constants/Stats";
+import { STAT_COLORS, type BaseStatArray } from "../../constants/Stats";
 import { useCharacter } from "../../contexts/CharacterContext";
 import type { StatKey } from "../../types/StatKey";
 import { useState } from "react";
-
-type BaseStatArray = 3 | 1 | 0 | -1;
 
 const BASE_STAT_VALUES: BaseStatArray[] = [3, 1, 0, -1];
 
@@ -89,7 +87,7 @@ export function BaseStatsEditor({ closeModal }: { closeModal: () => void }) {
   };
 
   const confirmStats = () => {
-    updateCharacter({ baseStats });
+    updateCharacter({ baseStats, baseStatsSet: true });
     closeModal();
   };
 

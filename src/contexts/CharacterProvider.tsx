@@ -29,6 +29,7 @@ const defaultCharacter: Character = {
   background: null,
   species: null,
   baseStats: { PHY: 0, DEX: 0, INT: 0, WIL: 0 },
+  baseStatsSet: false,
   skillProficiencies: {},
   saveProficiencies: {},
   health: { current: 10, max: 10 },

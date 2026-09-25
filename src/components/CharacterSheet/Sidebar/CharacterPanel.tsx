@@ -41,7 +41,8 @@ export default function CharacterPanel() {
           }
         />
         <OpenModalButton
-          label="Set Base Stats"
+          label={character.baseStatsSet ? "Base Stats Set" : "Set Base Stats"}
+          itemChosen={character.baseStatsSet}
           onClick={() =>
             setModalRequest({ type: "baseStats", title: "Set Base Stats" })
           }

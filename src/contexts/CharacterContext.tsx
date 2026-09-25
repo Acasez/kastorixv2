@@ -25,6 +25,7 @@ export type Character = {
   background: string | null;
   species: string | null;
   baseStats: Record<StatKey, number>;
+  baseStatsSet: boolean;
   skillProficiencies: Record<string, ProficiencyTierName>;
   saveProficiencies: Record<string, ProficiencyTierName>;
   health: Track;
