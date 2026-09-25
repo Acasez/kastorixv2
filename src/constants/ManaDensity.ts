@@ -7,7 +7,7 @@ export const MANA_DENSITY = [
     spellShapingModifier: -1,
   },
   {
-    name: "Low Mana",
+    name: "Low",
     hourlyRate: 10,
     harnessManaDC: 15,
     harnessMana: "1d4",
