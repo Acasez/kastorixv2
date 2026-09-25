@@ -68,7 +68,7 @@ const actionTypes: Record<string, ChoiceType | "baseStats"> = {
   "Select Ancestry Feat": "ancestryFeat",
   "Select Arcane Feat": "arcaneFeat",
   "Select General Feat": "generalFeat",
-  "Increase One Stat": "baseStats",
+  /* "Increase One Stat": "statIncrease", */
 };
 
 function parseUnlockedChoice(

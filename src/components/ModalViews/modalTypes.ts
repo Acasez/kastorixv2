@@ -43,3 +43,4 @@ export type ModalRequest =
     }
   | { type: "armor"; title: string; selectionKey: string; level: number }
   | { type: "baseStats"; title: string };
+/*   | { type: "statIncrease"; title: string } */
