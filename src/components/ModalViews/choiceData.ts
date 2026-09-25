@@ -15,11 +15,14 @@ import armors from "../../JSON/armors.json";
 import { getActionIcons } from "../../utils/actionUtils";
 
 export type ChoiceData = Record<
-  Exclude<ModalRequest["type"], "baseStats">,
+  Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
   ChoiceItem[]
 >;
 
-export type ChoiceType = Exclude<ModalRequest["type"], "baseStats">;
+export type ChoiceType = Exclude<
+  ModalRequest["type"],
+  "baseStats" | "statIncrease"
+>;
 
 export type DetailField = {
   label: string;

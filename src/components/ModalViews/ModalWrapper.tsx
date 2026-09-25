@@ -4,6 +4,7 @@ import { getChoiceData } from "./choiceData";
 import { useCharacter } from "../../contexts/CharacterContext";
 import backgrounds from "../../JSON/backgrounds.json";
 import { BaseStatsEditor } from "./BaseStatModal";
+import { StatIncreaseModal } from "./StatIncreaseModal";
 
 interface ModalWrapperProps {
   request: ModalRequest;
@@ -27,7 +28,7 @@ export default function ModalWrapper({
     if (request.type === "armor") return character.armor;
     if (request.type === "species") return character.species;
     if (request.type === "background") return character.background;
-    if (request.type !== "baseStats") {
+    if (request.type !== "baseStats" && request.type !== "statIncrease") {
       return character.selections[request.selectionKey] ?? null;
     }
     return null;
@@ -44,7 +45,11 @@ export default function ModalWrapper({
       );
     }
 
-    if (request.type === "species" || request.type === "baseStats") {
+    if (
+      request.type === "species" ||
+      request.type === "baseStats" ||
+      request.type === "statIncrease"
+    ) {
       return [];
     }
 
@@ -80,6 +85,7 @@ export default function ModalWrapper({
     const isBlockedDuplicate =
       request.type !== "species" &&
       request.type !== "baseStats" &&
+      request.type !== "statIncrease" &&
       getBlockedChoiceNames().includes(value) &&
       value !== (request.type === "spell" ? request.replaceSpell : undefined);
 
@@ -132,7 +138,10 @@ export default function ModalWrapper({
           ? metamagics
           : [...metamagics, value],
       });
-    } else if (request.type !== "baseStats") {
+    } else if (
+      request.type !== "baseStats" &&
+      request.type !== "statIncrease"
+    ) {
       updateCharacter({
         selections: { ...character.selections, [request.selectionKey]: value },
       });
@@ -141,7 +150,7 @@ export default function ModalWrapper({
   };
 
   const renderModalContent = () => {
-    if (request.type !== "baseStats") {
+    if (request.type !== "baseStats" && request.type !== "statIncrease") {
       return (
         <ChoiceModal
           items={choiceData[request.type]}
@@ -168,7 +177,16 @@ export default function ModalWrapper({
       );
     }
 
-    return <BaseStatsEditor closeModal={closeModal} />;
+    if (request.type === "baseStats") {
+      return <BaseStatsEditor closeModal={closeModal} />;
+    }
+
+    return (
+      <StatIncreaseModal
+        selectionKey={request.selectionKey}
+        closeModal={closeModal}
+      />
+    );
   };
 
   return (

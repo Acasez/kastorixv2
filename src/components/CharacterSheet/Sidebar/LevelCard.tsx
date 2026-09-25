@@ -18,7 +18,10 @@ import armors from "../../../JSON/armors.json";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 
-type ChoiceType = Exclude<ModalRequest["type"], "species" | "baseStats">;
+type ChoiceType = Exclude<
+  ModalRequest["type"],
+  "species" | "baseStats" | "statIncrease"
+>;
 
 type UnlockableItem = {
   name: string;
@@ -62,13 +65,13 @@ const choiceConfig: Record<
   armor: { title: "Select Armor", items: armors },
 };
 
-const actionTypes: Record<string, ChoiceType | "baseStats"> = {
+const actionTypes: Record<string, ChoiceType | "baseStats" | "statIncrease"> = {
   "Select Background": "background",
   "Select Advantage": "advantage",
   "Select Ancestry Feat": "ancestryFeat",
   "Select Arcane Feat": "arcaneFeat",
   "Select General Feat": "generalFeat",
-  /* "Increase One Stat": "statIncrease", */
+  "Increase One Stat": "statIncrease",
 };
 
 function parseUnlockedChoice(
@@ -149,6 +152,13 @@ export default function LevelCard({ level }: LevelCardProps) {
     const type = actionTypes[action];
     if (type === "baseStats") {
       setModalRequest({ type, title: action });
+    } else if (type === "statIncrease") {
+      setModalRequest({
+        type,
+        title: action,
+        selectionKey: `${type}:${level}`,
+        level,
+      });
     } else if (type) {
       openChoiceModal(type, action, `${type}:${level}`, level);
     }
@@ -227,7 +237,7 @@ export default function LevelCard({ level }: LevelCardProps) {
 
   const getActionUnlockedChoices = (action: string) => {
     const type = actionTypes[action];
-    if (!type || type === "baseStats") return [];
+    if (!type || type === "baseStats" || type === "statIncrease") return [];
 
     const selectionKey = getSelectionKey(type);
     const selectedName = character.selections[selectionKey];
@@ -305,14 +315,19 @@ export default function LevelCard({ level }: LevelCardProps) {
                 itemChosen={hasChosenItem(action)}
                 onContextMenu={(event) => {
                   const type = actionTypes[action];
-                  if (type && type !== "baseStats") {
+                  if (type && type !== "baseStats" && type !== "statIncrease") {
                     handleContextMenu(event, `${type}:${level}`, type);
                   }
                 }}
                 tooltipContent={(() => {
                   const selectedName = getSelectedActionLabel(action);
                   const type = actionTypes[action];
-                  if (!type || type === "baseStats" || !hasChosenItem(action)) {
+                  if (
+                    !type ||
+                    type === "baseStats" ||
+                    type === "statIncrease" ||
+                    !hasChosenItem(action)
+                  ) {
                     return undefined;
                   }
                   const item = getChoiceItem(type, selectedName);
