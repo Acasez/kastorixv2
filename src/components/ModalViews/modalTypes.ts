@@ -4,7 +4,13 @@ export type ModalRequest =
   | { type: "generalFeat"; title: string; selectionKey: string; level: number }
   | { type: "arcaneFeat"; title: string; selectionKey: string; level: number }
   | { type: "advantage"; title: string; selectionKey: string; level: number }
-  | { type: "ancestryFeat"; title: string; selectionKey: string; level: number }
+  | {
+      type: "ancestryFeat";
+      title: string;
+      selectionKey: string;
+      level: number;
+      species: string | null;
+    }
   | { type: "golemUpgrade"; title: string; selectionKey: string; level: number }
   | {
       type: "runegunUpgrade";

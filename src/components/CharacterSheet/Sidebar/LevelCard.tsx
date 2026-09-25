@@ -108,6 +108,17 @@ export default function LevelCard({ level }: LevelCardProps) {
     selectionKey: string,
     choiceLevel: number,
   ) => {
+    if (type === "ancestryFeat") {
+      setModalRequest({
+        type,
+        title,
+        selectionKey,
+        level: choiceLevel,
+        species: character.species,
+      });
+      return;
+    }
+
     setModalRequest({ type, title, selectionKey, level: choiceLevel });
   };
 

@@ -128,6 +128,17 @@ const ARMOR_FIELDS: DetailField[] = [
   { label: "Phy Required", valueKey: "phy" },
 ];
 
+function featIsAvailableForSpecies(
+  featSpecies: string,
+  selectedSpecies: string | null,
+): boolean {
+  if (!selectedSpecies) return false;
+
+  return featSpecies
+    .split(/[,/]/)
+    .some((speciesName) => speciesName.trim() === selectedSpecies);
+}
+
 export function getChoiceData(request: ModalRequest): ChoiceData {
   const spellItems: ChoiceItem[] = (
     request.type === "spell" && request.rank
@@ -170,8 +181,14 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   const generalFeatItems = createChoiceItems(generalFeats, GENERAL_FEAT_FIELDS);
   const arcaneFeatItems = createChoiceItems(arcaneFeats, ARCANE_FEAT_FIELDS);
   const advantageItems = createChoiceItems(advantages, ADVANTAGE_FIELDS);
+  const availableAncestryFeats =
+    request.type === "ancestryFeat"
+      ? ancestryFeats.filter((feat) =>
+          featIsAvailableForSpecies(feat.species, request.species),
+        )
+      : ancestryFeats;
   const ancestryFeatItems = createChoiceItems(
-    ancestryFeats,
+    availableAncestryFeats,
     ANCESTRY_FEAT_FIELDS,
   );
   const golemUpgradeItems = createChoiceItems(golemUpgrades, UPGRADE_FIELDS);
@@ -210,6 +227,12 @@ export function getChoiceItem(
   type: ChoiceType,
   name: string,
 ): ChoiceItem | undefined {
+  if (type === "ancestryFeat") {
+    return createChoiceItems(ancestryFeats, ANCESTRY_FEAT_FIELDS).find(
+      (item) => item.name === name,
+    );
+  }
+
   const request =
     type === "species"
       ? { type: "species" as const, title: "Select Species" }
