@@ -1,6 +1,7 @@
 import { useCharacter } from "../../../contexts/CharacterContext";
 import type { Spell } from "../../../types/Spells";
 import SpellComponent from "./SpellComponent";
+import { getCharacterSpellGrant } from "../../../utils/characterSpellGrants";
 
 interface SpellRankSectionProps {
   rankName: string;
@@ -27,7 +28,8 @@ export default function SpellRankSection({
 }: SpellRankSectionProps) {
   const { character } = useCharacter();
   const maxKnownSpells = Math.max(
-    character.level >= unlockedAtLevel ? character.baseStats.INT : 0,
+    (character.level >= unlockedAtLevel ? character.baseStats.INT : 0) +
+      getCharacterSpellGrant(character, rankName),
     0,
   );
 
