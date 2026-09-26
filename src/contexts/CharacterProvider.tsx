@@ -75,6 +75,10 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
       gold: Math.min(99999, Math.max(0, Number(e.target.value))),
     });
 
+  const handleInventoryChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => updateCharacter({ inventory: e.target.value });
+
   // Combined derived stats
   const derivedStats = useMemo(() => {
     const getPassive = (skill: string, stat: StatKey) => {
@@ -106,6 +110,7 @@ export function CharacterProvider({ children }: { children: ReactNode }) {
         handleNameChange,
         ...derivedStats,
         handleGoldChange,
+        handleInventoryChange,
       }}
     >
       {children}

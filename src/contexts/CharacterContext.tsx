@@ -56,6 +56,9 @@ export type CharacterContextType = {
   passivePerception: number;
   passiveManasense: number;
   handleGoldChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleInventoryChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => void;
 };
 
 export const CharacterContext = createContext<CharacterContextType | undefined>(
