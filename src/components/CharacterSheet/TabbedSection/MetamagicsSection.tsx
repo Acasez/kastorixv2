@@ -1,5 +1,7 @@
 import type { Metamagic } from "../../../types/Spells";
 import MetamagicComponent from "./MetamagicComponent";
+import { useCharacter } from "../../../contexts/CharacterContext";
+import { getCharacterMetamagicGrant } from "../../../utils/characterSpellGrants";
 
 interface MetamagicProps {
   onAddMetamagic: () => void;
@@ -14,7 +16,8 @@ export default function MetamagicsSection({
   onRemoveMetamagic,
   selectedMetamagics,
 }: MetamagicProps) {
-  const maxKnownMetamagics = 0;
+  const { character } = useCharacter();
+  const maxKnownMetamagics = getCharacterMetamagicGrant(character);
   return (
     <div className="bg-gray-800 p-4 rounded-lg mt-3">
       <div className="flex justify-between items-center mb-4">

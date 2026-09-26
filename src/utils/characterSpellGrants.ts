@@ -9,6 +9,7 @@ import { evaluateCharacterExpression } from "./evaluateCharacterExpression";
 type SpellGrantSource = {
   name: string;
   spellsLearned?: string;
+  metamagicsLearned?: string;
 };
 
 const spellGrantSources: SpellGrantSource[] = [
@@ -19,12 +20,13 @@ const spellGrantSources: SpellGrantSource[] = [
   ...species,
 ];
 
-export function getCharacterSpellGrant(
+function getCharacterGrant(
   character: Character,
-  rankName: string,
+  grantField: "spellsLearned" | "metamagicsLearned",
+  grantName: string,
 ): number {
   const variables = { ...character.baseStats, Level: character.level };
-  const normalizedRank = rankName.replace(/\s+/g, "").toLowerCase();
+  const normalizedGrantName = grantName.replace(/\s+/g, "").toLowerCase();
   const selectedNames = [
     ...Object.values(character.selections),
     ...(character.species ? [character.species] : []),
@@ -32,14 +34,25 @@ export function getCharacterSpellGrant(
 
   return selectedNames.reduce((total, selectedName) => {
     const source = spellGrantSources.find((item) => item.name === selectedName);
-    const match = source?.spellsLearned?.match(/^\((.+)\)\s*(.+)$/);
+    const match = source?.[grantField]?.match(/^\((.+)\)\s*(.+)$/);
     if (
       !match ||
-      match[2].replace(/\s+/g, "").toLowerCase() !== normalizedRank
+      match[2].replace(/\s+/g, "").toLowerCase() !== normalizedGrantName
     ) {
       return total;
     }
 
     return total + evaluateCharacterExpression(match[1], variables);
   }, 0);
+}
+
+export function getCharacterSpellGrant(
+  character: Character,
+  rankName: string,
+): number {
+  return getCharacterGrant(character, "spellsLearned", rankName);
+}
+
+export function getCharacterMetamagicGrant(character: Character): number {
+  return getCharacterGrant(character, "metamagicsLearned", "Metamagic");
 }
