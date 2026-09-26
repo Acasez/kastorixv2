@@ -11,7 +11,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Alert",
@@ -25,11 +26,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Always The Right Tool",
-        "description": "You always seem to have the correct tool in your pocket.\nOnce per day, as a two action activity you may find a small tool, gear, ammunition or material you could have bought earlier in your bags.\nYou then reveal when you bought the item and pay for them.",
+        "description": "You always seem to have the correct tool in your pocket.\nOnce per day, as a two action activity you may find a small tool, gear, ammunition or material you could have bought earlier in your bags.\nYou then reveal when you bought the item and pay for them.\nYou have one more quick access slot",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -39,7 +41,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": "1"
     },
     {
         "name": "Army Training",
@@ -53,7 +56,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Athlete",
@@ -67,7 +71,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Battlefield Medic",
@@ -81,7 +86,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Calculate The Odds",
@@ -95,7 +101,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Combat Training",
@@ -109,7 +116,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Dedicated Student",
@@ -123,7 +131,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Defensive Training",
@@ -137,7 +146,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Duelist",
@@ -151,7 +161,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Encouraging Words",
@@ -165,7 +176,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Expert Pilot",
@@ -179,7 +191,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Heavy Armor Training",
@@ -193,7 +206,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Inspiring Leader",
@@ -207,7 +221,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Item Thrower",
@@ -221,7 +236,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Linguist",
@@ -235,7 +251,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Lore Mastery",
@@ -249,7 +266,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Marksman",
@@ -263,7 +281,8 @@
         "resistances": "",
         "combatManeuversLearned": "(1) CombatManeuvers",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Martial Arts Training",
@@ -277,7 +296,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Martial Gun Arts",
@@ -291,7 +311,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Nerves of Steel",
@@ -305,7 +326,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Opportunist",
@@ -319,7 +341,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Quick Witted",
@@ -333,7 +356,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Quip",
@@ -347,11 +371,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Skilled",
-        "description": "You have practiced three skills of your choice, becoming trained in them.\nYou may choose this feat multiple times.",
+        "description": "You have practiced three skills of your choice.\nYour proficiency level in the the three skllls increases (max Expert).\nYou may choose this feat multiple times.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -361,7 +386,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Sneaky",
@@ -375,7 +401,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Staff Training",
@@ -389,7 +416,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Surveyor",
@@ -403,7 +431,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Survivor",
@@ -417,7 +446,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Tactical Combatant",
@@ -431,7 +461,8 @@
         "resistances": "",
         "combatManeuversLearned": "(2 + INT) CombatManeuvers",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Underhanded Striker",
@@ -445,7 +476,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Untrained Improvisation",
@@ -459,7 +491,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Weapons Training",
@@ -473,7 +506,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Will to Live",
@@ -487,7 +521,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "You're Next",
@@ -501,7 +536,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Aerialist",
@@ -511,11 +547,12 @@
         "level": "2",
         "repeatable": "",
         "unlockedFeats": "",
-        "speeds": "",
+        "speeds": "(+1) Fly, (+1) Gilde",
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Bob and Weave",
@@ -529,7 +566,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Emergency Aura Block",
@@ -543,7 +581,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Like Shooting Fish in a Barrel",
@@ -557,11 +596,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Skilled Fencer",
-        "description": "You've trained in the arts of fencing \nYou have +1 bonus when Parrying melee attacks\nYou learn the Cut Down Projectile and Riposte combat maneuvers.",
+        "description": "You've trained in the arts of fencing \nYou have +1 bonus when Parrying\nYou learn the Cut Down Projectile and Riposte combat maneuvers.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "2",
@@ -571,7 +611,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Always Ready",
@@ -585,7 +626,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Armor Expertize",
@@ -599,7 +641,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Commanding Presence",
@@ -613,7 +656,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Evasion Expertize",
@@ -627,11 +671,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Expert Brawler",
-        "description": "Your proficiency level in Brawling increases (max Expert).\nYour proficiency level in unarmed attacks increases (max Expert).\nYou learn 2 combat maneuvers with the Brawling trait",
+        "description": "Brawling comes to you naturally\nYour proficiency level in Brawling increases (max Expert).\nYour proficiency level in unarmed attacks increases (max Expert).\nYou learn 2 combat maneuvers with the Brawling trait",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -641,7 +686,8 @@
         "resistances": "",
         "combatManeuversLearned": "(2) CombatManeuvers",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Fleet",
@@ -655,7 +701,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Magical Master",
@@ -669,7 +716,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Martial Expertize",
@@ -683,7 +731,8 @@
         "resistances": "",
         "combatManeuversLearned": "(2) CombatManeuvers",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Move Together",
@@ -697,7 +746,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Perfect Condition",
@@ -711,12 +761,13 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "PHY",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Rolling Landing",
-        "description": "You can use your reaction to treat falls as they were 3 tiles shorter.\nIf you don't take fall damage from a fall you can immediately step as free action\nYour proficiency level in Acrobatics increases (max Master).",
-        "unlockedAction": "",
+        "description": "You can land on your feat like a cat\nYou learn the Cat Fall reaction\nYour proficiency level in Acrobatics increases (max Master).",
+        "unlockedAction": "Cat Fall",
         "prerequisites": "",
         "level": "4",
         "repeatable": "",
@@ -725,7 +776,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Spot Weak Point",
@@ -739,7 +791,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Strike The Unwary",
@@ -753,7 +806,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Titan Grappler",
@@ -767,11 +821,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Battlefield Awareness",
-        "description": "Your proficiency level in perception increases (max Master). \nWhile off-guard you reduce the penalty by one",
+        "description": "Taking you off guard is harder than most\nYour proficiency level in perception increases (max Master). \nWhile off-guard you reduce the penalty by one",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "6",
@@ -781,11 +836,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Defensive Duelist",
-        "description": "Nothing can get past your guard\nYour bonus when parrying melee attacks increases to +2.\nWhen you succeed on a Parry you get a +1 bonus to the next attack until the end of your next turn (Stacks up to 3 times).",
+        "description": "Nothing can get past your guard\nYour bonus when parrying increases to +2.\nWhen you succeed on a Parry you get a +1 bonus to the next attack until the end of your next turn (Stacks up to 3 times).",
         "unlockedAction": "",
         "prerequisites": "[Skilled Fencer]",
         "level": "6",
@@ -795,7 +851,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Flash Of Genius",
@@ -809,7 +866,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Impactful Strikes",
@@ -823,7 +881,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "In The Thick of It",
@@ -837,7 +896,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Second Wind",
@@ -851,7 +911,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Shield Specialization",
@@ -865,7 +926,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Strike Together",
@@ -879,7 +941,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Rapid Striker",
@@ -893,11 +956,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Versatile Wielder",
-        "description": "You're ready to fight with whatever weapon comes your way.\nYour proficiency level with all weapons is Expert",
+        "description": "You're ready to fight with whatever weapon comes your way.\nYour proficiency level with all weapons and improvised attacks is Expert",
         "unlockedAction": "",
         "prerequisites": "Expert in 2 weapon groups",
         "level": "8",
@@ -907,11 +971,12 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Weapon Master",
-        "description": "Your proficiency level in a weapon group increases (max Master).\nYou learn an advanced combat maneuver\nYou may choose this feat multiple times",
+        "description": "Mastery at arms\nYour proficiency level in a weapon group increases (max Master).\nYou learn an advanced combat maneuver\nYou may choose this feat multiple times",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "8",
@@ -921,7 +986,8 @@
         "resistances": "",
         "combatManeuversLearned": "(1) CombatManeuvers",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Aspect Infusion",
@@ -935,7 +1001,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": "Aspects"
+        "choice": "Aspects",
+        "quickAccessSlots": ""
     },
     {
         "name": "Instinctive Aura Block",
@@ -949,7 +1016,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Master Sprinter",
@@ -963,7 +1031,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Blade Artist",
@@ -977,7 +1046,8 @@
         "resistances": "",
         "combatManeuversLearned": "(1) CombatManeuvers",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Parrying Master",
@@ -991,7 +1061,8 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Elementalization",
@@ -1005,21 +1076,23 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": "Aspects"
+        "choice": "Aspects",
+        "quickAccessSlots": ""
     },
     {
         "name": "Legendary Weapon Master",
-        "description": "Your proficiency level in a weapon group increases (max Legendary).\nYou learn an masterwork combat maneuver",
+        "description": "Your skills with weapons is legendary\nYour proficiency level in a weapon group increases (max Legendary).\nYou learn an masterwork combat maneuver\nYou may choose this feat multiple times",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "16",
-        "repeatable": "",
+        "repeatable": "1",
         "unlockedFeats": "",
         "speeds": "",
         "resistances": "",
         "combatManeuversLearned": "(1) CombatManeuvers",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     },
     {
         "name": "Mythic Champion",
@@ -1033,6 +1106,7 @@
         "resistances": "",
         "combatManeuversLearned": "",
         "health": "",
-        "choice": ""
+        "choice": "",
+        "quickAccessSlots": ""
     }
 ]

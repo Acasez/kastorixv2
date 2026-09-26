@@ -2,7 +2,7 @@
     {
         "name": "Ascend",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Movement",
         "range": "Self",
@@ -15,7 +15,7 @@
     {
         "name": "Blinding Flash",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Light",
         "traits": "Targeting",
         "range": "10",
@@ -28,7 +28,7 @@
     {
         "name": "Chill",
         "actions": "1-2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Targeting",
         "range": "Touch",
@@ -41,7 +41,7 @@
     {
         "name": "Control Water",
         "actions": "1-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Manipulation",
         "range": "12",
@@ -54,7 +54,7 @@
     {
         "name": "Darken",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Darkness",
         "traits": "Area",
         "range": "10",
@@ -67,7 +67,7 @@
     {
         "name": "Earthglide",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Movement",
         "range": "Self",
@@ -80,7 +80,7 @@
     {
         "name": "Ferrokinesis",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Targeting",
         "range": "6",
@@ -93,7 +93,7 @@
     {
         "name": "Firebolt",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Targeting",
         "range": "6",
@@ -106,7 +106,7 @@
     {
         "name": "Flameshape",
         "actions": "1-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Manipulation",
         "range": "3",
@@ -119,7 +119,7 @@
     {
         "name": "Gentle Breeze",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Enchantment",
         "range": "Self",
@@ -132,7 +132,7 @@
     {
         "name": "Glide",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Movement, Enchantment",
         "range": "Self",
@@ -145,7 +145,7 @@
     {
         "name": "Glow",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Light",
         "traits": "Enchantment",
         "range": "Touch",
@@ -158,7 +158,7 @@
     {
         "name": "Gravel Spray",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Area",
         "range": "Area from Self",
@@ -171,7 +171,7 @@
     {
         "name": "Featherfall",
         "actions": "Reaction",
-        "Column 11": "You see a creature or group of creatures falling",
+        "trigger": "You see a creature or group of creatures falling",
         "aspects": "Air",
         "traits": "Enchantment",
         "range": "8",
@@ -184,7 +184,7 @@
     {
         "name": "Gust",
         "actions": "1-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Targeting",
         "range": "10",
@@ -197,7 +197,7 @@
     {
         "name": "Heat",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Targeting",
         "range": "Touch",
@@ -210,7 +210,7 @@
     {
         "name": "Icy Floor",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Area",
         "range": "6",
@@ -223,7 +223,7 @@
     {
         "name": "Ignite",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Targeting",
         "range": "5",
@@ -236,7 +236,7 @@
     {
         "name": "Interpose Earth",
         "actions": "Reaction",
-        "Column 11": "You would have to make a Reflex save",
+        "trigger": "You would have to make a Reflex save",
         "aspects": "Earth",
         "traits": "-",
         "range": "Self",
@@ -249,7 +249,7 @@
     {
         "name": "Magnetic Field",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Enchantment",
         "range": "Self",
@@ -262,7 +262,7 @@
     {
         "name": "Magnetic Rebound",
         "actions": "Reaction",
-        "Column 11": "You would have to make a Reflex save against an attack by a metal weapon or projectile.",
+        "trigger": "You would have to make a Reflex save against an attack by a metal weapon or projectile.",
         "aspects": "Metal",
         "traits": "-",
         "range": "Self",
@@ -275,7 +275,7 @@
     {
         "name": "Magnetize",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Enchantment",
         "range": "Touch",
@@ -288,7 +288,7 @@
     {
         "name": "Illusory Object",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Illusion",
         "range": "8",
@@ -301,7 +301,7 @@
     {
         "name": "Metal Shards",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Targeting",
         "range": "6",
@@ -314,7 +314,7 @@
     {
         "name": "Mold Earth",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Manipulation",
         "range": "3",
@@ -327,7 +327,7 @@
     {
         "name": "Momentary Acceleration",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Enchantment, Complex, Temporal",
         "range": "5",
@@ -340,7 +340,7 @@
     {
         "name": "Move with the Wind",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Complex, Enchantment",
         "range": "Self",
@@ -353,7 +353,7 @@
     {
         "name": "Muddy Ground",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth, Water",
         "traits": "Area",
         "range": "8",
@@ -366,7 +366,7 @@
     {
         "name": "Null",
         "actions": "1-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Void",
         "traits": "Complex",
         "range": "Touch",
@@ -379,7 +379,7 @@
     {
         "name": "Quick Jet",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Movement, Complex",
         "range": "Self",
@@ -392,7 +392,7 @@
     {
         "name": "Rock Toss",
         "actions": "1-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Targeting",
         "range": "8",
@@ -405,7 +405,7 @@
     {
         "name": "Slip",
         "actions": "Reaction",
-        "Column 11": "You see another creature in range take the Stride action",
+        "trigger": "You see another creature in range take the Stride action",
         "aspects": "Water",
         "traits": "Manipulation, Complex",
         "range": "5",
@@ -418,7 +418,7 @@
     {
         "name": "Soul Ward",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Enchantment, Complex, Soul",
         "range": "Self",
@@ -431,7 +431,7 @@
     {
         "name": "Sturdy as Stone",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Complex, Enchantment",
         "range": "Self",
@@ -444,7 +444,7 @@
     {
         "name": "Water Bullet",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Targeting",
         "range": "12",
@@ -457,7 +457,7 @@
     {
         "name": "Water Push",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Targeting",
         "range": "5",
@@ -470,7 +470,7 @@
     {
         "name": "Zap",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Lightning",
         "traits": "Targeting, Complex",
         "range": "2",
@@ -483,7 +483,7 @@
     {
         "name": "Accelerate Self",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Enchantment, Complex, Temporal",
         "range": "Self",
@@ -496,7 +496,7 @@
     {
         "name": "Air Bubble",
         "actions": "1 or 3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Enchantment",
         "range": "Self",
@@ -509,7 +509,7 @@
     {
         "name": "Barricade",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth, Metal",
         "traits": "Area",
         "range": "8",
@@ -522,7 +522,7 @@
     {
         "name": "Beam of Light",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Light",
         "traits": "Enchantment",
         "range": "Self",
@@ -535,7 +535,7 @@
     {
         "name": "Water Breathing",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Enchantment",
         "range": "Self",
@@ -548,7 +548,7 @@
     {
         "name": "Breathe Fire",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Area",
         "range": "Area from Self",
@@ -561,7 +561,7 @@
     {
         "name": "Conjure",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Teleportation",
         "range": "8",
@@ -574,7 +574,7 @@
     {
         "name": "Illusory Wall",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Illusion",
         "range": "7",
@@ -587,7 +587,7 @@
     {
         "name": "Detect Metal",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Sensing",
         "range": "Self",
@@ -600,7 +600,7 @@
     {
         "name": "Dispell",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "",
         "range": "Touch",
@@ -613,7 +613,7 @@
     {
         "name": "Earth Tremor",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Area, Environmental",
         "range": "Area from Self",
@@ -626,7 +626,7 @@
     {
         "name": "Heat Metal",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire, Metal",
         "traits": "",
         "range": "Touch",
@@ -639,7 +639,7 @@
     {
         "name": "Earthen Armor",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Enchantment",
         "range": "Self",
@@ -652,7 +652,7 @@
     {
         "name": "Earthen Launch",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Movement",
         "range": "Self",
@@ -665,7 +665,7 @@
     {
         "name": "Electrify",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Lightning",
         "traits": "Enchantment",
         "range": "Touch",
@@ -678,7 +678,7 @@
     {
         "name": "Flame Jet",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Area",
         "range": "Area from Self",
@@ -691,7 +691,7 @@
     {
         "name": "Heatwave",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air, Fire",
         "traits": "Area",
         "range": "10",
@@ -704,7 +704,7 @@
     {
         "name": "Hone Edge",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Enchantment",
         "range": "Touch",
@@ -717,7 +717,7 @@
     {
         "name": "Ice Shard",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Targeting, Precision",
         "range": "8",
@@ -730,7 +730,7 @@
     {
         "name": "Inflame",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Enchantment",
         "range": "Self",
@@ -743,7 +743,7 @@
     {
         "name": "Levitate",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Enchantment",
         "range": "Self",
@@ -756,7 +756,7 @@
     {
         "name": "Lightning Shroud",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Lightning",
         "traits": "Enchantment",
         "range": "Self",
@@ -769,7 +769,7 @@
     {
         "name": "Orbiting Earth",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Enchantment",
         "range": "Self",
@@ -782,7 +782,7 @@
     {
         "name": "Propel",
         "actions": "Reaction",
-        "Column 11": "You see an ally stride within reach",
+        "trigger": "You see an ally stride within reach",
         "aspects": "Air",
         "traits": "Movement",
         "range": "6",
@@ -795,7 +795,7 @@
     {
         "name": "Purify Water",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Manipulation",
         "range": "Touch",
@@ -808,7 +808,7 @@
     {
         "name": "Quick Forge",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Manipulation",
         "range": "Touch",
@@ -821,7 +821,7 @@
     {
         "name": "Sense Water",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Sensing",
         "range": "Self",
@@ -834,7 +834,7 @@
     {
         "name": "Shape Bone",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "",
         "traits": "Manipulation",
         "range": "Touch",
@@ -847,7 +847,7 @@
     {
         "name": "Soul Sight",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Enchantment, Complex, Soul",
         "range": "Self",
@@ -860,7 +860,7 @@
     {
         "name": "Stalagmite",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Area",
         "range": "7",
@@ -873,7 +873,7 @@
     {
         "name": "Steam Cloud",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire, Water",
         "traits": "Area",
         "range": "10",
@@ -886,7 +886,7 @@
     {
         "name": "Tailwind",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Enchantment",
         "range": "10",
@@ -899,7 +899,7 @@
     {
         "name": "Teleport",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Teleportation",
         "range": "10",
@@ -912,7 +912,7 @@
     {
         "name": "Tremor Sense",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Sensing",
         "range": "Self",
@@ -925,7 +925,7 @@
     {
         "name": "Water Arm",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Enchantment, Complex, Conjured Weapon",
         "range": "Self",
@@ -938,7 +938,7 @@
     {
         "name": "Water Ball",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Area",
         "range": "6",
@@ -951,7 +951,7 @@
     {
         "name": "Water Walk",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Enchantment",
         "range": "Touch",
@@ -964,7 +964,7 @@
     {
         "name": "Wave Dash",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Movement, Area",
         "range": "Area from Self",
@@ -977,7 +977,7 @@
     {
         "name": "Whirlwind",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Area, Complex",
         "range": "10",
@@ -990,7 +990,7 @@
     {
         "name": "Wind Wall",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Area",
         "range": "10",
@@ -1003,7 +1003,7 @@
     {
         "name": "Air Slice",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Targeting, Precision",
         "range": "12",
@@ -1016,7 +1016,7 @@
     {
         "name": "Blink",
         "actions": "1",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Teleportation, Complex",
         "range": "6",
@@ -1029,7 +1029,7 @@
     {
         "name": "Creeping Shadows",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Darkness",
         "traits": "Area",
         "range": "10",
@@ -1042,7 +1042,7 @@
     {
         "name": "Dust Devil",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air, Earth",
         "traits": "Area",
         "range": "10",
@@ -1055,7 +1055,7 @@
     {
         "name": "Fire Whip",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Enchantment, Conjured Weapon",
         "range": "Self",
@@ -1068,7 +1068,7 @@
     {
         "name": "Fireball",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Area",
         "range": "8",
@@ -1081,20 +1081,20 @@
     {
         "name": "Fly",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Enchantment",
         "range": "Self",
         "target": "Self",
         "duration": "Sustained, up to 10 minutes, ",
-        "effect": "Connects you to the wind, allowing you to fly freely.\nYou gain a 4 tiles flight speed. \nWhen you sustain this spell you may fly as a free action",
+        "effect": "Connects you to the wind, allowing you to fly freely.\nYou gain a 4 tiles flight speed. \nWhen you sustain this spell you may Fly as a free action",
         "upcast": "By Rank: Increase the flying speed by 2",
         "rank": "(3) Magus"
     },
     {
         "name": "Lava Wave",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Area",
         "range": "Area from Self",
@@ -1107,7 +1107,7 @@
     {
         "name": "Giant Stone Hand",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Manipulation, Conjured Weapon",
         "range": "5",
@@ -1120,7 +1120,7 @@
     {
         "name": "Hail of Nails",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Area",
         "range": "8",
@@ -1133,7 +1133,7 @@
     {
         "name": "Haste",
         "actions": "2-3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Complex, Enchantment, Temporal",
         "range": "Self",
@@ -1146,7 +1146,7 @@
     {
         "name": "Lightning Bolt",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Lightning",
         "traits": "Targeting",
         "range": "10",
@@ -1159,7 +1159,7 @@
     {
         "name": "Shunt",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Teleportation, Complex",
         "range": "Touch",
@@ -1172,7 +1172,7 @@
     {
         "name": "Slow",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Complex, Enchantment, Temporal",
         "range": "5",
@@ -1185,7 +1185,7 @@
     {
         "name": "Thunder Rush",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Lightning",
         "traits": "Enchantment, Complex",
         "range": "Self",
@@ -1198,7 +1198,7 @@
     {
         "name": "Thunder Step",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Teleportation, Complex",
         "range": "10",
@@ -1211,7 +1211,7 @@
     {
         "name": "Water Jet",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Area",
         "range": "Area from Self",
@@ -1224,7 +1224,7 @@
     {
         "name": "Chain Lightning",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Lightning",
         "traits": "Targeting",
         "range": "10",
@@ -1237,7 +1237,7 @@
     {
         "name": "Cold Snap",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Area",
         "range": "10",
@@ -1250,7 +1250,7 @@
     {
         "name": "Disintegrate",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Targeting, Complex, Precision",
         "range": "10",
@@ -1263,7 +1263,7 @@
     {
         "name": "Fiery Body",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Enchantment",
         "range": "Self",
@@ -1276,7 +1276,7 @@
     {
         "name": "Steelskin",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Enchantment",
         "range": "Area from Self",
@@ -1289,7 +1289,7 @@
     {
         "name": "Storm",
         "actions": "1 Minute",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water, Air",
         "traits": "Area, Environmental , Draining",
         "range": "Area from Self",
@@ -1302,7 +1302,7 @@
     {
         "name": "Wall of Fire",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Area",
         "range": "8",
@@ -1315,7 +1315,7 @@
     {
         "name": "Waterspout",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Area",
         "range": "10",
@@ -1328,11 +1328,11 @@
     {
         "name": "Wind Walk",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
-        "traits": "Enchantment",
+        "traits": "Enchantment, Draining",
         "range": "6",
-        "target": "Up to 6 creatures",
+        "target": "A number of creatures",
         "duration": "Up to 1 hour",
         "effect": "You select up an amount of creatures equal to 4 + your INT (or WIL if cast as an Attuned Spell). \nYou may include yourself.\nThe chosen creatures gain a flight speed equal to their walking speed for the duration.",
         "upcast": "By Rank: Increase the flying speed by 2",
@@ -1341,7 +1341,7 @@
     {
         "name": "Dimensional Net",
         "actions": "Reaction",
-        "Column 11": "You see a projectile within the spells range",
+        "trigger": "You see a projectile within the spells range",
         "aspects": "Arcane",
         "traits": "Complex, Dimensional",
         "range": "8",
@@ -1354,7 +1354,7 @@
     {
         "name": "Dimensional Tear",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Area, Complex, Dimensional",
         "range": "10",
@@ -1367,7 +1367,7 @@
     {
         "name": "Earthquake",
         "actions": "10",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Earth",
         "traits": "Area, Draining, Environmental",
         "range": "10",
@@ -1380,7 +1380,7 @@
     {
         "name": "Inferno",
         "actions": "7",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Area, Draining",
         "range": "10",
@@ -1393,7 +1393,7 @@
     {
         "name": "Miniature Sun",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire, Light",
         "traits": "Area, Complex",
         "range": "Touch",
@@ -1406,7 +1406,7 @@
     {
         "name": "Pyroblast",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Fire",
         "traits": "Area",
         "range": "Area from Self",
@@ -1419,7 +1419,7 @@
     {
         "name": "Simulacra",
         "actions": "-",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Arcane",
         "traits": "Complex",
         "range": "5",
@@ -1432,7 +1432,7 @@
     {
         "name": "Storm of Swords",
         "actions": "2",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Metal",
         "traits": "Enchantment",
         "range": "Self",
@@ -1445,7 +1445,7 @@
     {
         "name": "Sunbeam",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Light",
         "traits": "Area",
         "range": "Area from Self",
@@ -1458,7 +1458,7 @@
     {
         "name": "Tornado",
         "actions": "6",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Air",
         "traits": "Area",
         "range": "10",
@@ -1471,7 +1471,7 @@
     {
         "name": "True Lightning",
         "actions": "3",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Lightning",
         "traits": "Targeting",
         "range": "15",
@@ -1484,7 +1484,7 @@
     {
         "name": "Tsunami",
         "actions": "6",
-        "Column 11": "",
+        "trigger": "",
         "aspects": "Water",
         "traits": "Area",
         "range": "10",

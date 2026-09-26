@@ -14,7 +14,7 @@
     },
     {
         "name": "Attunement Shortcut",
-        "description": "Your attunement lets you learn spells that would normally be too complex for you.\nLearn two Adept Spells from your attunement\nBefore Level 4 you you need to spend a focus point when you cast these spells due to their complexity",
+        "description": "Your attunement lets you learn spells that would normally be too advanced for you.\nLearn two Adept Spells from your attunement\nBefore Level 4 you you need to spend a focus point when you cast these spells due to their complexity",
         "unlockedAction": "",
         "prerequisites": "[Attunement]",
         "level": "1",
@@ -53,7 +53,7 @@
     },
     {
         "name": "Basic Elemental Magic",
-        "description": "Can be chosen multiple times, once for each aspect. \nChoose one aspect and learn two apprentice rank spells from that aspect. \nYou gain a bonus depending on the aspect",
+        "description": "Your skills with one aspect of magic has grown\nCan be chosen multiple times, once for each aspect. \nChoose one aspect and learn two apprentice rank spells from that aspect. \nYou gain a bonus depending on the aspect",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -66,7 +66,7 @@
     },
     {
         "name": "Focused Spellshaping",
-        "description": "You have a +1 to spellshaping when casting spells that cost 3 actions or more. \nLearn two apprentices spells that costs 3 actions or more.",
+        "description": "You've trained with complex spells that take longer to cast\nYou have a +1 to spellshaping when casting spells that cost 3 actions or more. \nLearn two apprentice spells that costs 3 actions or more.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -79,7 +79,7 @@
     },
     {
         "name": "Freeform Learning",
-        "description": "You learn 2 + your INT apprentice spells of your choosing. \nYou can choose this feat multiple times",
+        "description": "You've studied spells here and there, picking up any that seemed intresting\nYou learn 2 + your INT apprentice spells of your choosing. \nYou can choose this feat multiple times",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",

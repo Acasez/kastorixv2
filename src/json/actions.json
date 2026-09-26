@@ -48,6 +48,18 @@
         "Column 1": ""
     },
     {
+        "name": "Cat Fall",
+        "actions": "Reaction",
+        "trigger": "When you would take fall damage",
+        "requirement": "",
+        "description": "Make an Acrobatics check, and reduce the fall damage by that much\nIf you take no damage from it you may Step as free action.",
+        "traits": "Skill",
+        "skill": "Acrobatics",
+        "sourceType": "General Feat",
+        "source": "Cat Fall",
+        "Column 1": ""
+    },
+    {
         "name": "Battlefield Medicine",
         "actions": "2",
         "trigger": "",

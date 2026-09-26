@@ -117,7 +117,7 @@
         "speeds": "",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedAction": "Steady by Tail"
     },
     {
         "name": "Aruna",
@@ -137,7 +137,7 @@
         "speeds": "(6) Glide, (4) Swim",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": "Steady by Tail"
+        "unlockedAction": ""
     },
     {
         "name": "Troll",
