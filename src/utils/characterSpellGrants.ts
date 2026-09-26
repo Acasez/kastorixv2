@@ -10,6 +10,7 @@ type SpellGrantSource = {
   name: string;
   spellsLearned?: string;
   metamagicsLearned?: string;
+  gadgets?: string;
 };
 
 const spellGrantSources: SpellGrantSource[] = [
@@ -22,7 +23,7 @@ const spellGrantSources: SpellGrantSource[] = [
 
 function getCharacterGrant(
   character: Character,
-  grantField: "spellsLearned" | "metamagicsLearned",
+  grantField: "spellsLearned" | "metamagicsLearned" | "gadgets",
   grantName: string,
 ): number {
   const variables = { ...character.baseStats, Level: character.level };
@@ -55,4 +56,8 @@ export function getCharacterSpellGrant(
 
 export function getCharacterMetamagicGrant(character: Character): number {
   return getCharacterGrant(character, "metamagicsLearned", "Metamagic");
+}
+
+export function getCharacterGadgetGrant(character: Character): number {
+  return getCharacterGrant(character, "gadgets", "Gadget");
 }

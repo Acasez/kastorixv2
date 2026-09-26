@@ -4,6 +4,7 @@ import { useCharacter } from "../../../contexts/CharacterContext";
 import type { Gadget } from "../../../types/Gadgets";
 import gadgets from "../../../JSON/gadgets.json";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
+import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
 
 interface GadgetComponentProps {
   gadget: Gadget;
@@ -61,6 +62,7 @@ function GadgetComponent({
 export default function GadgetSection() {
   const { character, updateCharacter } = useCharacter();
   const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const maxKnownGadgets = getCharacterGadgetGrant(character);
 
   const openGadgetModal = () => {
     openGadgetModalForReplacement();
@@ -83,15 +85,29 @@ export default function GadgetSection() {
   };
   return (
     <div className="p-4 text-white">
-      <div className="flex flex-row gap-4">
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-xl mb-2">Gadgets</h2>
-        <button
-          type="button"
-          className="bg-button-add text-white px-3 py-1 rounded border-2"
-          onClick={openGadgetModal}
-        >
-          +
-        </button>
+        <div className="flex items-center gap-3">
+          <p
+            className={`text-right ${
+              character.gadgets.length > maxKnownGadgets
+                ? "text-red-500"
+                : character.gadgets.length < maxKnownGadgets
+                  ? "text-green-500"
+                  : "text-text-light"
+            }`}
+          >
+            Gadgets Chosen ({character.gadgets.length}/{maxKnownGadgets})
+          </p>
+          <button
+            type="button"
+            className="bg-button-add text-white px-3 py-1 rounded border-2"
+            onClick={openGadgetModal}
+            aria-label="Add gadget"
+          >
+            +
+          </button>
+        </div>
       </div>
 
       <div className="flex justify-between items-center mb-4">
