@@ -3,9 +3,14 @@ import { getProficiency } from "../../../constants/Proficiency";
 import { STRING_TO_STATKEY } from "../../../types/StatKey";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import ProficiencyMarker from "../../ProficiencyMarker";
+import armors from "../../../JSON/armors.json";
+import Tooltip from "../../Tooltip";
 
 export default function SavingThrowDisplay() {
   const { character } = useCharacter();
+  const selectedArmor = armors.find((armor) => armor.name === character.armor);
+  const heavyArmorPenalty =
+    selectedArmor?.type === "Heavy" ? Number(selectedArmor.penalties) : 0;
   return (
     <div>
       <h1 className="text-3xl text-striking text-center underline mb-2">
@@ -21,7 +26,10 @@ export default function SavingThrowDisplay() {
             character.saveProficiencies[save.name] ?? "Untrained";
           const tier = getProficiency(tierName);
           const stat = character.baseStats[STRING_TO_STATKEY[save.stat]] ?? 0;
-          const bonus = stat + tier.bonus;
+          const bonus =
+            stat +
+            tier.bonus +
+            (save.name === "Reflex" ? heavyArmorPenalty : 0);
           return (
             <div
               key={save.name}
@@ -31,7 +39,12 @@ export default function SavingThrowDisplay() {
                 {save.name} ({save.stat}):
               </span>
               <ProficiencyMarker skillName={save.name} category="saves" />
-              <span className="text-2xl text-text-light">{bonus}</span>
+              <Tooltip
+                align="center"
+                content={`${save.stat} ${bonus} + ${tier.fullName} ${tier.bonus}${save.name === "Reflex" ? ` + ${character.armor} ${heavyArmorPenalty}` : ""}`}
+              >
+                <span className="text-2xl text-text-light">{bonus}</span>
+              </Tooltip>
             </div>
           );
         })}
