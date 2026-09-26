@@ -46,7 +46,8 @@ const defaultCharacter: Character = {
   },
   gold: 0,
   inventory: "",
-  quickAccessSlots: 0,
+  quickAccessSlots: 3,
+  quickAccessItems: ["", "", ""],
 };
 
 export function CharacterProvider({ children }: { children: ReactNode }) {

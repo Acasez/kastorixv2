@@ -39,6 +39,7 @@ export type Character = {
   gold: number;
   inventory: string;
   quickAccessSlots: number;
+  quickAccessItems: string[];
 };
 
 export type Track = {
