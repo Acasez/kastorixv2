@@ -6,6 +6,7 @@ import {
   type Character,
 } from "../../../contexts/CharacterContext";
 import TrackBar from "../../TrackBar";
+import { getCharacterResourceBonuses } from "../../../utils/characterResourceBonuses";
 
 export default function HealthManaAuraBars() {
   const { character, updateCharacter } = useCharacter();
@@ -15,12 +16,17 @@ export default function HealthManaAuraBars() {
   const speciesHealth = Number(selectedSpecies?.health);
   const baseHealth =
     Number.isFinite(speciesHealth) && speciesHealth > 0 ? speciesHealth : 6;
-  const maxHealth = baseHealth + character.baseStats.PHY;
+  const resourceBonuses = getCharacterResourceBonuses(character);
+  const maxHealth =
+    baseHealth + character.baseStats.PHY + resourceBonuses.health;
 
   const speciesMana = Number(selectedSpecies?.mana);
   const baseMana =
     Number.isFinite(speciesMana) && speciesMana > 0 ? speciesMana : 6;
-  const maxPool = baseMana + (3 + character.baseStats.WIL) * character.level;
+  const maxPool =
+    baseMana +
+    (3 + character.baseStats.WIL) * character.level +
+    resourceBonuses.mana;
 
   useEffect(() => {
     const patch: Partial<Character> = {};
