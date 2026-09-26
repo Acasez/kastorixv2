@@ -5,6 +5,7 @@ import gadgets from "../../../JSON/gadgets.json";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
 import GadgetComponent from "./GadgetComponent";
+import { skillModifier } from "../../../constants/Proficiency";
 
 export default function GadgetSection() {
   const { character, updateCharacter } = useCharacter();
@@ -34,6 +35,11 @@ export default function GadgetSection() {
     <div className="p-4 text-white">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <h2 className="text-xl mb-2">Gadgets</h2>
+        <p className="text-xl mb-2">
+          Gadget Bonus:{" "}
+          {skillModifier(character, "Crafting", "INT") +
+            character.baseStats.DEX}
+        </p>
         <div className="flex items-center gap-3">
           <p
             className={`text-right ${
