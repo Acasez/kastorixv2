@@ -25,6 +25,9 @@ export default function ModalWrapper({
     if (request.type === "weapon") {
       return request.replaceWeapon ?? null;
     }
+    if (request.type === "gadget") {
+      return request.replaceGadget ?? null;
+    }
     if (request.type === "armor") return character.armor;
     if (request.type === "species") return character.species;
     if (request.type === "background") return character.background;
@@ -42,6 +45,12 @@ export default function ModalWrapper({
     if (request.type === "weapon") {
       return character.weapons.filter(
         (weaponName) => weaponName !== request.replaceWeapon,
+      );
+    }
+
+    if (request.type === "gadget") {
+      return character.gadgets.filter(
+        (gadgetName) => gadgetName !== request.replaceGadget,
       );
     }
 
@@ -126,6 +135,13 @@ export default function ModalWrapper({
       );
       updateCharacter({
         weapons: weapons.includes(value) ? weapons : [...weapons, value],
+      });
+    } else if (request.type === "gadget") {
+      const gadgets = character.gadgets.filter(
+        (gadgetName) => gadgetName !== request.replaceGadget,
+      );
+      updateCharacter({
+        gadgets: gadgets.includes(value) ? gadgets : [...gadgets, value],
       });
     } else if (request.type === "armor") {
       updateCharacter({ armor: value });

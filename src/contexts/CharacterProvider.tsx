@@ -24,6 +24,7 @@ const defaultCharacter: Character = {
   knownSpells: [],
   metamagics: [],
   weapons: [],
+  gadgets: [],
   armor: "",
   selections: {},
   background: null,

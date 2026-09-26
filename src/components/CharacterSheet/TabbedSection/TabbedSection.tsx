@@ -3,6 +3,7 @@ import SpellsSection from "./SpellsSection";
 import StrikesSection from "./StrikesSection";
 import ActionsSection from "./ActionsSection";
 import InventorySection from "./InventorySection";
+import GadgetSection from "./GadgetSection";
 
 export default function TabbedSection() {
   // State to track the active tab
@@ -16,6 +17,7 @@ export default function TabbedSection() {
     { label: "Strikes", key: "Strikes" },
     { label: "Actions", key: "Actions" },
     { label: "Inventory", key: "Inventory" },
+    { label: "Gadgets", key: "Gadgets" },
   ];
 
   // Content for each tab (replace with your actual content)
@@ -24,6 +26,7 @@ export default function TabbedSection() {
     Strikes: <StrikesSection />,
     Actions: <ActionsSection />,
     Inventory: <InventorySection />,
+    Gadgets: <GadgetSection />,
   };
 
   return (

@@ -15,6 +15,7 @@ import spells from "../../../JSON/spells.json";
 import weapons from "../../../JSON/weapons.json";
 import metamagics from "../../../JSON/metamagic.json";
 import armors from "../../../JSON/armors.json";
+import gadgets from "../../../JSON/gadgets.json";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 
@@ -63,6 +64,7 @@ const choiceConfig: Record<
   weapon: { title: "Select Weapon", items: weapons },
   metamagic: { title: "Select Metamagic", items: metamagics },
   armor: { title: "Select Armor", items: armors },
+  gadget: { title: "Select Gadget", items: gadgets },
 };
 
 const actionTypes: Record<string, ChoiceType | "baseStats" | "statIncrease"> = {

@@ -35,6 +35,13 @@ export type ModalRequest =
       excludedTypes?: string[];
     }
   | {
+      type: "gadget";
+      title: string;
+      selectionKey: string;
+      level: number;
+      replaceGadget?: string;
+    }
+  | {
       type: "metamagic";
       title: string;
       selectionKey: string;

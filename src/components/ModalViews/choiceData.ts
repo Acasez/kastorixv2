@@ -12,6 +12,7 @@ import weapons from "../../JSON/weapons.json";
 import species from "../../JSON/species.json";
 import metamagics from "../../JSON/metamagic.json";
 import armors from "../../JSON/armors.json";
+import gadgets from "../../JSON/gadgets.json";
 import { getActionIcons } from "../../utils/actionUtils";
 
 export type ChoiceData = Record<
@@ -131,6 +132,13 @@ const ARMOR_FIELDS: DetailField[] = [
   { label: "Phy Required", valueKey: "phy" },
 ];
 
+const GADGET_FIELDS: DetailField[] = [
+  { label: "Type", valueKey: "type" },
+  { label: "Level", valueKey: "level" },
+  { label: "Requirement", valueKey: "requirement" },
+  { label: "Effect", valueKey: "effect" },
+];
+
 function featIsAvailableForSpecies(
   featSpecies: string,
   selectedSpecies: string | null,
@@ -209,6 +217,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   const weaponItems = createChoiceItems(availableWeapons, WEAPON_FIELDS);
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
   const armorItems = createChoiceItems(armors, ARMOR_FIELDS);
+  const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
 
   return {
     species: speciesItems,
@@ -223,6 +232,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     weapon: weaponItems,
     metamagic: metamagicItems,
     armor: armorItems,
+    gadget: gadgetItems,
   };
 }
 

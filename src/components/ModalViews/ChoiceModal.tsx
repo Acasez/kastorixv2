@@ -18,6 +18,7 @@ export interface ChoiceItem {
   traits?: string;
   type?: string;
   weaponGroup?: string;
+  requirement?: string;
   level?: number | string;
   repeatable?: string | number | boolean;
   unlockedAction?: string;
