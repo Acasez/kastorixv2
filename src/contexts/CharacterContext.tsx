@@ -28,6 +28,7 @@ export type Character = {
   baseStats: Record<StatKey, number>;
   baseStatsSet: boolean;
   skillProficiencies: Record<string, ProficiencyTierName>;
+  loreSkills: string[];
   saveProficiencies: Record<string, ProficiencyTierName>;
   health: Track;
   aura: Track;
