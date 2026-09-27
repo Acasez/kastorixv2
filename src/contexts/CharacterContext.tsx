@@ -22,6 +22,7 @@ export type Character = {
   weapons: string[];
   gadgets: string[];
   golemModel: string | null;
+  golemHealth: Track;
   armor: string;
   selections: Record<string, string>;
   background: string | null;

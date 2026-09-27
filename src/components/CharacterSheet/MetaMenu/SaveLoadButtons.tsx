@@ -45,6 +45,7 @@ function mergeCharacter(current: Character, saved: Character): Character {
         : null),
     baseStats: { ...current.baseStats, ...saved.baseStats },
     health: { ...current.health, ...saved.health },
+    golemHealth: { ...current.golemHealth, ...saved.golemHealth },
     aura: { ...current.aura, ...saved.aura },
     mana: { ...current.mana, ...saved.mana },
     speeds: { ...current.speeds, ...saved.speeds },

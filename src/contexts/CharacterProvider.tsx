@@ -26,6 +26,7 @@ const defaultCharacter: Character = {
   weapons: [],
   gadgets: [],
   golemModel: null,
+  golemHealth: { current: 10, max: 10 },
   armor: "",
   selections: {},
   background: null,
