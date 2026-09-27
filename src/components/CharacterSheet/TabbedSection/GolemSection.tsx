@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import TrackBar from "../../TrackBar";
 import golemModels from "../../../JSON/golem_models.json";
@@ -9,17 +10,51 @@ export default function GolemSection() {
   const model = golemModels.find(
     (golemModel) => golemModel.name === character.golemModel,
   );
-
-  if (!model) {
-    return null;
-  }
-
   const selectedUpgrades = Object.entries(character.selections).flatMap(
     ([selectionKey, selectedName]) => {
       const upgrade = golemUpgrades.find((item) => item.name === selectedName);
       return upgrade ? [{ ...upgrade, selectionKey }] : [];
     },
   );
+  const selectedUpgradeNames = new Set(
+    selectedUpgrades.map((upgrade) => upgrade.name),
+  );
+  const healthMultiplier = selectedUpgradeNames.has("War Walker")
+    ? 5
+    : selectedUpgradeNames.has("Size-Up Golem")
+      ? 4
+      : 3;
+  const modelPhy = Number(model?.phy ?? 0);
+  const maxGolemHealth = Math.max(
+    1,
+    healthMultiplier * character.level +
+      character.baseStats.INT +
+      modelPhy +
+      (selectedUpgradeNames.has("Reinforced Armor") ? modelPhy : 0),
+  );
+
+  useEffect(() => {
+    if (!model) return;
+
+    const current = Math.min(character.golemHealth.current, maxGolemHealth);
+    if (
+      character.golemHealth.max !== maxGolemHealth ||
+      character.golemHealth.current !== current
+    ) {
+      updateCharacter({
+        golemHealth: { current, max: maxGolemHealth },
+      });
+    }
+  }, [character.golemHealth, maxGolemHealth, model, updateCharacter]);
+
+  if (!model) {
+    return null;
+  }
+
+  const golemHealth = {
+    current: Math.min(character.golemHealth.current, maxGolemHealth),
+    max: maxGolemHealth,
+  };
   const naturalStrike = weapons.find(
     (weapon) => weapon.type === "Golem" && weapon.name === model.naturalWeapon,
   );
@@ -45,8 +80,8 @@ export default function GolemSection() {
           <TrackBar
             label="Health"
             color="#dc2626"
-            track={character.golemHealth}
-            max={999}
+            track={golemHealth}
+            maxEditable={false}
             onChange={(golemHealth) => updateCharacter({ golemHealth })}
           />
         </div>

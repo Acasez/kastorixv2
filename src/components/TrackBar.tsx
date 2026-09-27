@@ -7,6 +7,7 @@ type TrackBarProps = {
   color: string;
   track: Track;
   max?: number;
+  maxEditable?: boolean;
   onChange: (next: Track) => void;
 };
 
@@ -15,6 +16,7 @@ export default function TrackBar({
   color,
   track,
   max,
+  maxEditable = true,
   onChange,
 }: TrackBarProps) {
   const percentage = Math.min(
@@ -39,12 +41,18 @@ export default function TrackBar({
           onChange={(v) => onChange({ ...track, current: v })}
         />
         <span className="text-gray-400">/</span>
-        <NumberInput
-          value={track.max}
-          min={1}
-          max={max}
-          onChange={(v) => onChange({ ...track, max: v })}
-        />
+        {maxEditable ? (
+          <NumberInput
+            value={track.max}
+            min={1}
+            max={max}
+            onChange={(v) => onChange({ ...track, max: v })}
+          />
+        ) : (
+          <span className="inline-block w-16 text-center font-bold border-2 border-orange-300 bg-white text-text-flavor">
+            {track.max}
+          </span>
+        )}
       </div>
     </div>
   );
