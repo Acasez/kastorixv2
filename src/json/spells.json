@@ -33,7 +33,7 @@
         "traits": "Targeting",
         "range": "Touch",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "effect": "Freeze an medium or smaller object or creature, dealing 3d4 cold damage with a basic Fortitude save.\nOn a critical failure the target is partially frozen and has move speed reduced by 2 tiles next turn. \nIf the target is standing in water it has a -3 penalty to the save \nIf you spend two actions on the spell the range increases to 3 tiles.",
         "upcast": "By Rank: Increase the damage by 2d4",
         "rank": "(1) Apprentice"
@@ -78,6 +78,19 @@
         "rank": "(1) Apprentice"
     },
     {
+        "name": "Featherfall",
+        "actions": "Reaction",
+        "trigger": "You see a creature or group of creatures falling",
+        "aspects": "Air",
+        "traits": "Enchantment",
+        "range": "8",
+        "target": "A group of creatures up to your INT/WIL",
+        "duration": "Sustained, up to 1 minute",
+        "effect": "Guide a group creatures down on a blanket of wind.\nThe creatures gently fall down at a speed of 10 tiles each round, taking no fall damage and landing standing.\nYou cannot use this spell on creatures larger than medium",
+        "upcast": "At Adept: You can use this on Large Creatures\nAt Grand Magus: You can use this on Huge Creatures",
+        "rank": "(1) Apprentice"
+    },
+    {
         "name": "Ferrokinesis",
         "actions": "2",
         "trigger": "",
@@ -85,7 +98,7 @@
         "traits": "Targeting",
         "range": "6",
         "target": "One unenchanted metal object of light weight or less",
-        "duration": "-",
+        "duration": "",
         "effect": "Move a piece of metal of light weight or less up to spells range, if you move it into your space you may catch it with a free hand. \nIf you attempt to move a metal object that's being held, the holder gets a to attempt a Fortitude save against the spell. \nEnchanted metal or artifice typically has runes to prevent it being moved with spells. \nYou can use this spell to shoot a metal object at an enemy in range, dealing 2d8 physical damage with a basic Reflex save.",
         "upcast": "By Rank: Increase the damage by 1d8",
         "rank": "(1) Apprentice"
@@ -98,7 +111,7 @@
         "traits": "Targeting",
         "range": "6",
         "target": "One creature",
-        "duration": "-",
+        "duration": "",
         "effect": "Throw a bolt of fire against a target, dealing 2d6 fire damage with a basic Reflex save. \nOn a critical failure the target is also set on fire, taking 1d6 persistent fire damage.",
         "upcast": "By Rank: Increase the damage by 1d6",
         "rank": "(1) Apprentice"
@@ -169,19 +182,6 @@
         "rank": "(1) Apprentice"
     },
     {
-        "name": "Featherfall",
-        "actions": "Reaction",
-        "trigger": "You see a creature or group of creatures falling",
-        "aspects": "Air",
-        "traits": "Enchantment",
-        "range": "8",
-        "target": "A group of creatures up to your INT/WIL",
-        "duration": "Sustained, up to 1 minute",
-        "effect": "Guide a group creatures down on a blanket of wind.\nThe creatures gently fall down at a speed of 10 tiles each round, taking no fall damage and landing standing.\nYou cannot use this spell on creatures larger than medium",
-        "upcast": "At Adept: You can use this on Large Creatures\nAt Grand Magus: You can use this on Huge Creatures",
-        "rank": "(1) Apprentice"
-    },
-    {
         "name": "Gust",
         "actions": "1-3",
         "trigger": "",
@@ -189,7 +189,7 @@
         "traits": "Targeting",
         "range": "10",
         "target": "One creature or object",
-        "duration": "-",
+        "duration": "",
         "effect": "Creates a sudden burst of wind that can push away small objects, unbalance foes, or snuff out small flames. If the target is a creature it must make a Reflex or Fortitude save. \n Success: Target is knocked back 1 tile or knocked off-guard 1 (targets choice)\n Failure: Target is knocked back 2 tiles and knocked off-guard 2\n Critical Failure: Target is knocked back 4 tiles and knocked prone\nA light object is pushed 4 tiles back. This spell cannot push large or larger creatures. You may increase the actions spent on the spell to increase the amount of tiles of knockback by 2 for each action.",
         "upcast": "",
         "rank": "(1) Apprentice"
@@ -202,7 +202,7 @@
         "traits": "Targeting",
         "range": "Touch",
         "target": "One creature or object",
-        "duration": "-",
+        "duration": "",
         "effect": "Heat an medium or smaller object or creature, dealing 2d4 fire damage with a basic Fortitude save. \nThe effect can be lessened to warm food or objects to a pleasant temperature. I\nf the target is a created affected by an Ice spell, your may attempt to remove it, giving it a new save against the effect.",
         "upcast": "By Rank: Increase the damage by 2d4",
         "rank": "(1) Apprentice"
@@ -231,6 +231,19 @@
         "duration": "Up to one minute",
         "effect": "Lights a flammable object or creature on fire. \nIf the target is a creature it can make a Reflex or Fortitude save. \nOn a failure it's set on fire, taking 1d8 persistent fire damage. \nIt can use on action its turn to repeat the save, ending the spell on success",
         "upcast": "",
+        "rank": "(1) Apprentice"
+    },
+    {
+        "name": "Illusory Object",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Arcane",
+        "traits": "Illusion",
+        "range": "8",
+        "target": "",
+        "duration": "",
+        "effect": "Weave an illusion of an stationary object or creature in range \nThe object is medium or smaller and anything can pass through it. ",
+        "upcast": "At Adept: You can use this create Large Illusions\nAt Magus: You can use this create Huge Illusions\nAt Archmage : You can use this create Gargantuan Illusions",
         "rank": "(1) Apprentice"
     },
     {
@@ -283,19 +296,6 @@
         "duration": "",
         "effect": "Magnetize a target to make it easier for metal objects to hit it.\nTarget creature makes a Wil save.\nOn a success they are magnetized for one round\nOn a failure they are magnetized for a minute\nOn a critical they are magnetized for a minute and the effect is doubled.\nWhile magnetized they have a -2 penalty to Reflex saves against Metal weapons and projectiles",
         "upcast": "",
-        "rank": "(1) Apprentice"
-    },
-    {
-        "name": "Illusory Object",
-        "actions": "2",
-        "trigger": "",
-        "aspects": "Arcane",
-        "traits": "Illusion",
-        "range": "8",
-        "target": "",
-        "duration": "",
-        "effect": "Weave an illusion of an stationary object or creature in range \nThe object is medium or smaller and anything can pass through it. ",
-        "upcast": "At Adept: You can use this create Large Illusions\nAt Magus: You can use this create Huge Illusions\nAt Archmage : You can use this create Gargantuan Illusions",
         "rank": "(1) Apprentice"
     },
     {
@@ -397,9 +397,22 @@
         "traits": "Targeting",
         "range": "8",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "effect": "Use your magic to throw a bit of loose earth or a rock against a target, dealing 1d6 physical damage with a basic Reflex save. \nIf you spend two actions on this spell it throws a larger rock, dealing 1d10 damage. \nIf you spend three actions on this spell it throws an even larger rock, dealing 1d12 damage and knocking the target prone on a critical failure",
         "upcast": "By Rank: Increase the damage dice amount by 1",
+        "rank": "(1) Apprentice"
+    },
+    {
+        "name": "Shadowstrike",
+        "actions": "1",
+        "trigger": "",
+        "aspects": "Darkness",
+        "traits": "Targeting, Complex",
+        "range": "6",
+        "target": "One Creature",
+        "duration": "",
+        "effect": "You make the shadows themself attack a target.\nChoose a tile of darkness or shadow within range, with an adjacent creature\nThe creature must make a Reflex saving throw or take 2d8 piercing damage.\nThis spell deals an extra d8 damage on a critical hit.",
+        "upcast": "",
         "rank": "(1) Apprentice"
     },
     {
@@ -411,7 +424,7 @@
         "range": "5",
         "target": "One Creature",
         "duration": "",
-        "effect": "You manipulate water or ice to make a moving creature slip.\nIt must make a Reflex saving throw.\n Success: The creature must stop its movement or become off-guard 1 until the end of your next turn\n Failure: The creature falls prone\n Critical Failure: The creature falls prone and takes 1d6 bludgeoning damage.\nThe creature has disavantage on the save if they are on wet, slippery or icy ground",
+        "effect": "You manipulate water or ice to make a moving creature slip.\nIt must make a Reflex saving throw.\n Success: The creature must stop its movement or become off-guard 1 until the end of your next turn\n Failure: The creature falls prone\n Critical Failure: The creature falls prone and takes 1d6 bludgeoning damage.\nThe creature has disadvantage on the save if they are on wet, slippery or icy ground",
         "upcast": "",
         "rank": "(1) Apprentice"
     },
@@ -449,7 +462,7 @@
         "traits": "Targeting",
         "range": "12",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "effect": "Creates a compressed bullet of water to strike at a creature, dealing 2d12 piercing damage with a basic Reflex save. \nIf you stand in or next to water the spell only costs 2 actions to cast",
         "upcast": "By Rank: Increase the damage by 1d10",
         "rank": "(1) Apprentice"
@@ -462,7 +475,7 @@
         "traits": "Targeting",
         "range": "5",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "effect": "Creates a blast of water to push a creature. It must make a Reflex or Fortitude save. \n Success: Target is pushed 1 tile back \n Failure: Target is pushed 3 tiles back \n Critical Failure: Target is pushed 3 tiles back and knocked off-guard 2\n For each size above Medium the creature is pushed 2 tiles less. \nIf you are standing in water the range or spend three actions on the spell, it instead targets all creatures in a 5 tile line from you. This gives the spell the Draining Trait",
         "upcast": "",
         "rank": "(1) Apprentice"
@@ -475,8 +488,8 @@
         "traits": "Targeting, Complex",
         "range": "2",
         "target": "One Creature",
-        "duration": "-",
-        "effect": "Sends a weak but very fast bolt of electricity at the target, dealing 1d8 lightning damage. \nIf the target is wearing armor made of metal or holding a metal object it makes a Reflex save with a -4 modifier, otherwise the modifier is -2.",
+        "duration": "",
+        "effect": "Sends a weak but very fast bolt of electricity at the target, dealing 1d10 lightning damage. \nIf the target is wearing armor made of metal or holding a metal object it makes a Reflex save with a -4 modifier, otherwise the modifier is -2.",
         "upcast": "By Rank: Increase the damage by 1d8",
         "rank": "(1) Apprentice"
     },
@@ -533,19 +546,6 @@
         "rank": "(2) Adept"
     },
     {
-        "name": "Water Breathing",
-        "actions": "2",
-        "trigger": "",
-        "aspects": "Water",
-        "traits": "Enchantment",
-        "range": "Self",
-        "target": "",
-        "duration": "1 Minute",
-        "effect": "Connect to the waters and absorb the air you need from it.\nWhile the spell is active you can breathe water as if were air and use verbal underwater\nAdditionally you have advantage on saves against deep sea preassure and similar threats",
-        "upcast": "At Magus: Increase the duration to 10 Minutes\nAt Grand Magus: Increase the duration to 1 Hour\nAt Archmage: Increase the duration to 8 Hours",
-        "rank": "(2) Adept"
-    },
-    {
         "name": "Breathe Fire",
         "actions": "2-3",
         "trigger": "",
@@ -572,19 +572,6 @@
         "rank": "(2) Adept"
     },
     {
-        "name": "Illusory Wall",
-        "actions": "2",
-        "trigger": "",
-        "aspects": "Arcane",
-        "traits": "Illusion",
-        "range": "7",
-        "target": "",
-        "duration": "Sustained, up to 1 minute",
-        "effect": "Conjure an illusory wall, taking any shape you want.\nThe wall is up to six tiles long and can appear solid or passable.\nYou may also use the wall to hide creatures behind it\nCreatures, objects and projectiles can pass through the wall, and any creatures that see something pass through the wall can find it.",
-        "upcast": "",
-        "rank": "(2) Adept"
-    },
-    {
         "name": "Detect Metal",
         "actions": "1",
         "trigger": "",
@@ -598,7 +585,7 @@
         "rank": "(2) Adept"
     },
     {
-        "name": "Dispell",
+        "name": "Dispel",
         "actions": "1",
         "trigger": "",
         "aspects": "Arcane",
@@ -606,7 +593,7 @@
         "range": "Touch",
         "target": "One Creature or Object",
         "duration": "",
-        "effect": "Attempt to counteract a spell or magical effect on a target you can touch.\nUse your Spellshaping check versus the Spellshaping check of the caster of the spell.\nOn a success you end the effect on the targeted creature\nThe targets check has a +3 bonus for each rank of their spell higher than the rank you cast this spell at",
+        "effect": "Attempt to counteract a spell or magical effect on a target you can touch.\nUse your Spellshaping chuck versus the Spellshaping check of the caster of the spell.\nOn a success you end the effect on the targeted creature\nThe targets check has a +3 bonus for each rank of their spell higher than the rank you cast this spell at",
         "upcast": "",
         "rank": "(2) Adept"
     },
@@ -621,19 +608,6 @@
         "duration": "",
         "effect": "Causes the earth to shake in a area around you.\nCreatures other than you in a 5 tile burst need to make a Reflex or Fortitude save or take 1d8 bludgeoning damage and fall prone",
         "upcast": "",
-        "rank": "(2) Adept"
-    },
-    {
-        "name": "Heat Metal",
-        "actions": "2",
-        "trigger": "",
-        "aspects": "Fire, Metal",
-        "traits": "",
-        "range": "Touch",
-        "target": "Metal armor or weapon",
-        "duration": "Sustained, up to 1 minute",
-        "effect": "Heat a set of metal armor or weapon.\nThe wearer or holder needs to can make Reflex spell to avoid it\nOn a failure the item is heated, dealing 2d4 fire damage at the start of the holders turn.",
-        "upcast": "By Rank: Increase the damage by 1d4",
         "rank": "(2) Adept"
     },
     {
@@ -689,6 +663,19 @@
         "rank": "(2) Adept"
     },
     {
+        "name": "Heat Metal",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Fire, Metal",
+        "traits": "",
+        "range": "Touch",
+        "target": "Metal armor or weapon",
+        "duration": "Sustained, up to 1 minute",
+        "effect": "Heat a set of metal armor or weapon.\nThe wearer or holder needs to can make Reflex spell to avoid it\nOn a failure the item is heated, dealing 2d4 fire damage at the start of the holders turn.",
+        "upcast": "By Rank: Increase the damage by 1d4",
+        "rank": "(2) Adept"
+    },
+    {
         "name": "Heatwave",
         "actions": "2",
         "trigger": "",
@@ -722,9 +709,22 @@
         "traits": "Targeting, Precision",
         "range": "8",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "effect": "Throw a shard of ice against a target, dealing 3d6 piercing damage with a basic Reflex save. \nOn a critical failure the damage dice of this spell increases to d10's",
         "upcast": "By Rank: Increase the damage by 1d6",
+        "rank": "(2) Adept"
+    },
+    {
+        "name": "Illusory Wall",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Arcane",
+        "traits": "Illusion",
+        "range": "7",
+        "target": "",
+        "duration": "Sustained, up to 1 minute",
+        "effect": "Conjure an illusory wall, taking any shape you want.\nThe wall is up to six tiles long and can appear solid or passable.\nYou may also use the wall to hide creatures behind it\nCreatures, objects and projectiles can pass through the wall, and any creatures that see something pass through the wall can find it.",
+        "upcast": "",
         "rank": "(2) Adept"
     },
     {
@@ -749,7 +749,7 @@
         "range": "Self",
         "target": "One Creature",
         "duration": "Sustained, up to 1 minute",
-        "effect": "You defy gravity and levitate the target 1 tile off the ground. When you sustain you can move the target up or down 10 feet. \nA creature floating in the air from levitate takes a -2 circumstance penalty to attack rolls, but can spend an Interact action to stabilize itself and negate this penalty for the remainder of its turn.\nIf the target is adjacent to a fixed object or terrain of suitable stability, it can move across the surface by climbing (if the surface is vertical, like a wall) or crawling (if the surface is horizontal, such as a ceiling). \nCreatures with a Glide speed have a Flight speed when affected by this spell.",
+        "effect": "You defy gravity and levitate the target 1 tile off the ground. \nWhen you sustain you can move the target up or down 10 feet. \nA creature floating in the air from levitate takes a -2 circumstance penalty to attack rolls, but can spend an Interact action to stabilize itself and negate this penalty for the remainder of its turn.\nIf the target is adjacent to a fixed object or terrain of suitable stability, it can move across the surface by climbing (if the surface is vertical, like a wall) or crawling (if the surface is horizontal, such as a ceiling). \nCreatures with a Glide speed have a Flight speed when affected by this spell.",
         "upcast": "",
         "rank": "(2) Adept"
     },
@@ -828,6 +828,19 @@
         "target": "Self",
         "duration": "Sustained, up to 1 minute",
         "effect": "A utility spell that allows the caster to sense nearby sources of water within 20 tiles, even if they are hidden underground or behind obstacles. \nThe caster can determine the direction and approximate distance to the nearest water source.",
+        "upcast": "",
+        "rank": "(2) Adept"
+    },
+    {
+        "name": "Shadowbind",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Darkness",
+        "traits": "Manipulation, Targeting",
+        "range": "8",
+        "target": "One Creature",
+        "duration": "Sustained, up to 1 minute",
+        "effect": "Make the shadows bind a creature\nChoose a creature in range in dim light or darkness. It must make a Reflex or Fortitude save.\nSuccess: It is slowed 1 for one round as the shadows try to grab it\nFailure: It is grabbed by the shadows.\nCritical Failure: It is restrained by the shadows.\nWhile the creature is grabbed by the shadows it is slowed 1.\nEffects that expose the shadows to magical light can attempt to break the spell\nIf bright light shines on the creature it has advantage on saves to escape",
         "upcast": "",
         "rank": "(2) Adept"
     },
@@ -931,7 +944,7 @@
         "range": "Self",
         "target": "-",
         "duration": "Sustained, up to 1 minute",
-        "effect": "Create a tentacle of water that can grab things or attack. \nWhile the spell is active, you have the Water Tentacle and Water Slam strikes. \nYou can also use an action to grab a small object within 30 feet with an arm. Each conjured water arm also gives you a climb speed of 2 tiles while you don't have a grabbed creature. \nWater Tentacle has range 4, hands 1 and deals 2d6 bludgeoning damage. On a hit you can also grab a creature.\nWater Slam has range 5, hands 1, the shove trait and deals 2d8 bludgeoning damage.",
+        "effect": "Create a tentacle of water that can grab things or attack. \nWhile the spell is active, you have the Water Tentacle and Water Slam strikes. \nYou can also use an action to grab a small object within 30 feet with an arm. Each conjured water arm also gives you a climb speed of 2 tiles while you don't have a grabbed creature. \nWater Tentacle has range 4, and deals 2d6 bludgeoning damage. On a hit you can also grab a creature.\nWater Slam has range 5, the shove trait and deals 2d8 bludgeoning damage.",
         "upcast": "By Rank: Increase amount of water arms by 1",
         "rank": "(2) Adept"
     },
@@ -944,8 +957,21 @@
         "range": "6",
         "target": "",
         "duration": "Sustained, up to 1 minute",
-        "effect": "Create a hovering ball of water, 4x4 tiles wide. \nWhen you cast or sustain the spell you can move the ball up to 3 tiles.\nAny creatures that move into the ball or that the ball moves into need to make Reflex or Fortitude saving throws or become trapped in the ball.\nCreatures trapped in the ball are move along with it. \nThey can make Athletics checks to try to get out of. \nCreatures with a swimming speed can swim out of the ball without needing to make a check",
+        "effect": "Create a hovering ball of water, 2 tiles in acoss. \nWhen you cast or sustain the spell you can move the ball up to 3 tiles.\nAny creatures that move into the ball or that the ball moves into need to make Reflex or Fortitude saving throws or become trapped in the ball.\nCreatures trapped in the ball are move along with it. \nThey can make Athletics checks to try to get out of. \nCreatures with a swimming speed can swim out of the ball without needing to make a check",
         "upcast": "",
+        "rank": "(2) Adept"
+    },
+    {
+        "name": "Water Breathing",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Water",
+        "traits": "Enchantment",
+        "range": "Self",
+        "target": "",
+        "duration": "1 Minute",
+        "effect": "Connect to the waters and absorb the air you need from it.\nWhile the spell is active you can breathe water as if were air and use verbal underwater\nAdditionally you have advantage on saves against deep sea pressure and similar threats",
+        "upcast": "At Magus: Increase the duration to 10 Minutes\nAt Grand Magus: Increase the duration to 1 Hour\nAt Archmage: Increase the duration to 8 Hours",
         "rank": "(2) Adept"
     },
     {
@@ -1008,7 +1034,7 @@
         "traits": "Targeting, Precision",
         "range": "12",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "effect": "Send out a swift slice of cutting wind.\nIt deals 2d10 slashing damage with a basic Reflex save.",
         "upcast": "By Rank: Increase the damage by 1d10",
         "rank": "(3) Magus"
@@ -1092,19 +1118,6 @@
         "rank": "(3) Magus"
     },
     {
-        "name": "Lava Wave",
-        "actions": "3",
-        "trigger": "",
-        "aspects": "Fire",
-        "traits": "Area",
-        "range": "Area from Self",
-        "target": "",
-        "duration": "Sustained, up to 1 minute",
-        "effect": "The caster summons a deadly but slow moving wave of lava.\nThe wave is up to three tiles wide and one tile thick. \nWhen cast and sustained the wave travels 5 tiles forward. \nCreatures hit by the wave need to make a Reflex saving throw or take 4d8 fire damage. ",
-        "upcast": "",
-        "rank": "(3) Magus"
-    },
-    {
         "name": "Giant Stone Hand",
         "actions": "3",
         "trigger": "",
@@ -1144,6 +1157,19 @@
         "rank": "(3) Magus"
     },
     {
+        "name": "Lava Wave",
+        "actions": "3",
+        "trigger": "",
+        "aspects": "Fire",
+        "traits": "Area",
+        "range": "Area from Self",
+        "target": "",
+        "duration": "Sustained, up to 1 minute",
+        "effect": "The caster summons a deadly but slow moving wave of lava.\nThe wave is up to three tiles wide and one tile thick. \nWhen cast and sustained the wave travels 5 tiles forward. \nCreatures hit by the wave need to make a Reflex saving throw or take 4d8 fire damage. ",
+        "upcast": "",
+        "rank": "(3) Magus"
+    },
+    {
         "name": "Lightning Bolt",
         "actions": "2",
         "trigger": "",
@@ -1153,6 +1179,19 @@
         "target": "One Creature or Object",
         "duration": "",
         "effect": "Create a bolt of lightning to strike a target in range\nThe target needs to make a basic Reflex save, taking 4d12 lightning damage on failure.\nIf the target is wearing armor made of metal or holding a metal object it makes this save with a -4 modifier, otherwise the modifier is -2.",
+        "upcast": "",
+        "rank": "(3) Magus"
+    },
+    {
+        "name": "Shadowstep",
+        "actions": "1",
+        "trigger": "",
+        "aspects": "Darkness",
+        "traits": "Teleportation",
+        "range": "10",
+        "target": "Self",
+        "duration": "",
+        "effect": "You step through the shadows and appear elsewhere.\nTeleport to a tile in darkness or dim light within range.",
         "upcast": "",
         "rank": "(3) Magus"
     },
@@ -1177,7 +1216,7 @@
         "traits": "Complex, Enchantment, Temporal",
         "range": "5",
         "target": "One creature",
-        "duration": "2 Minute",
+        "duration": "1 Minute",
         "effect": "By subtly manipulating the timestream around you can slow it's movement and perception of the world.\nIt must make a Will save.\nSuccess: Target is slowed 1 for one round\nFailure: Target is slowed 1 for the spells duration\nCritical Failure: Target is slowed 2 for the spells duration\nThe target may attempt to redo the save at end of turn",
         "upcast": "By Rank: Choose one more creature",
         "rank": "(3) Magus"

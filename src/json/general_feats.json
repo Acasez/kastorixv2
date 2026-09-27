@@ -211,7 +211,7 @@
     },
     {
         "name": "Inspiring Leader",
-        "description": "You have a way with words and can inspire those around you. \nYou can use the Inspire Courage action once per day. \nYour proficiency level in pesuasion or warfare lore increases (max Expert). ",
+        "description": "You have a way with words and can inspire those around you. \nYou can use the Inspire Courage action once per day. \nYour proficiency level in persuasion or warfare lore increases (max Expert). ",
         "unlockedAction": "Inspire Courage",
         "prerequisites": "",
         "level": "1",
@@ -376,7 +376,7 @@
     },
     {
         "name": "Skilled",
-        "description": "You have practiced three skills of your choice.\nYour proficiency level in the the three skllls increases (max Expert).\nYou may choose this feat multiple times.",
+        "description": "You have practiced three skills of your choice.\nYour proficiency level in the the three skills increases (max Expert).\nYou may choose this feat multiple times.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -766,7 +766,7 @@
     },
     {
         "name": "Rolling Landing",
-        "description": "You can land on your feat like a cat\nYou learn the Cat Fall reaction\nYour proficiency level in Acrobatics increases (max Master).",
+        "description": "You can land on your feet like a cat\nYou learn the Cat Fall reaction\nYour proficiency level in Acrobatics increases (max Master).",
         "unlockedAction": "Cat Fall",
         "prerequisites": "",
         "level": "4",

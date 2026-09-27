@@ -13,8 +13,7 @@
         "skills": "Brawling",
         "saves": "Fortitude",
         "weapons": "",
-        "naturalWeapon": "Slam",
-        "naturalWeaponDesc": "(PHY + trained), 1d10 + PHY bludgeoning damage"
+        "naturalWeapon": "Slam"
     },
     {
         "name": "Soldier",
@@ -30,8 +29,7 @@
         "skills": "Two of Athletics, Brawling, Intimidation and Stealth",
         "saves": "Reflex",
         "weapons": "Simple weapons, shields and one weapon group",
-        "naturalWeapon": "",
-        "naturalWeaponDesc": ""
+        "naturalWeapon": ""
     },
     {
         "name": "Quadruped",
@@ -47,8 +45,7 @@
         "skills": "Athletics",
         "saves": "Fortitude or Reflex",
         "weapons": "",
-        "naturalWeapon": "Stomp",
-        "naturalWeaponDesc": "(PHY + trained), 1d8 + PHY bludgeoning damage. Deadly d6."
+        "naturalWeapon": "Stomp"
     },
     {
         "name": "Scout",
@@ -64,7 +61,6 @@
         "skills": "Two of Acrobatics, Performance, Sleight of hand or Stealth",
         "saves": "Reflex",
         "weapons": "Simple weapons and one weapon group",
-        "naturalWeapon": "",
-        "naturalWeaponDesc": ""
+        "naturalWeapon": ""
     }
 ]

@@ -79,7 +79,7 @@
     },
     {
         "name": "Freeform Learning",
-        "description": "You've studied spells here and there, picking up any that seemed intresting\nYou learn 2 + your INT apprentice spells of your choosing. \nYou can choose this feat multiple times",
+        "description": "You've studied spells here and there, picking up any that seemed interesting\nYou learn 2 + your INT apprentice spells of your choosing. \nYou can choose this feat multiple times",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -495,7 +495,7 @@
     },
     {
         "name": "Threaded Spellbreak",
-        "description": "You can perform Spellbreaking through your mana threads.\nYou can use the Spellbreak reaction from any of your Mana Threads\nIf the caster of the spell is the target of your thread you have +2 bonus to the Spellbreak roll and recover mana equal to the rank of the spell on a succesful spellbreak",
+        "description": "You can perform Spellbreaking through your mana threads.\nYou can use the Spellbreak reaction from any of your Mana Threads\nIf the caster of the spell is the target of your thread you have +2 bonus to the Spellbreak roll and recover mana equal to the rank of the spell on a successful spellbreak",
         "unlockedAction": "",
         "prerequisites": "[Mana Thread], [Spellbreaking]",
         "level": "4",
@@ -950,7 +950,7 @@
     },
     {
         "name": "Detonate Spell",
-        "description": "When you attempt a Spellbreak, you can spend a focus point to attempt to detonate the spell.\nOn a success you detonate the spell in a burst of mana\nThe caster and adjecant creatures need to make a PHY save or take 1d8 unraveling damage per rank of the spell.\nCreatures that fail the spell are also mana poisoned 1, or 2 on a critical failure.\nYou can not get back any mana or other resources from spellbreaking when you do this",
+        "description": "When you attempt a Spellbreak, you can spend a focus point to attempt to detonate the spell.\nOn a success you detonate the spell in a burst of mana\nThe caster and adjacent creatures need to make a PHY save or take 1d8 unraveling damage per rank of the spell.\nCreatures that fail the spell are also mana poisoned 1, or 2 on a critical failure.\nYou can not get back any mana or other resources from spellbreaking when you do this",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "16",

@@ -1,22 +1,26 @@
 export type GolemModel = {
   name: string;
   description: string;
-  phy: number;
-  dex: number;
-  int: number;
-  wil: number;
-  resistances: number;
+  phy: string;
+  dex: string;
+  int: string;
+  wil: string;
+  resistances: string;
   featureOne: string;
   featureOneDesc: string;
   saves: string;
   weapons: string;
   naturalWeapon: string;
-  naturalWeaponDesc: string;
 };
 
 export type GolemUpgrade = {
   name: string;
   description: string;
   prerequisites: string;
-  level: number;
+  level: string;
+  golemWeapon: string;
+  unlockedAction: string;
+  healthBase: string;
+  healthIncrease: string;
+  elementalResistance: string;
 };

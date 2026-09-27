@@ -48,18 +48,6 @@
         "Column 1": ""
     },
     {
-        "name": "Cat Fall",
-        "actions": "Reaction",
-        "trigger": "When you would take fall damage",
-        "requirement": "",
-        "description": "Make an Acrobatics check, and reduce the fall damage by that much\nIf you take no damage from it you may Step as free action.",
-        "traits": "Skill",
-        "skill": "Acrobatics",
-        "sourceType": "General Feat",
-        "source": "Cat Fall",
-        "Column 1": ""
-    },
-    {
         "name": "Battlefield Medicine",
         "actions": "2",
         "trigger": "",
@@ -69,6 +57,18 @@
         "skill": "Medicine",
         "sourceType": "Item",
         "source": "",
+        "Column 1": ""
+    },
+    {
+        "name": "Battlefield Stomp",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "",
+        "description": "Every creature within 3 tiles must make a basic Fortitude save against your Golems attack.\nOn a failure they take 2d6 bludgeoning damage and fall prone",
+        "traits": "Attack, Golem",
+        "skill": "",
+        "sourceType": "Golem Upgrade",
+        "source": "Battlefield Stomp",
         "Column 1": ""
     },
     {
@@ -141,6 +141,18 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
+        "Column 1": ""
+    },
+    {
+        "name": "Cat Fall",
+        "actions": "Reaction",
+        "trigger": "When you would take fall damage",
+        "requirement": "",
+        "description": "Make an Acrobatics check, and reduce the fall damage by that much\nIf you take no damage from it you may Step as free action.",
+        "traits": "Skill",
+        "skill": "Acrobatics",
+        "sourceType": "General Feat",
+        "source": "Cat Fall",
         "Column 1": ""
     },
     {
@@ -448,12 +460,24 @@
         "actions": "1",
         "trigger": "",
         "requirement": "",
-        "description": "You make a maneuver that appears as strike to throw an enemy off-guard. \nMake a Deception check against an enemie within 3 tiles Perception roll.\nOn a success, the creature becomes off-guard 3 for the rest of the turn\nOn a critical success,  the creature becomes off-guard 3 until the end of its next turn",
+        "description": "You make a maneuver that appears as strike to throw an enemy off-guard. \nMake a Deception check against an enemy within 3 tiles Perception roll.\nOn a success, the creature becomes off-guard 3 for the rest of the turn\nOn a critical success,  the creature becomes off-guard 3 until the end of its next turn",
         "traits": "Combat Manuever",
         "skill": "Deception",
         "sourceType": "Combat Manuever",
         "source": "",
         "Column 1": "Simple"
+    },
+    {
+        "name": "Fire Capacitor",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "",
+        "description": "The golem projects a 5 tile cone of fire, dealing 4d6 fire damage with a basic Reflex save\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem",
+        "traits": "Golem, Magic",
+        "skill": "",
+        "sourceType": "Golem Upgrade",
+        "source": "Fire Capacitor",
+        "Column 1": ""
     },
     {
         "name": "Flurry of Blows",
@@ -490,6 +514,18 @@
         "sourceType": "Combat Manuever",
         "source": "",
         "Column 1": "Simple"
+    },
+    {
+        "name": "Frost Capacitor",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "",
+        "description": "The golem projects a 4 tile cone of cold, dealing 3d4 cold damage with a basic Fortitude save\nMedium and smaller creatures that fail the save also become Frozen 1, or 2 on a critical failure\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
+        "traits": "Golem, Magic",
+        "skill": "",
+        "sourceType": "Golem Upgrade",
+        "source": "Frost Capacitor",
+        "Column 1": ""
     },
     {
         "name": "Glide",
@@ -633,6 +669,18 @@
         "skill": "Athletics",
         "sourceType": "Base",
         "source": "",
+        "Column 1": ""
+    },
+    {
+        "name": "Lightning Capacitor",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "",
+        "description": "The golem projects a 10 tile line of lightning, dealing 3d8 lightning damage with a basic Reflex save\nCreature wearing metal armor have a -3 penalty to this save\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem",
+        "traits": "Golem, Magic",
+        "skill": "",
+        "sourceType": "Golem Upgrade",
+        "source": "Lightning Capacitor",
         "Column 1": ""
     },
     {
@@ -864,6 +912,18 @@
         "Column 1": ""
     },
     {
+        "name": "Recharge Golem Capacitor",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "You are standing next to your golem",
+        "description": "Restore mana to your golems capacitor so it can be fired again.\nSpend 5 mana",
+        "traits": "Mana",
+        "skill": "",
+        "sourceType": "Golem",
+        "source": "",
+        "Column 1": ""
+    },
+    {
         "name": "Reinforce Aura",
         "actions": "1",
         "trigger": "",
@@ -987,7 +1047,7 @@
         "name": "Snap Shot",
         "actions": "1",
         "trigger": "",
-        "requirement": "You are holding a weapon with the Vollley trait",
+        "requirement": "You are holding a weapon with the Volley trait",
         "description": "Make a quick shot in the heart of battle. \nMake a Strike, ignoring the Volley trait",
         "traits": "Attack, Combat Manuever",
         "skill": "",
@@ -1012,7 +1072,7 @@
         "actions": "Reaction",
         "trigger": "You successfully identify a spell being cast within 3 tiles of you. ",
         "requirement": "",
-        "description": "Spend mana equal to half the spells cost and make a check against the Spellshaping Check of the caster.\nIf you know the spell being cast you may add your profficiency in the spell to the roll\nIf you got a critical success on the Identify Spell Check you may add your INT or DEX (min 1) to the roll.\nIf you roll higher than the caster you prevent the spell from being cast.",
+        "description": "Spend mana equal to half the spells cost and make a check against the Spellshaping Check of the caster.\nIf you know the spell being cast you may add your proficiency in the spell to the roll\nIf you got a critical success on the Identify Spell Check you may add your INT or DEX (min 1) to the roll.\nIf you roll higher than the caster you prevent the spell from being cast.",
         "traits": "Magic",
         "skill": "",
         "sourceType": "Arcane Feat",
@@ -1252,7 +1312,7 @@
         "actions": "1",
         "trigger": "",
         "requirement": "You are holding a device or have one on your belt",
-        "description": "Throw a device 2 + your DEX or PHY tiles. \nThe device activiates and has an effect based on the device . \nIf the device is an gadget crafted by you, you roll Crafting + DEX",
+        "description": "Throw a device 2 + your DEX or PHY tiles. \nThe device activates and has an effect based on the device . \nIf the device is an gadget crafted by you, you roll Crafting + DEX",
         "traits": "Item",
         "skill": "Crafting",
         "sourceType": "",
@@ -1264,7 +1324,7 @@
         "actions": "1",
         "trigger": "",
         "requirement": "",
-        "description": "Transfer some of your mana to an adjcant creature. A fast but dangerous way to give a creature mana.\nSpecify the amount of mana you wish to transfer, then make a Channeling skill check against a DC of twice the amount mana to transfer. You can\nOn a critical success you transfer the mana chosen.\nOn a critical success you transfer the mana chosen, and the target gets one level of mana poisoning.\nOn a failure you transfer the half mana chosen, losing the rest and the target gets one level of mana poisoning.\nOn a critical failure you lose all the mana chosen and the target gets two levels of mana poisoning.\nYou may spend two actions on this action to have +2 bonus on the roll, or three actions to have a +5 bonus. ",
+        "description": "Transfer some of your mana to an adjacent creature. A fast but dangerous way to give a creature mana.\nSpecify the amount of mana you wish to transfer, then make a Channeling skill check against a DC of twice the amount mana to transfer. You can\nOn a critical success you transfer the mana chosen.\nOn a critical success you transfer the mana chosen, and the target gets one level of mana poisoning.\nOn a failure you transfer the half mana chosen, losing the rest and the target gets one level of mana poisoning.\nOn a critical failure you lose all the mana chosen and the target gets two levels of mana poisoning.\nYou may spend two actions on this action to have +2 bonus on the roll, or three actions to have a +5 bonus. ",
         "traits": "Mana, Skill",
         "skill": "Channeling",
         "sourceType": "Base",

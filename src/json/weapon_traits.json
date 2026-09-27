@@ -29,7 +29,7 @@
     },
     {
         "name": "Agile",
-        "effect": "The multiple attack penalty you take with this weapon -4 per attack instead of -5. The penalty on oppertunity attacks is 1 less",
+        "effect": "The multiple attack penalty you take with this weapon -4 per attack instead of -5. The penalty on opportunity attacks is 1 less",
         "specialAction": "",
         "type": "",
         "modifiable": ""
@@ -162,7 +162,7 @@
     },
     {
         "name": "Sluggish",
-        "effect": "The multiple attack penalty you take with this weapon -6 per attack instead of -5. The penalty on oppertunity attacks is 1 more",
+        "effect": "The multiple attack penalty you take with this weapon -6 per attack instead of -5. The penalty on opportunity attacks is 1 more",
         "specialAction": "",
         "type": "",
         "modifiable": ""

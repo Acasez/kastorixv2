@@ -78,7 +78,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Agile, Channeling, Deadly (d8), Finesse, Light",
-        "description": "Impact Gauntlets lets their wielders punch with extraordinarie force",
+        "description": "Impact Gauntlets lets their wielders punch with extraordinary force",
         "price": "12 gp",
         "type": "Artificers",
         "weaponGroup": "Unarmed"
@@ -90,7 +90,7 @@
         "hands": "2",
         "range": "1",
         "traits": "Heavy, Shove",
-        "description": "Powered hammers bring intense power from careful runework",
+        "description": "Powered hammers bring intense power from careful runeword",
         "price": "15 gp",
         "type": "Artificers",
         "weaponGroup": "Hammer"
@@ -109,7 +109,7 @@
     },
     {
         "name": "Arbalest",
-        "dice": "2d8",
+        "dice": "2d10",
         "damageType": "piercing",
         "hands": "2",
         "range": "12",
@@ -133,7 +133,7 @@
     },
     {
         "name": "Crossbow",
-        "dice": "1d8",
+        "dice": "1d10",
         "damageType": "piercing",
         "hands": "2",
         "range": "10",
@@ -498,7 +498,7 @@
         "hands": "0",
         "range": "2",
         "traits": "Agile, Finesse",
-        "description": "",
+        "description": "An agile tail can often take foes that expect your golem to have slow lumbering attacks off-guard",
         "price": "-",
         "type": "Golem",
         "weaponGroup": "Unarmed"
@@ -540,13 +540,25 @@
         "weaponGroup": "Unarmed"
     },
     {
+        "name": "Ballista",
+        "dice": "1d10",
+        "damageType": "piercing",
+        "hands": "0",
+        "range": "10",
+        "traits": "Ranged, Reload (1), Propulsive",
+        "description": "You mount a ballista on your golem, giving it a ranged weapon.",
+        "price": "",
+        "type": "Golem",
+        "weaponGroup": "Unarmed"
+    },
+    {
         "name": "Sweeping Tail",
         "dice": "1d8",
         "damageType": "bludgeoning",
         "hands": "0",
         "range": "2",
         "traits": "Sweep, Shove",
-        "description": "",
+        "description": "Golems can push around foes and hit multiple targets with a sweeping tail attack",
         "price": "-",
         "type": "Golem",
         "weaponGroup": "Unarmed"

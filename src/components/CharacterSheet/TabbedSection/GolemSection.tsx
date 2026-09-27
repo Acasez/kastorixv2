@@ -4,6 +4,7 @@ import TrackBar from "../../TrackBar";
 import golemModels from "../../../JSON/golem_models.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
 import weapons from "../../../JSON/weapons.json";
+import WeaponComponent from "./WeaponComponent";
 
 export default function GolemSection() {
   const { character, updateCharacter } = useCharacter();
@@ -55,18 +56,20 @@ export default function GolemSection() {
     current: Math.min(character.golemHealth.current, maxGolemHealth),
     max: maxGolemHealth,
   };
-  const naturalStrike = weapons.find(
-    (weapon) => weapon.type === "Golem" && weapon.name === model.naturalWeapon,
-  );
-  const additionalStrikeUpgrades = selectedUpgrades.filter((upgrade) =>
-    [
-      "Ballista",
-      "Battlefield Stomp",
-      "Fire Capacitor",
-      "Frost Capacitor",
-      "Lightning Capacitor",
-      "Tail Strike",
-    ].includes(upgrade.name),
+  const golemStrikeNames = [
+    model.naturalWeapon,
+    ...selectedUpgrades.flatMap((upgrade) =>
+      upgrade.golemWeapon
+        .split(",")
+        .map((weaponName) => weaponName.trim())
+        .filter(Boolean),
+    ),
+  ];
+  const golemStrikes = [...new Set(golemStrikeNames.filter(Boolean))].flatMap(
+    (weaponName) => {
+      const weapon = weapons.find((item) => item.name === weaponName);
+      return weapon ? [weapon] : [];
+    },
   );
 
   return (
@@ -138,33 +141,27 @@ export default function GolemSection() {
 
         <section>
           <h2 className="mb-2 text-lg font-semibold">Strikes & Attacks</h2>
-          {naturalStrike && (
-            <div className="border-b border-gray-600 py-2">
-              <h3 className="font-semibold">{naturalStrike.name}</h3>
-              <p className="text-gray-300">
-                {naturalStrike.dice} {naturalStrike.damageType}, range{" "}
-                {naturalStrike.range}
-                {naturalStrike.traits && `, ${naturalStrike.traits}`}
-              </p>
-              {model.naturalWeaponDesc && (
-                <p className="whitespace-pre-line text-gray-300">
-                  {model.naturalWeaponDesc}
-                </p>
-              )}
-            </div>
-          )}
-          {additionalStrikeUpgrades.map((upgrade) => (
-            <div
-              key={upgrade.selectionKey}
-              className="border-b border-gray-600 py-2"
-            >
-              <h3 className="font-semibold">{upgrade.name}</h3>
-              <p className="whitespace-pre-line text-gray-300">
-                {upgrade.description}
-              </p>
-            </div>
-          ))}
-          {!naturalStrike && additionalStrikeUpgrades.length === 0 && (
+          {golemStrikes.map((weapon) => {
+            const traits = weapon.traits
+              .split(",")
+              .map((trait) => trait.trim());
+            const attackStat = traits.includes("Ranged")
+              ? Number(model.dex)
+              : traits.includes("Finesse")
+                ? Math.max(Number(model.dex), modelPhy)
+                : modelPhy;
+
+            return (
+              <WeaponComponent
+                key={weapon.name}
+                weapon={weapon}
+                attackStatOverride={attackStat}
+                damageBonusOverride={modelPhy}
+                fixedProficiency="Trained"
+              />
+            );
+          })}
+          {golemStrikes.length === 0 && (
             <p className="text-gray-400">No strikes or attacks listed.</p>
           )}
         </section>

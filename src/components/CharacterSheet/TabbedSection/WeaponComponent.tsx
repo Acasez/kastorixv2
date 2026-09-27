@@ -1,4 +1,5 @@
 import { getProficiency } from "../../../constants/Proficiency";
+import type { ProficiencyTierName } from "../../../constants/Proficiency";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import type { Weapon } from "../../../types/Weapons";
 import ProficiencyMarker from "../../ProficiencyMarker";
@@ -7,8 +8,11 @@ import weaponTraits from "../../../JSON/weapon_traits.json";
 
 interface WeaponComponentProps {
   weapon: Weapon;
-  onReplaceWeapon: (weaponName: string) => void;
-  onRemoveWeapon: (weaponName: string) => void;
+  onReplaceWeapon?: (weaponName: string) => void;
+  onRemoveWeapon?: (weaponName: string) => void;
+  attackStatOverride?: number;
+  damageBonusOverride?: number;
+  fixedProficiency?: ProficiencyTierName;
 }
 
 function normalizeTraitName(traitName: string) {
@@ -29,19 +33,26 @@ export default function WeaponComponent({
   weapon,
   onReplaceWeapon,
   onRemoveWeapon,
+  attackStatOverride,
+  damageBonusOverride,
+  fixedProficiency,
 }: WeaponComponentProps) {
   const { character } = useCharacter();
 
   const weaponTraits = weapon.traits.split(",").map((trait) => trait.trim());
-  const attackStat = weaponTraits.includes("Ranged")
-    ? character.baseStats.DEX
-    : weaponTraits.includes("Finesse")
-      ? Math.max(character.baseStats.DEX, character.baseStats.PHY)
-      : character.baseStats.PHY;
+  const attackStat =
+    attackStatOverride ??
+    (weaponTraits.includes("Ranged")
+      ? character.baseStats.DEX
+      : weaponTraits.includes("Finesse")
+        ? Math.max(character.baseStats.DEX, character.baseStats.PHY)
+        : character.baseStats.PHY);
 
-  const damageBonus = weaponTraits.includes("Ranged")
-    ? 0
-    : character.baseStats.PHY;
+  const damageBonus =
+    damageBonusOverride ??
+    (weaponTraits.includes("Ranged") ? 0 : character.baseStats.PHY);
+  const proficiencyTier =
+    fixedProficiency ?? character.skillProficiencies[weapon.name] ?? "Trained";
 
   const multiAttackPenalty = weaponTraits.includes("Agile") ? -4 : -5;
 
@@ -83,38 +94,58 @@ export default function WeaponComponent({
     >
       <div
         key={weapon.name}
-        role="button"
-        tabIndex={0}
-        onClick={(event) => {
-          if ((event.target as HTMLElement).closest("button")) return;
-          onReplaceWeapon(weapon.name);
-        }}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            onReplaceWeapon(weapon.name);
-          }
-        }}
-        onContextMenu={(event) => {
-          event.preventDefault();
-          if ((event.target as HTMLElement).closest("button")) return;
-          onRemoveWeapon(weapon.name);
-        }}
-        aria-label={`${weapon.name} strike. Click to replace or right-click to remove.`}
-        className="flex w-full flex-col gap-2 rounded-lg border border-gray-500 bg-gray-800 px-3 py-2 text-left shadow-sm transition-colors hover:border-gray-300"
+        role={onReplaceWeapon ? "button" : undefined}
+        tabIndex={onReplaceWeapon ? 0 : undefined}
+        onClick={
+          onReplaceWeapon
+            ? (event) => {
+                if ((event.target as HTMLElement).closest("button")) return;
+                onReplaceWeapon(weapon.name);
+              }
+            : undefined
+        }
+        onKeyDown={
+          onReplaceWeapon
+            ? (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  onReplaceWeapon(weapon.name);
+                }
+              }
+            : undefined
+        }
+        onContextMenu={
+          onRemoveWeapon
+            ? (event) => {
+                event.preventDefault();
+                if ((event.target as HTMLElement).closest("button")) return;
+                onRemoveWeapon(weapon.name);
+              }
+            : undefined
+        }
+        aria-label={
+          onReplaceWeapon || onRemoveWeapon
+            ? `${weapon.name} strike. Click to replace or right-click to remove.`
+            : `${weapon.name} golem strike.`
+        }
+        className={`flex w-full flex-col gap-2 rounded-lg border border-gray-500 bg-gray-800 px-3 py-2 text-left shadow-sm ${
+          onReplaceWeapon ? "transition-colors hover:border-gray-300" : ""
+        }`}
       >
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span className="text-base font-semibold text-white">
             {weapon.name}
           </span>
-          <ProficiencyMarker skillName={weapon.name} defaultTier="Trained" />
+          {fixedProficiency ? (
+            <span className="rounded bg-slate-600 px-1.5 py-0.5 text-xs text-white">
+              {fixedProficiency}
+            </span>
+          ) : (
+            <ProficiencyMarker skillName={weapon.name} defaultTier="Trained" />
+          )}
           <span className="text-sm text-gray-300">
             Hit{" "}
             <strong className="text-white">
-              +
-              {attackStat +
-                getProficiency(
-                  character.skillProficiencies[weapon.name] ?? "Trained",
-                ).bonus}
+              +{attackStat + getProficiency(proficiencyTier).bonus}
             </strong>
           </span>
           <span className="text-sm text-gray-300">
