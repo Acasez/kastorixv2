@@ -281,11 +281,16 @@ export default function LevelCard({ level }: LevelCardProps) {
   const renderUnlockedChoice = (choice: ChoiceNode, depth: number) => {
     const selectedName =
       character.selections[choice.selectionKey] ?? choice.fixedValue;
+    const selectedChoice =
+      character.selections[`${choice.selectionKey}:choice`];
+    const label = selectedName
+      ? `${selectedName}${selectedChoice ? ` - ${selectedChoice}` : ""}`
+      : choice.title;
 
     return (
       <div key={choice.selectionKey} className="space-y-1">
         <OpenModalButton
-          label={selectedName ?? choice.title}
+          label={label}
           itemChosen={Boolean(selectedName)}
           onClick={
             choice.fixedValue
