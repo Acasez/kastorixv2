@@ -90,7 +90,7 @@ export default function ModalWrapper({
       .map((item) => item.name);
   };
 
-  const confirmChoice = (value: string) => {
+  const confirmChoice = (value: string, choice?: string) => {
     const isBlockedDuplicate =
       request.type !== "species" &&
       request.type !== "baseStats" &&
@@ -166,8 +166,18 @@ export default function ModalWrapper({
       request.type !== "baseStats" &&
       request.type !== "statIncrease"
     ) {
+      const choiceKey = `${request.selectionKey}:choice`;
+      const selections = Object.fromEntries(
+        Object.entries(character.selections).filter(
+          ([key]) => key !== choiceKey,
+        ),
+      );
       updateCharacter({
-        selections: { ...character.selections, [request.selectionKey]: value },
+        selections: {
+          ...selections,
+          [request.selectionKey]: value,
+          ...(choice ? { [choiceKey]: choice } : {}),
+        },
       });
     }
     closeModal();
@@ -180,6 +190,11 @@ export default function ModalWrapper({
           items={choiceData[request.type]}
           confirmLabel={request.title}
           initialValue={getCurrentValue()}
+          initialChoice={
+            request.type === "species"
+              ? null
+              : (character.selections[`${request.selectionKey}:choice`] ?? null)
+          }
           maxLevel={request.type === "species" ? Infinity : request.level}
           disabledNames={getBlockedChoiceNames()}
           filterFields={

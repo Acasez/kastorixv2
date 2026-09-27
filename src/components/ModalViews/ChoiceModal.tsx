@@ -23,21 +23,25 @@ export interface ChoiceItem {
   repeatable?: string | number | boolean;
   unlockedAction?: string;
   actionCost?: string;
+  choice?: string;
+  choiceOptions?: ChoiceItem[];
 }
 interface ChoiceModalProps {
   items: ChoiceItem[];
   confirmLabel: string;
   initialValue: string | null;
+  initialChoice?: string | null;
   maxLevel: number;
   disabledNames?: string[];
   filterFields?: { label: string; value: string }[];
-  onConfirm: (value: string) => void;
+  onConfirm: (value: string, choice?: string) => void;
 }
 
 export default function ChoiceModal({
   items,
   confirmLabel,
   initialValue,
+  initialChoice = null,
   maxLevel,
   disabledNames = [],
   filterFields = [],
@@ -58,6 +62,9 @@ export default function ChoiceModal({
   const [selectedName, setSelectedName] = useState(
     () => initialValue ?? firstSelectableItem?.name ?? items[0]?.name ?? "",
   );
+  const [selectedChoiceName, setSelectedChoiceName] = useState(
+    () => (initialValue ? initialChoice : null) ?? "",
+  );
 
   const filteredItems = items.filter((item) => {
     const matchesName = item.name.toLowerCase().includes(search.toLowerCase());
@@ -74,6 +81,9 @@ export default function ChoiceModal({
     return matchesName && matchesFilters;
   });
   const selectedItem = items.find((item) => item.name === selectedName);
+  const selectedChoice = selectedItem?.choiceOptions?.find(
+    (choice) => choice.name === selectedChoiceName,
+  );
 
   return (
     <div className="flex flex-col gap-4">
@@ -139,7 +149,12 @@ export default function ChoiceModal({
                     ? "border-purple-500 bg-purple-100"
                     : "border-amber-200 bg-bg-rules text-text-dark"
               }`}
-              onClick={() => setSelectedName(item.name)}
+              onClick={() => {
+                setSelectedName(item.name);
+                setSelectedChoiceName(
+                  item.name === initialValue ? (initialChoice ?? "") : "",
+                );
+              }}
             >
               <span className="flex items-center gap-1">
                 {item.name}
@@ -204,6 +219,35 @@ export default function ChoiceModal({
                       "No description available."}
                   </p>
                 )}
+                {selectedItem.choiceOptions && (
+                  <div className="mt-4">
+                    <p className="font-bold">
+                      Choose{" "}
+                      {selectedItem.choice?.replace(/\s*-\s*Choice$/i, "")}
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {selectedItem.choiceOptions.map((choice) => (
+                        <button
+                          type="button"
+                          key={choice.name}
+                          className={`border-2 px-2 py-1 text-text-black ${
+                            selectedChoiceName === choice.name
+                              ? "border-teal-700 bg-teal-100"
+                              : "border-gray-300 bg-white"
+                          }`}
+                          onClick={() => setSelectedChoiceName(choice.name)}
+                        >
+                          {choice.name}
+                        </button>
+                      ))}
+                    </div>
+                    {selectedChoice?.description && (
+                      <p className="mt-2 whitespace-pre-line">
+                        {selectedChoice.description}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
               {selectedItem.unlockedAction && (
                 <ActionBox
@@ -213,9 +257,16 @@ export default function ChoiceModal({
               )}
               <button
                 type="button"
-                disabled={isDisabled(selectedItem)}
+                disabled={
+                  isDisabled(selectedItem) ||
+                  Boolean(
+                    selectedItem.choiceOptions?.length && !selectedChoiceName,
+                  )
+                }
                 className="bg-lime-300 p-1 rounded-md mt-4 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed self-start"
-                onClick={() => onConfirm(selectedItem.name)}
+                onClick={() =>
+                  onConfirm(selectedItem.name, selectedChoiceName || undefined)
+                }
               >
                 {confirmLabel}
               </button>

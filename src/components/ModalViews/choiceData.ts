@@ -13,6 +13,7 @@ import species from "../../JSON/species.json";
 import metamagics from "../../JSON/metamagic.json";
 import armors from "../../JSON/armors.json";
 import gadgets from "../../JSON/gadgets.json";
+import golemModels from "../../JSON/golem_models.json";
 import { getActionIcons } from "../../utils/actionUtils";
 
 export type ChoiceData = Record<
@@ -73,15 +74,24 @@ const GENERAL_FEAT_FIELDS: DetailField[] = [
   { label: "Level", valueKey: "level" },
 ];
 
-const ARCANE_FEAT_FIELDS: DetailField[] = [
-  ...GENERAL_FEAT_FIELDS,
-  { label: "Choice", valueKey: "choice" },
-];
+const ARCANE_FEAT_FIELDS: DetailField[] = [...GENERAL_FEAT_FIELDS];
 
 const ADVANTAGE_FIELDS: DetailField[] = [
   { label: "Description", valueKey: "description" },
   { label: "Level", valueKey: "level" },
-  { label: "Choice", valueKey: "choice" },
+];
+
+const GOLEM_MODEL_FIELDS: DetailField[] = [
+  { label: "Description", valueKey: "description" },
+  { label: "PHY", valueKey: "phy" },
+  { label: "DEX", valueKey: "dex" },
+  { label: "INT", valueKey: "int" },
+  { label: "WIL", valueKey: "wil" },
+  { label: "Resistances", valueKey: "resistances" },
+  { label: "Speeds", valueKey: "speeds" },
+  { label: "Skills", valueKey: "skills" },
+  { label: "Saves", valueKey: "saves" },
+  { label: "Weapons", valueKey: "weapons" },
 ];
 
 const ANCESTRY_FEAT_FIELDS: DetailField[] = [
@@ -192,6 +202,23 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   const generalFeatItems = createChoiceItems(generalFeats, GENERAL_FEAT_FIELDS);
   const arcaneFeatItems = createChoiceItems(arcaneFeats, ARCANE_FEAT_FIELDS);
   const advantageItems = createChoiceItems(advantages, ADVANTAGE_FIELDS);
+  const golemModelItems = createChoiceItems(golemModels, GOLEM_MODEL_FIELDS);
+  const runegunModelItems = createChoiceItems(
+    weapons.filter((weapon) => weapon.weaponGroup === "Runegun"),
+    WEAPON_FIELDS,
+  );
+  const addChoiceOptions = (items: ChoiceItem[]) =>
+    items.map((item) => {
+      const choiceType = item.choice?.replace(/\s*-\s*Choice$/i, "");
+      const choiceOptions =
+        choiceType === "Golem Model"
+          ? golemModelItems
+          : choiceType === "Runegun Model"
+            ? runegunModelItems
+            : undefined;
+
+      return choiceOptions ? { ...item, choiceOptions } : item;
+    });
   const availableAncestryFeats =
     request.type === "ancestryFeat"
       ? ancestryFeats.filter((feat) =>
@@ -223,8 +250,8 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     species: speciesItems,
     background: backgroundItems,
     generalFeat: generalFeatItems,
-    arcaneFeat: arcaneFeatItems,
-    advantage: advantageItems,
+    arcaneFeat: addChoiceOptions(arcaneFeatItems),
+    advantage: addChoiceOptions(advantageItems),
     ancestryFeat: ancestryFeatItems,
     golemUpgrade: golemUpgradeItems,
     runegunUpgrade: runegunUpgradeItems,
