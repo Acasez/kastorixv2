@@ -5,6 +5,8 @@ import golemModels from "../../../JSON/golem_models.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
 import weapons from "../../../JSON/weapons.json";
 import WeaponComponent from "./WeaponComponent";
+import actions from "../../../json/actions.json";
+import ActionBox from "../../ActionBox";
 
 export default function GolemSection() {
   const { character, updateCharacter } = useCharacter();
@@ -79,6 +81,16 @@ export default function GolemSection() {
       return weapon ? [weapon] : [];
     },
   );
+  const golemActions = [
+    ...new Set(
+      selectedUpgrades.flatMap((upgrade) =>
+        upgrade.unlockedAction
+          .split(",")
+          .map((action) => action.trim())
+          .filter(Boolean),
+      ),
+    ),
+  ];
 
   return (
     <div className="p-4 text-white">
@@ -171,6 +183,14 @@ export default function GolemSection() {
           })}
           {golemStrikes.length === 0 && (
             <p className="text-gray-400">No strikes or attacks listed.</p>
+          )}
+          {golemActions.length > 0 && (
+            <div className="mt-5 border-t border-gray-600 pt-4">
+              <h3 className="mb-2 text-lg font-semibold">Golem Actions</h3>
+              {golemActions.map((action) => (
+                <ActionBox key={action} action={action} actionsList={actions} />
+              ))}
+            </div>
           )}
         </section>
       </div>
