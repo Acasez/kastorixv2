@@ -124,5 +124,12 @@
         "effect": "You cast the spell on the move, weaving the spell mid motion.\nStride or Traverse, and cast the spell at any point during the movement",
         "dc": "4",
         "level": "4"
+    },
+    {
+        "name": "Recolor Spell",
+        "spellType": "",
+        "effect": "Add a flair to spell, with a splash of color. ",
+        "dc": "0",
+        "level": "1"
     }
 ]

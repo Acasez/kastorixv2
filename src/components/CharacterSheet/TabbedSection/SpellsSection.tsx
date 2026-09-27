@@ -84,7 +84,7 @@ export default function SpellsSection() {
         ? `Replace ${replaceMetamagic}`
         : `Select Metamagic`,
       selectionKey: "",
-      level: 0,
+      level: character.level,
       replaceMetamagic: replaceMetamagic,
     });
   };
