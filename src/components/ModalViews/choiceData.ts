@@ -14,6 +14,7 @@ import metamagics from "../../JSON/metamagic.json";
 import armors from "../../JSON/armors.json";
 import gadgets from "../../JSON/gadgets.json";
 import golemModels from "../../JSON/golem_models.json";
+import aspects from "../../JSON/aspects.json";
 import { getActionIcons } from "../../utils/actionUtils";
 
 export type ChoiceData = Record<
@@ -92,6 +93,15 @@ const GOLEM_MODEL_FIELDS: DetailField[] = [
   { label: "Skills", valueKey: "skills" },
   { label: "Saves", valueKey: "saves" },
   { label: "Weapons", valueKey: "weapons" },
+];
+
+const ASPECT_FIELDS: DetailField[] = [
+  { label: "Type", valueKey: "type" },
+  { label: "Opposite", valueKey: "opposite" },
+  { label: "Basic Magic", valueKey: "basicMagic" },
+  { label: "Aura", valueKey: "aura" },
+  { label: "Infusion", valueKey: "infusion" },
+  { label: "Elementalization", valueKey: "elementalization" },
 ];
 
 const ANCESTRY_FEAT_FIELDS: DetailField[] = [
@@ -207,6 +217,10 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     weapons.filter((weapon) => weapon.weaponGroup === "Runegun"),
     WEAPON_FIELDS,
   );
+  const aspectChoiceItems = createChoiceItems(
+    aspects.filter((aspect) => aspect.Attuneable !== "No"),
+    ASPECT_FIELDS,
+  );
   const addChoiceOptions = (items: ChoiceItem[]) =>
     items.map((item) => {
       const choiceType = item.choice?.replace(/\s*-\s*Choice$/i, "");
@@ -215,7 +229,9 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
           ? golemModelItems
           : choiceType === "Runegun Model"
             ? runegunModelItems
-            : undefined;
+            : choiceType?.startsWith("Aspects - ")
+              ? aspectChoiceItems
+              : undefined;
 
       return choiceOptions ? { ...item, choiceOptions } : item;
     });
