@@ -197,7 +197,13 @@ export default function LevelCard({ level }: LevelCardProps) {
     const type = actionTypes[action];
     if (!type || type === "baseStats") return action;
 
-    return character.selections[`${type}:${level}`] ?? action;
+    const selectionKey = `${type}:${level}`;
+    const selectedName = character.selections[selectionKey] ?? action;
+    const selectedChoice = character.selections[`${selectionKey}:choice`];
+
+    return selectedChoice
+      ? `${selectedName} - ${selectedChoice}`
+      : selectedName;
   };
 
   const hasChosenItem = (action: string) => {
