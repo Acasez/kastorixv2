@@ -28,6 +28,7 @@ type UnlockableItem = {
   name: string;
   unlockedFeats?: string;
   generalFeat?: string;
+  choice?: string;
 };
 
 type UnlockedChoice = {
@@ -128,15 +129,24 @@ export default function LevelCard({ level }: LevelCardProps) {
   };
 
   const clearSelection = (selectionKey: string, type: ChoiceType) => {
+    const selectedItem = choiceConfig[type].items.find(
+      (item) => item.name === character.selections[selectionKey],
+    );
     const selections = Object.fromEntries(
       Object.entries(character.selections).filter(
         ([key]) =>
-          key !== selectionKey && !key.startsWith(`${selectionKey}:unlocked:`),
+          key !== selectionKey &&
+          key !== `${selectionKey}:choice` &&
+          !key.startsWith(`${selectionKey}:unlocked:`),
       ),
     );
 
     updateCharacter({
       selections,
+      ...(type === "advantage" &&
+      selectedItem?.choice === "Golem Model - Choice"
+        ? { golemModel: null }
+        : {}),
       ...(type === "background" ? { background: null } : {}),
     });
   };

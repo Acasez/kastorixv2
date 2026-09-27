@@ -21,6 +21,7 @@ export type Character = {
   metamagics: string[];
   weapons: string[];
   gadgets: string[];
+  golemModel: string | null;
   armor: string;
   selections: Record<string, string>;
   background: string | null;

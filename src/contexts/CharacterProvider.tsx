@@ -25,6 +25,7 @@ const defaultCharacter: Character = {
   metamagics: [],
   weapons: [],
   gadgets: [],
+  golemModel: null,
   armor: "",
   selections: {},
   background: null,

@@ -172,12 +172,30 @@ export default function ModalWrapper({
           ([key]) => key !== choiceKey,
         ),
       );
+      const previousItem = choiceData[request.type].find(
+        (item) => item.name === character.selections[request.selectionKey],
+      );
+      const selectedItem = choiceData[request.type].find(
+        (item) => item.name === value,
+      );
+      const updatesGolemModel =
+        request.type === "advantage" &&
+        (previousItem?.choice === "Golem Model - Choice" ||
+          selectedItem?.choice === "Golem Model - Choice");
       updateCharacter({
         selections: {
           ...selections,
           [request.selectionKey]: value,
           ...(choice ? { [choiceKey]: choice } : {}),
         },
+        ...(updatesGolemModel
+          ? {
+              golemModel:
+                selectedItem?.choice === "Golem Model - Choice"
+                  ? (choice ?? null)
+                  : null,
+            }
+          : {}),
       });
     }
     closeModal();

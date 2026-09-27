@@ -28,9 +28,21 @@ function getSavedCharacterNames() {
 const CLEAR_CHARACTER = "__clear_character__";
 
 function mergeCharacter(current: Character, saved: Character): Character {
+  const legacyGolemCrafterKey = Object.entries(saved.selections ?? {}).find(
+    ([key, value]) =>
+      key.startsWith("advantage:") &&
+      !key.endsWith(":choice") &&
+      value === "Golemcrafter",
+  )?.[0];
+
   return {
     ...current,
     ...saved,
+    golemModel:
+      saved.golemModel ??
+      (legacyGolemCrafterKey
+        ? (saved.selections[`${legacyGolemCrafterKey}:choice`] ?? null)
+        : null),
     baseStats: { ...current.baseStats, ...saved.baseStats },
     health: { ...current.health, ...saved.health },
     aura: { ...current.aura, ...saved.aura },

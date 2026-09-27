@@ -6,12 +6,20 @@ import InventorySection from "./InventorySection";
 import GadgetSection from "./GadgetSection";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
+import GolemSection from "./GolemSection";
 
-type TabKey = "Spells" | "Strikes" | "Actions" | "Inventory" | "Gadgets";
+type TabKey =
+  | "Spells"
+  | "Strikes"
+  | "Actions"
+  | "Inventory"
+  | "Gadgets"
+  | "Golems";
 
 export default function TabbedSection() {
   const { character } = useCharacter();
   const hasGadgetAccess = getCharacterGadgetGrant(character) > 0;
+  const hasGolem = Boolean(character.golemModel);
   // State to track the active tab
   const [activeTab, setActiveTab] = useState<TabKey>("Spells");
 
@@ -22,9 +30,13 @@ export default function TabbedSection() {
     { label: "Actions", key: "Actions" },
     { label: "Inventory", key: "Inventory" },
     ...(hasGadgetAccess ? [{ label: "Gadgets", key: "Gadgets" as const }] : []),
+    ...(hasGolem ? [{ label: "Golems", key: "Golems" as const }] : []),
   ];
   const visibleActiveTab =
-    activeTab === "Gadgets" && !hasGadgetAccess ? "Spells" : activeTab;
+    (activeTab === "Gadgets" && !hasGadgetAccess) ||
+    (activeTab === "Golems" && !hasGolem)
+      ? "Spells"
+      : activeTab;
 
   // Content for each tab (replace with your actual content)
   const tabContent = {
@@ -33,6 +45,7 @@ export default function TabbedSection() {
     Actions: <ActionsSection />,
     Inventory: <InventorySection />,
     Gadgets: <GadgetSection />,
+    Golems: <GolemSection />,
   };
 
   return (
