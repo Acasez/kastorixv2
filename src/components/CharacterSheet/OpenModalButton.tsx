@@ -3,7 +3,6 @@ import Tooltip from "../Tooltip";
 
 interface OpenModalButtonProps {
   label: string;
-  isHighlighted?: boolean;
   className?: string;
   onClick?: () => void;
   onContextMenu?: MouseEventHandler<HTMLButtonElement>;
@@ -14,7 +13,6 @@ interface OpenModalButtonProps {
 
 export default function OpenModalButton({
   label,
-  isHighlighted = false,
   className = "",
   onClick = () => {},
   itemChosen = false,
@@ -29,13 +27,11 @@ export default function OpenModalButton({
           onClick={onClick}
           onContextMenu={onContextMenu}
           className={`w-full px-2 py-1 rounded-md text-base font-medium text-white ${
-            isHighlighted
-              ? "bg-green-500"
-              : fixedChoice
-                ? "bg-lime-500"
-                : itemChosen
-                  ? "bg-blue-500"
-                  : "bg-teal-700"
+            fixedChoice
+              ? "bg-lime-500"
+              : itemChosen
+                ? "bg-blue-500"
+                : "bg-teal-700"
           } ${className}`}
         >
           {label}

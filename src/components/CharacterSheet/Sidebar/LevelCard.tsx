@@ -329,14 +329,12 @@ export default function LevelCard({ level }: LevelCardProps) {
       </h3>
       <div className="space-y-2">
         {actions.map((action, index) => {
-          const isHighlighted = action === "Increase One Stat";
           const unlockedChoices = getActionUnlockedChoices(action);
 
           return (
             <div key={index} className="flex flex-col gap-1">
               <OpenModalButton
                 label={getSelectedActionLabel(action)}
-                isHighlighted={isHighlighted}
                 onClick={() => openActionModal(action)}
                 itemChosen={hasChosenItem(action)}
                 onContextMenu={(event) => {
