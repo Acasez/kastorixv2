@@ -5,10 +5,20 @@ import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
+import species from "../../../JSON/species.json";
 
 export default function CharacterPanel() {
-  const { character, handleNameChange, handleLevelChange } = useCharacter();
+  const { character, handleNameChange, handleLevelChange, updateCharacter } =
+    useCharacter();
   const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const speciesFeatKey = "species:unlocked:0";
+  const selectedSpecies = species.find(
+    (item) => item.name === character.species,
+  );
+  const hasGeneralFeatUnlock = selectedSpecies?.unlockedFeats
+    .split(",")
+    .some((feat) => /^General Feat\s*-\s*Level 1$/i.test(feat.trim()));
+  const selectedSpeciesFeat = character.selections[speciesFeatKey];
 
   const closeModal = () => setModalRequest(null);
 
@@ -40,6 +50,40 @@ export default function CharacterPanel() {
             setModalRequest({ type: "species", title: "Select Species" })
           }
         />
+        {hasGeneralFeatUnlock && (
+          <OpenModalButton
+            label={selectedSpeciesFeat ?? "Select General Feat - Level 1"}
+            itemChosen={Boolean(selectedSpeciesFeat)}
+            onClick={() =>
+              setModalRequest({
+                type: "generalFeat",
+                title: "Select General Feat",
+                selectionKey: speciesFeatKey,
+                level: 1,
+              })
+            }
+            onContextMenu={(event) => {
+              event.preventDefault();
+              const selections = Object.fromEntries(
+                Object.entries(character.selections).filter(
+                  ([key]) => key !== speciesFeatKey,
+                ),
+              );
+              updateCharacter({ selections });
+            }}
+            tooltipContent={
+              selectedSpeciesFeat
+                ? (() => {
+                    const item = getChoiceItem(
+                      "generalFeat",
+                      selectedSpeciesFeat,
+                    );
+                    return item ? <ChoiceTooltip item={item} /> : undefined;
+                  })()
+                : undefined
+            }
+          />
+        )}
         <OpenModalButton
           label={character.baseStatsSet ? "Base Stats Set" : "Set Base Stats"}
           itemChosen={character.baseStatsSet}

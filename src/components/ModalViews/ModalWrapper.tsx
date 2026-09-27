@@ -103,7 +103,15 @@ export default function ModalWrapper({
     }
 
     if (request.type === "species") {
-      updateCharacter({ species: value });
+      const selections =
+        character.species === value
+          ? character.selections
+          : Object.fromEntries(
+              Object.entries(character.selections).filter(
+                ([key]) => !key.startsWith("species:unlocked:"),
+              ),
+            );
+      updateCharacter({ species: value, selections });
     } else if (request.type === "background") {
       const selectedBackground = backgrounds.find(
         (background) => background.name === value,
