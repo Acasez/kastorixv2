@@ -17,21 +17,29 @@ export default function GolemSection() {
       return upgrade ? [{ ...upgrade, selectionKey }] : [];
     },
   );
-  const selectedUpgradeNames = new Set(
-    selectedUpgrades.map((upgrade) => upgrade.name),
-  );
-  const healthMultiplier = selectedUpgradeNames.has("War Walker")
-    ? 5
-    : selectedUpgradeNames.has("Size-Up Golem")
-      ? 4
-      : 3;
   const modelPhy = Number(model?.phy ?? 0);
+  const healthMultiplier = Math.max(
+    3,
+    ...selectedUpgrades.map((upgrade) => Number(upgrade.healthBase) || 0),
+  );
+  const healthIncreaseValues: Record<string, number> = {
+    PHY: modelPhy,
+    DEX: character.baseStats.DEX,
+    INT: character.baseStats.INT,
+    WIL: character.baseStats.WIL,
+    LEVEL: character.level,
+  };
+  const healthIncrease = selectedUpgrades.reduce((total, upgrade) => {
+    const value = upgrade.healthIncrease.trim().toUpperCase();
+    const increase = healthIncreaseValues[value] ?? Number(value);
+    return total + (Number.isFinite(increase) ? increase : 0);
+  }, 0);
   const maxGolemHealth = Math.max(
     1,
     healthMultiplier * character.level +
       character.baseStats.INT +
       modelPhy +
-      (selectedUpgradeNames.has("Reinforced Armor") ? modelPhy : 0),
+      healthIncrease,
   );
 
   useEffect(() => {

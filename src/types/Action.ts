@@ -7,6 +7,17 @@ export type Action = {
   traits: ActionTrait[];
 };
 
+export interface ActionData {
+  name: string;
+  description: string;
+  actions: string;
+  trigger?: string;
+  requirement?: string;
+  traits?: string;
+  sourceType: string;
+  source?: string;
+}
+
 export type ActionCost = "0" | "1" | "2" | "3" | "R";
 
 export type ActionTrait = {
