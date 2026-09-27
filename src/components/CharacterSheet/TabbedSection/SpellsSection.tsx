@@ -125,7 +125,7 @@ export default function SpellsSection() {
             baseSpellshapingBonus={spellshapingBonus}
             selectedSpells={spells.filter(
               (spell) =>
-                spell.rank.endsWith(` ${rank.name}`) &&
+                spell.rank === `(${rank.rank}) ${rank.name}` &&
                 character.knownSpells.includes(spell.name),
             )}
             onAddSpell={openSpellModal}
