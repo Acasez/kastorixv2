@@ -3,7 +3,7 @@ import { useState } from "react";
 import skills from "../../json/skills.json";
 import { useCharacter } from "../../contexts/CharacterContext";
 import { getProficiency, signed } from "../../constants/Proficiency";
-import ProficiencyMarker from "../ProficiencyMarker";
+import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import { STAT_COLORS } from "../../constants/Stats";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import Tooltip from "../Tooltip";

@@ -1,4 +1,4 @@
-import "../CSS/RowStructure.css";
+import "../../CSS/RowStructure.css";
 
 interface RowProps {
   reverse: boolean;

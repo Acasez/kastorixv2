@@ -2,7 +2,7 @@ import { getProficiency } from "../../../constants/Proficiency";
 import type { ProficiencyTierName } from "../../../constants/Proficiency";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import type { Weapon } from "../../../types/Weapons";
-import ProficiencyMarker from "../../ProficiencyMarker";
+import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
 import Tooltip from "../../Tooltip";
 import weaponTraits from "../../../JSON/weapon_traits.json";
 

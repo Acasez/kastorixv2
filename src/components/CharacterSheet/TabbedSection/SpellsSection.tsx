@@ -8,7 +8,7 @@ import type { ModalRequest } from "../../ModalViews/modalTypes";
 import spells from "../../../JSON/spells.json";
 import metamagics from "../../../JSON/metamagic.json";
 import MetamagicsSection from "./MetamagicsSection";
-import { MultiOptionSwitch } from "../../MultiOptionSwitch";
+import { MultiOptionSwitch } from "../../Buttons/MultiOptionSwitch";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();

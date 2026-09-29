@@ -1,4 +1,4 @@
-import RulesBox from "./RulesBox";
+import RulesBox from "./TextPageComponents/RulesBox";
 import { useState } from "react";
 import skills from "../json/skills.json";
 

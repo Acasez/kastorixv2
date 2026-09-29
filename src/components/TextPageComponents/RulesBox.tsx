@@ -1,4 +1,4 @@
-import "../CSS/RulesBox.css";
+import "../../CSS/RulesBox.css";
 
 interface RuleItem {
   rule: string;

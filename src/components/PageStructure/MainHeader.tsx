@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { routes } from "../routes/config";
-import "../CSS/headerStyle.css";
+import { routes } from "../../routes/config";
+import "../../CSS/headerStyle.css";
 
 export default function MainHeader() {
   // Filter routes that should appear in the header

@@ -1,4 +1,4 @@
-import "../CSS/ImageStyling.css";
+import "../../CSS/ImageStyling.css";
 
 interface ImageProps {
   imageLocation: string;
