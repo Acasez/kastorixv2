@@ -49,6 +49,13 @@
         "level": "1"
     },
     {
+        "name": "Recolor Spell",
+        "spellType": "",
+        "effect": "Add a flair to spell, with a splash of color. \nYou can give the spell any color you want, though if you want to try to make it look like another spell you need to make a channeling roll\n",
+        "dc": "0",
+        "level": "1"
+    },
+    {
         "name": "Sculpted Spell",
         "spellType": "Area",
         "effect": "Choose one creature in the area of the spell to not be affected by the spell.\n You may choose more than one creature, increasing the Spellshaping DC by one for each extra creature.",
@@ -91,6 +98,13 @@
         "level": "4"
     },
     {
+        "name": "Running Cast",
+        "spellType": "",
+        "effect": "You cast the spell on the move, weaving the spell mid motion.\nStride or Traverse, and cast the spell at any point during the movement",
+        "dc": "4",
+        "level": "4"
+    },
+    {
         "name": "Sustaining Spell",
         "spellType": "",
         "effect": "The first three turns the spell sustains itself, needing no action from you",
@@ -117,19 +131,5 @@
         "effect": "Instead of being cast immediately, the spell is prepared and stored in a dimensional bubble. \nIt can be released later as reaction to any trigger\nAt the end of each turn you hold a Compressed Spell, you pay a third of its mana cost or its cast automatically, centered on you",
         "dc": "4",
         "level": "10"
-    },
-    {
-        "name": "Running Cast",
-        "spellType": "",
-        "effect": "You cast the spell on the move, weaving the spell mid motion.\nStride or Traverse, and cast the spell at any point during the movement",
-        "dc": "4",
-        "level": "4"
-    },
-    {
-        "name": "Recolor Spell",
-        "spellType": "",
-        "effect": "Add a flair to spell, with a splash of color. ",
-        "dc": "0",
-        "level": "1"
     }
 ]

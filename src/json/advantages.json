@@ -9,7 +9,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Attunement",
@@ -21,7 +23,9 @@
         "resistances": "",
         "choice": "Aspects - Attunement",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Crafting Prodigy",
@@ -33,7 +37,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Experienced",
@@ -45,19 +51,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
-    },
-    {
-        "name": "Voidchild",
-        "description": "Marked by the void, feared by living.\nYou ignore the Complex trait on spells with the Void trait.\nYou learn spells equal to your INT\nYou have +3 bonus on saves against effects with the Void or Soul traits\nVoid Children have starry purple eyes and faintly glowing skin\nNOTE: Void Children are outlawed in the Draconium and some other countries and will be hunted on sight",
-        "unlockedAction": "",
-        "level": "1",
-        "unlockedFeats": "",
-        "speeds": "",
-        "resistances": "",
-        "choice": "",
-        "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Large Mana Well",
@@ -69,7 +65,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": "2 * Level"
+        "mana": "2 * Level",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Remnant Connection",
@@ -81,7 +79,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Soulsight",
@@ -93,11 +93,13 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Swift",
-        "description": "You have 1 tile extra movement speed and may add your DEX again to initiative checks. \nYour proficiency level in Reflex saves increases one step (max Master)",
+        "description": "Few can match your incredible speed\nYou have 1 tile extra movement speed and may add your DEX again to initiative checks. \nYour proficiency level in Reflex saves increases one step (max Master)",
         "unlockedAction": "",
         "level": "1",
         "unlockedFeats": "",
@@ -105,7 +107,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Tough",
@@ -117,11 +121,27 @@
         "resistances": "",
         "choice": "",
         "health": "3 + PHY",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
+    },
+    {
+        "name": "Voidchild",
+        "description": "Marked by the void, feared by living.\nYou ignore the Complex trait on spells with the Void trait.\nYou learn spells equal to your INT\nYou have +3 bonus on saves against effects with the Void or Soul traits\nVoid Children have starry purple eyes and faintly glowing skin\nNOTE: Void Children are outlawed in the Draconium and some other countries and will be hunted on sight",
+        "unlockedAction": "",
+        "level": "1",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Force of Personality",
-        "description": "Your proficiency level in persuasion and intimidation increases one step (max Master).\nYou may use WIL for intimidation checks.\nWhen you cast spells you may spend mana equal to their rank to increase their initial DC's by that much.",
+        "description": "Your willpower can increase their strength of you spells\nYour proficiency level in persuasion and intimidation increases one step (max Master).\nYou may use WIL for intimidation checks.\nWhen you cast spells you may spend mana equal to their rank to increase their initial DC's by that much.",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",
@@ -129,11 +149,13 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Golemcrafter",
-        "description": "Your proficiency level in golem lore and crafting increases (max Expert). \nYou have created a golem companion that follows you around. \nSee the golem companion page for more information. \nIf it is reduced to 0 hit points it is disabled and can be repaired with an hours work at a workbench.\nOnce per turn, when you or your Golem takes an action, the other one can take one as a free action",
+        "description": "You have created a golem companion that follows you around.\nYour proficiency level in golem lore and crafting increases (max Expert). \nSee the golem companion page for more information. \nIf it is reduced to 0 hit points it is disabled and can be repaired with an hours work at a workbench.\nOnce per turn, when you or your Golem takes an action, the other one can take one as a free action",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",
@@ -141,23 +163,13 @@
         "resistances": "",
         "choice": "Golem Model - Choice",
         "health": "",
-        "mana": ""
-    },
-    {
-        "name": "Soulbond",
-        "description": "You have a soulbonded with a magical creature giving you a direct connection to it.\nThe creature you can soulbond with depends on your level, as more powerful creatures require stronger magical power.\nSee the soulbonding page for more information. \nYou can only have one soulbond at a time, and if your soulbond dies you take 2d6 vital damage.",
-        "unlockedAction": "",
-        "level": "4",
-        "unlockedFeats": "",
-        "speeds": "",
-        "resistances": "",
-        "choice": "",
-        "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Magical Genius",
-        "description": "You learn extra spells of all ranks you know equal to your INT. \nYou also learn Metamagics equal to your INT\nYou may attempt to copy a spell (of a rank you can cast) you saw last turn,  casting the spell even without being proficient with it.",
+        "description": "You have an innate apptitude for learning magic.\nYou learn extra spells of all ranks you know equal to your INT. \nYou also learn Metamagics equal to your INT\nYou may attempt to copy a spell (of a rank you can cast) you saw last turn,  casting the spell even without being proficient with it.",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",
@@ -165,11 +177,13 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "(INT) Apprentice, (INT) Adept",
+        "metamagicsLearned": "(INT) Metamagic"
     },
     {
         "name": "Nimble as a Fox",
-        "description": "Once per turn you may use a focus point to take on of the Step, Stand Up, Hide, Take Cover, Tumble Through or Steal as a free actions. \nThe first time each day you critical success on a Tumble Through, Steal or Reflex Save you regain one focus point\nYour proficiency level in Reflex saves increases one step (max Master)",
+        "description": "Few can catch to you\nOnce per turn you may use a focus point to take on of the Step, Stand Up, Hide, Take Cover, Tumble Through or Steal as a free actions. \nWhen you get a critical success on a Tumble Through, Steal or Reflex Save you regain one focus point\nYour proficiency level in Reflex saves increases one step (max Master)",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",
@@ -177,11 +191,13 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Physical Might",
-        "description": "You add half your PHY again on weapon damage rolls, or if the weapon is two handed you add your full PHY again instead. \nYour proficiency level in athletics or brawling increases one step (max Master)",
+        "description": "Your strength makes you an imposing threat on the battlefield.\nYou add half your PHY again on weapon damage rolls, or if the weapon is two handed you add your full PHY again instead. \nYour proficiency level in athletics or brawling increases one step (max Master)",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",
@@ -189,7 +205,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Protective Aura",
@@ -201,7 +219,9 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Reactive",
@@ -213,7 +233,23 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
+    },
+    {
+        "name": "Soulbond",
+        "description": "You have a soulbonded with a magical creature giving you a direct connection to it.\nThe creature you can soulbond with depends on your level, as more powerful creatures require stronger magical power.\nSee the soulbonding page for more information. \nYou can only have one soulbond at a time, and if your soulbond dies you take 2d6 vital damage.",
+        "unlockedAction": "",
+        "level": "4",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
         "name": "Faster Than The Eye",
@@ -225,18 +261,162 @@
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": ""
     },
     {
-        "name": "Peerless Master",
-        "description": "You stand beyond the rest in the fields you've trained in. \nYou have +1 bonus to all checks you've are trained, increasing to +2 if you are have mastery in them",
+        "name": "",
+        "description": "",
         "unlockedAction": "",
-        "level": "8",
+        "level": "",
         "unlockedFeats": "",
         "speeds": "",
         "resistances": "",
         "choice": "",
         "health": "",
-        "mana": ""
+        "mana": "",
+        "spellsLearned": "(2 + INT) Adept",
+        "metamagicsLearned": ""
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "(3) Metamagic"
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "(1) Metamagic"
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "(5) Adept",
+        "metamagicsLearned": ""
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "(1) Metamagic"
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "(2 + INT) Magus",
+        "metamagicsLearned": ""
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "(3) Magus",
+        "metamagicsLearned": ""
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "(1) Metamagic"
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "(2 + INT) GrandMagus",
+        "metamagicsLearned": ""
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "(4) Metamagic"
+    },
+    {
+        "name": "",
+        "description": "",
+        "unlockedAction": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "(2 + INT) Archmage",
+        "metamagicsLearned": ""
     }
 ]

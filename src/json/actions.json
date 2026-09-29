@@ -9,7 +9,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Masterwork"
+        "manueverType": "Masterwork"
     },
     {
         "name": "Absorb Magic",
@@ -21,7 +21,7 @@
         "skill": "",
         "sourceType": "Species",
         "source": "Gnome",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Aim",
@@ -33,7 +33,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Aura Block",
@@ -45,7 +45,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Battlefield Medicine",
@@ -57,7 +57,7 @@
         "skill": "Medicine",
         "sourceType": "Item",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Battlefield Stomp",
@@ -69,7 +69,7 @@
         "skill": "",
         "sourceType": "Golem Upgrade",
         "source": "Battlefield Stomp",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Blade Dance",
@@ -81,7 +81,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Block",
@@ -93,7 +93,7 @@
         "skill": "",
         "sourceType": "Item",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Block Spell",
@@ -105,7 +105,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Burrow",
@@ -117,7 +117,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Calculate The Odds",
@@ -129,7 +129,7 @@
         "skill": "",
         "sourceType": "General Feat",
         "source": "Calculate the Odds",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Cast a Spell",
@@ -141,7 +141,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Cat Fall",
@@ -153,7 +153,7 @@
         "skill": "Acrobatics",
         "sourceType": "General Feat",
         "source": "Cat Fall",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Charge",
@@ -165,7 +165,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Coil Up",
@@ -177,7 +177,7 @@
         "skill": "",
         "sourceType": "Ancestry Feat",
         "source": "Coil Up",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Combat Assessment",
@@ -189,7 +189,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Combat Regeneration",
@@ -201,7 +201,7 @@
         "skill": "",
         "sourceType": "Ancestry Feat",
         "source": "Combat Regeneration",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Crash of the Titan",
@@ -213,7 +213,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Masterwork"
+        "manueverType": "Masterwork"
     },
     {
         "name": "Crawl",
@@ -225,7 +225,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Cut Down Projectile",
@@ -237,7 +237,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Cut Down Spell",
@@ -249,7 +249,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Complex"
+        "manueverType": "Complex"
     },
     {
         "name": "Deadshot",
@@ -261,7 +261,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Complex"
+        "manueverType": "Complex"
     },
     {
         "name": "Defensive Positions",
@@ -273,7 +273,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Double Shot",
@@ -285,7 +285,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Double Slice",
@@ -297,7 +297,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Dragonbreath ",
@@ -309,7 +309,7 @@
         "skill": "",
         "sourceType": "Ancestry Feat",
         "source": "Lesser Dragonbreath",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Draw Mana Thread",
@@ -321,7 +321,7 @@
         "skill": "Channeling",
         "sourceType": "Arcane Feat",
         "source": "Mana Thread",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Drink Potion",
@@ -333,7 +333,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Drop",
@@ -345,7 +345,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Drums of War",
@@ -357,7 +357,7 @@
         "skill": "",
         "sourceType": "Ancestry Feat",
         "source": "Drums of War",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Duck",
@@ -369,7 +369,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Elemental Aura",
@@ -381,7 +381,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Elemental Aura",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Escape",
@@ -393,7 +393,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Expand Aura",
@@ -405,7 +405,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Expand Aura",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Extend Aura",
@@ -417,7 +417,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Extend Aura",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Fan The Hammer",
@@ -429,7 +429,7 @@
         "skill": "",
         "sourceType": "",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Far Shot",
@@ -441,7 +441,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Feed Potion",
@@ -453,7 +453,7 @@
         "skill": "Crafting",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Feint",
@@ -465,7 +465,7 @@
         "skill": "Deception",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Fire Capacitor",
@@ -477,7 +477,7 @@
         "skill": "",
         "sourceType": "Golem Upgrade",
         "source": "Fire Capacitor",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Flurry of Blows",
@@ -489,7 +489,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Fly",
@@ -501,7 +501,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Flying Kick",
@@ -513,7 +513,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Frost Capacitor",
@@ -525,7 +525,7 @@
         "skill": "",
         "sourceType": "Golem Upgrade",
         "source": "Frost Capacitor",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Glide",
@@ -537,7 +537,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Grapple",
@@ -549,7 +549,7 @@
         "skill": "Brawling",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Guarded Advance",
@@ -561,7 +561,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Harness Mana",
@@ -573,7 +573,7 @@
         "skill": "Channeling, Mana Sensing",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "High Jump",
@@ -585,7 +585,7 @@
         "skill": "Athletics",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Hold By Thread",
@@ -597,7 +597,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Master of Threads",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Identify Spell",
@@ -609,7 +609,7 @@
         "skill": "Arcana",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Incanter's Stance",
@@ -621,7 +621,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Incanter's Stance",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Inspect Soul",
@@ -633,7 +633,7 @@
         "skill": "",
         "sourceType": "Advantage",
         "source": "Soulsight",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Inspire Courage",
@@ -645,7 +645,7 @@
         "skill": "",
         "sourceType": "General Feat",
         "source": "Inspiring Leader",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Intimidate",
@@ -657,7 +657,7 @@
         "skill": "Intimidation",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Leap",
@@ -669,7 +669,7 @@
         "skill": "Athletics",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Lightning Capacitor",
@@ -681,7 +681,7 @@
         "skill": "",
         "sourceType": "Golem Upgrade",
         "source": "Lightning Capacitor",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Lunge",
@@ -693,7 +693,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Measured Strike",
@@ -705,7 +705,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Mend Wounds",
@@ -717,7 +717,7 @@
         "skill": "Medicine",
         "sourceType": "Item",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Momentum Toss",
@@ -729,7 +729,7 @@
         "skill": "Brawling",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Moonlight Crescent",
@@ -741,7 +741,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Masterwork"
+        "manueverType": "Masterwork"
     },
     {
         "name": "Movementum Roll",
@@ -753,7 +753,7 @@
         "skill": "Acrobatics",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Parry",
@@ -765,7 +765,7 @@
         "skill": "",
         "sourceType": "Item",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Piercing Thrust",
@@ -777,7 +777,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Pincer Movement",
@@ -789,7 +789,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Pinning Shot",
@@ -801,7 +801,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Pommel Strike",
@@ -813,7 +813,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Predict Their Movement",
@@ -825,7 +825,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Protect Ally",
@@ -837,7 +837,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Quick Draw",
@@ -849,7 +849,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Quick Parry",
@@ -861,7 +861,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Quip",
@@ -873,7 +873,7 @@
         "skill": "Persuasion",
         "sourceType": "General Feat",
         "source": "Quip",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Rapid Retreat",
@@ -885,7 +885,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Reactive Strike",
@@ -897,7 +897,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Recall Knowledge",
@@ -909,7 +909,7 @@
         "skill": "Arcana, History, Society, Nature, Crafting",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Recharge Golem Capacitor",
@@ -921,7 +921,7 @@
         "skill": "",
         "sourceType": "Golem",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Reinforce Aura",
@@ -933,7 +933,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Reload",
@@ -945,7 +945,7 @@
         "skill": "",
         "sourceType": "Item",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Riposte",
@@ -957,7 +957,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Run and Gun",
@@ -969,7 +969,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Complex"
+        "manueverType": "Complex"
     },
     {
         "name": "Running Reload",
@@ -981,7 +981,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Serpent Stride",
@@ -993,7 +993,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Masterwork"
+        "manueverType": "Masterwork"
     },
     {
         "name": "Set Weapon",
@@ -1005,7 +1005,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Shove",
@@ -1017,7 +1017,7 @@
         "skill": "Brawling",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Siphon Mana",
@@ -1029,7 +1029,7 @@
         "skill": "",
         "sourceType": "",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Slide Into Cover",
@@ -1041,7 +1041,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Snap Shot",
@@ -1053,7 +1053,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Sneak",
@@ -1065,7 +1065,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Spellbreak",
@@ -1077,7 +1077,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Spellbreaking",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Spellbreak Strike",
@@ -1089,7 +1089,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Spot Weak Point",
@@ -1101,7 +1101,7 @@
         "skill": "Medicine",
         "sourceType": "General Feat",
         "source": "Spot Weak Point",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Stabilize",
@@ -1113,7 +1113,7 @@
         "skill": "Medicine",
         "sourceType": "Item",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Stabilize Spell",
@@ -1125,7 +1125,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Stabilize Spell",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Stand Up",
@@ -1137,7 +1137,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Steady by Tail",
@@ -1149,7 +1149,7 @@
         "skill": "",
         "sourceType": "Species",
         "source": "Dragonkin",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Steady Shield",
@@ -1161,7 +1161,7 @@
         "skill": "",
         "sourceType": "General Feat",
         "source": "Shield Specialization",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Steal Attuned Spell",
@@ -1173,7 +1173,7 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Steal Attuned Spell",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Step",
@@ -1185,7 +1185,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Stride",
@@ -1197,7 +1197,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Strike",
@@ -1209,7 +1209,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Strike Now!",
@@ -1221,7 +1221,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Stunning Strike",
@@ -1233,7 +1233,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Advanced"
+        "manueverType": "Advanced"
     },
     {
         "name": "Sustain",
@@ -1245,7 +1245,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Sweep",
@@ -1257,7 +1257,7 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Swim",
@@ -1269,7 +1269,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Take Cover",
@@ -1281,7 +1281,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Take Off",
@@ -1293,7 +1293,7 @@
         "skill": "",
         "sourceType": "Ancestry Feat",
         "source": "Powerful Wingflap",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Throw Bomb",
@@ -1305,7 +1305,7 @@
         "skill": "",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Throw Device",
@@ -1317,7 +1317,7 @@
         "skill": "Crafting",
         "sourceType": "",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Transfer Mana",
@@ -1329,7 +1329,7 @@
         "skill": "Channeling",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Trip",
@@ -1341,7 +1341,7 @@
         "skill": "Brawling",
         "sourceType": "Base",
         "source": "",
-        "Column 1": ""
+        "manueverType": ""
     },
     {
         "name": "Tumble Through",
@@ -1353,7 +1353,7 @@
         "skill": "Acrobatics",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     },
     {
         "name": "Wild Strike",
@@ -1365,6 +1365,6 @@
         "skill": "",
         "sourceType": "Combat Manuever",
         "source": "",
-        "Column 1": "Simple"
+        "manueverType": "Simple"
     }
 ]

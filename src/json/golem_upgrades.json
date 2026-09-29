@@ -12,7 +12,7 @@
     },
     {
         "name": "Ballista",
-        "description": "You mount a ballista on your golem, giving it a ranged weapon.\nYour golem has a ranged attack (DEX + trained), 1d10 + PHY piercing damage, with the Reload 1 trait and a range of 10 tiles. \nWhile adjacent to your golem you may use your DEX instead of it's own DEX for the attack.",
+        "description": "You mounted a ballista on your golem, giving it a ranged weapon.\nYour golem has a ranged attack (DEX + trained), 1d10 + PHY piercing damage, with the Reload 1 trait and a range of 10 tiles. \nWhile adjacent to your golem you may use your DEX instead of it's own DEX for the attack.",
         "prerequisites": "Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "Ballista",
@@ -34,7 +34,7 @@
     },
     {
         "name": "Feathersteel Wings",
-        "description": "You've equipped your golem with feathersteel wings that lets it glide down and perform acrobatic maneuvers.\nYour golem has a glide speed equal to its movespeed.\nYour golem is trained in acrobatics or stealth.",
+        "description": "You've equipped your golem with feathersteel wings that lets it glide down and perform acrobatic maneuvers.\nYour golem has a glide speed equal to its movespeed.\nYour golem is trained in acrobatics and stealth.",
         "prerequisites": "Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -56,7 +56,7 @@
     },
     {
         "name": "Integrated Weapon",
-        "description": "You've designed your golem to allow it to integrate a weapon into one of its arm\nYou can spend a minute to attach a weapon.\nWhile attached it cannot be disarmed and has +1 bonus to attack rolls",
+        "description": "You've designed your golem to allow it to integrate a weapon into one of its arm\nYou can spend a minute to attach a weapon to the golem.\nWhile attached it cannot be disarmed and has +1 bonus to attack rolls",
         "prerequisites": "Soldier or Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -78,7 +78,7 @@
     },
     {
         "name": "Raise Guard",
-        "description": "Your golem raises its hands or appendages to guard itself.\nYour Golems natural strikes has the Block 2 trait, giving an option to defend itself.\nIt also learns the Protect Ally",
+        "description": "Your golem can raise its hands or appendages to guard itself.\nYour Golems natural strikes has the Block 2 trait, giving an option to defend itself.\nIt also learns the Protect Ally",
         "prerequisites": "Brawler or Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -89,8 +89,8 @@
     },
     {
         "name": "Soul Link",
-        "description": "You set up a crystal connection to connect the golem to your soul, giving you a few benefits\nYou can see and hear through your golems location\nYou can command your golem without verbal commands and the range of command is now 20 tiles \nYou can recharge Capacitor Upgrades within that range.",
-        "prerequisites": "Trained in Souls Lore",
+        "description": "You set up a crystal connection to connect the golem to your soul, giving you a few benefits.\nYou can see and hear through your golems location\nYou can command your golem without verbal commands and the range of command is now 20 tiles \nYou can recharge Capacitor Upgrades within that range.",
+        "prerequisites": "Trained in Souls Lore or Expert in Arcana",
         "level": "4",
         "golemWeapon": "",
         "unlockedAction": "",
@@ -100,7 +100,7 @@
     },
     {
         "name": "Specialized Armory",
-        "description": "Your golem becomes trained in two weapon groups.\nYou may choose an Advanced Weapon instead of a weapon group",
+        "description": "You program in specialized weapon training into your golem.\nYour golem becomes trained in two weapon groups.\nYou may choose an Advanced Weapon instead of a weapon group",
         "prerequisites": "Soldier or Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -110,9 +110,9 @@
         "elementalResistance": ""
     },
     {
-        "name": "Sentry Protocol",
-        "description": "You set up a polished lens to allow your golem to watch as if it were an alert sentry.\nYour golem becomes trained in Perception and can your INT modifier for Perception\nWhen your golem detects a threat you will be alerted to as long as its within Soul Link range.",
-        "prerequisites": "[Soul Link]",
+        "name": "Defense Protocol",
+        "description": "You've set up your golem to provide great defence to you and your allies.\nAfter your Golem uses the Block action adjacent allies have +1 to all saving throws.\nAdditionally you may Take Cover behind your golem as a part it taking the Block action.",
+        "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
         "unlockedAction": "",
@@ -121,12 +121,34 @@
         "elementalResistance": ""
     },
     {
-        "name": "Defense Protocol",
-        "description": "After your Golem uses the Block action adjacent allies have +1 to all saving throws.\nAdditionally you may Take Cover behind your golem as a part of the Block action.",
+        "name": "Fire Capacitor",
+        "description": "You install a flame throwing projector in your golem.\nYour golem gets the Fire Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedAction": "Fire Capacitor",
+        "healthBase": "",
+        "healthIncrease": "",
+        "elementalResistance": ""
+    },
+    {
+        "name": "Frost Capacitor",
+        "description": "You install a chilling projector in your golem.\nYour golem gets the Frost Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
+        "prerequisites": "",
+        "level": "6",
+        "golemWeapon": "",
+        "unlockedAction": "Frost Capacitor",
+        "healthBase": "",
+        "healthIncrease": "",
+        "elementalResistance": ""
+    },
+    {
+        "name": "Lightning Capacitor",
+        "description": "You install a lightning projecting device into your golem.\nYour golem gets the Lightning Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
+        "prerequisites": "",
+        "level": "6",
+        "golemWeapon": "",
+        "unlockedAction": "Lightning Capacitor",
         "healthBase": "",
         "healthIncrease": "",
         "elementalResistance": ""
@@ -154,6 +176,17 @@
         "elementalResistance": ""
     },
     {
+        "name": "Sentry Protocol",
+        "description": "You set up a polished lens to allow your golem to watch as if it were an alert sentry.\nYour golem becomes trained in Perception and can your INT modifier for Perception\nWhen your golem detects a threat you will be alerted to as long as its within Soul Link range.",
+        "prerequisites": "[Soul Link]",
+        "level": "6",
+        "golemWeapon": "",
+        "unlockedAction": "",
+        "healthBase": "",
+        "healthIncrease": "",
+        "elementalResistance": ""
+    },
+    {
         "name": "Size-Up Golem",
         "description": "You've sized up your golem.\nYour Golem is large. \nIt's health is (4 x your level) + your INT + its PHY",
         "prerequisites": "",
@@ -177,7 +210,7 @@
     },
     {
         "name": "Tail Strike",
-        "description": "A tail or tentacle is an unorthodox weapon for a golem, but it can it hit foes that aren't expecting\nYour Golem has a Tail natural weapon, with a reach of 2. It does 1d8 damage.\nWhen you design your golem you can choose weather it it's an Agile tail or Shoving tail.\nAn agile tail also has the Agile and Finesse trait and does slashing damage\nA shoving tail also has the Shove and Sweep trait and does bludgeoning damage.",
+        "description": "A tail or tentacle is an unorthodox weapon for a golem, but it can it hit foes that aren't expecting it\nYour Golem has a Tail natural weapon, with a reach of 2. It does 1d8 damage.\nWhen you design your golem you can choose weather it it's an Agile tail or Shoving tail.\nAn agile tail also has the Agile and Finesse trait and does slashing damage\nA shoving tail also has the Shove and Sweep trait and does bludgeoning damage.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "Agile Tail, Sweeping Tail",
@@ -187,41 +220,8 @@
         "elementalResistance": ""
     },
     {
-        "name": "Fire Capacitor",
-        "description": "You install a flame throwing projector in your golem.\nYour golem gets the Fire Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
-        "prerequisites": "",
-        "level": "6",
-        "golemWeapon": "",
-        "unlockedAction": "Fire Capacitor",
-        "healthBase": "",
-        "healthIncrease": "",
-        "elementalResistance": ""
-    },
-    {
-        "name": "Lightning Capacitor",
-        "description": "You install a lightning projecting device into your golem.\nYour golem gets the Lightning Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
-        "prerequisites": "",
-        "level": "6",
-        "golemWeapon": "",
-        "unlockedAction": "Lightning Capacitor",
-        "healthBase": "",
-        "healthIncrease": "",
-        "elementalResistance": ""
-    },
-    {
-        "name": "Frost Capacitor",
-        "description": "You install a flame throwing projector in your golem.\nYour golem gets the Frost Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
-        "prerequisites": "",
-        "level": "6",
-        "golemWeapon": "",
-        "unlockedAction": "Frost Capacitor",
-        "healthBase": "",
-        "healthIncrease": "",
-        "elementalResistance": ""
-    },
-    {
         "name": "Upgraded Components",
-        "description": "With some upgraded components, your golem is now stronger or faster than before.\nIncrease your golems PHY or DEX by 1. \nYou may choose this upgrade multiple times.\nThe highest you can raise them to is 5.\nThis limit increases to 6 at level 12, and 7 at level 18",
+        "description": "With some upgraded components, your golem is now stronger or faster than before.\nIncrease your golems PHY or DEX by 1. \nYou may choose this upgrade multiple times.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -264,6 +264,17 @@
         "elementalResistance": "6"
     },
     {
+        "name": "Capacitor Upcharge",
+        "description": "You have upgraded your golems capacitors, allowing to channel more mana into destructive magic.\nWhen using the an capacitor action you may overcharge them, increase the damage and size.\nIf you do, your golem becomes Stunned 1 and needs 15 mana before the capacitor can be recharged.\nFire Capacitor, 8d6 damage, 7 tile cone.\nLightning Capacitor, 5d12 damage, 2 tile wide, 12 tile long line\nFrost Capacitor, 6d4 damage, 5 tile cone. Frozen status works on large creatures",
+        "prerequisites": "",
+        "level": "12",
+        "golemWeapon": "",
+        "unlockedAction": "",
+        "healthBase": "",
+        "healthIncrease": "",
+        "elementalResistance": ""
+    },
+    {
         "name": "Perfected Spell Channeling",
         "description": "You've set up the perfected resonating link to channel your spells\nWhen channeling spells though your golem you no longer give the spells the Complex trait and you can cast Complex spells\nYou can also target your golem with spells that would normally only target you",
         "prerequisites": "[Soul Channel Spell]",
@@ -289,17 +300,6 @@
         "name": "Winged Golem",
         "description": "You've improved your golems wings and given it magical propulsion.\nYour golem has a flight speed equal to its movespeed.",
         "prerequisites": "[Feathersteel Wings]",
-        "level": "12",
-        "golemWeapon": "",
-        "unlockedAction": "",
-        "healthBase": "",
-        "healthIncrease": "",
-        "elementalResistance": ""
-    },
-    {
-        "name": "Capacitor Upcharge",
-        "description": "You have upgraded your golems capacitors, allowing to channel more mana into destructive magic.\nWhen using the an capacitor action you may overcharge them, increase the damage and size.\nIf you do, your golem becomes Stunned 1 and needs 15 mana before the capacitor can be recharged.\nFire Capacitor, 8d6 damage, 7 tile cone.\nLightning Capacitor, 5d12 damage, 2 tile wide, 12 tile long line\nFrost Capacitor, 6d4 damage, 5 tile cone. Frozen status works on large creatures",
-        "prerequisites": "",
         "level": "12",
         "golemWeapon": "",
         "unlockedAction": "",
