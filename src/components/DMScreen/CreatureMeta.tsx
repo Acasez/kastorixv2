@@ -28,28 +28,31 @@ export default function CreatureMeta({
   importCreature,
 }: CreatureMetaProps) {
   return (
-    <header className="flex flex-wrap items-center gap-2 bg-stone-900 p-3">
-      <select
-        aria-label="Saved creatures"
-        value={selectedKey}
-        onChange={(event) => setSelectedKey(event.target.value)}
-        className="min-w-40 flex-1 rounded bg-stone-700 px-3 py-2 text-sm"
-      >
-        <option value="">Saved creatures</option>
-        {savedCreatures.map((key) => (
-          <option key={key} value={key}>
-            {key.slice(STORAGE_PREFIX.length)}
-          </option>
-        ))}
-      </select>
+    <header className="flex flex-row items-center bg-stone-900 p-3 border-b-2 border-black justify-between">
       <button className="creature-button" onClick={saveCreature}>
         Save Creature
       </button>
-      <button className="creature-button" onClick={loadCreature}>
-        Load Creature
-      </button>
+      <div className="flex flex-col">
+        <select
+          aria-label="Saved creatures"
+          value={selectedKey}
+          onChange={(event) => setSelectedKey(event.target.value)}
+          className="min-w-40 flex-1 rounded bg-stone-700 px-3 py-2 text-sm"
+        >
+          <option value="">Saved creatures</option>
+          {savedCreatures.map((key) => (
+            <option key={key} value={key}>
+              {key.slice(STORAGE_PREFIX.length)}
+            </option>
+          ))}
+        </select>
+        <button className="creature-button" onClick={loadCreature}>
+          Load Creature
+        </button>
+      </div>
+
       <button className="creature-button" onClick={deleteCreature}>
-        Delete Saved
+        Delete
       </button>
       <button
         className="creature-button"
@@ -61,7 +64,7 @@ export default function CreatureMeta({
         Export
       </button>
       <button className="creature-button" onClick={onRemove}>
-        Remove Block
+        Close
       </button>
       <input
         ref={importInputRef}
