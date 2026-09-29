@@ -2,11 +2,11 @@ import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useCreature, type Creature } from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import StatsGrid from "../CharacterSheet/CoreStatSection/StatsGrid";
+import HealthManaAuraBars from "../CharacterSheet/CoreStatSection/HealthManaAuraBars";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
-const trackKeys = ["health", "aura", "mana"] as const;
 const textFields = [
   ["traits", "Traits"],
   ["senses", "Senses"],
@@ -136,12 +136,6 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
     }
   };
 
-  const updateTrack = (
-    key: (typeof trackKeys)[number],
-    value: keyof Creature[(typeof trackKeys)[number]],
-    nextValue: number,
-  ) => updateCreature({ [key]: { ...creature[key], [value]: nextValue } });
-
   return (
     <section className="w-full max-w-4xl overflow-hidden border border-stone-700 bg-bg-creature text-text-light shadow-lg">
       <CreatureMeta
@@ -201,26 +195,14 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
 
         <section>
           <h2 className="creature-section-title">Resources</h2>
-          <div className="grid gap-3 sm:grid-cols-3">
-            {trackKeys.map((key) => (
-              <fieldset className="creature-field" key={key}>
-                <legend className="capitalize">{key}</legend>
-                <div className="flex items-center gap-2">
-                  {(["current", "max"] as const).map((part) => (
-                    <input
-                      key={part}
-                      aria-label={`${key} ${part}`}
-                      type="number"
-                      value={creature[key][part]}
-                      onChange={(event) =>
-                        updateTrack(key, part, Number(event.target.value))
-                      }
-                    />
-                  ))}
-                </div>
-              </fieldset>
-            ))}
-          </div>
+          <HealthManaAuraBars
+            tracks={{
+              health: creature.health,
+              aura: creature.aura,
+              mana: creature.mana,
+            }}
+            onTrackChange={(key, track) => updateCreature({ [key]: track })}
+          />
         </section>
 
         <section>

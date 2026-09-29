@@ -1,4 +1,4 @@
-import HealthManaAuraBars from "./HealthManaAuraBars";
+import CharacterHealthManaAuraBars from "./CharacterHealthManaAuraBars";
 import SavingThrowDisplay from "./SavingThrowDisplay";
 import StatsGrid from "./StatsGrid";
 import { useCharacter } from "../../../contexts/CharacterContext";
@@ -19,7 +19,7 @@ export default function CoreStatSection() {
       <hr className="border-red-500/70 mx-4" />
       <SavingThrowDisplay />
       <hr className="mx-4 border-red-500/70" />
-      <HealthManaAuraBars />
+      <CharacterHealthManaAuraBars />
     </div>
   );
 }

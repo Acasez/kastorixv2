@@ -1,6 +1,10 @@
 // TrackBar.tsx
-import type { Track } from "../contexts/CharacterContext";
 import NumberInput from "./NumberInput";
+
+type Track = {
+  current: number;
+  max: number;
+};
 
 type TrackBarProps = {
   label: string;
@@ -45,7 +49,7 @@ export default function TrackBar({
           <NumberInput
             value={track.max}
             min={1}
-            max={max}
+            max={max ?? Number.MAX_SAFE_INTEGER}
             onChange={(v) => onChange({ ...track, max: v })}
           />
         ) : (
