@@ -12,7 +12,11 @@ const defaultCreature: Creature = {
   health: { current: 10, max: 10 },
   aura: { current: 10, max: 10 },
   mana: { current: 10, max: 10 },
-  savingThrows: { Fortitude: 0, Reflex: 0, Will: 0 },
+  savingThrows: {
+    Fortitude: "Untrained",
+    Reflex: "Untrained",
+    Will: "Untrained",
+  },
   armor: "",
   resistances: "",
   speeds: "",

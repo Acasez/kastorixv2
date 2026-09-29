@@ -1,8 +1,18 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
-import { useCreature, type Creature } from "../../contexts/CreatureContext";
+import {
+  useCreature,
+  type Creature,
+  type CreatureSaveKey,
+} from "../../contexts/CreatureContext";
+import {
+  getProficiency,
+  PROFICIENCY_LEVELS,
+  type ProficiencyTierName,
+} from "../../constants/Proficiency";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
+import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
@@ -21,7 +31,11 @@ const textFields = [
   ["passives", "Passives"],
 ] as const;
 
-function isCreature(value: unknown): value is Creature {
+type CreatureData = Omit<Creature, "savingThrows"> & {
+  savingThrows: Record<CreatureSaveKey, ProficiencyTierName | number>;
+};
+
+function isCreature(value: unknown): value is CreatureData {
   if (!value || typeof value !== "object") return false;
   const candidate = value as Partial<Creature>;
   return (
@@ -35,10 +49,35 @@ function isCreature(value: unknown): value is Creature {
     isTrack(candidate.health) &&
     isTrack(candidate.aura) &&
     isTrack(candidate.mana) &&
-    typeof candidate.savingThrows?.Fortitude === "number" &&
-    typeof candidate.savingThrows.Reflex === "number" &&
-    typeof candidate.savingThrows.Will === "number"
+    ["Fortitude", "Reflex", "Will"].every((save) => {
+      const saveValue = candidate.savingThrows?.[save as CreatureSaveKey];
+      return (
+        typeof saveValue === "number" ||
+        PROFICIENCY_LEVELS.some((tier) => tier.fullName === saveValue)
+      );
+    })
   );
+}
+
+function normalizeCreature(value: CreatureData): Creature {
+  const normalizeTier = (
+    tier: ProficiencyTierName | number,
+  ): ProficiencyTierName => {
+    if (typeof tier === "string") return tier;
+    return (
+      PROFICIENCY_LEVELS.find((level) => level.bonus === tier)?.fullName ??
+      "Untrained"
+    );
+  };
+
+  return {
+    ...value,
+    savingThrows: {
+      Fortitude: normalizeTier(value.savingThrows.Fortitude),
+      Reflex: normalizeTier(value.savingThrows.Reflex),
+      Will: normalizeTier(value.savingThrows.Will),
+    },
+  };
 }
 
 function isTrack(value: unknown): value is Creature["health"] {
@@ -94,7 +133,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         localStorage.getItem(selectedKey) ?? "",
       );
       if (!isCreature(value)) throw new Error("Invalid creature data");
-      setCreature(value);
+      setCreature(normalizeCreature(value));
     } catch {
       window.alert("The selected saved creature could not be loaded.");
     }
@@ -130,7 +169,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
     try {
       const imported: unknown = JSON.parse(await file.text());
       if (!isCreature(imported)) throw new Error("Invalid creature data");
-      setCreature(imported);
+      setCreature(normalizeCreature(imported));
     } catch {
       window.alert("The selected file is not a valid creature JSON file.");
     }
@@ -208,23 +247,46 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         <section>
           <h2 className="creature-section-title">Saving Throws</h2>
           <div className="grid grid-cols-3 gap-3">
-            {(["Fortitude", "Reflex", "Will"] as const).map((save) => (
-              <label className="creature-field" key={save}>
-                <span>{save}</span>
-                <input
-                  type="number"
-                  value={creature.savingThrows[save]}
-                  onChange={(event) =>
-                    updateCreature({
-                      savingThrows: {
-                        ...creature.savingThrows,
-                        [save]: Number(event.target.value),
-                      },
-                    })
-                  }
-                />
-              </label>
-            ))}
+            {(
+              [
+                { name: "Fortitude", stat: "PHY" },
+                { name: "Reflex", stat: "DEX" },
+                { name: "Will", stat: "WIL" },
+              ] as const
+            ).map((save) => {
+              const tierName = creature.savingThrows[save.name];
+              const tier = getProficiency(tierName);
+              const bonus = creature.stats[save.stat] + tier.bonus;
+
+              return (
+                <div
+                  className="flex items-center justify-center gap-1.5 rounded border-2 border-red-500 px-2 py-1"
+                  key={save.name}
+                >
+                  <span className="font-semibold text-sky-500">
+                    {save.name} ({save.stat})
+                  </span>
+                  <ProficiencyMarker
+                    skillName={save.name}
+                    proficiency={tierName}
+                    onProficiencyChange={(proficiency) =>
+                      updateCreature({
+                        savingThrows: {
+                          ...creature.savingThrows,
+                          [save.name]: proficiency,
+                        },
+                      })
+                    }
+                  />
+                  <span
+                    className="text-xl text-text-light"
+                    aria-label={`${save.name} bonus ${bonus}`}
+                  >
+                    {bonus > 0 ? `+${bonus}` : bonus}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </section>
 

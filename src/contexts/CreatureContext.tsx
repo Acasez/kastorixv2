@@ -4,6 +4,9 @@ import {
   type Dispatch,
   type SetStateAction,
 } from "react";
+import type { ProficiencyTierName } from "../constants/Proficiency";
+
+export type CreatureSaveKey = "Fortitude" | "Reflex" | "Will";
 
 export type CreatureTrack = {
   current: number;
@@ -21,7 +24,7 @@ export type Creature = {
   health: CreatureTrack;
   aura: CreatureTrack;
   mana: CreatureTrack;
-  savingThrows: Record<"Fortitude" | "Reflex" | "Will", number>;
+  savingThrows: Record<CreatureSaveKey, ProficiencyTierName>;
   armor: string;
   resistances: string;
   speeds: string;

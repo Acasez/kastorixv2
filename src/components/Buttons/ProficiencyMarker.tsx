@@ -1,5 +1,6 @@
 // ProficiencyMarker.tsx
-import { useCharacter } from "../../contexts/CharacterContext";
+import { useContext } from "react";
+import { CharacterContext } from "../../contexts/CharacterContext";
 import {
   PROFICIENCY_LEVELS,
   getProficiency,
@@ -10,6 +11,8 @@ type ProficiencyMarkerProps = {
   skillName: string;
   category?: "skills" | "saves";
   defaultTier?: ProficiencyTierName;
+  proficiency?: ProficiencyTierName;
+  onProficiencyChange?: (tier: ProficiencyTierName) => void;
 };
 
 function cycle(
@@ -29,23 +32,46 @@ export default function ProficiencyMarker({
   skillName,
   category = "skills",
   defaultTier = "Untrained",
+  proficiency,
+  onProficiencyChange,
 }: ProficiencyMarkerProps) {
-  const { character, updateCharacter } = useCharacter();
+  const characterContext = useContext(CharacterContext);
 
-  const proficiencies =
-    category === "saves"
-      ? character.saveProficiencies
-      : character.skillProficiencies;
+  if (Boolean(proficiency) !== Boolean(onProficiencyChange)) {
+    throw new Error(
+      "ProficiencyMarker requires both proficiency and onProficiencyChange in controlled mode",
+    );
+  }
 
   const currentTierName: ProficiencyTierName =
-    proficiencies[skillName] ?? defaultTier;
+    proficiency ??
+    (category === "saves"
+      ? characterContext?.character.saveProficiencies[skillName]
+      : characterContext?.character.skillProficiencies[skillName]) ??
+    defaultTier;
   const currentTier = getProficiency(currentTierName);
 
   const update = (direction: 1 | -1) => {
-    updateCharacter({
+    const nextTier = cycle(currentTierName, direction);
+    if (onProficiencyChange) {
+      onProficiencyChange(nextTier);
+      return;
+    }
+
+    if (!characterContext) {
+      throw new Error(
+        "ProficiencyMarker requires CharacterContext when uncontrolled",
+      );
+    }
+
+    const proficiencies =
+      category === "saves"
+        ? characterContext.character.saveProficiencies
+        : characterContext.character.skillProficiencies;
+    characterContext.updateCharacter({
       [category === "skills" ? "skillProficiencies" : "saveProficiencies"]: {
         ...proficiencies,
-        [skillName]: cycle(currentTierName, direction),
+        [skillName]: nextTier,
       },
     });
   };
