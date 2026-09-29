@@ -19,4 +19,10 @@ export const routes = [
     header: "Character Sheet",
     createHeader: true,
   },
+  {
+    path: "/kastorixv2/DMScreen",
+    component: lazy(() => import("../pages/DMScreen")),
+    header: "DM Screen",
+    createHeader: true,
+  },
 ];
