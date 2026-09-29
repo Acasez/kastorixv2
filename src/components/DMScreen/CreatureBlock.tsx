@@ -1,10 +1,14 @@
-import CreatureMeta from "./CreatureMeta";
+import { CreatureProvider } from "../../contexts/CreatureProvider";
+import CreatureEditor from "./CreatureEditor";
 
-export default function CreatureBlock() {
+type CreatureBlockProps = {
+  onRemove: () => void;
+};
+
+export default function CreatureBlock({ onRemove }: CreatureBlockProps) {
   return (
-    <div className="bg-bg-creature text-text-light w-100 h-200 text-center mx-20 my-3">
-      <CreatureMeta />
-      Creature
-    </div>
+    <CreatureProvider>
+      <CreatureEditor onRemove={onRemove} />
+    </CreatureProvider>
   );
 }
