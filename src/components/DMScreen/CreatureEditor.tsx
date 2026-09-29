@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useCreature, type Creature } from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
+import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
-const STORAGE_PREFIX = "dm-creature:";
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
 const statKeys = ["PHY", "DEX", "INT", "WIL"] as const;
 const trackKeys = ["health", "aura", "mana"] as const;
@@ -141,49 +141,18 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
 
   return (
     <section className="w-full max-w-4xl overflow-hidden border border-stone-700 bg-bg-creature text-text-light shadow-lg">
-      <header className="flex flex-wrap items-center gap-2 bg-stone-900 p-3">
-        <select
-          aria-label="Saved creatures"
-          value={selectedKey}
-          onChange={(event) => setSelectedKey(event.target.value)}
-          className="min-w-40 flex-1 rounded bg-stone-700 px-3 py-2 text-sm"
-        >
-          <option value="">Saved creatures</option>
-          {savedCreatures.map((key) => (
-            <option key={key} value={key}>
-              {key.slice(STORAGE_PREFIX.length)}
-            </option>
-          ))}
-        </select>
-        <button className="creature-button" onClick={saveCreature}>
-          Save Creature
-        </button>
-        <button className="creature-button" onClick={loadCreature}>
-          Load Creature
-        </button>
-        <button className="creature-button" onClick={deleteCreature}>
-          Delete Saved
-        </button>
-        <button
-          className="creature-button"
-          onClick={() => importInputRef.current?.click()}
-        >
-          Import
-        </button>
-        <button className="creature-button" onClick={exportCreature}>
-          Export
-        </button>
-        <button className="creature-button" onClick={onRemove}>
-          Remove Block
-        </button>
-        <input
-          ref={importInputRef}
-          type="file"
-          accept="application/json,.json"
-          onChange={importCreature}
-          className="hidden"
-        />
-      </header>
+      <CreatureMeta
+        selectedKey={selectedKey}
+        setSelectedKey={setSelectedKey}
+        savedCreatures={savedCreatures}
+        saveCreature={saveCreature}
+        loadCreature={loadCreature}
+        deleteCreature={deleteCreature}
+        importInputRef={importInputRef}
+        exportCreature={exportCreature}
+        onRemove={onRemove}
+        importCreature={importCreature}
+      />
 
       <div className="space-y-5 p-4">
         <div className="grid gap-3 sm:grid-cols-2">
