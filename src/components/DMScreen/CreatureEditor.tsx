@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useCreature, type Creature } from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
+import StatsGrid from "../CharacterSheet/CoreStatSection/StatsGrid";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
-const statKeys = ["PHY", "DEX", "INT", "WIL"] as const;
 const trackKeys = ["health", "aura", "mana"] as const;
 const textFields = [
   ["traits", "Traits"],
@@ -28,7 +28,10 @@ function isCreature(value: unknown): value is Creature {
     typeof candidate.name === "string" &&
     typeof candidate.size === "string" &&
     textFields.every(([key]) => typeof candidate[key] === "string") &&
-    statKeys.every((key) => typeof candidate.stats?.[key] === "number") &&
+    ["PHY", "DEX", "INT", "WIL"].every(
+      (key) =>
+        typeof candidate.stats?.[key as keyof Creature["stats"]] === "number",
+    ) &&
     isTrack(candidate.health) &&
     isTrack(candidate.aura) &&
     isTrack(candidate.mana) &&
@@ -189,28 +192,12 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
           ))}
         </div>
 
-        <section>
-          <h2 className="creature-section-title">Stats</h2>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {statKeys.map((stat) => (
-              <label className="creature-field" key={stat}>
-                <span>{stat}</span>
-                <input
-                  type="number"
-                  value={creature.stats[stat]}
-                  onChange={(event) =>
-                    updateCreature({
-                      stats: {
-                        ...creature.stats,
-                        [stat]: Number(event.target.value),
-                      },
-                    })
-                  }
-                />
-              </label>
-            ))}
-          </div>
-        </section>
+        <StatsGrid
+          stats={creature.stats}
+          onStatChange={(key, value) =>
+            updateCreature({ stats: { ...creature.stats, [key]: value } })
+          }
+        />
 
         <section>
           <h2 className="creature-section-title">Resources</h2>

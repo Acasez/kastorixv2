@@ -1,9 +1,7 @@
 import type { StatKey } from "../../../types/StatKey";
 import { STAT_COLORS } from "../../../constants/Stats";
-import { useCharacter } from "../../../contexts/CharacterContext";
 import NumberInput from "../../NumberInput";
 
-// StatsGrid.tsx
 const STATS: { key: StatKey; name: string }[] = [
   { key: "PHY", name: "Physique" },
   { key: "DEX", name: "Dexterity" },
@@ -11,15 +9,18 @@ const STATS: { key: StatKey; name: string }[] = [
   { key: "WIL", name: "Willpower" },
 ];
 
-export default function StatsSection() {
-  const { character, updateCharacter } = useCharacter();
+type StatsGridProps = {
+  stats: Record<StatKey, number>;
+  onStatChange: (key: StatKey, value: number) => void;
+};
 
+export default function StatsGrid({ stats, onStatChange }: StatsGridProps) {
   return (
     <div>
       <h1 className="text-3xl text-striking text-center underline mb-2">
         Stats
       </h1>
-      <div className="grid grid-cols-4 gap-4 px-4">
+      <div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-4">
         {STATS.map(({ key, name }) => (
           <div
             key={key}
@@ -33,12 +34,8 @@ export default function StatsSection() {
                 {key}
               </span>
               <NumberInput
-                value={character.baseStats[key] ?? 0}
-                onChange={(value) =>
-                  updateCharacter({
-                    baseStats: { ...character.baseStats, [key]: value },
-                  })
-                }
+                value={stats[key] ?? 0}
+                onChange={(value) => onStatChange(key, value)}
               />
             </div>
           </div>
