@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import { useCharacter } from "../../../contexts/CharacterContext";
-import { ThreeOptionSwitch } from "../../ThreeOptionSwitch";
 import type { SomaticComponent, VerbalComponent } from "../../../types/Spells";
 import { SPELL_RANKS } from "../../../constants/SpellRanks";
 import SpellRankSection from "./SpellRankSection";
@@ -9,6 +8,7 @@ import type { ModalRequest } from "../../ModalViews/modalTypes";
 import spells from "../../../JSON/spells.json";
 import metamagics from "../../../JSON/metamagic.json";
 import MetamagicsSection from "./MetamagicsSection";
+import { MultiOptionSwitch } from "../../MultiOptionSwitch";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
@@ -95,7 +95,7 @@ export default function SpellsSection() {
         <h1 className="text-2xl">
           Base Spellshaping bonus: {spellshapingBonus}
         </h1>
-        <ThreeOptionSwitch<VerbalComponent>
+        <MultiOptionSwitch<VerbalComponent>
           options={["None", "Standard", "Attuned"]}
           value={verbal}
           onChange={(v) =>
@@ -104,7 +104,7 @@ export default function SpellsSection() {
             })
           }
         />
-        <ThreeOptionSwitch<SomaticComponent>
+        <MultiOptionSwitch<SomaticComponent>
           options={["None", "One Handed", "Two Handed"]}
           value={somatic}
           onChange={(v) =>
