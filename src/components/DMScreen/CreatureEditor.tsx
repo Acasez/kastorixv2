@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useCreature, type Creature } from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
-import StatsGrid from "../CharacterSheet/CoreStatSection/StatsGrid";
-import HealthManaAuraBars from "../CharacterSheet/CoreStatSection/HealthManaAuraBars";
+import StatsGrid from "../Buttons/StatsGrid";
+import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 

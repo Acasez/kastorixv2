@@ -5,7 +5,7 @@ import {
   type Character,
 } from "../../../contexts/CharacterContext";
 import { getCharacterResourceBonuses } from "../../../utils/characterResourceBonuses";
-import HealthManaAuraBars from "./HealthManaAuraBars";
+import HealthManaAuraBars from "../../Buttons/HealthManaAuraBars";
 
 export default function CharacterHealthManaAuraBars() {
   const { character, updateCharacter } = useCharacter();

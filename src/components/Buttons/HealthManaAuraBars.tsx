@@ -11,7 +11,7 @@ type HealthManaAuraBarsProps = {
   onTrackChange: (key: ResourceKey, track: ResourceTrack) => void;
 };
 
-import TrackBar from "../../TrackBar";
+import TrackBar from "../TrackBar";
 
 export default function HealthManaAuraBars({
   tracks,

@@ -1,6 +1,6 @@
-import type { StatKey } from "../../../types/StatKey";
-import { STAT_COLORS } from "../../../constants/Stats";
-import NumberInput from "../../NumberInput";
+import type { StatKey } from "../../types/StatKey";
+import { STAT_COLORS } from "../../constants/Stats";
+import NumberInput from "../NumberInput";
 
 const STATS: { key: StatKey; name: string }[] = [
   { key: "PHY", name: "Physique" },
