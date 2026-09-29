@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useCreature, type Creature } from "../../contexts/CreatureContext";
+import { CREATURE_SIZES } from "../../constants/CreatureSizes";
+export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_PREFIX = "dm-creature:";
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
@@ -199,11 +201,9 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               value={creature.size}
               onChange={(event) => updateCreature({ size: event.target.value })}
             >
-              {["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"].map(
-                (size) => (
-                  <option key={size}>{size}</option>
-                ),
-              )}
+              {CREATURE_SIZES.map((size) => (
+                <option key={size}>{size}</option>
+              ))}
             </select>
           </label>
           {textFields.slice(0, 4).map(([key, label]) => (

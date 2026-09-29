@@ -1,6 +1,8 @@
+import type { CreatureSizes } from "../constants/CreatureSizes";
+
 export type Species = {
   name: string;
-  size: CreatureSize;
+  size: CreatureSizes;
   health: number;
   mana: number;
   traitOne: string;
@@ -17,11 +19,3 @@ export type Species = {
   resistances: string;
   gadgets: string;
 };
-
-export type CreatureSize =
-  | "Tiny"
-  | "Small"
-  | "Medium"
-  | "Large"
-  | "Huge"
-  | "Gargantuan";
