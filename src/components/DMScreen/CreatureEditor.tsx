@@ -53,7 +53,7 @@ function getSavedCreatures(): string[] {
     .sort((first, second) => first.localeCompare(second));
 }
 
-function CreatureEditor({ onRemove }: { onRemove: () => void }) {
+export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
   const { creature, setCreature, updateCreature } = useCreature();
   const [savedCreatures, setSavedCreatures] = useState(getSavedCreatures);
   const [selectedKey, setSelectedKey] = useState("");
@@ -309,5 +309,3 @@ function CreatureEditor({ onRemove }: { onRemove: () => void }) {
     </section>
   );
 }
-
-export default CreatureEditor;

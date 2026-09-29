@@ -1,7 +1,7 @@
 import { useCallback, useState, type ReactNode } from "react";
 import { CreatureContext, type Creature } from "./CreatureContext";
 
-export const defaultCreature: Creature = {
+const defaultCreature: Creature = {
   name: "",
   traits: "",
   senses: "",
