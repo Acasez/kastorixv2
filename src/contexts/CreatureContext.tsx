@@ -18,7 +18,7 @@ export type Creature = {
   name: string;
   traits: string;
   senses: string;
-  skills: string;
+  skills: Partial<Record<string, ProficiencyTierName>>;
   languages: string;
   size: string;
   stats: Record<"PHY" | "DEX" | "INT" | "WIL", number>;

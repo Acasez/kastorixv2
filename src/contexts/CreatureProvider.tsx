@@ -5,7 +5,7 @@ const defaultCreature: Creature = {
   name: "",
   traits: "",
   senses: "",
-  skills: "",
+  skills: {},
   languages: "",
   size: "Medium",
   stats: { PHY: 0, DEX: 0, INT: 0, WIL: 0 },
@@ -34,6 +34,7 @@ export function CreatureProvider({ children }: { children: ReactNode }) {
     aura: { ...defaultCreature.aura },
     mana: { ...defaultCreature.mana },
     savingThrows: { ...defaultCreature.savingThrows },
+    skills: { ...defaultCreature.skills },
     resistances: { ...defaultCreature.resistances },
     speeds: { ...defaultCreature.speeds },
   }));

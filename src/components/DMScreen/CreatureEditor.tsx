@@ -12,11 +12,13 @@ import {
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import type { SpeedTypes } from "../../types/SpeedTypes";
 import damageTypes from "../../JSON/damage_types.json";
+import skills from "../../json/skills.json";
 import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 import NumericTypeList from "./NumericTypeList";
+import CreatureSkillList from "./CreatureSkillList";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
@@ -32,7 +34,6 @@ const DAMAGE_TYPE_NAMES = damageTypes.map(({ name }) => name);
 const textFields = [
   ["traits", "Traits"],
   ["senses", "Senses"],
-  ["skills", "Skills"],
   ["languages", "Languages"],
   ["armor", "Armor"],
   ["strikes", "Strikes"],
@@ -43,11 +44,12 @@ const textFields = [
 
 type CreatureData = Omit<
   Creature,
-  "savingThrows" | "speeds" | "resistances"
+  "savingThrows" | "speeds" | "resistances" | "skills"
 > & {
   savingThrows: Record<CreatureSaveKey, ProficiencyTierName | number>;
   speeds: Creature["speeds"] | string;
   resistances: Creature["resistances"] | string;
+  skills: Creature["skills"] | string;
 };
 
 function isCreature(value: unknown): value is CreatureData {
@@ -57,6 +59,7 @@ function isCreature(value: unknown): value is CreatureData {
     typeof candidate.name === "string" &&
     typeof candidate.size === "string" &&
     textFields.every(([key]) => typeof candidate[key] === "string") &&
+    isCreatureSkills(candidate.skills) &&
     isCreatureSpeeds(candidate.speeds) &&
     isCreatureResistances(candidate.resistances) &&
     ["PHY", "DEX", "INT", "WIL"].every(
@@ -74,6 +77,31 @@ function isCreature(value: unknown): value is CreatureData {
       );
     })
   );
+}
+
+function isCreatureSkills(value: unknown): value is CreatureData["skills"] {
+  if (typeof value === "string") return true;
+  if (typeof value !== "object" || value === null) return false;
+  const skillNames = skills.map(({ name }) => name);
+  return Object.entries(value).every(
+    ([skillName, proficiency]) =>
+      skillNames.includes(skillName) &&
+      PROFICIENCY_LEVELS.some((tier) => tier.fullName === proficiency),
+  );
+}
+
+function normalizeSkills(value: CreatureData["skills"]): Creature["skills"] {
+  if (typeof value !== "string") return value;
+
+  const normalized: Creature["skills"] = {};
+  const previousNames = value.split(/[,;\n]+/).map((name) => name.trim());
+  for (const previousName of previousNames) {
+    const matchingSkill = skills.find(
+      ({ name }) => name.toLowerCase() === previousName.toLowerCase(),
+    );
+    if (matchingSkill) normalized[matchingSkill.name] = "Untrained";
+  }
+  return normalized;
 }
 
 function isCreatureSpeeds(value: unknown): value is CreatureData["speeds"] {
@@ -152,6 +180,7 @@ function normalizeCreature(value: CreatureData): Creature {
 
   return {
     ...value,
+    skills: normalizeSkills(value.skills),
     speeds: normalizeSpeeds(value.speeds),
     resistances: normalizeResistances(value.resistances),
     savingThrows: {
@@ -313,6 +342,8 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
             updateCreature({ stats: { ...creature.stats, [key]: value } })
           }
         />
+
+        <CreatureSkillList />
 
         <section>
           <h2 className="creature-section-title">Resources</h2>
