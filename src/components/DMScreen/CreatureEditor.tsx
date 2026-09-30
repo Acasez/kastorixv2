@@ -331,17 +331,19 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
 
       <div className="space-y-5 p-4">
         <div className="grid gap-3 sm:grid-cols-2">
-          <label className="creature-field">
+          <label className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200">
             <span>Name</span>
             <input
+              className="w-full min-w-0 rounded-xs border border-[#5b554d] bg-[#242321] px-[0.55rem] py-[0.45rem] font-normal text-[#f5eee4]"
               value={creature.name}
               onChange={(event) => updateCreature({ name: event.target.value })}
               placeholder="Creature Name"
             />
           </label>
-          <label className="creature-field">
+          <label className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200">
             <span>Size</span>
             <select
+              className="w-full min-w-0 rounded-xs border border-[#5b554d] bg-[#242321] px-[0.55rem] py-[0.45rem] font-normal text-[#f5eee4]"
               value={creature.size}
               onChange={(event) => updateCreature({ size: event.target.value })}
             >
@@ -351,9 +353,13 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
             </select>
           </label>
           {textFields.slice(0, 4).map(([key, label]) => (
-            <label className="creature-field" key={key}>
+            <label
+              className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200"
+              key={key}
+            >
               <span>{label}</span>
               <input
+                className="w-full min-w-0 rounded-xs border border-[#5b554d] bg-[#242321] px-[0.55rem] py-[0.45rem] font-normal text-[#f5eee4]"
                 value={creature[key]}
                 onChange={(event) =>
                   updateCreature({ [key]: event.target.value })
@@ -374,7 +380,9 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         <CreatureSkillList />
 
         <section>
-          <h2 className="creature-section-title">Resources</h2>
+          <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
+            Resources
+          </h2>
           <HealthManaAuraBars
             tracks={{
               health: creature.health,
@@ -411,10 +419,14 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
 
         <div className="grid gap-3 sm:grid-cols-2">
           {textFields.slice(4).map(([key, label]) => (
-            <label className="creature-field" key={key}>
+            <label
+              className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200"
+              key={key}
+            >
               <span>{label}</span>
               <textarea
                 rows={3}
+                className="w-full min-w-0 resize-y rounded-xs border border-[#5b554d] bg-[#242321] px-[0.55rem] py-[0.45rem] font-normal text-[#f5eee4]"
                 value={creature[key]}
                 onChange={(event) =>
                   updateCreature({ [key]: event.target.value })
