@@ -16,6 +16,7 @@ import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
+import NumericTypeList from "./NumericTypeList";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
@@ -183,12 +184,6 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
   const [savedCreatures, setSavedCreatures] = useState(getSavedCreatures);
   const [selectedKey, setSelectedKey] = useState("");
   const importInputRef = useRef<HTMLInputElement>(null);
-  const availableSpeeds = SPEED_TYPES.filter(
-    (speed) => !(speed in creature.speeds),
-  );
-  const availableResistances = DAMAGE_TYPE_NAMES.filter(
-    (damageType) => !(damageType in creature.resistances),
-  );
 
   useEffect(() => {
     const refreshSavedCreatures = () => setSavedCreatures(getSavedCreatures());
@@ -260,48 +255,6 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
     } catch {
       window.alert("The selected file is not a valid creature JSON file.");
     }
-  };
-
-  const addSpeed = () => {
-    const speed = availableSpeeds[0];
-    if (!speed) return;
-    updateCreature({ speeds: { ...creature.speeds, [speed]: 0 } });
-  };
-
-  const changeSpeedType = (currentSpeed: SpeedTypes, nextSpeed: SpeedTypes) => {
-    const nextSpeeds = { ...creature.speeds };
-    const distance = nextSpeeds[currentSpeed] ?? 0;
-    delete nextSpeeds[currentSpeed];
-    nextSpeeds[nextSpeed] = distance;
-    updateCreature({ speeds: nextSpeeds });
-  };
-
-  const removeSpeed = (speed: SpeedTypes) => {
-    const nextSpeeds = { ...creature.speeds };
-    delete nextSpeeds[speed];
-    updateCreature({ speeds: nextSpeeds });
-  };
-
-  const addResistance = () => {
-    const damageType = availableResistances[0];
-    if (!damageType) return;
-    updateCreature({
-      resistances: { ...creature.resistances, [damageType]: 0 },
-    });
-  };
-
-  const changeResistanceType = (currentType: string, nextType: string) => {
-    const nextResistances = { ...creature.resistances };
-    const value = nextResistances[currentType] ?? 0;
-    delete nextResistances[currentType];
-    nextResistances[nextType] = value;
-    updateCreature({ resistances: nextResistances });
-  };
-
-  const removeResistance = (damageType: string) => {
-    const nextResistances = { ...creature.resistances };
-    delete nextResistances[damageType];
-    updateCreature({ resistances: nextResistances });
   };
 
   return (
@@ -419,163 +372,25 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
           </div>
         </section>
 
-        <section>
-          <div className="mb-1 flex items-center justify-between">
-            <h2 className="creature-section-title mb-0 flex-1">Speeds</h2>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            {Object.entries(creature.speeds).map(([type, speed]) => {
-              const speedType = type as SpeedTypes;
-              return (
-                <div
-                  className="relative inline-flex items-center gap-2 rounded border border-stone-600 bg-stone-800 p-2 pr-3"
-                  key={type}
-                >
-                  <label>
-                    <span className="sr-only">{speedType} speed type</span>
-                    <select
-                      aria-label={`${speedType} speed type`}
-                      value={speedType}
-                      onChange={(event) =>
-                        changeSpeedType(
-                          speedType,
-                          event.target.value as SpeedTypes,
-                        )
-                      }
-                      className="h-8 w-20 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-                    >
-                      {SPEED_TYPES.filter(
-                        (candidate) =>
-                          candidate === speedType ||
-                          !(candidate in creature.speeds),
-                      ).map((candidate) => (
-                        <option key={candidate} value={candidate}>
-                          {candidate}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <label>
-                    <span className="sr-only">{speedType} speed</span>
-                    <input
-                      type="number"
-                      min={0}
-                      value={speed}
-                      aria-label={`${speedType} speed`}
-                      onChange={(event) =>
-                        updateCreature({
-                          speeds: {
-                            ...creature.speeds,
-                            [speedType]: Math.max(
-                              0,
-                              Number(event.target.value),
-                            ),
-                          },
-                        })
-                      }
-                      className="h-8 w-16 rounded border border-stone-500 bg-stone-900 px-1 text-center text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-                    />
-                  </label>
-                  <button
-                    className="absolute -right-2 -top-2 flex size-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold leading-none text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
-                    onClick={() => removeSpeed(speedType)}
-                    aria-label={`Remove ${speedType} speed`}
-                    title={`Remove ${speedType} speed`}
-                  >
-                    ×
-                  </button>
-                </div>
-              );
-            })}
-            <button
-              className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-              onClick={addSpeed}
-              disabled={availableSpeeds.length === 0}
-              aria-label="Add speed"
-              title="Add speed"
-            >
-              +
-            </button>
-          </div>
-        </section>
+        <NumericTypeList
+          title="Speeds"
+          itemLabel="speed"
+          options={SPEED_TYPES}
+          values={creature.speeds}
+          onChange={(speeds) => updateCreature({ speeds })}
+          typeWidthClass="w-20"
+          allowNegative={false}
+        />
 
-        <section>
-          <div className="mb-1 flex items-center justify-between">
-            <h2 className="creature-section-title mb-0 flex-1">Resistances</h2>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            {Object.entries(creature.resistances).map(
-              ([damageType, resistance]) => (
-                <div
-                  className="relative inline-flex items-center gap-2 rounded border border-stone-600 bg-stone-800 p-2 pr-3"
-                  key={damageType}
-                >
-                  <label>
-                    <span className="sr-only">Resistance type</span>
-                    <select
-                      aria-label="Resistance type"
-                      value={damageType}
-                      onChange={(event) =>
-                        changeResistanceType(damageType, event.target.value)
-                      }
-                      className="h-8 w-28 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-                    >
-                      {DAMAGE_TYPE_NAMES.filter(
-                        (candidate) =>
-                          candidate === damageType ||
-                          !(candidate in creature.resistances),
-                      ).map((candidate) => (
-                        <option key={candidate} value={candidate}>
-                          {candidate}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <label>
-                    <span className="sr-only">
-                      {damageType} resistance value
-                    </span>
-                    <input
-                      type="number"
-                      min={0}
-                      value={resistance}
-                      aria-label={`${damageType} resistance value`}
-                      onChange={(event) =>
-                        updateCreature({
-                          resistances: {
-                            ...creature.resistances,
-                            [damageType]: Math.max(
-                              0,
-                              Number(event.target.value),
-                            ),
-                          },
-                        })
-                      }
-                      className="h-8 w-16 rounded border border-stone-500 bg-stone-900 px-1 text-center text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-                    />
-                  </label>
-                  <button
-                    className="absolute -right-2 -top-2 flex size-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold leading-none text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
-                    onClick={() => removeResistance(damageType)}
-                    aria-label={`Remove ${damageType} resistance`}
-                    title={`Remove ${damageType} resistance`}
-                  >
-                    ×
-                  </button>
-                </div>
-              ),
-            )}
-            <button
-              className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-              onClick={addResistance}
-              disabled={availableResistances.length === 0}
-              aria-label="Add resistance"
-              title="Add resistance"
-            >
-              +
-            </button>
-          </div>
-        </section>
+        <NumericTypeList
+          title="Resistances"
+          itemLabel="resistance"
+          options={DAMAGE_TYPE_NAMES}
+          values={creature.resistances}
+          onChange={(resistances) => updateCreature({ resistances })}
+          typeWidthClass="w-28"
+          allowNegative={true}
+        />
 
         <div className="grid gap-3 sm:grid-cols-2">
           {textFields.slice(4).map(([key, label]) => (
