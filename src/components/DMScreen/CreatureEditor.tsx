@@ -11,6 +11,7 @@ import {
 } from "../../constants/Proficiency";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import type { SpeedTypes } from "../../types/SpeedTypes";
+import damageTypes from "../../JSON/damage_types.json";
 import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
@@ -26,32 +27,37 @@ const SPEED_TYPES: SpeedTypes[] = [
   "Glide",
   "Fly",
 ];
+const DAMAGE_TYPE_NAMES = damageTypes.map(({ name }) => name);
 const textFields = [
   ["traits", "Traits"],
   ["senses", "Senses"],
   ["skills", "Skills"],
   ["languages", "Languages"],
   ["armor", "Armor"],
-  ["resistances", "Resistances"],
   ["strikes", "Strikes"],
   ["actions", "Actions"],
   ["spells", "Spells"],
   ["passives", "Passives"],
 ] as const;
 
-type CreatureData = Omit<Creature, "savingThrows" | "speeds"> & {
+type CreatureData = Omit<
+  Creature,
+  "savingThrows" | "speeds" | "resistances"
+> & {
   savingThrows: Record<CreatureSaveKey, ProficiencyTierName | number>;
   speeds: Creature["speeds"] | string;
+  resistances: Creature["resistances"] | string;
 };
 
 function isCreature(value: unknown): value is CreatureData {
   if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<Creature>;
+  const candidate = value as Partial<CreatureData>;
   return (
     typeof candidate.name === "string" &&
     typeof candidate.size === "string" &&
     textFields.every(([key]) => typeof candidate[key] === "string") &&
     isCreatureSpeeds(candidate.speeds) &&
+    isCreatureResistances(candidate.resistances) &&
     ["PHY", "DEX", "INT", "WIL"].every(
       (key) =>
         typeof candidate.stats?.[key as keyof Creature["stats"]] === "number",
@@ -94,6 +100,44 @@ function normalizeSpeeds(speeds: CreatureData["speeds"]): Creature["speeds"] {
   return normalized;
 }
 
+function isCreatureResistances(
+  value: unknown,
+): value is CreatureData["resistances"] {
+  if (typeof value === "string") return true;
+  if (typeof value !== "object" || value === null) return false;
+  return Object.entries(value).every(
+    ([damageType, resistance]) =>
+      DAMAGE_TYPE_NAMES.includes(damageType) &&
+      typeof resistance === "number" &&
+      Number.isFinite(resistance),
+  );
+}
+
+function normalizeResistances(
+  resistances: CreatureData["resistances"],
+): Creature["resistances"] {
+  if (typeof resistances !== "string") return resistances;
+
+  const normalized: Creature["resistances"] = {};
+  for (const damageType of DAMAGE_TYPE_NAMES) {
+    const escapedType = damageType.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const patterns = [
+      new RegExp(`\\(\\s*(\\d+)\\s*\\)\\s*${escapedType}`, "gi"),
+      new RegExp(`${escapedType}\\s*:?\\s*(\\d+)`, "gi"),
+      new RegExp(`(\\d+)\\s+${escapedType}`, "gi"),
+    ];
+
+    for (const pattern of patterns) {
+      const match = pattern.exec(resistances);
+      if (match) {
+        normalized[damageType] = Number(match[1] ?? match[2]);
+        break;
+      }
+    }
+  }
+  return normalized;
+}
+
 function normalizeCreature(value: CreatureData): Creature {
   const normalizeTier = (
     tier: ProficiencyTierName | number,
@@ -108,6 +152,7 @@ function normalizeCreature(value: CreatureData): Creature {
   return {
     ...value,
     speeds: normalizeSpeeds(value.speeds),
+    resistances: normalizeResistances(value.resistances),
     savingThrows: {
       Fortitude: normalizeTier(value.savingThrows.Fortitude),
       Reflex: normalizeTier(value.savingThrows.Reflex),
@@ -140,6 +185,9 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
   const importInputRef = useRef<HTMLInputElement>(null);
   const availableSpeeds = SPEED_TYPES.filter(
     (speed) => !(speed in creature.speeds),
+  );
+  const availableResistances = DAMAGE_TYPE_NAMES.filter(
+    (damageType) => !(damageType in creature.resistances),
   );
 
   useEffect(() => {
@@ -232,6 +280,28 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
     const nextSpeeds = { ...creature.speeds };
     delete nextSpeeds[speed];
     updateCreature({ speeds: nextSpeeds });
+  };
+
+  const addResistance = () => {
+    const damageType = availableResistances[0];
+    if (!damageType) return;
+    updateCreature({
+      resistances: { ...creature.resistances, [damageType]: 0 },
+    });
+  };
+
+  const changeResistanceType = (currentType: string, nextType: string) => {
+    const nextResistances = { ...creature.resistances };
+    const value = nextResistances[currentType] ?? 0;
+    delete nextResistances[currentType];
+    nextResistances[nextType] = value;
+    updateCreature({ resistances: nextResistances });
+  };
+
+  const removeResistance = (damageType: string) => {
+    const nextResistances = { ...creature.resistances };
+    delete nextResistances[damageType];
+    updateCreature({ resistances: nextResistances });
   };
 
   return (
@@ -423,6 +493,84 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               disabled={availableSpeeds.length === 0}
               aria-label="Add speed"
               title="Add speed"
+            >
+              +
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-1 flex items-center justify-between">
+            <h2 className="creature-section-title mb-0 flex-1">Resistances</h2>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            {Object.entries(creature.resistances).map(
+              ([damageType, resistance]) => (
+                <div
+                  className="relative inline-flex items-center gap-2 rounded border border-stone-600 bg-stone-800 p-2 pr-3"
+                  key={damageType}
+                >
+                  <label>
+                    <span className="sr-only">Resistance type</span>
+                    <select
+                      aria-label="Resistance type"
+                      value={damageType}
+                      onChange={(event) =>
+                        changeResistanceType(damageType, event.target.value)
+                      }
+                      className="h-8 w-28 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+                    >
+                      {DAMAGE_TYPE_NAMES.filter(
+                        (candidate) =>
+                          candidate === damageType ||
+                          !(candidate in creature.resistances),
+                      ).map((candidate) => (
+                        <option key={candidate} value={candidate}>
+                          {candidate}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    <span className="sr-only">
+                      {damageType} resistance value
+                    </span>
+                    <input
+                      type="number"
+                      min={0}
+                      value={resistance}
+                      aria-label={`${damageType} resistance value`}
+                      onChange={(event) =>
+                        updateCreature({
+                          resistances: {
+                            ...creature.resistances,
+                            [damageType]: Math.max(
+                              0,
+                              Number(event.target.value),
+                            ),
+                          },
+                        })
+                      }
+                      className="h-8 w-16 rounded border border-stone-500 bg-stone-900 px-1 text-center text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+                    />
+                  </label>
+                  <button
+                    className="absolute -right-2 -top-2 flex size-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold leading-none text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
+                    onClick={() => removeResistance(damageType)}
+                    aria-label={`Remove ${damageType} resistance`}
+                    title={`Remove ${damageType} resistance`}
+                  >
+                    ×
+                  </button>
+                </div>
+              ),
+            )}
+            <button
+              className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+              onClick={addResistance}
+              disabled={availableResistances.length === 0}
+              aria-label="Add resistance"
+              title="Add resistance"
             >
               +
             </button>

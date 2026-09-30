@@ -18,8 +18,8 @@ const defaultCreature: Creature = {
     Will: "Untrained",
   },
   armor: "",
-  resistances: "",
-  speeds: {},
+  resistances: {},
+  speeds: { Land: 5 },
   strikes: "",
   actions: "",
   spells: "",
@@ -34,6 +34,8 @@ export function CreatureProvider({ children }: { children: ReactNode }) {
     aura: { ...defaultCreature.aura },
     mana: { ...defaultCreature.mana },
     savingThrows: { ...defaultCreature.savingThrows },
+    resistances: { ...defaultCreature.resistances },
+    speeds: { ...defaultCreature.speeds },
   }));
 
   const updateCreature = useCallback(

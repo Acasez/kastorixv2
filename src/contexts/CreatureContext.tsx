@@ -27,7 +27,7 @@ export type Creature = {
   mana: CreatureTrack;
   savingThrows: Record<CreatureSaveKey, ProficiencyTierName>;
   armor: string;
-  resistances: string;
+  resistances: Partial<Record<string, number>>;
   speeds: Partial<Record<SpeedTypes, number>>;
   strikes: string;
   actions: string;
