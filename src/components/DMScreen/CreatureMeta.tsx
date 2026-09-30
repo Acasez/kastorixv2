@@ -1,4 +1,5 @@
 import type { ChangeEvent, RefObject } from "react";
+import MetaButton from "../CharacterSheet/MetaMenu/MetaButton";
 
 export const STORAGE_PREFIX = "dm-creature:";
 
@@ -29,9 +30,11 @@ export default function CreatureMeta({
 }: CreatureMetaProps) {
   return (
     <header className="flex flex-row items-center bg-stone-900 p-3 border-b-2 border-black justify-between">
-      <button className="creature-button" onClick={saveCreature}>
-        Save Creature
-      </button>
+      <MetaButton
+        label="Save Creature"
+        onClick={saveCreature}
+        variant="dmScreen"
+      />
       <div className="flex flex-col">
         <select
           aria-label="Saved creatures"
@@ -46,26 +49,21 @@ export default function CreatureMeta({
             </option>
           ))}
         </select>
-        <button className="creature-button" onClick={loadCreature}>
-          Load Creature
-        </button>
+        <MetaButton
+          label="Load Creature"
+          onClick={loadCreature}
+          variant="dmScreen"
+        />
       </div>
 
-      <button className="creature-button" onClick={deleteCreature}>
-        Delete
-      </button>
-      <button
-        className="creature-button"
+      <MetaButton label="Delete" onClick={deleteCreature} variant="dmScreen" />
+      <MetaButton
+        label="Import"
         onClick={() => importInputRef.current?.click()}
-      >
-        Import
-      </button>
-      <button className="creature-button" onClick={exportCreature}>
-        Export
-      </button>
-      <button className="creature-button" onClick={onRemove}>
-        Close
-      </button>
+        variant="dmScreen"
+      />
+      <MetaButton label="Export" onClick={exportCreature} variant="dmScreen" />
+      <MetaButton label="Close" onClick={onRemove} variant="dmScreen" />
       <input
         ref={importInputRef}
         type="file"

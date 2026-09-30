@@ -3,6 +3,10 @@
 @theme {
     --color-bg: #eceff4;
     --color-bg-rules: #f9f5e8;
+
+    --color-bg-wood: #503d27;
+    --color-bg-wood-border: #765a38;
+    --color-bg-redwood: #a17a49;
     --color-bg-creature: #1a1a1a;
 
     --color-text: #888888;
@@ -23,29 +27,6 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
     line-height: 1.75em;
-}
-
-.creature-button {
-    border: 1px solid #765a38;
-    border-radius: 3px;
-    background: #503d27;
-    padding: 0.45rem 0.75rem;
-    color: #f5eee4;
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.25rem;
-    transition: background-color 120ms ease, border-color 120ms ease;
-}
-
-.creature-button:hover {
-    border-color: #a17a49;
-    background: #684d2e;
-}
-
-.creature-button:focus-visible,
-.creature-field :is(input, textarea, select):focus-visible {
-    outline: 2px solid #f08a4b;
-    outline-offset: 2px;
 }
 
 .creature-field {

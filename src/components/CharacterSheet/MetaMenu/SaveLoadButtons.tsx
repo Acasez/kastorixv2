@@ -207,13 +207,30 @@ export default function SaveLoadButtons() {
           </option>
         ))}
       </select>
-      <MetaButton label="Delete" onClick={deleteCharacter} />
-      <MetaButton label="Save" onClick={saveCharacter} />
-      <MetaButton label="Load" onClick={loadCharacter} />
-      <MetaButton label="Export" onClick={exportCharacter} />
+      <MetaButton
+        label="Delete"
+        onClick={deleteCharacter}
+        variant="characterSheet"
+      />
+      <MetaButton
+        label="Save"
+        onClick={saveCharacter}
+        variant="characterSheet"
+      />
+      <MetaButton
+        label="Load"
+        onClick={loadCharacter}
+        variant="characterSheet"
+      />
+      <MetaButton
+        label="Export"
+        onClick={exportCharacter}
+        variant="characterSheet"
+      />
       <MetaButton
         label="Import"
         onClick={() => importInputRef.current?.click()}
+        variant="characterSheet"
       />
       <input
         ref={importInputRef}
