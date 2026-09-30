@@ -80,9 +80,7 @@ function isCreatureSpeeds(value: unknown): value is CreatureData["speeds"] {
   );
 }
 
-function normalizeSpeeds(
-  speeds: CreatureData["speeds"],
-): Creature["speeds"] {
+function normalizeSpeeds(speeds: CreatureData["speeds"]): Creature["speeds"] {
   if (typeof speeds !== "string") return speeds;
 
   const normalized: Creature["speeds"] = {};
@@ -306,79 +304,6 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         </section>
 
         <section>
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="creature-section-title mb-0 flex-1">Speeds</h2>
-            <button
-              className="creature-button ml-3"
-              onClick={addSpeed}
-              disabled={availableSpeeds.length === 0}
-              aria-label="Add speed"
-              title="Add speed"
-            >
-              +
-            </button>
-          </div>
-          <div className="space-y-2">
-            {Object.entries(creature.speeds).map(([speed, distance]) => {
-              const speedType = speed as SpeedTypes;
-              return (
-                <div
-                  className="grid grid-cols-[minmax(0,1fr)_7rem_auto] items-end gap-2"
-                  key={speed}
-                >
-                  <label className="creature-field">
-                    <span>Type</span>
-                    <select
-                      value={speedType}
-                      onChange={(event) =>
-                        changeSpeedType(
-                          speedType,
-                          event.target.value as SpeedTypes,
-                        )
-                      }
-                    >
-                      {SPEED_TYPES.filter(
-                        (candidate) =>
-                          candidate === speedType ||
-                          !(candidate in creature.speeds),
-                      ).map((candidate) => (
-                        <option key={candidate} value={candidate}>
-                          {candidate}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <label className="creature-field">
-                    <span>Distance</span>
-                    <input
-                      type="number"
-                      min={0}
-                      value={distance}
-                      onChange={(event) =>
-                        updateCreature({
-                          speeds: {
-                            ...creature.speeds,
-                            [speedType]: Math.max(0, Number(event.target.value)),
-                          },
-                        })
-                      }
-                    />
-                  </label>
-                  <button
-                    className="creature-button"
-                    onClick={() => removeSpeed(speedType)}
-                    aria-label={`Remove ${speedType} speed`}
-                    title={`Remove ${speedType} speed`}
-                  >
-                    Remove
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <section>
           <h2 className="creature-section-title">Saving Throws</h2>
           <div className="grid grid-cols-3 gap-3">
             {(
@@ -421,6 +346,86 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
                 </div>
               );
             })}
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-1 flex items-center justify-between">
+            <h2 className="creature-section-title mb-0 flex-1">Speeds</h2>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            {Object.entries(creature.speeds).map(([type, speed]) => {
+              const speedType = type as SpeedTypes;
+              return (
+                <div
+                  className="relative inline-flex items-center gap-2 rounded border border-stone-600 bg-stone-800 p-2 pr-3"
+                  key={type}
+                >
+                  <label>
+                    <span className="sr-only">{speedType} speed type</span>
+                    <select
+                      aria-label={`${speedType} speed type`}
+                      value={speedType}
+                      onChange={(event) =>
+                        changeSpeedType(
+                          speedType,
+                          event.target.value as SpeedTypes,
+                        )
+                      }
+                      className="h-8 w-20 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+                    >
+                      {SPEED_TYPES.filter(
+                        (candidate) =>
+                          candidate === speedType ||
+                          !(candidate in creature.speeds),
+                      ).map((candidate) => (
+                        <option key={candidate} value={candidate}>
+                          {candidate}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    <span className="sr-only">{speedType} speed</span>
+                    <input
+                      type="number"
+                      min={0}
+                      value={speed}
+                      aria-label={`${speedType} speed`}
+                      onChange={(event) =>
+                        updateCreature({
+                          speeds: {
+                            ...creature.speeds,
+                            [speedType]: Math.max(
+                              0,
+                              Number(event.target.value),
+                            ),
+                          },
+                        })
+                      }
+                      className="h-8 w-16 rounded border border-stone-500 bg-stone-900 px-1 text-center text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+                    />
+                  </label>
+                  <button
+                    className="absolute -right-2 -top-2 flex size-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold leading-none text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
+                    onClick={() => removeSpeed(speedType)}
+                    aria-label={`Remove ${speedType} speed`}
+                    title={`Remove ${speedType} speed`}
+                  >
+                    ×
+                  </button>
+                </div>
+              );
+            })}
+            <button
+              className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+              onClick={addSpeed}
+              disabled={availableSpeeds.length === 0}
+              aria-label="Add speed"
+              title="Add speed"
+            >
+              +
+            </button>
           </div>
         </section>
 
