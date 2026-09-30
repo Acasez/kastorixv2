@@ -5,7 +5,6 @@ import {
   type CreatureSaveKey,
 } from "../../contexts/CreatureContext";
 import {
-  getProficiency,
   PROFICIENCY_LEVELS,
   type ProficiencyTierName,
 } from "../../constants/Proficiency";
@@ -16,11 +15,11 @@ import skills from "../../json/skills.json";
 import weapons from "../../JSON/weapons.json";
 import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 import NumericTypeList from "./NumericTypeList";
 import CreatureSkillList from "./CreatureSkillList";
 import CreatureStrikeList from "./CreatureStrikeList";
+import CreatureSavingThrows from "./CreatureSavingThrows";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
@@ -386,51 +385,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
           />
         </section>
 
-        <section>
-          <h2 className="creature-section-title">Saving Throws</h2>
-          <div className="grid grid-cols-3 gap-3">
-            {(
-              [
-                { name: "Fortitude", stat: "PHY" },
-                { name: "Reflex", stat: "DEX" },
-                { name: "Will", stat: "WIL" },
-              ] as const
-            ).map((save) => {
-              const tierName = creature.savingThrows[save.name];
-              const tier = getProficiency(tierName);
-              const bonus = creature.stats[save.stat] + tier.bonus;
-
-              return (
-                <div
-                  className="flex items-center justify-center gap-1.5 rounded border-2 border-red-500 px-2 py-1"
-                  key={save.name}
-                >
-                  <span className="font-semibold text-sky-500">
-                    {save.name} ({save.stat})
-                  </span>
-                  <ProficiencyMarker
-                    skillName={save.name}
-                    proficiency={tierName}
-                    onProficiencyChange={(proficiency) =>
-                      updateCreature({
-                        savingThrows: {
-                          ...creature.savingThrows,
-                          [save.name]: proficiency,
-                        },
-                      })
-                    }
-                  />
-                  <span
-                    className="text-xl text-text-light"
-                    aria-label={`${save.name} bonus ${bonus}`}
-                  >
-                    {bonus > 0 ? `+${bonus}` : bonus}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </section>
+        <CreatureSavingThrows />
 
         <NumericTypeList
           title="Speeds"
