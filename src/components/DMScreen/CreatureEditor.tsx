@@ -1,18 +1,8 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
-import {
-  useCreature,
-  type Creature,
-  type CreatureSaveKey,
-} from "../../contexts/CreatureContext";
-import {
-  PROFICIENCY_LEVELS,
-  type ProficiencyTierName,
-} from "../../constants/Proficiency";
+import { useCreature, type Creature } from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import type { SpeedTypes } from "../../types/SpeedTypes";
 import damageTypes from "../../JSON/damage_types.json";
-import skills from "../../json/skills.json";
-import weapons from "../../JSON/weapons.json";
 import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
@@ -21,6 +11,7 @@ import CreatureSkillList from "./CreatureSkillList";
 import CreatureStrikeList from "./CreatureStrikeList";
 import CreatureSavingThrows from "./CreatureSavingThrows";
 import CreatureTextField from "./CreatureTextField";
+
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
@@ -42,194 +33,6 @@ const textFields = [
   ["spells", "Spells"],
   ["passives", "Passives"],
 ] as const;
-
-type CreatureData = Omit<
-  Creature,
-  "savingThrows" | "speeds" | "resistances" | "skills" | "strikes"
-> & {
-  savingThrows: Record<CreatureSaveKey, ProficiencyTierName | number>;
-  speeds: Creature["speeds"] | string;
-  resistances: Creature["resistances"] | string;
-  skills: Creature["skills"] | string;
-  strikes: Creature["strikes"] | string;
-};
-
-function isCreature(value: unknown): value is CreatureData {
-  if (!value || typeof value !== "object") return false;
-  const candidate = value as Partial<CreatureData>;
-  return (
-    typeof candidate.name === "string" &&
-    typeof candidate.size === "string" &&
-    textFields.every(([key]) => typeof candidate[key] === "string") &&
-    isCreatureSkills(candidate.skills) &&
-    isCreatureStrikes(candidate.strikes) &&
-    isCreatureSpeeds(candidate.speeds) &&
-    isCreatureResistances(candidate.resistances) &&
-    ["PHY", "DEX", "INT", "WIL"].every(
-      (key) =>
-        typeof candidate.stats?.[key as keyof Creature["stats"]] === "number",
-    ) &&
-    isTrack(candidate.health) &&
-    isTrack(candidate.aura) &&
-    isTrack(candidate.mana) &&
-    ["Fortitude", "Reflex", "Will"].every((save) => {
-      const saveValue = candidate.savingThrows?.[save as CreatureSaveKey];
-      return (
-        typeof saveValue === "number" ||
-        PROFICIENCY_LEVELS.some((tier) => tier.fullName === saveValue)
-      );
-    })
-  );
-}
-
-function isCreatureStrikes(value: unknown): value is CreatureData["strikes"] {
-  if (typeof value === "string") return true;
-  if (typeof value !== "object" || value === null) return false;
-  const weaponNames = weapons.map(({ name }) => name);
-  return Object.entries(value).every(
-    ([weaponName, proficiency]) =>
-      weaponNames.includes(weaponName) &&
-      PROFICIENCY_LEVELS.some((tier) => tier.fullName === proficiency),
-  );
-}
-
-function normalizeStrikes(value: CreatureData["strikes"]): Creature["strikes"] {
-  if (typeof value !== "string") return value;
-
-  const normalized: Creature["strikes"] = {};
-  const previousNames = value.split(/[,;\n]+/).map((name) => name.trim());
-  for (const previousName of previousNames) {
-    const weapon = weapons.find(
-      ({ name }) => name.toLowerCase() === previousName.toLowerCase(),
-    );
-    if (weapon) normalized[weapon.name] = "Trained";
-  }
-  return normalized;
-}
-
-function isCreatureSkills(value: unknown): value is CreatureData["skills"] {
-  if (typeof value === "string") return true;
-  if (typeof value !== "object" || value === null) return false;
-  const skillNames = skills.map(({ name }) => name);
-  return Object.entries(value).every(
-    ([skillName, proficiency]) =>
-      skillNames.includes(skillName) &&
-      PROFICIENCY_LEVELS.some((tier) => tier.fullName === proficiency),
-  );
-}
-
-function normalizeSkills(value: CreatureData["skills"]): Creature["skills"] {
-  if (typeof value !== "string") return value;
-
-  const normalized: Creature["skills"] = {};
-  const previousNames = value.split(/[,;\n]+/).map((name) => name.trim());
-  for (const previousName of previousNames) {
-    const matchingSkill = skills.find(
-      ({ name }) => name.toLowerCase() === previousName.toLowerCase(),
-    );
-    if (matchingSkill) normalized[matchingSkill.name] = "Untrained";
-  }
-  return normalized;
-}
-
-function isCreatureSpeeds(value: unknown): value is CreatureData["speeds"] {
-  if (typeof value === "string") return true;
-  if (typeof value !== "object" || value === null) return false;
-  return Object.entries(value).every(
-    ([speed, distance]) =>
-      SPEED_TYPES.includes(speed as SpeedTypes) &&
-      typeof distance === "number" &&
-      Number.isFinite(distance),
-  );
-}
-
-function normalizeSpeeds(speeds: CreatureData["speeds"]): Creature["speeds"] {
-  if (typeof speeds !== "string") return speeds;
-
-  const normalized: Creature["speeds"] = {};
-  const pattern = /(Land|Swim|Climb|Burrow|Glide|Fly)\s*:?\s*(\d+)/gi;
-  for (const match of speeds.matchAll(pattern)) {
-    const speed = SPEED_TYPES.find(
-      (candidate) => candidate.toLowerCase() === match[1].toLowerCase(),
-    );
-    if (speed) normalized[speed] = Number(match[2]);
-  }
-  return normalized;
-}
-
-function isCreatureResistances(
-  value: unknown,
-): value is CreatureData["resistances"] {
-  if (typeof value === "string") return true;
-  if (typeof value !== "object" || value === null) return false;
-  return Object.entries(value).every(
-    ([damageType, resistance]) =>
-      DAMAGE_TYPE_NAMES.includes(damageType) &&
-      typeof resistance === "number" &&
-      Number.isFinite(resistance),
-  );
-}
-
-function normalizeResistances(
-  resistances: CreatureData["resistances"],
-): Creature["resistances"] {
-  if (typeof resistances !== "string") return resistances;
-
-  const normalized: Creature["resistances"] = {};
-  for (const damageType of DAMAGE_TYPE_NAMES) {
-    const escapedType = damageType.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const patterns = [
-      new RegExp(`\\(\\s*(\\d+)\\s*\\)\\s*${escapedType}`, "gi"),
-      new RegExp(`${escapedType}\\s*:?\\s*(\\d+)`, "gi"),
-      new RegExp(`(\\d+)\\s+${escapedType}`, "gi"),
-    ];
-
-    for (const pattern of patterns) {
-      const match = pattern.exec(resistances);
-      if (match) {
-        normalized[damageType] = Number(match[1] ?? match[2]);
-        break;
-      }
-    }
-  }
-  return normalized;
-}
-
-function normalizeCreature(value: CreatureData): Creature {
-  const normalizeTier = (
-    tier: ProficiencyTierName | number,
-  ): ProficiencyTierName => {
-    if (typeof tier === "string") return tier;
-    return (
-      PROFICIENCY_LEVELS.find((level) => level.bonus === tier)?.fullName ??
-      "Untrained"
-    );
-  };
-
-  return {
-    ...value,
-    skills: normalizeSkills(value.skills),
-    strikes: normalizeStrikes(value.strikes),
-    speeds: normalizeSpeeds(value.speeds),
-    resistances: normalizeResistances(value.resistances),
-    savingThrows: {
-      Fortitude: normalizeTier(value.savingThrows.Fortitude),
-      Reflex: normalizeTier(value.savingThrows.Reflex),
-      Will: normalizeTier(value.savingThrows.Will),
-    },
-  };
-}
-
-function isTrack(value: unknown): value is Creature["health"] {
-  return (
-    typeof value === "object" &&
-    value !== null &&
-    "current" in value &&
-    typeof value.current === "number" &&
-    "max" in value &&
-    typeof value.max === "number"
-  );
-}
 
 function getSavedCreatures(): string[] {
   return Object.keys(localStorage)
@@ -272,8 +75,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
       const value: unknown = JSON.parse(
         localStorage.getItem(selectedKey) ?? "",
       );
-      if (!isCreature(value)) throw new Error("Invalid creature data");
-      setCreature(normalizeCreature(value));
+      setCreature(value as Creature);
     } catch {
       window.alert("The selected saved creature could not be loaded.");
     }
@@ -308,8 +110,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
 
     try {
       const imported: unknown = JSON.parse(await file.text());
-      if (!isCreature(imported)) throw new Error("Invalid creature data");
-      setCreature(normalizeCreature(imported));
+      setCreature(imported as Creature);
     } catch {
       window.alert("The selected file is not a valid creature JSON file.");
     }

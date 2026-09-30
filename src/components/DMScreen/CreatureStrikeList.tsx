@@ -42,8 +42,10 @@ export default function CreatureStrikeList() {
 
   return (
     <section className="space-y-3">
+      <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
+        Strikes
+      </h2>
       <div className="flex items-center gap-2">
-        <h2 className="creature-section-title mb-0 flex-1">Strikes</h2>
         <select
           aria-label="Select creature weapon"
           value={weaponToAdd}

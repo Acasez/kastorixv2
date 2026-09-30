@@ -13,7 +13,9 @@ export default function CreatureSavingThrows() {
 
   return (
     <section>
-      <h2 className="creature-section-title">Saving Throws</h2>
+      <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
+        Saving Throws
+      </h2>
       <div className="grid grid-cols-3 gap-3">
         {SAVING_THROWS.map((save) => {
           const tierName = creature.savingThrows[save.name];

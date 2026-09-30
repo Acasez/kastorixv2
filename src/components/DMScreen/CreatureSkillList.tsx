@@ -42,7 +42,9 @@ export default function CreatureSkillList() {
 
   return (
     <section>
-      <h2 className="creature-section-title mb-1">Skills</h2>
+      <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
+        Skills
+      </h2>
       <div className="flex flex-wrap items-center gap-2">
         {selectedSkills.map((skillName) => {
           const skill = skills.find(({ name }) => name === skillName);

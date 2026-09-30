@@ -48,7 +48,9 @@ export default function NumericTypeList<T extends string>({
 
   return (
     <section>
-      <h2 className="creature-section-title mb-1">{title}</h2>
+      <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
+        {title}
+      </h2>
       <div className="flex flex-wrap items-center gap-3">
         {selectedTypes.map((type) => (
           <div
