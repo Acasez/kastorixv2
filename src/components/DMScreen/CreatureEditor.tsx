@@ -10,6 +10,7 @@ import {
   type ProficiencyTierName,
 } from "../../constants/Proficiency";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
+import type { SpeedTypes } from "../../types/SpeedTypes";
 import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
@@ -17,6 +18,14 @@ import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
+const SPEED_TYPES: SpeedTypes[] = [
+  "Land",
+  "Swim",
+  "Climb",
+  "Burrow",
+  "Glide",
+  "Fly",
+];
 const textFields = [
   ["traits", "Traits"],
   ["senses", "Senses"],
@@ -24,15 +33,15 @@ const textFields = [
   ["languages", "Languages"],
   ["armor", "Armor"],
   ["resistances", "Resistances"],
-  ["speeds", "Speeds"],
   ["strikes", "Strikes"],
   ["actions", "Actions"],
   ["spells", "Spells"],
   ["passives", "Passives"],
 ] as const;
 
-type CreatureData = Omit<Creature, "savingThrows"> & {
+type CreatureData = Omit<Creature, "savingThrows" | "speeds"> & {
   savingThrows: Record<CreatureSaveKey, ProficiencyTierName | number>;
+  speeds: Creature["speeds"] | string;
 };
 
 function isCreature(value: unknown): value is CreatureData {
@@ -42,6 +51,7 @@ function isCreature(value: unknown): value is CreatureData {
     typeof candidate.name === "string" &&
     typeof candidate.size === "string" &&
     textFields.every(([key]) => typeof candidate[key] === "string") &&
+    isCreatureSpeeds(candidate.speeds) &&
     ["PHY", "DEX", "INT", "WIL"].every(
       (key) =>
         typeof candidate.stats?.[key as keyof Creature["stats"]] === "number",
@@ -59,6 +69,33 @@ function isCreature(value: unknown): value is CreatureData {
   );
 }
 
+function isCreatureSpeeds(value: unknown): value is CreatureData["speeds"] {
+  if (typeof value === "string") return true;
+  if (typeof value !== "object" || value === null) return false;
+  return Object.entries(value).every(
+    ([speed, distance]) =>
+      SPEED_TYPES.includes(speed as SpeedTypes) &&
+      typeof distance === "number" &&
+      Number.isFinite(distance),
+  );
+}
+
+function normalizeSpeeds(
+  speeds: CreatureData["speeds"],
+): Creature["speeds"] {
+  if (typeof speeds !== "string") return speeds;
+
+  const normalized: Creature["speeds"] = {};
+  const pattern = /(Land|Swim|Climb|Burrow|Glide|Fly)\s*:?\s*(\d+)/gi;
+  for (const match of speeds.matchAll(pattern)) {
+    const speed = SPEED_TYPES.find(
+      (candidate) => candidate.toLowerCase() === match[1].toLowerCase(),
+    );
+    if (speed) normalized[speed] = Number(match[2]);
+  }
+  return normalized;
+}
+
 function normalizeCreature(value: CreatureData): Creature {
   const normalizeTier = (
     tier: ProficiencyTierName | number,
@@ -72,6 +109,7 @@ function normalizeCreature(value: CreatureData): Creature {
 
   return {
     ...value,
+    speeds: normalizeSpeeds(value.speeds),
     savingThrows: {
       Fortitude: normalizeTier(value.savingThrows.Fortitude),
       Reflex: normalizeTier(value.savingThrows.Reflex),
@@ -102,6 +140,9 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
   const [savedCreatures, setSavedCreatures] = useState(getSavedCreatures);
   const [selectedKey, setSelectedKey] = useState("");
   const importInputRef = useRef<HTMLInputElement>(null);
+  const availableSpeeds = SPEED_TYPES.filter(
+    (speed) => !(speed in creature.speeds),
+  );
 
   useEffect(() => {
     const refreshSavedCreatures = () => setSavedCreatures(getSavedCreatures());
@@ -175,6 +216,26 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
     }
   };
 
+  const addSpeed = () => {
+    const speed = availableSpeeds[0];
+    if (!speed) return;
+    updateCreature({ speeds: { ...creature.speeds, [speed]: 0 } });
+  };
+
+  const changeSpeedType = (currentSpeed: SpeedTypes, nextSpeed: SpeedTypes) => {
+    const nextSpeeds = { ...creature.speeds };
+    const distance = nextSpeeds[currentSpeed] ?? 0;
+    delete nextSpeeds[currentSpeed];
+    nextSpeeds[nextSpeed] = distance;
+    updateCreature({ speeds: nextSpeeds });
+  };
+
+  const removeSpeed = (speed: SpeedTypes) => {
+    const nextSpeeds = { ...creature.speeds };
+    delete nextSpeeds[speed];
+    updateCreature({ speeds: nextSpeeds });
+  };
+
   return (
     <section className="w-full max-w-4xl overflow-hidden border border-stone-700 bg-bg-creature text-text-light shadow-lg">
       <CreatureMeta
@@ -242,6 +303,79 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
             }}
             onTrackChange={(key, track) => updateCreature({ [key]: track })}
           />
+        </section>
+
+        <section>
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="creature-section-title mb-0 flex-1">Speeds</h2>
+            <button
+              className="creature-button ml-3"
+              onClick={addSpeed}
+              disabled={availableSpeeds.length === 0}
+              aria-label="Add speed"
+              title="Add speed"
+            >
+              +
+            </button>
+          </div>
+          <div className="space-y-2">
+            {Object.entries(creature.speeds).map(([speed, distance]) => {
+              const speedType = speed as SpeedTypes;
+              return (
+                <div
+                  className="grid grid-cols-[minmax(0,1fr)_7rem_auto] items-end gap-2"
+                  key={speed}
+                >
+                  <label className="creature-field">
+                    <span>Type</span>
+                    <select
+                      value={speedType}
+                      onChange={(event) =>
+                        changeSpeedType(
+                          speedType,
+                          event.target.value as SpeedTypes,
+                        )
+                      }
+                    >
+                      {SPEED_TYPES.filter(
+                        (candidate) =>
+                          candidate === speedType ||
+                          !(candidate in creature.speeds),
+                      ).map((candidate) => (
+                        <option key={candidate} value={candidate}>
+                          {candidate}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label className="creature-field">
+                    <span>Distance</span>
+                    <input
+                      type="number"
+                      min={0}
+                      value={distance}
+                      onChange={(event) =>
+                        updateCreature({
+                          speeds: {
+                            ...creature.speeds,
+                            [speedType]: Math.max(0, Number(event.target.value)),
+                          },
+                        })
+                      }
+                    />
+                  </label>
+                  <button
+                    className="creature-button"
+                    onClick={() => removeSpeed(speedType)}
+                    aria-label={`Remove ${speedType} speed`}
+                    title={`Remove ${speedType} speed`}
+                  >
+                    Remove
+                  </button>
+                </div>
+              );
+            })}
+          </div>
         </section>
 
         <section>

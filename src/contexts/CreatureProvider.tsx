@@ -19,7 +19,7 @@ const defaultCreature: Creature = {
   },
   armor: "",
   resistances: "",
-  speeds: "",
+  speeds: {},
   strikes: "",
   actions: "",
   spells: "",

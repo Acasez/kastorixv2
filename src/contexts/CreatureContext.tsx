@@ -5,6 +5,7 @@ import {
   type SetStateAction,
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
+import type { SpeedTypes } from "../types/SpeedTypes";
 
 export type CreatureSaveKey = "Fortitude" | "Reflex" | "Will";
 
@@ -27,7 +28,7 @@ export type Creature = {
   savingThrows: Record<CreatureSaveKey, ProficiencyTierName>;
   armor: string;
   resistances: string;
-  speeds: string;
+  speeds: Partial<Record<SpeedTypes, number>>;
   strikes: string;
   actions: string;
   spells: string;
