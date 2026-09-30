@@ -1,7 +1,9 @@
 import { getProficiency } from "../../../constants/Proficiency";
 import type { ProficiencyTierName } from "../../../constants/Proficiency";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useContext } from "react";
+import { CharacterContext } from "../../../contexts/CharacterContext";
 import type { Weapon } from "../../../types/Weapons";
+import type { StatKey } from "../../../types/StatKey";
 import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
 import Tooltip from "../../Tooltip";
 import weaponTraits from "../../../JSON/weapon_traits.json";
@@ -13,6 +15,9 @@ interface WeaponComponentProps {
   attackStatOverride?: number;
   damageBonusOverride?: number;
   fixedProficiency?: ProficiencyTierName;
+  creatureStats?: Record<StatKey, number>;
+  proficiency?: ProficiencyTierName;
+  onProficiencyChange?: (proficiency: ProficiencyTierName) => void;
 }
 
 function normalizeTraitName(traitName: string) {
@@ -36,23 +41,35 @@ export default function WeaponComponent({
   attackStatOverride,
   damageBonusOverride,
   fixedProficiency,
+  creatureStats,
+  proficiency,
+  onProficiencyChange,
 }: WeaponComponentProps) {
-  const { character } = useCharacter();
+  const characterContext = useContext(CharacterContext);
+  const baseStats = creatureStats ?? characterContext?.character.baseStats;
+  if (!baseStats) {
+    throw new Error(
+      "WeaponComponent requires CharacterContext or creatureStats",
+    );
+  }
 
   const weaponTraits = weapon.traits.split(",").map((trait) => trait.trim());
   const attackStat =
     attackStatOverride ??
     (weaponTraits.includes("Ranged")
-      ? character.baseStats.DEX
+      ? baseStats.DEX
       : weaponTraits.includes("Finesse")
-        ? Math.max(character.baseStats.DEX, character.baseStats.PHY)
-        : character.baseStats.PHY);
+        ? Math.max(baseStats.DEX, baseStats.PHY)
+        : baseStats.PHY);
 
   const damageBonus =
     damageBonusOverride ??
-    (weaponTraits.includes("Ranged") ? 0 : character.baseStats.PHY);
+    (weaponTraits.includes("Ranged") ? 0 : baseStats.PHY);
   const proficiencyTier =
-    fixedProficiency ?? character.skillProficiencies[weapon.name] ?? "Trained";
+    proficiency ??
+    fixedProficiency ??
+    characterContext?.character.skillProficiencies[weapon.name] ??
+    "Trained";
 
   const multiAttackPenalty = weaponTraits.includes("Agile") ? -4 : -5;
 
@@ -135,7 +152,13 @@ export default function WeaponComponent({
           <span className="text-base font-semibold text-white">
             {weapon.name}
           </span>
-          {fixedProficiency ? (
+          {onProficiencyChange ? (
+            <ProficiencyMarker
+              skillName={weapon.name}
+              proficiency={proficiencyTier}
+              onProficiencyChange={onProficiencyChange}
+            />
+          ) : fixedProficiency ? (
             <span className="rounded bg-slate-600 px-1.5 py-0.5 text-xs text-white">
               {fixedProficiency}
             </span>

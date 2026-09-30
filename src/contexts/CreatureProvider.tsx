@@ -20,7 +20,7 @@ const defaultCreature: Creature = {
   armor: "",
   resistances: {},
   speeds: { Land: 5 },
-  strikes: "",
+  strikes: {},
   actions: "",
   spells: "",
   passives: "",
@@ -37,6 +37,7 @@ export function CreatureProvider({ children }: { children: ReactNode }) {
     skills: { ...defaultCreature.skills },
     resistances: { ...defaultCreature.resistances },
     speeds: { ...defaultCreature.speeds },
+    strikes: { ...defaultCreature.strikes },
   }));
 
   const updateCreature = useCallback(

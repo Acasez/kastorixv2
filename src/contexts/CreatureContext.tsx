@@ -29,7 +29,7 @@ export type Creature = {
   armor: string;
   resistances: Partial<Record<string, number>>;
   speeds: Partial<Record<SpeedTypes, number>>;
-  strikes: string;
+  strikes: Partial<Record<string, ProficiencyTierName>>;
   actions: string;
   spells: string;
   passives: string;
