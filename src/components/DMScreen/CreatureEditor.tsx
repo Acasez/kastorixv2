@@ -20,6 +20,7 @@ import NumericTypeList from "./NumericTypeList";
 import CreatureSkillList from "./CreatureSkillList";
 import CreatureStrikeList from "./CreatureStrikeList";
 import CreatureSavingThrows from "./CreatureSavingThrows";
+import CreatureTextField from "./CreatureTextField";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
@@ -331,15 +332,11 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
 
       <div className="space-y-5 p-4">
         <div className="grid gap-3 sm:grid-cols-2">
-          <label className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200">
-            <span>Name</span>
-            <input
-              className="w-full min-w-0 rounded-xs border border-[#5b554d] bg-[#242321] px-[0.55rem] py-[0.45rem] font-normal text-[#f5eee4]"
-              value={creature.name}
-              onChange={(event) => updateCreature({ name: event.target.value })}
-              placeholder="Creature Name"
-            />
-          </label>
+          <CreatureTextField
+            field="Name"
+            value={creature.name}
+            onChange={(value) => updateCreature({ name: value })}
+          />
           <label className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200">
             <span>Size</span>
             <select
@@ -353,20 +350,12 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
             </select>
           </label>
           {textFields.slice(0, 4).map(([key, label]) => (
-            <label
-              className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200"
+            <CreatureTextField
               key={key}
-            >
-              <span>{label}</span>
-              <input
-                className="w-full min-w-0 rounded-xs border border-[#5b554d] bg-[#242321] px-[0.55rem] py-[0.45rem] font-normal text-[#f5eee4]"
-                value={creature[key]}
-                onChange={(event) =>
-                  updateCreature({ [key]: event.target.value })
-                }
-                placeholder={`${label}...`}
-              />
-            </label>
+              field={label}
+              value={creature[key]}
+              onChange={(value) => updateCreature({ [key]: value })}
+            />
           ))}
         </div>
 
