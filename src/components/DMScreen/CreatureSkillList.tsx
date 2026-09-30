@@ -67,7 +67,7 @@ export default function CreatureSkillList() {
                   onChange={(event) =>
                     changeSkill(skillName, event.target.value)
                   }
-                  className="h-8 w-32 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+                  className="h-8 max-w-30 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
                 >
                   {skillNames
                     .filter(
