@@ -21,6 +21,7 @@ const defaultCreature: Creature = {
   resistances: {},
   speeds: { Land: 5 },
   strikes: {},
+  spellProficiencies: {},
   actions: "",
   spells: [],
   passives: "",
@@ -38,6 +39,7 @@ export function CreatureProvider({ children }: { children: ReactNode }) {
     resistances: { ...defaultCreature.resistances },
     speeds: { ...defaultCreature.speeds },
     strikes: { ...defaultCreature.strikes },
+    spellProficiencies: { ...defaultCreature.spellProficiencies },
     spells: [...defaultCreature.spells],
   }));
 

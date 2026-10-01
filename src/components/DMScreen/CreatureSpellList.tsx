@@ -1,9 +1,11 @@
 import { useState } from "react";
 import spells from "../../JSON/spells.json";
+import type { ProficiencyTierName } from "../../constants/Proficiency";
 import { useCreature } from "../../contexts/CreatureContext";
 import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getSpellChoiceItems } from "../ModalViews/choiceData";
+import SpellComponent from "../CharacterSheet/TabbedSection/SpellComponent";
 
 const spellChoiceItems = getSpellChoiceItems();
 const spellFilters = [
@@ -14,19 +16,63 @@ const spellFilters = [
 export default function CreatureSpellList() {
   const { creature, updateCreature } = useCreature();
   const [isSpellModalOpen, setIsSpellModalOpen] = useState(false);
+  const [spellToReplace, setSpellToReplace] = useState<string | null>(null);
   const selectedSpells = spells.filter((spell) =>
     creature.spells.includes(spell.name),
   );
 
-  const addSpell = (spellName: string) => {
-    if (creature.spells.includes(spellName)) return;
-    updateCreature({ spells: [...creature.spells, spellName] });
+  const closeSpellModal = () => {
     setIsSpellModalOpen(false);
+    setSpellToReplace(null);
   };
 
-  const removeSpell = (spellName: string) =>
+  const openSpellModal = (replaceSpell: string | null = null) => {
+    setSpellToReplace(replaceSpell);
+    setIsSpellModalOpen(true);
+  };
+
+  const confirmSpell = (spellName: string) => {
+    const spellProficiencies = { ...(creature.spellProficiencies ?? {}) };
+
+    if (spellToReplace) {
+      if (spellName !== spellToReplace && creature.spells.includes(spellName)) {
+        return;
+      }
+      const proficiency = spellProficiencies[spellToReplace] ?? "Trained";
+      delete spellProficiencies[spellToReplace];
+      spellProficiencies[spellName] = proficiency;
+      updateCreature({
+        spells: creature.spells.map((name) =>
+          name === spellToReplace ? spellName : name,
+        ),
+        spellProficiencies,
+      });
+    } else {
+      if (creature.spells.includes(spellName)) return;
+      updateCreature({ spells: [...creature.spells, spellName] });
+    }
+
+    closeSpellModal();
+  };
+
+  const removeSpell = (spellName: string) => {
+    const spellProficiencies = { ...(creature.spellProficiencies ?? {}) };
+    delete spellProficiencies[spellName];
     updateCreature({
       spells: creature.spells.filter((name) => name !== spellName),
+      spellProficiencies,
+    });
+  };
+
+  const setSpellProficiency = (
+    spellName: string,
+    proficiency: ProficiencyTierName,
+  ) =>
+    updateCreature({
+      spellProficiencies: {
+        ...(creature.spellProficiencies ?? {}),
+        [spellName]: proficiency,
+      },
     });
 
   return (
@@ -38,7 +84,7 @@ export default function CreatureSpellList() {
         <button
           type="button"
           className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={() => setIsSpellModalOpen(true)}
+          onClick={() => openSpellModal()}
           aria-label="Add spell"
           title="Add spell"
         >
@@ -46,44 +92,35 @@ export default function CreatureSpellList() {
         </button>
       </div>
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-wrap gap-2">
         {selectedSpells.map((spell) => (
-          <div
-            className="flex items-center justify-between gap-3 rounded border border-stone-600 bg-stone-800 px-3 py-2"
+          <SpellComponent
             key={spell.name}
-          >
-            <div className="min-w-0">
-              <h3 className="font-semibold text-white">{spell.name}</h3>
-              <p className="text-xs text-stone-300">
-                {spell.rank} | {spell.aspects} | {spell.traits}
-              </p>
-            </div>
-            <button
-              type="button"
-              className="flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600 text-sm font-bold leading-none text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
-              onClick={() => removeSpell(spell.name)}
-              aria-label={`Remove ${spell.name} spell`}
-              title={`Remove ${spell.name} spell`}
-            >
-              ×
-            </button>
-          </div>
+            spell={spell}
+            onReplaceSpell={(_rankName, spellName) => openSpellModal(spellName)}
+            onRemoveSpell={removeSpell}
+            baseSpellshapingBonus={0}
+            rankName={spell.rank}
+            proficiency={creature.spellProficiencies?.[spell.name] ?? "Trained"}
+            onProficiencyChange={(proficiency) =>
+              setSpellProficiency(spell.name, proficiency)
+            }
+          />
         ))}
       </div>
 
       {isSpellModalOpen && (
-        <ChoiceModalFrame
-          title="Select Spell"
-          closeModal={() => setIsSpellModalOpen(false)}
-        >
+        <ChoiceModalFrame title="Select Spell" closeModal={closeSpellModal}>
           <ChoiceModal
             items={spellChoiceItems}
-            confirmLabel="Add Spell"
-            initialValue={null}
+            confirmLabel={spellToReplace ? "Replace Spell" : "Add Spell"}
+            initialValue={spellToReplace}
             maxLevel={Infinity}
-            disabledNames={creature.spells}
+            disabledNames={creature.spells.filter(
+              (spellName) => spellName !== spellToReplace,
+            )}
             filterFields={spellFilters}
-            onConfirm={addSpell}
+            onConfirm={confirmSpell}
           />
         </ChoiceModalFrame>
       )}

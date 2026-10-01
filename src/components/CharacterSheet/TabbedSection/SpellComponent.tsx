@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { getProficiency } from "../../../constants/Proficiency";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import type { ProficiencyTierName } from "../../../constants/Proficiency";
+import { CharacterContext } from "../../../contexts/CharacterContext";
 import type { Spell } from "../../../types/Spells";
 import { getActionIcons } from "../../../utils/actionUtils";
 import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
@@ -11,6 +13,8 @@ interface SpellComponentProps {
   onRemoveSpell: (spellName: string) => void;
   baseSpellshapingBonus: number;
   rankName: string;
+  proficiency?: ProficiencyTierName;
+  onProficiencyChange?: (proficiency: ProficiencyTierName) => void;
 }
 
 export default function SpellComponent({
@@ -19,8 +23,24 @@ export default function SpellComponent({
   onRemoveSpell,
   baseSpellshapingBonus,
   rankName,
+  proficiency,
+  onProficiencyChange,
 }: SpellComponentProps) {
-  const { character } = useCharacter();
+  const characterContext = useContext(CharacterContext);
+  if (Boolean(proficiency) !== Boolean(onProficiencyChange)) {
+    throw new Error(
+      "SpellComponent requires both proficiency and onProficiencyChange in controlled mode",
+    );
+  }
+  if (!onProficiencyChange && !characterContext) {
+    throw new Error(
+      "SpellComponent requires CharacterContext in character mode",
+    );
+  }
+  const proficiencyTier =
+    proficiency ??
+    characterContext?.character.skillProficiencies[spell.name] ??
+    "Trained";
   return (
     <Tooltip
       key={spell.name}
@@ -103,13 +123,18 @@ export default function SpellComponent({
             className="w-5 h-5 object-contain"
           />
         ))}
-        <ProficiencyMarker skillName={spell.name} defaultTier="Trained" />
+        {onProficiencyChange ? (
+          <ProficiencyMarker
+            skillName={spell.name}
+            proficiency={proficiencyTier}
+            onProficiencyChange={onProficiencyChange}
+          />
+        ) : (
+          <ProficiencyMarker skillName={spell.name} defaultTier="Trained" />
+        )}
         <span>
           {`(+${
-            baseSpellshapingBonus +
-            getProficiency(
-              character.skillProficiencies[spell.name] ?? "Trained",
-            ).bonus
+            baseSpellshapingBonus + getProficiency(proficiencyTier).bonus
           })`}
         </span>
       </div>
