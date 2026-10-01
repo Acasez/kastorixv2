@@ -5,7 +5,7 @@ import {
   type SetStateAction,
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
-import type { ActionCost } from "../types/Action";
+import type { CreatureActionCost } from "../types/Action";
 import type { StatKey } from "../types/StatKey";
 import type { SpeedTypes } from "../types/SpeedTypes";
 import type { SomaticComponent, VerbalComponent } from "../types/Spells";
@@ -20,7 +20,7 @@ export type CreatureTrack = {
 export type CreatureAction = {
   id: string;
   name: string;
-  actions: ActionCost;
+  actions: CreatureActionCost;
   stat: StatKey;
   proficiency: ProficiencyTierName;
   manaCost: number;

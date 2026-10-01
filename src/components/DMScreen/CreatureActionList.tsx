@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import type { ActionCost } from "../../types/Action";
+import type { CreatureActionCost } from "../../types/Action";
 import {
   getProficiency,
   signed,
@@ -30,7 +30,14 @@ const EMPTY_ACTION: ActionDraft = {
   traits: "",
 };
 
-const ACTION_COSTS: readonly ActionCost[] = ["0", "1", "2", "3", "R"];
+const ACTION_COSTS: readonly CreatureActionCost[] = [
+  "0",
+  "1",
+  "2",
+  "3",
+  "R",
+  "L",
+];
 
 export default function CreatureActionList() {
   const { creature, updateCreature } = useCreature();
@@ -146,7 +153,7 @@ export default function CreatureActionList() {
               <legend className="text-sm font-semibold text-stone-200">
                 Action cost
               </legend>
-              <MultiOptionSwitch<ActionCost>
+              <MultiOptionSwitch<CreatureActionCost>
                 options={ACTION_COSTS}
                 value={draft.actions}
                 labels={{ "0": "Free", R: "Reaction" }}
@@ -280,7 +287,7 @@ export default function CreatureActionList() {
                   <img
                     key={`${action.id}-cost-${index}`}
                     src={icon}
-                    alt=""
+                    alt={action.actions}
                     aria-hidden="true"
                     className="size-5 object-contain"
                   />
@@ -290,7 +297,7 @@ export default function CreatureActionList() {
                 {action.name}
               </h3>
               <div className="flex flex-wrap gap-x-5 gap-y-1 text-stone-300">
-                {action.manaCost && (
+                {action.manaCost > 0 && (
                   <p>
                     <strong>Mana cost:</strong> {action.manaCost}
                   </p>

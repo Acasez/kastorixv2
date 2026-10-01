@@ -43,7 +43,10 @@ export const getActionIcons = (actionCost: string): string[] => {
     if (cost === "0" || cost === "free") {
       icons.push("./images/Icons/FreeAction.png");
     }
-    if (cost.includes("reaction")) icons.push("./images/Icons/Reaction.png");
+    if (cost === "r" || cost === "reaction" || cost.includes("reaction"))
+      icons.push("./images/Icons/Reaction.png");
+    if (cost === "l" || cost === "lair")
+      icons.push("./images/Icons/LairAction.png");
   }
 
   return icons;
