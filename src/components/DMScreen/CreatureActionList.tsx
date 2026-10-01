@@ -1,6 +1,9 @@
 import { useState, type FormEvent } from "react";
 import type { ActionCost } from "../../types/Action";
-import { useCreature, type CreatureAction } from "../../contexts/CreatureContext";
+import {
+  useCreature,
+  type CreatureAction,
+} from "../../contexts/CreatureContext";
 import { getActionIcons } from "../../utils/actionUtils";
 import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
 import CreatureHeader from "./CreatureHeader";
@@ -77,13 +80,19 @@ export default function CreatureActionList() {
   return (
     <section className="space-y-3">
       <div className="flex items-center gap-2">
-        <CreatureHeader title="Actions" />
+        <div className="w-full">
+          <CreatureHeader title="Actions" />
+        </div>
         <button
           type="button"
           className="flex size-8 shrink-0 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
           onClick={openNewAction}
-          aria-label={isEditorOpen && !editingActionId ? "Cancel action" : "Add action"}
-          title={isEditorOpen && !editingActionId ? "Cancel action" : "Add action"}
+          aria-label={
+            isEditorOpen && !editingActionId ? "Cancel action" : "Add action"
+          }
+          title={
+            isEditorOpen && !editingActionId ? "Cancel action" : "Add action"
+          }
         >
           {isEditorOpen && !editingActionId ? "×" : "+"}
         </button>
@@ -225,10 +234,14 @@ export default function CreatureActionList() {
             </header>
             <div className="space-y-2 px-3 py-2 text-sm leading-5">
               {action.trigger && (
-                <p><strong>Trigger:</strong> {action.trigger}</p>
+                <p>
+                  <strong>Trigger:</strong> {action.trigger}
+                </p>
               )}
               {action.requirement && (
-                <p><strong>Requirement:</strong> {action.requirement}</p>
+                <p>
+                  <strong>Requirement:</strong> {action.requirement}
+                </p>
               )}
               <p className="whitespace-pre-line">{action.description}</p>
               {action.traits && (
