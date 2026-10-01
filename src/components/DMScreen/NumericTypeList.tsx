@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 type NumericTypeListProps<T extends string> = {
   title: string;
   itemLabel: string;
@@ -17,12 +19,16 @@ export default function NumericTypeList<T extends string>({
   typeWidthClass,
   allowNegative,
 }: NumericTypeListProps<T>) {
-  const selectedTypes = options.filter((type) => type in values);
+  const [isAdding, setIsAdding] = useState(false);
+  const selectedTypes = options
+    .filter((type) => type in values)
+    .sort((first, second) => (values[second] ?? 0) - (values[first] ?? 0));
   const availableTypes = options.filter((type) => !(type in values));
 
-  const addType = () => {
-    const type = availableTypes[0];
-    if (type) onChange({ ...values, [type]: 0 });
+  const addType = (type: T) => {
+    if (!availableTypes.includes(type)) return;
+    onChange({ ...values, [type]: 0 });
+    setIsAdding(false);
   };
 
   const changeType = (currentType: T, nextType: T) => {
@@ -105,13 +111,32 @@ export default function NumericTypeList<T extends string>({
         <button
           type="button"
           className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={addType}
+          onClick={() => setIsAdding((open) => !open)}
           disabled={availableTypes.length === 0}
           aria-label={`Add ${itemLabel}`}
           title={`Add ${itemLabel}`}
+          aria-expanded={isAdding}
         >
           +
         </button>
+        {isAdding && (
+          <select
+            autoFocus
+            aria-label={`Choose ${itemLabel} to add`}
+            value=""
+            onChange={(event) => addType(event.target.value as T)}
+            className={`h-8 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 ${typeWidthClass}`}
+          >
+            <option value="" disabled>
+              Select
+            </option>
+            {availableTypes.map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
     </section>
   );
