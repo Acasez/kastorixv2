@@ -168,6 +168,19 @@ export function getWeaponChoiceItems(
   return createChoiceItems(availableWeapons, WEAPON_FIELDS);
 }
 
+export function getSpellChoiceItems(rank?: string): ChoiceItem[] {
+  const availableSpells = rank
+    ? spells.filter((spell) => spell.rank.endsWith(` ${rank}`))
+    : spells;
+
+  return availableSpells.map((spell) => ({
+    ...createChoiceItems([spell], SPELL_FIELDS)[0],
+    aspects: spell.aspects,
+    traits: spell.traits,
+    actionIcons: getActionIcons(spell.actions),
+  }));
+}
+
 function featIsAvailableForSpecies(
   featSpecies: string,
   selectedSpecies: string | null,
@@ -180,16 +193,9 @@ function featIsAvailableForSpecies(
 }
 
 export function getChoiceData(request: ModalRequest): ChoiceData {
-  const spellItems: ChoiceItem[] = (
-    request.type === "spell" && request.rank
-      ? spells.filter((spell) => spell.rank.endsWith(` ${request.rank}`))
-      : spells
-  ).map((spell) => ({
-    ...createChoiceItems([spell], SPELL_FIELDS)[0],
-    aspects: spell.aspects,
-    traits: spell.traits,
-    actionIcons: getActionIcons(spell.actions),
-  }));
+  const spellItems = getSpellChoiceItems(
+    request.type === "spell" ? request.rank : undefined,
+  );
 
   const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
     name: speciesItem.name,
