@@ -91,9 +91,22 @@ export default function CreatureSpellList() {
     });
 
   return (
-    <section className="space-y-3">
-      <div className="flex flex-wrap items-center gap-2">
-        <CreatureHeader title="Spells" />
+    <section>
+      <div className="flex flex-row justify-center">
+        <div className="w-full">
+          <CreatureHeader title="Spells" />
+        </div>
+        <button
+          type="button"
+          className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+          onClick={() => openSpellModal()}
+          aria-label="Add strike"
+          title="Add strike"
+        >
+          +
+        </button>
+      </div>
+      <div className="flex flex-row justify-center mb-3 -mt-2 gap-2">
         <MultiOptionSwitch<VerbalComponent>
           options={["None", "Standard", "Attuned"]}
           value={verbal}
@@ -118,15 +131,6 @@ export default function CreatureSpellList() {
             })
           }
         />
-        <button
-          type="button"
-          className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={() => openSpellModal()}
-          aria-label="Add spell"
-          title="Add spell"
-        >
-          +
-        </button>
       </div>
 
       <div className="flex flex-wrap gap-2">
