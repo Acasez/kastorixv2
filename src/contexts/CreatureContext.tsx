@@ -5,6 +5,7 @@ import {
   type SetStateAction,
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
+import type { ActionCost } from "../types/Action";
 import type { SpeedTypes } from "../types/SpeedTypes";
 import type { SomaticComponent, VerbalComponent } from "../types/Spells";
 
@@ -13,6 +14,16 @@ export type CreatureSaveKey = "Fortitude" | "Reflex" | "Will";
 export type CreatureTrack = {
   current: number;
   max: number;
+};
+
+export type CreatureAction = {
+  id: string;
+  name: string;
+  actions: ActionCost;
+  trigger: string;
+  requirement: string;
+  description: string;
+  traits: string;
 };
 
 export type Creature = {
@@ -36,7 +47,7 @@ export type Creature = {
     verbal: VerbalComponent;
     somatic: SomaticComponent;
   };
-  actions: string;
+  actions: CreatureAction[];
   spells: string[];
   passives: string;
 };

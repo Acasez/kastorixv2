@@ -17,6 +17,7 @@ import CreatureSavingThrows from "./CreatureSavingThrows";
 import CreatureTextField from "./CreatureTextField";
 import CreatureSpellList from "./CreatureSpellList";
 import CreatureHeader from "./CreatureHeader";
+import CreatureActionList from "./CreatureActionList";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
@@ -35,7 +36,6 @@ const textFields = [
   ["senses", "Senses"],
   ["languages", "Languages"],
   ["armor", "Armor"],
-  ["actions", "Actions"],
   ["passives", "Passives"],
 ] as const;
 
@@ -250,6 +250,8 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         <CreatureStrikeList />
 
         <CreatureSpellList />
+
+        <CreatureActionList />
 
         <div className="grid gap-3 sm:grid-cols-2">
           {textFields.slice(4).map(([key, label]) => (

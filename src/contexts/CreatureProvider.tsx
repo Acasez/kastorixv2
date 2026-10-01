@@ -23,7 +23,7 @@ const defaultCreature: Creature = {
   strikes: {},
   spellProficiencies: {},
   spellShaping: { verbal: "Standard", somatic: "Two Handed" },
-  actions: "",
+  actions: [],
   spells: [],
   passives: "",
 };
@@ -43,6 +43,7 @@ export function CreatureProvider({ children }: { children: ReactNode }) {
     spellProficiencies: { ...defaultCreature.spellProficiencies },
     spellShaping: { ...defaultCreature.spellShaping },
     spells: [...defaultCreature.spells],
+    actions: [...defaultCreature.actions],
   }));
 
   const updateCreature = useCallback(
