@@ -131,8 +131,8 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         importCreature={importCreature}
       />
 
-      <div className="space-y-5 p-4">
-        <div className="grid gap-3 sm:grid-cols-2">
+      <div className="px-4 py-2">
+        <div className="grid gap-2 sm:grid-cols-2 mb-2">
           <CreatureTextField
             field="Name"
             value={creature.name}

@@ -12,7 +12,7 @@ export default function CreatureSavingThrows() {
   const { creature, updateCreature } = useCreature();
 
   return (
-    <section>
+    <section className="p-2">
       <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
         Saving Throws
       </h2>

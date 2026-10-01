@@ -43,7 +43,7 @@ export default function CreatureSkillList() {
   };
 
   return (
-    <section>
+    <section className="py-2">
       <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
         Skills
       </h2>
