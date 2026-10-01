@@ -203,6 +203,8 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
           ))}
         </div>
 
+        <CreatureSkillList />
+
         <CreatureHeader title="Stats" />
         <StatsGrid
           stats={creature.stats}
@@ -210,8 +212,6 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
             updateCreature({ stats: { ...creature.stats, [key]: value } })
           }
         />
-
-        <CreatureSkillList />
 
         <section>
           <CreatureHeader title="Resources" />
