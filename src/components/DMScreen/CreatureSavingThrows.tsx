@@ -1,5 +1,6 @@
 import { getProficiency } from "../../constants/Proficiency";
 import { useCreature } from "../../contexts/CreatureContext";
+import armors from "../../JSON/armors.json";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureHeader from "./CreatureHeader";
 
@@ -11,6 +12,9 @@ const SAVING_THROWS = [
 
 export default function CreatureSavingThrows() {
   const { creature, updateCreature } = useCreature();
+  const selectedArmor = armors.find((armor) => armor.name === creature.armor);
+  const reflexPenalty =
+    selectedArmor?.type === "Heavy" ? Number(selectedArmor.penalties) : 0;
 
   return (
     <section className="p-2">
@@ -19,7 +23,10 @@ export default function CreatureSavingThrows() {
         {SAVING_THROWS.map((save) => {
           const tierName = creature.savingThrows[save.name];
           const tier = getProficiency(tierName);
-          const bonus = creature.stats[save.stat] + tier.bonus;
+          const bonus =
+            creature.stats[save.stat] +
+            tier.bonus +
+            (save.name === "Reflex" ? reflexPenalty : 0);
 
           return (
             <div

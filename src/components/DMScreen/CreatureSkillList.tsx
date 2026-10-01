@@ -5,6 +5,7 @@ import {
   type ProficiencyTierName,
 } from "../../constants/Proficiency";
 import skills from "../../json/skills.json";
+import armors from "../../JSON/armors.json";
 import { useCreature } from "../../contexts/CreatureContext";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
@@ -14,6 +15,8 @@ const skillNames = skills.map(({ name }) => name);
 
 export default function CreatureSkillList() {
   const { creature, updateCreature } = useCreature();
+  const selectedArmor = armors.find((armor) => armor.name === creature.armor);
+  const armorPenalty = Number(selectedArmor?.penalties ?? 0);
   const [isAdding, setIsAdding] = useState(false);
   const selectedSkills = skillNames.filter((name) => name in creature.skills);
   const availableSkills = skillNames.filter(
@@ -92,7 +95,15 @@ export default function CreatureSkillList() {
           const proficiency: ProficiencyTierName =
             creature.skills[skillName] ?? "Untrained";
           const tier = getProficiency(proficiency);
-          const bonus = creature.stats[stat] + tier.bonus;
+          const armorApplies =
+            selectedArmor?.type === "Heavy"
+              ? skill.armorPenalties === "Light" ||
+                skill.armorPenalties === "Heavy"
+              : skill.armorPenalties === selectedArmor?.type;
+          const bonus =
+            creature.stats[stat] +
+            tier.bonus +
+            (armorApplies ? armorPenalty : 0);
 
           return (
             <div
@@ -136,7 +147,7 @@ export default function CreatureSkillList() {
               <span
                 className="min-w-5 text-center text-sm font-semibold text-white"
                 aria-label={`${skillName} modifier ${signed(bonus)}`}
-                title={`${skill.stat} ${creature.stats[stat]} + ${tier.fullName} ${tier.bonus}`}
+                title={`${skill.stat} ${creature.stats[stat]} + ${tier.fullName} ${tier.bonus}${armorApplies ? ` + ${creature.armor} ${armorPenalty}` : ""}`}
               >
                 {signed(bonus)}
               </span>

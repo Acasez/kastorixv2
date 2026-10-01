@@ -18,6 +18,7 @@ import CreatureSpellList from "./CreatureSpellList";
 import CreatureHeader from "./CreatureHeader";
 import CreatureActionList from "./CreatureActionList";
 import CreaturePassiveList from "./CreaturePassiveList";
+import CreatureArmorSelector from "./CreatureArmorSelector";
 import { SPEED_TYPES } from "../../constants/SpeedTypes";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
@@ -29,7 +30,6 @@ const textFields = [
   ["traits", "Traits"],
   ["senses", "Senses"],
   ["languages", "Languages"],
-  ["armor", "Armor"],
 ] as const;
 
 type ResourceKey = "health" | "aura" | "mana";
@@ -194,6 +194,8 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               onChange={(value) => updateCreature({ [key]: value })}
             />
           ))}
+
+          <CreatureArmorSelector />
         </div>
 
         <CreatureSkillList />

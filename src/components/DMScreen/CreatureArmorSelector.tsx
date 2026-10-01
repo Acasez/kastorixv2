@@ -1,0 +1,64 @@
+import { useState } from "react";
+import armors from "../../JSON/armors.json";
+import { useCreature } from "../../contexts/CreatureContext";
+import { getCharacterResistances } from "../../utils/characterResistances";
+import ChoiceModal from "../ModalViews/ChoiceModal";
+import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
+import { getArmorChoiceItems } from "../ModalViews/choiceData";
+
+const armorChoiceItems = getArmorChoiceItems();
+
+export default function CreatureArmorSelector() {
+  const { creature, updateCreature } = useCreature();
+  const [isArmorModalOpen, setIsArmorModalOpen] = useState(false);
+  const selectedArmor = armors.find((armor) => armor.name === creature.armor);
+
+  return (
+    <section className="flex h-full items-center justify-center">
+      <div className="flex flex-wrap items-center justify-center gap-3">
+        <button
+          type="button"
+          className="rounded border border-stone-500 bg-stone-800 px-3 py-1.5 text-sm text-white hover:bg-stone-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+          onClick={() => setIsArmorModalOpen(true)}
+          aria-label={
+            selectedArmor
+              ? `Change armor from ${selectedArmor.name}`
+              : "Select armor"
+          }
+        >
+          {selectedArmor?.name || "Select Armor"}
+        </button>
+      </div>
+
+      {isArmorModalOpen && (
+        <ChoiceModalFrame
+          title="Select Armor"
+          closeModal={() => setIsArmorModalOpen(false)}
+        >
+          <ChoiceModal
+            items={armorChoiceItems}
+            confirmLabel="Select Armor"
+            initialValue={creature.armor || null}
+            maxLevel={Infinity}
+            onConfirm={(armor) => {
+              const armorResistances = getCharacterResistances({
+                armor,
+                species: null,
+                selections: {},
+              });
+              updateCreature({
+                armor,
+                resistances: Object.fromEntries(
+                  Object.entries(armorResistances).filter(
+                    ([, value]) => value > 0,
+                  ),
+                ),
+              });
+              setIsArmorModalOpen(false);
+            }}
+          />
+        </ChoiceModalFrame>
+      )}
+    </section>
+  );
+}

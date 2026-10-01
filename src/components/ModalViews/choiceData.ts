@@ -181,6 +181,10 @@ export function getSpellChoiceItems(rank?: string): ChoiceItem[] {
   }));
 }
 
+export function getArmorChoiceItems(): ChoiceItem[] {
+  return createChoiceItems(armors, ARMOR_FIELDS);
+}
+
 function featIsAvailableForSpecies(
   featSpecies: string,
   selectedSpecies: string | null,
@@ -270,7 +274,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     request.type === "weapon" ? request.excludedTypes : undefined,
   );
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
-  const armorItems = createChoiceItems(armors, ARMOR_FIELDS);
+  const armorItems = getArmorChoiceItems();
   const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
 
   return {
