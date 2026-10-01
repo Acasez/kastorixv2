@@ -108,35 +108,39 @@ export default function NumericTypeList<T extends string>({
             </button>
           </div>
         ))}
-        <button
-          type="button"
-          className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={() => setIsAdding((open) => !open)}
-          disabled={availableTypes.length === 0}
-          aria-label={`Add ${itemLabel}`}
-          title={`Add ${itemLabel}`}
-          aria-expanded={isAdding}
-        >
-          +
-        </button>
-        {isAdding && (
-          <select
-            autoFocus
-            aria-label={`Choose ${itemLabel} to add`}
-            value=""
-            onChange={(event) => addType(event.target.value as T)}
-            className={`h-8 rounded border border-stone-500 bg-stone-900 px-1 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400 ${typeWidthClass}`}
+        <div className="relative">
+          <button
+            type="button"
+            className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+            onClick={() => setIsAdding((open) => !open)}
+            disabled={availableTypes.length === 0}
+            aria-label={`Add ${itemLabel}`}
+            title={isAdding ? `Cancel adding ${itemLabel}` : `Add ${itemLabel}`}
+            aria-expanded={isAdding}
           >
-            <option value="" disabled>
-              Select
-            </option>
-            {availableTypes.map((type) => (
-              <option key={type} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
-        )}
+            +
+          </button>
+          {isAdding && (
+            <div
+              role="listbox"
+              aria-label={`Choose ${itemLabel} to add`}
+              className="absolute left-0 top-full z-30 mt-1 max-h-[60vh] w-44 overflow-y-auto rounded-lg border border-gray-600 bg-gray-700 py-1 shadow-lg"
+            >
+              {availableTypes.map((type) => (
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  key={type}
+                  onClick={() => addType(type)}
+                  className="w-full px-4 py-2 text-left text-sm text-text-light hover:bg-gray-600 focus-visible:bg-gray-600 focus-visible:outline-none"
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
