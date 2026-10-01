@@ -38,9 +38,22 @@ const ACTION_COSTS: readonly CreatureActionCost[] = [
   "R",
   "L",
 ];
+const ACTION_COST_ORDER: Record<CreatureActionCost, number> = {
+  "0": 0,
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  R: 4,
+  L: 5,
+};
 
 export default function CreatureActionList() {
   const { creature, updateCreature } = useCreature();
+  const sortedActions = [...creature.actions].sort((first, second) => {
+    const costOrder =
+      ACTION_COST_ORDER[first.actions] - ACTION_COST_ORDER[second.actions];
+    return costOrder || first.name.localeCompare(second.name);
+  });
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [editingActionId, setEditingActionId] = useState<string | null>(null);
   const [draft, setDraft] = useState<ActionDraft>(EMPTY_ACTION);
@@ -273,7 +286,7 @@ export default function CreatureActionList() {
       )}
 
       <div className="space-y-2">
-        {creature.actions.map((action) => (
+        {sortedActions.map((action) => (
           <article
             className="rounded border border-stone-600 bg-stone-800 text-stone-200"
             key={action.id}
