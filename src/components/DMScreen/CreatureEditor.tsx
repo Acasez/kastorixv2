@@ -19,6 +19,7 @@ import CreatureHeader from "./CreatureHeader";
 import CreatureActionList from "./CreatureActionList";
 import CreaturePassiveList from "./CreaturePassiveList";
 import CreatureArmorSelector from "./CreatureArmorSelector";
+import CreatureSenses from "./CreatureSenses";
 import { SPEED_TYPES } from "../../constants/SpeedTypes";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
@@ -26,9 +27,12 @@ export type CreatureSize = (typeof CREATURE_SIZES)[number];
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
 
 const DAMAGE_TYPE_NAMES = damageTypes.map(({ name }) => name);
+const RESISTANCE_OPTIONS = [
+  ...DAMAGE_TYPE_NAMES,
+  ...new Set(damageTypes.map(({ damageGroup }) => damageGroup)),
+];
 const textFields = [
   ["traits", "Traits"],
-  ["senses", "Senses"],
   ["languages", "Languages"],
 ] as const;
 
@@ -194,10 +198,11 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               onChange={(value) => updateCreature({ [key]: value })}
             />
           ))}
-
+        </div>
+        <div className="flex flex-row gap-3">
+          <CreatureSenses />
           <CreatureArmorSelector />
         </div>
-
         <CreatureSkillList />
 
         <CreatureHeader title="Stats" />
@@ -235,7 +240,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         <NumericTypeList
           title="Resistances"
           itemLabel="resistance"
-          options={DAMAGE_TYPE_NAMES}
+          options={RESISTANCE_OPTIONS}
           values={creature.resistances}
           onChange={(resistances) => updateCreature({ resistances })}
           typeWidthClass="w-28"

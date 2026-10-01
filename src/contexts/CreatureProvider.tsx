@@ -4,7 +4,6 @@ import { CreatureContext, type Creature } from "./CreatureContext";
 const defaultCreature: Creature = {
   name: "",
   traits: "",
-  senses: "",
   skills: {},
   languages: "",
   size: "Medium",

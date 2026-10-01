@@ -1,7 +1,10 @@
 import { useState } from "react";
 import armors from "../../JSON/armors.json";
 import { useCreature } from "../../contexts/CreatureContext";
-import { getCharacterResistances } from "../../utils/characterResistances";
+import {
+  getCharacterResistances,
+  getCompactResistances,
+} from "../../utils/characterResistances";
 import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getArmorChoiceItems } from "../ModalViews/choiceData";
@@ -46,10 +49,12 @@ export default function CreatureArmorSelector() {
                 species: null,
                 selections: {},
               });
+              const compactResistances =
+                getCompactResistances(armorResistances);
               updateCreature({
                 armor,
                 resistances: Object.fromEntries(
-                  Object.entries(armorResistances).filter(
+                  Object.entries(compactResistances).filter(
                     ([, value]) => value > 0,
                   ),
                 ),

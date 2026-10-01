@@ -41,7 +41,6 @@ export type CreaturePassive = {
 export type Creature = {
   name: string;
   traits: string;
-  senses: string;
   skills: Partial<Record<string, ProficiencyTierName>>;
   languages: string;
   size: string;
