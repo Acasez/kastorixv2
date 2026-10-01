@@ -106,33 +106,34 @@ export default function CreatureSpellList() {
           +
         </button>
       </div>
-      <div className="flex flex-row justify-center mb-3 -mt-2 gap-2">
-        <MultiOptionSwitch<VerbalComponent>
-          options={["None", "Standard", "Attuned"]}
-          value={verbal}
-          onChange={(nextVerbal) =>
-            updateCreature({
-              spellShaping: {
-                ...creature.spellShaping,
-                verbal: nextVerbal,
-              },
-            })
-          }
-        />
-        <MultiOptionSwitch<SomaticComponent>
-          options={["None", "One Handed", "Two Handed"]}
-          value={somatic}
-          onChange={(nextSomatic) =>
-            updateCreature({
-              spellShaping: {
-                ...creature.spellShaping,
-                somatic: nextSomatic,
-              },
-            })
-          }
-        />
-      </div>
-
+      {creature.spells.length > 0 && (
+        <div className="flex flex-row justify-center mb-3 -mt-2 gap-2">
+          <MultiOptionSwitch<VerbalComponent>
+            options={["None", "Standard", "Attuned"]}
+            value={verbal}
+            onChange={(nextVerbal) =>
+              updateCreature({
+                spellShaping: {
+                  ...creature.spellShaping,
+                  verbal: nextVerbal,
+                },
+              })
+            }
+          />
+          <MultiOptionSwitch<SomaticComponent>
+            options={["None", "One Handed", "Two Handed"]}
+            value={somatic}
+            onChange={(nextSomatic) =>
+              updateCreature({
+                spellShaping: {
+                  ...creature.spellShaping,
+                  somatic: nextSomatic,
+                },
+              })
+            }
+          />
+        </div>
+      )}
       <div className="flex flex-wrap gap-2">
         {selectedSpells.map((spell) => (
           <SpellComponent
