@@ -6,6 +6,7 @@ import {
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { ActionCost } from "../types/Action";
+import type { StatKey } from "../types/StatKey";
 import type { SpeedTypes } from "../types/SpeedTypes";
 import type { SomaticComponent, VerbalComponent } from "../types/Spells";
 
@@ -20,6 +21,8 @@ export type CreatureAction = {
   id: string;
   name: string;
   actions: ActionCost;
+  stat: StatKey;
+  proficiency: ProficiencyTierName;
   trigger: string;
   requirement: string;
   description: string;

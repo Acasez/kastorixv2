@@ -1,11 +1,18 @@
 import { useState, type FormEvent } from "react";
 import type { ActionCost } from "../../types/Action";
 import {
+  getProficiency,
+  signed,
+  type ProficiencyTierName,
+} from "../../constants/Proficiency";
+import {
   useCreature,
   type CreatureAction,
 } from "../../contexts/CreatureContext";
+import type { StatKey } from "../../types/StatKey";
 import { getActionIcons } from "../../utils/actionUtils";
 import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
+import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureHeader from "./CreatureHeader";
 
 type ActionDraft = Omit<CreatureAction, "id">;
@@ -13,6 +20,8 @@ type ActionDraft = Omit<CreatureAction, "id">;
 const EMPTY_ACTION: ActionDraft = {
   name: "",
   actions: "1",
+  stat: "PHY",
+  proficiency: "Trained",
   trigger: "",
   requirement: "",
   description: "",
@@ -44,18 +53,21 @@ export default function CreatureActionList() {
     event.preventDefault();
     const name = draft.name.trim();
     if (!name) return;
+    const actionDraft = { ...draft, name };
 
     if (editingActionId) {
       updateCreature({
         actions: creature.actions.map((action) =>
-          action.id === editingActionId ? { ...draft, id: action.id } : action,
+          action.id === editingActionId
+            ? { ...actionDraft, id: action.id }
+            : action,
         ),
       });
     } else {
       updateCreature({
         actions: [
           ...creature.actions,
-          { ...draft, name, id: crypto.randomUUID() },
+          { ...actionDraft, id: crypto.randomUUID() },
         ],
       });
     }
@@ -65,6 +77,16 @@ export default function CreatureActionList() {
   const removeAction = (actionId: string) =>
     updateCreature({
       actions: creature.actions.filter((action) => action.id !== actionId),
+    });
+
+  const updateActionProficiency = (
+    actionId: string,
+    proficiency: ProficiencyTierName,
+  ) =>
+    updateCreature({
+      actions: creature.actions.map((action) =>
+        action.id === actionId ? { ...action, proficiency } : action,
+      ),
     });
 
   const openNewAction = () => {
@@ -117,17 +139,49 @@ export default function CreatureActionList() {
             />
           </label>
 
-          <fieldset className="space-y-1">
-            <legend className="text-sm font-semibold text-stone-200">
-              Action cost
-            </legend>
-            <MultiOptionSwitch<ActionCost>
-              options={ACTION_COSTS}
-              value={draft.actions}
-              labels={{ "0": "Free", R: "Reaction" }}
-              onChange={(actions) => setDraft({ ...draft, actions })}
-            />
-          </fieldset>
+          <div className="flex flex-wrap items-end gap-10 justify-between">
+            <fieldset className="space-y-1">
+              <legend className="text-sm font-semibold text-stone-200">
+                Action cost
+              </legend>
+              <MultiOptionSwitch<ActionCost>
+                options={ACTION_COSTS}
+                value={draft.actions}
+                labels={{ "0": "Free", R: "Reaction" }}
+                onChange={(actions) => setDraft({ ...draft, actions })}
+              />
+            </fieldset>
+
+            <div className="flex flex-row justify-between gap-5">
+              <label className="flex flex-col gap-1 text-sm font-semibold text-stone-200">
+                <span>Scaling stat</span>
+                <select
+                  value={draft.stat}
+                  onChange={(event) =>
+                    setDraft({ ...draft, stat: event.target.value as StatKey })
+                  }
+                  className="h-8 rounded border border-red-500 bg-stone-900 px-2 text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
+                >
+                  {(["PHY", "DEX", "INT", "WIL"] as const).map((stat) => (
+                    <option key={stat} value={stat}>
+                      {stat}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <div className="flex flex-col gap-1 text-sm font-semibold text-stone-200">
+                <span>Proficiency</span>
+                <ProficiencyMarker
+                  skillName={draft.name || "Action"}
+                  proficiency={draft.proficiency}
+                  onProficiencyChange={(proficiency) =>
+                    setDraft({ ...draft, proficiency })
+                  }
+                />
+              </div>
+            </div>
+          </div>
 
           <div className="grid gap-3 sm:grid-cols-2">
             {(["trigger", "requirement"] as const).map((field) => (
@@ -216,6 +270,20 @@ export default function CreatureActionList() {
               <h3 className="min-w-0 flex-1 font-semibold text-white">
                 {action.name}
               </h3>
+              <span className="text-sm font-semibold text-stone-300">
+                {action.stat}{" "}
+                {signed(
+                  creature.stats[action.stat] +
+                    getProficiency(action.proficiency).bonus,
+                )}
+              </span>
+              <ProficiencyMarker
+                skillName={action.name}
+                proficiency={action.proficiency}
+                onProficiencyChange={(proficiency) =>
+                  updateActionProficiency(action.id, proficiency)
+                }
+              />
               <button
                 type="button"
                 className="rounded px-2 py-1 text-xs text-stone-300 hover:bg-stone-700 hover:text-white"
