@@ -5,6 +5,7 @@ import { useCharacter } from "../../contexts/CharacterContext";
 import backgrounds from "../../JSON/backgrounds.json";
 import { BaseStatsEditor } from "./BaseStatModal";
 import { StatIncreaseModal } from "./StatIncreaseModal";
+import ChoiceModalFrame from "./ChoiceModalFrame";
 
 interface ModalWrapperProps {
   request: ModalRequest;
@@ -247,27 +248,8 @@ export default function ModalWrapper({
   };
 
   return (
-    <div
-      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-      onClick={closeModal}
-    >
-      <div
-        className="bg-white rounded-lg p-8 max-w-6xl w-11/12 h-[85vh] overflow-auto shadow-2xl border border-gray-300"
-        onClick={(event) => event.stopPropagation()}
-      >
-        <div className="flex items-center justify-between mb-4 border-b-2 border-striking">
-          <h2 className="text-3xl font-bold text-gray-800">{request.title}</h2>
-          <button
-            type="button"
-            className="text-2xl text-gray-600 hover:text-gray-900"
-            onClick={closeModal}
-            aria-label="Close modal"
-          >
-            &times;
-          </button>
-        </div>
-        {renderModalContent()}
-      </div>
-    </div>
+    <ChoiceModalFrame title={request.title} closeModal={closeModal}>
+      {renderModalContent()}
+    </ChoiceModalFrame>
   );
 }

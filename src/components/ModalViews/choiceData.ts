@@ -159,6 +159,15 @@ const GADGET_FIELDS: DetailField[] = [
   { label: "Effect", valueKey: "effect" },
 ];
 
+export function getWeaponChoiceItems(
+  excludedTypes: string[] = [],
+): ChoiceItem[] {
+  const availableWeapons = weapons.filter(
+    (weapon) => !excludedTypes.includes(weapon.type),
+  );
+  return createChoiceItems(availableWeapons, WEAPON_FIELDS);
+}
+
 function featIsAvailableForSpecies(
   featSpecies: string,
   selectedSpecies: string | null,
@@ -251,13 +260,9 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     UPGRADE_FIELDS,
   );
   const backgroundItems = createChoiceItems(backgrounds, BACKGROUND_FIELDS);
-  const availableWeapons =
-    request.type === "weapon" && request.excludedTypes
-      ? weapons.filter(
-          (weapon) => !request.excludedTypes?.includes(weapon.type),
-        )
-      : weapons;
-  const weaponItems = createChoiceItems(availableWeapons, WEAPON_FIELDS);
+  const weaponItems = getWeaponChoiceItems(
+    request.type === "weapon" ? request.excludedTypes : undefined,
+  );
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
   const armorItems = createChoiceItems(armors, ARMOR_FIELDS);
   const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
