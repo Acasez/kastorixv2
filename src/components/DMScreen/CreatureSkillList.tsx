@@ -45,7 +45,44 @@ export default function CreatureSkillList() {
 
   return (
     <section className="py-2">
-      <CreatureHeader title="Skills" />
+      <div className="flex flex-row justify-center">
+        <div className="w-full">
+          <CreatureHeader title="Skills" />
+        </div>
+        <div className="relative">
+          <button
+            type="button"
+            className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+            onClick={() => setIsAdding((open) => !open)}
+            disabled={availableSkills.length === 0}
+            aria-label="Add skill"
+            title={isAdding ? "Cancel adding skill" : "Add skill"}
+            aria-expanded={isAdding}
+          >
+            +
+          </button>
+          {isAdding && (
+            <div
+              role="listbox"
+              aria-label="Choose skill to add"
+              className="absolute -left-20 top-full z-30 mt-1 max-h-[60vh] w-48 overflow-y-auto rounded-lg border border-gray-600 bg-gray-700 py-1 shadow-lg"
+            >
+              {availableSkills.map((skillName) => (
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  key={skillName}
+                  onClick={() => addSkill(skillName)}
+                  className="w-full px-4 py-2 text-left text-sm text-text-light hover:bg-gray-600 focus-visible:bg-gray-600 focus-visible:outline-none"
+                >
+                  {skillName}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
       <div className="flex flex-wrap items-center gap-2">
         {selectedSkills.map((skillName) => {
           const skill = skills.find(({ name }) => name === skillName);
@@ -115,39 +152,6 @@ export default function CreatureSkillList() {
             </div>
           );
         })}
-        <div className="relative">
-          <button
-            type="button"
-            className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-            onClick={() => setIsAdding((open) => !open)}
-            disabled={availableSkills.length === 0}
-            aria-label="Add skill"
-            title={isAdding ? "Cancel adding skill" : "Add skill"}
-            aria-expanded={isAdding}
-          >
-            +
-          </button>
-          {isAdding && (
-            <div
-              role="listbox"
-              aria-label="Choose skill to add"
-              className="absolute left-0 top-full z-30 mt-1 max-h-[60vh] w-48 overflow-y-auto rounded-lg border border-gray-600 bg-gray-700 py-1 shadow-lg"
-            >
-              {availableSkills.map((skillName) => (
-                <button
-                  type="button"
-                  role="option"
-                  aria-selected="false"
-                  key={skillName}
-                  onClick={() => addSkill(skillName)}
-                  className="w-full px-4 py-2 text-left text-sm text-text-light hover:bg-gray-600 focus-visible:bg-gray-600 focus-visible:outline-none"
-                >
-                  {skillName}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
       </div>
     </section>
   );
