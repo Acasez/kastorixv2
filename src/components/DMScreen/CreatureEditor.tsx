@@ -5,7 +5,6 @@ import {
   type CreatureTrack,
 } from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
-import type { SpeedTypes } from "../../types/SpeedTypes";
 import damageTypes from "../../JSON/damage_types.json";
 import StatsGrid from "../Buttons/StatsGrid";
 import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
@@ -18,25 +17,19 @@ import CreatureTextField from "./CreatureTextField";
 import CreatureSpellList from "./CreatureSpellList";
 import CreatureHeader from "./CreatureHeader";
 import CreatureActionList from "./CreatureActionList";
+import CreaturePassiveList from "./CreaturePassiveList";
+import { SPEED_TYPES } from "../../constants/SpeedTypes";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
-const SPEED_TYPES: SpeedTypes[] = [
-  "Land",
-  "Swim",
-  "Climb",
-  "Burrow",
-  "Glide",
-  "Fly",
-];
+
 const DAMAGE_TYPE_NAMES = damageTypes.map(({ name }) => name);
 const textFields = [
   ["traits", "Traits"],
   ["senses", "Senses"],
   ["languages", "Languages"],
   ["armor", "Armor"],
-  ["passives", "Passives"],
 ] as const;
 
 type ResourceKey = "health" | "aura" | "mana";
@@ -252,26 +245,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         <CreatureSpellList />
 
         <CreatureActionList />
-
-        <div className="grid gap-3 sm:grid-cols-2">
-          {textFields.slice(4).map(([key, label]) => (
-            <label
-              className="flex min-w-0 flex-col gap-1 text-sm font-semibold leading-5 text-stone-200"
-              key={key}
-            >
-              <span>{label}</span>
-              <textarea
-                rows={3}
-                className="w-full min-w-0 resize-y rounded-xs border border-[#5b554d] bg-[#242321] px-[0.55rem] py-[0.45rem] font-normal text-[#f5eee4]"
-                value={creature[key]}
-                onChange={(event) =>
-                  updateCreature({ [key]: event.target.value })
-                }
-                placeholder={`${label}...`}
-              />
-            </label>
-          ))}
-        </div>
+        <CreaturePassiveList />
       </div>
     </section>
   );

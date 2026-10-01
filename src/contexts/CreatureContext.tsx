@@ -31,6 +31,13 @@ export type CreatureAction = {
   traits: string;
 };
 
+export type CreaturePassive = {
+  id: string;
+  name: string;
+  effect: string;
+  traits: string;
+};
+
 export type Creature = {
   name: string;
   traits: string;
@@ -54,7 +61,7 @@ export type Creature = {
   };
   actions: CreatureAction[];
   spells: string[];
-  passives: string;
+  passives: CreaturePassive[];
 };
 
 export type CreatureContextType = {

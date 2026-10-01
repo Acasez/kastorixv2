@@ -25,7 +25,7 @@ const defaultCreature: Creature = {
   spellShaping: { verbal: "Standard", somatic: "Two Handed" },
   actions: [],
   spells: [],
-  passives: "",
+  passives: [],
 };
 
 export function CreatureProvider({ children }: { children: ReactNode }) {
@@ -44,6 +44,7 @@ export function CreatureProvider({ children }: { children: ReactNode }) {
     spellShaping: { ...defaultCreature.spellShaping },
     spells: [...defaultCreature.spells],
     actions: [...defaultCreature.actions],
+    passives: [...defaultCreature.passives],
   }));
 
   const updateCreature = useCallback(
