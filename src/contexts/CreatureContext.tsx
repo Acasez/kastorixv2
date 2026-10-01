@@ -6,6 +6,7 @@ import {
 } from "react";
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { SpeedTypes } from "../types/SpeedTypes";
+import type { SomaticComponent, VerbalComponent } from "../types/Spells";
 
 export type CreatureSaveKey = "Fortitude" | "Reflex" | "Will";
 
@@ -31,6 +32,10 @@ export type Creature = {
   speeds: Partial<Record<SpeedTypes, number>>;
   strikes: Partial<Record<string, ProficiencyTierName>>;
   spellProficiencies: Partial<Record<string, ProficiencyTierName>>;
+  spellShaping: {
+    verbal: VerbalComponent;
+    somatic: SomaticComponent;
+  };
   actions: string;
   spells: string[];
   passives: string;

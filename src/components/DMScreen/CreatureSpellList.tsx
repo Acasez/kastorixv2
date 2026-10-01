@@ -6,6 +6,8 @@ import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getSpellChoiceItems } from "../ModalViews/choiceData";
 import SpellComponent from "../CharacterSheet/TabbedSection/SpellComponent";
+import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
+import type { SomaticComponent, VerbalComponent } from "../../types/Spells";
 
 const spellChoiceItems = getSpellChoiceItems();
 const spellFilters = [
@@ -17,6 +19,18 @@ export default function CreatureSpellList() {
   const { creature, updateCreature } = useCreature();
   const [isSpellModalOpen, setIsSpellModalOpen] = useState(false);
   const [spellToReplace, setSpellToReplace] = useState<string | null>(null);
+  const { verbal, somatic } = creature.spellShaping;
+  const spellshapingBonus =
+    (verbal === "Standard"
+      ? creature.stats.INT
+      : verbal === "Attuned"
+        ? creature.stats.WIL
+        : 0) +
+    (somatic === "One Handed"
+      ? Math.floor(creature.stats.DEX / 2)
+      : somatic === "Two Handed"
+        ? creature.stats.DEX
+        : 0);
   const selectedSpells = spells.filter((spell) =>
     creature.spells.includes(spell.name),
   );
@@ -77,10 +91,34 @@ export default function CreatureSpellList() {
 
   return (
     <section className="space-y-3">
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <h2 className="mb-[0.65rem] flex-1 border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
           Spells
         </h2>
+        <MultiOptionSwitch<VerbalComponent>
+          options={["None", "Standard", "Attuned"]}
+          value={verbal}
+          onChange={(nextVerbal) =>
+            updateCreature({
+              spellShaping: {
+                ...creature.spellShaping,
+                verbal: nextVerbal,
+              },
+            })
+          }
+        />
+        <MultiOptionSwitch<SomaticComponent>
+          options={["None", "One Handed", "Two Handed"]}
+          value={somatic}
+          onChange={(nextSomatic) =>
+            updateCreature({
+              spellShaping: {
+                ...creature.spellShaping,
+                somatic: nextSomatic,
+              },
+            })
+          }
+        />
         <button
           type="button"
           className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
@@ -99,7 +137,7 @@ export default function CreatureSpellList() {
             spell={spell}
             onReplaceSpell={(_rankName, spellName) => openSpellModal(spellName)}
             onRemoveSpell={removeSpell}
-            baseSpellshapingBonus={0}
+            baseSpellshapingBonus={spellshapingBonus}
             rankName={spell.rank}
             proficiency={creature.spellProficiencies?.[spell.name] ?? "Trained"}
             onProficiencyChange={(proficiency) =>
