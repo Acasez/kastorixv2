@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
-import { useCreature, type Creature } from "../../contexts/CreatureContext";
+import {
+  useCreature,
+  type Creature,
+  type CreatureTrack,
+} from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import type { SpeedTypes } from "../../types/SpeedTypes";
 import damageTypes from "../../JSON/damage_types.json";
@@ -35,6 +39,17 @@ const textFields = [
   ["passives", "Passives"],
 ] as const;
 
+type ResourceKey = "health" | "aura" | "mana";
+
+function scaleTrackToMax(track: CreatureTrack, max: number): CreatureTrack {
+  if (track.max === max) return track;
+  const proportion = track.max > 0 ? track.current / track.max : 0;
+  return {
+    current: Math.min(max, Math.max(0, Math.round(proportion * max))),
+    max,
+  };
+}
+
 function getSavedCreatures(): string[] {
   return Object.keys(localStorage)
     .filter((key) => key.startsWith(STORAGE_PREFIX))
@@ -46,6 +61,33 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
   const [savedCreatures, setSavedCreatures] = useState(getSavedCreatures);
   const [selectedKey, setSelectedKey] = useState("");
   const importInputRef = useRef<HTMLInputElement>(null);
+
+  const updateResourceTrack = (key: ResourceKey, nextTrack: CreatureTrack) => {
+    if (key === "health") {
+      updateCreature({
+        health:
+          nextTrack.max === creature.health.max
+            ? nextTrack
+            : scaleTrackToMax(creature.health, nextTrack.max),
+      });
+      return;
+    }
+
+    const nextAura =
+      key === "aura"
+        ? nextTrack.max === creature.aura.max
+          ? nextTrack
+          : scaleTrackToMax(creature.aura, nextTrack.max)
+        : scaleTrackToMax(creature.aura, nextTrack.max);
+    const nextMana =
+      key === "mana"
+        ? nextTrack.max === creature.mana.max
+          ? nextTrack
+          : scaleTrackToMax(creature.mana, nextTrack.max)
+        : scaleTrackToMax(creature.mana, nextTrack.max);
+
+    updateCreature({ aura: nextAura, mana: nextMana });
+  };
 
   useEffect(() => {
     const refreshSavedCreatures = () => setSavedCreatures(getSavedCreatures());
@@ -179,7 +221,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               aura: creature.aura,
               mana: creature.mana,
             }}
-            onTrackChange={(key, track) => updateCreature({ [key]: track })}
+            onTrackChange={updateResourceTrack}
           />
         </section>
 
