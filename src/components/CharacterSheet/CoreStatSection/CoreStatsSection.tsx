@@ -8,6 +8,7 @@ export default function CoreStatSection() {
 
   return (
     <div className="flex flex-col bg-gray-800 h-90 gap-3 border-x-2 rounded-lg -mt-2">
+      <h1 className="text-3xl text-striking text-center underline">Stats</h1>
       <StatsGrid
         stats={character.baseStats}
         onStatChange={(key, value) =>

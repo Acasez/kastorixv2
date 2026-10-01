@@ -6,6 +6,7 @@ import WeaponComponent from "../CharacterSheet/TabbedSection/WeaponComponent";
 import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getWeaponChoiceItems } from "../ModalViews/choiceData";
+import CreatureHeader from "./CreatureHeader";
 
 const weaponChoiceItems = getWeaponChoiceItems(["Golem"]);
 const weaponFilters = [
@@ -45,9 +46,7 @@ export default function CreatureStrikeList() {
     <section className="space-y-3">
       <div className="flex flex-row justify-center">
         <div className="w-full">
-          <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
-            Strikes
-          </h2>
+          <CreatureHeader title="Strikes" />
         </div>
         <button
           type="button"

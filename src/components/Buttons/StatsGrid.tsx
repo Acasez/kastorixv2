@@ -17,9 +17,6 @@ type StatsGridProps = {
 export default function StatsGrid({ stats, onStatChange }: StatsGridProps) {
   return (
     <div>
-      <h1 className="text-3xl text-striking text-center underline mb-2">
-        Stats
-      </h1>
       <div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-4">
         {STATS.map(({ key, name }) => (
           <div

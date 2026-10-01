@@ -8,6 +8,7 @@ import skills from "../../json/skills.json";
 import { useCreature } from "../../contexts/CreatureContext";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import CreatureHeader from "./CreatureHeader";
 
 const skillNames = skills.map(({ name }) => name);
 
@@ -44,9 +45,7 @@ export default function CreatureSkillList() {
 
   return (
     <section className="py-2">
-      <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
-        Skills
-      </h2>
+      <CreatureHeader title="Skills" />
       <div className="flex flex-wrap items-center gap-2">
         {selectedSkills.map((skillName) => {
           const skill = skills.find(({ name }) => name === skillName);

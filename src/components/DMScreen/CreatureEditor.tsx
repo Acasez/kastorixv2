@@ -12,6 +12,7 @@ import CreatureStrikeList from "./CreatureStrikeList";
 import CreatureSavingThrows from "./CreatureSavingThrows";
 import CreatureTextField from "./CreatureTextField";
 import CreatureSpellList from "./CreatureSpellList";
+import CreatureHeader from "./CreatureHeader";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
@@ -160,6 +161,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
           ))}
         </div>
 
+        <CreatureHeader title="Stats" />
         <StatsGrid
           stats={creature.stats}
           onStatChange={(key, value) =>
@@ -170,9 +172,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         <CreatureSkillList />
 
         <section>
-          <h2 className="mb-[0.65rem] border-b border-[#3c3935] pb-[0.35rem] text-center text-xl font-bold leading-6 text-[#ff7043]">
-            Resources
-          </h2>
+          <CreatureHeader title="Resources" />
           <HealthManaAuraBars
             tracks={{
               health: creature.health,
