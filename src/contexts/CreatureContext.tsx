@@ -23,6 +23,8 @@ export type CreatureAction = {
   actions: ActionCost;
   stat: StatKey;
   proficiency: ProficiencyTierName;
+  manaCost: number;
+  cooldown: string;
   trigger: string;
   requirement: string;
   description: string;

@@ -22,6 +22,8 @@ const EMPTY_ACTION: ActionDraft = {
   actions: "1",
   stat: "PHY",
   proficiency: "Trained",
+  manaCost: 0,
+  cooldown: "",
   trigger: "",
   requirement: "",
   description: "",
@@ -152,7 +154,24 @@ export default function CreatureActionList() {
               />
             </fieldset>
 
-            <div className="flex flex-row justify-between gap-5">
+            <label className="flex flex-col gap-1 text-sm font-semibold text-stone-200">
+              <span>Mana cost</span>
+              <input
+                type="number"
+                min={0}
+                step={1}
+                value={draft.manaCost}
+                onChange={(event) =>
+                  setDraft({
+                    ...draft,
+                    manaCost: Math.max(0, Number(event.target.value)),
+                  })
+                }
+                className="h-8 w-20 rounded border border-stone-500 bg-stone-900 px-2 font-normal text-white focus-visible:outline-2 focus-visible:outline-orange-400"
+              />
+            </label>
+
+            <div className="flex flex-wrap items-end justify-between gap-5">
               <label className="flex flex-col gap-1 text-sm font-semibold text-stone-200">
                 <span>Scaling stat</span>
                 <select
@@ -183,8 +202,8 @@ export default function CreatureActionList() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
-            {(["trigger", "requirement"] as const).map((field) => (
+          <div className="grid gap-3 sm:grid-cols-3">
+            {(["trigger", "cooldown", "requirement"] as const).map((field) => (
               <label
                 className="flex flex-col gap-1 text-sm font-semibold text-stone-200"
                 key={field}
@@ -270,6 +289,18 @@ export default function CreatureActionList() {
               <h3 className="min-w-0 flex-1 font-semibold text-white">
                 {action.name}
               </h3>
+              <div className="flex flex-wrap gap-x-5 gap-y-1 text-stone-300">
+                {action.manaCost && (
+                  <p>
+                    <strong>Mana cost:</strong> {action.manaCost}
+                  </p>
+                )}
+                {action.cooldown && (
+                  <p>
+                    <strong>Cooldown:</strong> {action.cooldown}
+                  </p>
+                )}
+              </div>
               <span className="text-sm font-semibold text-stone-300">
                 {action.stat}{" "}
                 {signed(
