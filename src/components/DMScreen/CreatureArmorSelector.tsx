@@ -17,7 +17,7 @@ export default function CreatureArmorSelector() {
   const selectedArmor = armors.find((armor) => armor.name === creature.armor);
 
   return (
-    <section className="flex h-full items-center justify-center">
+    <section className="flex h-full mt-2.5">
       <div className="flex flex-wrap items-center justify-center gap-3">
         <button
           type="button"

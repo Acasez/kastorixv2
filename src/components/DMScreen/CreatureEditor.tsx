@@ -157,7 +157,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
   };
 
   return (
-    <section className="w-full max-w-4xl overflow-hidden border border-stone-700 bg-bg-creature text-text-light shadow-lg">
+    <section className="w-full max-w-8xl overflow-hidden border border-stone-700 bg-bg-creature text-text-light shadow-lg">
       <CreatureMeta
         selectedKey={selectedKey}
         setSelectedKey={setSelectedKey}
@@ -171,8 +171,9 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
         importCreature={importCreature}
       />
 
-      <div className="px-4 py-2">
-        <div className="grid gap-2 sm:grid-cols-2 mb-2">
+      <div className="flex flex-col gap-3 px-4 py-2">
+        {/* Row 1 — identity fields, packed into one grid instead of 2-per-line */}
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 xl:grid-cols-6">
           <CreatureTextField
             field="Name"
             value={creature.name}
@@ -198,21 +199,11 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               onChange={(value) => updateCreature({ [key]: value })}
             />
           ))}
-        </div>
-        <div className="flex flex-row gap-3">
-          <CreatureSenses />
+
           <CreatureArmorSelector />
         </div>
-        <CreatureSkillList />
 
-        <CreatureHeader title="Stats" />
-        <StatsGrid
-          stats={creature.stats}
-          onStatChange={(key, value) =>
-            updateCreature({ stats: { ...creature.stats, [key]: value } })
-          }
-        />
-
+        {/* Row 2a — Resources strip: bars want horizontal room, so let them span the panel */}
         <section>
           <CreatureHeader title="Resources" />
           <HealthManaAuraBars
@@ -225,34 +216,58 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
           />
         </section>
 
-        <CreatureSavingThrows />
+        {/* Row 2b — three columns, sized by what they hold */}
+        <div className="grid grid-cols-1 gap-x-6 gap-y-3 lg:grid-cols-2">
+          {/* Col 1 — growable lists: UNCHANGED, you like this one */}
+          <div className="flex min-w-0 flex-col gap-3">
+            <div className="flex flex-wrap gap-3">
+              <CreatureSenses />
+            </div>
+            <CreatureSkillList />
+            <NumericTypeList
+              title="Speeds"
+              itemLabel="speed"
+              options={SPEED_TYPES}
+              values={creature.speeds}
+              onChange={(speeds) => updateCreature({ speeds })}
+              typeWidthClass="w-20"
+              allowNegative={false}
+            />
 
-        <NumericTypeList
-          title="Speeds"
-          itemLabel="speed"
-          options={SPEED_TYPES}
-          values={creature.speeds}
-          onChange={(speeds) => updateCreature({ speeds })}
-          typeWidthClass="w-20"
-          allowNegative={false}
-        />
+            <NumericTypeList
+              title="Resistances"
+              itemLabel="resistance"
+              options={RESISTANCE_OPTIONS}
+              values={creature.resistances}
+              onChange={(resistances) => updateCreature({ resistances })}
+              typeWidthClass="w-28"
+              allowNegative={true}
+            />
+          </div>
 
-        <NumericTypeList
-          title="Resistances"
-          itemLabel="resistance"
-          options={RESISTANCE_OPTIONS}
-          values={creature.resistances}
-          onChange={(resistances) => updateCreature({ resistances })}
-          typeWidthClass="w-28"
-          allowNegative={true}
-        />
+          {/* Right — numbers + combat, in priority order */}
+          <div className="flex min-w-0 flex-col gap-3">
+            <div>
+              <CreatureHeader title="Stats" />
+              <StatsGrid
+                stats={creature.stats}
+                onStatChange={(key, value) =>
+                  updateCreature({ stats: { ...creature.stats, [key]: value } })
+                }
+                columnsClassName="px-0"
+              />
+            </div>
+            <CreatureSavingThrows />
+            <CreatureStrikeList />
+            <CreatureSpellList />
+          </div>
+        </div>
 
-        <CreatureStrikeList />
-
-        <CreatureSpellList />
-
-        <CreatureActionList />
-        <CreaturePassiveList />
+        {/* Row 3 — the tall text sections, two up */}
+        <div className="grid grid-cols-1 items-start gap-x-4 lg:grid-cols-2">
+          <CreatureActionList />
+          <CreaturePassiveList />
+        </div>
       </div>
     </section>
   );

@@ -12,12 +12,17 @@ const STATS: { key: StatKey; name: string }[] = [
 type StatsGridProps = {
   stats: Record<StatKey, number>;
   onStatChange: (key: StatKey, value: number) => void;
+  columnsClassName?: string;
 };
 
-export default function StatsGrid({ stats, onStatChange }: StatsGridProps) {
+export default function StatsGrid({
+  stats,
+  onStatChange,
+  columnsClassName = "px-4 sm:grid-cols-4",
+}: StatsGridProps) {
   return (
     <div>
-      <div className="grid grid-cols-2 gap-4 px-4 sm:grid-cols-4">
+      <div className={`grid grid-cols-2 gap-4 ${columnsClassName}`}>
         {STATS.map(({ key, name }) => (
           <div
             key={key}

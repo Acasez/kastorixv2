@@ -8,7 +8,7 @@ import { getSpellChoiceItems } from "../ModalViews/choiceData";
 import SpellComponent from "../CharacterSheet/TabbedSection/SpellComponent";
 import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
 import type { SomaticComponent, VerbalComponent } from "../../types/Spells";
-import CreatureHeader from "./CreatureHeader";
+import CreatureSectionHeader from "./CreatureSectionHeader";
 
 const spellChoiceItems = getSpellChoiceItems();
 const spellFilters = [
@@ -92,22 +92,13 @@ export default function CreatureSpellList() {
 
   return (
     <section>
-      <div className="flex flex-row justify-center">
-        <div className="w-full">
-          <CreatureHeader title="Spells" />
-        </div>
-        <button
-          type="button"
-          className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={() => openSpellModal()}
-          aria-label="Add strike"
-          title="Add strike"
-        >
-          +
-        </button>
-      </div>
+      <CreatureSectionHeader
+        title="Spells"
+        onAdd={openSpellModal}
+        addLabel="Add spell"
+      />
       {creature.spells.length > 0 && (
-        <div className="flex flex-row justify-center mb-3 -mt-2 gap-2">
+        <div className="mb-2 flex flex-wrap gap-2 items-center">
           <MultiOptionSwitch<VerbalComponent>
             options={["None", "Standard", "Attuned"]}
             value={verbal}

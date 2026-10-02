@@ -14,7 +14,7 @@ export default function DMScreen() {
     setCreatureBlocks((blocks) => blocks.filter((id) => id !== blockId));
 
   return (
-    <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-center gap-5 p-4 sm:p-6">
+    <div className="mx-auto flex w-full max-w-screen-3xl flex-col items-center gap-5 p-4 sm:p-6">
       <div className="grid w-full gap-5 xl:grid-cols-2">
         {creatureBlocks.map((blockId) => (
           <CreatureBlock
