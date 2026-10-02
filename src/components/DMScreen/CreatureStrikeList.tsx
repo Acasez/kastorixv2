@@ -24,7 +24,7 @@ export default function CreatureStrikeList() {
   );
   const confirmWeapon = (weaponName: string) => {
     const strikesProficiencies = { ...(creature.strikesProficiencies ?? {}) };
-
+    console.log("Confirmed weapon", weaponName);
     if (weaponToReplace) {
       if (
         weaponName !== weaponToReplace &&
@@ -70,6 +70,7 @@ export default function CreatureStrikeList() {
     });
 
   const openWeaponModal = (replaceWeapon: string | null = null) => {
+    /* console.log("replaceWeapon", replaceWeapon); */
     setWeaponToReplace(replaceWeapon);
     setIsWeaponModalOpen(true);
   };
@@ -83,7 +84,7 @@ export default function CreatureStrikeList() {
     <section className="space-y-3">
       <CreatureSectionHeader
         title="Weapons"
-        onAdd={openWeaponModal}
+        onAdd={() => openWeaponModal()}
         addLabel="Add weapon"
       />
 
@@ -99,6 +100,7 @@ export default function CreatureStrikeList() {
             proficiency={
               creature.strikesProficiencies?.[weapon.name] ?? "Trained"
             }
+            creatureStats={creature.stats}
             onProficiencyChange={(proficiency) =>
               setWeaponProficiency(weapon.name, proficiency)
             }
@@ -112,9 +114,12 @@ export default function CreatureStrikeList() {
         >
           <ChoiceModal
             items={weaponChoiceItems}
-            confirmLabel="Add Strike"
-            initialValue={null}
+            confirmLabel={weaponToReplace ? "Replace Spell" : "Add Strike"}
+            initialValue={weaponToReplace}
             maxLevel={Infinity}
+            disabledNames={creature.strikes.filter(
+              (spellName) => spellName !== weaponToReplace,
+            )}
             filterFields={weaponFilters}
             onConfirm={confirmWeapon}
           />

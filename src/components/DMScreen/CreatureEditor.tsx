@@ -241,6 +241,8 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               typeWidthClass="w-28"
               allowNegative={true}
             />
+
+            <CreatureStrikeList />
           </div>
 
           {/* Right — numbers + combat, in priority order */}
@@ -256,7 +258,6 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               />
             </div>
             <CreatureSavingThrows />
-            <CreatureStrikeList />
             <CreatureSpellList />
           </div>
         </div>
