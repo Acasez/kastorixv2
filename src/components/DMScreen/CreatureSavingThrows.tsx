@@ -17,7 +17,7 @@ export default function CreatureSavingThrows() {
     selectedArmor?.type === "Heavy" ? Number(selectedArmor.penalties) : 0;
 
   return (
-    <section className="p-2">
+    <section>
       <CreatureHeader title="Saving Throws" />
       <div className="grid grid-cols-3 gap-3">
         {SAVING_THROWS.map((save) => {
@@ -30,7 +30,7 @@ export default function CreatureSavingThrows() {
 
           return (
             <div
-              className="flex items-center justify-center gap-1.5 rounded border-2 border-red-500 px-2 py-1"
+              className="flex items-center justify-center gap-1 rounded border-2 border-red-500 px-2 py-1 text-sm"
               key={save.name}
             >
               <span className="font-semibold text-sky-500">
