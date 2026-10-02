@@ -48,18 +48,6 @@ export default function CreatureActionComponent({
         <h3 className="min-w-0 flex-1 font-semibold text-white">
           {action.name}
         </h3>
-        <div className="flex flex-wrap gap-x-5 gap-y-1 text-stone-300">
-          {action.manaCost > 0 && (
-            <p>
-              <strong>Mana cost:</strong> {action.manaCost}
-            </p>
-          )}
-          {action.cooldown && (
-            <p>
-              <strong>Cooldown:</strong> {action.cooldown}
-            </p>
-          )}
-        </div>
         <span className="text-sm font-semibold text-stone-300">
           {action.stat}{" "}
           {signed(
@@ -107,6 +95,18 @@ export default function CreatureActionComponent({
             <strong>Traits:</strong> {action.traits}
           </p>
         )}
+        <div className="flex flex-wrap gap-x-5 gap-y-1 text-stone-300">
+          {action.manaCost > 0 && (
+            <p>
+              <strong>Mana cost:</strong> {action.manaCost}
+            </p>
+          )}
+          {action.cooldown && (
+            <p>
+              <strong>Cooldown:</strong> {action.cooldown}
+            </p>
+          )}
+        </div>
       </div>
     </article>
   );
