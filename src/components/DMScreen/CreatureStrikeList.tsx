@@ -24,7 +24,6 @@ export default function CreatureStrikeList() {
   );
   const confirmWeapon = (weaponName: string) => {
     const strikesProficiencies = { ...(creature.strikesProficiencies ?? {}) };
-    console.log("Confirmed weapon", weaponName);
     if (weaponToReplace) {
       if (
         weaponName !== weaponToReplace &&
@@ -70,7 +69,6 @@ export default function CreatureStrikeList() {
     });
 
   const openWeaponModal = (replaceWeapon: string | null = null) => {
-    /* console.log("replaceWeapon", replaceWeapon); */
     setWeaponToReplace(replaceWeapon);
     setIsWeaponModalOpen(true);
   };

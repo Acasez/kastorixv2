@@ -48,8 +48,9 @@ export default function CreatureSpellList() {
 
   const confirmSpell = (spellName: string) => {
     const spellProficiencies = { ...(creature.spellProficiencies ?? {}) };
-
+    console.log("Confirm", spellName);
     if (spellToReplace) {
+      console.log("Replacing spell");
       if (spellName !== spellToReplace && creature.spells.includes(spellName)) {
         return;
       }
@@ -94,7 +95,7 @@ export default function CreatureSpellList() {
     <section>
       <CreatureSectionHeader
         title="Spells"
-        onAdd={openSpellModal}
+        onAdd={() => openSpellModal()}
         addLabel="Add spell"
       />
       {creature.spells.length > 0 && (
