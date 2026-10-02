@@ -38,6 +38,8 @@ function mergeCharacter(current: Character, saved: Character): Character {
   return {
     ...current,
     ...saved,
+    golemWeapons: saved.golemWeapons ?? current.golemWeapons,
+    golemWeaponGroups: saved.golemWeaponGroups ?? current.golemWeaponGroups,
     golemModel:
       saved.golemModel ??
       (legacyGolemCrafterKey

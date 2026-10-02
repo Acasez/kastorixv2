@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useState } from "react";
 import { useCharacter } from "../../../contexts/CharacterContext";
 import TrackBar from "../../TrackBar";
 import golemModels from "../../../JSON/golem_models.json";
@@ -8,9 +9,12 @@ import WeaponComponent from "./WeaponComponent";
 import actions from "../../../json/actions.json";
 import ActionBox from "../../ActionBox";
 import type { StatKey } from "../../../types/StatKey";
+import ModalWrapper from "../../ModalViews/ModalWrapper";
+import type { ModalRequest } from "../../ModalViews/modalTypes";
 
 export default function GolemSection() {
   const { character, updateCharacter } = useCharacter();
+  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
   const model = golemModels.find(
     (golemModel) => golemModel.name === character.golemModel,
   );
@@ -92,6 +96,62 @@ export default function GolemSection() {
       return weapon ? [weapon] : [];
     },
   );
+  const hasSimpleWeaponProficiency = model.weapons
+    .toLowerCase()
+    .includes("simple weapons");
+  const hasShieldProficiency = model.weapons.toLowerCase().includes("shields");
+  const weaponGroupSlots = selectedUpgrades.some(
+    (upgrade) => upgrade.name === "Specialized Armory",
+  )
+    ? 2
+    : model.weapons.toLowerCase().includes("one weapon group")
+      ? 1
+      : 0;
+  const weaponGroups = [
+    ...new Set(
+      weapons
+        .filter((weapon) => weapon.type !== "Golem")
+        .map((weapon) => weapon.weaponGroup)
+        .filter((group) => group && group !== "Unarmed"),
+    ),
+  ];
+  const includedTypes = hasSimpleWeaponProficiency ? ["Simple"] : [];
+  const includedWeaponGroups = [
+    ...(hasShieldProficiency ? ["Shield"] : []),
+    ...character.golemWeaponGroups,
+  ];
+  const addedGolemWeapons = character.golemWeapons.flatMap((weaponName) => {
+    const weapon = weapons.find((item) => item.name === weaponName);
+    return weapon ? [weapon] : [];
+  });
+  const allGolemStrikes = [
+    ...new Map(
+      [...golemStrikes, ...addedGolemWeapons].map((weapon) => [
+        weapon.name,
+        weapon,
+      ]),
+    ).values(),
+  ];
+  const openGolemWeaponModal = (replaceWeapon?: string) => {
+    setModalRequest({
+      type: "weapon",
+      title: replaceWeapon ? `Replace ${replaceWeapon}` : "Add Golem Weapon",
+      selectionKey: "golemWeapons",
+      level: 0,
+      replaceWeapon,
+      excludedTypes: ["Golem"],
+      includedTypes,
+      includedWeaponGroups,
+      owner: "golem",
+    });
+  };
+  const removeGolemWeapon = (weaponName: string) => {
+    updateCharacter({
+      golemWeapons: character.golemWeapons.filter(
+        (name) => name !== weaponName,
+      ),
+    });
+  };
   const golemActions = [
     ...new Set(
       selectedUpgrades.flatMap((upgrade) =>
@@ -141,6 +201,69 @@ export default function GolemSection() {
             </div>
           ))}
         </dl>
+        {weaponGroupSlots > 0 && (
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <span className="text-sm text-gray-300">
+              Weapon groups ({character.golemWeaponGroups.length}/
+              {weaponGroupSlots})
+            </span>
+            {character.golemWeaponGroups.map((group) => (
+              <button
+                type="button"
+                key={group}
+                title={`Remove ${group} proficiency`}
+                onClick={() =>
+                  updateCharacter({
+                    golemWeaponGroups: character.golemWeaponGroups.filter(
+                      (selectedGroup) => selectedGroup !== group,
+                    ),
+                    golemWeapons: character.golemWeapons.filter(
+                      (weaponName) => {
+                        const weapon = weapons.find(
+                          (item) => item.name === weaponName,
+                        );
+                        return weapon?.weaponGroup !== group;
+                      },
+                    ),
+                  })
+                }
+                className="rounded border border-gray-500 px-2 py-1 text-sm hover:border-gray-300"
+              >
+                {group} ×
+              </button>
+            ))}
+            {character.golemWeaponGroups.length < weaponGroupSlots && (
+              <select
+                key={character.golemWeaponGroups.length}
+                defaultValue=""
+                aria-label="Add golem weapon group proficiency"
+                onChange={(event) => {
+                  const group = event.target.value;
+                  if (group && !character.golemWeaponGroups.includes(group)) {
+                    updateCharacter({
+                      golemWeaponGroups: [
+                        ...character.golemWeaponGroups,
+                        group,
+                      ],
+                    });
+                  }
+                }}
+                className="rounded border border-gray-400 bg-white px-2 py-1 text-sm text-gray-900"
+              >
+                <option value="">Add weapon group</option>
+                {weaponGroups
+                  .filter(
+                    (group) => !character.golemWeaponGroups.includes(group),
+                  )
+                  .map((group) => (
+                    <option key={group} value={group}>
+                      {group}
+                    </option>
+                  ))}
+              </select>
+            )}
+          </div>
+        )}
       </section>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -171,18 +294,35 @@ export default function GolemSection() {
         </section>
 
         <section>
-          <h2 className="mb-2 text-lg font-semibold">Strikes & Attacks</h2>
-          {golemStrikes.map((weapon) => {
+          <div className="mb-2 flex items-center gap-3">
+            <h2 className="text-lg font-semibold">Strikes & Attacks</h2>
+            {(includedTypes.length > 0 || includedWeaponGroups.length > 0) && (
+              <button
+                type="button"
+                className="rounded border border-white px-2 py-0.5 text-lg leading-none hover:bg-gray-600"
+                onClick={() => openGolemWeaponModal()}
+                aria-label="Add weapon to golem"
+              >
+                +
+              </button>
+            )}
+          </div>
+          {allGolemStrikes.map((weapon) => {
+            const isAddedWeapon = character.golemWeapons.includes(weapon.name);
             return (
               <WeaponComponent
                 key={weapon.name}
                 weapon={weapon}
                 fixedProficiency="Trained"
                 creatureStats={modelStats}
+                onReplaceWeapon={
+                  isAddedWeapon ? openGolemWeaponModal : undefined
+                }
+                onRemoveWeapon={isAddedWeapon ? removeGolemWeapon : undefined}
               />
             );
           })}
-          {golemStrikes.length === 0 && (
+          {allGolemStrikes.length === 0 && (
             <p className="text-gray-400">No strikes or attacks listed.</p>
           )}
           {golemActions.length > 0 && (
@@ -195,6 +335,12 @@ export default function GolemSection() {
           )}
         </section>
       </div>
+      {modalRequest && (
+        <ModalWrapper
+          request={modalRequest}
+          closeModal={() => setModalRequest(null)}
+        />
+      )}
     </div>
   );
 }

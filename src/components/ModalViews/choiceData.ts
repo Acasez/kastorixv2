@@ -161,9 +161,15 @@ const GADGET_FIELDS: DetailField[] = [
 
 export function getWeaponChoiceItems(
   excludedTypes: string[] = [],
+  includedTypes?: string[],
+  includedWeaponGroups?: string[],
 ): ChoiceItem[] {
   const availableWeapons = weapons.filter(
-    (weapon) => !excludedTypes.includes(weapon.type),
+    (weapon) =>
+      !excludedTypes.includes(weapon.type) &&
+      (!includedTypes ||
+        includedTypes.includes(weapon.type) ||
+        includedWeaponGroups?.includes(weapon.weaponGroup)),
   );
   return createChoiceItems(availableWeapons, WEAPON_FIELDS);
 }
@@ -272,6 +278,8 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   const backgroundItems = createChoiceItems(backgrounds, BACKGROUND_FIELDS);
   const weaponItems = getWeaponChoiceItems(
     request.type === "weapon" ? request.excludedTypes : undefined,
+    request.type === "weapon" ? request.includedTypes : undefined,
+    request.type === "weapon" ? request.includedWeaponGroups : undefined,
   );
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
   const armorItems = getArmorChoiceItems();

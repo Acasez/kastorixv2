@@ -33,6 +33,9 @@ export type ModalRequest =
       level: number;
       replaceWeapon?: string;
       excludedTypes?: string[];
+      includedTypes?: string[];
+      includedWeaponGroups?: string[];
+      owner?: "character" | "golem";
     }
   | {
       type: "gadget";

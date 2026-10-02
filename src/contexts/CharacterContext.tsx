@@ -22,6 +22,8 @@ export type Character = {
   weapons: string[];
   gadgets: string[];
   golemModel: string | null;
+  golemWeapons: string[];
+  golemWeaponGroups: string[];
   golemHealth: Track;
   armor: string;
   selections: Record<string, string>;

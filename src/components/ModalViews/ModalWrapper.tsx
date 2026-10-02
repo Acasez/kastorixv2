@@ -44,7 +44,9 @@ export default function ModalWrapper({
     }
 
     if (request.type === "weapon") {
-      return character.weapons.filter(
+      const ownedWeapons =
+        request.owner === "golem" ? character.golemWeapons : character.weapons;
+      return ownedWeapons.filter(
         (weaponName) => weaponName !== request.replaceWeapon,
       );
     }
@@ -139,11 +141,21 @@ export default function ModalWrapper({
           : [...knownSpells, value],
       });
     } else if (request.type === "weapon") {
-      const weapons = character.weapons.filter(
+      const currentWeapons =
+        request.owner === "golem" ? character.golemWeapons : character.weapons;
+      const weapons = currentWeapons.filter(
         (weaponName) => weaponName !== request.replaceWeapon,
       );
       updateCharacter({
-        weapons: weapons.includes(value) ? weapons : [...weapons, value],
+        ...(request.owner === "golem"
+          ? {
+              golemWeapons: weapons.includes(value)
+                ? weapons
+                : [...weapons, value],
+            }
+          : {
+              weapons: weapons.includes(value) ? weapons : [...weapons, value],
+            }),
       });
     } else if (request.type === "gadget") {
       const gadgets = character.gadgets.filter(
@@ -195,6 +207,8 @@ export default function ModalWrapper({
                 selectedItem?.choice === "Golem Model - Choice"
                   ? (choice ?? null)
                   : null,
+              golemWeapons: [],
+              golemWeaponGroups: [],
             }
           : {}),
       });
