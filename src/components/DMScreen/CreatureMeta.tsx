@@ -29,7 +29,7 @@ export default function CreatureMeta({
   importCreature,
 }: CreatureMetaProps) {
   return (
-    <header className="flex flex-row items-center bg-stone-900 p-3 border-b-2 border-black justify-between">
+    <header className="flex flex-row items-center bg-stone-900 p-3 px-5 border-b-2 border-black justify-between">
       <MetaButton
         label="Save Creature"
         onClick={saveCreature}

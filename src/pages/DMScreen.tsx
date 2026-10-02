@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CreatureBlock from "../components/DMScreen/CreatureBlock";
+import MetaButton from "../components/CharacterSheet/MetaMenu/MetaButton";
 
 export default function DMScreen() {
   const [creatureBlocks, setCreatureBlocks] = useState([0]);
@@ -23,9 +24,11 @@ export default function DMScreen() {
           />
         ))}
       </div>
-      <button className="creature-button" onClick={addCreatureBlock}>
-        Add New Creature
-      </button>
+      <MetaButton
+        label={"Add New Creature"}
+        variant={"characterSheet"}
+        onClick={addCreatureBlock}
+      />
     </div>
   );
 }
