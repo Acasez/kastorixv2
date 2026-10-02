@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import {
   useCreature,
-  type Creature,
   type CreatureTrack,
 } from "../../contexts/CreatureContext";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
@@ -21,6 +20,7 @@ import CreaturePassiveList from "./CreaturePassiveList";
 import CreatureArmorSelector from "./CreatureArmorSelector";
 import CreatureSenses from "./CreatureSenses";
 import { SPEED_TYPES } from "../../constants/SpeedTypes";
+import { normalizeCreature } from "../../utils/normalizeCreature";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
@@ -112,10 +112,8 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
   const loadCreature = () => {
     if (!selectedKey) return;
     try {
-      const value: unknown = JSON.parse(
-        localStorage.getItem(selectedKey) ?? "",
-      );
-      setCreature(value as Creature);
+      const raw = localStorage.getItem(selectedKey) ?? "null";
+      setCreature(normalizeCreature(JSON.parse(raw)));
     } catch {
       window.alert("The selected saved creature could not be loaded.");
     }
@@ -150,7 +148,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
 
     try {
       const imported: unknown = JSON.parse(await file.text());
-      setCreature(imported as Creature);
+      setCreature(normalizeCreature(imported));
     } catch {
       window.alert("The selected file is not a valid creature JSON file.");
     }

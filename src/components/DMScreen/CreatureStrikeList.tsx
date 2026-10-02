@@ -6,7 +6,7 @@ import WeaponComponent from "../CharacterSheet/TabbedSection/WeaponComponent";
 import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getWeaponChoiceItems } from "../ModalViews/choiceData";
-import CreatureHeader from "./CreatureHeader";
+import CreatureSectionHeader from "./CreatureSectionHeader";
 
 const weaponChoiceItems = getWeaponChoiceItems(["Golem"]);
 const weaponFilters = [
@@ -18,20 +18,44 @@ const weaponFilters = [
 export default function CreatureStrikeList() {
   const { creature, updateCreature } = useCreature();
   const [isWeaponModalOpen, setIsWeaponModalOpen] = useState(false);
-  const selectedWeapons = Object.keys(creature.strikes);
+  const [weaponToReplace, setWeaponToReplace] = useState<string | null>(null);
+  const selectedWeapons = weapons.filter((weapon) =>
+    creature.strikes.includes(weapon.name),
+  );
+  const confirmWeapon = (weaponName: string) => {
+    const strikesProficiencies = { ...(creature.strikesProficiencies ?? {}) };
 
-  const addWeapon = (weaponName: string) => {
-    if (selectedWeapons.includes(weaponName)) return;
-    updateCreature({
-      strikes: { ...creature.strikes, [weaponName]: "Trained" },
-    });
-    setIsWeaponModalOpen(false);
+    if (weaponToReplace) {
+      if (
+        weaponName !== weaponToReplace &&
+        creature.strikes.includes(weaponName)
+      ) {
+        return;
+      }
+      const proficiency = strikesProficiencies[weaponToReplace] ?? "Trained";
+      delete strikesProficiencies[weaponToReplace];
+      strikesProficiencies[weaponName] = proficiency;
+      updateCreature({
+        strikes: creature.strikes.map((name) =>
+          name === weaponToReplace ? weaponName : name,
+        ),
+        strikesProficiencies,
+      });
+    } else {
+      if (creature.strikes.includes(weaponName)) return;
+      updateCreature({ strikes: [...creature.strikes, weaponName] });
+    }
+
+    closeWeaponModal();
   };
 
   const removeWeapon = (weaponName: string) => {
-    const strikes = { ...creature.strikes };
-    delete strikes[weaponName];
-    updateCreature({ strikes });
+    const strikesProficiencies = { ...(creature.strikesProficiencies ?? {}) };
+    delete strikesProficiencies[weaponName];
+    updateCreature({
+      strikes: creature.strikes.filter((name) => name !== weaponName),
+      strikesProficiencies,
+    });
   };
 
   const setWeaponProficiency = (
@@ -39,47 +63,47 @@ export default function CreatureStrikeList() {
     proficiency: ProficiencyTierName,
   ) =>
     updateCreature({
-      strikes: { ...creature.strikes, [weaponName]: proficiency },
+      strikesProficiencies: {
+        ...(creature.strikesProficiencies ?? {}),
+        [weaponName]: proficiency,
+      },
     });
+
+  const openWeaponModal = (replaceWeapon: string | null = null) => {
+    setWeaponToReplace(replaceWeapon);
+    setIsWeaponModalOpen(true);
+  };
+
+  const closeWeaponModal = () => {
+    setIsWeaponModalOpen(false);
+    setWeaponToReplace(null);
+  };
 
   return (
     <section className="space-y-3">
-      <div className="flex flex-row justify-center">
-        <div className="w-full">
-          <CreatureHeader title="Strikes" />
-        </div>
-        <button
-          type="button"
-          className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={() => setIsWeaponModalOpen(true)}
-          aria-label="Add strike"
-          title="Add strike"
-        >
-          +
-        </button>
-      </div>
+      <CreatureSectionHeader
+        title="Weapons"
+        onAdd={openWeaponModal}
+        addLabel="Add weapon"
+      />
 
       <div className="flex items-center gap-2"></div>
 
-      <div className="flex flex-col gap-2">
-        {selectedWeapons.map((weaponName) => {
-          const weapon = weapons.find((entry) => entry.name === weaponName);
-          if (!weapon) return null;
-
-          return (
-            <div className="flex justify-center pr-7" key={weaponName}>
-              <WeaponComponent
-                weapon={weapon}
-                creatureStats={creature.stats}
-                proficiency={creature.strikes[weaponName] ?? "Trained"}
-                onProficiencyChange={(proficiency) =>
-                  setWeaponProficiency(weaponName, proficiency)
-                }
-                onRemoveWeapon={removeWeapon}
-              />
-            </div>
-          );
-        })}
+      <div className="flex flex-wrap gap-2">
+        {selectedWeapons.map((weapon) => (
+          <WeaponComponent
+            key={weapon.name}
+            weapon={weapon}
+            onReplaceWeapon={(weaponName) => openWeaponModal(weaponName)}
+            onRemoveWeapon={removeWeapon}
+            proficiency={
+              creature.strikesProficiencies?.[weapon.name] ?? "Trained"
+            }
+            onProficiencyChange={(proficiency) =>
+              setWeaponProficiency(weapon.name, proficiency)
+            }
+          />
+        ))}
       </div>
       {isWeaponModalOpen && (
         <ChoiceModalFrame
@@ -91,9 +115,8 @@ export default function CreatureStrikeList() {
             confirmLabel="Add Strike"
             initialValue={null}
             maxLevel={Infinity}
-            disabledNames={selectedWeapons}
             filterFields={weaponFilters}
-            onConfirm={addWeapon}
+            onConfirm={confirmWeapon}
           />
         </ChoiceModalFrame>
       )}

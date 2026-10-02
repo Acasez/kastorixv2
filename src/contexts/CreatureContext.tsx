@@ -52,7 +52,7 @@ export type Creature = {
   armor: string;
   resistances: Partial<Record<string, number>>;
   speeds: Partial<Record<SpeedTypes, number>>;
-  strikes: Partial<Record<string, ProficiencyTierName>>;
+  strikesProficiencies: Partial<Record<string, ProficiencyTierName>>;
   spellProficiencies: Partial<Record<string, ProficiencyTierName>>;
   spellShaping: {
     verbal: VerbalComponent;
@@ -60,6 +60,7 @@ export type Creature = {
   };
   actions: CreatureAction[];
   spells: string[];
+  strikes: string[];
   passives: CreaturePassive[];
 };
 
