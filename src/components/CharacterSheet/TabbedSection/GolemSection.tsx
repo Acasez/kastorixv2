@@ -7,6 +7,7 @@ import weapons from "../../../JSON/weapons.json";
 import WeaponComponent from "./WeaponComponent";
 import actions from "../../../json/actions.json";
 import ActionBox from "../../ActionBox";
+import type { StatKey } from "../../../types/StatKey";
 
 export default function GolemSection() {
   const { character, updateCharacter } = useCharacter();
@@ -20,6 +21,16 @@ export default function GolemSection() {
     },
   );
   const modelPhy = Number(model?.phy ?? 0);
+  const modelDex = Number(model?.dex ?? 0);
+  const modelInt = Number(model?.int ?? 0);
+  const modelWil = Number(model?.wil ?? 0);
+  const modelStats: Record<StatKey, number> = {
+    PHY: modelPhy,
+    DEX: modelDex,
+    INT: modelInt,
+    WIL: modelWil,
+  };
+
   const healthMultiplier = Math.max(
     3,
     ...selectedUpgrades.map((upgrade) => Number(upgrade.healthBase) || 0),
@@ -122,7 +133,7 @@ export default function GolemSection() {
             ["Speed", model.speeds],
             ["Skills", model.skills],
             ["Saves", model.saves],
-            ["Weapons", model.weapons],
+            ["Weapon Proficiencies", model.weapons],
           ].map(([label, value]) => (
             <div key={label}>
               <dt className="text-sm text-gray-400">{label}</dt>
@@ -162,22 +173,12 @@ export default function GolemSection() {
         <section>
           <h2 className="mb-2 text-lg font-semibold">Strikes & Attacks</h2>
           {golemStrikes.map((weapon) => {
-            const traits = weapon.traits
-              .split(",")
-              .map((trait) => trait.trim());
-            const attackStat = traits.includes("Ranged")
-              ? Number(model.dex)
-              : traits.includes("Finesse")
-                ? Math.max(Number(model.dex), modelPhy)
-                : modelPhy;
-
             return (
               <WeaponComponent
                 key={weapon.name}
                 weapon={weapon}
-                attackStatOverride={attackStat}
-                damageBonusOverride={modelPhy}
                 fixedProficiency="Trained"
+                creatureStats={modelStats}
               />
             );
           })}
