@@ -8,12 +8,6 @@ export const routes = [
     createHeader: false,
   },
   {
-    path: "/kastorixv2/index",
-    component: lazy(() => import("../pages/RPGOverview")),
-    header: "Overview",
-    createHeader: true,
-  },
-  {
     path: "/kastorixv2/characterSheet",
     component: lazy(() => import("../pages/CharacterSheet")),
     header: "Character Sheet",
