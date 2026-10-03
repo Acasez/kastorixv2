@@ -145,7 +145,7 @@
     },
     {
         "name": "Marsh Walker",
-        "description": "You've learned to navigate the wet and dangerous grounds of your homeland. \nYou ignore difficult terrain caused by wetlands, swamps, jungles and similar enviroments\nYou have +3 bonus to Survival and Nature checks regarding those environments.",
+        "description": "You've learned to navigate the wet and dangerous grounds of your homeland. \nYou ignore difficult terrain caused by wetlands, swamps, jungles and similar environments\nYou have +3 bonus to Survival and Nature checks regarding those environments.",
         "unlockedAction": "",
         "type": "Biological",
         "species": "Naga",

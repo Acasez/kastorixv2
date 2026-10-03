@@ -169,7 +169,7 @@
     },
     {
         "name": "Magical Genius",
-        "description": "You have an innate apptitude for learning magic.\nYou learn extra spells of all ranks you know equal to your INT. \nYou also learn Metamagics equal to your INT\nYou may attempt to copy a spell (of a rank you can cast) you saw last turn,  casting the spell even without being proficient with it.",
+        "description": "You have an innate aptitude for learning magic.\nYou learn extra spells of all ranks you know equal to your INT. \nYou also learn Metamagics equal to your INT\nYou may attempt to copy a spell (of a rank you can cast) you saw last turn,  casting the spell even without being proficient with it.",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",

@@ -6,7 +6,7 @@ import type { Weapon } from "../../../types/Weapons";
 import type { StatKey } from "../../../types/StatKey";
 import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
 import Tooltip from "../../Tooltip";
-import weaponTraits from "../../../JSON/weapon_traits.json";
+import WeaponTraitComponent from "./WeaponTraitComponent";
 
 interface WeaponComponentProps {
   weapon: Weapon;
@@ -18,20 +18,6 @@ interface WeaponComponentProps {
   creatureStats?: Record<StatKey, number>;
   proficiency?: ProficiencyTierName;
   onProficiencyChange?: (proficiency: ProficiencyTierName) => void;
-}
-
-function normalizeTraitName(traitName: string) {
-  return traitName
-    .replace(/\s*\([^)]*\)/g, "")
-    .trim()
-    .toLowerCase();
-}
-
-function getTraitDescription(traitName: string) {
-  const normalizedName = normalizeTraitName(traitName);
-  return weaponTraits.find(
-    (trait) => normalizeTraitName(trait.name) === normalizedName,
-  )?.effect;
 }
 
 export default function WeaponComponent({
@@ -186,18 +172,7 @@ export default function WeaponComponent({
         </div>
         <div className="flex flex-wrap gap-1">
           {weaponTraits.map((trait) => (
-            <Tooltip
-              key={trait}
-              content={
-                getTraitDescription(trait) ?? "No description available."
-              }
-              align="left"
-              contentClassName="whitespace-pre-line"
-            >
-              <span className="rounded border border-sky-700 bg-sky-950/60 px-1.5 py-0.5 text-xs text-sky-100">
-                {trait}
-              </span>
-            </Tooltip>
+            <WeaponTraitComponent trait={trait} key={trait} />
           ))}
         </div>
       </div>

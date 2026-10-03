@@ -1104,6 +1104,18 @@
         "manueverType": ""
     },
     {
+        "name": "Swallow Whole",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "The monster has a creature grabbed in your teeth",
+        "description": "Make a brawling roll against the grabbed creature.\nOn a success the creature is swallowed and the monster can use its mouth attack again.",
+        "traits": "Attack, Creature",
+        "skill": "",
+        "sourceType": "Creature",
+        "source": "",
+        "manueverType": ""
+    },
+    {
         "name": "Stabilize",
         "actions": "1",
         "trigger": "",
@@ -1315,7 +1327,19 @@
         "description": "Throw a device 2 + your DEX or PHY tiles. \nThe device activates and has an effect based on the device . \nIf the device is an gadget crafted by you, you roll Crafting + DEX",
         "traits": "Item",
         "skill": "Crafting",
-        "sourceType": "",
+        "sourceType": "Base",
+        "source": "",
+        "manueverType": ""
+    },
+    {
+        "name": "Trample",
+        "actions": "3",
+        "trigger": "",
+        "requirement": "",
+        "description": "The monster Strides up to double its Speed and can move through the spaces of creatures of the listed size, Trampling each creature whose space it enters. \nThe monster can attempt to Trample the same creature only once in a single use of Trample. \nThe monster deals the damage of the listed Strike, but trampled creatures can attempt a basic Reflex save at the listed DC",
+        "traits": "Attack, Move, Creature",
+        "skill": "",
+        "sourceType": "Monster",
         "source": "",
         "manueverType": ""
     },

@@ -138,5 +138,12 @@
         "type": "Numeric",
         "disappears": "-1 on long rests or successful Medicine checks",
         "neutrality": "Negative"
+    },
+    {
+        "name": "Swallowed",
+        "effect": "Your slowed 1 and has to hold your breath or start suffocating. \nYou take damage at the start of each turn based on the creature",
+        "type": "Binary",
+        "disappears": "",
+        "neutrality": "Negative"
     }
 ]

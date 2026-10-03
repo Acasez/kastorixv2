@@ -1,7 +1,9 @@
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type KeyboardEvent } from "react";
 import damageTypes from "../../JSON/damage_types.json";
+import weaponTraits from "../../JSON/weapon_traits.json";
 import type { Weapon } from "../../types/Weapons";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
+import WeaponTraitComponent from "../CharacterSheet/TabbedSection/WeaponTraitComponent";
 
 type CreatureWeaponModalProps = {
   initialWeapon?: Weapon;
@@ -49,7 +51,44 @@ export default function CreatureWeaponModal({
   const [weapon, setWeapon] = useState<Weapon>(
     () => initialWeapon ?? EMPTY_WEAPON,
   );
+  const [traitQuery, setTraitQuery] = useState("");
   const isEditing = Boolean(initialWeapon);
+  const selectedTraits = weapon.traits
+    .split(",")
+    .map((trait) => trait.trim())
+    .filter(Boolean);
+  const matchingTraits = weaponTraits
+    .map(({ name }) => name)
+    .filter(
+      (trait) =>
+        trait.toLowerCase().includes(traitQuery.trim().toLowerCase()) &&
+        !selectedTraits.some(
+          (selected) => selected.toLowerCase() === trait.toLowerCase(),
+        ),
+    );
+
+  const setTraits = (traits: string[]) =>
+    setWeapon({ ...weapon, traits: traits.join(", ") });
+
+  const addTrait = (trait: string) => {
+    const normalizedTrait = trait.trim();
+    if (
+      !normalizedTrait ||
+      selectedTraits.some(
+        (selected) => selected.toLowerCase() === normalizedTrait.toLowerCase(),
+      )
+    ) {
+      return;
+    }
+    setTraits([...selectedTraits, normalizedTrait]);
+    setTraitQuery("");
+  };
+
+  const handleTraitKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key !== "Enter" || !traitQuery.trim()) return;
+    event.preventDefault();
+    addTrait(traitQuery);
+  };
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -132,17 +171,76 @@ export default function CreatureWeaponModal({
           </label>
         </div>
 
-        <label className="flex flex-col gap-1 font-semibold text-white">
-          <span>Traits</span>
-          <input
-            value={weapon.traits}
-            onChange={(event) =>
-              setWeapon({ ...weapon, traits: event.target.value })
-            }
-            placeholder="Type or select traits..."
-            className="h-11 rounded border border-gray-400 bg-white px-2 text-gray-900"
-          />
-        </label>
+        <div className="space-y-2">
+          <label className="flex flex-col gap-1 font-semibold text-white">
+            <span>Traits</span>
+            <input
+              value={traitQuery}
+              onChange={(event) => setTraitQuery(event.target.value)}
+              onKeyDown={handleTraitKeyDown}
+              placeholder="Search or type a trait, then press Enter"
+              className="h-11 rounded border border-gray-400 bg-white px-2 text-gray-900"
+              aria-label="Search weapon traits"
+            />
+          </label>
+          {traitQuery.trim() && (
+            <div
+              role="listbox"
+              aria-label="Matching weapon traits"
+              className="max-h-40 overflow-y-auto rounded border border-stone-500 bg-stone-900"
+            >
+              {matchingTraits.map((trait) => (
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  key={trait}
+                  onClick={() => addTrait(trait)}
+                  className="block w-full px-3 py-2 text-left text-sm text-white hover:bg-stone-700"
+                >
+                  {trait}
+                </button>
+              ))}
+              {!matchingTraits.some(
+                (trait) =>
+                  trait.toLowerCase() === traitQuery.trim().toLowerCase(),
+              ) && (
+                <button
+                  type="button"
+                  role="option"
+                  aria-selected="false"
+                  onClick={() => addTrait(traitQuery)}
+                  className="block w-full border-t border-stone-700 px-3 py-2 text-left text-sm text-orange-200 hover:bg-stone-700"
+                >
+                  Add custom trait: {traitQuery.trim()}
+                </button>
+              )}
+            </div>
+          )}
+          {selectedTraits.length > 0 && (
+            <div className="flex flex-wrap gap-2 rounded border border-stone-600 bg-stone-900 p-2">
+              {selectedTraits.map((trait, index) => (
+                <span
+                  className="inline-flex items-center gap-1"
+                  key={`${trait}-${index}`}
+                >
+                  <WeaponTraitComponent trait={trait} />
+                  <button
+                    type="button"
+                    className="flex size-4 items-center justify-center rounded-full bg-stone-600 text-xs text-white hover:bg-red-700"
+                    onClick={() =>
+                      setTraits(selectedTraits.filter((_, i) => i !== index))
+                    }
+                    aria-label={`Remove ${trait} trait`}
+                    title={`Remove ${trait}`}
+                  >
+                    ×
+                  </button>
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
 
         <label className="flex flex-col gap-1 font-semibold text-white">
           <span>Description</span>

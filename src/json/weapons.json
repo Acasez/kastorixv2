@@ -511,7 +511,7 @@
         "range": "1",
         "traits": "Finesse",
         "description": "Quadruped golems can attack foes with their sharp claws",
-        "price": "",
+        "price": "-",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -547,7 +547,7 @@
         "range": "10",
         "traits": "Ranged, Reload (1), Propulsive",
         "description": "You mount a ballista on your golem, giving it a ranged weapon.",
-        "price": "",
+        "price": "-",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -597,6 +597,42 @@
         "description": "Punching people has always been a way to fight",
         "price": "-",
         "type": "Unarmed",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Peck",
+        "dice": "1d6",
+        "damageType": "piercing",
+        "hands": "0",
+        "range": "1",
+        "traits": "Finesse, Precision, Deadly (d8)",
+        "description": "Avian creatures can deliver precise strikes with the beak",
+        "price": "-",
+        "type": "Creature",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Creature Claw",
+        "dice": "1d10",
+        "damageType": "slashing",
+        "hands": "1",
+        "range": "0",
+        "traits": "Finesse",
+        "description": "Many creatures fight with their claws",
+        "price": "-",
+        "type": "Creature",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Jaws",
+        "dice": "1d8",
+        "damageType": "piercing",
+        "hands": "0",
+        "range": "0",
+        "traits": "",
+        "description": "You don't want to get stuck in the jaws of a large creature",
+        "price": "",
+        "type": "Creature",
         "weaponGroup": "Unarmed"
     }
 ]

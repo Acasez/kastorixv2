@@ -248,7 +248,7 @@
     },
     {
         "name": "Adept Elemental Magic",
-        "description": "Your experince in one aspect of magic grows\nCan be chosen multiple times, once for each aspect. \nChoose one aspect and learn two adept rank spells from that aspect. \nYou become expert in casting spells of your chosen aspect",
+        "description": "Your experience in one aspect of magic grows\nCan be chosen multiple times, once for each aspect. \nChoose one aspect and learn two adept rank spells from that aspect. \nYou become expert in casting spells of your chosen aspect",
         "unlockedAction": "",
         "prerequisites": "[Basic Elemental Magic], for the same aspect",
         "level": "4",
@@ -950,7 +950,7 @@
     },
     {
         "name": "Legendary Evoker",
-        "description": "Bring forth devastion\nYour proficiency level with Area spells increases (max Legendary).\nYou learn the Expand Spell metamagic and can use it without modifying spell DCs\nYou can use spend a focus points to reroll the damage of an area spell (as many times as you want)",
+        "description": "Bring forth devastation\nYour proficiency level with Area spells increases (max Legendary).\nYou learn the Expand Spell metamagic and can use it without modifying spell DCs\nYou can use spend a focus points to reroll the damage of an area spell (as many times as you want)",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "18",
