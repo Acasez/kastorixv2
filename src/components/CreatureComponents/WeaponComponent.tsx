@@ -18,6 +18,7 @@ interface WeaponComponentProps {
   creatureStats?: Record<StatKey, number>;
   proficiency?: ProficiencyTierName;
   onProficiencyChange?: (proficiency: ProficiencyTierName) => void;
+  customWeapon?: boolean;
 }
 
 export default function WeaponComponent({
