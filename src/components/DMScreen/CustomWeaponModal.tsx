@@ -3,7 +3,7 @@ import damageTypes from "../../JSON/damage_types.json";
 import weaponTraits from "../../JSON/weapon_traits.json";
 import type { Weapon } from "../../types/Weapons";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
-import WeaponTraitComponent from "../CharacterSheet/TabbedSection/WeaponTraitComponent";
+import WeaponTraitComponent from "../CreatureComponents/WeaponTraitComponent";
 import { WEAPON_TYPES, WEAPON_GROUPS } from "../../constants/Weapons";
 
 type CustomWeaponModalProps = {

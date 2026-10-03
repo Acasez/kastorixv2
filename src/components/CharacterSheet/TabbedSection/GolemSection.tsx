@@ -5,7 +5,7 @@ import TrackBar from "../../TrackBar";
 import golemModels from "../../../JSON/golem_models.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
 import weapons from "../../../JSON/weapons.json";
-import WeaponComponent from "./WeaponComponent";
+import WeaponComponent from "../../CreatureComponents/WeaponComponent";
 import actions from "../../../json/actions.json";
 import ActionBox from "../../ActionBox";
 import type { StatKey } from "../../../types/StatKey";

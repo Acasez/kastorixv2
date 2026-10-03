@@ -1,12 +1,12 @@
-import { getProficiency } from "../../../constants/Proficiency";
-import type { ProficiencyTierName } from "../../../constants/Proficiency";
+import { getProficiency } from "../../constants/Proficiency";
+import type { ProficiencyTierName } from "../../constants/Proficiency";
 import { useContext } from "react";
-import { CharacterContext } from "../../../contexts/CharacterContext";
-import type { Weapon } from "../../../types/Weapons";
-import type { StatKey } from "../../../types/StatKey";
-import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
-import Tooltip from "../../Tooltip";
-import WeaponTraitComponent from "../../CreatureComponents/WeaponTraitComponent";
+import { CharacterContext } from "../../contexts/CharacterContext";
+import type { Weapon } from "../../types/Weapons";
+import type { StatKey } from "../../types/StatKey";
+import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import Tooltip from "../Tooltip";
+import WeaponTraitComponent from "./WeaponTraitComponent";
 
 interface WeaponComponentProps {
   weapon: Weapon;

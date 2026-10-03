@@ -3,7 +3,7 @@ import weapons from "../../JSON/weapons.json";
 import { useCreature } from "../../contexts/CreatureContext";
 import type { ProficiencyTierName } from "../../constants/Proficiency";
 import type { Weapon } from "../../types/Weapons";
-import WeaponComponent from "../CharacterSheet/TabbedSection/WeaponComponent";
+import WeaponComponent from "../CreatureComponents/WeaponComponent";
 import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getWeaponChoiceItems } from "../ModalViews/choiceData";

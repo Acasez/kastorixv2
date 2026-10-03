@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { getProficiency } from "../../../constants/Proficiency";
-import type { ProficiencyTierName } from "../../../constants/Proficiency";
-import { CharacterContext } from "../../../contexts/CharacterContext";
-import type { Spell } from "../../../types/Spells";
-import { getActionIcons } from "../../../utils/actionUtils";
-import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
-import Tooltip from "../../Tooltip";
+import { getProficiency } from "../../constants/Proficiency";
+import type { ProficiencyTierName } from "../../constants/Proficiency";
+import { CharacterContext } from "../../contexts/CharacterContext";
+import type { Spell } from "../../types/Spells";
+import { getActionIcons } from "../../utils/actionUtils";
+import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import Tooltip from "../Tooltip";
 
 interface SpellComponentProps {
   spell: Spell;

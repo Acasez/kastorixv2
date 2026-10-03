@@ -1,5 +1,5 @@
-import Tooltip from "../../Tooltip";
-import weaponTraits from "../../../JSON/weapon_traits.json";
+import Tooltip from "../Tooltip";
+import weaponTraits from "../../JSON/weapon_traits.json";
 
 type WeaponTraitComponentProps = {
   trait: string;
