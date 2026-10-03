@@ -9,6 +9,7 @@ import type { CreatureActionCost } from "../types/Action";
 import type { StatKey } from "../types/StatKey";
 import type { SpeedTypes } from "../types/SpeedTypes";
 import type { SomaticComponent, VerbalComponent } from "../types/Spells";
+import type { Weapon } from "../types/Weapons";
 
 export type CreatureSaveKey = "Fortitude" | "Reflex" | "Will";
 
@@ -54,6 +55,7 @@ export type Creature = {
   speeds: Partial<Record<SpeedTypes, number>>;
   strikesProficiencies: Partial<Record<string, ProficiencyTierName>>;
   spellProficiencies: Partial<Record<string, ProficiencyTierName>>;
+  customWeapons: Weapon[];
   spellShaping: {
     verbal: VerbalComponent;
     somatic: SomaticComponent;

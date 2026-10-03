@@ -6,6 +6,7 @@ import type {
 } from "../contexts/CreatureContext";
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { VerbalComponent, SomaticComponent } from "../types/Spells";
+import type { Weapon } from "../types/Weapons";
 
 // If constants/Proficiency already exports the tier names, import that instead.
 const PROFICIENCY_TIERS: readonly string[] = [
@@ -102,6 +103,27 @@ const passives = (value: unknown): CreaturePassive[] =>
       })
     : [];
 
+const weapons = (value: unknown): Weapon[] =>
+  Array.isArray(value)
+    ? value.flatMap((entry) => {
+        if (!isRecord(entry) || !str(entry.name).trim()) return [];
+        return [
+          {
+            name: str(entry.name).trim(),
+            dice: str(entry.dice),
+            damageType: str(entry.damageType, "Piercing"),
+            hands: str(entry.hands, "1"),
+            range: str(entry.range, "1"),
+            traits: str(entry.traits),
+            description: str(entry.description),
+            price: str(entry.price),
+            type: str(entry.type, "Simple"),
+            weaponGroup: str(entry.weaponGroup, "Unarmed"),
+          },
+        ];
+      })
+    : [];
+
 export function normalizeCreature(input: unknown): Creature {
   const src = isRecord(input) ? input : {};
   const saves = isRecord(src.savingThrows) ? src.savingThrows : {};
@@ -131,6 +153,7 @@ export function normalizeCreature(input: unknown): Creature {
     resistances: numberRecord(src.resistances),
     speeds: numberRecord(src.speeds) as Creature["speeds"],
     strikesProficiencies: tierRecord(src.strikesProficiencies),
+    customWeapons: weapons(src.customWeapons),
     spellProficiencies: tierRecord(src.spellProficiencies),
     spellShaping: {
       verbal: str(shaping.verbal, "Standard") as VerbalComponent,
