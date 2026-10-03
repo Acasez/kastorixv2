@@ -1,7 +1,14 @@
 // routes/config.js
 import { lazy } from "react";
 
-export const routes = [
+interface RouteConfig {
+  path: string;
+  component: React.LazyExoticComponent<React.ComponentType>;
+  header?: string;
+  createHeader: boolean;
+}
+
+export const routes: RouteConfig[] = [
   {
     path: "/kastorixv2",
     component: lazy(() => import("../pages/RPGOverview")),
