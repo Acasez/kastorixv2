@@ -4,31 +4,13 @@ import weaponTraits from "../../JSON/weapon_traits.json";
 import type { Weapon } from "../../types/Weapons";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import WeaponTraitComponent from "../CharacterSheet/TabbedSection/WeaponTraitComponent";
+import { WEAPON_TYPES, WEAPON_GROUPS } from "../../constants/Weapons";
 
-type CreatureWeaponModalProps = {
+type CustomWeaponModalProps = {
   initialWeapon?: Weapon;
   closeModal: () => void;
   onSave: (weapon: Weapon) => boolean;
 };
-
-const WEAPON_TYPES = ["Unarmed", "Simple", "Martial", "Advanced", "Artificer"];
-const WEAPON_GROUPS = [
-  "Axe",
-  "Bow",
-  "Club",
-  "Crossbow",
-  "Flail",
-  "Hammer",
-  "Knife",
-  "Polearm",
-  "Runegun",
-  "Shield",
-  "Sling",
-  "Spear",
-  "Staff",
-  "Sword",
-  "Unarmed",
-];
 
 const EMPTY_WEAPON: Weapon = {
   name: "",
@@ -43,11 +25,11 @@ const EMPTY_WEAPON: Weapon = {
   weaponGroup: "Unarmed",
 };
 
-export default function CreatureWeaponModal({
+export default function CustomWeaponModal({
   initialWeapon,
   closeModal,
   onSave,
-}: CreatureWeaponModalProps) {
+}: CustomWeaponModalProps) {
   const [weapon, setWeapon] = useState<Weapon>(
     () => initialWeapon ?? EMPTY_WEAPON,
   );
@@ -102,7 +84,7 @@ export default function CreatureWeaponModal({
     >
       <form className="space-y-5 rounded bg-[#242321] p-4" onSubmit={submit}>
         <div className="grid gap-4 md:grid-cols-[1fr_1fr_auto]">
-          <label className="flex min-w-0 flex-col gap-1 font-semibold text-white">
+          <label className="flex min-w-0 flex-col gap-1 text-white">
             <span>Name</span>
             <input
               required
@@ -114,7 +96,7 @@ export default function CreatureWeaponModal({
               className="h-9 min-w-0 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
-          <label className="flex min-w-0 flex-col gap-1 font-semibold text-white">
+          <label className="flex min-w-0 flex-col gap-1 text-white">
             <span>Damage</span>
             <input
               required
@@ -126,7 +108,7 @@ export default function CreatureWeaponModal({
               className="h-9 min-w-0 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
-          <label className="flex flex-col gap-1 font-semibold text-white">
+          <label className="flex flex-col gap-1 text-white">
             <span>Damage Type</span>
             <select
               value={weapon.damageType}
@@ -145,11 +127,11 @@ export default function CreatureWeaponModal({
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <label className="flex flex-col gap-1 font-semibold text-white">
+          <label className="flex flex-col gap-1 text-white">
             <span>Hands</span>
             <input
               type="number"
-              min={1}
+              min={0}
               value={weapon.hands}
               onChange={(event) =>
                 setWeapon({ ...weapon, hands: event.target.value })
@@ -157,7 +139,7 @@ export default function CreatureWeaponModal({
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
-          <label className="flex flex-col gap-1 font-semibold text-white">
+          <label className="flex flex-col gap-1  text-white">
             <span>Range</span>
             <input
               type="number"
@@ -242,7 +224,7 @@ export default function CreatureWeaponModal({
           )}
         </div>
 
-        <label className="flex flex-col gap-1 font-semibold text-white">
+        <label className="flex flex-col gap-1 text-white">
           <span>Description</span>
           <textarea
             rows={3}
@@ -255,7 +237,7 @@ export default function CreatureWeaponModal({
         </label>
 
         <div className="grid gap-4 sm:grid-cols-3">
-          <label className="flex flex-col gap-1 font-semibold text-white">
+          <label className="flex flex-col gap-1 text-white">
             <span>Price</span>
             <input
               value={weapon.price}
@@ -265,7 +247,7 @@ export default function CreatureWeaponModal({
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
-          <label className="flex flex-col gap-1 font-semibold text-white">
+          <label className="flex flex-col gap-1 text-white">
             <span>Type</span>
             <select
               value={weapon.type}
@@ -279,7 +261,7 @@ export default function CreatureWeaponModal({
               ))}
             </select>
           </label>
-          <label className="flex flex-col gap-1 font-semibold text-white">
+          <label className="flex flex-col gap-1 text-white">
             <span>Weapon Group</span>
             <select
               value={weapon.weaponGroup}
@@ -305,7 +287,7 @@ export default function CreatureWeaponModal({
           </button>
           <button
             type="submit"
-            className="rounded bg-green-600 px-4 py-2 font-semibold text-white hover:bg-green-500"
+            className="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-500"
           >
             {isEditing ? "Save Weapon" : "Add Weapon"}
           </button>
