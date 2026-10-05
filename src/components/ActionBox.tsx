@@ -45,7 +45,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
   // ✅ Step 3: NOW we can do conditional rendering
   if (!actionDetails) {
     return (
-      <div className="mb-3.75 ml-3.75 p-2.5 border border-[#8b4513] bg-bg-rules font-serif max-w-62.5 self-center grid">
+      <div className="mb-3.75 ml-3.75 p-2.5 border border-amber-800 bg-bg-rules font-serif max-w-62.5 self-center grid">
         Action not found: {action}
       </div>
     );
@@ -54,7 +54,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
   // ✅ Step 4: Main render (all hooks already called)
   return (
     <div
-      className={`mb-3.75 ml-3.75 p-2.5 border border-[#8b4513] bg-bg-rules font-serif text-text-black ${widthClass} self-center grid`}
+      className={`mb-3.75 ml-3.75 p-2.5 border border-amber-800 bg-bg-rules font-serif text-text-black ${widthClass} self-center grid`}
     >
       <div className="flex items-center gap-2.5 mb-2.5 justify-self-center">
         <h2 className="underline text-[28px]">{action}</h2>
