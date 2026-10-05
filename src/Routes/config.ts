@@ -12,7 +12,8 @@ export const routes: RouteConfig[] = [
   {
     path: "/kastorixv2",
     component: lazy(() => import("../pages/RPGOverview")),
-    createHeader: false,
+    header: "Overview",
+    createHeader: true,
   },
   {
     path: "/kastorixv2/characterSheet",

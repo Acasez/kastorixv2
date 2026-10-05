@@ -4,20 +4,13 @@ import { Suspense, useEffect } from "react";
 import { routes } from "./routes/config.ts";
 import MainHeader from "./components/PageStructure/MainHeader.tsx";
 import Footer from "./components/PageStructure/Footer.tsx";
-/* import { ErrorBoundary } from "react-error-boundary";
-TODO FIX Error Boundary
+import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 
-function ErrorFallback({
-  error,
-  resetErrorBoundary,
-}: {
-  error: Error;
-  resetErrorBoundary: () => void;
-}) {
+function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
     <div role="alert" className="p-4 bg-red-100 text-red-800">
       <p>Something went wrong:</p>
-      <pre className="text-sm">{error.message}</pre>
+      <pre className="text-sm">{String(error)}</pre>
       <button
         onClick={resetErrorBoundary}
         className="mt-2 p-2 bg-red-200 rounded"
@@ -26,7 +19,7 @@ function ErrorFallback({
       </button>
     </div>
   );
-} */
+}
 
 export default function App() {
   const { pathname } = useLocation();
@@ -37,15 +30,17 @@ export default function App() {
 
   return (
     <>
-      <MainHeader />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          {routes.map(({ path, component: Component }) => (
-            <Route key={path} path={path} element={<Component />} />
-          ))}
-        </Routes>
-      </Suspense>
-      <Footer />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <MainHeader />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            {routes.map(({ path, component: Component }) => (
+              <Route key={path} path={path} element={<Component />} />
+            ))}
+          </Routes>
+        </Suspense>
+        <Footer />
+      </ErrorBoundary>
     </>
   );
 }
