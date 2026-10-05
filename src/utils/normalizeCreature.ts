@@ -3,7 +3,7 @@ import type {
   CreatureAction,
   CreaturePassive,
   CreatureTrack,
-} from "../contexts/CreatureContext";
+} from "../stores/useCreatureStore";
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { VerbalComponent, SomaticComponent } from "../types/Spells";
 import type { Weapon } from "../types/Weapons";

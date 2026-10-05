@@ -3,7 +3,7 @@ import ancestryFeats from "../JSON/ancestry_feats.json";
 import arcaneFeats from "../JSON/arcane_feats.json";
 import generalFeats from "../JSON/general_feats.json";
 import species from "../JSON/species.json";
-import type { Character } from "../contexts/CharacterContext";
+import type { Character } from "../stores/useCharacterStore";
 import { evaluateCharacterExpression } from "./evaluateCharacterExpression";
 
 type SpellGrantSource = {
