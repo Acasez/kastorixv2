@@ -3,24 +3,21 @@ import CoreStatSection from "../components/CharacterSheet/CoreStatSection/CoreSt
 import OtherStatSection from "../components/CharacterSheet/OtherInfoSection/OtherStatSection";
 import LevelSidebar from "../components/CharacterSheet/Sidebar/LevelSidebar";
 import SkillsTable from "../components/CharacterSheet/SkillTable";
-import { CharacterProvider } from "../contexts/CharacterProvider";
 
-export default function RPGOverview() {
+export default function CharacterSheet() {
   return (
     <>
-      <CharacterProvider>
-        <div className="flex flex-row">
-          <LevelSidebar />
-          <SkillsTable />
-          <div>
-            <div className="flex flex-row">
-              <CoreStatSection />
-              <OtherStatSection />
-            </div>
-            <TabbedSection />
+      <div className="flex flex-row">
+        <LevelSidebar />
+        <SkillsTable />
+        <div>
+          <div className="flex flex-row">
+            <CoreStatSection />
+            <OtherStatSection />
           </div>
+          <TabbedSection />
         </div>
-      </CharacterProvider>
+      </div>
     </>
   );
 }

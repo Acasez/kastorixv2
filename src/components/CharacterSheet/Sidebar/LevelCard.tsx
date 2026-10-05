@@ -3,7 +3,7 @@ import OpenModalButton from "../OpenModalButton";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import { getLevelActions } from "../../../utils/LevelCardUtils";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import generalFeats from "../../../JSON/general_feats.json";
 import arcaneFeats from "../../../JSON/arcane_feats.json";
 import advantages from "../../../JSON/advantages.json";

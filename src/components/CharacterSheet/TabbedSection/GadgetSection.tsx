@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import gadgets from "../../../JSON/gadgets.json";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";

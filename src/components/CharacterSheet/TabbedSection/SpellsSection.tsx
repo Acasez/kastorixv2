@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import type { SomaticComponent, VerbalComponent } from "../../../types/Spells";
 import { SPELL_RANKS } from "../../../constants/SpellRanks";
 import SpellRankSection from "./SpellRankSection";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import { MANA_DENSITY } from "../../../constants/ManaDensity";
 import armors from "../../../JSON/armors.json";
 

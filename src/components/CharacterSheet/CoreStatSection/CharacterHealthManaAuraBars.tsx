@@ -1,9 +1,7 @@
 import { useEffect } from "react";
 import species from "../../../JSON/species.json";
-import {
-  useCharacter,
-  type Character,
-} from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
+import type { Character } from "../../../stores/useCharacterStore";
 import { getCharacterResourceBonuses } from "../../../utils/characterResourceBonuses";
 import HealthManaAuraBars from "../../Buttons/HealthManaAuraBars";
 

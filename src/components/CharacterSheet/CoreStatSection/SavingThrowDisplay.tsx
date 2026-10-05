@@ -1,7 +1,7 @@
 /* CoreStatsSection.tsx; */
 import { getProficiency } from "../../../constants/Proficiency";
 import { STRING_TO_STATKEY } from "../../../types/StatKey";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
 import armors from "../../../JSON/armors.json";
 import Tooltip from "../../Tooltip";

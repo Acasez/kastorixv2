@@ -1,5 +1,5 @@
 import { STAT_COLORS, type BaseStatArray } from "../../constants/Stats";
-import { useCharacter } from "../../contexts/CharacterContext";
+import { useCharacter } from "../../hooks/useCharacter";
 import type { StatKey } from "../../types/StatKey";
 import { useState } from "react";
 

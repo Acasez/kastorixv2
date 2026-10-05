@@ -1,6 +1,6 @@
 import { useState } from "react";
 import OpenModalButton from "../OpenModalButton";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";

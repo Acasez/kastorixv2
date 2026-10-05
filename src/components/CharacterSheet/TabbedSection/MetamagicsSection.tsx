@@ -1,6 +1,6 @@
 import type { Metamagic } from "../../../types/Spells";
 import MetamagicComponent from "./MetamagicComponent";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import { getCharacterMetamagicGrant } from "../../../utils/characterSpellGrants";
 
 interface MetamagicProps {

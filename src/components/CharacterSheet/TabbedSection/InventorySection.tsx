@@ -1,4 +1,4 @@
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 
 export default function InventorySection() {
   const {

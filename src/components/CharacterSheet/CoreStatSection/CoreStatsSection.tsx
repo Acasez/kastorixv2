@@ -1,7 +1,7 @@
 import CharacterHealthManaAuraBars from "./CharacterHealthManaAuraBars";
 import SavingThrowDisplay from "./SavingThrowDisplay";
 import StatsGrid from "../../Buttons/StatsGrid";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 
 export default function CoreStatSection() {
   const { character, updateCharacter } = useCharacter();

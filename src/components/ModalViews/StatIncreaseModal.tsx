@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { STAT_COLORS } from "../../constants/Stats";
 import type { StatKey } from "../../types/StatKey";
-import { useCharacter } from "../../contexts/CharacterContext";
+import { useCharacter } from "../../hooks/useCharacter";
 
 const STATS: { key: StatKey; label: string }[] = [
   { key: "PHY", label: "Physique" },

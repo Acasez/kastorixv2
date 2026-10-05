@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import OpenModalButton from "../OpenModalButton";

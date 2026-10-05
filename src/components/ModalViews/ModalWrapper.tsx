@@ -1,7 +1,7 @@
 import ChoiceModal from "./ChoiceModal";
 import type { ModalRequest } from "./modalTypes";
 import { getChoiceData } from "./choiceData";
-import { useCharacter } from "../../contexts/CharacterContext";
+import { useCharacter } from "../../hooks/useCharacter";
 import backgrounds from "../../JSON/backgrounds.json";
 import { BaseStatsEditor } from "./BaseStatModal";
 import { StatIncreaseModal } from "./StatIncreaseModal";

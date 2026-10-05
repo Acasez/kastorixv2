@@ -4,7 +4,7 @@ import StrikesSection from "./StrikesSection";
 import ActionsSection from "./ActionsSection";
 import InventorySection from "./InventorySection";
 import GadgetSection from "./GadgetSection";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
 import GolemSection from "./GolemSection";
 

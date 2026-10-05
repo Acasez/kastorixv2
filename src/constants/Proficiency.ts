@@ -1,4 +1,4 @@
-import type { Character } from "../contexts/CharacterContext";
+import type { Character } from "../stores/useCharacterStore";
 import type { StatKey } from "../types/StatKey";
 
 // constants/proficiency.ts

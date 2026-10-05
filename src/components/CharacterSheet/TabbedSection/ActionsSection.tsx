@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { useCharacter } from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
 import actions from "../../../json/actions.json";
 import advantages from "../../../JSON/advantages.json";
 import ancestryFeats from "../../../JSON/ancestry_feats.json";
