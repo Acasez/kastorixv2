@@ -1,4 +1,5 @@
 // src/components/ActionBox.tsx
+import { useMemo } from "react";
 import { getActionIcons } from "../utils/actionUtils";
 
 interface Action {
@@ -15,7 +16,33 @@ interface ActionBoxProps {
 }
 
 export default function ActionBox({ action, actionsList }: ActionBoxProps) {
-  const actionDetails = actionsList.find((item) => item.name === action);
+  // ✅ Step 1: Memoize actionDetails FIRST (before any returns)
+  const actionDetails = useMemo(() => {
+    return actionsList.find((item) => item.name === action);
+  }, [action, actionsList]);
+
+  // ✅ Step 2: Memoize all derived data together
+  const { formattedDescription, widthClass, actionIcons } = useMemo(() => {
+    if (!actionDetails) {
+      return { formattedDescription: null, widthClass: "", actionIcons: [] };
+    }
+
+    const wordCount = actionDetails.description.split(/\s+/).length;
+    return {
+      formattedDescription: actionDetails.description
+        .split("\n")
+        .map((line, i) => (
+          <span key={i}>
+            {line}
+            <br />
+          </span>
+        )),
+      widthClass: wordCount > 40 ? "max-w-[420px]" : "max-w-[250px]",
+      actionIcons: getActionIcons(actionDetails.actions),
+    };
+  }, [actionDetails]); // Only recalculates when actionDetails changes
+
+  // ✅ Step 3: NOW we can do conditional rendering
   if (!actionDetails) {
     return (
       <div className="mb-3.75 ml-3.75 p-2.5 border border-[#8b4513] bg-bg-rules font-serif max-w-62.5 self-center grid">
@@ -24,20 +51,7 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
     );
   }
 
-  const actionIcons = getActionIcons(actionDetails.actions);
-
-  const formattedDescription = actionDetails.description
-    .split("\n")
-    .map((line, i) => (
-      <span key={i}>
-        {line}
-        <br />
-      </span>
-    ));
-
-  const wordCount = actionDetails.description.split(/\s+/).length;
-  const widthClass = wordCount > 40 ? "max-w-[420px]" : "max-w-[250px]";
-
+  // ✅ Step 4: Main render (all hooks already called)
   return (
     <div
       className={`mb-3.75 ml-3.75 p-2.5 border border-[#8b4513] bg-bg-rules font-serif text-text-black ${widthClass} self-center grid`}
