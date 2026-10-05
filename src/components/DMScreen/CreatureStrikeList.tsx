@@ -18,8 +18,14 @@ const weaponFilters = [
   { label: "Weapon Groups", value: "weaponGroup" },
 ];
 
-export default function CreatureStrikeList() {
-  const { creature, updateCreature } = useCreature();
+type CreatureStrikeListProps = {
+  blockId: number;
+};
+
+export default function CreatureStrikeList({
+  blockId,
+}: CreatureStrikeListProps) {
+  const { creature, updateCreature } = useCreature(blockId);
   const [isWeaponModalOpen, setIsWeaponModalOpen] = useState(false);
   const [weaponToReplace, setWeaponToReplace] = useState<string | null>(null);
   const [isCustomWeaponModalOpen, setIsCustomWeaponModalOpen] = useState(false);

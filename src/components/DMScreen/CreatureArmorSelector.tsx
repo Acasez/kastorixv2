@@ -11,8 +11,14 @@ import { getArmorChoiceItems } from "../ModalViews/choiceData";
 
 const armorChoiceItems = getArmorChoiceItems();
 
-export default function CreatureArmorSelector() {
-  const { creature, updateCreature } = useCreature();
+type CreatureArmorSelectorProps = {
+  blockId: number;
+};
+
+export default function CreatureArmorSelector({
+  blockId,
+}: CreatureArmorSelectorProps) {
+  const { creature, updateCreature } = useCreature(blockId);
   const [isArmorModalOpen, setIsArmorModalOpen] = useState(false);
   const selectedArmor = armors.find((armor) => armor.name === creature.armor);
 

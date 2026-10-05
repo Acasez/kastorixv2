@@ -55,11 +55,13 @@ export type Creature = {
   passives: CreaturePassive[];
 };
 
-type CreatureState = {
-  creature: Creature;
-  setCreature: (creature: Creature) => void;
-  updateCreature: (patch: Partial<Creature>) => void;
-  resetCreature: () => void;
+type MultiCreatureStore = {
+  creatures: Record<number, Creature>;
+  getCreature: (blockId: number) => Creature;
+  setCreature: (blockId: number, creature: Creature) => void;
+  updateCreature: (blockId: number, patch: Partial<Creature>) => void;
+  resetCreature: (blockId: number) => void;
+  removeCreature: (blockId: number) => void;
 };
 
 const defaultCreature: Creature = {
@@ -90,10 +92,39 @@ const defaultCreature: Creature = {
   passives: [],
 };
 
-export const useCreatureStore = create<CreatureState>((set) => ({
-  creature: defaultCreature,
-  setCreature: (creature) => set({ creature }),
-  updateCreature: (patch) =>
-    set((state) => ({ creature: { ...state.creature, ...patch } })),
-  resetCreature: () => set({ creature: defaultCreature }),
+export const useCreatureStore = create<MultiCreatureStore>((set, get) => ({
+  creatures: {},
+
+  getCreature: (blockId) => {
+    // Initialize if doesn't exist
+    if (!get().creatures[blockId]) {
+      get().resetCreature(blockId);
+    }
+    return get().creatures[blockId];
+  },
+
+  setCreature: (blockId, creature) =>
+    set({ creatures: { ...get().creatures, [blockId]: creature } }),
+
+  updateCreature: (blockId, patch) =>
+    set({
+      creatures: {
+        ...get().creatures,
+        [blockId]: { ...get().creatures[blockId], ...patch },
+      },
+    }),
+
+  resetCreature: (blockId) =>
+    set({
+      creatures: {
+        ...get().creatures,
+        [blockId]: { ...defaultCreature },
+      },
+    }),
+
+  removeCreature: (blockId) => {
+    const newCreatures = { ...get().creatures };
+    delete newCreatures[blockId];
+    set({ creatures: newCreatures });
+  },
 }));

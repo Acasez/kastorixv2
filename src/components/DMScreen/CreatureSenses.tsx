@@ -1,8 +1,12 @@
 import { getProficiency } from "../../constants/Proficiency";
 import { useCreature } from "../../hooks/useCreature";
 
-export default function CreatureSenses() {
-  const { creature } = useCreature();
+type CreatureSensesProps = {
+  blockId: number;
+};
+
+export default function CreatureSenses({ blockId }: CreatureSensesProps) {
+  const { creature } = useCreature(blockId);
   const perception =
     10 +
     creature.stats.INT +

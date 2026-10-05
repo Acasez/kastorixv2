@@ -10,8 +10,14 @@ const SAVING_THROWS = [
   { name: "Will", stat: "WIL" },
 ] as const;
 
-export default function CreatureSavingThrows() {
-  const { creature, updateCreature } = useCreature();
+type CreatureSavingThrowsProps = {
+  blockId: number;
+};
+
+export default function CreatureSavingThrows({
+  blockId,
+}: CreatureSavingThrowsProps) {
+  const { creature, updateCreature } = useCreature(blockId);
   const selectedArmor = armors.find((armor) => armor.name === creature.armor);
   const reflexPenalty =
     selectedArmor?.type === "Heavy" ? Number(selectedArmor.penalties) : 0;

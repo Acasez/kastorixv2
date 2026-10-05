@@ -41,8 +41,14 @@ const ACTION_COST_ORDER: Record<CreatureActionCost, number> = {
   L: 5,
 };
 
-export default function CreatureActionList() {
-  const { creature, updateCreature } = useCreature();
+type CreatureActionListProps = {
+  blockId: number;
+};
+
+export default function CreatureActionList({
+  blockId,
+}: CreatureActionListProps) {
+  const { creature, updateCreature } = useCreature(blockId);
   const sortedActions = [...creature.actions].sort((first, second) => {
     const costOrder =
       ACTION_COST_ORDER[first.actions] - ACTION_COST_ORDER[second.actions];

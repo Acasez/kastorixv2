@@ -13,8 +13,12 @@ import CreatureHeader from "./CreatureHeader";
 
 const skillNames = skills.map(({ name }) => name);
 
-export default function CreatureSkillList() {
-  const { creature, updateCreature } = useCreature();
+type CreatureSkillListProps = {
+  blockId: number;
+};
+
+export default function CreatureSkillList({ blockId }: CreatureSkillListProps) {
+  const { creature, updateCreature } = useCreature(blockId);
   const selectedArmor = armors.find((armor) => armor.name === creature.armor);
   const armorPenalty = Number(selectedArmor?.penalties ?? 0);
   const [isAdding, setIsAdding] = useState(false);

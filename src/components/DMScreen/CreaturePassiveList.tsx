@@ -12,8 +12,14 @@ const EMPTY_PASSIVE: PassiveDraft = {
   traits: "",
 };
 
-export default function CreaturePassiveList() {
-  const { creature, updateCreature } = useCreature();
+type CreaturePassiveListProps = {
+  blockId: number;
+};
+
+export default function CreaturePassiveList({
+  blockId,
+}: CreaturePassiveListProps) {
+  const { creature, updateCreature } = useCreature(blockId);
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [editingPassiveId, setEditingPassiveId] = useState<string | null>(null);
   const [draft, setDraft] = useState<PassiveDraft>(EMPTY_PASSIVE);

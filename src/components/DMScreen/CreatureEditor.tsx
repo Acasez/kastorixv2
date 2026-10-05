@@ -51,8 +51,16 @@ function getSavedCreatures(): string[] {
     .sort((first, second) => first.localeCompare(second));
 }
 
-export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
-  const { creature, setCreature, updateCreature } = useCreature();
+type CreatureEditorProps = {
+  onRemove: () => void;
+  blockId: number;
+};
+
+export default function CreatureEditor({
+  onRemove,
+  blockId,
+}: CreatureEditorProps) {
+  const { creature, setCreature, updateCreature } = useCreature(blockId);
   const [savedCreatures, setSavedCreatures] = useState(getSavedCreatures);
   const [selectedKey, setSelectedKey] = useState("");
   const importInputRef = useRef<HTMLInputElement>(null);
@@ -196,7 +204,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
             />
           ))}
 
-          <CreatureArmorSelector />
+          <CreatureArmorSelector blockId={blockId} />
         </div>
 
         {/* Row 2a — Resources strip: bars want horizontal room, so let them span the panel */}
@@ -217,9 +225,9 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
           {/* Col 1 — growable lists: UNCHANGED, you like this one */}
           <div className="flex min-w-0 flex-col gap-3">
             <div className="flex flex-wrap gap-3">
-              <CreatureSenses />
+              <CreatureSenses blockId={blockId} />
             </div>
-            <CreatureSkillList />
+            <CreatureSkillList blockId={blockId} />
             <NumericTypeList
               title="Speeds"
               itemLabel="speed"
@@ -240,7 +248,7 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
               allowNegative={true}
             />
 
-            <CreatureStrikeList />
+            <CreatureStrikeList blockId={blockId} />
           </div>
 
           {/* Right — numbers + combat, in priority order */}
@@ -255,15 +263,15 @@ export default function CreatureEditor({ onRemove }: { onRemove: () => void }) {
                 columnsClassName="px-0"
               />
             </div>
-            <CreatureSavingThrows />
-            <CreatureSpellList />
+            <CreatureSavingThrows blockId={blockId} />
+            <CreatureSpellList blockId={blockId} />
           </div>
         </div>
 
         {/* Row 3 — the tall text sections, two up */}
         <div className="grid grid-cols-1 items-start gap-x-4 lg:grid-cols-2">
-          <CreatureActionList />
-          <CreaturePassiveList />
+          <CreatureActionList blockId={blockId} />
+          <CreaturePassiveList blockId={blockId} />
         </div>
       </div>
     </section>

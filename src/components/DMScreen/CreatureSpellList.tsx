@@ -16,8 +16,12 @@ const spellFilters = [
   { label: "Traits", value: "traits" },
 ];
 
-export default function CreatureSpellList() {
-  const { creature, updateCreature } = useCreature();
+type CreatureSkillListProps = {
+  blockId: number;
+};
+
+export default function CreatureSpellList({ blockId }: CreatureSkillListProps) {
+  const { creature, updateCreature } = useCreature(blockId);
   const [isSpellModalOpen, setIsSpellModalOpen] = useState(false);
   const [spellToReplace, setSpellToReplace] = useState<string | null>(null);
   const { verbal, somatic } = creature.spellShaping;
