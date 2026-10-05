@@ -1,7 +1,6 @@
 import { getProficiency } from "../../constants/Proficiency";
 import type { ProficiencyTierName } from "../../constants/Proficiency";
-import { useContext } from "react";
-import { CharacterContext } from "../../contexts/CharacterContext";
+import { useCharacterStore } from "../../stores/useCharacterStore";
 import type { Weapon } from "../../types/Weapons";
 import type { StatKey } from "../../types/StatKey";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
@@ -32,8 +31,8 @@ export default function WeaponComponent({
   proficiency,
   onProficiencyChange,
 }: WeaponComponentProps) {
-  const characterContext = useContext(CharacterContext);
-  const baseStats = creatureStats ?? characterContext?.character.baseStats;
+  const { character } = useCharacterStore();
+  const baseStats = creatureStats ?? character.baseStats;
   if (!baseStats) {
     throw new Error(
       "WeaponComponent requires CharacterContext or creatureStats",
@@ -55,7 +54,7 @@ export default function WeaponComponent({
   const proficiencyTier =
     proficiency ??
     fixedProficiency ??
-    characterContext?.character.skillProficiencies[weapon.name] ??
+    character.skillProficiencies[weapon.name] ??
     "Trained";
 
   const multiAttackPenalty = weaponTraits.includes("Agile") ? -4 : -5;

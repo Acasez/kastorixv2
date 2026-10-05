@@ -1,6 +1,4 @@
-// ProficiencyMarker.tsx
-import { useContext } from "react";
-import { CharacterContext } from "../../contexts/CharacterContext";
+import { useCharacterStore } from "../../stores/useCharacterStore";
 import {
   PROFICIENCY_LEVELS,
   getProficiency,
@@ -35,7 +33,7 @@ export default function ProficiencyMarker({
   proficiency,
   onProficiencyChange,
 }: ProficiencyMarkerProps) {
-  const characterContext = useContext(CharacterContext);
+  const { character, updateCharacter } = useCharacterStore();
 
   if (Boolean(proficiency) !== Boolean(onProficiencyChange)) {
     throw new Error(
@@ -46,8 +44,8 @@ export default function ProficiencyMarker({
   const currentTierName: ProficiencyTierName =
     proficiency ??
     (category === "saves"
-      ? characterContext?.character.saveProficiencies[skillName]
-      : characterContext?.character.skillProficiencies[skillName]) ??
+      ? character.saveProficiencies[skillName]
+      : character.skillProficiencies[skillName]) ??
     defaultTier;
   const currentTier = getProficiency(currentTierName);
 
@@ -58,17 +56,11 @@ export default function ProficiencyMarker({
       return;
     }
 
-    if (!characterContext) {
-      throw new Error(
-        "ProficiencyMarker requires CharacterContext when uncontrolled",
-      );
-    }
-
     const proficiencies =
       category === "saves"
-        ? characterContext.character.saveProficiencies
-        : characterContext.character.skillProficiencies;
-    characterContext.updateCharacter({
+        ? character.saveProficiencies
+        : character.skillProficiencies;
+    updateCharacter({
       [category === "skills" ? "skillProficiencies" : "saveProficiencies"]: {
         ...proficiencies,
         [skillName]: nextTier,
@@ -77,7 +69,7 @@ export default function ProficiencyMarker({
   };
 
   const retreat = (e: React.MouseEvent) => {
-    e.preventDefault(); // stops the browser context menu from opening
+    e.preventDefault();
     update(-1);
   };
 

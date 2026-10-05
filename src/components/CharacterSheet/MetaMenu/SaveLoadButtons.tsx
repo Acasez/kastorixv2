@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import MetaButton from "./MetaButton";
-import {
-  useCharacter,
-  type Character,
-} from "../../../contexts/CharacterContext";
+import { useCharacter } from "../../../hooks/useCharacter";
+import type { Character } from "../../../stores/useCharacterStore";
 
 function isCharacter(value: unknown): value is Character {
   return (

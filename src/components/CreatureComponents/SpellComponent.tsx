@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import { getProficiency } from "../../constants/Proficiency";
 import type { ProficiencyTierName } from "../../constants/Proficiency";
-import { CharacterContext } from "../../contexts/CharacterContext";
+import { useCharacterStore } from "../../stores/useCharacterStore";
 import type { Spell } from "../../types/Spells";
 import { getActionIcons } from "../../utils/actionUtils";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
@@ -26,21 +25,18 @@ export default function SpellComponent({
   proficiency,
   onProficiencyChange,
 }: SpellComponentProps) {
-  const characterContext = useContext(CharacterContext);
+  const { character } = useCharacterStore();
+
   if (Boolean(proficiency) !== Boolean(onProficiencyChange)) {
     throw new Error(
       "SpellComponent requires both proficiency and onProficiencyChange in controlled mode",
     );
   }
-  if (!onProficiencyChange && !characterContext) {
-    throw new Error(
-      "SpellComponent requires CharacterContext in character mode",
-    );
+  if (!onProficiencyChange && !character) {
+    throw new Error("SpellComponent requires character in character mode");
   }
   const proficiencyTier =
-    proficiency ??
-    characterContext?.character.skillProficiencies[spell.name] ??
-    "Trained";
+    proficiency ?? character?.skillProficiencies[spell.name] ?? "Trained";
   return (
     <Tooltip
       key={spell.name}
