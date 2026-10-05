@@ -1,6 +1,6 @@
 import { useState } from "react";
 import armors from "../../JSON/armors.json";
-import { useCreature } from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
 import {
   getCharacterResistances,
   getCompactResistances,

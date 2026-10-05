@@ -1,7 +1,7 @@
 import { useState } from "react";
 import spells from "../../JSON/spells.json";
 import type { ProficiencyTierName } from "../../constants/Proficiency";
-import { useCreature } from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
 import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getSpellChoiceItems } from "../ModalViews/choiceData";

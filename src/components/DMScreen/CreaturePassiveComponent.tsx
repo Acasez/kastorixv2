@@ -1,4 +1,4 @@
-import type { CreaturePassive } from "../../contexts/CreatureContext";
+import type { CreaturePassive } from "../../stores/useCreatureStore";
 
 interface CreaturePassiveComponentProps {
   passive: CreaturePassive;

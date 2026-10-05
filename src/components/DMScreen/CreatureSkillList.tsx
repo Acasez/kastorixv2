@@ -6,7 +6,7 @@ import {
 } from "../../constants/Proficiency";
 import skills from "../../json/skills.json";
 import armors from "../../JSON/armors.json";
-import { useCreature } from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureHeader from "./CreatureHeader";

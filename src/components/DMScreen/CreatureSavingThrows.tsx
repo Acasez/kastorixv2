@@ -1,5 +1,5 @@
 import { getProficiency } from "../../constants/Proficiency";
-import { useCreature } from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
 import armors from "../../JSON/armors.json";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureHeader from "./CreatureHeader";

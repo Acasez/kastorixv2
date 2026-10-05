@@ -1,5 +1,5 @@
 import { getProficiency } from "../../constants/Proficiency";
-import { useCreature } from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
 
 export default function CreatureSenses() {
   const { creature } = useCreature();

@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
-import {
-  useCreature,
-  type CreatureTrack,
-} from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
+import { type CreatureTrack } from "../../stores/useCreatureStore";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import damageTypes from "../../JSON/damage_types.json";
 import StatsGrid from "../Buttons/StatsGrid";

@@ -1,8 +1,6 @@
 import { useState, type FormEvent } from "react";
-import {
-  useCreature,
-  type CreaturePassive,
-} from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
+import type { CreaturePassive } from "../../stores/useCreatureStore";
 import CreatureHeader from "./CreatureHeader";
 import CreaturePassiveComponent from "./CreaturePassiveComponent";
 

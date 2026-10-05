@@ -3,7 +3,7 @@ import {
   signed,
   type ProficiencyTierName,
 } from "../../constants/Proficiency";
-import type { Creature, CreatureAction } from "../../contexts/CreatureContext";
+import type { Creature, CreatureAction } from "../../stores/useCreatureStore";
 import { getActionIcons } from "../../utils/actionUtils";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 

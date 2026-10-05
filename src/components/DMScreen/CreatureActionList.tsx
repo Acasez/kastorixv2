@@ -1,10 +1,8 @@
 import { useState, type FormEvent } from "react";
 import type { CreatureActionCost } from "../../types/Action";
 import { type ProficiencyTierName } from "../../constants/Proficiency";
-import {
-  useCreature,
-  type CreatureAction,
-} from "../../contexts/CreatureContext";
+import { useCreature } from "../../hooks/useCreature";
+import { type CreatureAction } from "../../stores/useCreatureStore";
 import type { StatKey } from "../../types/StatKey";
 import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
