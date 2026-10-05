@@ -8,6 +8,7 @@ import {
   getCharacterResistances,
   getCharacterSpeeds,
 } from "../utils/characterResistances";
+import { devtools } from "zustand/middleware";
 
 export type Track = { current: number; max: number };
 
@@ -98,50 +99,55 @@ const defaultCharacter: Character = {
   quickAccessItems: ["", "", ""],
 };
 
-export const useCharacterStore = create<CharacterState>((set, get) => ({
-  character: defaultCharacter,
+export const useCharacterStore = create<CharacterState>()(
+  devtools(
+    (set, get) => ({
+      character: defaultCharacter,
 
-  setCharacter: (
-    characterOrFn: Character | ((prev: Character) => Character),
-  ) => {
-    const newCharacter =
-      typeof characterOrFn === "function"
-        ? characterOrFn(get().character)
-        : characterOrFn;
-    set({
-      character: {
-        ...newCharacter,
-        speeds: getCharacterSpeeds(newCharacter),
-        resistances: getCharacterResistances(newCharacter),
+      setCharacter: (
+        characterOrFn: Character | ((prev: Character) => Character),
+      ) => {
+        const newCharacter =
+          typeof characterOrFn === "function"
+            ? characterOrFn(get().character)
+            : characterOrFn;
+        set({
+          character: {
+            ...newCharacter,
+            speeds: getCharacterSpeeds(newCharacter),
+            resistances: getCharacterResistances(newCharacter),
+          },
+        });
       },
-    });
-  },
 
-  resetCharacter: () => set({ character: defaultCharacter }),
+      resetCharacter: () => set({ character: defaultCharacter }),
 
-  updateCharacter: (patch) => {
-    const updated = { ...get().character, ...patch };
-    set({
-      character: {
-        ...updated,
-        speeds: getCharacterSpeeds(updated),
-        resistances: getCharacterResistances(updated),
+      updateCharacter: (patch) => {
+        const updated = { ...get().character, ...patch };
+        set({
+          character: {
+            ...updated,
+            speeds: getCharacterSpeeds(updated),
+            resistances: getCharacterResistances(updated),
+          },
+        });
       },
-    });
-  },
 
-  handleLevelChange: (e) =>
-    get().updateCharacter({
-      level: Math.min(20, Math.max(0, Number(e.target.value))),
+      handleLevelChange: (e) =>
+        get().updateCharacter({
+          level: Math.min(20, Math.max(0, Number(e.target.value))),
+        }),
+
+      handleNameChange: (e) => get().updateCharacter({ name: e.target.value }),
+
+      handleGoldChange: (e) =>
+        get().updateCharacter({
+          gold: Math.min(99999, Math.max(0, Number(e.target.value))),
+        }),
+
+      handleInventoryChange: (e) =>
+        get().updateCharacter({ inventory: e.target.value }),
     }),
-
-  handleNameChange: (e) => get().updateCharacter({ name: e.target.value }),
-
-  handleGoldChange: (e) =>
-    get().updateCharacter({
-      gold: Math.min(99999, Math.max(0, Number(e.target.value))),
-    }),
-
-  handleInventoryChange: (e) =>
-    get().updateCharacter({ inventory: e.target.value }),
-}));
+    { name: "CharacterStore" }, // This name appears in DevTools
+  ),
+);
