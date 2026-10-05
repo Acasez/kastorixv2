@@ -101,14 +101,21 @@ const defaultCharacter: Character = {
 export const useCharacterStore = create<CharacterState>((set, get) => ({
   character: defaultCharacter,
 
-  setCharacter: (character) =>
+  setCharacter: (
+    characterOrFn: Character | ((prev: Character) => Character),
+  ) => {
+    const newCharacter =
+      typeof characterOrFn === "function"
+        ? characterOrFn(get().character)
+        : characterOrFn;
     set({
       character: {
-        ...character,
-        speeds: getCharacterSpeeds(character),
-        resistances: getCharacterResistances(character),
+        ...newCharacter,
+        speeds: getCharacterSpeeds(newCharacter),
+        resistances: getCharacterResistances(newCharacter),
       },
-    }),
+    });
+  },
 
   resetCharacter: () => set({ character: defaultCharacter }),
 

@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import MetaButton from "./MetaButton";
-import { useCharacter } from "../../../hooks/useCharacter";
-import type { Character } from "../../../stores/useCharacterStore";
+import {
+  useCharacterStore,
+  type Character,
+} from "../../../stores/useCharacterStore";
 
 function isCharacter(value: unknown): value is Character {
   return (
@@ -54,7 +56,7 @@ function mergeCharacter(current: Character, saved: Character): Character {
 }
 
 export default function SaveLoadButtons() {
-  const { character, setCharacter, resetCharacter } = useCharacter();
+  const { character, setCharacter, resetCharacter } = useCharacterStore();
   const importInputRef = useRef<HTMLInputElement>(null);
   const [savedCharacterNames, setSavedCharacterNames] = useState(
     getSavedCharacterNames,
@@ -105,7 +107,7 @@ export default function SaveLoadButtons() {
         throw new Error("Invalid character format");
       }
 
-      setCharacter((current) => mergeCharacter(current, savedData));
+      setCharacter(mergeCharacter(character, savedData));
     } catch {
       window.alert(`Saved character "${characterKey}" is invalid.`);
     }
@@ -175,7 +177,7 @@ export default function SaveLoadButtons() {
         throw new Error("Invalid character format");
       }
 
-      setCharacter((current) => mergeCharacter(current, importedCharacter));
+      setCharacter(mergeCharacter(character, importedCharacter));
     } catch {
       window.alert("The selected file is not a valid character JSON file.");
     }
