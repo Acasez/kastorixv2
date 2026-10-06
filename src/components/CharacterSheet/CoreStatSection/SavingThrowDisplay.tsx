@@ -3,14 +3,14 @@ import { getProficiency } from "../../../constants/Proficiency";
 import { STRING_TO_STATKEY } from "../../../types/StatKey";
 import { useCharacter } from "../../../hooks/useCharacter";
 import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
-import armors from "../../../JSON/armors.json";
 import Tooltip from "../../Tooltip";
+import { armors } from "../../../data/armors";
 
 export default function SavingThrowDisplay() {
   const { character } = useCharacter();
   const selectedArmor = armors.find((armor) => armor.name === character.armor);
   const heavyArmorPenalty =
-    selectedArmor?.type === "Heavy" ? Number(selectedArmor.penalties) : 0;
+    selectedArmor?.type === "Heavy" ? selectedArmor.penalties : 0;
   return (
     <div>
       <h1 className="text-3xl text-striking text-center underline mb-2">
