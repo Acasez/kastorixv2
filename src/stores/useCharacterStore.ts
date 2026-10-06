@@ -60,6 +60,10 @@ type CharacterState = {
   handleInventoryChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
+  saveCharacter: (name: string) => void;
+  loadCharacter: (name: string) => void;
+  exportCharacter: () => string;
+  importCharacter: (fileContent: string) => void;
 };
 
 const defaultCharacter: Character = {

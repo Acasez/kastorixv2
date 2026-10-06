@@ -1,3 +1,4 @@
+// src/components/CharacterSheet/MetaMenu/SaveLoadButtons.tsx
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import MetaButton from "./MetaButton";
 import {
@@ -5,6 +6,20 @@ import {
   type Character,
 } from "../../../stores/useCharacterStore";
 
+function getSavedCharacterNames() {
+  return Object.keys(localStorage)
+    .filter((key) => {
+      try {
+        const item = localStorage.getItem(key);
+        return item && isCharacter(JSON.parse(item));
+      } catch {
+        return false;
+      }
+    })
+    .sort((firstName, secondName) => firstName.localeCompare(secondName));
+}
+
+// Import the type guard from the store file
 function isCharacter(value: unknown): value is Character {
   return (
     typeof value === "object" &&
@@ -13,50 +28,18 @@ function isCharacter(value: unknown): value is Character {
   );
 }
 
-function getSavedCharacterNames() {
-  return Object.keys(localStorage)
-    .filter((key) => {
-      try {
-        return isCharacter(JSON.parse(localStorage.getItem(key) ?? ""));
-      } catch {
-        return false;
-      }
-    })
-    .sort((firstName, secondName) => firstName.localeCompare(secondName));
-}
-
 const CLEAR_CHARACTER = "__clear_character__";
 
-function mergeCharacter(current: Character, saved: Character): Character {
-  const legacyGolemCrafterKey = Object.entries(saved.selections ?? {}).find(
-    ([key, value]) =>
-      key.startsWith("advantage:") &&
-      !key.endsWith(":choice") &&
-      value === "Golemcrafter",
-  )?.[0];
-
-  return {
-    ...current,
-    ...saved,
-    golemWeapons: saved.golemWeapons ?? current.golemWeapons,
-    golemWeaponGroups: saved.golemWeaponGroups ?? current.golemWeaponGroups,
-    golemModel:
-      saved.golemModel ??
-      (legacyGolemCrafterKey
-        ? (saved.selections[`${legacyGolemCrafterKey}:choice`] ?? null)
-        : null),
-    baseStats: { ...current.baseStats, ...saved.baseStats },
-    health: { ...current.health, ...saved.health },
-    golemHealth: { ...current.golemHealth, ...saved.golemHealth },
-    aura: { ...current.aura, ...saved.aura },
-    mana: { ...current.mana, ...saved.mana },
-    speeds: { ...current.speeds, ...saved.speeds },
-    spellShaping: { ...current.spellShaping, ...saved.spellShaping },
-  };
-}
-
 export default function SaveLoadButtons() {
-  const { character, setCharacter, resetCharacter } = useCharacterStore();
+  const {
+    character,
+    resetCharacter,
+    saveCharacter,
+    loadCharacter,
+    exportCharacter,
+    importCharacter,
+  } = useCharacterStore();
+
   const importInputRef = useRef<HTMLInputElement>(null);
   const [savedCharacterNames, setSavedCharacterNames] = useState(
     getSavedCharacterNames,
@@ -75,43 +58,6 @@ export default function SaveLoadButtons() {
   }, []);
 
   const getCharacterKey = () => character.name.trim();
-
-  const saveCharacter = () => {
-    const characterKey = getCharacterKey();
-    if (!characterKey) {
-      window.alert("Enter a character name before saving.");
-      return;
-    }
-
-    localStorage.setItem(characterKey, JSON.stringify(character));
-    refreshSavedCharacters();
-    window.alert(`Saved character "${characterKey}".`);
-  };
-
-  const loadCharacter = (selectedKey = getCharacterKey()) => {
-    const characterKey = selectedKey;
-    if (!characterKey) {
-      window.alert("Enter a character name before loading.");
-      return;
-    }
-
-    const savedCharacter = localStorage.getItem(characterKey);
-    if (!savedCharacter) {
-      window.alert(`No saved character found for "${characterKey}".`);
-      return;
-    }
-
-    try {
-      const savedData: unknown = JSON.parse(savedCharacter);
-      if (!isCharacter(savedData)) {
-        throw new Error("Invalid character format");
-      }
-
-      setCharacter(mergeCharacter(character, savedData));
-    } catch {
-      window.alert(`Saved character "${characterKey}" is invalid.`);
-    }
-  };
 
   const handleSavedCharacterChange = (
     event: ChangeEvent<HTMLSelectElement>,
@@ -148,14 +94,25 @@ export default function SaveLoadButtons() {
     refreshSavedCharacters();
   };
 
-  const exportCharacter = () => {
+  const clearCharacter = () => {
+    if (
+      !window.confirm(
+        "Clear the current character? Saved characters will not be affected.",
+      )
+    ) {
+      return;
+    }
+    resetCharacter();
+  };
+
+  const handleExport = () => {
     const characterKey = getCharacterKey();
     if (!characterKey) {
       window.alert("Enter a character name before exporting.");
       return;
     }
 
-    const file = new Blob([JSON.stringify(character, null, 2)], {
+    const file = new Blob([exportCharacter()], {
       type: "application/json",
     });
     const downloadUrl = URL.createObjectURL(file);
@@ -166,33 +123,17 @@ export default function SaveLoadButtons() {
     URL.revokeObjectURL(downloadUrl);
   };
 
-  const importCharacter = async (event: ChangeEvent<HTMLInputElement>) => {
+  const handleImport = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     event.target.value = "";
     if (!file) return;
 
     try {
-      const importedCharacter: unknown = JSON.parse(await file.text());
-      if (!isCharacter(importedCharacter)) {
-        throw new Error("Invalid character format");
-      }
-
-      setCharacter(mergeCharacter(character, importedCharacter));
+      const fileContent = await file.text();
+      importCharacter(fileContent);
     } catch {
       window.alert("The selected file is not a valid character JSON file.");
     }
-  };
-
-  const clearCharacter = () => {
-    if (
-      !window.confirm(
-        "Clear the current character? Saved characters will not be affected.",
-      )
-    ) {
-      return;
-    }
-
-    resetCharacter();
   };
 
   return (
@@ -216,17 +157,17 @@ export default function SaveLoadButtons() {
       />
       <MetaButton
         label="Save"
-        onClick={saveCharacter}
+        onClick={() => saveCharacter(getCharacterKey())}
         variant="characterSheet"
       />
       <MetaButton
         label="Load"
-        onClick={loadCharacter}
+        onClick={() => loadCharacter(getCharacterKey())}
         variant="characterSheet"
       />
       <MetaButton
         label="Export"
-        onClick={exportCharacter}
+        onClick={handleExport}
         variant="characterSheet"
       />
       <MetaButton
@@ -238,7 +179,7 @@ export default function SaveLoadButtons() {
         ref={importInputRef}
         type="file"
         accept="application/json,.json"
-        onChange={importCharacter}
+        onChange={handleImport}
         className="hidden"
       />
     </div>
