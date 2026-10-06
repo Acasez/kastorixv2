@@ -5,7 +5,7 @@ import {
   type ProficiencyTierName,
 } from "../../constants/Proficiency";
 import skills from "../../json/skills.json";
-import armors from "../../JSON/armors.json";
+import armors from "../../data/armors";
 import { useCreature } from "../../hooks/useCreature";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
@@ -20,7 +20,7 @@ type CreatureSkillListProps = {
 export default function CreatureSkillList({ blockId }: CreatureSkillListProps) {
   const { creature, updateCreature } = useCreature(blockId);
   const selectedArmor = armors.find((armor) => armor.name === creature.armor);
-  const armorPenalty = Number(selectedArmor?.penalties ?? 0);
+  const armorPenalty = selectedArmor?.penalties ?? 0;
   const [isAdding, setIsAdding] = useState(false);
   const selectedSkills = skillNames.filter((name) => name in creature.skills);
   const availableSkills = skillNames.filter(

@@ -14,7 +14,7 @@ import runegunUpgrades from "../../../JSON/runegun_upgrades.json";
 import spells from "../../../JSON/spells.json";
 import weapons from "../../../JSON/weapons.json";
 import metamagics from "../../../JSON/metamagic.json";
-import armors from "../../../JSON/armors.json";
+import armors from "../../../data/armors";
 import gadgets from "../../../JSON/gadgets.json";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";

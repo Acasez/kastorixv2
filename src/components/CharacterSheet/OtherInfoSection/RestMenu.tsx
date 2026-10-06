@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCharacter } from "../../../hooks/useCharacter";
 import { MANA_DENSITY } from "../../../constants/ManaDensity";
-import armors from "../../../JSON/armors.json";
+import armors from "../../../data/armors";
 
 function getManaRecoveryMultiplier(manaRecovery: string | undefined) {
   if (!manaRecovery) return 1;
