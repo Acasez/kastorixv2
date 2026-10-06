@@ -27,7 +27,7 @@ export default function SkillsTable() {
   }, [character]);
 
   // ========== HANDLERS (unchanged) ==========
-  const addLoreSkill = (event: React.FormEvent<HTMLFormElement>) => {
+  const addLoreSkill = (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     const baseName = newLoreSkillName
       .trim()

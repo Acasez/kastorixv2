@@ -1,23 +1,13 @@
-export type Armor = {
-  name: string;
-  resistances: string;
-  weakPointDiff: string;
-  penalties: string;
-  description: string;
-  price: string;
-  type: string;
-  phy: string;
-};
+export type ArmorType = "Unarmed" | "Light" | "Heavy" | "Unarmored";
 
-export type ArmorTyped = {
+export interface Armor {
   name: string;
   resistances: string;
   weakPointDiff: number;
   penalties: number;
+  manaRecovery: string;
   description: string;
   price: number;
   type: ArmorType;
-  phy: number;
-};
-
-export type ArmorType = "Unarmed" | "Light" | "Heavy";
+  phy: string;
+}

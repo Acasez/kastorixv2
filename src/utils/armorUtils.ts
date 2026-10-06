@@ -1,7 +1,7 @@
-import type { Armor } from "../types/Armor";
+import type { ArmorTyped } from "../types/Armor";
 
 export function getArmorPenalty(
-  armor: Armor | undefined,
+  armor: ArmorTyped | undefined,
   armorPenalties: string,
 ): number {
   if (!armor) return 0;

@@ -1,5 +1,17 @@
 [
     {
+        "name": "Duelist's Defense",
+        "actions": "Free",
+        "trigger": "You hit a creature with a Strike or Spell",
+        "requirement": "You are holding a weapon with the Light trait, that not the weapon you made the strike with",
+        "description": "Block or Parry with the Light weapon",
+        "traits": "Defensive",
+        "skill": "",
+        "sourceType": "Feat",
+        "source": "",
+        "manueverType": ""
+    },
+    {
         "name": "A Thousand Cuts",
         "actions": "3",
         "trigger": "",

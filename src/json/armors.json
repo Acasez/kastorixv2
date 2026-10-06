@@ -6,7 +6,7 @@
         "penalties": "0",
         "manaRecovery": "",
         "description": "",
-        "price": "-",
+        "price": "0",
         "type": "Unarmored",
         "phy": "-"
     },
@@ -17,7 +17,7 @@
         "penalties": "-1",
         "manaRecovery": "",
         "description": "Commonly used by adventurers unused to heavier armor.",
-        "price": "3 gp",
+        "price": "3",
         "type": "Light",
         "phy": "-"
     },
@@ -28,7 +28,7 @@
         "penalties": "-1",
         "manaRecovery": "0.8",
         "description": "Tough leather armor made from the hides of large animals. Popular among rangers and hunters.",
-        "price": "5 gp",
+        "price": "5",
         "type": "Light",
         "phy": "0"
     },
@@ -39,7 +39,7 @@
         "penalties": "-2",
         "manaRecovery": "0.75",
         "description": "Overlapping leather plates provide good all-round protection, without limiting mana recovery",
-        "price": "15 gp",
+        "price": "15",
         "type": "Light",
         "phy": "1"
     },
@@ -50,7 +50,7 @@
         "penalties": "-2",
         "manaRecovery": "0.5",
         "description": "Interlocking metal rings provide good all-round protection, but are less effective against heavy blows and spells.",
-        "price": "5 gp",
+        "price": "5",
         "type": "Heavy",
         "phy": "1"
     },
@@ -61,7 +61,7 @@
         "penalties": "-2",
         "manaRecovery": "0.3",
         "description": "Metal plates riveted to leather, designed to deflect spells and blows.",
-        "price": "10 gp",
+        "price": "10",
         "type": "Heavy",
         "phy": "2"
     },
@@ -72,7 +72,7 @@
         "penalties": "-2",
         "manaRecovery": "0.5",
         "description": "A hybrid of plate and leather, favored by dedicated battle-mages. Unlike the protection of full platemail, it has more weak points to be exploited by clever enemies.",
-        "price": "20 gp",
+        "price": "20",
         "type": "Heavy",
         "phy": "2"
     },
@@ -83,7 +83,7 @@
         "penalties": "-3",
         "manaRecovery": "0.25",
         "description": "Full plate provides the greatest protection and has fewer weak spots to target. Being encased in metal is dampens mana recovery though, making it rarely used by mages, but favored by some knight orders.",
-        "price": "50 gp",
+        "price": "50",
         "type": "Heavy",
         "phy": "3"
     }
