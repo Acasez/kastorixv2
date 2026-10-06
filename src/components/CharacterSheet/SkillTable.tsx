@@ -8,7 +8,7 @@ import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import { STAT_COLORS } from "../../constants/Stats";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import Tooltip from "../Tooltip";
-import armors from "../../JSON/armors.json";
+import armors from "../../data/armors";
 
 export default function SkillsTable() {
   const { character, updateCharacter } = useCharacter();
@@ -20,7 +20,7 @@ export default function SkillsTable() {
     () => armors.find((armor) => armor.name === character.armor),
     [character.armor],
   );
-  const armorPenalty = Number(selectedArmor?.penalties ?? 0);
+  const armorPenalty = selectedArmor?.penalties ?? 0;
 
   const loreSkills = useMemo(() => {
     return character.loreSkills ?? [];

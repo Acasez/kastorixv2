@@ -1,6 +1,6 @@
 import { getProficiency } from "../../constants/Proficiency";
 import { useCreature } from "../../hooks/useCreature";
-import armors from "../../JSON/armors.json";
+import armors from "../../data/armors";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureHeader from "./CreatureHeader";
 
@@ -20,7 +20,7 @@ export default function CreatureSavingThrows({
   const { creature, updateCreature } = useCreature(blockId);
   const selectedArmor = armors.find((armor) => armor.name === creature.armor);
   const reflexPenalty =
-    selectedArmor?.type === "Heavy" ? Number(selectedArmor.penalties) : 0;
+    selectedArmor?.type === "Heavy" ? selectedArmor.penalties : 0;
 
   return (
     <section>

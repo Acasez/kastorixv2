@@ -1,5 +1,5 @@
 import { useState } from "react";
-import armors from "../../JSON/armors.json";
+import armors from "../../data/armors";
 import { useCreature } from "../../hooks/useCreature";
 import {
   getCharacterResistances,

@@ -11,7 +11,7 @@ import spells from "../../JSON/spells.json";
 import weapons from "../../JSON/weapons.json";
 import species from "../../JSON/species.json";
 import metamagics from "../../JSON/metamagic.json";
-import armors from "../../JSON/armors.json";
+import armors from "../../data/armors";
 import gadgets from "../../JSON/gadgets.json";
 import golemModels from "../../JSON/golem_models.json";
 import aspects from "../../JSON/aspects.json";
