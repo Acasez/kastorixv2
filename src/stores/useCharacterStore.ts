@@ -99,6 +99,43 @@ const defaultCharacter: Character = {
   quickAccessItems: ["", "", ""],
 };
 
+function isCharacter(value: unknown): value is Character {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    typeof (value as { name?: unknown }).name === "string"
+  );
+}
+
+// Merge logic moved from SaveLoadButtons
+function mergeCharacter(current: Character, saved: Character): Character {
+  const legacyGolemCrafterKey = Object.entries(saved.selections ?? {}).find(
+    ([key, value]) =>
+      key.startsWith("advantage:") &&
+      !key.endsWith(":choice") &&
+      value === "Golemcrafter",
+  )?.[0];
+
+  return {
+    ...current,
+    ...saved,
+    golemWeapons: saved.golemWeapons ?? current.golemWeapons,
+    golemWeaponGroups: saved.golemWeaponGroups ?? current.golemWeaponGroups,
+    golemModel:
+      saved.golemModel ??
+      (legacyGolemCrafterKey
+        ? (saved.selections[`${legacyGolemCrafterKey}:choice`] ?? null)
+        : null),
+    baseStats: { ...current.baseStats, ...saved.baseStats },
+    health: { ...current.health, ...saved.health },
+    golemHealth: { ...current.golemHealth, ...saved.golemHealth },
+    aura: { ...current.aura, ...saved.aura },
+    mana: { ...current.mana, ...saved.mana },
+    speeds: { ...current.speeds, ...saved.speeds },
+    spellShaping: { ...current.spellShaping, ...saved.spellShaping },
+  };
+}
+
 export const useCharacterStore = create<CharacterState>()(
   devtools(
     (set, get) => ({
@@ -131,6 +168,71 @@ export const useCharacterStore = create<CharacterState>()(
             resistances: getCharacterResistances(updated),
           },
         });
+      },
+
+      saveCharacter: (name: string) => {
+        const characterKey = name.trim();
+        if (!characterKey) {
+          window.alert("Enter a character name before saving.");
+          return;
+        }
+        localStorage.setItem(characterKey, JSON.stringify(get().character));
+        window.alert(`Saved character "${characterKey}".`);
+      },
+
+      loadCharacter: (name: string) => {
+        const characterKey = name.trim();
+        if (!characterKey) {
+          window.alert("Enter a character name before loading.");
+          return;
+        }
+
+        const savedCharacter = localStorage.getItem(characterKey);
+        if (!savedCharacter) {
+          window.alert(`No saved character found for "${characterKey}".`);
+          return;
+        }
+
+        try {
+          const savedData: unknown = JSON.parse(savedCharacter);
+          if (!isCharacter(savedData)) {
+            throw new Error("Invalid character format");
+          }
+          // ✅ Inline the setCharacter logic
+          const merged = mergeCharacter(get().character, savedData);
+          set({
+            character: {
+              ...merged,
+              speeds: getCharacterSpeeds(merged),
+              resistances: getCharacterResistances(merged),
+            },
+          });
+        } catch {
+          window.alert(`Saved character "${characterKey}" is invalid.`);
+        }
+      },
+
+      exportCharacter: () => {
+        return JSON.stringify(get().character, null, 2);
+      },
+
+      importCharacter: (fileContent: string) => {
+        try {
+          const importedCharacter: unknown = JSON.parse(fileContent);
+          if (!isCharacter(importedCharacter)) {
+            throw new Error("Invalid character format");
+          }
+          const merged = mergeCharacter(get().character, importedCharacter);
+          set({
+            character: {
+              ...merged,
+              speeds: getCharacterSpeeds(merged),
+              resistances: getCharacterResistances(merged),
+            },
+          });
+        } catch {
+          window.alert("The selected file is not a valid character JSON file.");
+        }
       },
 
       handleLevelChange: (e) =>
