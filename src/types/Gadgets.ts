@@ -1,7 +1,14 @@
 export type Gadget = {
   name: string;
-  type: string;
+  type: GadgetType;
   effect: string;
-  level: string;
+  level: number;
   requirement: string;
 };
+
+export type GadgetType =
+  | "Bomb"
+  | "Equipment"
+  | "Thrown Device"
+  | "Upgrade"
+  | "Held Item";

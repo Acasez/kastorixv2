@@ -1,12 +1,7 @@
 import RulesBox from "./TextPageComponents/RulesBox";
 import { useState } from "react";
-import skills from "../json/skills.json";
-
-interface Skill {
-  name: string;
-  description: string;
-  stat: string;
-}
+import skills from "../data/skills";
+import { type Skill } from "../types/Skills";
 
 export default function SkillRuleBox() {
   const [isExpanded, setIsExpanded] = useState(false); // Collapsible state

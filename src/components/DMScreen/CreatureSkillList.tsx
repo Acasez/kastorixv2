@@ -4,7 +4,7 @@ import {
   signed,
   type ProficiencyTierName,
 } from "../../constants/Proficiency";
-import skills from "../../json/skills.json";
+import skills from "../../data/skills";
 import armors from "../../data/armors";
 import { useCreature } from "../../hooks/useCreature";
 import { STRING_TO_STATKEY } from "../../types/StatKey";

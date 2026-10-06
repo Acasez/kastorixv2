@@ -1,4 +1,6 @@
 import type { CreatureSizes } from "../constants/CreatureSizes";
+import type { Resistance } from "./DamageTypes";
+import type { Speed } from "./SpeedTypes";
 
 export type Species = {
   name: string;
@@ -15,7 +17,7 @@ export type Species = {
   traitFourDesc: string;
   unlockedFeats: string;
   spellsLearned: string;
-  speeds: string;
-  resistances: string;
+  speeds: Speed[];
+  resistances: Resistance[];
   gadgets: string;
 };

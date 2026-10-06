@@ -1,7 +1,7 @@
 // SkillsTable.tsx
 import { useState, useMemo } from "react";
 import type { Skill } from "../../types/Skills"; // Make sure this type exists
-import skills from "../../json/skills.json";
+import skills from "../../data/skills";
 import { useCharacter } from "../../hooks/useCharacter";
 import { getProficiency, signed } from "../../constants/Proficiency";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";

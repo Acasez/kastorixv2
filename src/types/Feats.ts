@@ -1,5 +1,7 @@
 import type { Action } from "./Action";
+import type { Resistance } from "./DamageTypes";
 import type { Species } from "./Species";
+import type { Speed } from "./SpeedTypes";
 
 export type Background = {
   name: string;
@@ -15,8 +17,8 @@ export type GeneralFeat = {
   level: number;
   repeatable: boolean;
   unlockedFeats: string;
-  speeds: string;
-  resistances: string;
+  speeds: Speed[];
+  resistances: Resistance[];
   combatManeuversLearned: string;
   health: string;
   choice: string;
@@ -42,8 +44,8 @@ export type Advantage = {
   unlockedAction: Action;
   level: number;
   unlockedFeats: string;
-  speeds: string;
-  resistances: string;
+  speeds: Speed[];
+  resistances: Resistance[];
   spellsLearned: string;
   metamagicsLearned: string;
   choice: string;
@@ -60,8 +62,8 @@ export type AncestryFeat = {
   prerequisites: string;
   level: number;
   unlockedFeats: string;
-  speeds: string;
-  resistances: string;
+  speeds: Speed[];
+  resistances: Resistance[];
 };
 
 export type AncestryFeatType = "Cultural" | "Biological";
