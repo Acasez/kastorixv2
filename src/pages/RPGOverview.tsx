@@ -14,7 +14,7 @@ import { PROGRESSION_RULES } from "../constants/RulesDescriptions/ProgressionRul
 import { STATS_RULES } from "../constants/RulesDescriptions/StatsRules";
 import overviewMarkdown from "../markdown/Overview.md?raw";
 import { parseMarkdownByHeaders } from "../utils/parseMarkdown";
-import actions from "../json/actions.json";
+import actions from "../data/actions";
 
 const DESC = parseMarkdownByHeaders(overviewMarkdown);
 

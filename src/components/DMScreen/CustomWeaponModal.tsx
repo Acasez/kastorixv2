@@ -1,6 +1,6 @@
 import { useState, type FormEvent, type KeyboardEvent } from "react";
 import damageTypes from "../../JSON/damage_types.json";
-import weaponTraits from "../../JSON/weapon_traits.json";
+import weaponTraits from "../../data/weaponTraits";
 import type { Weapon } from "../../types/Weapons";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import WeaponTraitComponent from "../CreatureComponents/WeaponTraitComponent";
@@ -16,11 +16,11 @@ const EMPTY_WEAPON: Weapon = {
   name: "",
   dice: "",
   damageType: "Piercing",
-  hands: "1",
-  range: "1",
-  traits: "",
+  hands: 1,
+  range: 1,
+  traits: [],
   description: "",
-  price: "",
+  price: 0,
   type: "Simple",
   weaponGroup: "Unarmed",
 };

@@ -4,9 +4,9 @@ import { useCharacter } from "../../../hooks/useCharacter";
 import TrackBar from "../../TrackBar";
 import golemModels from "../../../JSON/golem_models.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
-import weapons from "../../../JSON/weapons.json";
+import weapons from "../../../data/weapons";
 import WeaponComponent from "../../CreatureComponents/WeaponComponent";
-import actions from "../../../json/actions.json";
+import actions from "../../../data/actions";
 import ActionBox from "../../ActionBox";
 import type { StatKey } from "../../../types/StatKey";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
@@ -190,7 +190,7 @@ export default function GolemSection() {
             ["INT", model.int],
             ["WIL", model.wil],
             ["Physical Resistance", model.resistances],
-            ["Speed", model.speeds],
+            ["Speed", model.landSpeed],
             ["Skills", model.skills],
             ["Saves", model.saves],
             ["Weapon Proficiencies", model.weapons],

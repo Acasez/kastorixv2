@@ -7,7 +7,6 @@ import {
 import skills from "../../data/skills";
 import armors from "../../data/armors";
 import { useCreature } from "../../hooks/useCreature";
-import { STRING_TO_STATKEY } from "../../types/StatKey";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureHeader from "./CreatureHeader";
 
@@ -95,7 +94,7 @@ export default function CreatureSkillList({ blockId }: CreatureSkillListProps) {
           const skill = skills.find(({ name }) => name === skillName);
           if (!skill) return null;
 
-          const stat = STRING_TO_STATKEY[skill.stat];
+          const stat = skill.stat;
           const proficiency: ProficiencyTierName =
             creature.skills[skillName] ?? "Untrained";
           const tier = getProficiency(proficiency);

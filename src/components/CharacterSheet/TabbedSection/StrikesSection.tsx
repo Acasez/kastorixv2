@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import { useCharacter } from "../../../hooks/useCharacter";
 import WeaponComponent from "../../CreatureComponents/WeaponComponent";
-import weapons from "../../../JSON/weapons.json";
+import weapons from "../../../data/weapons";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 
 export default function StrikesSection() {

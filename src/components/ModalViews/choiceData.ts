@@ -8,7 +8,7 @@ import ancestryFeats from "../../JSON/ancestry_feats.json";
 import golemUpgrades from "../../JSON/golem_upgrades.json";
 import runegunUpgrades from "../../JSON/runegun_upgrades.json";
 import spells from "../../JSON/spells.json";
-import weapons from "../../JSON/weapons.json";
+import weapons from "../../data/weapons";
 import species from "../../JSON/species.json";
 import metamagics from "../../JSON/metamagic.json";
 import armors from "../../data/armors";

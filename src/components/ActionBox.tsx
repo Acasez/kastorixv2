@@ -1,14 +1,7 @@
 // src/components/ActionBox.tsx
 import { useMemo } from "react";
 import { getActionIcons } from "../utils/actionUtils";
-
-interface Action {
-  name: string;
-  actions: string;
-  trigger: string;
-  description: string;
-  traits: string;
-}
+import type { Action } from "../types/Action";
 
 interface ActionBoxProps {
   action: string;

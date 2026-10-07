@@ -25,7 +25,7 @@ export const armors: Armor[] = rawArmors.map((raw) => ({
   penalties: Number(raw.penalties),
   price: Number(raw.price),
   type: raw.type as ArmorType,
-  resistances: parseResistances(raw.resistances), // ✅ Parse string to array
+  resistances: parseResistances(raw.resistances),
 }));
 
 export default armors;

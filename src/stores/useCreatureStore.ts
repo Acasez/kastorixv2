@@ -37,7 +37,7 @@ export type Creature = {
   skills: Partial<Record<string, ProficiencyTierName>>;
   languages: string;
   size: string;
-  stats: Record<"PHY" | "DEX" | "INT" | "WIL", number>;
+  stats: Record<StatKey, number>;
   health: CreatureTrack;
   aura: CreatureTrack;
   mana: CreatureTrack;

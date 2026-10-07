@@ -1,10 +1,10 @@
 import type { Action } from "./Action";
-import type { DamageType } from "./DamageTypes";
+import type { StatKey } from "./StatKey";
 
 export type Weapon = {
   name: string;
   dice: string;
-  damageType: DamageType;
+  damageType: string;
   hands: number;
   range: number;
   traits: WeaponTrait[];
@@ -16,10 +16,25 @@ export type Weapon = {
 
 export type WeaponTrait = {
   name: string;
+  parameter?: string;
   effect: string;
-  specialAction: Action;
+  specialAction: Action | null;
   type: string;
   modifiable: string;
+  attackStat: StatKey | "DEX/PHY" | null;
+  damageStat: StatKey | "None" | null;
+  MAPChange: number | null;
+};
+
+export type RawWeaponTrait = {
+  name: string;
+  effect: string;
+  specialAction: string;
+  type: string;
+  modifiable: string;
+  attackStat: string;
+  damageStat: string;
+  MAPChange: string;
 };
 
 export type WeaponType =

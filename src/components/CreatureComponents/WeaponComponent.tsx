@@ -6,6 +6,11 @@ import type { StatKey } from "../../types/StatKey";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import Tooltip from "../Tooltip";
 import WeaponTraitComponent from "./WeaponTraitComponent";
+import {
+  getAttackStatFromWeapon,
+  getDamageStatFromWeapon,
+  getMAPFromWeapon,
+} from "../../data/weapons";
 
 interface WeaponComponentProps {
   weapon: Weapon;
@@ -39,25 +44,21 @@ export default function WeaponComponent({
     );
   }
 
-  const weaponTraits = weapon.traits.split(",").map((trait) => trait.trim());
+  const weaponTraits = weapon.traits;
+
   const attackStat =
-    attackStatOverride ??
-    (weaponTraits.includes("Ranged")
-      ? baseStats.DEX
-      : weaponTraits.includes("Finesse")
-        ? Math.max(baseStats.DEX, baseStats.PHY)
-        : baseStats.PHY);
+    attackStatOverride ?? getAttackStatFromWeapon(weapon, baseStats);
 
   const damageBonus =
-    damageBonusOverride ??
-    (weaponTraits.includes("Ranged") ? 0 : baseStats.PHY);
+    damageBonusOverride ?? getDamageStatFromWeapon(weapon, baseStats);
+
   const proficiencyTier =
     proficiency ??
     fixedProficiency ??
     character.skillProficiencies[weapon.name] ??
     "Trained";
 
-  const multiAttackPenalty = weaponTraits.includes("Agile") ? -4 : -5;
+  const multiAttackPenalty = getMAPFromWeapon(weapon);
 
   return (
     <Tooltip
@@ -68,7 +69,10 @@ export default function WeaponComponent({
             {weapon.name}
           </h3>
           <p className="mt-2 whitespace-pre-line">
-            <strong>Traits:</strong> {weapon.traits}
+            <strong>Traits:</strong>{" "}
+            {weaponTraits
+              .map((t) => (t.parameter ? `${t.name} (${t.parameter})` : t.name))
+              .join(", ")}
           </p>
           <p className="mt-2 whitespace-pre-line">
             <strong>Damage:</strong> {weapon.dice + " " + weapon.damageType}
@@ -172,7 +176,7 @@ export default function WeaponComponent({
         </div>
         <div className="flex flex-wrap gap-1">
           {weaponTraits.map((trait) => (
-            <WeaponTraitComponent trait={trait} key={trait} />
+            <WeaponTraitComponent trait={trait} key={trait.name} />
           ))}
         </div>
       </div>

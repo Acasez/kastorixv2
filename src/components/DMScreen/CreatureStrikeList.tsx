@@ -1,5 +1,5 @@
 import { useState } from "react";
-import weapons from "../../JSON/weapons.json";
+import weapons from "../../data/weapons";
 import { useCreature } from "../../hooks/useCreature";
 import type { ProficiencyTierName } from "../../constants/Proficiency";
 import type { Weapon } from "../../types/Weapons";
