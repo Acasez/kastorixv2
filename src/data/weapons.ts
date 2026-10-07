@@ -9,7 +9,7 @@ import type {
 } from "../types/Weapons";
 import { weaponTraitsByName } from "./weaponTraits";
 
-function parseTraitInstance(traitString: string): WeaponTrait {
+export function parseWeaponTrait(traitString: string): WeaponTrait {
   // Parse "Deadly (d12)" into {name: "Deadly", parameter: "d12"}
   const match = traitString.trim().match(/^([\w\s]+)(?:\s*\(([^)]+)\))?$/);
   const baseName = match ? match[1].trim() : traitString.trim();
@@ -29,9 +29,9 @@ function parseTraitInstance(traitString: string): WeaponTrait {
   return { ...baseTrait, parameter: parameter || baseTrait.parameter };
 }
 
-function parseTraits(traitsString: string): WeaponTrait[] {
+export function parseWeaponTraits(traitsString: string): WeaponTrait[] {
   if (!traitsString?.trim()) return [];
-  return traitsString.split(",").map(parseTraitInstance);
+  return traitsString.split(",").map(parseWeaponTrait);
 }
 
 export const weapons: Weapon[] = rawWeapons.map((raw) => ({
@@ -42,7 +42,7 @@ export const weapons: Weapon[] = rawWeapons.map((raw) => ({
   price: Number(raw.price.replace(/\s*gp$/, "")),
   type: raw.type as WeaponType,
   weaponGroup: raw.weaponGroup as WeaponGroup,
-  traits: parseTraits(raw.traits),
+  traits: parseWeaponTraits(raw.traits),
 }));
 
 export default weapons;

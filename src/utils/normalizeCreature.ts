@@ -7,6 +7,7 @@ import type {
 import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { VerbalComponent, SomaticComponent } from "../types/Spells";
 import type { Weapon } from "../types/Weapons";
+import { parseWeaponTrait, parseWeaponTraits } from "../data/weapons";
 
 // If constants/Proficiency already exports the tier names, import that instead.
 const PROFICIENCY_TIERS: readonly string[] = [
@@ -25,6 +26,14 @@ const str = (value: unknown, fallback = "") =>
 
 const num = (value: unknown, fallback = 0) =>
   typeof value === "number" && Number.isFinite(value) ? value : fallback;
+
+const numeric = (value: unknown, fallback: number) => {
+  const parsed =
+    typeof value === "number"
+      ? value
+      : Number.parseFloat(str(value).replace(/[^\d.-]/g, ""));
+  return Number.isFinite(parsed) ? parsed : fallback;
+};
 
 const tier = (value: unknown): ProficiencyTierName | undefined =>
   typeof value === "string" && PROFICIENCY_TIERS.includes(value)
@@ -103,6 +112,18 @@ const passives = (value: unknown): CreaturePassive[] =>
       })
     : [];
 
+const weaponTraitList = (value: unknown): Weapon["traits"] => {
+  if (typeof value === "string") return parseWeaponTraits(value);
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((entry) => {
+    if (typeof entry === "string") return parseWeaponTraits(entry);
+    if (!isRecord(entry) || typeof entry.name !== "string") return [];
+    const traitName = `${entry.name}${typeof entry.parameter === "string" && entry.parameter ? ` (${entry.parameter})` : ""}`;
+    return [parseWeaponTrait(traitName)];
+  });
+};
+
 const weapons = (value: unknown): Weapon[] =>
   Array.isArray(value)
     ? value.flatMap((entry) => {
@@ -111,14 +132,17 @@ const weapons = (value: unknown): Weapon[] =>
           {
             name: str(entry.name).trim(),
             dice: str(entry.dice),
-            damageType: str(entry.damageType, "Piercing"),
-            hands: str(entry.hands, "1"),
-            range: str(entry.range, "1"),
-            traits: str(entry.traits),
+            damageType: str(entry.damageType, "piercing").toLowerCase(),
+            hands: numeric(entry.hands, 1),
+            range: numeric(entry.range, 1),
+            traits: weaponTraitList(entry.traits),
             description: str(entry.description),
-            price: str(entry.price),
-            type: str(entry.type, "Simple"),
-            weaponGroup: str(entry.weaponGroup, "Unarmed"),
+            price: numeric(entry.price, 0),
+            type: str(entry.type, "Simple") as Weapon["type"],
+            weaponGroup: str(
+              entry.weaponGroup,
+              "Unarmed",
+            ) as Weapon["weaponGroup"],
           },
         ];
       })

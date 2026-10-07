@@ -1,7 +1,13 @@
 import { useState, type FormEvent, type KeyboardEvent } from "react";
 import damageTypes from "../../JSON/damage_types.json";
 import weaponTraits from "../../data/weaponTraits";
-import type { Weapon } from "../../types/Weapons";
+import { parseWeaponTrait } from "../../data/weapons";
+import type {
+  Weapon,
+  WeaponGroup,
+  WeaponTrait,
+  WeaponType,
+} from "../../types/Weapons";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import WeaponTraitComponent from "../CreatureComponents/WeaponTraitComponent";
 import { WEAPON_TYPES, WEAPON_GROUPS } from "../../constants/Weapons";
@@ -15,7 +21,7 @@ type CustomWeaponModalProps = {
 const EMPTY_WEAPON: Weapon = {
   name: "",
   dice: "",
-  damageType: "Piercing",
+  damageType: "piercing",
   hands: 1,
   range: 1,
   traits: [],
@@ -35,36 +41,34 @@ export default function CustomWeaponModal({
   );
   const [traitQuery, setTraitQuery] = useState("");
   const isEditing = Boolean(initialWeapon);
-  const selectedTraits = weapon.traits
-    .split(",")
-    .map((trait) => trait.trim())
-    .filter(Boolean);
-  const matchingTraits = weaponTraits
-    .map(({ name }) => name)
-    .filter(
-      (trait) =>
-        trait.toLowerCase().includes(traitQuery.trim().toLowerCase()) &&
-        !selectedTraits.some(
-          (selected) => selected.toLowerCase() === trait.toLowerCase(),
-        ),
-    );
+  const selectedTraits = weapon.traits;
+  const traitQueryBase = traitQuery.trim().split("(")[0].trim().toLowerCase();
+  const matchingTraits = weaponTraits.filter(
+    (trait) =>
+      trait.name.toLowerCase().includes(traitQueryBase) &&
+      !selectedTraits.some((selected) => selected.name === trait.name),
+  );
 
-  const setTraits = (traits: string[]) =>
-    setWeapon({ ...weapon, traits: traits.join(", ") });
+  const setTraits = (traits: WeaponTrait[]) => setWeapon({ ...weapon, traits });
 
   const addTrait = (trait: string) => {
-    const normalizedTrait = trait.trim();
+    const parsedTrait = parseWeaponTrait(trait);
     if (
-      !normalizedTrait ||
+      !parsedTrait.name ||
       selectedTraits.some(
-        (selected) => selected.toLowerCase() === normalizedTrait.toLowerCase(),
+        (selected) =>
+          selected.name === parsedTrait.name &&
+          selected.parameter === parsedTrait.parameter,
       )
     ) {
       return;
     }
-    setTraits([...selectedTraits, normalizedTrait]);
+    setTraits([...selectedTraits, parsedTrait]);
     setTraitQuery("");
   };
+
+  const traitLabel = (trait: WeaponTrait) =>
+    trait.parameter ? `${trait.name} (${trait.parameter})` : trait.name;
 
   const handleTraitKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key !== "Enter" || !traitQuery.trim()) return;
@@ -118,7 +122,7 @@ export default function CustomWeaponModal({
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             >
               {damageTypes.map(({ name }) => (
-                <option key={name} value={name}>
+                <option key={name} value={name.toLowerCase()}>
                   {name}
                 </option>
               ))}
@@ -134,7 +138,7 @@ export default function CustomWeaponModal({
               min={0}
               value={weapon.hands}
               onChange={(event) =>
-                setWeapon({ ...weapon, hands: event.target.value })
+                setWeapon({ ...weapon, hands: Number(event.target.value) })
               }
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
@@ -146,7 +150,7 @@ export default function CustomWeaponModal({
               min={0}
               value={weapon.range}
               onChange={(event) =>
-                setWeapon({ ...weapon, range: event.target.value })
+                setWeapon({ ...weapon, range: Number(event.target.value) })
               }
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
@@ -176,16 +180,23 @@ export default function CustomWeaponModal({
                   type="button"
                   role="option"
                   aria-selected="false"
-                  key={trait}
-                  onClick={() => addTrait(trait)}
+                  key={trait.name}
+                  onClick={() =>
+                    addTrait(
+                      trait.parameter
+                        ? `${trait.name} (${trait.parameter})`
+                        : trait.name,
+                    )
+                  }
                   className="block w-full px-3 py-2 text-left text-sm text-white hover:bg-stone-700"
                 >
-                  {trait}
+                  {traitLabel(trait)}
                 </button>
               ))}
               {!matchingTraits.some(
                 (trait) =>
-                  trait.toLowerCase() === traitQuery.trim().toLowerCase(),
+                  traitLabel(trait).toLowerCase() ===
+                  traitQuery.trim().toLowerCase(),
               ) && (
                 <button
                   type="button"
@@ -204,7 +215,7 @@ export default function CustomWeaponModal({
               {selectedTraits.map((trait, index) => (
                 <span
                   className="inline-flex items-center gap-1"
-                  key={`${trait}-${index}`}
+                  key={`${trait.name}-${trait.parameter ?? ""}-${index}`}
                 >
                   <WeaponTraitComponent trait={trait} />
                   <button
@@ -213,8 +224,8 @@ export default function CustomWeaponModal({
                     onClick={() =>
                       setTraits(selectedTraits.filter((_, i) => i !== index))
                     }
-                    aria-label={`Remove ${trait} trait`}
-                    title={`Remove ${trait}`}
+                    aria-label={`Remove ${traitLabel(trait)} trait`}
+                    title={`Remove ${traitLabel(trait)}`}
                   >
                     ×
                   </button>
@@ -240,9 +251,12 @@ export default function CustomWeaponModal({
           <label className="flex flex-col gap-1 text-white">
             <span>Price</span>
             <input
+              type="number"
+              min={0}
+              step={0.01}
               value={weapon.price}
               onChange={(event) =>
-                setWeapon({ ...weapon, price: event.target.value })
+                setWeapon({ ...weapon, price: Number(event.target.value) })
               }
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
@@ -252,7 +266,7 @@ export default function CustomWeaponModal({
             <select
               value={weapon.type}
               onChange={(event) =>
-                setWeapon({ ...weapon, type: event.target.value })
+                setWeapon({ ...weapon, type: event.target.value as WeaponType })
               }
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             >
@@ -266,7 +280,10 @@ export default function CustomWeaponModal({
             <select
               value={weapon.weaponGroup}
               onChange={(event) =>
-                setWeapon({ ...weapon, weaponGroup: event.target.value })
+                setWeapon({
+                  ...weapon,
+                  weaponGroup: event.target.value as WeaponGroup,
+                })
               }
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             >

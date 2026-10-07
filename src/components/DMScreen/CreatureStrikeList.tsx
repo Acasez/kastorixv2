@@ -41,19 +41,29 @@ export default function CreatureStrikeList({
     )
     .filter((weapon): weapon is Weapon => weapon !== undefined);
   const customWeaponNames = new Set(customWeapons.map(({ name }) => name));
-  const customChoiceItems: ChoiceItem[] = customWeapons.map((weapon) => ({
-    ...weapon,
-    details: [
-      { label: "Damage", value: `${weapon.dice} ${weapon.damageType}` },
-      { label: "Hands", value: weapon.hands },
-      { label: "Range", value: weapon.range },
-      { label: "Traits", value: weapon.traits },
-      { label: "Description", value: weapon.description },
-      { label: "Price", value: weapon.price },
-      { label: "Type", value: weapon.type },
-      { label: "Weapon Group", value: weapon.weaponGroup },
-    ].filter(({ value }) => value.trim() !== ""),
-  }));
+  const customChoiceItems: ChoiceItem[] = customWeapons.map((weapon) => {
+    const traits = weapon.traits
+      .map((trait) =>
+        trait.parameter ? `${trait.name} (${trait.parameter})` : trait.name,
+      )
+      .join(", ");
+    return {
+      name: weapon.name,
+      traits,
+      type: weapon.type,
+      weaponGroup: weapon.weaponGroup,
+      details: [
+        { label: "Damage", value: `${weapon.dice} ${weapon.damageType}` },
+        { label: "Hands", value: String(weapon.hands) },
+        { label: "Range", value: String(weapon.range) },
+        { label: "Traits", value: traits },
+        { label: "Description", value: weapon.description },
+        { label: "Price", value: `${weapon.price} gp` },
+        { label: "Type", value: weapon.type },
+        { label: "Weapon Group", value: weapon.weaponGroup },
+      ].filter(({ value }) => value.trim() !== ""),
+    };
+  });
   const weaponChoices = [...weaponChoiceItems, ...customChoiceItems];
 
   const closeWeaponModal = () => {
