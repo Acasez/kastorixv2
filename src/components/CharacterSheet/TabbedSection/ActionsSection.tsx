@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useCharacter } from "../../../hooks/useCharacter";
-import actions from "../../../json/actions.json";
+import actions from "../../../data/actions";
 import advantages from "../../../JSON/advantages.json";
 import ancestryFeats from "../../../JSON/ancestry_feats.json";
 import arcaneFeats from "../../../JSON/arcane_feats.json";

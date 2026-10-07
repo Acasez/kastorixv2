@@ -1,5 +1,5 @@
 import ActionBox from "../ActionBox";
-import actions from "../../json/actions.json";
+import actions from "../../data/actions";
 import type { ChoiceItem } from "./ChoiceModal";
 
 interface ChoiceTooltipProps {

@@ -1,22 +1,13 @@
 export type Action = {
   name: string;
   actions: ActionCost;
-  trigger: string;
-  requirement: string;
-  description: string;
-  traits: ActionTrait[];
-};
-
-export interface ActionData {
-  name: string;
-  description: string;
-  actions: string;
   trigger?: string;
   requirement?: string;
-  traits?: string;
+  description: string;
+  traits: ActionTrait[];
   sourceType: string;
   source?: string;
-}
+};
 
 export type ActionCost = "0" | "1" | "2" | "3" | "R";
 
