@@ -7,37 +7,41 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": "-1"
+        "MAPChange": "-1",
+        "attackPenalty": ""
     },
     {
         "name": "Aiming Focus",
-        "effect": "When casting spells with a range over 10 tiles, their range increases by 4.",
+        "effect": "While holding this weapon you can cast spells at double range at a -2 penalty on the spellshaping check.",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Bayonet",
-        "effect": "Bayonets are fastened on runegun rifles, and provide an quick melee attack. Their construction means you have -1 penalty on attacks with them",
+        "effect": "Bayonets are fastened on runegun rifles, and provide an quick melee attack. \nTheir construction means you have -1 penalty on attacks with them",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": "1"
     },
     {
         "name": "Block (X)",
-        "effect": "While holding this weapon you have the Block action. ",
+        "effect": "While holding this weapon you have the Block action, which provides X defense.",
         "specialAction": "Block",
         "type": "Normal",
         "modifiable": "Yes",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Channeling",
@@ -47,17 +51,19 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Deadly (dX)",
-        "effect": "Critical hits with this weapon adds the specified dice to the damage. ",
+        "effect": "Critical hits with this weapon deal an additional X damage. ",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "Yes",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Disarm",
@@ -67,17 +73,19 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Extend (X)",
-        "effect": "You can extend this weapon to the range specified as part of the strike. While extended you have a -2 move speed penalty and cannot make reactive strikes until you take an action to retract it",
+        "effect": "When you strike you can extend your weapon range to X as part of the strike. \nWhile extended you have a -2 move speed penalty and cannot make reactive strikes until you take an action to retract it.",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "Yes",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Finesse",
@@ -87,7 +95,8 @@
         "modifiable": "",
         "attackStat": "DEX/PHY",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Heavy",
@@ -97,7 +106,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Light",
@@ -107,17 +117,19 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Loud",
-        "effect": "Using this weapon creates a loud burst of noise",
+        "effect": "Using this weapon creates a loud burst of noise.",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Parry",
@@ -127,7 +139,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Precision",
@@ -137,7 +150,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Propulsive",
@@ -147,17 +161,19 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "PHY",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Ranged ",
-        "effect": "You use your DEX instead of PHY when making attacks with this weapon. No bonus is added to the damage of the weapon (unless it has propulsive)",
+        "effect": "You use your DEX instead of PHY when making attacks with this weapon. \nNo bonus is added to the damage of the weapon (unless it has propulsive)",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",
         "attackStat": "DEX",
         "damageStat": "None",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Ranged Trip",
@@ -167,7 +183,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Shove",
@@ -177,7 +194,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Slowing (X)",
@@ -187,7 +205,8 @@
         "modifiable": "Yes",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Sluggish",
@@ -197,7 +216,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": "1"
+        "MAPChange": "1",
+        "attackPenalty": ""
     },
     {
         "name": "Sweep",
@@ -207,7 +227,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Swing Around",
@@ -217,7 +238,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Thrown (X)",
@@ -227,17 +249,19 @@
         "modifiable": "Yes",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Unwieldy",
-        "effect": "While attacking with this weapon you have a -3 penalty if the target is adjacent to you",
+        "effect": "While attacking with this weapon you have a -3 penalty if the target is adjacent to you.",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Versatile",
@@ -247,17 +271,19 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
-        "name": "Volley",
-        "effect": "While attacking with this weapon you have a -3 penalty if the target is within Volley Range",
+        "name": "Volley (X)",
+        "effect": "While attacking with this weapon you have a -3 penalty if the target is within X range",
         "specialAction": "",
         "type": "Normal",
-        "modifiable": "",
+        "modifiable": "Yes",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Grab",
@@ -267,7 +293,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Improved Grab",
@@ -277,7 +304,8 @@
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Innate",
@@ -287,7 +315,8 @@
         "modifiable": "",
         "attackStat": "WIL",
         "damageStat": "WIL",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Psionic",
@@ -297,16 +326,18 @@
         "modifiable": "",
         "attackStat": "INT",
         "damageStat": "INT",
-        "MAPChange": ""
+        "MAPChange": "",
+        "attackPenalty": ""
     },
     {
         "name": "Rapid",
         "effect": "The multiple attack penalty you take with this weapon -3 per attack instead of -5. The penalty on opportunity attacks is 2 less",
         "specialAction": "",
-        "type": "",
+        "type": "Special",
         "modifiable": "",
         "attackStat": "",
         "damageStat": "",
-        "MAPChange": "-2"
+        "MAPChange": "-2",
+        "attackPenalty": ""
     }
 ]

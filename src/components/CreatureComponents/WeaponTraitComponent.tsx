@@ -8,10 +8,14 @@ type WeaponTraitComponentProps = {
 export default function WeaponTraitComponent({
   trait,
 }: WeaponTraitComponentProps) {
+  const content = trait.parameter
+    ? trait.effect.replace(/X/g, trait.parameter)
+    : trait.effect;
+
   return (
     <Tooltip
       key={trait.name}
-      content={trait.effect}
+      content={content}
       align="left"
       contentClassName="whitespace-pre-line"
     >
