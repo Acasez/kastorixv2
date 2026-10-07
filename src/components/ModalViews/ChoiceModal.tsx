@@ -37,6 +37,44 @@ interface ChoiceModalProps {
   onConfirm: (value: string, choice?: string) => void;
 }
 
+function getFilterValues(value: unknown): string[] {
+  if (typeof value === "string") {
+    return value
+      .split(",")
+      .map((part) => part.trim())
+      .filter(Boolean);
+  }
+
+  if (!Array.isArray(value)) {
+    return value === undefined || value === null ? [] : [String(value)];
+  }
+
+  return value.flatMap((entry) => {
+    if (typeof entry === "string") {
+      return entry
+        .split(",")
+        .map((part) => part.trim())
+        .filter(Boolean);
+    }
+    if (!entry || typeof entry !== "object") return [];
+
+    const namedEntry = entry as {
+      name?: unknown;
+      parameter?: unknown;
+      label?: unknown;
+      value?: unknown;
+    };
+    const label = namedEntry.name ?? namedEntry.label ?? namedEntry.value;
+    if (label === undefined || label === null) return [];
+    const parameter = namedEntry.parameter;
+    return [
+      parameter === undefined || parameter === null || parameter === ""
+        ? String(label)
+        : `${String(label)} (${String(parameter)})`,
+    ];
+  });
+}
+
 export default function ChoiceModal({
   items,
   confirmLabel,
@@ -71,11 +109,9 @@ export default function ChoiceModal({
     const matchesFilters = filterFields.every(({ value }) => {
       const selectedFilter = filters[value] ?? "";
       if (!selectedFilter) return true;
-      const itemValue = item[value as keyof ChoiceItem];
-      return String(itemValue ?? "")
-        .toLowerCase()
-        .split(",")
-        .map((part) => part.trim())
+      const itemValue: unknown = item[value as keyof ChoiceItem];
+      return getFilterValues(itemValue)
+        .map((part) => part.toLowerCase())
         .includes(selectedFilter.toLowerCase());
     });
     return matchesName && matchesFilters;
@@ -115,10 +151,7 @@ export default function ChoiceModal({
                 {Array.from(
                   new Set(
                     items.flatMap((item) =>
-                      String(item[field.value as keyof ChoiceItem] ?? "")
-                        .split(",")
-                        .map((part) => part.trim())
-                        .filter(Boolean),
+                      getFilterValues(item[field.value as keyof ChoiceItem]),
                     ),
                   ),
                 )

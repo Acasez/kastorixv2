@@ -146,7 +146,7 @@
         "type": "Normal",
         "modifiable": "",
         "attackStat": "",
-        "damageStat": "",
+        "damageStat": "PHY",
         "MAPChange": ""
     },
     {
@@ -156,7 +156,7 @@
         "type": "Normal",
         "modifiable": "",
         "attackStat": "DEX",
-        "damageStat": "NON",
+        "damageStat": "None",
         "MAPChange": ""
     },
     {
@@ -298,5 +298,15 @@
         "attackStat": "INT",
         "damageStat": "INT",
         "MAPChange": ""
+    },
+    {
+        "name": "Rapid",
+        "effect": "The multiple attack penalty you take with this weapon -3 per attack instead of -5. The penalty on opportunity attacks is 2 less",
+        "specialAction": "",
+        "type": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "-2"
     }
 ]
