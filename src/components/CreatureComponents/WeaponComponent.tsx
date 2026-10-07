@@ -58,7 +58,7 @@ export default function WeaponComponent({
     character.skillProficiencies[weapon.name] ??
     "Trained";
 
-  const multiAttackPenalty = getMAPFromWeapon(weapon);
+  const multiAttackPenalty = -getMAPFromWeapon(weapon) + -5;
 
   return (
     <Tooltip
