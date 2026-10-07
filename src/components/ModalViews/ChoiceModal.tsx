@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ActionBox from "../ActionBox";
-import actions from "../../json/actions.json";
+import actions from "../../data/actions";
 
 export interface ChoiceDetail {
   label: string;

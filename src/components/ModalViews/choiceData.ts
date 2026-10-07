@@ -16,6 +16,7 @@ import gadgets from "../../JSON/gadgets.json";
 import golemModels from "../../JSON/golem_models.json";
 import aspects from "../../JSON/aspects.json";
 import { getActionIcons } from "../../utils/actionUtils";
+import type { WeaponTrait } from "../../types/Weapons";
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -39,11 +40,30 @@ function createDetails(
 ): ChoiceDetail[] {
   return fields.flatMap(({ label, valueKey, italicFirstLine }) => {
     const value = item[valueKey];
+
     if (value === undefined || value === null || String(value).trim() === "") {
       return [];
     }
 
-    return [{ label, value: String(value), italicFirstLine }];
+    // Special handling for arrays of objects with name property (like WeaponTrait[])
+    let displayValue: string;
+    if (
+      Array.isArray(value) &&
+      value.length > 0 &&
+      value[0] &&
+      typeof value[0] === "object" &&
+      "name" in value[0]
+    ) {
+      displayValue = value
+        .map((t: WeaponTrait) =>
+          t.parameter ? `${t.name} (${t.parameter})` : t.name,
+        )
+        .join(", ");
+    } else {
+      displayValue = String(value);
+    }
+
+    return [{ label, value: displayValue, italicFirstLine }];
   });
 }
 
