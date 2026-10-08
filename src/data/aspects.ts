@@ -2,14 +2,30 @@
 import type { Aspect, AspectType } from "../types/Spells";
 import rawAspects from "../JSON/aspects.json";
 
-export const aspects: Aspect[] = rawAspects.map((raw) => ({
-  ...raw,
-  type: raw.type as AspectType,
-  opposite: raw.opposite ? aspectsByName[raw.opposite] || null : null,
-}));
+// Step 1: Create all aspect objects in a map (opposite is null for now)
+const aspectObjects: Record<string, Aspect> = {};
 
+for (const raw of rawAspects) {
+  aspectObjects[raw.name] = {
+    name: raw.name,
+    type: raw.type as AspectType,
+    attuneable: raw.attuneable,
+    opposite: null,
+    basicMagic: raw.basicMagic,
+    aura: raw.aura,
+    infusion: raw.infusion,
+    elementalization: raw.elementalization,
+  };
+}
+
+// Step 2: Now that all objects exist, resolve opposite references
+for (const raw of rawAspects) {
+  const aspect = aspectObjects[raw.name];
+  if (raw.opposite) {
+    aspect.opposite = aspectObjects[raw.opposite] || null;
+  }
+}
+
+export const aspects: Aspect[] = Object.values(aspectObjects);
+export const aspectsByName: Record<string, Aspect> = aspectObjects;
 export default aspects;
-
-export const aspectsByName: Record<string, Aspect> = Object.fromEntries(
-  aspects.map((a) => [a.name, a]),
-);

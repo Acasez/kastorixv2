@@ -67,6 +67,7 @@ export default function SpellRankSection({
       <div className="flex flex-wrap gap-2 mt-3">
         {selectedSpells.map((spell) => (
           <SpellComponent
+            key={spell.name}
             spell={spell}
             onRemoveSpell={onRemoveSpell}
             onReplaceSpell={onReplaceSpell}
