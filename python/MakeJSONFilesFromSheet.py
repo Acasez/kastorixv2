@@ -24,7 +24,9 @@ SHEETS = [
     "Backgrounds",
     "Species",
     "Spells",
-    "Metamagic",
+    "Spell Traits",
+    "Metamagics",
+    "Aspects",
     "Weapons",
     "Weapon Traits",
     "Combat Maneuvers",
@@ -33,13 +35,15 @@ SHEETS = [
     "Golem Models",
     "Runegun Upgrades",
     "Golem Upgrades",
+    "Armor Upgrades",
+    "Conditions",
     "Potions",
     "Gadgets",
     "Runes",
     "Skills",
-    "Conditions",
     "Damage Types",
-    "Aspects",
+    "Languages",
+    "Creature Traits",
 ]
 
 SHEET_CONFIGS = []
