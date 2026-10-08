@@ -37,6 +37,9 @@ export default function SpellComponent({
   }
   const proficiencyTier =
     proficiency ?? character?.skillProficiencies[spell.name] ?? "Trained";
+
+  console.log(spell, " aspect ", spell.aspects);
+
   return (
     <Tooltip
       key={spell.name}
@@ -58,10 +61,12 @@ export default function SpellComponent({
             ))}
           </p>
           <p>
-            <strong>Aspects:</strong> {spell.aspects}
+            <strong>Aspects:</strong>{" "}
+            {spell.aspects?.map((a) => a.name).join(", ")}
           </p>
           <p>
-            <strong>Traits:</strong> {spell.traits}
+            <strong>Traits:</strong>{" "}
+            {spell.traits.map((t) => t.name).join(", ")}
           </p>
           <p>
             <strong>Range:</strong> {spell.range}

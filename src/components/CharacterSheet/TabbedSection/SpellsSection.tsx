@@ -5,7 +5,7 @@ import { SPELL_RANKS } from "../../../constants/SpellRanks";
 import SpellRankSection from "./SpellRankSection";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
-import spells from "../../../JSON/spells.json";
+import spells from "../../../data/spells";
 import metamagics from "../../../JSON/metamagic.json";
 import MetamagicsSection from "./MetamagicsSection";
 import { MultiOptionSwitch } from "../../Buttons/MultiOptionSwitch";
