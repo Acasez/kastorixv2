@@ -1,17 +1,5 @@
 [
     {
-        "name": "Duelist's Defense",
-        "actions": "Free",
-        "trigger": "You hit a creature with a Strike or Spell",
-        "requirement": "You are holding a weapon with the Light trait, that not the weapon you made the strike with",
-        "description": "Block or Parry with the Light weapon",
-        "traits": "Defensive",
-        "skill": "",
-        "sourceType": "Feat",
-        "source": "",
-        "manueverType": ""
-    },
-    {
         "name": "A Thousand Cuts",
         "actions": "3",
         "trigger": "",
@@ -384,6 +372,18 @@
         "manueverType": "Simple"
     },
     {
+        "name": "Duelist's Defense",
+        "actions": "Free",
+        "trigger": "You hit a creature with a Strike or Spell",
+        "requirement": "You are holding a weapon with the Light trait, that not the weapon you made the strike with",
+        "description": "Block or Parry with the Light weapon",
+        "traits": "Defensive",
+        "skill": "",
+        "sourceType": "Feat",
+        "source": "",
+        "manueverType": ""
+    },
+    {
         "name": "Elemental Aura",
         "actions": "1",
         "trigger": "",
@@ -574,6 +574,18 @@
         "sourceType": "Combat Manuever",
         "source": "",
         "manueverType": "Advanced"
+    },
+    {
+        "name": "Guide Cast",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "You are holding a weapon with the Aiming Focus trait",
+        "description": "If your next action is to cast a spell with the Targeting trait, you cast it at double distance",
+        "traits": "Magic, Item",
+        "skill": "",
+        "sourceType": "Item",
+        "source": "",
+        "manueverType": ""
     },
     {
         "name": "Harness Mana",
@@ -1116,18 +1128,6 @@
         "manueverType": ""
     },
     {
-        "name": "Swallow Whole",
-        "actions": "1",
-        "trigger": "",
-        "requirement": "The monster has a creature grabbed in your teeth",
-        "description": "Make a brawling roll against the grabbed creature.\nOn a success the creature is swallowed and the monster can use its mouth attack again.",
-        "traits": "Attack, Creature",
-        "skill": "",
-        "sourceType": "Creature",
-        "source": "",
-        "manueverType": ""
-    },
-    {
         "name": "Stabilize",
         "actions": "1",
         "trigger": "",
@@ -1268,6 +1268,18 @@
         "traits": "Spellcasting, Magic",
         "skill": "",
         "sourceType": "Base",
+        "source": "",
+        "manueverType": ""
+    },
+    {
+        "name": "Swallow Whole",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "The monster has a creature grabbed in your teeth",
+        "description": "Make a brawling roll against the grabbed creature.\nOn a success the creature is swallowed and the monster can use its mouth attack again.",
+        "traits": "Attack, Creature",
+        "skill": "",
+        "sourceType": "Creature",
         "source": "",
         "manueverType": ""
     },

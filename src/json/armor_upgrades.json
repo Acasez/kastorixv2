@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Blast Proof",
+        "description": "After enough time dealing with explosions, you've made sure your armor can deal with some the impacts.\nWhen you would take fire or bludgeoning damage from an area effect, treat your armors resistance as double the listed amount",
+        "prerequisites": "",
+        "level": "4"
+    },
+    {
+        "name": "Jump Jets",
+        "description": "Once per turn you can use an action to fly 3 steps, falling if you are still in the air after the movement.\nYou can use this ability up three times per day",
+        "prerequisites": "",
+        "level": "4"
+    },
+    {
+        "name": "Air Supply",
+        "description": "",
+        "prerequisites": "",
+        "level": "4"
+    }
+]

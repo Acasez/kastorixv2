@@ -1,16 +1,9 @@
 import { STAT_COLORS, type BaseStatArray } from "../../constants/Stats";
 import { useCharacter } from "../../hooks/useCharacter";
-import type { StatKey } from "../../types/StatKey";
+import { BASE_STAT_KEYS, type StatKey } from "../../types/StatKey";
 import { useState } from "react";
 
 const BASE_STAT_VALUES: BaseStatArray[] = [3, 1, 0, -1];
-
-const BASE_STAT_KEYS: { key: StatKey; label: string }[] = [
-  { key: "PHY", label: "Physique" },
-  { key: "DEX", label: "Dexterity" },
-  { key: "INT", label: "Intelligence" },
-  { key: "WIL", label: "Willpower" },
-];
 
 const formatValue = (value: BaseStatArray) =>
   value > 0 ? `+${value}` : `${value}`;

@@ -11,14 +11,14 @@ export type VerbalComponent = "None" | "Standard" | "Attuned";
 export type Spell = {
   name: string;
   actions: string;
-  aspects: string;
-  traits: string;
+  aspects: Aspect[];
+  traits: SpellTrait[];
   range: number | string;
   target: string;
   duration: string;
   effect: string;
   upcast: string;
-  rank: string;
+  rank: SpellRank;
 };
 
 export type SpellRank =
@@ -37,7 +37,8 @@ export type SpellTrait = {
 export type Aspect = {
   name: string;
   type: AspectType;
-  opposite: Aspect;
+  attuneable: string;
+  opposite: Aspect | null;
   basicMagic: string;
   aura: string;
   infusion: string;

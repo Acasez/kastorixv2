@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Common",
+        "description": "The common tounge across Kastorix",
+        "rarity": "Common"
+    },
+    {
+        "name": "Zhandaren",
+        "description": "The trollish language, common on the isles",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Old Naga",
+        "description": "The old naga language was once widespread across Meibor",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Aldarnan",
+        "description": "Aldarnan is a variety of common, designed to incorparate magical runes in its writing system",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Deshiran",
+        "description": "The Deshiran language is of a different language family than most on Meibor",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Vesper",
+        "description": "",
+        "rarity": "Rare"
+    }
+]

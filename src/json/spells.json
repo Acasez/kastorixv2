@@ -251,7 +251,7 @@
         "actions": "Reaction",
         "trigger": "You would have to make a Reflex save",
         "aspects": "Earth",
-        "traits": "-",
+        "traits": "",
         "range": "Self",
         "target": "Self",
         "duration": "-",
@@ -277,7 +277,7 @@
         "actions": "Reaction",
         "trigger": "You would have to make a Reflex save against an attack by a metal weapon or projectile.",
         "aspects": "Metal",
-        "traits": "-",
+        "traits": "",
         "range": "Self",
         "target": "One metallic weapon or projectile",
         "duration": "-",
@@ -1313,6 +1313,19 @@
         "rank": "(4) Grand Magus"
     },
     {
+        "name": "Stasis",
+        "actions": "3",
+        "trigger": "",
+        "aspects": "Arcane",
+        "traits": "Temporal, Complex",
+        "range": "6",
+        "target": "One Creature or Object",
+        "duration": "Sustained, up to 1 minute",
+        "effect": "Holds a creature or object stuck in timespace.\nTarget a creature or object of large size or smaller, it must make a Will save.\n Success: The creature is Stunned 1\n Failure: The creature is held in Stasis while you sustain the spell\n Critical Failure: The creature is Stasis while you sustain the spell and it has disadvantage on further saves against it.\nWhile in Stasis creatures and objects skip their turn, and any effects they were causing or were effecting them are suspended while the spell is maintained\nCreatures affected by stasis roll a 1 on all saves (besides saves against Stasis).\nThe first time each turn they would make a save, take damage, be healed or be affected by a new effect, they can make new save against Stasis",
+        "upcast": "",
+        "rank": "(4) Grand Magus"
+    },
+    {
         "name": "Steelskin",
         "actions": "2",
         "trigger": "",
@@ -1360,7 +1373,7 @@
         "range": "10",
         "target": "-",
         "duration": "",
-        "effect": "Creates a 3 tiles burst, 10 tiles high waterspout within range. Creatures at that location need to make a Reflex or Fortitude saving throw. \n Success: The creature takes half damage and is pushed up 3 tiles\n Failure: The creature takes 3d10 bludgeoning damage and is pushed up 8 tiles\n Critical Failure: The creature takes double damage and is pushed up 12 tiles\nCreatures pushed up by the spell fall down afterwards, taking fall damage as normal.",
+        "effect": "Creates a 3 tiles burst, 10 tiles high waterspout within range. \nCreatures at that location need to make a Reflex or Fortitude saving throw. \n Success: The creature takes half damage and is pushed up 3 tiles\n Failure: The creature takes 3d10 bludgeoning damage and is pushed up 8 tiles\n Critical Failure: The creature takes double damage and is pushed up 12 tiles\nCreatures pushed up by the spell fall down afterwards, taking fall damage as normal.",
         "upcast": "By Rank: Increase the damage by 1d10",
         "rank": "(4) Grand Magus"
     },

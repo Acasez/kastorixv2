@@ -7,14 +7,14 @@ import advantages from "../../JSON/advantages.json";
 import ancestryFeats from "../../JSON/ancestry_feats.json";
 import golemUpgrades from "../../JSON/golem_upgrades.json";
 import runegunUpgrades from "../../JSON/runegun_upgrades.json";
-import spells from "../../JSON/spells.json";
+import spells from "../../data/spells";
 import weapons from "../../data/weapons";
 import species from "../../JSON/species.json";
 import metamagics from "../../JSON/metamagic.json";
 import armors from "../../data/armors";
 import gadgets from "../../JSON/gadgets.json";
 import golemModels from "../../JSON/golem_models.json";
-import aspects from "../../JSON/aspects.json";
+import aspects from "../../data/aspects";
 import { getActionIcons } from "../../utils/actionUtils";
 import type { WeaponTrait } from "../../types/Weapons";
 
@@ -201,8 +201,6 @@ export function getSpellChoiceItems(rank?: string): ChoiceItem[] {
 
   return availableSpells.map((spell) => ({
     ...createChoiceItems([spell], SPELL_FIELDS)[0],
-    aspects: spell.aspects,
-    traits: spell.traits,
     actionIcons: getActionIcons(spell.actions),
   }));
 }
@@ -263,7 +261,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     WEAPON_FIELDS,
   );
   const aspectChoiceItems = createChoiceItems(
-    aspects.filter((aspect) => aspect.Attuneable !== "No"),
+    aspects.filter((aspect) => aspect.attuneable !== "No"),
     ASPECT_FIELDS,
   );
   const addChoiceOptions = (items: ChoiceItem[]) =>

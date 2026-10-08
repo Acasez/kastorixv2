@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Area",
+        "effect": "",
+        "flavor": "Area spells affects multiple tiles in a area"
+    },
+    {
+        "name": "Conjured Weapon",
+        "effect": "",
+        "flavor": "The spell creates a weapon out magic that the caster can use while they maintain the spell"
+    },
+    {
+        "name": "Complex",
+        "effect": "The spellshaping DC increase by 3",
+        "flavor": "Complex spells are are harder to cast, requiring cunning and deftness"
+    },
+    {
+        "name": "Dimensional",
+        "effect": "",
+        "flavor": "The spell has to do with shaping or manipulating dimensional rifts and extra dimensional spaces"
+    },
+    {
+        "name": "Draining",
+        "effect": "Increase the spells mana cost by twice its rank",
+        "flavor": "Draining spells require a lot of mana"
+    },
+    {
+        "name": "Enchantment",
+        "effect": "",
+        "flavor": "The spell temporarily improves the caster or target, or gives them new abilities"
+    },
+    {
+        "name": "Enviromental",
+        "effect": "",
+        "flavor": "The spell affects a large area, causing an effect on the enviroment"
+    },
+    {
+        "name": "Illusion",
+        "effect": "",
+        "flavor": "The spell creates an illusory shape to fool visual observers"
+    },
+    {
+        "name": "Manipulation",
+        "effect": "",
+        "flavor": "Manipulation spells modifies or shapes matter. They are generally not cast in combat"
+    },
+    {
+        "name": "Movement",
+        "effect": "",
+        "flavor": "The spell gives the caster new ways to move or improves their current movement speed."
+    },
+    {
+        "name": "Precision",
+        "effect": "When targeting weak points the penalty is 2 lower than normal (to a minimum of 1)",
+        "flavor": "These spells are very precise, allowing you to target creature weak points easier"
+    },
+    {
+        "name": "Sensing",
+        "effect": "",
+        "flavor": "The spell helps the caster detect things"
+    },
+    {
+        "name": "Soul",
+        "effect": "",
+        "flavor": "Affects souls"
+    },
+    {
+        "name": "Targeting",
+        "effect": "Counts as an attack for the purposes of your multiple attack penalty",
+        "flavor": "Targeting spells fire one or multiple projectiles"
+    },
+    {
+        "name": "Teleportation",
+        "effect": "",
+        "flavor": "Allows the caster to instantly move to a new position"
+    },
+    {
+        "name": "Temporal",
+        "effect": "",
+        "flavor": "Deals with time, speed up or slowing down objects or creatures"
+    }
+]

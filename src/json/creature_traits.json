@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Beast",
+        "description": "Magical beasts",
+        "overTrait": ""
+    },
+    {
+        "name": "Animal",
+        "description": "Common animals",
+        "overTrait": ""
+    },
+    {
+        "name": "Construct",
+        "description": "Golems and the like",
+        "overTrait": ""
+    },
+    {
+        "name": "Void",
+        "description": "Beings from the void",
+        "overTrait": ""
+    },
+    {
+        "name": "Elemental",
+        "description": "",
+        "overTrait": ""
+    },
+    {
+        "name": "Fire",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Water",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Earth",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Air",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Light",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Darkness",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Metal",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Lightning",
+        "description": "",
+        "overTrait": "Elemental"
+    },
+    {
+        "name": "Sapient",
+        "description": "",
+        "overTrait": ""
+    },
+    {
+        "name": "Draconic",
+        "description": "",
+        "overTrait": ""
+    },
+    {
+        "name": "Aruna",
+        "description": "",
+        "overTrait": "Sapient"
+    },
+    {
+        "name": "Brannur",
+        "description": "",
+        "overTrait": "Sapient"
+    },
+    {
+        "name": "Dragonkin",
+        "description": "",
+        "overTrait": "Sapient, Draconic"
+    },
+    {
+        "name": "Gnome",
+        "description": "",
+        "overTrait": "Sapient"
+    },
+    {
+        "name": "Human",
+        "description": "",
+        "overTrait": "Sapient"
+    },
+    {
+        "name": "Naga",
+        "description": "",
+        "overTrait": "Sapient"
+    },
+    {
+        "name": "Troll",
+        "description": "",
+        "overTrait": "Sapient"
+    },
+    {
+        "name": "Vesper",
+        "description": "",
+        "overTrait": "Sapient"
+    },
+    {
+        "name": "Reptile",
+        "description": "",
+        "overTrait": "Animal"
+    },
+    {
+        "name": "Mammal",
+        "description": "",
+        "overTrait": "Animal"
+    },
+    {
+        "name": "Bird",
+        "description": "",
+        "overTrait": "Animal"
+    },
+    {
+        "name": "Dragon",
+        "description": "",
+        "overTrait": "Draconic"
+    },
+    {
+        "name": "Aquatic",
+        "description": "",
+        "overTrait": ""
+    },
+    {
+        "name": "Amphibius",
+        "description": "",
+        "overTrait": ""
+    },
+    {
+        "name": "Insect",
+        "description": "",
+        "overTrait": "Animal"
+    },
+    {
+        "name": "Plant",
+        "description": "",
+        "overTrait": ""
+    },
+    {
+        "name": "Mushroom",
+        "description": "",
+        "overTrait": ""
+    }
+]
