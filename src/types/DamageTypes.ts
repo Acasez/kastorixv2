@@ -13,3 +13,14 @@ export type Resistance = {
   name: string;
   amount: number;
 };
+
+export type DamageInstance = {
+  name: DamageType;
+  amount: DiceRoll;
+};
+
+export type DiceRoll = {
+  diceSize: number; //d4 or d12
+  amount: number; //1d4 or 2d4
+  bonus?: number; //+4
+};
