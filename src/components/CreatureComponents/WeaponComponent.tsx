@@ -11,6 +11,7 @@ import {
   getDamageStatFromWeapon,
   getMAPFromWeapon,
 } from "../../data/weapons";
+import { formatDamageInstances } from "../../utils/damage";
 
 interface WeaponComponentProps {
   weapon: Weapon;
@@ -60,6 +61,8 @@ export default function WeaponComponent({
 
   const multiAttackPenalty = -getMAPFromWeapon(weapon) + -5;
 
+  console.log(weapon);
+
   return (
     <Tooltip
       key={weapon.name}
@@ -75,7 +78,7 @@ export default function WeaponComponent({
               .join(", ")}
           </p>
           <p className="mt-2 whitespace-pre-line">
-            <strong>Damage:</strong> {weapon.dice + " " + weapon.damageType}
+            <strong>Damage:</strong> {formatDamageInstances(weapon.dice)}
           </p>
           <p className="mt-2 whitespace-pre-line">
             <strong>Hands:</strong> {weapon.hands}
@@ -167,7 +170,9 @@ export default function WeaponComponent({
           <span className="text-sm text-gray-300">
             Damage{" "}
             <strong className="text-white">
-              {weapon.dice} + {damageBonus} {weapon.damageType}
+              {/* {weapon.dice} + {damageBonus} {weapon.damageType} */}
+              {formatDamageInstances(weapon.dice)}
+              {damageBonus}
             </strong>
           </span>
           <span className="text-sm text-gray-300">

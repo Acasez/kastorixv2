@@ -7,7 +7,7 @@ export type DamageType = {
 
 export type DamageGroup = "Physical" | "Elemental" | "Exotic";
 
-type Rarity = "Common" | "Uncommon" | "Rare" | "Very Rare";
+export type Rarity = "Common" | "Uncommon" | "Rare" | "Very Rare";
 
 export type Resistance = {
   name: string;

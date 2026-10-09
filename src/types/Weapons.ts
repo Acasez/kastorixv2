@@ -1,10 +1,10 @@
 import type { Action } from "./Action";
+import type { DamageInstance } from "./DamageTypes";
 import type { StatKey } from "./StatKey";
 
 export type Weapon = {
   name: string;
-  dice: string;
-  damageType: string;
+  dice: DamageInstance[];
   hands: number;
   range: number;
   traits: WeaponTrait[];
