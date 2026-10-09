@@ -171,8 +171,7 @@ export default function WeaponComponent({
             Damage{" "}
             <strong className="text-white">
               {/* {weapon.dice} + {damageBonus} {weapon.damageType} */}
-              {formatDamageInstances(weapon.dice)}
-              {damageBonus}
+              {formatDamageInstances(weapon.dice, damageBonus)}
             </strong>
           </span>
           <span className="text-sm text-gray-300">

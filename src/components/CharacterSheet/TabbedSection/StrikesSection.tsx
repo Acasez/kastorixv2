@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import { useCharacter } from "../../../hooks/useCharacter";
-import WeaponComponent from "../../CreatureComponents/WeaponComponent";
+import WeaponComponent from "../../CommonCreatureComponents/WeaponComponent";
 import weapons from "../../../data/weapons";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 

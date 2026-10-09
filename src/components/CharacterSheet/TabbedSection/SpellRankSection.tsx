@@ -1,6 +1,6 @@
 import { useCharacter } from "../../../hooks/useCharacter";
 import type { Spell } from "../../../types/Spells";
-import SpellComponent from "../../CreatureComponents/SpellComponent";
+import SpellComponent from "../../CommonCreatureComponents/SpellComponent";
 import { getCharacterSpellGrant } from "../../../utils/characterSpellGrants";
 
 interface SpellRankSectionProps {
