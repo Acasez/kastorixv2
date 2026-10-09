@@ -13,3 +13,5 @@ export const BASE_STAT_KEYS: { key: StatKey; label: string }[] = [
   { key: "INT", label: "Intelligence" },
   { key: "WIL", label: "Willpower" },
 ];
+
+export type Saves = "Reflex" | "Fortitude" | "Will";

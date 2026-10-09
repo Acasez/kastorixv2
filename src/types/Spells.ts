@@ -1,3 +1,6 @@
+import type { DamageInstance } from "./DamageTypes";
+import type { Saves } from "./StatKey";
+
 export type Spellshaping = {
   verbal: VerbalComponent;
   somatic: SomaticComponent;
@@ -16,9 +19,12 @@ export type Spell = {
   range: number | string;
   target: string;
   duration: string;
+  flavor: string;
   effect: string;
   upcast: string;
   rank: SpellRank;
+  dice: DamageInstance[];
+  save: Saves;
 };
 
 export type SpellRank =
