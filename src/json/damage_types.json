@@ -32,18 +32,24 @@
     {
         "name": "Lightning",
         "damageGroup": "Elemental",
-        "resistance": "Potions",
+        "resistance": "Armor, potions",
         "rarity": "Rare"
     },
     {
         "name": "Acid",
         "damageGroup": "Elemental",
-        "resistance": "Potions",
+        "resistance": "Armor, potions",
+        "rarity": "Rare"
+    },
+    {
+        "name": "Thunder",
+        "damageGroup": "Elemental",
+        "resistance": "Armor, potions",
         "rarity": "Rare"
     },
     {
         "name": "Poison",
-        "damageGroup": "Elemental",
+        "damageGroup": "Exotic",
         "resistance": "Potions",
         "rarity": "Uncommon"
     },

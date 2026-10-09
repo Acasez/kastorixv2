@@ -85,7 +85,7 @@
     },
     {
         "name": "Soulsight",
-        "description": "You posses the rare gift of natural soulsight, allowing you to see souls. Souls appear as tiny dots of light in the center of living creatures. \nYou have the Inspect Soul action. You may spend a focus point to use it as a free action",
+        "description": "You posses the rare gift of natural soulsight, allowing you to see souls. Souls appear as tiny dots of light in the center of living creatures. \nYou have a soulsight as an impressive sense up to 10 tiles. \nYou have the Inspect Soul action. You may spend a focus point to use it as a free action",
         "unlockedAction": "Inspect Soul",
         "level": "1",
         "unlockedFeats": "",
