@@ -3,6 +3,8 @@ import type { Spell, Aspect, SpellTrait, SpellRank } from "../types/Spells";
 import rawSpells from "../JSON/spells.json";
 import { aspectsByName } from "./aspects";
 import { spellTraitsByName } from "./spellTraits"; // You need this too
+import { createDamageInstances } from "./damageTypes";
+import type { Saves } from "../types/StatKey";
 
 export const spells: Spell[] = rawSpells.map((raw) => ({
   ...raw,
@@ -15,6 +17,8 @@ export const spells: Spell[] = rawSpells.map((raw) => ({
     .map((name: string) => spellTraitsByName[name])
     .filter(Boolean) as SpellTrait[],
   rank: raw.rank as SpellRank,
+  dice: createDamageInstances(raw.dice, raw.damageType, `spell ${raw.name}`),
+  save: raw.rank as Saves,
 }));
 
 export default spells;

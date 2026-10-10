@@ -1,6 +1,5 @@
 // data/weapons.ts
 import rawWeapons from "../JSON/weapons.json";
-import type { DamageInstance, DiceRoll } from "../types/DamageTypes";
 import type { StatKey } from "../types/StatKey";
 import type {
   Weapon,
@@ -8,7 +7,7 @@ import type {
   WeaponTrait,
   WeaponType,
 } from "../types/Weapons";
-import { damageTypesByName } from "./damageTypes";
+import { createDamageInstances } from "./damageTypes";
 import { weaponTraitsByName } from "./weaponTraits";
 
 export function parseWeaponTrait(traitString: string): WeaponTrait {
@@ -36,43 +35,10 @@ export function parseWeaponTraits(traitsString: string): WeaponTrait[] {
   return traitsString.split(",").map(parseWeaponTrait);
 }
 
-// Helper to parse "1d8" or "2d6+3" into DiceRoll
-function parseDiceString(diceString: string): DiceRoll {
-  const match = diceString.match(/^(\d+)d(\d+)(?:\+(\d+))?$/i);
-  if (match) {
-    return {
-      diceSize: Number(match[2]),
-      amount: Number(match[1]),
-      bonus: match[3] ? Number(match[3]) : undefined,
-    };
-  }
-  // Fallback for malformed strings
-  return { diceSize: 6, amount: 1 };
-}
-
 export const weapons: Weapon[] = rawWeapons.map((raw) => {
-  // Handle single damage type from JSON
-  const damageInstances: DamageInstance[] = [];
-
-  if (raw.dice && raw.damageType) {
-    const diceRoll = parseDiceString(raw.dice);
-    const damageType = damageTypesByName[raw.damageType.toLowerCase()];
-
-    if (damageType) {
-      damageInstances.push({
-        name: damageType,
-        amount: diceRoll,
-      });
-    } else {
-      console.warn(
-        `Unknown damage type: ${raw.damageType} for weapon ${raw.name}`,
-      );
-    }
-  }
-
   return {
     ...raw,
-    dice: damageInstances,
+    dice: createDamageInstances(raw.dice, raw.damageType, `weapon ${raw.name}`),
     hands: Number(raw.hands),
     range: Number(raw.range),
     price: Number(raw.price.replace(/\s*gp$/, "")),

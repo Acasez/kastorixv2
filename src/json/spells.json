@@ -1,6 +1,6 @@
 [
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Ascend",
+        "name": "Ascend",
         "actions": "1",
         "trigger": "",
         "aspects": "Air",
@@ -17,7 +17,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Blinding Flash",
+        "name": "Blinding Flash",
         "actions": "2",
         "trigger": "",
         "aspects": "Light",
@@ -34,7 +34,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Chill",
+        "name": "Chill",
         "actions": "1-2",
         "trigger": "",
         "aspects": "Water",
@@ -51,7 +51,7 @@
         "save": "Fortitude "
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Control Water",
+        "name": "Control Water",
         "actions": "1-3",
         "trigger": "",
         "aspects": "Water",
@@ -68,7 +68,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Darken",
+        "name": "Darken",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Darkness",
@@ -85,7 +85,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Earthglide",
+        "name": "Earthglide",
         "actions": "2",
         "trigger": "",
         "aspects": "Earth",
@@ -102,7 +102,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Featherfall",
+        "name": "Featherfall",
         "actions": "Reaction",
         "trigger": "You see a creature or group of creatures falling",
         "aspects": "Air",
@@ -119,7 +119,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Ferrokinesis",
+        "name": "Ferrokinesis",
         "actions": "2",
         "trigger": "",
         "aspects": "Metal",
@@ -136,7 +136,7 @@
         "save": "Fortitude "
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Firebolt",
+        "name": "Firebolt",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire",
@@ -153,7 +153,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Flameshape",
+        "name": "Flameshape",
         "actions": "1-3",
         "trigger": "",
         "aspects": "Fire",
@@ -170,7 +170,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Gentle Breeze",
+        "name": "Gentle Breeze",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Air",
@@ -187,7 +187,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Glide",
+        "name": "Glide",
         "actions": "1",
         "trigger": "",
         "aspects": "Air",
@@ -204,7 +204,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Glow",
+        "name": "Glow",
         "actions": "2",
         "trigger": "",
         "aspects": "Light",
@@ -221,7 +221,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Gravel Spray",
+        "name": "Gravel Spray",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Earth",
@@ -238,7 +238,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Gust",
+        "name": "Gust",
         "actions": "1-3",
         "trigger": "",
         "aspects": "Air",
@@ -255,7 +255,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Heat",
+        "name": "Heat",
         "actions": "1",
         "trigger": "",
         "aspects": "Fire",
@@ -272,7 +272,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Icy Floor",
+        "name": "Icy Floor",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -289,7 +289,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Ignite",
+        "name": "Ignite",
         "actions": "1",
         "trigger": "",
         "aspects": "Fire",
@@ -306,7 +306,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Illusory Object",
+        "name": "Illusory Object",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -323,7 +323,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Interpose Earth",
+        "name": "Interpose Earth",
         "actions": "Reaction",
         "trigger": "You would have to make a Reflex save",
         "aspects": "Earth",
@@ -340,7 +340,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Magnetic Field",
+        "name": "Magnetic Field",
         "actions": "1",
         "trigger": "",
         "aspects": "Metal",
@@ -357,7 +357,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Magnetic Rebound",
+        "name": "Magnetic Rebound",
         "actions": "Reaction",
         "trigger": "You would have to make a Reflex save against an attack by a metal weapon or projectile.",
         "aspects": "Metal",
@@ -374,7 +374,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Magnetize",
+        "name": "Magnetize",
         "actions": "1",
         "trigger": "",
         "aspects": "Metal",
@@ -391,7 +391,7 @@
         "save": "Will"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Metal Shards",
+        "name": "Metal Shards",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Metal",
@@ -408,7 +408,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Mold Earth",
+        "name": "Mold Earth",
         "actions": "1",
         "trigger": "",
         "aspects": "Earth",
@@ -425,7 +425,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Momentary Acceleration",
+        "name": "Momentary Acceleration",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -442,7 +442,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Move with the Wind",
+        "name": "Move with the Wind",
         "actions": "2",
         "trigger": "",
         "aspects": "Air",
@@ -459,7 +459,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Muddy Ground",
+        "name": "Muddy Ground",
         "actions": "2",
         "trigger": "",
         "aspects": "Earth, Water",
@@ -476,7 +476,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Null",
+        "name": "Null",
         "actions": "1-3",
         "trigger": "",
         "aspects": "Void",
@@ -493,7 +493,7 @@
         "save": "Will"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Quick Jet",
+        "name": "Quick Jet",
         "actions": "1",
         "trigger": "",
         "aspects": "Fire",
@@ -510,7 +510,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Rock Toss",
+        "name": "Rock Toss",
         "actions": "1-3",
         "trigger": "",
         "aspects": "Earth",
@@ -527,7 +527,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Shadowstrike",
+        "name": "Shadowstrike",
         "actions": "1",
         "trigger": "",
         "aspects": "Darkness",
@@ -544,7 +544,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Slip",
+        "name": "Slip",
         "actions": "Reaction",
         "trigger": "You see another creature in range take the Stride action",
         "aspects": "Water",
@@ -561,7 +561,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Soul Ward",
+        "name": "Soul Ward",
         "actions": "1",
         "trigger": "",
         "aspects": "Arcane",
@@ -578,7 +578,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Sturdy as Stone",
+        "name": "Sturdy as Stone",
         "actions": "2",
         "trigger": "",
         "aspects": "Earth",
@@ -595,7 +595,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Water Bullet",
+        "name": "Water Bullet",
         "actions": "3",
         "trigger": "",
         "aspects": "Water",
@@ -612,7 +612,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Water Push",
+        "name": "Water Push",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Water",
@@ -629,7 +629,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Zap",
+        "name": "Zap",
         "actions": "2",
         "trigger": "",
         "aspects": "Lightning",
@@ -646,7 +646,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Accelerate Self",
+        "name": "Accelerate Self",
         "actions": "1",
         "trigger": "",
         "aspects": "Arcane",
@@ -663,7 +663,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Air Bubble",
+        "name": "Air Bubble",
         "actions": "1 or 3",
         "trigger": "",
         "aspects": "Air",
@@ -680,7 +680,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Barricade",
+        "name": "Barricade",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Earth, Metal",
@@ -697,7 +697,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Beam of Light",
+        "name": "Beam of Light",
         "actions": "3",
         "trigger": "",
         "aspects": "Light",
@@ -714,7 +714,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Breathe Fire",
+        "name": "Breathe Fire",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Fire",
@@ -731,7 +731,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Conjure",
+        "name": "Conjure",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -748,7 +748,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Detect Metal",
+        "name": "Detect Metal",
         "actions": "1",
         "trigger": "",
         "aspects": "Metal",
@@ -765,7 +765,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Dispel",
+        "name": "Dispel",
         "actions": "1",
         "trigger": "",
         "aspects": "Arcane",
@@ -782,7 +782,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Earth Tremor",
+        "name": "Earth Tremor",
         "actions": "2",
         "trigger": "",
         "aspects": "Earth",
@@ -799,7 +799,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Earthen Armor",
+        "name": "Earthen Armor",
         "actions": "2",
         "trigger": "",
         "aspects": "Earth",
@@ -816,7 +816,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Earthen Launch",
+        "name": "Earthen Launch",
         "actions": "1",
         "trigger": "",
         "aspects": "Earth",
@@ -833,7 +833,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Electrify",
+        "name": "Electrify",
         "actions": "2",
         "trigger": "",
         "aspects": "Lightning",
@@ -850,7 +850,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Flame Jet",
+        "name": "Flame Jet",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire",
@@ -867,7 +867,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Heat Metal",
+        "name": "Heat Metal",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire, Metal",
@@ -884,7 +884,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Heatwave",
+        "name": "Heatwave",
         "actions": "2",
         "trigger": "",
         "aspects": "Air, Fire",
@@ -901,7 +901,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Hone Edge",
+        "name": "Hone Edge",
         "actions": "1",
         "trigger": "",
         "aspects": "Metal",
@@ -918,7 +918,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Ice Shard",
+        "name": "Ice Shard",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -935,7 +935,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Illusory Wall",
+        "name": "Illusory Wall",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -952,7 +952,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Inflame",
+        "name": "Inflame",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire",
@@ -969,7 +969,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Levitate",
+        "name": "Levitate",
         "actions": "2",
         "trigger": "",
         "aspects": "Air",
@@ -986,7 +986,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Lightning Shroud",
+        "name": "Lightning Shroud",
         "actions": "2",
         "trigger": "",
         "aspects": "Lightning",
@@ -1003,7 +1003,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Orbiting Earth",
+        "name": "Orbiting Earth",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Earth",
@@ -1020,7 +1020,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Propel",
+        "name": "Propel",
         "actions": "Reaction",
         "trigger": "You see an ally stride within reach",
         "aspects": "Air",
@@ -1037,7 +1037,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Purify Water",
+        "name": "Purify Water",
         "actions": "3",
         "trigger": "",
         "aspects": "Water",
@@ -1054,7 +1054,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Quick Forge",
+        "name": "Quick Forge",
         "actions": "3",
         "trigger": "",
         "aspects": "Metal",
@@ -1071,7 +1071,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Sense Water",
+        "name": "Sense Water",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1088,7 +1088,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Shadowbind",
+        "name": "Shadowbind",
         "actions": "2",
         "trigger": "",
         "aspects": "Darkness",
@@ -1105,7 +1105,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Shape Bone",
+        "name": "Shape Bone",
         "actions": "2",
         "trigger": "",
         "aspects": "",
@@ -1122,7 +1122,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Soul Sight",
+        "name": "Soul Sight",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -1139,7 +1139,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Stalagmite",
+        "name": "Stalagmite",
         "actions": "3",
         "trigger": "",
         "aspects": "Earth",
@@ -1156,7 +1156,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Steam Cloud",
+        "name": "Steam Cloud",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire, Water",
@@ -1173,7 +1173,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Tailwind",
+        "name": "Tailwind",
         "actions": "1",
         "trigger": "",
         "aspects": "Air",
@@ -1190,7 +1190,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Teleport",
+        "name": "Teleport",
         "actions": "3",
         "trigger": "",
         "aspects": "Arcane",
@@ -1207,7 +1207,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Tremor Sense",
+        "name": "Tremor Sense",
         "actions": "2",
         "trigger": "",
         "aspects": "Earth",
@@ -1224,7 +1224,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Water Arm",
+        "name": "Water Arm",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1241,7 +1241,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Water Ball",
+        "name": "Water Ball",
         "actions": "3",
         "trigger": "",
         "aspects": "Water",
@@ -1258,7 +1258,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Water Breathing",
+        "name": "Water Breathing",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1275,7 +1275,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Water Walk",
+        "name": "Water Walk",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1292,7 +1292,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Wave Dash",
+        "name": "Wave Dash",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1309,7 +1309,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Wind Wall",
+        "name": "Wind Wall",
         "actions": "2",
         "trigger": "",
         "aspects": "Air",
@@ -1326,7 +1326,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Whirlwind",
+        "name": "Whirlwind",
         "actions": "3",
         "trigger": "",
         "aspects": "Air",
@@ -1343,7 +1343,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Air Slice",
+        "name": "Air Slice",
         "actions": "1",
         "trigger": "",
         "aspects": "Air",
@@ -1360,7 +1360,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Blink",
+        "name": "Blink",
         "actions": "1",
         "trigger": "",
         "aspects": "Arcane",
@@ -1377,7 +1377,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Creeping Shadows",
+        "name": "Creeping Shadows",
         "actions": "2",
         "trigger": "",
         "aspects": "Darkness",
@@ -1394,7 +1394,7 @@
         "save": "Will"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Dust Devil",
+        "name": "Dust Devil",
         "actions": "2",
         "trigger": "",
         "aspects": "Air, Earth",
@@ -1411,7 +1411,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Fire Whip",
+        "name": "Fire Whip",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire",
@@ -1428,7 +1428,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Fireball",
+        "name": "Fireball",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire",
@@ -1445,7 +1445,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Fly",
+        "name": "Fly",
         "actions": "2",
         "trigger": "",
         "aspects": "Air",
@@ -1462,7 +1462,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Giant Stone Hand",
+        "name": "Giant Stone Hand",
         "actions": "3",
         "trigger": "",
         "aspects": "Earth",
@@ -1479,7 +1479,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Hail of Nails",
+        "name": "Hail of Nails",
         "actions": "3",
         "trigger": "",
         "aspects": "Metal",
@@ -1496,7 +1496,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Haste",
+        "name": "Haste",
         "actions": "2-3",
         "trigger": "",
         "aspects": "Arcane",
@@ -1513,7 +1513,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Lava Wave",
+        "name": "Lava Wave",
         "actions": "3",
         "trigger": "",
         "aspects": "Fire",
@@ -1530,7 +1530,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Lightning Bolt",
+        "name": "Lightning Bolt",
         "actions": "2",
         "trigger": "",
         "aspects": "Lightning",
@@ -1547,7 +1547,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Shadowstep",
+        "name": "Shadowstep",
         "actions": "1",
         "trigger": "",
         "aspects": "Darkness",
@@ -1564,7 +1564,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Shunt",
+        "name": "Shunt",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -1581,7 +1581,7 @@
         "save": "Will"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Slow",
+        "name": "Slow",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -1598,7 +1598,7 @@
         "save": "Will"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Thunder Rush",
+        "name": "Thunder Rush",
         "actions": "2",
         "trigger": "",
         "aspects": "Lightning",
@@ -1615,7 +1615,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Thunder Step",
+        "name": "Thunder Step",
         "actions": "2",
         "trigger": "",
         "aspects": "Air",
@@ -1632,7 +1632,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Water Jet",
+        "name": "Water Jet",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1649,7 +1649,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Chain Lightning",
+        "name": "Chain Lightning",
         "actions": "3",
         "trigger": "",
         "aspects": "Lightning",
@@ -1666,7 +1666,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Cold Snap",
+        "name": "Cold Snap",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1683,7 +1683,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Disintegrate",
+        "name": "Disintegrate",
         "actions": "2",
         "trigger": "",
         "aspects": "Arcane",
@@ -1700,7 +1700,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Fiery Body",
+        "name": "Fiery Body",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire",
@@ -1717,7 +1717,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Stasis",
+        "name": "Stasis",
         "actions": "3",
         "trigger": "",
         "aspects": "Arcane",
@@ -1734,7 +1734,7 @@
         "save": "Will"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Steelskin",
+        "name": "Steelskin",
         "actions": "2",
         "trigger": "",
         "aspects": "Metal",
@@ -1751,7 +1751,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Storm",
+        "name": "Storm",
         "actions": "1 Minute",
         "trigger": "",
         "aspects": "Water, Air",
@@ -1768,7 +1768,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Wall of Fire",
+        "name": "Wall of Fire",
         "actions": "3",
         "trigger": "",
         "aspects": "Fire",
@@ -1785,7 +1785,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Waterspout",
+        "name": "Waterspout",
         "actions": "2",
         "trigger": "",
         "aspects": "Water",
@@ -1802,7 +1802,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Wind Walk",
+        "name": "Wind Walk",
         "actions": "3",
         "trigger": "",
         "aspects": "Air",
@@ -1819,7 +1819,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Dimensional Net",
+        "name": "Dimensional Net",
         "actions": "Reaction",
         "trigger": "You see a projectile within the spells range",
         "aspects": "Arcane",
@@ -1836,7 +1836,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Earthquake",
+        "name": "Earthquake",
         "actions": "10",
         "trigger": "",
         "aspects": "Earth",
@@ -1853,7 +1853,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Inferno",
+        "name": "Inferno",
         "actions": "7",
         "trigger": "",
         "aspects": "Fire",
@@ -1870,7 +1870,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Miniature Sun",
+        "name": "Miniature Sun",
         "actions": "3",
         "trigger": "",
         "aspects": "Fire, Light",
@@ -1887,7 +1887,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Pyroblast",
+        "name": "Pyroblast",
         "actions": "3",
         "trigger": "",
         "aspects": "Fire",
@@ -1904,7 +1904,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Simulacra",
+        "name": "Simulacra",
         "actions": "-",
         "trigger": "",
         "aspects": "Arcane",
@@ -1921,7 +1921,7 @@
         "save": ""
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Storm of Swords",
+        "name": "Storm of Swords",
         "actions": "2",
         "trigger": "",
         "aspects": "Metal",
@@ -1938,7 +1938,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Sunbeam",
+        "name": "Sunbeam",
         "actions": "3",
         "trigger": "",
         "aspects": "Light",
@@ -1955,7 +1955,7 @@
         "save": "Fortitude"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Tornado",
+        "name": "Tornado",
         "actions": "6",
         "trigger": "",
         "aspects": "Air",
@@ -1972,7 +1972,7 @@
         "save": "Fortitude, Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "True Lightning",
+        "name": "True Lightning",
         "actions": "3",
         "trigger": "",
         "aspects": "Lightning",
@@ -1989,7 +1989,7 @@
         "save": "Reflex"
     },
     {
-        "You sweep your arm forward and a wave of stinging gravel erupts from the ground.": "Tsunami",
+        "name": "Tsunami",
         "actions": "6",
         "trigger": "",
         "aspects": "Water",
