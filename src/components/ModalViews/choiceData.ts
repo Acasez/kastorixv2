@@ -81,6 +81,7 @@ function createChoiceItems<T extends { name: string }>(
 const SPELL_FIELDS: DetailField[] = [
   { label: "", valueKey: "flavor", flavor: true },
   { label: "Actions", valueKey: "actions" },
+  { label: "Trigger", valueKey: "trigger" },
   { label: "Aspects", valueKey: "aspects" },
   { label: "Traits", valueKey: "traits" },
   { label: "Range", valueKey: "range" },
