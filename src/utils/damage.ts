@@ -18,7 +18,7 @@ export function formatDamageInstances(
 ): string {
   console.log(instances);
   try {
-    if (instances.length > 0) {
+    if (instances.length == 0) {
       console.log("Empty array");
       return "";
     }
