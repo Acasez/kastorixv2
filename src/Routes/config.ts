@@ -10,7 +10,7 @@ interface RouteConfig {
 
 export const routes: RouteConfig[] = [
   {
-    path: "/kastorixv2",
+    path: "/kastorixv2/",
     component: lazy(() => import("../pages/RPGOverview")),
     header: "Overview",
     createHeader: true,
