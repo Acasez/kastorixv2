@@ -8,6 +8,7 @@ import type { ProficiencyTierName } from "../constants/Proficiency";
 import type { VerbalComponent, SomaticComponent } from "../types/Spells";
 import type { Weapon } from "../types/Weapons";
 import { parseWeaponTrait, parseWeaponTraits } from "../data/weapons";
+import { createDamageInstances, damageTypesByName } from "../data/damageTypes";
 
 // If constants/Proficiency already exports the tier names, import that instead.
 const PROFICIENCY_TIERS: readonly string[] = [
@@ -124,6 +125,38 @@ const weaponTraitList = (value: unknown): Weapon["traits"] => {
   });
 };
 
+const weaponDamage = (
+  value: unknown,
+  legacyDamageType: unknown,
+): Weapon["dice"] => {
+  if (typeof value === "string") {
+    return createDamageInstances(value, str(legacyDamageType));
+  }
+  if (!Array.isArray(value)) return [];
+
+  return value.flatMap((entry) => {
+    if (!isRecord(entry) || !isRecord(entry.amount)) return [];
+
+    const rawName = entry.name;
+    const damageName = isRecord(rawName) ? rawName.name : rawName;
+    if (typeof damageName !== "string") return [];
+
+    const damageType = damageTypesByName[damageName.toLowerCase()];
+    if (!damageType) return [];
+
+    return [
+      {
+        name: damageType,
+        amount: {
+          diceSize: numeric(entry.amount.diceSize, 6),
+          amount: numeric(entry.amount.amount, 1),
+          bonus: numeric(entry.amount.bonus, 0),
+        },
+      },
+    ];
+  });
+};
+
 const weapons = (value: unknown): Weapon[] =>
   Array.isArray(value)
     ? value.flatMap((entry) => {
@@ -131,7 +164,7 @@ const weapons = (value: unknown): Weapon[] =>
         return [
           {
             name: str(entry.name).trim(),
-            dice: str(entry.dice),
+            dice: weaponDamage(entry.dice, entry.damageType),
             damageType: str(entry.damageType, "piercing").toLowerCase(),
             hands: numeric(entry.hands, 1),
             range: numeric(entry.range, 1),

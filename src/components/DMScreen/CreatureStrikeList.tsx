@@ -11,7 +11,6 @@ import CreatureSectionHeader from "./CreatureSectionHeader";
 import CreatureWeaponModal from "../ModalViews/CustomWeaponModal";
 import type { ChoiceItem } from "../ModalViews/ChoiceModal";
 import { formatDamageInstances } from "../../utils/damage";
-import { fallBackDamageInstance } from "../../data/damageTypes";
 
 const weaponChoiceItems = getWeaponChoiceItems(["Golem"]);
 const weaponFilters = [
@@ -49,14 +48,6 @@ export default function CreatureStrikeList({
         trait.parameter ? `${trait.name} (${trait.parameter})` : trait.name,
       )
       .join(", ");
-    console.log(weapon);
-    if (!weapon.dice || weapon.dice.length === 0) {
-      console.log(
-        "Weapon has invalid damage, setting to fallback",
-        weapon.dice,
-      );
-      weapon.dice = [fallBackDamageInstance];
-    }
     return {
       name: weapon.name,
       traits,
