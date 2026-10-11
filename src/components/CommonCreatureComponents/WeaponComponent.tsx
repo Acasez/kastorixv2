@@ -170,7 +170,6 @@ export default function WeaponComponent({
           <span className="text-sm text-gray-300">
             Damage{" "}
             <strong className="text-white">
-              {/* {weapon.dice} + {damageBonus} {weapon.damageType} */}
               {formatDamageInstances(weapon.dice, damageBonus)}
             </strong>
           </span>

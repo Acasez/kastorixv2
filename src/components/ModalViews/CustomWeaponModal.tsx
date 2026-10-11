@@ -8,7 +8,7 @@ import type {
   WeaponTrait,
   WeaponType,
 } from "../../types/Weapons";
-import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
+import ChoiceModalFrame from "./ChoiceModalFrame";
 import WeaponTraitComponent from "../CommonCreatureComponents/WeaponTraitComponent";
 import { WEAPON_TYPES, WEAPON_GROUPS } from "../../constants/Weapons";
 

@@ -8,7 +8,7 @@ import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getWeaponChoiceItems } from "../ModalViews/choiceData";
 import CreatureSectionHeader from "./CreatureSectionHeader";
-import CreatureWeaponModal from "./CustomWeaponModal";
+import CreatureWeaponModal from "../ModalViews/CustomWeaponModal";
 import type { ChoiceItem } from "../ModalViews/ChoiceModal";
 
 const weaponChoiceItems = getWeaponChoiceItems(["Golem"]);
