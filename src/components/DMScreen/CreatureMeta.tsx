@@ -8,7 +8,7 @@ interface CreatureMetaProps {
   setSelectedKey: (selectedKey: string) => void;
   savedCreatures: string[];
   saveCreature: () => void;
-  loadCreature: () => void;
+  handleManualLoad: () => void;
   deleteCreature: () => void;
   importInputRef: RefObject<HTMLInputElement | null>;
   exportCreature: () => void;
@@ -21,7 +21,7 @@ export default function CreatureMeta({
   setSelectedKey,
   savedCreatures,
   saveCreature,
-  loadCreature,
+  handleManualLoad,
   deleteCreature,
   importInputRef,
   exportCreature,
@@ -51,7 +51,7 @@ export default function CreatureMeta({
         </select>
         <MetaButton
           label="Load Creature"
-          onClick={loadCreature}
+          onClick={handleManualLoad}
           variant="dmScreen"
         />
       </div>

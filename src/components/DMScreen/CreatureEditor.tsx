@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useCreature } from "../../hooks/useCreature";
-import { type CreatureTrack } from "../../stores/useCreatureStore";
+import {
+  type Creature,
+  type CreatureTrack,
+} from "../../stores/useCreatureStore";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import damageTypes from "../../JSON/damage_types.json";
 import StatsGrid from "../Buttons/StatsGrid";
@@ -21,8 +24,6 @@ import { SPEED_TYPES } from "../../constants/SpeedTypes";
 import { normalizeCreature } from "../../utils/normalizeCreature";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
-
-const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
 
 const DAMAGE_TYPE_NAMES = damageTypes.map(({ name }) => name);
 const RESISTANCE_OPTIONS = [
@@ -45,12 +46,29 @@ function scaleTrackToMax(track: CreatureTrack, max: number): CreatureTrack {
   };
 }
 
+const STORAGE_CHANGE_EVENT = "dm-creature-storage-change";
+
+function isCreature(value: unknown): value is Creature {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    typeof (value as { name?: unknown }).name === "string"
+  );
+}
+
 function getSavedCreatures(): string[] {
   return Object.keys(localStorage)
     .filter((key) => key.startsWith(STORAGE_PREFIX))
+    .filter((key) => {
+      try {
+        const item = localStorage.getItem(key);
+        return item && isCreature(JSON.parse(item));
+      } catch {
+        return false;
+      }
+    })
     .sort((first, second) => first.localeCompare(second));
 }
-
 type CreatureEditorProps = {
   onRemove: () => void;
   blockId: number;
@@ -102,6 +120,53 @@ export default function CreatureEditor({
     };
   }, []);
 
+  const handleSelectedKeyChange = (key: string) => {
+    setSelectedKey(key);
+    if (key) {
+      try {
+        const raw = localStorage.getItem(key) ?? "null";
+        setCreature(normalizeCreature(JSON.parse(raw)));
+      } catch {
+        window.alert("The selected saved creature could not be loaded.");
+      }
+    }
+  };
+
+  // Manual load with prompt (supports legacy non-prefixed saves)
+  const handleManualLoad = () => {
+    const name = window.prompt("Enter creature name to load:");
+    if (!name) return;
+
+    const nameTrimmed = name.trim();
+    if (!nameTrimmed) {
+      window.alert("Please enter a valid creature name.");
+      return;
+    }
+
+    const keysToTry = [
+      `${STORAGE_PREFIX}${nameTrimmed}`,
+      nameTrimmed, // Legacy support
+    ];
+
+    for (const key of keysToTry) {
+      const saved = localStorage.getItem(key);
+      if (saved) {
+        try {
+          const parsed: unknown = JSON.parse(saved);
+          if (isCreature(parsed)) {
+            setCreature(normalizeCreature(parsed));
+            setSelectedKey(key);
+            return;
+          }
+        } catch {
+          continue;
+        }
+      }
+    }
+
+    window.alert(`No creature found with name "${nameTrimmed}"`);
+  };
+
   const saveCreature = () => {
     const name = creature.name.trim();
     if (!name) {
@@ -111,18 +176,8 @@ export default function CreatureEditor({
 
     const key = `${STORAGE_PREFIX}${name}`;
     localStorage.setItem(key, JSON.stringify(creature));
-    setSelectedKey(key);
+    handleSelectedKeyChange(key); // Auto-select and load after save
     window.dispatchEvent(new Event(STORAGE_CHANGE_EVENT));
-  };
-
-  const loadCreature = () => {
-    if (!selectedKey) return;
-    try {
-      const raw = localStorage.getItem(selectedKey) ?? "null";
-      setCreature(normalizeCreature(JSON.parse(raw)));
-    } catch {
-      window.alert("The selected saved creature could not be loaded.");
-    }
   };
 
   const deleteCreature = () => {
@@ -164,10 +219,10 @@ export default function CreatureEditor({
     <section className="w-full max-w-8xl overflow-hidden border border-stone-700 bg-bg-creature text-text-light shadow-lg">
       <CreatureMeta
         selectedKey={selectedKey}
-        setSelectedKey={setSelectedKey}
+        setSelectedKey={handleSelectedKeyChange}
         savedCreatures={savedCreatures}
         saveCreature={saveCreature}
-        loadCreature={loadCreature}
+        handleManualLoad={handleManualLoad} // New prop
         deleteCreature={deleteCreature}
         importInputRef={importInputRef}
         exportCreature={exportCreature}
