@@ -3,6 +3,7 @@ import { useState } from "react";
 import CreatureBlock from "../components/DMScreen/CreatureBlock";
 import MetaButton from "../components/CharacterSheet/MetaMenu/MetaButton";
 import { useCreatureStore } from "../stores/useCreatureStore";
+import { Helmet } from "react-helmet-async";
 
 export default function DMScreen() {
   const [creatureBlocks, setCreatureBlocks] = useState([0]);
@@ -20,21 +21,26 @@ export default function DMScreen() {
   };
 
   return (
-    <div className="mx-auto flex w-full max-w-screen-3xl flex-col items-center gap-4 sm:p-4">
-      <div className="grid w-full gap-4 xl:grid-cols-2">
-        {creatureBlocks.map((blockId) => (
-          <CreatureBlock
-            key={blockId}
-            blockId={blockId}
-            onRemove={() => removeCreatureBlock(blockId)}
-          />
-        ))}
+    <>
+      <Helmet>
+        <title>Kastorix - DM Screen</title>
+      </Helmet>
+      <div className="mx-auto flex w-full max-w-screen-3xl flex-col items-center gap-4 sm:p-4">
+        <div className="grid w-full gap-4 xl:grid-cols-2">
+          {creatureBlocks.map((blockId) => (
+            <CreatureBlock
+              key={blockId}
+              blockId={blockId}
+              onRemove={() => removeCreatureBlock(blockId)}
+            />
+          ))}
+        </div>
+        <MetaButton
+          label={"Add New Creature"}
+          variant={"characterSheet"}
+          onClick={addCreatureBlock}
+        />
       </div>
-      <MetaButton
-        label={"Add New Creature"}
-        variant={"characterSheet"}
-        onClick={addCreatureBlock}
-      />
-    </div>
+    </>
   );
 }

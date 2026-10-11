@@ -15,12 +15,16 @@ import { STATS_RULES } from "../constants/RulesDescriptions/StatsRules";
 import overviewMarkdown from "../markdown/Overview.md?raw";
 import { parseMarkdownByHeaders } from "../utils/parseMarkdown";
 import actions from "../data/actions";
+import { Helmet } from "react-helmet-async";
 
 const DESC = parseMarkdownByHeaders(overviewMarkdown);
 
 export default function RPGOverview() {
   return (
     <>
+      <Helmet>
+        <title>Kastorix - TTRPG Overview</title>
+      </Helmet>
       <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />
       <RowFrame reverse={false}>
         <TextSection description={DESC.Overview} />

@@ -3,10 +3,14 @@ import CoreStatSection from "../components/CharacterSheet/CoreStatSection/CoreSt
 import OtherStatSection from "../components/CharacterSheet/OtherInfoSection/OtherStatSection";
 import LevelSidebar from "../components/CharacterSheet/Sidebar/LevelSidebar";
 import SkillsTable from "../components/CharacterSheet/SkillTable";
+import { Helmet } from "react-helmet-async";
 
 export default function CharacterSheet() {
   return (
     <>
+      <Helmet>
+        <title>Kastorix - Character Sheet</title>
+      </Helmet>
       <div className="flex flex-row">
         <LevelSidebar />
         <SkillsTable />

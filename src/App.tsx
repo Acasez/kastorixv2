@@ -5,6 +5,7 @@ import { routes } from "./routes/config.ts";
 import MainHeader from "./components/PageStructure/MainHeader.tsx";
 import Footer from "./components/PageStructure/Footer.tsx";
 import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
+import { HelmetProvider } from "react-helmet-async";
 
 function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
@@ -30,17 +31,19 @@ export default function App() {
 
   return (
     <>
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <MainHeader />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            {routes.map(({ path, component: Component }) => (
-              <Route key={path} path={path} element={<Component />} />
-            ))}
-          </Routes>
-        </Suspense>
-        <Footer />
-      </ErrorBoundary>
+      <HelmetProvider>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <MainHeader />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              {routes.map(({ path, component: Component }) => (
+                <Route key={path} path={path} element={<Component />} />
+              ))}
+            </Routes>
+          </Suspense>
+          <Footer />
+        </ErrorBoundary>
+      </HelmetProvider>
     </>
   );
 }
