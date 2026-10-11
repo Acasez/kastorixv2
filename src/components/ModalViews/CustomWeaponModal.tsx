@@ -1,13 +1,14 @@
 import { useState, type FormEvent, type KeyboardEvent } from "react";
-import damageTypes from "../../JSON/damage_types.json";
 import weaponTraits from "../../data/weaponTraits";
 import { parseWeaponTrait } from "../../data/weapons";
+import { createDamageInstances, damageTypes } from "../../data/damageTypes";
 import type {
   Weapon,
   WeaponGroup,
   WeaponTrait,
   WeaponType,
 } from "../../types/Weapons";
+import type { DamageType } from "../../types/DamageTypes";
 import ChoiceModalFrame from "./ChoiceModalFrame";
 import WeaponTraitComponent from "../CommonCreatureComponents/WeaponTraitComponent";
 import { WEAPON_TYPES, WEAPON_GROUPS } from "../../constants/Weapons";
@@ -20,8 +21,7 @@ type CustomWeaponModalProps = {
 
 const EMPTY_WEAPON: Weapon = {
   name: "",
-  dice: "",
-  damageType: "piercing",
+  dice: [],
   hands: 1,
   range: 1,
   traits: [],
@@ -40,6 +40,9 @@ export default function CustomWeaponModal({
     () => initialWeapon ?? EMPTY_WEAPON,
   );
   const [traitQuery, setTraitQuery] = useState("");
+  const [damageInput, setDamageInput] = useState("");
+  const [selectedDamageType, setSelectedDamageType] =
+    useState<DamageType | null>(damageTypes[0] || null);
   const isEditing = Boolean(initialWeapon);
   const selectedTraits = weapon.traits;
   const traitQueryBase = traitQuery.trim().split("(")[0].trim().toLowerCase();
@@ -76,6 +79,41 @@ export default function CustomWeaponModal({
     addTrait(traitQuery);
   };
 
+  const handleDamageTypeChange = (
+    event: React.ChangeEvent<HTMLSelectElement>,
+  ) => {
+    const selectedName = event.target.value;
+    const selected = damageTypes.find(
+      (dt) => dt.name.toLowerCase() === selectedName.toLowerCase(),
+    );
+    if (selected) {
+      setSelectedDamageType(selected);
+    }
+  };
+
+  const handleAddDamage = () => {
+    if (!damageInput.trim() || !selectedDamageType) return;
+
+    const newDamageInstances = createDamageInstances(
+      damageInput,
+      selectedDamageType.name,
+      `weapon ${weapon.name}`,
+    );
+
+    setWeapon({
+      ...weapon,
+      dice: [...weapon.dice, ...newDamageInstances],
+    });
+    setDamageInput("");
+  };
+
+  const handleRemoveDamage = (index: number) => {
+    setWeapon({
+      ...weapon,
+      dice: weapon.dice.filter((_, i) => i !== index),
+    });
+  };
+
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (onSave({ ...weapon, name: weapon.name.trim() })) closeModal();
@@ -102,33 +140,64 @@ export default function CustomWeaponModal({
           </label>
           <label className="flex min-w-0 flex-col gap-1 text-white">
             <span>Damage</span>
-            <input
-              required
-              value={weapon.dice}
-              onChange={(event) =>
-                setWeapon({ ...weapon, dice: event.target.value })
-              }
-              placeholder="e.g., 2d6"
-              className="h-9 min-w-0 rounded border border-gray-400 bg-white px-2 text-gray-900"
-            />
-          </label>
-          <label className="flex flex-col gap-1 text-white">
-            <span>Damage Type</span>
-            <select
-              value={weapon.damageType}
-              onChange={(event) =>
-                setWeapon({ ...weapon, damageType: event.target.value })
-              }
-              className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
-            >
-              {damageTypes.map(({ name }) => (
-                <option key={name} value={name.toLowerCase()}>
-                  {name}
-                </option>
-              ))}
-            </select>
+            <div className="flex gap-2">
+              <input
+                value={damageInput}
+                onChange={(event) => setDamageInput(event.target.value)}
+                placeholder="e.g., 1d8 or 2d6+1"
+                className="h-9 flex-1 rounded border border-gray-400 bg-white px-2 text-gray-900"
+              />
+              <select
+                value={selectedDamageType?.name || ""}
+                onChange={handleDamageTypeChange}
+                className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
+              >
+                {damageTypes.map(({ name }) => (
+                  <option key={name} value={name}>
+                    {name}
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                onClick={handleAddDamage}
+                className="h-9 rounded bg-blue-600 px-3 text-white hover:bg-blue-500"
+              >
+                Add
+              </button>
+            </div>
           </label>
         </div>
+
+        {/* Display existing damage instances */}
+        {weapon.dice.length > 0 && (
+          <div className="flex flex-wrap gap-2 rounded border border-stone-600 bg-stone-900 p-2">
+            {weapon.dice.map((damageInstance, index) => (
+              <span
+                className="inline-flex items-center gap-1 rounded bg-stone-800 px-2 py-1"
+                key={`${damageInstance.name.name}-${damageInstance.amount.diceSize}-${damageInstance.amount.amount}-${index}`}
+              >
+                <span className="text-white">
+                  {damageInstance.amount.amount}d
+                  {damageInstance.amount.diceSize}
+                  {damageInstance.amount.bonus
+                    ? `+${damageInstance.amount.bonus}`
+                    : ""}{" "}
+                  {damageInstance.name.name}
+                </span>
+                <button
+                  type="button"
+                  className="flex size-4 items-center justify-center rounded-full bg-stone-600 text-xs text-white hover:bg-red-700"
+                  onClick={() => handleRemoveDamage(index)}
+                  aria-label={`Remove damage instance`}
+                  title="Remove damage instance"
+                >
+                  ×
+                </button>
+              </span>
+            ))}
+          </div>
+        )}
 
         <div className="grid gap-4 sm:grid-cols-2">
           <label className="flex flex-col gap-1 text-white">
@@ -143,7 +212,7 @@ export default function CustomWeaponModal({
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
-          <label className="flex flex-col gap-1  text-white">
+          <label className="flex flex-col gap-1 text-white">
             <span>Range</span>
             <input
               type="number"

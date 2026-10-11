@@ -10,6 +10,7 @@ import { getWeaponChoiceItems } from "../ModalViews/choiceData";
 import CreatureSectionHeader from "./CreatureSectionHeader";
 import CreatureWeaponModal from "../ModalViews/CustomWeaponModal";
 import type { ChoiceItem } from "../ModalViews/ChoiceModal";
+import { formatDamageInstances } from "../../utils/damage";
 
 const weaponChoiceItems = getWeaponChoiceItems(["Golem"]);
 const weaponFilters = [
@@ -53,15 +54,15 @@ export default function CreatureStrikeList({
       type: weapon.type,
       weaponGroup: weapon.weaponGroup,
       details: [
-        { label: "Damage", value: `${weapon.dice} ${weapon.damageType}` },
-        { label: "Hands", value: String(weapon.hands) },
-        { label: "Range", value: String(weapon.range) },
-        { label: "Traits", value: traits },
-        { label: "Description", value: weapon.description },
-        { label: "Price", value: `${weapon.price} gp` },
-        { label: "Type", value: weapon.type },
-        { label: "Weapon Group", value: weapon.weaponGroup },
-      ].filter(({ value }) => value.trim() !== ""),
+        { label: "Damage", valueKey: `${formatDamageInstances(weapon.dice)}` },
+        { label: "Hands", valueKey: String(weapon.hands) },
+        { label: "Range", valueKey: String(weapon.range) },
+        { label: "Traits", valueKey: traits },
+        { label: "Description", valueKey: weapon.description },
+        { label: "Price", valueKey: `${weapon.price} gp` },
+        { label: "Type", valueKey: weapon.type },
+        { label: "Weapon Group", valueKey: weapon.weaponGroup },
+      ].filter(({ valueKey }) => valueKey.trim() !== ""),
     };
   });
   const weaponChoices = [...weaponChoiceItems, ...customChoiceItems];
