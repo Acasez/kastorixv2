@@ -26,10 +26,7 @@ import { normalizeCreature } from "../../utils/normalizeCreature";
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
 const DAMAGE_TYPE_NAMES = damageTypes.map(({ name }) => name);
-const RESISTANCE_OPTIONS = [
-  ...DAMAGE_TYPE_NAMES,
-  ...new Set(damageTypes.map(({ damageGroup }) => damageGroup)),
-];
+const RESISTANCE_OPTIONS = [...DAMAGE_TYPE_NAMES];
 const textFields = [
   ["traits", "Traits"],
   ["languages", "Languages"],
@@ -222,7 +219,7 @@ export default function CreatureEditor({
         setSelectedKey={handleSelectedKeyChange}
         savedCreatures={savedCreatures}
         saveCreature={saveCreature}
-        handleManualLoad={handleManualLoad} // New prop
+        handleManualLoad={handleManualLoad}
         deleteCreature={deleteCreature}
         importInputRef={importInputRef}
         exportCreature={exportCreature}

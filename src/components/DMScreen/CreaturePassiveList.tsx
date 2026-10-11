@@ -164,6 +164,7 @@ export default function CreaturePassiveList({
       <div className="space-y-2">
         {creature.passives.map((passive) => (
           <CreaturePassiveComponent
+            key={passive.name}
             passive={passive}
             editPassive={editPassive}
             removePassive={removePassive}

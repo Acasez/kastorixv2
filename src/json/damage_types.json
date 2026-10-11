@@ -18,6 +18,12 @@
         "rarity": "Common"
     },
     {
+        "name": "Physical",
+        "damageGroup": "Physical",
+        "resistance": "Armor",
+        "rarity": "Common"
+    },
+    {
         "name": "Fire",
         "damageGroup": "Elemental",
         "resistance": "Armor, potions",
@@ -48,10 +54,22 @@
         "rarity": "Rare"
     },
     {
+        "name": "Elemental",
+        "damageGroup": "Elemental",
+        "resistance": "Armor, potions",
+        "rarity": "Very Rare"
+    },
+    {
         "name": "Poison",
-        "damageGroup": "Exotic",
-        "resistance": "Potions",
+        "damageGroup": "Other",
+        "resistance": "Potions, traits",
         "rarity": "Uncommon"
+    },
+    {
+        "name": "Aura",
+        "damageGroup": "Exotic",
+        "resistance": "None",
+        "rarity": "Rare"
     },
     {
         "name": "Unraveling",

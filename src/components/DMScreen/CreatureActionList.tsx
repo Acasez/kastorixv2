@@ -288,6 +288,7 @@ export default function CreatureActionList({
       <div className="space-y-2">
         {sortedActions.map((action) => (
           <CreatureActionComponent
+            key={action.name}
             action={action}
             creature={creature}
             updateActionProficiency={updateActionProficiency}
