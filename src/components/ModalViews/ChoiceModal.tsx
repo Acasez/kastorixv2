@@ -1,19 +1,14 @@
 import { useState } from "react";
 import ActionBox from "../ActionBox";
 import actions from "../../data/actions";
-
-export interface ChoiceDetail {
-  label: string;
-  value: string;
-  italicFirstLine?: boolean;
-}
+import type { DetailField } from "./choiceData";
 
 export interface ChoiceItem {
   name: string;
   description?: string;
   effect?: string;
   actionIcons?: string[];
-  details?: ChoiceDetail[];
+  details?: DetailField[];
   aspects?: string;
   traits?: string;
   type?: string;
@@ -228,19 +223,26 @@ export default function ChoiceModal({
                 {selectedItem.details ? (
                   selectedItem.details.map((detail) => {
                     const [firstLine, ...remainingLines] =
-                      detail.value.split("\n");
-
+                      detail.valueKey.split("\n");
                     return (
                       <p key={detail.label} className="whitespace-pre-line">
-                        <span className="font-bold">{detail.label}:</span>{" "}
-                        {detail.italicFirstLine ? (
+                        {detail.flavor ? (
                           <>
-                            <span className="italic">{firstLine}</span>
-                            {remainingLines.length > 0 &&
-                              `\n${remainingLines.join("\n")}`}
+                            <i>{detail.valueKey}</i>
                           </>
                         ) : (
-                          detail.value
+                          <>
+                            <span className="font-bold">{detail.label}:</span>{" "}
+                            {detail.italicFirstLine ? (
+                              <>
+                                <span className="italic">{firstLine}</span>
+                                {remainingLines.length > 0 &&
+                                  `\n${remainingLines.join("\n")}`}
+                              </>
+                            ) : (
+                              detail.valueKey
+                            )}
+                          </>
                         )}
                       </p>
                     );

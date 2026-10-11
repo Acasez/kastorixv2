@@ -1,4 +1,4 @@
-import { type ChoiceDetail, type ChoiceItem } from "./ChoiceModal";
+import { type ChoiceItem } from "./ChoiceModal";
 import type { ModalRequest } from "./modalTypes";
 import backgrounds from "../../JSON/backgrounds.json";
 import generalFeats from "../../JSON/general_feats.json";
@@ -32,13 +32,14 @@ export type DetailField = {
   label: string;
   valueKey: string;
   italicFirstLine?: boolean;
+  flavor?: boolean;
 };
 
 function createDetails(
   item: Record<string, unknown>,
   fields: DetailField[],
-): ChoiceDetail[] {
-  return fields.flatMap(({ label, valueKey, italicFirstLine }) => {
+): DetailField[] {
+  return fields.flatMap(({ label, valueKey, italicFirstLine, flavor }) => {
     const value = item[valueKey];
 
     if (value === undefined || value === null || String(value).trim() === "") {
@@ -63,7 +64,7 @@ function createDetails(
       displayValue = String(value);
     }
 
-    return [{ label, value: displayValue, italicFirstLine }];
+    return [{ label, valueKey: displayValue, italicFirstLine, flavor }];
   });
 }
 
@@ -78,13 +79,14 @@ function createChoiceItems<T extends { name: string }>(
 }
 
 const SPELL_FIELDS: DetailField[] = [
+  { label: "", valueKey: "flavor", flavor: true },
   { label: "Actions", valueKey: "actions" },
   { label: "Aspects", valueKey: "aspects" },
   { label: "Traits", valueKey: "traits" },
   { label: "Range", valueKey: "range" },
   { label: "Target", valueKey: "target" },
   { label: "Duration", valueKey: "duration" },
-  { label: "Effect", valueKey: "effect", italicFirstLine: true },
+  { label: "Effect", valueKey: "effect" },
   { label: "Upcast", valueKey: "upcast" },
   { label: "Rank", valueKey: "rank" },
 ];

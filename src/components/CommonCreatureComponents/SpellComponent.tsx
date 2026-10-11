@@ -48,6 +48,9 @@ export default function SpellComponent({
           <h3 className="mb-2 text-base font-normal text-yellow-300 underline">
             {spell.name}
           </h3>
+          <p>
+            <i>{spell.flavor}</i>
+          </p>
           <p className="flex justify-center">
             <strong>Actions:</strong>{" "}
             {getActionIcons(spell.actions).map((icon, index) => (
@@ -79,7 +82,7 @@ export default function SpellComponent({
               <strong>Duration:</strong> {spell.duration}
             </p>
           )}
-          <p className="mt-2 whitespace-pre-line">
+          <p className="mt-2 ">
             <strong>Effect:</strong> {spell.effect}
           </p>
           {spell.upcast && (
