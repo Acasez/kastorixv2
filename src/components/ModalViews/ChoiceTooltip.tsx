@@ -30,7 +30,8 @@ export default function ChoiceTooltip({ item }: ChoiceTooltipProps) {
           <strong>{detail.label}:</strong>{" "}
           {detail.italicFirstLine
             ? (() => {
-                const [firstLine, ...remainingLines] = detail.value.split("\n");
+                const [firstLine, ...remainingLines] =
+                  detail.valueKey.split("\n");
                 return (
                   <>
                     <span className="italic">{firstLine}</span>
@@ -39,7 +40,7 @@ export default function ChoiceTooltip({ item }: ChoiceTooltipProps) {
                   </>
                 );
               })()
-            : detail.value}
+            : detail.valueKey}
         </p>
       ))}
       {item.unlockedAction && (
