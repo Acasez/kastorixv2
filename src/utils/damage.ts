@@ -16,16 +16,17 @@ export function formatDamageInstances(
   instances: DamageInstance[],
   damageBonus: number = 0,
 ): string {
-  console.log(instances);
   try {
-    if (instances.length == 0) {
+    if (instances.length === 0) {
       console.log("Empty array");
       return "";
     }
+
     return instances
-      .map((instance) => {
+      .map((instance, index) => {
         const dice = instance.amount;
-        const totalBonus = (dice.bonus || 0) + damageBonus;
+        // Only apply damageBonus to the first instance
+        const totalBonus = (dice.bonus || 0) + (index === 0 ? damageBonus : 0);
 
         const diceStr = `${dice.amount}d${dice.diceSize}`;
 

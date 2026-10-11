@@ -61,8 +61,6 @@ export default function WeaponComponent({
 
   const multiAttackPenalty = -getMAPFromWeapon(weapon) + -5;
 
-  console.log(weapon);
-
   return (
     <Tooltip
       key={weapon.name}
