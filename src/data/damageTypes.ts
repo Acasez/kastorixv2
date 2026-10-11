@@ -58,4 +58,9 @@ function parseDiceString(diceString: string): DiceRoll {
   return { diceSize: 6, amount: 1 };
 }
 
+export const fallBackDamageInstance: DamageInstance = {
+  name: damageTypesByName["piercing"],
+  amount: { diceSize: 6, amount: 1 },
+};
+
 export default damageTypes;

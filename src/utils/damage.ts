@@ -16,19 +16,29 @@ export function formatDamageInstances(
   instances: DamageInstance[],
   damageBonus: number = 0,
 ): string {
-  return instances
-    .map((instance) => {
-      const dice = instance.amount;
-      const totalBonus = (dice.bonus || 0) + damageBonus;
+  console.log(instances);
+  try {
+    if (instances.length > 0) {
+      console.log("Empty array");
+      return "";
+    }
+    return instances
+      .map((instance) => {
+        const dice = instance.amount;
+        const totalBonus = (dice.bonus || 0) + damageBonus;
 
-      const diceStr = `${dice.amount}d${dice.diceSize}`;
+        const diceStr = `${dice.amount}d${dice.diceSize}`;
 
-      if (totalBonus > 0) {
-        return `${diceStr} + ${totalBonus} ${instance.name.name}`;
-      } else if (totalBonus < 0) {
-        return `${diceStr} - ${Math.abs(totalBonus)} ${instance.name.name}`;
-      }
-      return `${diceStr} ${instance.name.name}`;
-    })
-    .join(" + ");
+        if (totalBonus > 0) {
+          return `${diceStr} + ${totalBonus} ${instance.name.name}`;
+        } else if (totalBonus < 0) {
+          return `${diceStr} - ${Math.abs(totalBonus)} ${instance.name.name}`;
+        }
+        return `${diceStr} ${instance.name.name}`;
+      })
+      .join(" + ");
+  } catch {
+    window.alert("Invalid damage " + instances);
+    return "";
+  }
 }
