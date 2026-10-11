@@ -24,6 +24,7 @@ export default function ConditionMarker({
           value={condition.level}
           onChange={changeLevelOfCondition}
           min={0}
+          width={3}
         />
       )}
       <button
