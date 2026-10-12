@@ -23,7 +23,8 @@ interface WeaponComponentProps {
   creatureStats?: Record<StatKey, number>;
   proficiency?: ProficiencyTierName;
   onProficiencyChange?: (proficiency: ProficiencyTierName) => void;
-  customWeapon?: boolean;
+  isCustomWeapon?: boolean;
+  onEditWeapon?: (weapon: Weapon) => void;
 }
 
 export default function WeaponComponent({
@@ -36,6 +37,8 @@ export default function WeaponComponent({
   creatureStats,
   proficiency,
   onProficiencyChange,
+  isCustomWeapon = false,
+  onEditWeapon,
 }: WeaponComponentProps) {
   const { character } = useCharacterStore();
   const baseStats = creatureStats ?? character.baseStats;
@@ -139,7 +142,7 @@ export default function WeaponComponent({
           onReplaceWeapon ? "transition-colors hover:border-gray-300" : ""
         }`}
       >
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+        <div className="relative flex flex-wrap items-center gap-x-3 gap-y-1">
           <span className="text-base font-semibold text-white">
             {weapon.name}
           </span>
@@ -174,6 +177,16 @@ export default function WeaponComponent({
           <span className="text-sm text-gray-300">
             Range <strong className="text-white">{weapon.range}</strong>
           </span>
+          {isCustomWeapon && onEditWeapon && (
+            <button
+              type="button"
+              className="ml-auto rounded bg-stone-700 px-2 py-1 text-xs text-white hover:bg-stone-600"
+              onClick={() => onEditWeapon(weapon)}
+              aria-label={`Edit ${weapon.name}`}
+            >
+              Edit
+            </button>
+          )}
         </div>
         <div className="flex flex-wrap gap-1">
           {weaponTraits.map((trait) => (

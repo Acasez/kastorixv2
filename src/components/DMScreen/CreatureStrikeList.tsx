@@ -220,30 +220,21 @@ export default function CreatureStrikeList({
         {selectedWeapons.map((weapon) => {
           const isCustomWeapon = customWeaponNames.has(weapon.name);
           return (
-            <div className="relative w-full" key={weapon.name}>
-              <WeaponComponent
-                weapon={weapon}
-                onReplaceWeapon={(weaponName) => openWeaponModal(weaponName)}
-                onRemoveWeapon={removeWeapon}
-                proficiency={
-                  creature.strikesProficiencies?.[weapon.name] ?? "Trained"
-                }
-                creatureStats={creature.stats}
-                onProficiencyChange={(proficiency) =>
-                  setWeaponProficiency(weapon.name, proficiency)
-                }
-              />
-              {isCustomWeapon && (
-                <button
-                  type="button"
-                  className="absolute right-2 top-2 rounded bg-stone-700 px-2 py-1 text-xs text-white hover:bg-stone-600"
-                  onClick={() => openCustomWeaponModal(weapon)}
-                  aria-label={`Edit ${weapon.name}`}
-                >
-                  Edit
-                </button>
-              )}
-            </div>
+            <WeaponComponent
+              key={weapon.name}
+              weapon={weapon}
+              onReplaceWeapon={(weaponName) => openWeaponModal(weaponName)}
+              onRemoveWeapon={removeWeapon}
+              proficiency={
+                creature.strikesProficiencies?.[weapon.name] ?? "Trained"
+              }
+              creatureStats={creature.stats}
+              onProficiencyChange={(proficiency) =>
+                setWeaponProficiency(weapon.name, proficiency)
+              }
+              isCustomWeapon={isCustomWeapon}
+              onEditWeapon={openCustomWeaponModal}
+            />
           );
         })}
       </div>
