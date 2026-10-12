@@ -138,11 +138,24 @@ export default function WeaponComponent({
             ? `${weapon.name} strike. Click to replace or right-click to remove.`
             : `${weapon.name} golem strike.`
         }
-        className={`flex w-full flex-col gap-2 rounded-lg border border-gray-500 bg-gray-800 px-3 py-2 text-left shadow-sm ${
+        className={`relative flex w-full flex-col gap-2 rounded-lg border border-gray-500 bg-gray-800 px-3 py-2 text-left shadow-sm ${
           onReplaceWeapon ? "transition-colors hover:border-gray-300" : ""
         }`}
       >
-        <div className="relative flex flex-wrap items-center gap-x-3 gap-y-1">
+        {isCustomWeapon && onEditWeapon && (
+          <button
+            type="button"
+            className="absolute right-2 top-2 rounded bg-stone-700 px-2 py-1 text-xs text-white hover:bg-stone-600"
+            onClick={(e) => {
+              e.stopPropagation();
+              onEditWeapon(weapon);
+            }}
+            aria-label={`Edit ${weapon.name}`}
+          >
+            Edit
+          </button>
+        )}
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mr-9">
           <span className="text-base font-semibold text-white">
             {weapon.name}
           </span>
@@ -177,16 +190,6 @@ export default function WeaponComponent({
           <span className="text-sm text-gray-300">
             Range <strong className="text-white">{weapon.range}</strong>
           </span>
-          {isCustomWeapon && onEditWeapon && (
-            <button
-              type="button"
-              className="ml-auto rounded bg-stone-700 px-2 py-1 text-xs text-white hover:bg-stone-600"
-              onClick={() => onEditWeapon(weapon)}
-              aria-label={`Edit ${weapon.name}`}
-            >
-              Edit
-            </button>
-          )}
         </div>
         <div className="flex flex-wrap gap-1">
           {weaponTraits.map((trait) => (
