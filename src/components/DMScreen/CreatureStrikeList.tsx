@@ -12,7 +12,7 @@ import CreatureWeaponModal from "../ModalViews/CustomWeaponModal";
 import type { ChoiceItem } from "../ModalViews/ChoiceModal";
 import { formatDamageInstances } from "../../utils/damage";
 
-const weaponChoiceItems = getWeaponChoiceItems(["Golem"]);
+const weaponChoiceItems = getWeaponChoiceItems();
 const weaponFilters = [
   { label: "Traits", value: "traits" },
   { label: "Types", value: "type" },
@@ -32,10 +32,7 @@ export default function CreatureStrikeList({
   const [isCustomWeaponModalOpen, setIsCustomWeaponModalOpen] = useState(false);
   const [weaponToEdit, setWeaponToEdit] = useState<Weapon | undefined>();
   const customWeapons = creature.customWeapons ?? [];
-  const availableWeapons: Weapon[] = [
-    ...weapons.filter((weapon) => weapon.type !== "Golem"),
-    ...customWeapons,
-  ];
+  const availableWeapons: Weapon[] = [...weapons, ...customWeapons];
   const selectedWeapons = creature.strikes
     .map((weaponName) =>
       availableWeapons.find((weapon) => weapon.name === weaponName),
