@@ -100,8 +100,6 @@ export default function CustomWeaponModal({
       `weapon ${weapon.name}`,
     );
 
-    console.log("Adding damage", newDamageInstances);
-
     setWeapon({
       ...weapon,
       dice: [...weapon.dice, ...newDamageInstances],
@@ -117,7 +115,6 @@ export default function CustomWeaponModal({
   };
 
   const submit = (event: FormEvent<HTMLFormElement>) => {
-    console.log(weapon);
     event.preventDefault();
     if (onSave({ ...weapon, name: weapon.name.trim() })) closeModal();
   };

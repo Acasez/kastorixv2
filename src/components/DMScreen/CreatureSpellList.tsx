@@ -52,9 +52,7 @@ export default function CreatureSpellList({ blockId }: CreatureSkillListProps) {
 
   const confirmSpell = (spellName: string) => {
     const spellProficiencies = { ...(creature.spellProficiencies ?? {}) };
-    console.log("Confirm", spellName);
     if (spellToReplace) {
-      console.log("Replacing spell");
       if (spellName !== spellToReplace && creature.spells.includes(spellName)) {
         return;
       }
