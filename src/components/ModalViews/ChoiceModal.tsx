@@ -3,6 +3,7 @@ import type { DetailField } from "./choiceData";
 import ChoiceItemDetail from "./ChoiceItemDetail";
 import SearchField from "../SearchField";
 import DropDownMenu from "../DropDownMenu";
+import ModalItemButton from "./ModalItemButton";
 
 export interface ChoiceItem {
   name: string;
@@ -141,38 +142,16 @@ export default function ChoiceModal({
         {/* List panel - scrollable */}
         <div className="flex flex-col w-56 gap-1 overflow-y-auto pr-1">
           {filteredItems.map((item) => (
-            <button
-              type="button"
+            <ModalItemButton
               key={item.name}
-              disabled={isDisabled(item)}
-              className={`text-left text-text-black border-2 px-2 py-1 ${
-                isDisabled(item)
-                  ? "border-gray-300 bg-gray-200 text-gray-400 cursor-not-allowed"
-                  : selectedName === item.name
-                    ? "border-purple-500 bg-purple-100"
-                    : "border-amber-200 bg-bg-rules text-text-dark"
-              }`}
-              onClick={() => {
-                setSelectedName(item.name);
-                setSelectedChoiceName(
-                  item.name === initialValue ? (initialChoice ?? "") : "",
-                );
-              }}
-            >
-              <span className="flex items-center gap-1">
-                {item.name}
-                {item.actionIcons?.map((icon, index) => (
-                  <img
-                    key={`${item.name}-action-${index}`}
-                    src={icon}
-                    alt=""
-                    aria-hidden="true"
-                    className="w-5 h-5 object-contain"
-                  />
-                ))}
-                {item.level !== undefined && ` [${item.level}]`}
-              </span>
-            </button>
+              item={item}
+              isDisabled={isDisabled}
+              selectedName={selectedName}
+              setSelectedName={setSelectedName}
+              setSelectedChoiceName={setSelectedChoiceName}
+              initialValue={initialValue}
+              initialChoice={initialChoice}
+            />
           ))}
           {filteredItems.length === 0 && (
             <p className="text-gray-600">No matching choices.</p>
