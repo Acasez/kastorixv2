@@ -1,4 +1,5 @@
 import "../../CSS/RulesBox.css";
+import ActionIcon from "../ActionIcon";
 
 interface RuleItem {
   rule: string;
@@ -25,7 +26,7 @@ export default function RulesBox({ name, rules, maxWidth }: RulesProp) {
           className={`rules-item ${isHeader ? "rules-item--header" : ""}`}
           key={rule}
         >
-          {ruleIcon && <img className="action-icon" src={ruleIcon} alt="" />}
+          {ruleIcon && <ActionIcon icon={ruleIcon} />}
           <div className="rules-item-content">
             <span className="rules-item-title">{rule}</span>
             {description && (

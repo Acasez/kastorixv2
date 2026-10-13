@@ -5,6 +5,7 @@ import {
 } from "../../constants/Proficiency";
 import type { Creature, CreatureAction } from "../../stores/useCreatureStore";
 import { getActionIcons } from "../../utils/actionUtils";
+import ActionIcon from "../ActionIcon";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 
 interface CreatureActionComponentProps {
@@ -36,13 +37,7 @@ export default function CreatureActionComponent({
           aria-label={`${action.actions} action cost`}
         >
           {getActionIcons(action.actions).map((icon, index) => (
-            <img
-              key={`${action.id}-cost-${index}`}
-              src={icon}
-              alt={action.actions}
-              aria-hidden="true"
-              className="size-5 object-contain"
-            />
+            <ActionIcon icon={icon} key={`${action.name}-${index}`} />
           ))}
         </span>
         <h3 className="min-w-0 flex-1 font-semibold text-white">
