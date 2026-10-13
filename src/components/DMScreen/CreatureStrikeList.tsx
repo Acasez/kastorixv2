@@ -6,11 +6,12 @@ import type { Weapon } from "../../types/Weapons";
 import WeaponComponent from "../CommonCreatureComponents/WeaponComponent";
 import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
-import { getWeaponChoiceItems } from "../ModalViews/choiceData";
+import {
+  getWeaponChoiceItems,
+  weaponToChoiceItem,
+} from "../ModalViews/choiceData";
 import CreatureSectionHeader from "./CreatureSectionHeader";
 import CreatureWeaponModal from "../ModalViews/CustomWeaponModal";
-import type { ChoiceItem } from "../ModalViews/ChoiceModal";
-import { formatDamageInstances } from "../../utils/damage";
 
 const weaponChoiceItems = getWeaponChoiceItems();
 const weaponFilters = [
@@ -39,32 +40,7 @@ export default function CreatureStrikeList({
     )
     .filter((weapon): weapon is Weapon => weapon !== undefined);
   const customWeaponNames = new Set(customWeapons.map(({ name }) => name));
-  const customChoiceItems: ChoiceItem[] = customWeapons.map((weapon) => {
-    const traits = weapon.traits
-      .map((trait) =>
-        trait.parameter ? `${trait.name} (${trait.parameter})` : trait.name,
-      )
-      .join(", ");
-    return {
-      name: weapon.name,
-      traits,
-      type: weapon.type,
-      weaponGroup: weapon.weaponGroup,
-      details: [
-        {
-          label: "Damage",
-          valueKey: `${formatDamageInstances(weapon.dice)}`,
-        },
-        { label: "Hands", valueKey: String(weapon.hands) },
-        { label: "Range", valueKey: String(weapon.range) },
-        { label: "Traits", valueKey: traits },
-        { label: "Description", valueKey: weapon.description },
-        { label: "Price", valueKey: `${weapon.price} gp` },
-        { label: "Type", valueKey: weapon.type },
-        { label: "Weapon Group", valueKey: weapon.weaponGroup },
-      ].filter(({ valueKey }) => valueKey.trim() !== ""),
-    };
-  });
+  const customChoiceItems = customWeapons.map(weaponToChoiceItem);
   const weaponChoices = [...weaponChoiceItems, ...customChoiceItems];
 
   const closeWeaponModal = () => {
