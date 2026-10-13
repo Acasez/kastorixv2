@@ -1,5 +1,6 @@
 import type { Action } from "../../../types/Action";
 import { getActionIcons } from "../../../utils/actionUtils";
+import ActionIcon from "../../ActionIcon";
 
 interface ActionRowProps {
   action: Action;
@@ -24,12 +25,7 @@ export default function ActionRow({
       >
         <span className="flex min-w-20 items-center gap-1">
           {actionIcons.map((icon, index) => (
-            <img
-              key={`${action.name}-${index}`}
-              src={icon}
-              alt=""
-              className="h-5 w-5 object-contain"
-            />
+            <ActionIcon icon={icon} key={`${action.name}-${index}`} />
           ))}
         </span>
         <span className="flex-1 font-semibold">{action.name}</span>

@@ -2,6 +2,7 @@
 import { useMemo } from "react";
 import { getActionIcons } from "../utils/actionUtils";
 import type { Action } from "../types/Action";
+import ActionIcon from "./ActionIcon";
 
 interface ActionBoxProps {
   action: string;
@@ -52,13 +53,8 @@ export default function ActionBox({ action, actionsList }: ActionBoxProps) {
       <div className="flex items-center gap-2.5 mb-2.5 justify-self-center">
         <h2 className="underline text-[28px]">{action}</h2>
         <div className="max-w-8 max-h-8 flex flex-row">
-          {actionIcons.map((icon, i) => (
-            <img
-              key={i}
-              src={icon}
-              alt={`${actionDetails.actions} action cost`}
-              className="w-6 h-6"
-            />
+          {actionIcons.map((icon, index) => (
+            <ActionIcon icon={icon} key={`${action}-${index}`} />
           ))}
         </div>
       </div>

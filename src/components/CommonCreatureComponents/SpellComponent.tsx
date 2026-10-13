@@ -3,6 +3,7 @@ import type { ProficiencyTierName } from "../../constants/Proficiency";
 import { useCharacterStore } from "../../stores/useCharacterStore";
 import type { Spell } from "../../types/Spells";
 import { getActionIcons } from "../../utils/actionUtils";
+import ActionIcon from "../ActionIcon";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import Tooltip from "../Tooltip";
 
@@ -52,13 +53,7 @@ export default function SpellComponent({
           <p className="flex justify-center">
             <strong>Actions:</strong>{" "}
             {getActionIcons(spell.actions).map((icon, index) => (
-              <img
-                key={`${spell.name}-action-${index}`}
-                src={icon}
-                alt=""
-                aria-hidden="true"
-                className="w-5 h-5 object-contain"
-              />
+              <ActionIcon icon={icon} key={`${spell.name}-action-${index}`} />
             ))}
           </p>
           <p>
@@ -117,13 +112,7 @@ export default function SpellComponent({
       >
         <span>{spell.name}</span>
         {getActionIcons(spell.actions).map((icon, index) => (
-          <img
-            key={`${spell.name}-action-${index}`}
-            src={icon}
-            alt=""
-            aria-hidden="true"
-            className="w-5 h-5 object-contain"
-          />
+          <ActionIcon icon={icon} key={`${spell.name}-action-${index}`} />
         ))}
         {onProficiencyChange ? (
           <ProficiencyMarker
