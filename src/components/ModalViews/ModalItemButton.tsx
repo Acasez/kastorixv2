@@ -1,5 +1,6 @@
 import type { SetStateAction } from "react";
 import type { ChoiceItem } from "./ChoiceModal";
+import ActionIcon from "../ActionIcon";
 
 interface ModalItemButtonProps {
   item: ChoiceItem;
@@ -42,13 +43,7 @@ export default function ModalItemButton({
       <span className="flex items-center gap-1">
         {item.name}
         {item.actionIcons?.map((icon, index) => (
-          <img
-            key={`${item.name}-action-${index}`}
-            src={icon}
-            alt=""
-            aria-hidden="true"
-            className="w-5 h-5 object-contain"
-          />
+          <ActionIcon key={`${item.name}-action-${index}`} icon={icon} />
         ))}
         {item.level !== undefined && ` [${item.level}]`}
       </span>

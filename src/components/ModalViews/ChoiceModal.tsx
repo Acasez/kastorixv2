@@ -143,7 +143,7 @@ export default function ChoiceModal({
         <div className="flex flex-col w-56 gap-1 overflow-y-auto pr-1">
           {filteredItems.map((item) => (
             <ModalItemButton
-              key={item.name}
+              key={item.name + " ModalItem"}
               item={item}
               isDisabled={isDisabled}
               selectedName={selectedName}

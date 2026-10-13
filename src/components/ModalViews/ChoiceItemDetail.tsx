@@ -2,6 +2,7 @@ import type { SetStateAction } from "react";
 import ActionBox from "../ActionBox";
 import type { ChoiceItem } from "./ChoiceModal";
 import actions from "../../data/actions";
+import ActionIcon from "../ActionIcon";
 
 interface ChoiceItemDetailProps {
   selectedItem: ChoiceItem | undefined;
@@ -30,12 +31,9 @@ export default function ChoiceItemDetail({
             <div className="flex items-center gap-2">
               <h3 className="text-2xl underline">{selectedItem.name}</h3>
               {selectedItem.actionIcons?.map((icon, index) => (
-                <img
-                  key={`${selectedItem.name}-action-${index}`}
-                  src={icon}
-                  alt=""
-                  aria-hidden="true"
-                  className="w-6 h-6 object-contain"
+                <ActionIcon
+                  icon={icon}
+                  key={`${selectedItem.name}-detail-action-${index}`}
                 />
               ))}
             </div>
