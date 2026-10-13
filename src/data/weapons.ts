@@ -77,30 +77,3 @@ export function getDamageStatFromWeapon(
 export function getMAPFromWeapon(weapon: Weapon): number {
   return weapon.traits.reduce((sum, trait) => sum + (trait.MAPChange || 0), 0);
 }
-
-/*  export const customChoiceItems: ChoiceItem[] = customWeapons.map((weapon: Weapon) => {
-    const traits = weapon.traits
-      .map((trait) =>
-        trait.parameter ? `${trait.name} (${trait.parameter})` : trait.name,
-      )
-      .join(", ");
-    return {
-      name: weapon.name,
-      traits,
-      type: weapon.type,
-      weaponGroup: weapon.weaponGroup,
-      details: [
-        {
-          label: "Damage",
-          valueKey: `${formatDamageInstances(weapon.dice)}`,
-        },
-        { label: "Hands", valueKey: String(weapon.hands) },
-        { label: "Range", valueKey: String(weapon.range) },
-        { label: "Traits", valueKey: traits },
-        { label: "Description", valueKey: weapon.description },
-        { label: "Price", valueKey: `${weapon.price} gp` },
-        { label: "Type", valueKey: weapon.type },
-        { label: "Weapon Group", valueKey: weapon.weaponGroup },
-      ].filter(({ valueKey }) => valueKey.trim() !== ""),
-    };
-  }); */

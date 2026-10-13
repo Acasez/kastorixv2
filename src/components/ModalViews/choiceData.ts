@@ -16,8 +16,9 @@ import gadgets from "../../JSON/gadgets.json";
 import golemModels from "../../JSON/golem_models.json";
 import aspects from "../../data/aspects";
 import { getActionIcons } from "../../utils/actionUtils";
-import type { Weapon, WeaponTrait } from "../../types/Weapons";
+import type { Weapon } from "../../types/Weapons";
 import { formatDamageInstances } from "../../utils/damage";
+import type { DamageInstance } from "../../types/DamageTypes";
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -36,6 +37,51 @@ export type DetailField = {
   flavor?: boolean;
 };
 
+interface WeaponTrait {
+  name: string;
+  parameter?: string;
+}
+
+// Narrow arrays by checking every element, not just the first
+function isArrayOf<T>(
+  value: unknown,
+  guard: (v: unknown) => v is T,
+): value is T[] {
+  return Array.isArray(value) && value.length > 0 && value.every(guard);
+}
+
+function isDamageInstance(v: unknown): v is DamageInstance {
+  return typeof v === "object" && v !== null && "name" in v && "amount" in v;
+}
+
+function isWeaponTrait(v: unknown): v is WeaponTrait {
+  return (
+    typeof v === "object" && v !== null && "name" in v && !("amount" in v) // exclude DamageInstance
+  );
+}
+
+function formatValue(value: unknown): string | null {
+  if (isArrayOf(value, isDamageInstance)) {
+    return formatDamageInstances(value); // optionally pass damageBonus
+  }
+
+  if (isArrayOf(value, isWeaponTrait)) {
+    return value
+      .map((t) => (t.parameter ? `${t.name} (${t.parameter})` : t.name))
+      .join(", ");
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((v) => String(v)).join(", ");
+  }
+
+  if (typeof value === "object" && value !== null) {
+    return null;
+  }
+
+  return String(value);
+}
+
 function createDetails(
   item: Record<string, unknown>,
   fields: DetailField[],
@@ -43,26 +89,13 @@ function createDetails(
   return fields.flatMap(({ label, valueKey, italicFirstLine, flavor }) => {
     const value = item[valueKey];
 
-    if (value === undefined || value === null || String(value).trim() === "") {
-      return [];
-    }
+    const displayValue =
+      value === undefined || value === null || String(value).trim() === ""
+        ? null
+        : formatValue(value);
 
-    // Special handling for arrays of objects with name property (like WeaponTrait[])
-    let displayValue: string;
-    if (
-      Array.isArray(value) &&
-      value.length > 0 &&
-      value[0] &&
-      typeof value[0] === "object" &&
-      "name" in value[0]
-    ) {
-      displayValue = value
-        .map((t: WeaponTrait) =>
-          t.parameter ? `${t.name} (${t.parameter})` : t.name,
-        )
-        .join(", ");
-    } else {
-      displayValue = String(value);
+    if (displayValue === null || displayValue.trim() === "") {
+      return [];
     }
 
     return [{ label, valueKey: displayValue, italicFirstLine, flavor }];
@@ -149,8 +182,10 @@ const BACKGROUND_FIELDS: DetailField[] = [
 
 const WEAPON_FIELDS: DetailField[] = [
   { label: "Description", valueKey: "description" },
-  { label: "Damage", valueKey: "dice" },
-  { label: "Damage Type", valueKey: "damageType" },
+  {
+    label: "Damage",
+    valueKey: "dice",
+  } /* ${formatDamageInstances(weapon.dice)} */,
   { label: "Hands", valueKey: "hands" },
   { label: "Range", valueKey: "range" },
   { label: "Traits", valueKey: "traits" },
