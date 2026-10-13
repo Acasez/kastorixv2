@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { DetailField } from "./choiceData";
 import ChoiceItemDetail from "./ChoiceItemDetail";
+import SearchField from "../SearchField";
 
 export interface ChoiceItem {
   name: string;
@@ -118,14 +119,7 @@ export default function ChoiceModal({
   return (
     <div className="flex flex-col gap-4">
       <div className="flex min-w-0 flex-row gap-2">
-        <input
-          type="search"
-          value={search}
-          onChange={(event) => setSearch(event.target.value)}
-          placeholder="Search by name"
-          aria-label="Search choices"
-          className="min-w-0 flex-1 border-2 border-gray-300 rounded-md px-3 py-2 text-text-black"
-        />
+        <SearchField search={search} setSearch={setSearch} />
         {filterFields.length > 0 && (
           <div className="flex shrink-0 flex-nowrap gap-1">
             {filterFields.map((field) => (
