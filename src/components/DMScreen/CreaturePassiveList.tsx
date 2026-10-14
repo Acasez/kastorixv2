@@ -3,6 +3,7 @@ import { useCreature } from "../../hooks/useCreature";
 import type { CreaturePassive } from "../../stores/useCreatureStore";
 import CreatureHeader from "./CreatureHeader";
 import CreaturePassiveComponent from "./CreaturePassiveComponent";
+import CreaturePlusButton from "./CreaturePlusButton";
 
 type PassiveDraft = Omit<CreaturePassive, "id">;
 
@@ -83,19 +84,11 @@ export default function CreaturePassiveList({
         <div className="w-full">
           <CreatureHeader title="Passives" />
         </div>
-        <button
-          type="button"
-          className="flex size-8 shrink-0 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={openNewPassive}
-          aria-label={
-            isEditorOpen && !editingPassiveId ? "Cancel passive" : "Add passive"
-          }
-          title={
-            isEditorOpen && !editingPassiveId ? "Cancel passive" : "Add passive"
-          }
-        >
-          {isEditorOpen && !editingPassiveId ? "×" : "+"}
-        </button>
+        <CreaturePlusButton
+          setIsAdding={openNewPassive}
+          itemLabel="Passives"
+          isAdding={isEditorOpen}
+        />
       </div>
 
       {isEditorOpen && (

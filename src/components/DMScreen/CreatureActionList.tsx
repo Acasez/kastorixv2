@@ -8,6 +8,7 @@ import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
 import CreatureHeader from "./CreatureHeader";
 import CreatureActionComponent from "./CreatureActionComponent";
+import CreaturePlusButton from "./CreaturePlusButton";
 
 type ActionDraft = Omit<CreatureAction, "id">;
 
@@ -127,19 +128,11 @@ export default function CreatureActionList({
         <div className="w-full">
           <CreatureHeader title="Actions" />
         </div>
-        <button
-          type="button"
-          className="flex size-8 shrink-0 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={openNewAction}
-          aria-label={
-            isEditorOpen && !editingActionId ? "Cancel action" : "Add action"
-          }
-          title={
-            isEditorOpen && !editingActionId ? "Cancel action" : "Add action"
-          }
-        >
-          {isEditorOpen && !editingActionId ? "×" : "+"}
-        </button>
+        <CreaturePlusButton
+          setIsAdding={openNewAction}
+          itemLabel="Actions"
+          isAdding={isEditorOpen}
+        />
       </div>
 
       {isEditorOpen && (

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CreatureHeader from "./CreatureHeader";
+import CreaturePlusButton from "./CreaturePlusButton";
 
 type NumericTypeListProps<T extends string> = {
   title: string;
@@ -60,17 +61,12 @@ export default function NumericTypeList<T extends string>({
           <CreatureHeader title={title} />
         </div>
         <div className="relative">
-          <button
-            type="button"
-            className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-            onClick={() => setIsAdding((open) => !open)}
-            disabled={availableTypes.length === 0}
-            aria-label={`Add ${itemLabel}`}
-            title={isAdding ? `Cancel adding ${itemLabel}` : `Add ${itemLabel}`}
-            aria-expanded={isAdding}
-          >
-            +
-          </button>
+          <CreaturePlusButton
+            setIsAdding={setIsAdding}
+            availableTypes={availableTypes}
+            itemLabel={itemLabel}
+            isAdding={isAdding}
+          />
           {isAdding && (
             <div
               role="listbox"
