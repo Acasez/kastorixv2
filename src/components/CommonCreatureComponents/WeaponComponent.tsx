@@ -138,8 +138,8 @@ export default function WeaponComponent({
             ? `${weapon.name} strike. Click to replace or right-click to remove.`
             : `${weapon.name} golem strike.`
         }
-        className={`relative flex w-full flex-col gap-2 rounded-lg border border-gray-500 bg-gray-800 px-3 py-2 text-left shadow-sm ${
-          onReplaceWeapon ? "transition-colors hover:border-gray-300" : ""
+        className={`relative flex w-full flex-col gap-2 rounded-lg border border-bg-stone-border bg-bg-obsidian px-3 py-2 text-left shadow-sm ${
+          onReplaceWeapon ? "transition-colors hover:border-bg-quartz" : ""
         }`}
       >
         {isCustomWeapon && onEditWeapon && (
