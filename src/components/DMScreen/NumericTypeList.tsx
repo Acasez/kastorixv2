@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CreatureHeader from "./CreatureHeader";
 import CreaturePlusButton from "./CreaturePlusButton";
+import CreatureAddDropdown from "./CreatureAddDropdownProps";
 
 type NumericTypeListProps<T extends string> = {
   title: string;
@@ -68,24 +69,11 @@ export default function NumericTypeList<T extends string>({
             isAdding={isAdding}
           />
           {isAdding && (
-            <div
-              role="listbox"
-              aria-label={`Choose ${itemLabel} to add`}
-              className="absolute -left-20 top-full z-30 mt-1 max-h-[60vh] w-30 overflow-y-auto rounded-lg border border-gray-600 bg-gray-700 py-1 shadow-lg"
-            >
-              {availableTypes.map((type) => (
-                <button
-                  type="button"
-                  role="option"
-                  aria-selected="false"
-                  key={type}
-                  onClick={() => addType(type)}
-                  className="w-full px-4 py-2 text-left text-sm text-text-light hover:bg-gray-600 focus-visible:bg-gray-600 focus-visible:outline-none"
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
+            <CreatureAddDropdown
+              availableTypes={availableTypes}
+              itemLabel={itemLabel}
+              onSelect={addType}
+            />
           )}
         </div>
       </div>
