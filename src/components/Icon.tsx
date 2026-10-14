@@ -9,15 +9,7 @@ export default function Icon({ imageLocation, altText }: ImageProps) {
   return (
     <>
       <div className="">
-        <div>
-          <div>
-            <img
-              src={imageLocation}
-              alt={altText}
-              className="portfolio-image"
-            />
-          </div>
-        </div>
+        <img src={imageLocation} alt={altText} className="portfolio-image" />
       </div>
     </>
   );
