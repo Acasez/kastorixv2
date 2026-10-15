@@ -1,7 +1,6 @@
 import { useState } from "react";
-import CreatureHeader from "./CreatureHeader";
-import CreaturePlusButton from "./CreaturePlusButton";
 import CreatureAddDropdown from "./CreatureAddDropdownProps";
+import CreatureSectionHeader from "./CreatureSectionHeader";
 
 type NumericTypeListProps<T extends string> = {
   title: string;
@@ -57,28 +56,22 @@ export default function NumericTypeList<T extends string>({
 
   return (
     <section>
-      <div className="flex items-center gap-2">
-        <div className="w-full">
-          <CreatureHeader title={title} />
-        </div>
-        <div className="relative">
-          <CreaturePlusButton
-            setIsAdding={setIsAdding}
+      <CreatureSectionHeader
+        title={title}
+        onAdd={() => setIsAdding((open) => !open)}
+        addLabel={"Add" + title}
+        isAdding={isAdding}
+      >
+        {isAdding && (
+          <CreatureAddDropdown
             availableTypes={availableTypes}
             itemLabel={itemLabel}
-            isAdding={isAdding}
+            onSelect={addType}
           />
-          {isAdding && (
-            <CreatureAddDropdown
-              availableTypes={availableTypes}
-              itemLabel={itemLabel}
-              onSelect={addType}
-            />
-          )}
-        </div>
-      </div>
+        )}
+      </CreatureSectionHeader>
 
-      <div className="flex flex-wrap items-center gap-3">
+      <div className="flex flex-wrap items-center gap-3 mt-1">
         {selectedTypes.map((type) => (
           <div
             className="relative inline-flex items-center gap-2 rounded border border-stone-600 bg-stone-800 p-2 pr-3"

@@ -13,7 +13,7 @@ export default function CreatureAddDropdown<T extends string>({
     <div
       role="listbox"
       aria-label={`Choose ${itemLabel} to add`}
-      className="absolute -left-20 top-full z-30 mt-1 w-30 overflow-y-auto rounded-lg border border-bg-stone-border bg-bg-stone py-1 shadow-lg"
+      className="absolute top-full -left-30 z-30 mt-6 w-30 overflow-y-auto rounded-lg border border-bg-stone-border bg-bg-stone py-1 shadow-lg"
     >
       {availableTypes.map((type) => (
         <button

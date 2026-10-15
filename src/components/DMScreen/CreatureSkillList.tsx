@@ -8,7 +8,8 @@ import skills from "../../data/skills";
 import armors from "../../data/armors";
 import { useCreature } from "../../hooks/useCreature";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
-import CreatureHeader from "./CreatureHeader";
+import CreatureSectionHeader from "./CreatureSectionHeader";
+import CreatureAddDropdown from "./CreatureAddDropdownProps";
 
 const skillNames = skills.map(({ name }) => name);
 
@@ -51,45 +52,21 @@ export default function CreatureSkillList({ blockId }: CreatureSkillListProps) {
 
   return (
     <section className="py-2">
-      <div className="flex flex-row justify-center">
-        <div className="w-full">
-          <CreatureHeader title="Skills" />
-        </div>
-        <div className="relative">
-          <button
-            type="button"
-            className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-            onClick={() => setIsAdding((open) => !open)}
-            disabled={availableSkills.length === 0}
-            aria-label="Add skill"
-            title={isAdding ? "Cancel adding skill" : "Add skill"}
-            aria-expanded={isAdding}
-          >
-            +
-          </button>
-          {isAdding && (
-            <div
-              role="listbox"
-              aria-label="Choose skill to add"
-              className="absolute -left-20 top-full z-30 mt-1 max-h-[60vh] w-48 overflow-y-auto rounded-lg border border-gray-600 bg-gray-700 py-1 shadow-lg"
-            >
-              {availableSkills.map((skillName) => (
-                <button
-                  type="button"
-                  role="option"
-                  aria-selected="false"
-                  key={skillName}
-                  onClick={() => addSkill(skillName)}
-                  className="w-full px-4 py-2 text-left text-sm text-text-light hover:bg-gray-600 focus-visible:bg-gray-600 focus-visible:outline-none"
-                >
-                  {skillName}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
+      <CreatureSectionHeader
+        title="Skills"
+        onAdd={() => setIsAdding((open) => !open)}
+        addLabel="Add skill"
+        isAdding={isAdding}
+      >
+        {isAdding && (
+          <CreatureAddDropdown
+            availableTypes={availableSkills}
+            itemLabel="Skill"
+            onSelect={addSkill}
+          />
+        )}
+      </CreatureSectionHeader>
+      <div className="flex flex-wrap items-center gap-2 mt-1">
         {selectedSkills.map((skillName) => {
           const skill = skills.find(({ name }) => name === skillName);
           if (!skill) return null;

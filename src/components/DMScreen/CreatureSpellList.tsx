@@ -101,7 +101,7 @@ export default function CreatureSpellList({ blockId }: CreatureSkillListProps) {
         addLabel="Add spell"
       />
       {creature.spells.length > 0 && (
-        <div className="mb-2 flex flex-wrap gap-2 items-center">
+        <div className="mb-2 flex flex-wrap gap-2 items-center mt-1">
           <MultiOptionSwitch<VerbalComponent>
             options={["None", "Standard", "Attuned"]}
             value={verbal}
