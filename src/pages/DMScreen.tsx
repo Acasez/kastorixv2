@@ -35,11 +35,13 @@ export default function DMScreen() {
             />
           ))}
         </div>
-        <MetaButton
-          label={"Add New Creature"}
-          variant={"characterSheet"}
-          onClick={addCreatureBlock}
-        />
+        <div className="border-2 border-bg-stone-border">
+          <MetaButton
+            label={"Add New Creature"}
+            variant={"characterSheet"}
+            onClick={addCreatureBlock}
+          />
+        </div>
       </div>
     </>
   );

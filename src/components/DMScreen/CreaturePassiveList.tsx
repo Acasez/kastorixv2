@@ -1,9 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { useCreature } from "../../hooks/useCreature";
 import type { CreaturePassive } from "../../stores/useCreatureStore";
-import CreatureHeader from "./CreatureHeader";
 import CreaturePassiveComponent from "./CreaturePassiveComponent";
-import CreaturePlusButton from "./CreaturePlusButton";
+import CreatureSectionHeader from "./CreatureSectionHeader";
 
 type PassiveDraft = Omit<CreaturePassive, "id">;
 
@@ -80,16 +79,12 @@ export default function CreaturePassiveList({
 
   return (
     <section className="space-y-3">
-      <div className="flex items-center gap-2">
-        <div className="w-full">
-          <CreatureHeader title="Passives" />
-        </div>
-        <CreaturePlusButton
-          setIsAdding={openNewPassive}
-          itemLabel="Passives"
-          isAdding={isEditorOpen}
-        />
-      </div>
+      <CreatureSectionHeader
+        title="Passives"
+        onAdd={openNewPassive}
+        addLabel="Add spell"
+        isAdding={isEditorOpen}
+      />
 
       {isEditorOpen && (
         <form

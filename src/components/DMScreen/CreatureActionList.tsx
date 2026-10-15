@@ -6,9 +6,8 @@ import { type CreatureAction } from "../../stores/useCreatureStore";
 import type { StatKey } from "../../types/StatKey";
 import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
-import CreatureHeader from "./CreatureHeader";
 import CreatureActionComponent from "./CreatureActionComponent";
-import CreaturePlusButton from "./CreaturePlusButton";
+import CreatureSectionHeader from "./CreatureSectionHeader";
 
 type ActionDraft = Omit<CreatureAction, "id">;
 
@@ -124,16 +123,12 @@ export default function CreatureActionList({
 
   return (
     <section className="space-y-3">
-      <div className="flex items-center gap-2">
-        <div className="w-full">
-          <CreatureHeader title="Actions" />
-        </div>
-        <CreaturePlusButton
-          setIsAdding={openNewAction}
-          itemLabel="Actions"
-          isAdding={isEditorOpen}
-        />
-      </div>
+      <CreatureSectionHeader
+        title="Actions"
+        onAdd={openNewAction}
+        addLabel="Add spell"
+        isAdding={isEditorOpen}
+      />
 
       {isEditorOpen && (
         <form

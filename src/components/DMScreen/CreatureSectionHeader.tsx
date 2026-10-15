@@ -1,29 +1,28 @@
 import CreatureHeader from "./CreatureHeader";
+import CreaturePlusButton from "./CreaturePlusButton";
 
 type CreatureSectionHeaderProps = {
   title: string;
   onAdd?: () => void;
   addLabel?: string;
+  isAdding?: boolean;
 };
 
 export default function CreatureSectionHeader({
   title,
   onAdd,
   addLabel = "Add",
+  isAdding,
 }: CreatureSectionHeaderProps) {
   return (
     <div className="relative">
       <CreatureHeader title={title} />
       {onAdd && (
-        <button
-          type="button"
-          className="absolute right-0 top-0 flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
-          onClick={onAdd}
-          aria-label={addLabel}
-          title={addLabel}
-        >
-          +
-        </button>
+        <CreaturePlusButton
+          setIsAdding={onAdd}
+          itemLabel={addLabel}
+          isAdding={isAdding}
+        />
       )}
     </div>
   );

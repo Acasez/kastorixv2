@@ -4,7 +4,7 @@ interface CreaturePlusButtonProps<T extends string> {
   setIsAdding: (value: SetStateAction<boolean>) => void;
   availableTypes?: readonly T[];
   itemLabel: string;
-  isAdding: boolean;
+  isAdding?: boolean;
 }
 
 export default function CreaturePlusButton<T extends string>({
@@ -16,7 +16,7 @@ export default function CreaturePlusButton<T extends string>({
   return (
     <button
       type="button"
-      className="flex size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
+      className="flex absolute right-0 top-0 size-8 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
       onClick={() => setIsAdding((open) => !open)}
       disabled={availableTypes && availableTypes.length === 0}
       aria-label={`Add ${itemLabel}`}
