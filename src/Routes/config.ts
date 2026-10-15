@@ -30,7 +30,7 @@ export const routes: RouteConfig[] = [
   {
     path: "/kastorixv2/WorldMap",
     component: lazy(() => import("../pages/WorldMap")),
-    header: "WorldMap",
+    header: "World Map",
     createHeader: true,
   },
 ];
