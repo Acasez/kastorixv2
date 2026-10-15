@@ -3,7 +3,7 @@ import weaponTraits from "../../../data/weaponTraits";
 import { parseWeaponTrait } from "../../../data/weapons";
 import type { WeaponTrait } from "../../../types/Weapons";
 import WeaponTraitComponent from "../../CommonCreatureComponents/WeaponTraitComponent";
-import { RemoveButton } from "./formBits";
+import { RemoveButton, INPUT_CLASS } from "./formBits";
 import { traitLabel } from "./TraitLabel";
 
 type TraitPickerProps = {
@@ -13,6 +13,9 @@ type TraitPickerProps = {
 
 export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
   const [query, setQuery] = useState("");
+  // The trait currently awaiting a parameter value, e.g. the "Volley (X)" definition
+  const [pendingTrait, setPendingTrait] = useState<WeaponTrait | null>(null);
+  const [parameterInput, setParameterInput] = useState("");
 
   const matchingTraits = useMemo(() => {
     const base = query.trim().split("(")[0].trim().toLowerCase();
@@ -23,21 +26,55 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
     );
   }, [query, traits]);
 
-  const addTrait = (raw: string) => {
-    const parsed = parseWeaponTrait(raw);
+  const isParameterized = (trait: WeaponTrait) => trait.parameter === "X";
+
+  const addParsedTrait = (trait: WeaponTrait) => {
     if (
-      !parsed.name ||
+      !trait.name ||
       traits.some(
-        (t) => t.name === parsed.name && t.parameter === parsed.parameter,
+        (t) => t.name === trait.name && t.parameter === trait.parameter,
       )
     ) {
       return;
     }
-    onChange([...traits, parsed]);
+    onChange([...traits, trait]);
     setQuery("");
+    setPendingTrait(null);
+    setParameterInput("");
   };
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+  const addTrait = (raw: string) => {
+    addParsedTrait(parseWeaponTrait(raw));
+  };
+
+  const selectTrait = (trait: WeaponTrait) => {
+    if (isParameterized(trait)) {
+      setPendingTrait(trait);
+      setParameterInput("");
+      return;
+    }
+    addParsedTrait({ ...trait, parameter: undefined });
+  };
+
+  const confirmParameter = () => {
+    if (!pendingTrait) return;
+    addParsedTrait({
+      ...pendingTrait,
+      parameter: parameterInput.trim() || undefined,
+    });
+  };
+
+  const handleParameterKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Escape") {
+      setPendingTrait(null);
+      return;
+    }
+    if (event.key !== "Enter") return;
+    event.preventDefault();
+    confirmParameter();
+  };
+
+  const handleSearchKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key !== "Enter" || !query.trim()) return;
     event.preventDefault();
     addTrait(query);
@@ -50,14 +87,47 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={handleKeyDown}
+          onKeyDown={handleSearchKeyDown}
           placeholder="Search or type a trait, then press Enter"
           aria-label="Search weapon traits"
-          className="h-11 rounded border border-gray-400 bg-white px-2 text-gray-900"
+          className={`${INPUT_CLASS} h-11`}
         />
       </label>
 
-      {query.trim() && (
+      {pendingTrait && (
+        <div className="flex flex-wrap items-center gap-2 rounded border border-blue-500 bg-stone-900 p-2">
+          <span className="text-sm text-white">{pendingTrait.name} value:</span>
+          <input
+            autoFocus
+            type="number"
+            value={parameterInput}
+            onChange={(e) => setParameterInput(e.target.value)}
+            onKeyDown={handleParameterKeyDown}
+            aria-label={`Parameter value for ${pendingTrait.name}`}
+            placeholder="e.g., 4"
+            className={`${INPUT_CLASS} w-24`}
+          />
+          <button
+            type="button"
+            onClick={confirmParameter}
+            className="h-9 rounded bg-blue-600 px-3 text-white hover:bg-blue-500"
+          >
+            Confirm
+          </button>
+          <button
+            type="button"
+            onClick={() => setPendingTrait(null)}
+            className="text-sm text-gray-400 underline hover:text-white"
+          >
+            Cancel
+          </button>
+          <span className="w-full text-xs text-gray-400">
+            {pendingTrait.effect}
+          </span>
+        </div>
+      )}
+
+      {!pendingTrait && query.trim() && (
         <div
           aria-label="Matching weapon traits"
           className="max-h-40 overflow-y-auto rounded border border-stone-500 bg-stone-900"
@@ -66,7 +136,7 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
             <button
               type="button"
               key={trait.name}
-              onClick={() => addTrait(traitLabel(trait))}
+              onClick={() => selectTrait(trait)}
               className="block w-full px-3 py-2 text-left text-sm text-white hover:bg-stone-700"
             >
               {traitLabel(trait)}
