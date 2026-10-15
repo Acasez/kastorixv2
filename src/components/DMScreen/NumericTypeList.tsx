@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CreatureAddDropdown from "./CreatureAddDropdownProps";
 import CreatureSectionHeader from "./CreatureSectionHeader";
+import ComponentDeleteButton from "../ComponentDeleteButton";
 
 type NumericTypeListProps<T extends string> = {
   title: string;
@@ -111,15 +112,11 @@ export default function NumericTypeList<T extends string>({
                 className="h-8 w-16 rounded border border-stone-500 bg-stone-900 px-1 text-center text-sm text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-400"
               />
             </label>
-            <button
-              type="button"
-              className="absolute -right-2 -top-2 flex size-5 items-center justify-center rounded-full bg-red-600 text-xs font-bold leading-none text-white hover:bg-red-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-400"
+            <ComponentDeleteButton
+              objectName={type}
               onClick={() => removeType(type)}
-              aria-label={`Remove ${type} ${itemLabel}`}
-              title={`Remove ${type} ${itemLabel}`}
-            >
-              ×
-            </button>
+              objectClass={itemLabel}
+            />
           </div>
         ))}
       </div>
