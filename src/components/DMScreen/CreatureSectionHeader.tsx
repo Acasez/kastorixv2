@@ -7,6 +7,7 @@ type CreatureSectionHeaderProps = {
   onAdd?: () => void;
   addLabel?: string;
   isAdding?: boolean;
+  disabled?: boolean;
   children?: ReactNode;
 };
 
@@ -15,23 +16,25 @@ export default function CreatureSectionHeader({
   onAdd,
   addLabel = "Add",
   isAdding,
+  disabled,
   children,
 }: CreatureSectionHeaderProps) {
   return (
-    <div className="flex items-center gap-2 border-b border-bg-wood-border">
-      <div className="w-full pb-1">
-        <CreatureHeader title={title} />
-      </div>
-      <div className="relative shrink-0 -mt-9">
-        {onAdd && (
-          <CreaturePlusButton
-            setIsAdding={onAdd}
-            itemLabel={addLabel}
-            isAdding={isAdding}
-          />
-        )}
-        {children}
-      </div>
+    <div className="relative border-b border-bg-wood-border pb-1">
+      <CreatureHeader title={title} />
+      {onAdd && (
+        <div className="absolute right-0 top-0">
+          <div className="relative">
+            <CreaturePlusButton
+              onAdd={onAdd}
+              itemLabel={addLabel}
+              isAdding={isAdding}
+              disabled={disabled}
+            />
+            {children}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
