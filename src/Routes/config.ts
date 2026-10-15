@@ -27,4 +27,10 @@ export const routes: RouteConfig[] = [
     header: "DM Screen",
     createHeader: true,
   },
+  {
+    path: "/kastorixv2/WorldMap",
+    component: lazy(() => import("../pages/WorldMap")),
+    header: "WorldMap",
+    createHeader: true,
+  },
 ];

@@ -9,7 +9,7 @@ export default function CharacterSheet() {
   return (
     <>
       <Helmet>
-        <title>Kastorix - Character Sheet</title>
+        <title>Character Sheet - Kastorix</title>
       </Helmet>
       <div className="flex flex-row">
         <LevelSidebar />

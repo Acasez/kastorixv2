@@ -23,7 +23,7 @@ export default function DMScreen() {
   return (
     <>
       <Helmet>
-        <title>Kastorix - DM Screen</title>
+        <title>DM Screen - Kastorix</title>
       </Helmet>
       <div className="mx-auto flex w-full max-w-screen-3xl flex-col items-center gap-4 sm:p-4">
         <div className="grid w-full gap-4 xl:grid-cols-2">

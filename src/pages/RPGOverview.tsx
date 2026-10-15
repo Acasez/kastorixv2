@@ -23,7 +23,7 @@ export default function RPGOverview() {
   return (
     <>
       <Helmet>
-        <title>Kastorix - TTRPG Overview</title>
+        <title>TTRPG Overview - Kastorix</title>
       </Helmet>
       <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />
       <RowFrame reverse={false}>
