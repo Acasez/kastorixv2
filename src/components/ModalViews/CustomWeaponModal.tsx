@@ -51,6 +51,8 @@ export default function CustomWeaponModal({
       trait.name.toLowerCase().includes(traitQueryBase) &&
       !selectedTraits.some((selected) => selected.name === trait.name),
   );
+  const updateWeapon = (patch: Partial<Weapon>) =>
+    setWeapon((prev) => ({ ...prev, ...patch }));
 
   const setTraits = (traits: WeaponTrait[]) => setWeapon({ ...weapon, traits });
 
@@ -132,9 +134,7 @@ export default function CustomWeaponModal({
               required
               autoFocus
               value={weapon.name}
-              onChange={(event) =>
-                setWeapon({ ...weapon, name: event.target.value })
-              }
+              onChange={(e) => updateWeapon({ name: e.target.value })}
               className="h-9 min-w-0 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
@@ -146,6 +146,7 @@ export default function CustomWeaponModal({
                 onChange={(event) => setDamageInput(event.target.value)}
                 placeholder="e.g., 1d8 or 2d6+1"
                 className="h-9 flex-1 rounded border border-gray-400 bg-white px-2 text-gray-900"
+                onKeyDown={(e) => e.key === "Enter"}
               />
               <select
                 value={selectedDamageType?.name || ""}
@@ -189,7 +190,7 @@ export default function CustomWeaponModal({
                   type="button"
                   className="flex size-4 items-center justify-center rounded-full bg-stone-600 text-xs text-white hover:bg-red-700"
                   onClick={() => handleRemoveDamage(index)}
-                  aria-label={`Remove damage instance`}
+                  aria-label="Remove damage instance"
                   title="Remove damage instance"
                 >
                   ×
@@ -206,9 +207,7 @@ export default function CustomWeaponModal({
               type="number"
               min={0}
               value={weapon.hands}
-              onChange={(event) =>
-                setWeapon({ ...weapon, hands: Number(event.target.value) })
-              }
+              onChange={(e) => updateWeapon({ hands: Number(e.target.value) })}
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
@@ -218,9 +217,7 @@ export default function CustomWeaponModal({
               type="number"
               min={0}
               value={weapon.range}
-              onChange={(event) =>
-                setWeapon({ ...weapon, range: Number(event.target.value) })
-              }
+              onChange={(e) => updateWeapon({ range: Number(e.target.value) })}
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
@@ -240,14 +237,12 @@ export default function CustomWeaponModal({
           </label>
           {traitQuery.trim() && (
             <div
-              role="listbox"
               aria-label="Matching weapon traits"
               className="max-h-40 overflow-y-auto rounded border border-stone-500 bg-stone-900"
             >
               {matchingTraits.map((trait) => (
                 <button
                   type="button"
-                  role="option"
                   aria-selected="false"
                   key={trait.name}
                   onClick={() =>
@@ -269,7 +264,6 @@ export default function CustomWeaponModal({
               ) && (
                 <button
                   type="button"
-                  role="option"
                   aria-selected="false"
                   onClick={() => addTrait(traitQuery)}
                   className="block w-full border-t border-stone-700 px-3 py-2 text-left text-sm text-orange-200 hover:bg-stone-700"
@@ -309,9 +303,7 @@ export default function CustomWeaponModal({
           <textarea
             rows={3}
             value={weapon.description}
-            onChange={(event) =>
-              setWeapon({ ...weapon, description: event.target.value })
-            }
+            onChange={(e) => updateWeapon({ description: e.target.value })}
             className="resize-y rounded border border-gray-400 bg-white px-2 py-1.5 text-gray-900"
           />
         </label>
@@ -324,9 +316,7 @@ export default function CustomWeaponModal({
               min={0}
               step={0.01}
               value={weapon.price}
-              onChange={(event) =>
-                setWeapon({ ...weapon, price: Number(event.target.value) })
-              }
+              onChange={(e) => updateWeapon({ price: Number(e.target.value) })}
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             />
           </label>
@@ -334,8 +324,8 @@ export default function CustomWeaponModal({
             <span>Type</span>
             <select
               value={weapon.type}
-              onChange={(event) =>
-                setWeapon({ ...weapon, type: event.target.value as WeaponType })
+              onChange={(e) =>
+                updateWeapon({ type: e.target.value as WeaponType })
               }
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             >
@@ -348,11 +338,8 @@ export default function CustomWeaponModal({
             <span>Weapon Group</span>
             <select
               value={weapon.weaponGroup}
-              onChange={(event) =>
-                setWeapon({
-                  ...weapon,
-                  weaponGroup: event.target.value as WeaponGroup,
-                })
+              onChange={(e) =>
+                updateWeapon({ weaponGroup: e.target.value as WeaponGroup })
               }
               className="h-9 rounded border border-gray-400 bg-white px-2 text-gray-900"
             >
