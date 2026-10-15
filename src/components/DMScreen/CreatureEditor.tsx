@@ -22,6 +22,7 @@ import CreatureArmorSelector from "./CreatureArmorSelector";
 import CreatureSenses from "./CreatureSenses";
 import { SPEED_TYPES } from "../../constants/SpeedTypes";
 import { normalizeCreature } from "../../utils/normalizeCreature";
+import CreatureSectionHeader from "./CreatureSectionHeader";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
@@ -306,7 +307,8 @@ export default function CreatureEditor({
           {/* Right — numbers + combat, in priority order */}
           <div className="flex min-w-0 flex-col gap-3">
             <div>
-              <CreatureHeader title="Stats" />
+              <CreatureSectionHeader title="Stats" />
+              <div className="mt-1"></div>
               <StatsGrid
                 stats={creature.stats}
                 onStatChange={(key, value) =>

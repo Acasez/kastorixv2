@@ -167,7 +167,7 @@ export default function CreatureStrikeList({
 
   return (
     <section className="space-y-3">
-      <div className="flex items-center gap-2">
+      {/* <div className="flex items-center gap-2">
         <div className="min-w-0 flex-1">
           <CreatureSectionHeader title="Weapons" />
         </div>
@@ -187,7 +187,20 @@ export default function CreatureStrikeList({
         >
           Custom
         </button>
-      </div>
+      </div> */}
+      <CreatureSectionHeader
+        title="Weapons"
+        onAdd={() => openWeaponModal()}
+        addLabel="Add weapons"
+      >
+        <button
+          type="button"
+          className="rounded border -mt-0.5 border-stone px-2 py-1.5 text-xs text-white hover:bg-stone-700"
+          onClick={() => openCustomWeaponModal()}
+        >
+          Custom
+        </button>
+      </CreatureSectionHeader>
 
       <div className="flex flex-wrap gap-2">
         {selectedWeapons.map((weapon) => {

@@ -2,7 +2,7 @@ import { getProficiency } from "../../constants/Proficiency";
 import { useCreature } from "../../hooks/useCreature";
 import armors from "../../data/armors";
 import ProficiencyMarker from "../Buttons/ProficiencyMarker";
-import CreatureHeader from "./CreatureHeader";
+import CreatureSectionHeader from "./CreatureSectionHeader";
 
 const SAVING_THROWS = [
   { name: "Fortitude", stat: "PHY" },
@@ -24,8 +24,8 @@ export default function CreatureSavingThrows({
 
   return (
     <section>
-      <CreatureHeader title="Saving Throws" />
-      <div className="grid grid-cols-3 gap-3">
+      <CreatureSectionHeader title="Saving Throws" />
+      <div className="grid grid-cols-3 gap-3 mt-1">
         {SAVING_THROWS.map((save) => {
           const tierName = creature.savingThrows[save.name];
           const tier = getProficiency(tierName);
