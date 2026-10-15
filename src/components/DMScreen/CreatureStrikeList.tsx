@@ -11,7 +11,7 @@ import {
   weaponToChoiceItem,
 } from "../ModalViews/choiceData";
 import CreatureSectionHeader from "./CreatureSectionHeader";
-import CreatureWeaponModal from "../ModalViews/CustomWeaponModal";
+import CreatureWeaponModal from "../ModalViews/CustomWeapons/CustomWeaponModal";
 
 const weaponChoiceItems = getWeaponChoiceItems();
 const weaponFilters = [
