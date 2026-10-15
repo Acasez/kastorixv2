@@ -1,5 +1,3 @@
-import "../../CSS/ImageStyling.css";
-
 interface ImageProps {
   imageLocation: string;
   altText: string;
@@ -15,20 +13,16 @@ export default function ImageDisplay({
 }: ImageProps) {
   return (
     <>
-      <div className={coverImage ? "portfolio-media cover" : "portfolio-media"}>
+      <div className={coverImage ? "" : ""}>
         <div>
           <div>
             {imageCaption ? (
-              <div className="image-with-caption">
+              <div className="max-w-200 text-center text-xl cursive">
                 <img src={imageLocation} alt={altText} />
                 <p>{imageCaption}</p>
               </div>
             ) : (
-              <img
-                src={imageLocation}
-                alt={altText}
-                className="portfolio-image"
-              />
+              <img src={imageLocation} alt={altText} />
             )}
           </div>
         </div>

@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import ImageDisplay from "../components/TextPageComponents/ImageDisplay";
 
 export default function WorldMap() {
   return (
@@ -7,12 +6,13 @@ export default function WorldMap() {
       <Helmet>
         <title>World Map - Kastorix</title>
       </Helmet>
-      <ImageDisplay
-        imageLocation="./images/Maps/Kastorix.jpg"
-        altText="Kastorix World Map"
-        imageCaption="Kastorix World Map"
-        coverImage={true}
-      />
+      <div className="">
+        <img
+          className="-mt-1.5"
+          src="./images/Maps/Kastorix.jpg"
+          alt="Kastorix World Map"
+        />
+      </div>
     </>
   );
 }
