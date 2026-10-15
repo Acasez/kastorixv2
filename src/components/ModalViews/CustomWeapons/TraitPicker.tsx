@@ -99,7 +99,7 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
           <span className="text-sm text-white">{pendingTrait.name} value:</span>
           <input
             autoFocus
-            type="number"
+            type="string"
             value={parameterInput}
             onChange={(e) => setParameterInput(e.target.value)}
             onKeyDown={handleParameterKeyDown}

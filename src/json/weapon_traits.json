@@ -55,7 +55,7 @@
         "attackPenalty": ""
     },
     {
-        "name": "Deadly (dX)",
+        "name": "Deadly (X)",
         "effect": "Critical hits with this weapon deal an additional X damage. ",
         "specialAction": "",
         "type": "Normal",

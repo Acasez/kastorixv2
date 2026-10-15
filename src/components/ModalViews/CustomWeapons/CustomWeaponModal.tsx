@@ -1,10 +1,11 @@
-import { useState, type FormEvent } from "react";
+import { useMemo, useState, type FormEvent } from "react";
 import { WEAPON_TYPES, WEAPON_GROUPS } from "../../../constants/Weapons";
 import type { Weapon, WeaponGroup, WeaponType } from "../../../types/Weapons";
 import ChoiceModalFrame from "../ChoiceModalFrame";
 import DamageEditor from "./DamageEditor";
 import TraitPicker from "./TraitPicker";
 import { INPUT_CLASS } from "./formBits";
+import weapons from "../../../data/weapons";
 
 type CustomWeaponModalProps = {
   initialWeapon?: Weapon;
@@ -30,6 +31,7 @@ export default function CustomWeaponModal({
   onSave,
 }: CustomWeaponModalProps) {
   const [weapon, setWeapon] = useState(() => initialWeapon ?? EMPTY_WEAPON);
+  const [baseWeaponName, setBaseWeaponName] = useState("");
   const isEditing = Boolean(initialWeapon);
 
   const updateWeapon = (patch: Partial<Weapon>) =>
@@ -38,6 +40,23 @@ export default function CustomWeaponModal({
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (onSave({ ...weapon, name: weapon.name.trim() })) closeModal();
+  };
+
+  const existingWeapons = useMemo(
+    () => [...weapons].sort((a, b) => a.name.localeCompare(b.name)),
+    [],
+  );
+
+  const handleBaseWeaponChange = (name: string) => {
+    setBaseWeaponName(name);
+    if (!name) return; // back to "(start from scratch)"
+    const base = existingWeapons.find((w) => w.name === name);
+    if (!base) return;
+    // Keep the user's name if they've typed one; otherwise adopt the base's name
+    setWeapon((prev) => ({
+      ...base,
+      name: prev.name.trim() ? prev.name : base.name,
+    }));
   };
 
   return (
@@ -49,6 +68,23 @@ export default function CustomWeaponModal({
         className="space-y-5 rounded bg-[#242321] p-4"
         onSubmit={handleSubmit}
       >
+        {!isEditing && (
+          <label className="flex flex-col gap-1 text-white">
+            <span>Start from existing weapon</span>
+            <select
+              value={baseWeaponName}
+              onChange={(e) => handleBaseWeaponChange(e.target.value)}
+              className={INPUT_CLASS}
+            >
+              <option value="">— Start from scratch —</option>
+              {existingWeapons.map((w) => (
+                <option key={w.name} value={w.name}>
+                  {w.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
         <div className="flex flex-row justify-between gap-5">
           <label className="flex min-w-50 w-full flex-col gap-1 text-white">
             <span>Name</span>
