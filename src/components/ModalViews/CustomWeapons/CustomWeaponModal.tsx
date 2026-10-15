@@ -49,8 +49,8 @@ export default function CustomWeaponModal({
         className="space-y-5 rounded bg-[#242321] p-4"
         onSubmit={handleSubmit}
       >
-        <div className="grid gap-4 md:grid-cols-[1fr_1fr]">
-          <label className="flex min-w-0 flex-col gap-1 text-white">
+        <div className="flex flex-row justify-between gap-5">
+          <label className="flex min-w-50 w-full flex-col gap-1 text-white">
             <span>Name</span>
             <input
               required
@@ -60,14 +60,6 @@ export default function CustomWeaponModal({
               className={`${INPUT_CLASS} min-w-0`}
             />
           </label>
-          <DamageEditor
-            weaponName={weapon.name}
-            dice={weapon.dice}
-            onChange={(dice) => updateWeapon({ dice })}
-          />
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
           <label className="flex flex-col gap-1 text-white">
             <span>Hands</span>
             <input
@@ -89,7 +81,11 @@ export default function CustomWeaponModal({
             />
           </label>
         </div>
-
+        <DamageEditor
+          weaponName={weapon.name}
+          dice={weapon.dice}
+          onChange={(dice) => updateWeapon({ dice })}
+        />
         <TraitPicker
           traits={weapon.traits}
           onChange={(traits) => updateWeapon({ traits })}
