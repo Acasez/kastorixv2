@@ -6,10 +6,10 @@ export default function MainHeader() {
 
   return (
     <nav
-      className="bg-text-black text-text-light border-striking border-b-2"
+      className="bg-black text-text-light border-striking border-b-2"
       role="navigation"
     >
-      <ul className="flex list-none w-full p-0 m-0 bg-black max-md:flex-col max-md:w-full md:flex-wrap md:justify-center xl:flex-nowrap">
+      <ul className="flex list-none w-full p-0 m-0 max-md:flex-col max-md:w-full md:flex-wrap md:justify-center xl:flex-nowrap">
         {headerRoutes.map((route) => (
           <li
             key={route.path}
