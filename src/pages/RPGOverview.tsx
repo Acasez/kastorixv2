@@ -7,7 +7,6 @@ import RowFrame from "../components/TextPageComponents/RowFrame";
 import RulesBox from "../components/TextPageComponents/RulesBox";
 import RulesRow from "../components/TextPageComponents/RulesRow";
 import SkillRuleBox from "../components/SkillRuleBox";
-import { TargetedAttacksTable } from "../components/TextPageComponents/Table";
 import TextSection from "../components/TextPageComponents/TextSection";
 import { ACTION_RULES } from "../constants/RulesDescriptions/ActionRules";
 import { PROGRESSION_RULES } from "../constants/RulesDescriptions/ProgressionRules";
@@ -16,6 +15,7 @@ import overviewMarkdown from "../markdown/Overview.md?raw";
 import { parseMarkdownByHeaders } from "../utils/parseMarkdown";
 import actions from "../data/actions";
 import { Helmet } from "react-helmet-async";
+import { TargetedAttacksTable } from "../components/OverviewComponents/TargetedAttacksTable";
 
 const DESC = parseMarkdownByHeaders(overviewMarkdown);
 
