@@ -2,7 +2,7 @@ import ActionBox from "../components/Actions/ActionBox";
 import Icon from "../components/Content/Icon";
 import ImageDisplay from "../components/Content/ImageDisplay";
 import LevelOneSetup from "../components/OverviewComponents/LevelOneCard";
-import TitleSection from "../components/OverviewComponents/PageIntroFlair";
+import OverviewPageIntro from "../components/OverviewComponents/OverviewPageIntro";
 import RowFrame from "../components/Layout/ContentRow";
 import RulesBox from "../components/Rules/RulesBox";
 import RulesRow from "../components/Rules/RulesRow";
@@ -25,7 +25,7 @@ export default function RPGOverview() {
       <Helmet>
         <title>TTRPG Overview - Kastorix</title>
       </Helmet>
-      <TitleSection title={"Kastorix"} subtitle={"TTRPG Overview"} />
+      <OverviewPageIntro title={"Kastorix"} subtitle={"TTRPG Overview"} />
       <RowFrame reverse={false}>
         <TextSection description={DESC.Overview} />
         <ImageDisplay

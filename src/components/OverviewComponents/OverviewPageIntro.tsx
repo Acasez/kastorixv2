@@ -1,15 +1,15 @@
 import "../../CSS/PageintroFlair.css";
-interface TitleSectionProps {
+interface OverviewPageIntroProps {
   title: string;
   subtitle: string;
   extraLine?: string;
 }
 
-export default function TitleSection({
+export default function OverviewPageIntro({
   title,
   subtitle,
   extraLine,
-}: TitleSectionProps) {
+}: OverviewPageIntroProps) {
   return (
     <>
       <div className="TitleSection">
