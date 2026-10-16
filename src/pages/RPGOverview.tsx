@@ -16,6 +16,7 @@ import { parseMarkdownByHeaders } from "../utils/parseMarkdown";
 import actions from "../data/actions";
 import { Helmet } from "react-helmet-async";
 import { TargetedAttacksTable } from "../components/OverviewComponents/TargetedAttacksTable";
+import Section from "../components/Layout/Section";
 
 const DESC = parseMarkdownByHeaders(overviewMarkdown);
 
@@ -57,18 +58,15 @@ export default function RPGOverview() {
         <MarkdownSection description={DESC.LearnSpells} />
         <LevelOneSetup />
       </RowFrame>
-      <RowFrame reverse={false}>
-        <Icon imageLocation="./images/ManaIcon.png" altText="Mana Icon" />
-        <MarkdownSection
-          name="Mana"
-          description={DESC.ManaFlavor}
-          cursive={true}
-        />
-      </RowFrame>
-      <RowFrame reverse={false}>
+      <Section
+        title="Mana"
+        flavorText={DESC.ManaFlavor}
+        icon="./images/ManaIcon.png"
+        iconAlt="Mana Icon"
+      >
         <MarkdownSection description={DESC.Mana} />
         <ActionBox action="Harness Mana" actionsList={actions} />
-      </RowFrame>
+      </Section>
       <RowFrame reverse={false}>
         <Icon imageLocation="./images/Eldritch.png" altText="Aura Icon" />
         <MarkdownSection
