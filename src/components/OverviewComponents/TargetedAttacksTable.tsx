@@ -37,8 +37,10 @@ export function TargetedAttacksTable() {
   ];
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4 text-white">Called Shot Table</h1>
+    <div className="max-w-4xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4 text-text-black text-center">
+        Called Shot Table
+      </h1>
       <Table
         columns={columns}
         data={data}
