@@ -6,7 +6,7 @@ import ChoiceModal from "../ModalViews/ChoiceModal";
 import ChoiceModalFrame from "../ModalViews/ChoiceModalFrame";
 import { getSpellChoiceItems } from "../ModalViews/choiceData";
 import SpellComponent from "../CommonCreatureComponents/SpellComponent";
-import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
+import { MultiOptionSwitch } from "../CommonCreatureComponents/MultiOptionSwitch";
 import type { SomaticComponent, VerbalComponent } from "../../types/Spells";
 import CreatureSectionHeader from "./CreatureSectionHeader";
 

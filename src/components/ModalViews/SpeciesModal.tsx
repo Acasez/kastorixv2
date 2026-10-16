@@ -1,6 +1,6 @@
 import species from "../../JSON/species.json";
 import { useState } from "react";
-import TraitRow from "../TraitRow";
+import TraitRow from "./TraitRow";
 import { useCharacter } from "../../hooks/useCharacter";
 
 interface SpeciesModalProps {

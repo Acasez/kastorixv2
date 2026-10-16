@@ -1,12 +1,12 @@
-import ActionBox from "../components/ActionBox";
-import Icon from "../components/Icon";
+import ActionBox from "../components/Actions/ActionBox";
+import Icon from "../components/Content/Icon";
 import ImageDisplay from "../components/TextPageComponents/ImageDisplay";
 import LevelOneSetup from "../components/OverviewComponents/LevelOneCard";
 import TitleSection from "../components/OverviewComponents/PageIntroFlair";
 import RowFrame from "../components/TextPageComponents/RowFrame";
 import RulesBox from "../components/TextPageComponents/RulesBox";
 import RulesRow from "../components/TextPageComponents/RulesRow";
-import SkillRuleBox from "../components/SkillRuleBox";
+import SkillRuleBox from "../components/Rules/SkillRuleBox";
 import TextSection from "../components/TextPageComponents/TextSection";
 import { ACTION_RULES } from "../constants/RulesDescriptions/ActionRules";
 import { PROGRESSION_RULES } from "../constants/RulesDescriptions/ProgressionRules";

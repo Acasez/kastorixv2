@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CreatureAddDropdown from "./CreatureAddDropdownProps";
 import CreatureSectionHeader from "./CreatureSectionHeader";
-import ComponentDeleteButton from "../ComponentDeleteButton";
+import ComponentDeleteButton from "../CommonCreatureComponents/ComponentDeleteButton";
 
 type NumericTypeListProps<T extends string> = {
   title: string;

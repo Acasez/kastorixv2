@@ -4,7 +4,7 @@ import type { Skill } from "../../types/Skills"; // Make sure this type exists
 import skills from "../../data/skills";
 import { useCharacter } from "../../hooks/useCharacter";
 import { getProficiency, signed } from "../../constants/Proficiency";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import ProficiencyMarker from "../CommonCreatureComponents/ProficiencyMarker";
 import { STAT_COLORS } from "../../constants/Stats";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import Tooltip from "../Tooltip";

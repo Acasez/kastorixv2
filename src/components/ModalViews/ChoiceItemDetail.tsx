@@ -1,8 +1,8 @@
 import type { SetStateAction } from "react";
-import ActionBox from "../ActionBox";
+import ActionBox from "../Actions/ActionBox";
 import type { ChoiceItem } from "./ChoiceModal";
 import actions from "../../data/actions";
-import ActionIcon from "../ActionIcon";
+import ActionIcon from "../Actions/ActionIcon";
 
 interface ChoiceItemDetailProps {
   selectedItem: ChoiceItem | undefined;

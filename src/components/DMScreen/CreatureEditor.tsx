@@ -6,8 +6,8 @@ import {
 } from "../../stores/useCreatureStore";
 import { CREATURE_SIZES } from "../../constants/CreatureSizes";
 import damageTypes from "../../JSON/damage_types.json";
-import StatsGrid from "../Buttons/StatsGrid";
-import HealthManaAuraBars from "../Buttons/HealthManaAuraBars";
+import StatsGrid from "../CommonCreatureComponents/StatsGrid";
+import HealthManaAuraBars from "../CommonCreatureComponents/HealthManaAuraBars";
 import CreatureMeta, { STORAGE_PREFIX } from "./CreatureMeta";
 import NumericTypeList from "./NumericTypeList";
 import CreatureSkillList from "./CreatureSkillList";

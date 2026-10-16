@@ -4,8 +4,8 @@ import { type ProficiencyTierName } from "../../constants/Proficiency";
 import { useCreature } from "../../hooks/useCreature";
 import { type CreatureAction } from "../../stores/useCreatureStore";
 import type { StatKey } from "../../types/StatKey";
-import { MultiOptionSwitch } from "../Buttons/MultiOptionSwitch";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import { MultiOptionSwitch } from "../CommonCreatureComponents/MultiOptionSwitch";
+import ProficiencyMarker from "../CommonCreatureComponents/ProficiencyMarker";
 import CreatureActionComponent from "./CreatureActionComponent";
 import CreatureSectionHeader from "./CreatureSectionHeader";
 

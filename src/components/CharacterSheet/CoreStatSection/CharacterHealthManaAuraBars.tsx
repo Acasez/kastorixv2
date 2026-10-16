@@ -3,7 +3,7 @@ import species from "../../../JSON/species.json";
 import { useCharacter } from "../../../hooks/useCharacter";
 import type { Character } from "../../../stores/useCharacterStore";
 import { getCharacterResourceBonuses } from "../../../utils/characterResourceBonuses";
-import HealthManaAuraBars from "../../Buttons/HealthManaAuraBars";
+import HealthManaAuraBars from "../../CommonCreatureComponents/HealthManaAuraBars";
 
 export default function CharacterHealthManaAuraBars() {
   const { character, updateCharacter } = useCharacter();

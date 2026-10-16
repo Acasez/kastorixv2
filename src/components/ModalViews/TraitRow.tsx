@@ -1,4 +1,4 @@
-import { cursiveFlavorText } from "../utils/CursiveFlavorText";
+import { cursiveFlavorText } from "../../utils/CursiveFlavorText";
 
 interface TraitRowProps {
   traitName: string;

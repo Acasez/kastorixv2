@@ -2,7 +2,7 @@
 import { getProficiency } from "../../../constants/Proficiency";
 import { STRING_TO_STATKEY } from "../../../types/StatKey";
 import { useCharacter } from "../../../hooks/useCharacter";
-import ProficiencyMarker from "../../Buttons/ProficiencyMarker";
+import ProficiencyMarker from "../../CommonCreatureComponents/ProficiencyMarker";
 import Tooltip from "../../Tooltip";
 import { armors } from "../../../data/armors";
 

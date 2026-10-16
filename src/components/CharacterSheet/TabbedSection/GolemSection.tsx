@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useCharacter } from "../../../hooks/useCharacter";
-import TrackBar from "../../TrackBar";
+import TrackBar from "../../CommonCreatureComponents/TrackBar";
 import golemModels from "../../../JSON/golem_models.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
 import weapons from "../../../data/weapons";
 import WeaponComponent from "../../CommonCreatureComponents/WeaponComponent";
 import actions from "../../../data/actions";
-import ActionBox from "../../ActionBox";
+import ActionBox from "../../Actions/ActionBox";
 import type { StatKey } from "../../../types/StatKey";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";

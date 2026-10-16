@@ -3,8 +3,8 @@ import type { ProficiencyTierName } from "../../constants/Proficiency";
 import { useCharacterStore } from "../../stores/useCharacterStore";
 import type { Spell } from "../../types/Spells";
 import { getActionIcons } from "../../utils/actionUtils";
-import ActionIcon from "../ActionIcon";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import ActionIcon from "../Actions/ActionIcon";
+import ProficiencyMarker from "./ProficiencyMarker";
 import Tooltip from "../Tooltip";
 
 interface SpellComponentProps {

@@ -1,6 +1,6 @@
 import CharacterHealthManaAuraBars from "./CharacterHealthManaAuraBars";
 import SavingThrowDisplay from "./SavingThrowDisplay";
-import StatsGrid from "../../Buttons/StatsGrid";
+import StatsGrid from "../../CommonCreatureComponents/StatsGrid";
 import { useCharacter } from "../../../hooks/useCharacter";
 
 export default function CoreStatSection() {

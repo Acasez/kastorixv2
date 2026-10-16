@@ -3,7 +3,7 @@ import type { ProficiencyTierName } from "../../constants/Proficiency";
 import { useCharacterStore } from "../../stores/useCharacterStore";
 import type { Weapon } from "../../types/Weapons";
 import type { StatKey } from "../../types/StatKey";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import ProficiencyMarker from "./ProficiencyMarker";
 import Tooltip from "../Tooltip";
 import WeaponTraitComponent from "./WeaponTraitComponent";
 import {

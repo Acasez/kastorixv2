@@ -5,8 +5,8 @@ import {
 } from "../../constants/Proficiency";
 import type { Creature, CreatureAction } from "../../stores/useCreatureStore";
 import { getActionIcons } from "../../utils/actionUtils";
-import ActionIcon from "../ActionIcon";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import ActionIcon from "../Actions/ActionIcon";
+import ProficiencyMarker from "../CommonCreatureComponents/ProficiencyMarker";
 
 interface CreatureActionComponentProps {
   action: CreatureAction;

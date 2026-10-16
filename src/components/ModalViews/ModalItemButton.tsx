@@ -1,6 +1,6 @@
 import type { SetStateAction } from "react";
 import type { ChoiceItem } from "./ChoiceModal";
-import ActionIcon from "../ActionIcon";
+import ActionIcon from "../Actions/ActionIcon";
 
 interface ModalItemButtonProps {
   item: ChoiceItem;

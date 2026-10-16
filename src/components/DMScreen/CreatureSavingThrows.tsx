@@ -1,7 +1,7 @@
 import { getProficiency } from "../../constants/Proficiency";
 import { useCreature } from "../../hooks/useCreature";
 import armors from "../../data/armors";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
+import ProficiencyMarker from "../CommonCreatureComponents/ProficiencyMarker";
 import CreatureSectionHeader from "./CreatureSectionHeader";
 
 const SAVING_THROWS = [

@@ -1,4 +1,4 @@
-import ActionBox from "../ActionBox";
+import ActionBox from "../Actions/ActionBox";
 import actions from "../../data/actions";
 import type { ChoiceItem } from "./ChoiceModal";
 

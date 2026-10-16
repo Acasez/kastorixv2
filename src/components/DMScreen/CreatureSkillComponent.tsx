@@ -6,8 +6,8 @@ import {
 import type { Creature } from "../../stores/useCreatureStore";
 import type { Armor } from "../../types/Armor";
 import type { Skill } from "../../types/Skills";
-import ProficiencyMarker from "../Buttons/ProficiencyMarker";
-import ComponentDeleteButton from "../ComponentDeleteButton";
+import ProficiencyMarker from "../CommonCreatureComponents/ProficiencyMarker";
+import ComponentDeleteButton from "../CommonCreatureComponents/ComponentDeleteButton";
 
 interface CreatureSkillComponentProps {
   skill: Skill;

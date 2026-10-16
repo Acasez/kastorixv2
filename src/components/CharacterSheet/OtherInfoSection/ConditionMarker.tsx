@@ -1,5 +1,5 @@
 import type { Condition } from "../../../types/Condition";
-import NumberInput from "../../NumberInput";
+import NumberInput from "../../CommonCreatureComponents/NumberInput";
 
 interface ConditionMarkerProps {
   condition: Condition;

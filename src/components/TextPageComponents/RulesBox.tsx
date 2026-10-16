@@ -1,5 +1,5 @@
 import "../../CSS/RulesBox.css";
-import ActionIcon from "../ActionIcon";
+import ActionIcon from "../Actions/ActionIcon";
 
 interface RuleItem {
   rule: string;
