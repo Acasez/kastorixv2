@@ -124,7 +124,7 @@ export default function SkillsTable() {
   // ========== RENDER ==========
   return (
     <div>
-      <table className="w-70 -mt-2 border-collapse rounded-lg">
+      <table className="w-70 border-collapse rounded-lg">
         <thead>
           <tr className="bg-gray-900 text-white">
             <th className="px-3 py-2 text-left">Skill</th>

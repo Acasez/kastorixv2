@@ -15,7 +15,7 @@ export default function OtherStatSection() {
 
   const closeModal = () => setModalRequest(null);
   return (
-    <div className="flex flex-col bg-gray-800 h-90 w-165 gap-3 border-x-2 rounded-lg -mt-2">
+    <div className="flex flex-col bg-gray-800 h-90 w-165 gap-3 border-x-2 rounded-lg">
       <h1 className="text-striking text-center text-3xl underline">
         Status effects
       </h1>
