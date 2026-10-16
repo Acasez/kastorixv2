@@ -1,4 +1,4 @@
-import Table from "../TextPageComponents/Table";
+import Table from "../Layout/Table";
 
 export function TargetedAttacksTable() {
   const data = [
