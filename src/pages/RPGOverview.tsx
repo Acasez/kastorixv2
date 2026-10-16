@@ -7,7 +7,7 @@ import RowFrame from "../components/Layout/ContentRow";
 import RulesBox from "../components/Rules/RulesBox";
 import RulesRow from "../components/Rules/RulesRow";
 import SkillRuleBox from "../components/Rules/SkillRuleBox";
-import TextSection from "../components/Content/MarkdownSection";
+import MarkdownSection from "../components/Content/MarkdownSection";
 import { ACTION_RULES } from "../constants/RulesDescriptions/ActionRules";
 import { PROGRESSION_RULES } from "../constants/RulesDescriptions/ProgressionRules";
 import { STATS_RULES } from "../constants/RulesDescriptions/StatsRules";
@@ -27,7 +27,7 @@ export default function RPGOverview() {
       </Helmet>
       <OverviewPageIntro title={"Kastorix"} subtitle={"TTRPG Overview"} />
       <RowFrame reverse={false}>
-        <TextSection description={DESC.Overview} />
+        <MarkdownSection description={DESC.Overview} />
         <ImageDisplay
           imageLocation="./images/Maps/Kastorix.jpg"
           altText="Kastorix World Map"
@@ -36,64 +36,72 @@ export default function RPGOverview() {
         />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection name="Actions" description={DESC.Actions} />
+        <MarkdownSection name="Actions" description={DESC.Actions} />
         <ActionBox action="Stride" actionsList={actions} />
         <RulesBox name="Actions" rules={ACTION_RULES} />
       </RowFrame>
       <RowFrame reverse={true}>
-        <TextSection name="Stats" description={DESC.Stats} />
+        <MarkdownSection name="Stats" description={DESC.Stats} />
         <RulesBox name="Attributes" rules={STATS_RULES} />
       </RowFrame>
       <RowFrame reverse={true}>
-        <TextSection name="Skills" description={DESC.Skills} />
+        <MarkdownSection name="Skills" description={DESC.Skills} />
         <SkillRuleBox />
       </RowFrame>
       <RowFrame vertical={true} reverse={false}>
-        <TextSection
+        <MarkdownSection
           name="Character building/Progression"
           description={DESC.MageRanks}
         />
         <RulesRow rules={PROGRESSION_RULES} />
-        <TextSection description={DESC.LearnSpells} />
+        <MarkdownSection description={DESC.LearnSpells} />
         <LevelOneSetup />
       </RowFrame>
       <RowFrame reverse={false}>
         <Icon imageLocation="./images/ManaIcon.png" altText="Mana Icon" />
-        <TextSection name="Mana" description={DESC.ManaFlavor} cursive={true} />
+        <MarkdownSection
+          name="Mana"
+          description={DESC.ManaFlavor}
+          cursive={true}
+        />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection description={DESC.Mana} />
+        <MarkdownSection description={DESC.Mana} />
         <ActionBox action="Harness Mana" actionsList={actions} />
       </RowFrame>
       <RowFrame reverse={false}>
         <Icon imageLocation="./images/Eldritch.png" altText="Aura Icon" />
-        <TextSection name="Aura" description={DESC.AuraFlavor} cursive={true} />
+        <MarkdownSection
+          name="Aura"
+          description={DESC.AuraFlavor}
+          cursive={true}
+        />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection description={DESC.Aura} />
+        <MarkdownSection description={DESC.Aura} />
         <ActionBox action="Aura Block" actionsList={actions} />
         <ActionBox action="Reinforce Aura" actionsList={actions} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection
+        <MarkdownSection
           name="Spellcasting"
           description={DESC.SpellcastingFlavor}
           cursive={true}
         />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection description={DESC.Spellcasting} />
+        <MarkdownSection description={DESC.Spellcasting} />
         <ActionBox action="Cast a Spell" actionsList={actions} />
         <ActionBox action="Sustain" actionsList={actions} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection name="Focus Points" description={DESC.FocusPoints} />
+        <MarkdownSection name="Focus Points" description={DESC.FocusPoints} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection name="Opposed Rolls" description={DESC.OpposedRolls} />
+        <MarkdownSection name="Opposed Rolls" description={DESC.OpposedRolls} />
       </RowFrame>
       <RowFrame reverse={false}>
-        <TextSection
+        <MarkdownSection
           name="Targeted Attacks"
           description={DESC.TargetedAttacks}
         />

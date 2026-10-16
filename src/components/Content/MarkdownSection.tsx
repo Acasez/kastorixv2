@@ -1,19 +1,19 @@
 import ReactMarkdown from "react-markdown";
 import { NavLink } from "react-router-dom";
 
-interface TextSectionProps {
+interface MarkdownSectionProps {
   name?: string;
   projectPageLink?: string;
   description: string;
   cursive?: boolean;
 }
 
-export default function TextSection({
+export default function MarkdownSection({
   name,
   projectPageLink,
   description,
   cursive,
-}: TextSectionProps) {
+}: MarkdownSectionProps) {
   return (
     <div className="portfolio-text">
       {projectPageLink ? (
