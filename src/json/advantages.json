@@ -57,7 +57,7 @@
     },
     {
         "name": "Large Mana Well",
-        "description": "You have an larger than average mana well, allowing you to cast more spells and increasing the strength of your aura. \nIncrease your maximum Mana by your WIL\nEvery time you level up your maximum mana increases by 2 more",
+        "description": "You have an larger than average mana well, allowing you to cast more spells and increasing the strength of your aura. \nIncrease your maximum mana by your WIL\nEvery time you level up your maximum mana increases by 2 more",
         "unlockedAction": "",
         "level": "1",
         "unlockedFeats": "",
@@ -99,7 +99,7 @@
     },
     {
         "name": "Swift",
-        "description": "Few can match your incredible speed\nYou have 1 tile extra movement speed and may add your DEX again to initiative checks. \nYour proficiency level in Reflex saves increases one step (max Master)",
+        "description": "Few can match your incredible speed\nYou have 1 tile extra movement speed and may add your DEX again to initiative checks. \nYour proficiency level in reflex saves increases one step (max Expert)",
         "unlockedAction": "",
         "level": "1",
         "unlockedFeats": "",

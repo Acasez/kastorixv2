@@ -55,7 +55,7 @@
         "attackPenalty": ""
     },
     {
-        "name": "Deadly (X)",
+        "name": "Deadly (dX)",
         "effect": "Critical hits with this weapon deal an additional X damage. ",
         "specialAction": "",
         "type": "Normal",
@@ -67,7 +67,7 @@
     },
     {
         "name": "Disarm",
-        "effect": "You make the Disarm Maneuver with this weapon, using its range and the attack bonus you have with it",
+        "effect": "You may take the Disarm action with this weapon, using its range and the attack bonus you have with it",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",

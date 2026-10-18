@@ -12,9 +12,11 @@
         "effect": "You move up to 5 tiles straight up and up to 2 tiles in any other direction. \nCreatures have disadvantage on reactive strikes made in response to this movement.",
         "upcast": "By Rank: Increase the distance 2 tiles up and 1 tile in another direction",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Blinding Flash",
@@ -29,9 +31,30 @@
         "effect": "One creature within range must attempt a Fortitude save.\nSuccess: The target is dazzled for one turn.\nFailure: The target is blinded for one turn and dazzled for one minute.\nCritical Failure: The target is blinded for one minute.\nWhile affected, the target can spend one action to attempt the save again, removing all remaining effects on a success.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Fortitude",
         "dice": "",
         "damageType": "",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Burst of Light",
+        "actions": "Reaction",
+        "trigger": "You are targeted by a melee attack",
+        "aspects": "Light",
+        "traits": "Targeting",
+        "range": "Touch",
+        "target": "",
+        "duration": "",
+        "flavor": "A burst of light threatens to blind your attacker",
+        "effect": "You try to blind your attacker with a burst of light.\nThe creature attacking you must make a Fortitude save.\nUnless it gets a critical success it must makes the attack with disadvantage\nFailure: The target is blinded until the start of your next turn\nCritical Failure: The target is blinded for one minute.\nWhile affected, the target can spend one action to attempt the save again, removing all remaining effects on a success.",
+        "upcast": "",
+        "rank": "(1) Apprentice",
+        "save": "Fortitude",
+        "dice": "",
+        "damageType": "",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Chill",
@@ -46,9 +69,11 @@
         "effect": "You freeze one medium-or-smaller creature or object you touch, dealing 3d4 cold damage with a basic Fortitude save.\nCritical Failure: The target is partially frozen; its move speed is reduced by 2 tiles next turn.\nIf the target is standing in water, it takes a −3 penalty to the save.\nIf you spend two actions on this spell, the range increases to 3 tiles.",
         "upcast": "By Rank: Increase the damage by 2d4",
         "rank": "(1) Apprentice",
+        "save": "Fortitude ",
         "dice": "3d4",
         "damageType": "cold",
-        "save": "Fortitude "
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Control Water",
@@ -57,15 +82,17 @@
         "aspects": "Water",
         "traits": "Manipulation",
         "range": "12",
-        "target": "-",
-        "duration": "-",
+        "target": "",
+        "duration": "",
         "flavor": "Water bends to your will, flowing into whatever shape you desire.",
         "effect": "You shape and manipulate water within range, creating simple shapes, redirecting small rivers, forming temporary barriers, or shaping small tools of water. \nThe water returns to its natural state when the spell ends. This spell does not offer permanent control.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Darken",
@@ -80,9 +107,30 @@
         "effect": "You create a zone of darkness centered on a point within 10 tiles, covering up to 9 connected tiles. \nThe zone blocks non-magical light.\nIf you spend 3 actions on this spell, the zone can cover up to 15 tiles.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Earth Tremor",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Earth",
+        "traits": "Area, Environmental",
+        "range": "Area from Self",
+        "target": "",
+        "duration": "",
+        "flavor": "The ground bucks and heaves around you.",
+        "effect": "You cause the earth to shake in a 4-tile burst around you. \nCreatures other than you in the area take 1d8 bludgeoning damage with a basic Reflex or Fortitude save.\nFailure: The target falls prone.",
+        "upcast": "By Rank: Increase the size of the burst by 1 tile",
+        "rank": "(1) Apprentice",
+        "save": "Fortitude, Reflex",
+        "dice": "1d8",
+        "damageType": "bludgeoning",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Earthglide",
@@ -92,14 +140,16 @@
         "traits": "Movement",
         "range": "Self",
         "target": "Self",
-        "duration": "-",
+        "duration": "",
         "flavor": "You skim across the ground in a line, turning in harsh gravel behind you",
         "effect": "You glide along the ground, moving up to 6 tiles in a line. \nEvery tile you move across becomes rough terrain.\nIf your next action is casting an Earth spell, it costs 1 action less.",
         "upcast": "By Rank: Increase the distance by 3 tiles",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Featherfall",
@@ -114,9 +164,11 @@
         "effect": "You guide a group of falling creatures within rabge gently to the ground. \nThey fall at a speed of 10 tiles each round, take no fall damage, and land standing. \nYou cannot use this spell on creatures larger than medium.",
         "upcast": "At Adept: You can use this on Large Creatures\nAt Grand Magus: You can use this on Huge Creatures",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Ferrokinesis",
@@ -131,9 +183,11 @@
         "effect": "You move one unenchanted metal object of light weight or less up to 6 tiles. \nIf you move it into your space, you may catch it with a free hand.\nIf the object is held, the holder can attempt a Fortitude save to resist the movement. Enchanted metal and artifice typically bear runes that prevent being moved by spells.\nYou can instead hurl the object at a creature in range, dealing 2d8 physical damage with a basic Reflex save.",
         "upcast": "By Rank: Increase the damage by 1d8",
         "rank": "(1) Apprentice",
+        "save": "Fortitude ",
         "dice": "2d8",
         "damageType": "physical",
-        "save": "Fortitude "
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Firebolt",
@@ -148,9 +202,11 @@
         "effect": "You hurl a bolt of fire at one creature within range, dealing 2d6 fire damage with a basic Reflex save.\nCritical Failure: The target is set on fire, taking 1d6 persistent fire damage.",
         "upcast": "By Rank: Increase the damage by 1d6",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "2d6",
         "damageType": "fire",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Flameshape",
@@ -165,9 +221,11 @@
         "effect": "You manipulate flames within range, lighting candles, creating patterns, or shaping flames for visual effects. \nThis spell cannot deal damage directly.\nIf cast as a Complex spell, you can also change the color of fire.",
         "upcast": "By Rank: You can control an additional fire",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Gentle Breeze",
@@ -182,9 +240,11 @@
         "effect": "A refreshing breeze washes over creatures in a 2-tile burst centered on you, easing the heat of the day or the tension of a social gathering. \nThe first time each day a creature is affected by this spell, it loses one level of exhaustion.\nIf you spend 3 actions on this spell, the burst increases to 3 tiles.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Glide",
@@ -199,9 +259,11 @@
         "effect": "Allows the caster to glide down with the wind. \nGives the caster a Glide speed equal to their land speed for the turn. \nAfter casting the spell the caster can glide as a free action.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Glow",
@@ -216,9 +278,11 @@
         "effect": "You cause one object or creature of small size or smaller to glow, spreading bright light for 4 tiles and dim light for 4 tiles beyond that, for one minute. \nThe light can be dismissed with an action.\nIf the target is a creature or a held object, the creature can attempt a Reflex save to resist the spell.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Gravel Spray",
@@ -228,14 +292,16 @@
         "traits": "Area",
         "range": "Area from Self",
         "target": "4 Tile cone from caster",
-        "duration": "-",
+        "duration": "",
         "flavor": "You sweep your arm forward and a wave of stinging gravel erupts from the ground.",
         "effect": "You hurl a barrage of gravel in a 4-tile cone, turning the area into difficult terrain\nCreatures in the area take 2d4 physical damage with a basic Fortitude save. \nIf you spend 3 actions on this spell, it deals 3d4 damage and the cone extends to 5 tiles.",
         "upcast": "By Rank: Increase the damage by 1d4",
         "rank": "(1) Apprentice",
+        "save": "Fortitude",
         "dice": "2d4",
         "damageType": "physical",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Gust",
@@ -250,9 +316,11 @@
         "effect": "You create a sudden burst of wind against one creature or object within range, pushing away small objects, unbalancing foes, or snuffing out small flames. A light object is pushed 4 tiles back. This spell cannot push creatures of large size or larger.\nIf the target is a creature, it must attempt a Reflex or Fortitude save.\nSuccess: The target is knocked back 1 tile or knocked off-guard 1 (it's choice)\nFailure: The target is knocked back 2 tiles and knocked off-guard 2\nCritical Failure: The target is knocked back 4 tiles and falls prone.\nFor each additional action you spend on the spell, the knockback increases by 2 tiles.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Fortitude, Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Heat",
@@ -267,9 +335,11 @@
         "effect": "You heat one medium-or-smaller creature or object you touch, dealing 2d4 fire damage with a basic Fortitude save. The heat can be lessened to instead warm food or objects to a pleasant temperature.\nIf the target is a creature affected by an Ice spell, you may attempt to thaw it, giving it a new save against that effect.",
         "upcast": "By Rank: Increase the damage by 2d4",
         "rank": "(1) Apprentice",
+        "save": "Fortitude",
         "dice": "2d4",
         "damageType": "fire",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Icy Floor",
@@ -284,9 +354,11 @@
         "effect": "You freeze the ground in a 9 connected within range for one minute. \nAny creature that walks across the ice must attempt a DC 13 Acrobatics check or fall prone. \nIf another effect would cause a creature standing on the ice to fall prone, it takes a −5 penalty to that check",
         "upcast": "By Rank: Increase the amount of tiles frozen by 6",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Ignite",
@@ -301,9 +373,11 @@
         "effect": "You set one flammable object or creature within range on fire for up to one minute. If the target is a creature, it can attempt a Reflex or Fortitude save.\nFailure: The target is set on fire, taking 1d8 persistent fire damage.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Fortitude, Reflex",
         "dice": "1d8",
         "damageType": "fire",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Illusory Object",
@@ -318,9 +392,11 @@
         "effect": "Weave an illusion of an stationary object or creature in range \nThe object is medium or smaller and anything can pass through it. ",
         "upcast": "At Adept: You can use this create Large Illusions\nAt Magus: You can use this create Huge Illusions\nAt Archmage : You can use this create Gargantuan Illusions",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Interpose Earth",
@@ -330,14 +406,16 @@
         "traits": "",
         "range": "Self",
         "target": "Self",
-        "duration": "-",
+        "duration": "",
         "flavor": "Stone and soil leap up to shield you from harm.",
         "effect": "You hurl a nearby piece of earth to block part of the attack, making the triggering Reflex save with a +3 modifier.\nYou can instead cast this spell when an ally within 3 tiles would have to make a Reflex save, granting them the bonus. If you do, the spell gains the Complex trait.",
         "upcast": "By Rank: Increase the modifier by 1",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Magnetic Field",
@@ -352,9 +430,11 @@
         "effect": "You surround yourself with a field that repels metal. \nYou gain a +4 bonus to Reflex saves against metal weapons and projectiles.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Magnetic Rebound",
@@ -364,14 +444,16 @@
         "traits": "",
         "range": "Self",
         "target": "One metallic weapon or projectile",
-        "duration": "-",
+        "duration": "",
         "flavor": "You twist the incoming metal aside with a flick of magnetism.",
         "effect": "You move the metal out of way, using your Spellshaping check instead of making a Reflex save against the triggering attack.\nCritical Success: You may select another valid target for the attack instead.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Magnetize",
@@ -386,9 +468,11 @@
         "effect": "You magnetize one creature you touch, drawing metal toward it. The target must attempt a Will save.\nSuccess: The target is magnetized for one round.\nFailure: The target is magnetized for one minute.\nCritical Failure: The target is magnetized for one minute, and the effect is doubled.\nWhile magnetized, the target takes a −2 penalty to Reflex saves against metal weapons and projectiles.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Will",
         "dice": "",
         "damageType": "",
-        "save": "Will"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Metal Shards",
@@ -403,9 +487,11 @@
         "effect": "You shoot three small shards of metal at targets of your choice within range. Each shard deals 1d4 physical damage with a basic Reflex save.\nIf you spend 3 actions on this spell, you shoot one extra shard.",
         "upcast": "By Rank: Increase the amount of needles by 1",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Mold Earth",
@@ -420,9 +506,11 @@
         "effect": "You shape small bits of earth within range. \nYou can raise a 2-tile-high, 1-tile earthen pillar that provides greater cover, or turn 4 adjacent tiles rough, creating difficult terrain.\nWith more time, you can craft simple shapes and constructions out of earth, though they fall apart after an hour.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Momentary Acceleration",
@@ -437,9 +525,11 @@
         "effect": "Choose a number of creatures within range up to your INT. \nThey gain Hastened 1 for one turn.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Move with the Wind",
@@ -454,9 +544,11 @@
         "effect": "You connect to the wind, gaining a +2-tile bonus to your movement speed and a +2 bonus to Reflex saves. \nWhen you cast or sustain this spell, you may Stride (or traverse with another movement speed), treating difficult terrain one step less.",
         "upcast": "By Rank: Increase the modifiers by 1",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Muddy Ground",
@@ -466,14 +558,16 @@
         "traits": "Area",
         "range": "8",
         "target": "15 connected tiles",
-        "duration": "-",
+        "duration": "",
         "flavor": "The ground softens into a sucking mire beneath your enemies.",
         "effect": "You turn up to 15 connected tiles within range muddy, slowing those who walk over it. \nThe area becomes difficult terrain for up to an hour.",
         "upcast": "At Magus: Turn the ground into greater difficult terrain instead",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Null",
@@ -483,14 +577,16 @@
         "traits": "Complex",
         "range": "Touch",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "flavor": "A touch of null magic tears into the aura of a target",
         "effect": "You use rare void magic to tear through magical defenses, dealing no physical damage but striking at auras. The target must attempt a basic Will save.\nFailure: The target takes 3d4 aura damage. This damage only targets auras and magical defenses, dealing full damage to auras.\nIf the target has no aura or magical defenses, this spell has no effect.\nEvery extra action you spend on the spell increases its damage by 2d4.\nVoid magic is dangerous: on a failed spellshape, you take half the aura damage instead.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Will",
         "dice": "3d4",
         "damageType": "aura",
-        "save": "Will"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Quick Jet",
@@ -505,9 +601,11 @@
         "effect": "You propel yourself forward in a line, traveling up to 6 tiles and treating difficult terrain one step less. \nThis movement does not trigger reactive strikes.\nYou can use this spell to cross gaps, though you fall if you end your movement in midair. \nYou may instead travel 4 tiles diagonally up or down",
         "upcast": "By Rank: Increase the movement distance by 2",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Rock Toss",
@@ -522,9 +620,11 @@
         "effect": "You throw a bit of loose earth or a rock at one creature within range, dealing 1d6 physical damage with a basic Reflex save.\nIf you spend 2 actions on this spell, you throw a larger rock, dealing 1d10 damage.\nIf you spend 3 actions on this spell, you throw an even larger rock, dealing 1d12 damage. Additionally on a critical hit \nthe target is knocked prone.",
         "upcast": "By Rank: Increase the damage dice amount by 1",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "1d6",
         "damageType": "physical",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Shadowstrike",
@@ -539,9 +639,11 @@
         "effect": "You make the shadows attack. \nChoose a tile of darkness or shadow within range with a creature adjacent to it; that creature must attempt a Reflex save.\nFailure: The target takes 2d8 piercing damage.\nThis spell deals an extra 1d8 damage on a critical hit.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "2d8",
         "damageType": "physical",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Slip",
@@ -556,9 +658,11 @@
         "effect": "You manipulate water or ice beneth a creature. It must attempt a Reflex save.\nSuccess: The creature must stop its movement or become off-guard 1 until the end of your next turn.\nFailure: The creature falls prone.\nCritical Failure: The creature falls prone and takes 1d6 bludgeoning damage.\nThe creature has disadvantage on the save if it is on wet, slippery, or icy ground.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Soul Ward",
@@ -573,9 +677,11 @@
         "effect": "You project an invisible field around yourself, gaining a +5 bonus to WIL saves against spells, attacks, and effects with the Soul trait, and a +1 bonus to other WIL saves.",
         "upcast": "At Grand Magus: The spell does not need to be sustained",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Sturdy as Stone",
@@ -590,9 +696,11 @@
         "effect": "You infuse yourself with earth, gaining resistance 5 to physical damage and a +3 bonus to Fortitude saves, but your speed is reduced by 1 tile.\nIf you would become prone or off-guard, you may dismiss this spell to avoid the condition. The benefits stop working while you are in the air.",
         "upcast": "By Rank: Increase the modifiers by 1",
         "rank": "(1) Apprentice",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Water Bullet",
@@ -607,9 +715,11 @@
         "effect": "You strike one creature within range with a compressed bullet of water, dealing 2d12 piercing damage with a basic Reflex save.\nIf you stand in or next to water, this spell costs only 2 actions to cast.",
         "upcast": "By Rank: Increase the damage by 1d10",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "2d12",
         "damageType": "piercing",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Water Push",
@@ -624,9 +734,11 @@
         "effect": "You blast one creature within range with water. It must attempt a Reflex or Fortitude save.\nSuccess: The target is pushed back 1 tile.\nFailure: The target is pushed back 3 tiles.\nCritical Failure: The target is pushed back 3 tiles and becomes off-guard 2.\nFor each size category above Medium, the target is pushed 2 tiles less.\nIf you are standing in water or spend 3 actions on this spell, it instead targets all creatures in a 5-tile line from you, and it gains the Draining trait.",
         "upcast": "",
         "rank": "(1) Apprentice",
+        "save": "Fortitude, Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Zap",
@@ -641,9 +753,11 @@
         "effect": "You send a fast bolt of electricity at one creature within range, dealing 1d10 lightning damage. \nThe target makes a Reflex save with a −4 modifier if it wears metal armor or holds a metal object; otherwise the modifier is −2",
         "upcast": "By Rank: Increase the damage by 1d8",
         "rank": "(1) Apprentice",
+        "save": "Reflex",
         "dice": "1d10",
         "damageType": "lightning",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Accelerate Self",
@@ -658,9 +772,11 @@
         "effect": "You move in a burst of speed, gaining Hastened 3 this turn. \nYou cannot be affected by Accelerate Self again for 1d4 turns.",
         "upcast": "At Grand Magus: Gain Hastened 4 instead",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Air Bubble",
@@ -675,9 +791,11 @@
         "effect": "You create a bubble of breathable air around one creature, allowing it to breathe in environments without breathable air, such as underwater or in toxic areas.\nWhen you cast the spell, you can extend the bubble to adjacent tiles. If you do, the spell costs 3 actions and gains the Draining trait.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Barricade",
@@ -686,15 +804,17 @@
         "aspects": "Earth, Metal",
         "traits": "Area",
         "range": "8",
-        "target": "-",
-        "duration": "-",
+        "target": "",
+        "duration": "",
         "flavor": "Stone and metal surge upward into a protective wall.",
         "effect": "You form a barricade of metal or stone across 5 connected tiles within range. \nThe barricade provides cover, and you choose whether it blocks line of sight.\nIf you spend 3 actions on this spell, the barricade is 8 tiles long.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Beam of Light",
@@ -703,15 +823,36 @@
         "aspects": "Light",
         "traits": "Enchantment",
         "range": "Self",
-        "target": "-",
-        "duration": "-",
+        "target": "",
+        "duration": "",
         "flavor": "A blinding ray of light sweeps out from your outstretched hand.",
         "effect": "You cast a beam of light in a 1-tile-wide, 6-tile-long line from you. Creatures in the line must attempt a Fortitude save.\nSuccess: The target is dazzled for one turn.\nFailure: The target is blinded for one turn and dazzled for one minute.\nCritical Failure: The target is blinded for one minute.\nWhile affected by this spell, a target can spend one action to attempt the save again, removing all remaining effects on a success.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Blur",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Darkness",
+        "traits": "Enchantment",
+        "range": "Self",
+        "target": "",
+        "duration": "10 Minutes",
+        "flavor": "Shadows hide your shape",
+        "effect": "You conjure shadows to hide your form.\nYou gain a +5 bonus to stealth checks and creatures have disadvantage on reactive strikes against you.\nThese benefits go away while you are in enter bright light.",
+        "upcast": "At Grand Magus: The duration increase to 1 Hour",
+        "rank": "(2) Adept",
+        "save": "",
+        "dice": "",
+        "damageType": "",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Breathe Fire",
@@ -720,15 +861,17 @@
         "aspects": "Fire",
         "traits": "Area",
         "range": "Area from Self",
-        "target": "-",
-        "duration": "-",
+        "target": "",
+        "duration": "",
         "flavor": "A roaring gout of flame pours from your jaws.",
         "effect": "You breathe a cone of fire. Creatures in the cone take 3d6 fire damage with a basic Reflex save. \nThe cone is 4 tiles with 2 actions, or 6 tiles with 3 actions.",
         "upcast": "By Rank: Increase the damage by 1d6",
         "rank": "(2) Adept",
-        "dice": "",
-        "damageType": "",
-        "save": ""
+        "save": "Reflex",
+        "dice": "3d6",
+        "damageType": "fire",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Conjure",
@@ -743,9 +886,11 @@
         "effect": "You teleport one medium-or-smaller item within range bearing a Conjuration rune you have drawn to you. \nIf you have a free hand, you may catch it.",
         "upcast": "By Rank: Double the range\nAt Grand Magus: You can conjure Large items",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Detect Metal",
@@ -754,15 +899,17 @@
         "aspects": "Metal",
         "traits": "Sensing",
         "range": "Self",
-        "target": "-",
+        "target": "",
         "duration": "Up to 1 minute",
         "flavor": "You can sense metal around you",
         "effect": "You gain a precise metalsense with a range of 5 tiles, working through non-magical materials. \nYou can detect creatures holding or wearing metal within range.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Dispel",
@@ -777,26 +924,11 @@
         "effect": "You attempt to counteract a spell or magical effect on one creature or object you touch. \nUse your Spellshaping check against the Spellshaping check of the spell's caster. \nOn a success, the effect ends on the target. \nThe target's check gains a +3 bonus for each rank their spell is higher than the rank you cast this spell at.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
-    },
-    {
-        "name": "Earth Tremor",
-        "actions": "2",
-        "trigger": "",
-        "aspects": "Earth",
-        "traits": "Area, Environmental",
-        "range": "Area from Self",
-        "target": "",
-        "duration": "",
-        "flavor": "The ground bucks and heaves around you.",
-        "effect": "You cause the earth to shake in a 4-tile burst around you. Creatures other than you in the area take 1d8 bludgeoning damage with a basic Reflex or Fortitude save.\nFailure: The target falls prone.",
-        "upcast": "By Rank: Increase the size of the burst by 1 tile",
-        "rank": "(1) Apprentice",
-        "dice": "1d8",
-        "damageType": "bludgeoning",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Earthen Armor",
@@ -811,9 +943,11 @@
         "effect": "You form armor of hardened earth or stone around yourself. \nIt counts as heavy armor, but you are proficient with it even without armor proficiency. \nThe armor grants resistance 8 to physical damage and resistance 4 to elemental damage. \nIt has a Weak Point Difficulty of 10 and grants a +3 bonus to Fortitude saves and Athletics checks. \nWhile wearing it, your move speed is reduced by 2 tiles, and it imposes a −3 armor penalty.",
         "upcast": "By Rank: Increase the physical resistance by 2 and elemental resistance by 1",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Earthen Launch",
@@ -828,9 +962,11 @@
         "effect": "You boost yourself away with a burst of earth magic, jumping up to 5 tiles up and 7 tiles in any direction. \nYou take no fall damage as long as you fall a shorter distance than you jumped. \nYou must be on solid ground connected to the earth to cast this spell.\nIf you land on a creature, it must attempt a Reflex save.\nFailure: The creature takes 2d6 bludgeoning damage.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "Reflex",
         "dice": "2d6",
         "damageType": "bludgeoning",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Electrify",
@@ -845,9 +981,11 @@
         "effect": "You electrify a melee weapon you touch, causing it to deal an additional 1d12 lightning damage on a hit.\nIf the weapon falls into water, or the wielder fails a save from an effect with the Water trait, the spell ends and lightning zaps all creatures in a 2-tile burst, dealing 2d10 lightning damage with a basic Fortitude save.",
         "upcast": "At Grand Magus: Increase the damage by 1d12",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "1d12",
         "damageType": "lightning",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Flame Jet",
@@ -856,22 +994,43 @@
         "aspects": "Fire",
         "traits": "Area",
         "range": "Area from Self",
-        "target": "-",
-        "duration": "-",
+        "target": "",
+        "duration": "",
         "flavor": "A roaring torrent of flame erupts from your hands.",
         "effect": "You unleash a jet of flame in an 8-tile straight line from you, dealing 2d8 fire damage to all creatures in its path with a basic Reflex save.\nYou can choose to be pushed up to 3 tiles away from the direction of the flame. This movement does not trigger reactive strikes.",
         "upcast": "By Rank: Increase the damage by 1d8",
         "rank": "(2) Adept",
+        "save": "Reflex",
         "dice": "2d8",
         "damageType": "fire",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Flame Ward",
+        "actions": "Reaction",
+        "trigger": "You are targeted by a melee attack",
+        "aspects": "Fire",
+        "traits": "Targeting",
+        "range": "Touch",
+        "target": "One creature",
+        "duration": "",
+        "flavor": "A wave of flame hits the attacker",
+        "effect": "You strike the creature attacking you with a burst of flame.\nIt must make a Fortitude or Reflex save or take 2d8 fire damage.\nFailure: The target takes -2 penalty on the attack\nCrtiical Failure: The target takes -4 penalty on the attack",
+        "upcast": "By Rank: Increase the damage by 1d9",
+        "rank": "(2) Adept",
+        "save": "Fortitude, Reflex",
+        "dice": "2d8",
+        "damageType": "fire",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Heat Metal",
         "actions": "2",
         "trigger": "",
         "aspects": "Fire, Metal",
-        "traits": "",
+        "traits": "Enchantment",
         "range": "Touch",
         "target": "Metal armor or weapon",
         "duration": "Sustained, up to 1 minute",
@@ -879,9 +1038,11 @@
         "effect": "You heat one metal weapon or set of metal armor you touch. The holder or wearer can attempt a Reflex save to avoid the effect.\nFailure: The item becomes heated, dealing 2d4 fire damage at the start of the holder's turn.",
         "upcast": "By Rank: Increase the damage by 1d4",
         "rank": "(2) Adept",
+        "save": "Reflex",
         "dice": "2d4",
         "damageType": "fire",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Heatwave",
@@ -891,14 +1052,16 @@
         "traits": "Area",
         "range": "10",
         "target": "",
-        "duration": "-",
+        "duration": "",
         "flavor": "The air shimmers and bakes everything it touches.",
         "effect": "You create a 6×6-tile area of scorching air within range. \nCreatures in the area take 2d4 fire damage with a basic Fortitude save.\nCritical Failure: The target also gains one level of exhaustion.",
         "upcast": "By Rank: Increase the damage by 2d4",
         "rank": "(2) Adept",
+        "save": "Fortitude",
         "dice": "2d4",
         "damageType": "fire",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Hone Edge",
@@ -913,9 +1076,11 @@
         "effect": "You sharpen one metal weapon, or up to five pieces of ammunition, that deals slashing or piercing damage. \nIt deals an additional 1d8 damage for the duration.",
         "upcast": "At Grand Magus: Increase the damage by 1d8",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "1d8",
         "damageType": "physical",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Ice Shard",
@@ -930,9 +1095,11 @@
         "effect": "Throw a shard of ice against a target, dealing 3d6 piercing damage with a basic Reflex save. \nOn a critical failure the damage dice of this spell increases to d10's",
         "upcast": "By Rank: Increase the damage by 1d6",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "3d6",
         "damageType": "piercing",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Illusory Wall",
@@ -947,9 +1114,11 @@
         "effect": "You conjure an illusory wall within range, taking any shape you want. \nThe wall is up to 6 tiles long and up to 3 tiles high, can appear solid or passable, and can be used to hide creatures behind it. \nCreatures, objects, and projectiles pass through the wall, and any creature that sees something pass through can find it.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Inflame",
@@ -964,9 +1133,11 @@
         "effect": "You conjure flames on yourself, harmless to you but dangerous to others. \nAny creature that hits you with a melee attack takes 1d6 fire damage, and your unarmed melee attacks deal an extra 1d6 fire damage.\nWhen you cast or sustain this spell, you can make an unarmed melee strike as part of the same action.",
         "upcast": "By Rank: Increase the damage by 1d4",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "1d6",
         "damageType": "fire",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Levitate",
@@ -981,9 +1152,11 @@
         "effect": "You levitate the target 1 tile off the ground. When you sustain the spell, you can move the target up or down 3 tiles. \nA floating creature takes a −2 circumstance penalty to attack rolls, but can spend an Interact action to stabilize itself, negating the penalty for the rest of its turn.\nIf the target is adjacent to a fixed object or stable terrain, it can move across the surface by climbing (if vertical) or crawling (if horizontal, such as a ceiling). \nCreatures with a Glide speed have a Flight speed while affected, ignoring the downsides.\nAn unwilling target can attempt a Reflex save to avoid the effect, and make a Fortitude save to grab onto something if they would be moved up or down by the spell.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Lightning Shroud",
@@ -998,9 +1171,11 @@
         "effect": "You surround yourself with crackling electricity. \nAny creature that hits you with a melee attack or grapples you takes 2d6 lightning damage, and you gain resistance 5 to lightning damage.",
         "upcast": "By Rank: Increase the damage by 1d6 and resistance by 3",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "2d6",
         "damageType": "lightning",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Orbiting Earth",
@@ -1015,9 +1190,30 @@
         "effect": "You shape three rocks or pieces of debris into projectiles that orbit you. \nWhile they orbit, you can use a reaction to interpose them against incoming strikes, making a Spellshaping check instead of a Reflex save.\nWhen you sustain this spell, you can make an attack with one of the stones, dealing 1d10 bludgeoning damage with a basic Reflex save.\nEach time you block or attack, you lose one orbiter; if you run out of orbiters, the spell ends.\nIf you spend 3 actions on this spell, you raise four orbiters.",
         "upcast": "By Rank: Increase the amount of orbiters by 1",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "1d10",
         "damageType": "bludgeoning",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Passwall",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Arcane",
+        "traits": "Area, Complex",
+        "range": "Touch",
+        "target": "",
+        "duration": "Sustained, up to 1 minute",
+        "flavor": "With a touch the wall fades",
+        "effect": "Touch a wall and parts of it temporary fades out of existance, creating a tunnel in space.\nThe tunnel is 1 tile wide, 2 tile tall and up to 5 tile long.\nThis allows creatures and projectiles to pass through it as if it wasn't there.",
+        "upcast": "By Rank: You may double the width, height or length of the tunnel.",
+        "rank": "(2) Adept",
+        "save": "",
+        "dice": "",
+        "damageType": "",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Propel",
@@ -1027,14 +1223,16 @@
         "traits": "Movement",
         "range": "6",
         "target": "One Creature",
-        "duration": "-",
+        "duration": "",
         "flavor": "A gust of wind at your ally's back turns their stride into a dash.",
         "effect": "You push an ally who just took the Stride action with a gust of wind, increasing its movement by 2 tiles, or 4 tiles if it moves directly away from you. \nYou can instead use this spell to grant an ally a +5 bonus to a Jump check.",
         "upcast": "By Rank: Increase the tiles moved by 2.",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Purify Water",
@@ -1049,9 +1247,11 @@
         "effect": "You remove pollutants, toxins, and harmful substances from a body of water you touch, making it safe to drink. The water remains clean for up to 1 hour.\nThe first time each day a creature drinks the purified water, it loses one level of exhaustion.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Quick Forge",
@@ -1066,9 +1266,11 @@
         "effect": "You quickly repair or forge a simple metal object, such as a weapon, tool, or piece of armor. \nThe object must be medium sized or smaller, and the result is functional but not masterfully crafted. \nThe magic holding the object together fades when the spell ends, and it deforms or returns to its earlier state.",
         "upcast": "At Grand Magus: You can forge Large objects",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Sense Water",
@@ -1083,9 +1285,11 @@
         "effect": "You sense sources of water within 20 tiles, even hidden underground or behind obstacles, and can determine the direction and approximate distance to the nearest source.\nYou also have a +4 bonus against spells and effects with water trait while spell is active",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Shadowbind",
@@ -1100,9 +1304,11 @@
         "effect": "You make the shadows bind one creature within range standing in dim light or darkness. It must attempt a Reflex or Fortitude save.\nSuccess: The target is slowed 1 for one round as the shadows try to grab it.\nFailure: The target is grabbed by the shadows.\nCritical Failure: The target is restrained by the shadow\nWhile grabbed, the target is slowed 1. \nEffects that expose the shadows to magical light can attempt to break the spell, and a creature in bright light has advantage on saves to escape.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "Fortitude, Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Shape Bone",
@@ -1112,14 +1318,16 @@
         "traits": "Manipulation",
         "range": "Touch",
         "target": "One Object",
-        "duration": "-",
+        "duration": "",
         "flavor": "Bone softens at your touch, then hardens into a new form.",
         "effect": "You reshape a small bone or bone fragment into a simple tool, weapon, or decorative item, such as a bone dagger or needle. \nThe reshaped bone retains its original durability and can be customized for specific purposes. \nThe object must be no larger than what can be held in one hand.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Soul Sight",
@@ -1131,12 +1339,14 @@
         "target": "Self",
         "duration": "Sustained, up to 10 minutes, ",
         "flavor": "You see the bright sparks of souls",
-        "effect": "You gain a soulsight as an impressive sense with a range of 10 tiles, and can use the Inspect Soul action while the spell is active",
+        "effect": "You gain a soulsight as an inprecise sense with a range of 10 tiles, and can use the Inspect Soul action while the spell is active",
         "upcast": "At Archmage: The spell does not need to be sustained",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Stalagmite",
@@ -1145,15 +1355,17 @@
         "aspects": "Earth",
         "traits": "Area",
         "range": "7",
-        "target": "-",
-        "duration": "-",
+        "target": "",
+        "duration": "",
         "flavor": "The ground erupts in a spear of stone.",
         "effect": "You cause a stalagmite to rise from the ground in an unoccupied space within range. It is 2 tiles tall and provides cover.\nIf cast under a creature, that creature must attempt a Reflex save.\nFailure: The target is speared by the stalagmite, taking 3d6 piercing damage and becoming pinned until it succeeds at an Athletics check against your Spellshaping roll.",
         "upcast": "",
         "rank": "(2) Adept",
-        "dice": "",
-        "damageType": "",
-        "save": ""
+        "save": "Reflex",
+        "dice": "3d6",
+        "damageType": "piercing",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Steam Cloud",
@@ -1162,15 +1374,17 @@
         "aspects": "Fire, Water",
         "traits": "Area",
         "range": "10",
-        "target": "-",
+        "target": "",
         "duration": "Sustained, up to 1 minute",
         "flavor": "A hissing bank of steam swallows the battlefield.",
         "effect": "You create a 4x4-tile cloud of steam within range that obscures vision. \nCreatures within the cloud take a −5 penalty to visual perception checks. \nThe cloud dissipates if exposed to strong wind.\nIf your last action was casting a Water or Fire spell, this spell costs only 1 action.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Tailwind",
@@ -1185,9 +1399,11 @@
         "effect": "A gust of wind propels one creature within range, increasing its movement speed by 2 tiles for the duration. \nThe target can move in any direction but must move at least 1 tile each turn, or the spell ends.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Teleport",
@@ -1197,14 +1413,16 @@
         "traits": "Teleportation",
         "range": "10",
         "target": "Self",
-        "duration": "-",
+        "duration": "",
         "flavor": "Space folds, and you are simply elsewhere.",
         "effect": "You teleport to a tile you can see within range.",
         "upcast": "By Rank: Double the range of the spell",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Tremor Sense",
@@ -1219,9 +1437,11 @@
         "effect": "You sense vibrations through the ground, granting you a precise Tremor Sense with a range of 12 tiles. \nThis can reveal hidden or invisible creatures, but does not detect flying or hovering creatures.",
         "upcast": "At Grand Magus: The spell does not need to be sustained",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Water Arm",
@@ -1230,15 +1450,17 @@
         "aspects": "Water",
         "traits": "Enchantment, Complex, Conjured Weapon",
         "range": "Self",
-        "target": "-",
+        "target": "",
         "duration": "Sustained, up to 1 minute",
         "flavor": "You conjure an extra arm out water",
         "effect": "You create a tentacle of water that can grab things or attack. \nWhile the spell is active, you have the Water Tentacle strike, which has a range of 4 tiles, deals 2d6 bludgeoning damage, and has the Grab and Shove traits. \nThe arm can grab and open things like a normal arm within its range.\nEach conjured water arm also grants you a climb speed of 2 tiles while it's not grabbing a creature.",
         "upcast": "By Rank: Increase amount of water arms by 1",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "2d6",
         "damageType": "bludgeoning",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Water Ball",
@@ -1253,9 +1475,11 @@
         "effect": "You create a hovering ball of water 2 tiles across. When you cast or sustain the spell, you can move the ball up to 3 tiles. \nAny creature that moves into the ball, or that the ball moves into, must attempt a Reflex or Fortitude save.\nFailure: The target becomes trapped in the ball.\nTrapped creatures are carried along with the ball and can attempt Athletics checks to escape. Creatures with a swim speed can swim out without a check.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "Fortitude, Reflex",
         "dice": "",
         "damageType": "",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Water Breathing",
@@ -1270,9 +1494,11 @@
         "effect": "You can breathe water as if it were air and use verbal components underwater. \nYou also have advantage on saves against deep-sea pressure and similar dangers.",
         "upcast": "At Magus: Increase the duration to 10 Minutes\nAt Grand Magus: Increase the duration to 1 Hour\nAt Archmage: Increase the duration to 8 Hours",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Water Walk",
@@ -1287,9 +1513,11 @@
         "effect": "One creature you touch can walk on the surface of water or other liquids as if it were solid ground, moving at its normal speed without needing to balance.",
         "upcast": "By Rank: Increase the amount of targets by 1",
         "rank": "(2) Adept",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Wave Dash",
@@ -1304,26 +1532,11 @@
         "effect": "You create a slamming wave, a 4-tile cone of water from your position, dealing 2d6 bludgeoning damage to creatures in the area with a basic Fortitude save.\nFailure: The target is pushed 2 tiles along with the wave.\nCritical Failure: The target is pushed 4 tiles along with the wave.\nYou may choose to ride the wave, arriving anywhere on the edge of the cone.\nIf you cast this spell while in water, the cone is 6 tiles long and the spell deals 2d8 damage.",
         "upcast": "",
         "rank": "(2) Adept",
+        "save": "Fortitude",
         "dice": "2d6",
         "damageType": "bludgeoning",
-        "save": "Fortitude"
-    },
-    {
-        "name": "Wind Wall",
-        "actions": "2",
-        "trigger": "",
-        "aspects": "Air",
-        "traits": "Area",
-        "range": "10",
-        "target": "-",
-        "duration": "Sustained, up to 1 minute",
-        "flavor": "A howling curtain of wind springs up across the battlefield.",
-        "effect": "You create a wall of strong wind within range, 10 tiles long and 3 tiles high. \nThe wall blocks gaseous forms, such as clouds, and imposes a −4 penalty to ranged attack rolls passing through it.\nMedium or smaller creatures attempting to move through the wall must attempt a Fortitude save, being block on a failure",
-        "upcast": "",
-        "rank": "(2) Adept",
-        "dice": "",
-        "damageType": "",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Whirlwind",
@@ -1332,15 +1545,36 @@
         "aspects": "Air",
         "traits": "Area, Complex",
         "range": "10",
-        "target": "-",
+        "target": "",
         "duration": "Sustained, up to 1 minute",
         "flavor": "A spiraling column of wind tears at everything it touches.",
         "effect": "You create a whirlwind in a 3×3-tile area within range. \nCreatures in the whirlwind must attempt a Fortitude save at the start of their turn.\nFailure: The creature is lifted 2 tiles into the air and takes 2d6 bludgeoning damage.\nCritical Failure: The creature is lifted 4 tiles into the air and takes 4d6 bludgeoning damage.\nWhen you sustain this spell, you can move the whirlwind up to 3 tiles, carrying creatures inside it. \nThe first time each turn you move the whirlwind into a creature's space, that creature must attempt a Fortitude save.",
         "upcast": "By Rank: Increase the amount of tiles creatures are lifted by 1 and the damage by 1d6",
         "rank": "(2) Adept",
+        "save": "Fortitude",
         "dice": "2d6",
         "damageType": "bludgeoning",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Wind Wall",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Air",
+        "traits": "Area",
+        "range": "10",
+        "target": "",
+        "duration": "Sustained, up to 1 minute",
+        "flavor": "A howling curtain of wind springs up across the battlefield.",
+        "effect": "You create a wall of strong wind within range, 10 tiles long and 3 tiles high. \nThe wall blocks gaseous forms, such as clouds, and imposes a −4 penalty to ranged attack rolls passing through it.\nMedium or smaller creatures attempting to move through the wall must attempt a Fortitude save, being block on a failure",
+        "upcast": "",
+        "rank": "(2) Adept",
+        "save": "Fortitude",
+        "dice": "",
+        "damageType": "",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Air Slice",
@@ -1355,9 +1589,11 @@
         "effect": "You send a swift slice of cutting wind at one creature within range, dealing 2d10 slashing damage with a basic Reflex save.",
         "upcast": "By Rank: Increase the damage by 1d10",
         "rank": "(3) Magus",
+        "save": "Reflex",
         "dice": "2d10",
         "damageType": "slashing",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Blink",
@@ -1367,14 +1603,16 @@
         "traits": "Teleportation, Complex",
         "range": "6",
         "target": "Self",
-        "duration": "-",
+        "duration": "",
         "flavor": "You flicker, and appear elsewhere",
         "effect": "With a quick flash of magic, you teleport to a tile you can see within range.",
         "upcast": "By Rank: Increase range by 6",
         "rank": "(3) Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Creeping Shadows",
@@ -1389,9 +1627,11 @@
         "effect": "You create a zone of spreading darkness of up to 9 connected tiles within range, blocking out non-magical light. \nAny creature in the darkness at the start of its turn must attempt a Will save.\nFailure: The creature becomes Frightened 1.\nWhen you sustain this spell, you can extend the darkness by 3 tiles.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "Will",
         "dice": "",
         "damageType": "",
-        "save": "Will"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Dust Devil",
@@ -1406,9 +1646,11 @@
         "effect": "You create a 2-tile burst of whirling air and dust within range. \nWhen you create it or move it, creatures inside must attempt a Fortitude save.\nFailure: The creature takes 1d8 slashing damage and takes a −3 penalty to perception checks and ranged attacks until it spends an action to clear the dust from its eyes.\nWhen you sustain this spell, you can move the dust devil 3 tiles.",
         "upcast": "By Rank: Increase the burst size by 1 tile ",
         "rank": "(3) Magus",
+        "save": "Fortitude",
         "dice": "1d8",
         "damageType": "slashing",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Fire Whip",
@@ -1423,9 +1665,11 @@
         "effect": "You create a Fire Whip in one hand. \nIt deals 2d6 fire damage, has a +2 item bonus to attack, a range of 4 tiles, and the agile, finesse, and deadly (d8) traits. It belongs to the flail weapon group.\nWhen you sustain this spell, you can make a Strike with the weapon",
         "upcast": "By Rank: Increase the damage by 1d4",
         "rank": "(3) Magus",
+        "save": "",
         "dice": "2d6",
         "damageType": "fire",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Fireball",
@@ -1434,15 +1678,17 @@
         "aspects": "Fire",
         "traits": "Area",
         "range": "8",
-        "target": "-",
+        "target": "",
         "duration": "",
         "flavor": "A bead of flame streaks out and blooms into an inferno.",
         "effect": "You create a 5-tile burst of fire at a location you can see within range, dealing 5d6 fire damage with a basic Reflex save.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Fly",
@@ -1457,9 +1703,11 @@
         "effect": "You gain a flight speed of 5 tiles. \nWhen you sustain this spell, you may Fly as part of that action.",
         "upcast": "By Rank: Increase the flying speed by 2",
         "rank": "(3) Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Giant Stone Hand",
@@ -1474,9 +1722,11 @@
         "effect": "You conjure a giant stone hand at a space you can see within range. The hand is a large creature with health equal to your Spellshaping roll and resistance 6 to physical and elemental damage.\n\nWhen you cast or sustain this spell, and as a basic action, you may move the hand 3 tiles, restore 1d6 + your INT or WIL health to it, make a Grab attack, or position the hand to provide greater cover to adjacent allies. Grab attacks use your Spellshaping roll, deal 2d6 bludgeoning damage, and have the Improved Grab trait.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "",
         "dice": "2d6",
         "damageType": "bludgeoning",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Hail of Nails",
@@ -1485,15 +1735,17 @@
         "aspects": "Metal",
         "traits": "Area",
         "range": "8",
-        "target": "-",
+        "target": "",
         "duration": "Sustained, up to 1 minute",
         "flavor": "Shrieking metal rains from the sky",
         "effect": "You create a rain of small metallic projectiles over an 8×8-tile area within range, dealing 3d6 piercing damage with a basic Reflex save.\nThe first time you sustain this spell each turn, you may spend an action to repeat the hail, targeting the same or a new area.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "Reflex",
         "dice": "3d6",
         "damageType": "piercing",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Haste",
@@ -1508,9 +1760,11 @@
         "effect": "By subtly manipulating the timestream, you move slightly faster than normal. You become quickened 1.\nIf you spend 3 actions on this spell, you can instead target an adjacent willing creature.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Lava Wave",
@@ -1525,9 +1779,11 @@
         "effect": "You summon a wave of lava from your position, up to 3 tiles wide and 1 tile thick. \nWhen you cast the spell and each time you sustain it, the wave travels 4 tiles forward. \nCreatures hit by the wave must attempt a Reflex save.\nFailure: The target takes 4d8 fire damage.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "Reflex",
         "dice": "4d8",
         "damageType": "fire",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Lightning Bolt",
@@ -1542,9 +1798,30 @@
         "effect": "You hurl a bolt of lightning at one creature or object within range. \nThe target makes a basic Reflex save, taking 4d12 lightning damage on a failure. \nThe save takes a −4 modifier if the target wears metal armor or holds a metal object; otherwise the modifier is −2.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "Reflex",
         "dice": "4d12",
         "damageType": "lightning",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Radiant Light",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Light",
+        "traits": "Enchantment, Draining",
+        "range": "Touch",
+        "target": "",
+        "duration": "Sustained, up to 1 minute",
+        "flavor": "Strong, blinding light surronds the creature",
+        "effect": "You surrond a creature with blinding light. It shines bright for 6 tiles, and dim light for 6 more.\nThe first time each turn a creature in the bright light attempts to target it they must make a Fortitude save.\nSuccess: The target is dazzled for one turn.\nFailure: The target is blinded for one turn and dazzled for one minute.\nCritical Failure: The target is blinded for one minute.\nWhile affected, the target can spend one action to attempt the save again, removing all remaining effects on a success.",
+        "upcast": "By Rank: Increase the range of the light by 3",
+        "rank": "(3) Magus",
+        "save": "Fortitude",
+        "dice": "",
+        "damageType": "",
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Shadowstep",
@@ -1557,11 +1834,13 @@
         "duration": "",
         "flavor": "The shadows take you, and set you down elsewhere.",
         "effect": "You step through the shadows and teleport to a tile in darkness or dim light within range.",
-        "upcast": "",
+        "upcast": "By Rank: Double the range",
         "rank": "(3) Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Shunt",
@@ -1576,9 +1855,11 @@
         "effect": "You teleport one creature or object you touch to a destination within 6 tiles. You cannot target creatures larger than Large.\nAn unwilling creature can attempt a Will save to resist.\nFailure: You teleport the target to a destination within 6 tiles.",
         "upcast": "By Rank: Double the range you can teleport the creature to\nAt Archmage: You can target Huge creatures",
         "rank": "(3) Magus",
+        "save": "Will",
         "dice": "",
         "damageType": "",
-        "save": "Will"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Slow",
@@ -1593,9 +1874,11 @@
         "effect": "Effect: You subtly manipulate the timestream around one creature within range, slowing its movement and perception of the world. It must attempt a Will save.\nSuccess: The target is slowed 1 for one round.\nFailure: The target is slowed 1 for the spell's duration.\nCritical Failure: The target is slowed 2 for the spell's duration.\nThe target can attempt the save again at the end of each of its turns.",
         "upcast": "By Rank: Choose one more creature",
         "rank": "(3) Magus",
+        "save": "Will",
         "dice": "",
         "damageType": "",
-        "save": "Will"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Thunder Rush",
@@ -1607,12 +1890,14 @@
         "target": "Self",
         "duration": "Sustained, up to 1 minute",
         "flavor": "You become a crackling blur of motion.",
-        "effect": "You take on some of the speed of lightning. \nWhen you cast and sustain this spell, you can take the Stride action, and your move speed increases by 4 tiles. \nCreatures cannot make reactive strikes against your movement.\nOnce per turn, when you move adjacent to a creature, it takes 2d4 lightning damage.",
+        "effect": "You take on some of the speed of lightning. \nWhen you cast and sustain this spell, you can take the Stride action, and your move speed increases by 4 tiles. \nCreatures cannot make reactive strikes against your movement.\nOnce per turn, when you move adjacent to a creature, it must make a Reflex save or take 2d4 lightning damage.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "Reflex",
         "dice": "2d4",
         "damageType": "lightning",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Thunder Step",
@@ -1622,14 +1907,16 @@
         "traits": "Teleportation, Complex",
         "range": "10",
         "target": "Self",
-        "duration": "-",
+        "duration": "",
         "flavor": "You vanish with a crack of thunder that impacts everything nearby.",
         "effect": "Teleport to a tile you can see within range.\nCreatures within 5 tiles of where you teleported to take 2d8 thunder damage with a basic Fortitude save",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "Fortitude",
         "dice": "2d8",
         "damageType": "thunder",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Water Jet",
@@ -1638,15 +1925,17 @@
         "aspects": "Water",
         "traits": "Area",
         "range": "Area from Self",
-        "target": "-",
+        "target": "",
         "duration": "",
         "flavor": "A screaming lance of water cuts across the battlefield.",
         "effect": "You create a high-pressure jet of water in a 1-tile-wide, 12-tile-long line from your position, dealing 4d8 piercing damage with a basic Reflex save.",
         "upcast": "",
         "rank": "(3) Magus",
+        "save": "Reflex",
         "dice": "4d8",
         "damageType": "piercing",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Chain Lightning",
@@ -1661,9 +1950,11 @@
         "effect": "You strike one creature or object within range with a bolt of lightning that then arcs to nearby creatures. \nThe target makes a basic Reflex save, taking 3d12 lightning damage on a failure. \nThe save takes a −4 modifier if the target wears metal armor or holds a metal object; otherwise the modifier is −2.\nWhether it hits or not, you may then direct the spell to another target within 4 tiles, chaining to up to 5 bounces as it hits new targets.",
         "upcast": "By Rank: Increase the damage by 1d12",
         "rank": "(4) Grand Magus",
+        "save": "Reflex",
         "dice": "3d12",
         "damageType": "lightning",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Cold Snap",
@@ -1678,9 +1969,11 @@
         "effect": "You create an impact of extreme cold at a point within range. Creatures in a 3×3-tile area around the point must attempt a Fortitude save.\nSuccess: The creature takes half damage.\nFailure: The creature takes 5d8 cold damage and becomes frozen 1.\nCritical Failure: The creature takes double damage and becomes frozen 2.\nCreatures in a 6×6-tile area around the point take half as much damage and are not frozen.",
         "upcast": "By Rank: Increase the damage by 2d8",
         "rank": "(4) Grand Magus",
+        "save": "Fortitude",
         "dice": "5d8",
         "damageType": "cold",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Disintegrate",
@@ -1695,9 +1988,11 @@
         "effect": "You send a beam of pure unraveling magic at one creature or object within range, dealing 5d12 force damage with a basic Reflex save. \nShields, armor, and objects hit by Disintegrate are destroyed unless enchanted with anti-magic runes or made of Adamantium or Mithril.",
         "upcast": "By Rank: Increase the damage by 2d12",
         "rank": "(4) Grand Magus",
+        "save": "Reflex",
         "dice": "5d12",
         "damageType": "unraveling",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Fiery Body",
@@ -1712,9 +2007,30 @@
         "effect": "You turn your body into fire. \nWhile sustaining this spell, you cannot be grappled, restrained, or have your move speed reduced, and you are immune to fire damage and effects from fire spells. \nAny creature that hits you with a melee attack takes 3d6 fire damage, and your unarmed melee attacks deal an extra 2d6 damage, all of it fire damage.\nYou can use a reaction to reform around a damaging attack or effect, improving the result of a Reflex save one step.\nYou have vulnerability 10 to cold damage and damage from water spells. \nWhile in water or restrained by water spells, you take 2d6 vital damage at the start of your turn.",
         "upcast": "",
         "rank": "(4) Grand Magus",
+        "save": "",
         "dice": "3d6",
         "damageType": "fire",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
+        "name": "Meteor",
+        "actions": "3",
+        "trigger": "",
+        "aspects": "Earth, Fire",
+        "traits": "Area, Draining",
+        "range": "15",
+        "target": "",
+        "duration": "Sustained, up to 1 minute",
+        "flavor": "Conjure a massive flaming metoer to strike a point",
+        "effect": "Slowly conjure a metoer to strike a point within range.\nConjure a meteor to above you. \nWhen you sustain you this you may either reinforce it or fire the metoer. \nWhen you fire the meteor it flies towards a point in range. \nCreatures in 3 tiles of where you cast the spell must make a Reflex saving throw or takes damage.\nThe spell does 4d6 bludgeoning damage and 4d6 fire damage, plus an additional d8 of both for each turn you spent reinforcing it.\nIf you sustained this spell for 3 turns or more, all creatures within 8 tiles of where the metoer hit need to make a Fortititude save or fall prone.",
+        "upcast": "",
+        "rank": "(4) Grand Magus",
+        "save": "Reflex",
+        "dice": "6d6",
+        "damageType": "bludgeoning",
+        "diceTwo": "6d6",
+        "damageTypeTwo": "fire"
     },
     {
         "name": "Stasis",
@@ -1729,9 +2045,11 @@
         "effect": "You hold one creature or object of large size or smaller within range stuck in timespace. It must attempt a Will save.\nSuccess: The target is Stunned 1.\nFailure: The target is held in Stasis while you sustain the spell.\nCritical Failure: As a failure, but the creature rolls a 1 on all saves instead\nWhile in Stasis, a creature or object skips its turn, cannot take reactions, and any effects it was causing or that were affecting it are suspended. \nAffected creatures roll a 2 on all saves (besides saves against Stasis). \nThe first time each turn the target would make a save, take damage, be healed, or be affected by a new effect, it can attempt a new save against Stasis.",
         "upcast": "",
         "rank": "(4) Grand Magus",
+        "save": "Will",
         "dice": "",
         "damageType": "",
-        "save": "Will"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Steelskin",
@@ -1746,9 +2064,11 @@
         "effect": "You cover your body with a layer of metal armor that doesn't hinder movement. \nYou gain resistance 15 to physical damage, resistance 10 to fire, cold, and acid damage, and a +5 bonus to Fortitude saves.\nThe steel attracts lightning: you take a −4 penalty to saves against lightning effects.",
         "upcast": "",
         "rank": "(4) Grand Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Storm",
@@ -1763,9 +2083,11 @@
         "effect": "You conjure a storm of pouring rain and wind in a 100-tile area around you. \nAll creatures under the storm clouds become wet, taking half damage from fire but double damage from ice and lightning. \nThe storm obscures vision, imposing a −3 penalty to all visual perception checks.\nIf the spell is sustained for a minute, loose dirt and ground turn to mud, counting as difficult terrain.",
         "upcast": "At Archmage: The spell takes only 3 actions",
         "rank": "(4) Grand Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Wall of Fire",
@@ -1780,9 +2102,11 @@
         "effect": "You conjure a wall of flames of 10 adjoining tiles within range. \nCreatures that start their turn in the wall, or that walk into it, take 4d6 fire damage with a basic Reflex save.",
         "upcast": "",
         "rank": "(4) Grand Magus",
+        "save": "Reflex",
         "dice": "4d6",
         "damageType": "fire",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Waterspout",
@@ -1791,15 +2115,17 @@
         "aspects": "Water",
         "traits": "Area",
         "range": "10",
-        "target": "-",
+        "target": "",
         "duration": "",
         "flavor": "A howling pillar of water punches skyward.",
         "effect": "You create a 3-tile-burst, 10-tile-high waterspout within range. \nCreatures at that location must attempt a Reflex or Fortitude save.\nSuccess: The creature takes half damage and is pushed up 3 tiles.\nFailure: The creature takes 3d10 bludgeoning damage and is pushed up 8 tiles.\nCritical Failure: The creature takes double damage and is pushed up 12 tiles.\nCreatures pushed up by the spell fall down afterwards, taking fall damage as normal.",
         "upcast": "By Rank: Increase the damage by 1d10",
         "rank": "(4) Grand Magus",
+        "save": "Fortitude, Reflex",
         "dice": "3d10",
         "damageType": "bludgeoning",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Wind Walk",
@@ -1811,12 +2137,14 @@
         "target": "A number of creatures",
         "duration": "Up to 1 hour",
         "flavor": "The wind bears you up like a fallen leaf that changed its mind.",
-        "effect": "You select a number of creatures up to 4 + your INT (or WIL if cast as an Attuned Spell), and may include yourself. The chosen creatures gain a flight speed equal to their walking speed for the duration.",
+        "effect": "You select a number of creatures up to 4 + your INT (or WIL if cast as an Attuned Spell), and may include yourself. \nThe chosen creatures gain a flight speed equal to their walking speed for the duration.",
         "upcast": "By Rank: Increase the flying speed by 2",
         "rank": "(4) Grand Magus",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Dimensional Net",
@@ -1831,9 +2159,11 @@
         "effect": "You conjure a dimensional net to catch an incoming projectile without the Dimensionalism trait. \nIf your Spellshaping roll is higher than the projectile's, you catch it, stopping it before it hits its intended target. \nCaught projectiles are stored in the net while the spell is sustained.\n\nYou have the Open Dimensional Net action which you may use as long you are sustining the spell\n\nIf you fail to sustain the spell, the net collapses and the projectiles continue in the direction they were going before being caught.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Earthquake",
@@ -1848,9 +2178,11 @@
         "effect": "You shake the earth in a 200-tile burst around you. \nAny creature on land in the area must attempt a Fortitude save.\nFailure: The creature is knocked prone and takes 3d6 bludgeoning damage.\nThis spell deals heavy damage to buildings and terrain. \nYou may repeat the effect each time you sustain the spell.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Fortitude",
         "dice": "3d6",
         "damageType": "bludgeoning",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Inferno",
@@ -1865,9 +2197,11 @@
         "effect": "You create a roaring 10×10-tile fire of primordial proportions at a location you can see within range, dealing 10d6 fire damage with a basic Reflex save. \nThe fire spreads to nearby flammable materials and cannot be put out by nonmagical means while you sustain it.\nWater or Ice spells may attempt a contested check to put out part of the fire.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Reflex",
         "dice": "10d6",
         "damageType": "fire",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Miniature Sun",
@@ -1882,9 +2216,11 @@
         "effect": "You conjure a miniature sun that hovers in the air in front of you. It emits bright light for 8 tiles and dim light for 8 tiles beyond that. Any creature that moves into the bright light or ends its turn there must attempt a Fortitude save.\nFailure: The creature takes 5d6 fire damage.\nCreatures that target you with an attack must attempt a Fortitude save.\nFailure: The attacker is Blinded for the turn.\nYou are immune to all negative effects of the sun.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Fortitude",
         "dice": "5d6",
         "damageType": "fire",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Pyroblast",
@@ -1899,9 +2235,11 @@
         "effect": "You send a stream of superheated flame in a line up to 10 tiles long and 1 tile wide from you. \nCreatures in the area must attempt a Reflex save.\nFailure: The creature takes 12d6 fire damage.\nDue to the supernatural heat of the spell, fire resistance is half as effective against it.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Reflex",
         "dice": "12d6",
         "damageType": "fire",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Simulacra",
@@ -1916,9 +2254,11 @@
         "effect": "You create a copy of yourself out of magic that appears exactly as you. When you create it, you may give it illusory clothes that appear normal but cannot be interacted with. The copy has 5d6 health and aura, and can take any action you can except those with the \"Soul\" trait. When it casts spells, reinforces its aura, or uses mana in any way, it uses your mana.\n\nThe simulacrum cannot be healed or benefit from potions or the like, but can spend an action to drain 1d8 of your mana, restoring that much health to itself. You always know the location of your simulacra. Simulacra can dismiss themselves as a free action.\n\nAfter a long rest, you must spend mana equal to half this spell's cost per simulacrum you maintain.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "",
         "dice": "",
         "damageType": "",
-        "save": ""
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Storm of Swords",
@@ -1933,9 +2273,11 @@
         "effect": "You control an array of metal objects — often swords, spears, and other weapons — striking with unparalleled precision. \nWhen you cast or sustain the spell, you may throw up to 3 metal objects at creatures within range, dealing 3d8 physical damage each with a basic Reflex save.\nAdditionally, you may keep a number of metal objects hovering around you equal to your level + your INT + your WIL.\nIf at least 5 objects hover around you, any creature that starts its turn within 3 tiles or moves into the area must attempt a Reflex save.\nFailure: The creature takes 2d8 physical damage",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Reflex",
         "dice": "3d8",
         "damageType": "physical",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Sunbeam",
@@ -1950,9 +2292,11 @@
         "effect": "You create a massive beam of burning light, 5 tiles wide and 30 tiles long, from your position. Creatures in the line must attempt a Fortitude save.\nSuccess: The target is dazzled for one turn and takes 4d6 fire damage.\nFailure: The target is blinded for one turn, dazzled for one minute, and takes 8d6 fire damage.\nCritical Failure: The target is blinded for one minute and takes double damage.\nWhile affected by this spell, a target can spend one action to attempt the save again, removing all remaining effects on a success.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Fortitude",
         "dice": "8d6",
         "damageType": "fire",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Tornado",
@@ -1967,9 +2311,11 @@
         "effect": "You conjure a massive whirlwind in a 3×3-tile area, 20 tiles tall, within range. \nCreatures that start their turn in the area or enter it must attempt a Reflex or Fortitude save.\nFailure: The creature takes 6d8 bludgeoning damage and is sucked up into the tornado, lifted 4 tiles.\n\nCreatures stuck in the tornado move with it and are off-guard 4. At the start of their turns, stuck creatures take 6d8 bludgeoning damage and are lifted 3 tiles. They can spend an action on their turn to attempt an Athletics check against the spell to escape.\nWhen you sustain the spell, you can move the tornado up to 6 tiles.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Fortitude, Reflex",
         "dice": "6d8",
         "damageType": "bludgeoning",
-        "save": "Fortitude, Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "True Lightning",
@@ -1984,9 +2330,11 @@
         "effect": "You strike one creature or object within range with an extremely fast bolt of true lightning. \nThe target makes a basic Reflex save, taking 8d12 lightning damage on a failure.\n The save takes a −16 modifier if the target wears metal armor or holds a metal object; otherwise the modifier is −8.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Reflex",
         "dice": "8d12",
         "damageType": "lightning",
-        "save": "Reflex"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     },
     {
         "name": "Tsunami",
@@ -1995,14 +2343,16 @@
         "aspects": "Water",
         "traits": "Area",
         "range": "10",
-        "target": "-",
+        "target": "",
         "duration": "Up to 1 minute",
         "flavor": "The horizon rises, and the ocean comes for everything.",
         "effect": "You create a massive wave of water that crashes down on everything in its path. \nThe wave is a 10-tile-wide line from your position (15 tiles wide if you are in water). \nIt moves 5 tiles forward when you cast the spell, and at the end of each of your turns while the spell lasts. Creatures hit by the wave must attempt a Fortitude save.\nSuccess: The creature takes half damage and is moved 1 tile back.\nFailure: The creature takes 6d10 bludgeoning damage and is moved 3 tiles back.\nCritical Failure: The creature takes double damage and is moved 6 tiles back.",
         "upcast": "",
         "rank": "(5) Archmage",
+        "save": "Fortitude",
         "dice": "6d10",
         "damageType": "bludgeoning",
-        "save": "Fortitude"
+        "diceTwo": "",
+        "damageTypeTwo": ""
     }
 ]

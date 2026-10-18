@@ -450,7 +450,7 @@
     {
         "name": "Surveyor",
         "traits": "Lore",
-        "description": "You have studied maps and the land, learning how to read the terrain. \nYou become trained in geography lore. \nYour exploration speed is two steps faster than what it would normally be. You can always find north.",
+        "description": "You have studied maps and the land, learning how to read the terrain. \nYou become trained in geography lore. \nYour exploration speed is two steps faster than what it would normally be.\nYou can always find north.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -466,7 +466,7 @@
     {
         "name": "Survivor",
         "traits": "",
-        "description": "You have survived against the elements. \nYou gain resistance 3 to one type of elemental damage: fire, cold, electricity, acid or sonic. \nYou have a +3 bonus on survival checks to avoid natural hazards and extreme weather.",
+        "description": "You have survived against the elements. \nYou gain resistance 3 to one type of elemental damage: fire, cold, electricity, acid or sonic. \nYou have a +3 bonus on survival checks to avoid natural hazards and extreme weather.\nYour proficiency level in Survivial or Perception increases (max Expert). ",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
