@@ -13,9 +13,9 @@ export default function SkillRuleBox() {
   }));
 
   return (
-    <div className="collapsible-skills">
+    <div className="">
       <button
-        className="skills-toggle"
+        className=" text-text-light bg-bg-wood border-2 border-bg-quartz rounded-md w-92"
         onClick={() => setIsExpanded(!isExpanded)}
       >
         {isExpanded ? "▼ Hide Skills" : "▶ Show Skills"}
