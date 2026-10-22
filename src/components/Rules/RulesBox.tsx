@@ -1,4 +1,4 @@
-import "../../CSS/RulesBox.css";
+/* import "../../CSS/RulesBox.css"; */
 import ActionIcon from "../Actions/ActionIcon";
 
 interface RuleItem {
@@ -17,21 +17,23 @@ interface RulesProp {
 export default function RulesBox({ name, rules, maxWidth }: RulesProp) {
   return (
     <div
-      className="rules-box"
+      className="border bg-bg-rules border-bg-redwood min-w-50 max-w-120 m-2 text-center"
       style={{ maxWidth: maxWidth ? `${maxWidth}px` : undefined }}
     >
-      {name && <h2 className="rule-title text-center">{name}</h2>}
+      {name && (
+        <h2 className="text-center underline text-2xl text-text-black my-2">
+          {name}
+        </h2>
+      )}
       {rules.map(({ rule, ruleIcon, description, isHeader }) => (
         <div
-          className={`rules-item ${isHeader ? "rules-item--header" : ""}`}
+          className={`flex flex-row gap-1 text-lg justify-center ${isHeader ? "" : ""}`}
           key={rule}
         >
           {ruleIcon && <ActionIcon icon={ruleIcon} />}
-          <div className="rules-item-content">
-            <span className="rules-item-title">{rule}</span>
-            {description && (
-              <p className="rules-item-description">{description}</p>
-            )}
+          <div className="">
+            {rule && <span className="text-text-rule underline">{rule}</span>}
+            {description && <p className="m-1 text-center">{description}</p>}
           </div>
         </div>
       ))}

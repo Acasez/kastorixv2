@@ -1,22 +1,22 @@
 export const ACTION_RULES = [
   {
-    rule: "Single Action",
+    description: "Single Action",
     ruleIcon: "./images/Icons/OneAction.png",
   },
   {
-    rule: "Two-Action Activity",
+    description: "Two-Action Activity",
     ruleIcon: "./images/Icons/TwoActions.png",
   },
   {
-    rule: "Three-Action Activity",
+    description: "Three-Action Activity",
     ruleIcon: "./images/Icons/ThreeActions.png",
   },
   {
-    rule: "Reactions",
+    description: "Reactions",
     ruleIcon: "./images/Icons/Reaction.png",
   },
   {
-    rule: "Free Action",
+    description: "Free Action",
     ruleIcon: "./images/Icons/FreeAction.png",
   },
 ];
