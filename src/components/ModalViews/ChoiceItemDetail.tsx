@@ -1,7 +1,6 @@
 import type { SetStateAction } from "react";
 import ActionBox from "../Actions/ActionBox";
 import type { ChoiceItem } from "./ChoiceModal";
-import actions from "../../data/actions";
 import ActionIcon from "../Actions/ActionIcon";
 
 interface ChoiceItemDetailProps {
@@ -102,10 +101,7 @@ export default function ChoiceItemDetail({
               )}
             </div>
             {selectedItem.unlockedAction && (
-              <ActionBox
-                action={selectedItem.unlockedAction}
-                actionsList={actions}
-              />
+              <ActionBox action={selectedItem.unlockedAction} />
             )}
             <button
               type="button"

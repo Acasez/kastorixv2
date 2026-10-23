@@ -6,7 +6,6 @@ import golemModels from "../../../JSON/golem_models.json";
 import golemUpgrades from "../../../JSON/golem_upgrades.json";
 import weapons from "../../../data/weapons";
 import WeaponComponent from "../../CommonCreatureComponents/WeaponComponent";
-import actions from "../../../data/actions";
 import ActionBox from "../../Actions/ActionBox";
 import type { StatKey } from "../../../types/StatKey";
 import ModalWrapper from "../../ModalViews/ModalWrapper";
@@ -329,7 +328,7 @@ export default function GolemSection() {
             <div className="mt-5 border-t border-gray-600 pt-4">
               <h3 className="mb-2 text-lg font-semibold">Golem Actions</h3>
               {golemActions.map((action) => (
-                <ActionBox key={action} action={action} actionsList={actions} />
+                <ActionBox key={action} action={action} />
               ))}
             </div>
           )}

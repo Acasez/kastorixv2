@@ -1,5 +1,4 @@
 import ActionBox from "../Actions/ActionBox";
-import actions from "../../data/actions";
 import type { ChoiceItem } from "./ChoiceModal";
 
 interface ChoiceTooltipProps {
@@ -43,9 +42,7 @@ export default function ChoiceTooltip({ item }: ChoiceTooltipProps) {
             : detail.valueKey}
         </p>
       ))}
-      {item.unlockedAction && (
-        <ActionBox action={item.unlockedAction} actionsList={actions} />
-      )}
+      {item.unlockedAction && <ActionBox action={item.unlockedAction} />}
     </div>
   );
 }
