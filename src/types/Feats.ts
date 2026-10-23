@@ -22,6 +22,8 @@ export type GeneralFeat = {
   combatManeuversLearned: string;
   health: string;
   choice: string;
+  quickAccessSlots: number;
+  focusPoints: number;
 };
 
 export type ArcaneFeat = {

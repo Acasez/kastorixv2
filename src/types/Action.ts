@@ -1,12 +1,18 @@
+import type { Skill } from "./Skills";
+
 export type Action = {
   name: string;
   actions: ActionCost;
   trigger?: string;
   requirement?: string;
+  manaCost?: number;
+  focusCost?: number;
   description: string;
   traits: ActionTrait[];
+  skill: Skill[];
   sourceType: string;
   source?: string;
+  techniqueRank: TechniqueRank;
 };
 
 export type ActionCost = "0" | "1" | "2" | "3" | "R";
@@ -34,6 +40,8 @@ export type ActionTrait =
   | "Blade Art"
   | "Golem"
   | "Creature";
+
+export type TechniqueRank = "Simple" | "Complex" | "Advanced" | "Masterwork";
 
 /* export type ActionTrait = {
   name: string;

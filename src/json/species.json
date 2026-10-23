@@ -45,7 +45,7 @@
         "health": "7",
         "mana": "12",
         "traitOne": "Absorb magic",
-        "traitOneDesc": "Gnomes natural connection to magic allow them to absorb magical effects.\nYou have the Absorb Magic reaction which you can use twice per day.",
+        "traitOneDesc": "Gnomes natural connection to magic allow them to absorb magical effects.\nYou have the Absorb Magic reaction.",
         "traitTwo": "Font of Knowledge",
         "traitTwoDesc": "Gnomes have impressives memories and can easily remember facts and figures.\nBecome trained in one intelligence skill of your choice. Can change it on level up",
         "traitThree": "Ever Tinkerers",

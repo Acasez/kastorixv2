@@ -70,6 +70,13 @@
         "neutrality": "Negative"
     },
     {
+        "name": "Obscured",
+        "effect": "Your partially hidden, for example by fog, darkness or smoke\nAny creatures making a targeted attack against you need to first roll a d4. \nOn a 1 their attacks misses  ",
+        "type": "Binary",
+        "disappears": "",
+        "neutrality": "Positive"
+    },
+    {
         "name": "Off-Guard",
         "effect": "You have a -X penalty to all saves",
         "type": "Numeric",
@@ -119,6 +126,13 @@
         "neutrality": "Negative"
     },
     {
+        "name": "Swallowed",
+        "effect": "Your slowed 1 and has to hold your breath or start suffocating. \nYou take damage at the start of each turn based on the creature",
+        "type": "Binary",
+        "disappears": "",
+        "neutrality": "Negative"
+    },
+    {
         "name": "Weakened",
         "effect": "You have -X penalty to all PHY based D20 rolls",
         "type": "Numeric",
@@ -137,13 +151,6 @@
         "effect": "If you become you Dying you start at X more Dying",
         "type": "Numeric",
         "disappears": "-1 on long rests or successful Medicine checks",
-        "neutrality": "Negative"
-    },
-    {
-        "name": "Swallowed",
-        "effect": "Your slowed 1 and has to hold your breath or start suffocating. \nYou take damage at the start of each turn based on the creature",
-        "type": "Binary",
-        "disappears": "",
         "neutrality": "Negative"
     }
 ]

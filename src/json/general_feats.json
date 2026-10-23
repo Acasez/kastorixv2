@@ -13,7 +13,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Alert",
@@ -29,7 +30,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Always The Right Tool",
@@ -45,7 +47,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": "1"
+        "quickAccessSlots": "1",
+        "focusPoints": ""
     },
     {
         "name": "Army Training",
@@ -61,7 +64,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Athlete",
@@ -77,12 +81,13 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Battlefield Medic",
         "traits": "Skills",
-        "description": "You've trained to practice medicine even in the heat of combat\nYour proficiency level in medicine or athletics increases (max Expert). \nYou don't take the -2 penalty to the treat wounds and stabilize creature actions in combat",
+        "description": "You've trained to practice medicine even in the heat of combat\nYour proficiency level in medicine or athletics increases (max Expert). \nYou can spend a focus point to take the Treat Wounds action as a single action.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -93,7 +98,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Calculate The Odds",
@@ -109,7 +115,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Combat Training",
@@ -125,7 +132,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Dedicated Student",
@@ -141,7 +149,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Defensive Training",
@@ -157,7 +166,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Duelist",
@@ -173,7 +183,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Encouraging Words",
@@ -189,7 +200,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Expert Pilot",
@@ -205,7 +217,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Heavy Armor Training",
@@ -221,7 +234,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Inspiring Leader",
@@ -237,7 +251,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Item Thrower",
@@ -253,7 +268,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Linguist",
@@ -269,7 +285,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Lore Mastery",
@@ -285,7 +302,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Marksman",
@@ -301,7 +319,8 @@
         "combatManeuversLearned": "(1) CombatManeuvers",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Martial Arts Training",
@@ -317,7 +336,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Martial Gun Arts",
@@ -333,7 +353,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Nerves of Steel",
@@ -349,7 +370,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Opportunist",
@@ -365,7 +387,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Quick Witted",
@@ -381,7 +404,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Quip",
@@ -397,7 +421,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Skilled",
@@ -413,7 +438,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Sneaky",
@@ -429,7 +455,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Staff Training",
@@ -445,7 +472,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Surveyor",
@@ -461,7 +489,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Survivor",
@@ -477,13 +506,14 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Tactical Combatant",
         "traits": "",
-        "description": "You can make the best of the heat of combat. \nLearn 2 + your INT simple [Combat Maneuvers]\nYou may choose this feat multiple times.",
-        "unlockedAction": "",
+        "description": "You can make the best of the heat of combat. \nYour proficiency level in Warfare Lore increases (max Expert). \nYou have the Combat Assessment action¨",
+        "unlockedAction": "Combat Assessment",
         "prerequisites": "",
         "level": "1",
         "repeatable": "1",
@@ -493,7 +523,8 @@
         "combatManeuversLearned": "(2 + INT) CombatManeuvers",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Underhanded Striker",
@@ -509,7 +540,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Untrained Improvisation",
@@ -525,7 +557,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Weapons Training",
@@ -541,7 +574,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Will to Live",
@@ -557,7 +591,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "You're Next",
@@ -573,7 +608,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Aerialist",
@@ -589,7 +625,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Bob and Weave",
@@ -605,7 +642,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Emergency Aura Block",
@@ -621,7 +659,25 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
+    },
+    {
+        "name": "Focused",
+        "traits": "",
+        "description": "Your focus is steady, even in battle.\nIncrease your focus pool amount by 1",
+        "unlockedAction": "",
+        "prerequisites": "",
+        "level": "2",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "combatManeuversLearned": "",
+        "health": "",
+        "choice": "",
+        "quickAccessSlots": "",
+        "focusPoints": "1"
     },
     {
         "name": "Like Shooting Fish in a Barrel",
@@ -637,13 +693,14 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Skilled Fencer",
         "traits": "",
-        "description": "You've trained in the arts of fencing \nYou have +1 bonus when Parrying\nYou learn the Cut Down Projectile and Riposte combat maneuvers.",
-        "unlockedAction": "",
+        "description": "You've trained in the arts of fencing \nYou have +1 bonus when Parrying\nYou learn the Cut Down Projectile and Riposte techniques",
+        "unlockedAction": "Cut Down Projectile, Riposte",
         "prerequisites": "",
         "level": "2",
         "repeatable": "",
@@ -653,7 +710,42 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
+    },
+    {
+        "name": "Armor Expertize",
+        "traits": "",
+        "description": "You know how to make the most of your armor\nWhen wearing armor the resistances it grants increases by 1, or 2 if its heavy armor.\nAdditionally your unarmed attacks when wearing heavy armor with gauntlets deal 1d4 bludgeoning damage.",
+        "unlockedAction": "",
+        "prerequisites": "Trained with Armor",
+        "level": "3",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "combatManeuversLearned": "",
+        "health": "",
+        "choice": "",
+        "quickAccessSlots": "",
+        "focusPoints": ""
+    },
+    {
+        "name": "Strike The Unwary",
+        "traits": "",
+        "description": "Your always taking every opportunity to strike your foes\nYou can use Opportunity Attacks on creatures using casting spells using somatic component, and actions with the Manipulate Trait",
+        "unlockedAction": "",
+        "prerequisites": "",
+        "level": "3",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "combatManeuversLearned": "",
+        "health": "",
+        "choice": "",
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Always Ready",
@@ -669,23 +761,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
-    },
-    {
-        "name": "Armor Expertize",
-        "traits": "",
-        "description": "You know how to make the most of your armor\nWhen wearing armor the resistances it grants increases by 1, or 2 if its heavy armor.\nAdditionally your unarmed attacks when wearing heavy armor with gauntlets deal 1d4 bludgeoning damage.",
-        "unlockedAction": "",
-        "prerequisites": "Trained with Armor",
-        "level": "4",
-        "repeatable": "",
-        "unlockedFeats": "",
-        "speeds": "",
-        "resistances": "",
-        "combatManeuversLearned": "",
-        "health": "",
-        "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Commanding Presence",
@@ -701,7 +778,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Evasion Expertize",
@@ -717,12 +795,13 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Expert Brawler",
         "traits": "Skills, Weapons",
-        "description": "Brawling comes to you naturally\nYour proficiency level in Brawling increases (max Expert).\nYour proficiency level in unarmed attacks increases (max Expert).\nYou learn 2 combat maneuvers with the Brawling trait",
+        "description": "Brawling comes to you naturally\nYour proficiency level in Brawling increases (max Expert).\nYour proficiency level in unarmed attacks increases (max Expert).\nYou learn 2 techniques with the Brawling trait",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -733,7 +812,8 @@
         "combatManeuversLearned": "(2) CombatManeuvers",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Fleet",
@@ -749,7 +829,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Magical Master",
@@ -765,12 +846,13 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Martial Expertize",
         "traits": "Weapons",
-        "description": "Your martial experience has only increased with time. \nYour proficiency level in two weapon groups increases (max Expert). \nYou may learn one combat maneuver instead of picking a weapon group.\nYou may choose this feat multiple times",
+        "description": "Your martial experience has only increased with time. \nYour proficiency level in two weapon groups increases (max Expert). \nYou may learn one techniques instead of picking a weapon group.\nYou may choose this feat multiple times",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -781,7 +863,8 @@
         "combatManeuversLearned": "(2) CombatManeuvers",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Move Together",
@@ -797,7 +880,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Perfect Condition",
@@ -813,7 +897,8 @@
         "combatManeuversLearned": "",
         "health": "PHY",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Rolling Landing",
@@ -829,7 +914,42 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
+    },
+    {
+        "name": "Scrappy Survivalist",
+        "traits": "",
+        "description": "Though you may not be physically imposing, you've learnt to survive.\nIncrease your health by 5\nYour proficiency level in Fortitude saves increases (max Expert)",
+        "unlockedAction": "",
+        "prerequisites": "Phy 0 or less",
+        "level": "4",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "combatManeuversLearned": "",
+        "health": "",
+        "choice": "",
+        "quickAccessSlots": "",
+        "focusPoints": ""
+    },
+    {
+        "name": "Sniper",
+        "traits": "",
+        "description": "You're an expert at hitting foes from range.\nYour proficiency level with two of the Crossbow, Runeguns or Bows weapon groups increases (max Expert).\nYou learn the Deadshot action",
+        "unlockedAction": "Deadshot",
+        "prerequisites": "",
+        "level": "4",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "combatManeuversLearned": "",
+        "health": "",
+        "choice": "",
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Spot Weak Point",
@@ -845,23 +965,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
-    },
-    {
-        "name": "Strike The Unwary",
-        "traits": "",
-        "description": "Your always taking every opportunity to strike your foes\nYou can use Opportunity Attacks on creatures using casting spells using somatic component and actions with the Manipulate Trait",
-        "unlockedAction": "",
-        "prerequisites": "",
-        "level": "4",
-        "repeatable": "",
-        "unlockedFeats": "",
-        "speeds": "",
-        "resistances": "",
-        "combatManeuversLearned": "",
-        "health": "",
-        "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Titan Grappler",
@@ -877,7 +982,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Battlefield Awareness",
@@ -893,7 +999,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Defensive Duelist",
@@ -909,7 +1016,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Flash Of Genius",
@@ -925,7 +1033,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Impactful Strikes",
@@ -941,7 +1050,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "In The Thick of It",
@@ -957,7 +1067,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Second Wind",
@@ -973,13 +1084,14 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Shield Specialization",
         "traits": "Weapons",
-        "description": "You know how to use shields to their fullest extent.\nYour proficiency level with shields is Expert\nWhile you are holding bucklers you may cast spells as normal with that hand. \nYou learn the shield bash combat combat maneuver\nYou learn the Steady Shield action for tower shield",
-        "unlockedAction": "Steady Shield",
+        "description": "You know how to use shields to their fullest extent.\nYour proficiency level with shields is Expert\nWhile you are holding bucklers you may cast spells as normal with that hand. \nYou learn the Block Spell action\nYou learn the Steady Shield action",
+        "unlockedAction": "Steady Shield, Block Spell",
         "prerequisites": "",
         "level": "6",
         "repeatable": "",
@@ -989,7 +1101,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Strike Together",
@@ -1005,7 +1118,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Rapid Striker",
@@ -1021,7 +1135,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Versatile Wielder",
@@ -1037,23 +1152,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
-    },
-    {
-        "name": "Weapon Master",
-        "traits": "Weapons",
-        "description": "Mastery at arms\nYour proficiency level in a weapon group increases (max Master).\nYou learn an advanced combat maneuver\nYou may choose this feat multiple times",
-        "unlockedAction": "",
-        "prerequisites": "",
-        "level": "8",
-        "repeatable": "1",
-        "unlockedFeats": "",
-        "speeds": "",
-        "resistances": "",
-        "combatManeuversLearned": "(1) CombatManeuvers",
-        "health": "",
-        "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Aspect Infusion",
@@ -1069,7 +1169,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "Aspects",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Instinctive Aura Block",
@@ -1085,7 +1186,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Master Sprinter",
@@ -1101,12 +1203,30 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
+    },
+    {
+        "name": "Weapon Master",
+        "traits": "Weapons",
+        "description": "Mastery at arms\nYour proficiency level in a weapon group increases (max Master).\nYou learn two advanced techniques.\nYou may choose this feat multiple times.",
+        "unlockedAction": "",
+        "prerequisites": "",
+        "level": "10",
+        "repeatable": "1",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "combatManeuversLearned": "(1) CombatManeuvers",
+        "health": "",
+        "choice": "",
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Blade Artist",
         "traits": "",
-        "description": "You've learned to do the impossible with your weapon.\nYou learn one Blade Art Combat Maneuver\nYou can do one Blade Art per day",
+        "description": "You've learned to do the impossible with your weapon.\nYou learn one Blade Art.\nIncrease your focus pool 1.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "12",
@@ -1117,7 +1237,8 @@
         "combatManeuversLearned": "(1) CombatManeuvers",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": "1"
     },
     {
         "name": "Parrying Master",
@@ -1133,7 +1254,8 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Elementalization",
@@ -1149,12 +1271,13 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "Aspects",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Legendary Weapon Master",
         "traits": "",
-        "description": "Your skills with weapons is legendary\nYour proficiency level in a weapon group increases (max Legendary).\nYou learn an masterwork combat maneuver\nYou may choose this feat multiple times",
+        "description": "Your skills with weapons is legendary\nYour proficiency level in a weapon group increases (max Legendary).\nYou learn an masterwork technique\nYou may choose this feat multiple times",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "16",
@@ -1165,7 +1288,8 @@
         "combatManeuversLearned": "(1) CombatManeuvers",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     },
     {
         "name": "Mythic Champion",
@@ -1181,6 +1305,7 @@
         "combatManeuversLearned": "",
         "health": "",
         "choice": "",
-        "quickAccessSlots": ""
+        "quickAccessSlots": "",
+        "focusPoints": ""
     }
 ]

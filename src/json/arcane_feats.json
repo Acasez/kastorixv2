@@ -131,8 +131,8 @@
     },
     {
         "name": "Monster Hunting",
-        "description": "You are trained in monster hunting lore, which can be used to recall knowledge against monsters and elementals. \nWhen you succeed on a recall knowledge check with monster hunting lore, the creature takes a -2 penalty to the next save you impose on it.",
-        "unlockedAction": "",
+        "description": "You are trained in monster hunting lore, which can be used to recall knowledge against monsters and elementals. \nWhen you succeed on a recall knowledge check with monster hunting lore, the creature takes a -2 penalty to the next save you impose on it.\nYou learn the Combat Assessment action",
+        "unlockedAction": "Combat Assessment",
         "prerequisites": "",
         "level": "1",
         "repeatable": "",
