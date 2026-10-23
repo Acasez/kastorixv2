@@ -2,7 +2,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Suspense, useEffect } from "react";
 import { routes } from "./routes/config.ts";
-import MainHeader from "./components/PageStructure/MainHeader.tsx";
+import Header from "./components/PageStructure/Header.tsx";
 import Footer from "./components/PageStructure/Footer.tsx";
 import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
@@ -33,7 +33,7 @@ export default function App() {
     <>
       <HelmetProvider>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
-          <MainHeader />
+          <Header />
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               {routes.map(({ path, component: Component }) => (

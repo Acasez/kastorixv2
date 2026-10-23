@@ -37,7 +37,7 @@ export function TargetedAttacksTable() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto w-500">
       <h1 className="text-2xl font-bold mb-4 text-text-black text-center">
         Called Shot Table
       </h1>

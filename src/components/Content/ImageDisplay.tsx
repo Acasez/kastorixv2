@@ -17,7 +17,7 @@ export default function ImageDisplay({
         <div>
           <div>
             {imageCaption ? (
-              <div className="max-w-200 text-center text-xl cursive">
+              <div className="max-w-700 text-center text-xl cursive">
                 <img src={imageLocation} alt={altText} />
                 <p>{imageCaption}</p>
               </div>

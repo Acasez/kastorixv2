@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { routes } from "../../routes/config";
 
-export default function MainHeader() {
+export default function Header() {
   const headerRoutes = routes.filter((route) => route.createHeader);
 
   return (

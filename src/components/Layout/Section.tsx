@@ -1,4 +1,3 @@
-// src/components/Layout/Section.tsx
 import ContentRow from "./ContentRow";
 import Icon from "../Content/Icon";
 import ReactMarkdown from "react-markdown";
