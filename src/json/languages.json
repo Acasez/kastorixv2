@@ -1,7 +1,7 @@
 [
     {
         "name": "Common",
-        "description": "The common tounge across Kastorix",
+        "description": "The common tongue across Kastorix",
         "rarity": "Common"
     },
     {
@@ -16,7 +16,7 @@
     },
     {
         "name": "Aldarnan",
-        "description": "Aldarnan is a variety of common, designed to incorparate magical runes in its writing system",
+        "description": "Aldarnan is a variety of common, designed to incorporate magical runes in its writing system",
         "rarity": "Rare"
     },
     {

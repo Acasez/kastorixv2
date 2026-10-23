@@ -30,9 +30,9 @@
         "flavor": "The spell temporarily improves the caster or target, or gives them new abilities"
     },
     {
-        "name": "Enviromental",
+        "name": "Environmental",
         "effect": "",
-        "flavor": "The spell affects a large area, causing an effect on the enviroment"
+        "flavor": "The spell affects a large area, causing an effect on the environment"
     },
     {
         "name": "Illusion",

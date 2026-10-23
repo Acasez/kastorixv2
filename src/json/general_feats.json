@@ -495,7 +495,7 @@
     {
         "name": "Survivor",
         "traits": "",
-        "description": "You have survived against the elements. \nYou gain resistance 3 to one type of elemental damage: fire, cold, electricity, acid or sonic. \nYou have a +3 bonus on survival checks to avoid natural hazards and extreme weather.\nYour proficiency level in Survivial or Perception increases (max Expert). ",
+        "description": "You have survived against the elements. \nYou gain resistance 3 to one type of elemental damage: fire, cold, electricity, acid or sonic. \nYou have a +3 bonus on survival checks to avoid natural hazards and extreme weather.\nYour proficiency level in Survival or Perception increases (max Expert). ",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
