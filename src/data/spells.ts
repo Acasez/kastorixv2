@@ -2,7 +2,7 @@
 import type { Spell, Aspect, SpellTrait, SpellRank } from "../types/Spells";
 import rawSpells from "../JSON/spells.json";
 import { aspectsByName } from "./aspects";
-import { spellTraitsByName } from "./spellTraits"; // You need this too
+import { spellTraitsByName } from "./spellTraits";
 import { createDamageInstances } from "./damageTypes";
 import type { Saves } from "../types/StatKey";
 
