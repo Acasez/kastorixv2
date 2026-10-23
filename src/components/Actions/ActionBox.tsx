@@ -1,72 +1,45 @@
-import { useMemo } from "react";
 import { getActionIcons } from "../../utils/actionUtils";
-import type { Action } from "../../types/Action";
 import ActionIcon from "./ActionIcon";
+import actions from "../../data/actions";
 
 interface ActionBoxProps {
   action: string;
-  actionsList: Action[];
 }
 
-export default function ActionBox({ action, actionsList }: ActionBoxProps) {
-  // ✅ Step 1: Memoize actionDetails FIRST (before any returns)
-  const actionDetails = useMemo(() => {
-    return actionsList.find((item) => item.name === action);
-  }, [action, actionsList]);
+const boxClass =
+  "mb-3.75 ml-3.75 p-2.5 border border-bg-redwood bg-bg-rules font-serif self-center grid justify-items-center";
 
-  // ✅ Step 2: Memoize all derived data together
-  const { formattedDescription, widthClass, actionIcons } = useMemo(() => {
-    if (!actionDetails) {
-      return { formattedDescription: null, widthClass: "", actionIcons: [] };
-    }
+export default function ActionBox({ action }: ActionBoxProps) {
+  const details = actions.find((item) => item.name === action);
 
-    const wordCount = actionDetails.description.split(/\s+/).length;
-    return {
-      formattedDescription: actionDetails.description
-        .split("\n")
-        .map((line, i) => (
-          <span key={i}>
-            {line}
-            <br />
-          </span>
-        )),
-      widthClass: wordCount > 40 ? "max-w-[420px]" : "max-w-[250px]",
-      actionIcons: getActionIcons(actionDetails.actions),
-    };
-  }, [actionDetails]); // Only recalculates when actionDetails changes
-
-  // ✅ Step 3: NOW we can do conditional rendering
-  if (!actionDetails) {
+  if (!details) {
     return (
-      <div className="mb-3.75 ml-3.75 p-2.5 border border-amber-800 bg-bg-rules font-serif max-w-62.5 self-center grid">
-        Action not found: {action}
-      </div>
+      <div className={`${boxClass} max-w-62.5`}>Action not found: {action}</div>
     );
   }
 
-  // ✅ Step 4: Main render (all hooks already called)
   return (
-    <div
-      className={`mb-3.75 ml-3.75 p-2.5 border border-amber-800 bg-bg-rules font-serif text-text-black ${widthClass} self-center grid`}
-    >
-      <div className="flex items-center gap-2.5 mb-2.5 justify-self-center">
-        <h2 className="underline text-[28px]">{action}</h2>
+    <div className={`${boxClass} text-text-black shrink-0 w-auto max-w-100`}>
+      <div className="flex items-center gap-2.5 mb-2.5">
+        <h2 className="underline text-[28px] whitespace-nowrap">{action}</h2>
         <div className="max-w-8 max-h-8 flex flex-row">
-          {actionIcons.map((icon, index) => (
-            <ActionIcon icon={icon} key={`${action}-${index}`} />
+          {getActionIcons(details.actions).map((icon, i) => (
+            <ActionIcon icon={icon} key={i} />
           ))}
         </div>
       </div>
-      <div className="text-center text-base">
-        {actionDetails.trigger && (
+      <div className="text-center text-base max-w-full">
+        {details.trigger && (
           <p>
-            <span className="font-bold">Trigger</span>: {actionDetails.trigger}
+            <span className="font-bold">Trigger</span>: {details.trigger}
           </p>
         )}
-        <p className="mt-2.5 leading-normal">{formattedDescription}</p>
-        {actionDetails.traits && (
-          <p className="italic text-[#666] mt-2.5">
-            Traits: {actionDetails.traits}
+        <p className="mt-2.5 leading-normal whitespace-pre-line">
+          {details.description}
+        </p>
+        {details.traits && (
+          <p className="italic text-text-trait mt-2.5">
+            Traits: {details.traits}
           </p>
         )}
       </div>

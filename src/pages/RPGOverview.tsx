@@ -11,7 +11,6 @@ import { PROGRESSION_RULES } from "../constants/RulesDescriptions/ProgressionRul
 import { STATS_RULES } from "../constants/RulesDescriptions/StatsRules";
 import overviewMarkdown from "../markdown/Overview.md?raw";
 import { parseMarkdownByHeaders } from "../utils/parseMarkdown";
-import actions from "../data/actions";
 import { Helmet } from "react-helmet-async";
 import { TargetedAttacksTable } from "../components/OverviewComponents/TargetedAttacksTable";
 import Section from "../components/Layout/Section";
@@ -36,7 +35,7 @@ export default function RPGOverview() {
       </Section>
       <Section title="Actions">
         <MarkdownSection description={DESC.Actions} />
-        <ActionBox action="Stride" actionsList={actions} />
+        <ActionBox action="Stride" />
         <RulesBox name="Actions" rules={ACTION_RULES} />
       </Section>
       <Section title="Stats" contentReverse={true}>
@@ -63,7 +62,7 @@ export default function RPGOverview() {
         iconAlt="Mana Icon"
       >
         <MarkdownSection description={DESC.Mana} />
-        <ActionBox action="Harness Mana" actionsList={actions} />
+        <ActionBox action="Harness Mana" />
       </Section>
       <Section
         title="Aura"
@@ -72,13 +71,13 @@ export default function RPGOverview() {
         iconAlt="Aura Icon"
       >
         <MarkdownSection description={DESC.Aura} />
-        <ActionBox action="Aura Block" actionsList={actions} />
-        <ActionBox action="Reinforce Aura" actionsList={actions} />
+        <ActionBox action="Aura Block" />
+        <ActionBox action="Reinforce Aura" />
       </Section>
       <Section title="Spellcasting" flavorText={DESC.SpellcastingFlavor}>
         <MarkdownSection description={DESC.Spellcasting} />
-        <ActionBox action="Cast a Spell" actionsList={actions} />
-        <ActionBox action="Sustain" actionsList={actions} />
+        <ActionBox action="Cast a Spell" />
+        <ActionBox action="Sustain" />
       </Section>
       <Section title="Focus Points">
         <MarkdownSection description={DESC.FocusPoints} />
