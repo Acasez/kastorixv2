@@ -3,6 +3,7 @@ import rawArmors from "../JSON/armors.json";
 import type { Armor, ArmorType } from "../types/Armor";
 import type { Resistance } from "../types/DamageTypes";
 import { toNumber } from "../utils/toNumber";
+import { parsePrice } from "./prices";
 
 function parseResistances(resistancesString: string): Resistance[] {
   if (!resistancesString?.trim()) return [];
@@ -24,7 +25,7 @@ export const armors: Armor[] = rawArmors.map((raw) => ({
   ...raw,
   weakPointDiff: toNumber(raw.weakPointDiff),
   penalties: toNumber(raw.penalties),
-  price: Number(raw.price),
+  price: parsePrice(raw.price),
   type: raw.type as ArmorType,
   resistances: parseResistances(raw.resistances),
 }));

@@ -1,4 +1,4 @@
-// data/weapons.ts (or better: data/prices.ts so items can share it)
+// data/prices
 import type { Currency, Price } from "../types/Item";
 
 const CURRENCIES: Record<string, { currency: Currency; goldValue: number }> = {
