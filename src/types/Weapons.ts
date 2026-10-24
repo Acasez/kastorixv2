@@ -10,7 +10,7 @@ export type Weapon = {
   range: number;
   traits: WeaponTrait[];
   description: string;
-  price: Price[];
+  price?: Price;
   type: WeaponType;
   weaponGroup: WeaponGroup;
 };

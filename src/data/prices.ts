@@ -8,9 +8,12 @@ const CURRENCIES: Record<string, { currency: Currency; goldValue: number }> = {
   cp: { currency: "Copper Device", goldValue: 0.01 },
 };
 
-export function parsePrice(priceString: string): Price[] {
+export function parsePrice(priceString: string): Price | undefined {
+  if (!priceString?.trim()) return undefined;
   const trimmed = priceString?.trim();
-  if (!trimmed) return [];
+  if (!trimmed) {
+    throw new Error(`Missing price: "${priceString}"`);
+  }
 
   const match = trimmed.match(/^(\d+(?:\.\d+)?)\s*([a-zA-Z]+)$/);
   if (!match) {
@@ -24,11 +27,9 @@ export function parsePrice(priceString: string): Price[] {
   }
 
   const amount = Number(amountStr);
-  return [
-    {
-      amount,
-      currency: entry.currency,
-      convertedAmount: amount * entry.goldValue,
-    },
-  ];
+  return {
+    amount,
+    currency: entry.currency,
+    convertedAmount: amount * entry.goldValue,
+  };
 }
