@@ -29,29 +29,42 @@ export default function ActionRow({
           ))}
         </span>
         <span className="flex-1 font-semibold">{action.name}</span>
-        <span className="text-sm text-gray-400">{action.actions}</span>
-        <span aria-hidden="true" className="text-gray-400">
+        <span className="text-sm text-text-light">{action.actions}</span>
+        <span aria-hidden="true" className="text-text-light">
           {isExpanded ? "-" : "+"}
         </span>
       </button>
 
       {isExpanded && (
-        <div className="border-t border-[#343d49] bg-[#242b34] px-5 py-4 text-sm leading-6 text-gray-200">
+        <div className="border-t border-[#343d49] bg-[#242b34] px-5 py-4 text-sm leading-6 text-text-light">
+          <div className="flex flex-row gap-5">
+            {action.manaCost && action.manaCost > 0 && (
+              <p>
+                <span className="font-bold">Mana cost</span>: {action.manaCost}
+              </p>
+            )}
+            {action.focusCost && action.focusCost > 0 && (
+              <p>
+                <span className="font-bold">Focus point cost</span>:{" "}
+                {action.focusCost}
+              </p>
+            )}
+          </div>
           {action.trigger && (
             <p>
-              <strong className="text-white">Trigger:</strong> {action.trigger}
+              <strong className="font-bold">Trigger:</strong> {action.trigger}
             </p>
           )}
           {action.requirement && (
             <p>
-              <strong className="text-white">Requirement:</strong>{" "}
+              <strong className="font-bold">Requirement:</strong>{" "}
               {action.requirement}
             </p>
           )}
           <div className="mt-2 whitespace-pre-line">{action.description}</div>
           {action.traits && (
-            <p className="mt-3 text-gray-400">
-              <strong className="text-gray-300">Traits:</strong> {action.traits}
+            <p className="mt-3">
+              <span className="font-bold">Traits:</span> {action.traits}
             </p>
           )}
           {action.sourceType !== "Base" && action.source && (
