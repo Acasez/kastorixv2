@@ -1,5 +1,6 @@
 import type { Action } from "./Action";
 import type { DamageInstance } from "./DamageTypes";
+import type { Price } from "./Item";
 import type { StatKey } from "./StatKey";
 
 export type Weapon = {
@@ -9,7 +10,7 @@ export type Weapon = {
   range: number;
   traits: WeaponTrait[];
   description: string;
-  price: number;
+  price: Price[];
   type: WeaponType;
   weaponGroup: WeaponGroup;
 };

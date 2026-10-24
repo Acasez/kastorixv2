@@ -8,6 +8,7 @@ import type {
   WeaponType,
 } from "../types/Weapons";
 import { createDamageInstances } from "./damageTypes";
+import { parsePrice } from "./prices";
 import { weaponTraitsByName } from "./weaponTraits";
 
 export function parseWeaponTrait(traitString: string): WeaponTrait {
@@ -41,7 +42,7 @@ export const weapons: Weapon[] = rawWeapons.map((raw) => {
     dice: createDamageInstances(raw.dice, raw.damageType, `weapon ${raw.name}`),
     hands: Number(raw.hands),
     range: Number(raw.range),
-    price: Number(raw.price.replace(/\s*gp$/, "")),
+    price: parsePrice(raw.price),
     type: raw.type as WeaponType,
     weaponGroup: raw.weaponGroup as WeaponGroup,
     traits: parseWeaponTraits(raw.traits),
