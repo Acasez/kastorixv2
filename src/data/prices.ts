@@ -33,3 +33,22 @@ export function parsePrice(priceString: string): Price | undefined {
     convertedAmount: amount * entry.goldValue,
   };
 }
+
+const CURRENCY_CODES: Record<Currency, string> = {
+  "Platinum Piece": "pp",
+  "Gold Piece": "gp",
+  "Silver Piece": "sp",
+  "Copper Device": "cp",
+};
+
+export function formatPrice(price?: Price): string {
+  if (!price) return "—";
+
+  const code = CURRENCY_CODES[price.currency] ?? "?";
+  const amount =
+    price.amount % 1 === 0
+      ? String(price.amount)
+      : price.amount.toFixed(2).replace(/\.?0+$/, "");
+
+  return `${amount} ${code}`;
+}

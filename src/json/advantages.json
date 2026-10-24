@@ -169,7 +169,7 @@
     },
     {
         "name": "Magical Genius",
-        "description": "You have an innate aptitude for learning magic.\nYou learn extra spells of all ranks you know equal to your INT. \nYou also learn Metamagics equal to your INT\nYou may attempt to copy a spell (of a rank you can cast) you saw last turn,  casting the spell even without being proficient with it.",
+        "description": "You have an innate aptitude for learning magic.\nYou learn extra spells of all ranks you know equal to your INT. \nYou also learn Metamagics equal to your INT.\nYou may attempt to copy a spell (of a rank you can cast) you saw last turn,  casting the spell even without being proficient with it.",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",
@@ -183,7 +183,7 @@
     },
     {
         "name": "Nimble as a Fox",
-        "description": "Few can catch to you\nOnce per turn you may use a focus point to take on of the Step, Stand Up, Hide, Take Cover, Tumble Through or Steal as a free actions. \nWhen you get a critical success on a Tumble Through, Steal or Reflex Save you regain one focus point\nYour proficiency level in Reflex saves increases one step (max Master)",
+        "description": "Few can catch to you\nOnce per turn you may use a focus point to take on of the Step, Stand Up, Hide, Take Cover, Tumble Through or Steal as a free actions. \nYour proficiency level in Reflex saves increases one step (max Master).",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",
@@ -197,7 +197,7 @@
     },
     {
         "name": "Physical Might",
-        "description": "Your strength makes you an imposing threat on the battlefield.\nYou add half your PHY again on weapon damage rolls, or if the weapon is two handed you add your full PHY again instead. \nYour proficiency level in athletics or brawling increases one step (max Master)",
+        "description": "Your strength makes you an imposing threat on the battlefield.\nYou add half your PHY again on weapon damage rolls, or if the weapon is two handed you add your full PHY again instead. \nYour proficiency level in athletics or brawling increases one step (max Master).",
         "unlockedAction": "",
         "level": "4",
         "unlockedFeats": "",

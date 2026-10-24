@@ -34,6 +34,7 @@ import {
   UPGRADE_FIELDS,
   WEAPON_FIELDS,
 } from "../../constants/DetailFields";
+import { formatPrice } from "../../data/prices";
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -302,7 +303,7 @@ export function weaponToChoiceItem(weapon: Weapon): ChoiceItem {
       { label: "Range", valueKey: String(weapon.range) },
       { label: "Traits", valueKey: traits },
       { label: "Description", valueKey: weapon.description },
-      { label: "Price", valueKey: `${weapon.price} gp` },
+      { label: "Price", valueKey: `${formatPrice(weapon.price)}` },
       { label: "Type", valueKey: weapon.type },
       { label: "Weapon Group", valueKey: weapon.weaponGroup },
     ].filter(({ valueKey }) => valueKey.trim() !== ""),

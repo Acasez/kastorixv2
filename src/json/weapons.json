@@ -499,7 +499,7 @@
         "range": "2",
         "traits": "Agile, Finesse",
         "description": "An agile tail can often take foes that expect your golem to have slow lumbering attacks off-guard",
-        "price": "-",
+        "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -511,7 +511,7 @@
         "range": "1",
         "traits": "Finesse",
         "description": "Quadruped golems can attack foes with their sharp claws",
-        "price": "-",
+        "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -523,7 +523,7 @@
         "range": "1",
         "traits": "",
         "description": "Brawler type golems use their fists as simple, but effective weapons",
-        "price": "-",
+        "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -535,7 +535,7 @@
         "range": "1",
         "traits": "Deadly (d6)",
         "description": "The legs of quadruped golems is another deadly weapon",
-        "price": "-",
+        "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -547,7 +547,7 @@
         "range": "10",
         "traits": "Ranged, Reload (1), Propulsive",
         "description": "You mount a ballista on your golem, giving it a ranged weapon.",
-        "price": "-",
+        "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -559,7 +559,7 @@
         "range": "2",
         "traits": "Sweep, Shove",
         "description": "Golems can push around foes and hit multiple targets with a sweeping tail attack",
-        "price": "-",
+        "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
     },
@@ -571,7 +571,7 @@
         "range": "1",
         "traits": "Finesse, Agile, Aquatic",
         "description": "Naga and Yirte posses sharp claws that can serve as emergency weapons",
-        "price": "-",
+        "price": "",
         "type": "Unarmed",
         "weaponGroup": "Unarmed"
     },
@@ -583,7 +583,7 @@
         "range": "1",
         "traits": "Agile, Aquatic",
         "description": "Dragonkin's sharp claws can cut through many things, but their not as dexterous as a nagas or yirtes",
-        "price": "-",
+        "price": "",
         "type": "Unarmed",
         "weaponGroup": "Unarmed"
     },
@@ -595,7 +595,7 @@
         "range": "1",
         "traits": "Agile, Finesse, Aquatic",
         "description": "Punching people has always been a way to fight",
-        "price": "-",
+        "price": "",
         "type": "Unarmed",
         "weaponGroup": "Unarmed"
     },
@@ -607,7 +607,7 @@
         "range": "1",
         "traits": "Finesse, Precision, Deadly (d8)",
         "description": "Avian creatures can deliver precise strikes with the beak",
-        "price": "-",
+        "price": "",
         "type": "Creature",
         "weaponGroup": "Unarmed"
     },
@@ -619,7 +619,7 @@
         "range": "0",
         "traits": "Finesse",
         "description": "Many creatures fight with their claws",
-        "price": "-",
+        "price": "",
         "type": "Creature",
         "weaponGroup": "Unarmed"
     },

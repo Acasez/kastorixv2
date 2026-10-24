@@ -2,7 +2,7 @@
     {
         "name": "Academic",
         "traits": "Skills",
-        "description": "You are learned in many scholarly matters.\nYour proficiency level in three of Arcana, Crafting, History, Nature, Society or a Lore skill increases (max Expert)",
+        "description": "You are learned in many scholarly matters.\nYour proficiency level in three of Arcana, Crafting, History, Nature, Society or a Lore skill increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -19,7 +19,7 @@
     {
         "name": "Alert",
         "traits": "Skills",
-        "description": "With a watchful eye you are ready for danger.\nYour proficiency level in perception increases (max Expert). \nYour can choose to roll initiative with your perception score instead of your DEX",
+        "description": "With a watchful eye you are ready for danger.\nYour proficiency level in perception increases (max Expert). \nYour can choose to roll initiative with your perception score instead of your DEX.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -36,7 +36,7 @@
     {
         "name": "Always The Right Tool",
         "traits": "",
-        "description": "You always seem to have the correct tool in your pocket.\nOnce per day, as a two action activity you may find a small tool, gear, ammunition or material you could have bought earlier in your bags.\nYou then reveal when you bought the item and pay for them.\nYou have one more quick access slot",
+        "description": "You always seem to have the correct tool in your pocket.\nOnce per day, as a two action activity you may find a small tool, gear, ammunition or material you could have bought earlier in your bags.\nYou then reveal when you bought the item and pay for them.\nYou have one more quick access slot.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -53,7 +53,7 @@
     {
         "name": "Army Training",
         "traits": "Weapons",
-        "description": "You have served in one of the armies, and trained with its equipment. \nBecome trained Light Armor and two weapon groups depending on the army\nDraconic Legions. Polearms and Runeguns\nThezan Armies. Swords and Runeguns.\nSpellshield Formations. Shields and Swords\nEl-Shavrian Armies. Swords and Crossbows\nYirte Militias. Bows and Knives",
+        "description": "You have served in one of the armies, and trained with its equipment. \nBecome trained Light Armor and two weapon groups depending on the army;\n-Draconic Legions. Polearms and Runeguns\n-Thezan Armies. Swords and Runeguns.\n-Spellshield Formations. Shields and Swords\n-El-Shavrian Armies. Swords and Crossbows\n-Yirte Militias. Bows and Knives",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -70,7 +70,7 @@
     {
         "name": "Athlete",
         "traits": "Skills",
-        "description": "You've trained your body \nIncrease the distance you can move without making a check when you take the Leap or High Jump action by 2\nYour proficiency level in Athletics or Acrobatics increases (max Expert). ",
+        "description": "You've trained your body.\nIncrease the distance you can move without making a check when you take the Leap or High Jump action by 2.\nYour proficiency level in Athletics or Acrobatics increases (max Expert). ",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -87,7 +87,7 @@
     {
         "name": "Battlefield Medic",
         "traits": "Skills",
-        "description": "You've trained to practice medicine even in the heat of combat\nYour proficiency level in medicine or athletics increases (max Expert). \nYou can spend a focus point to take the Treat Wounds action as a single action.",
+        "description": "You've trained to practice medicine even in the heat of combat.\nYour proficiency level in medicine or athletics increases (max Expert). \nYou can spend a focus point to take the Treat Wounds action as a single action.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -104,7 +104,7 @@
     {
         "name": "Calculate The Odds",
         "traits": "",
-        "description": "You take a moment to think and calculate your next move.\nYou learn the Calculate The Odds action",
+        "description": "You take a moment to think and calculate your next move.\nYou learn the Calculate The Odds action.\nYou can use this a number of times per day equal to your INT.",
         "unlockedAction": "Calculate The Odds",
         "prerequisites": "",
         "level": "1",
@@ -121,7 +121,7 @@
     {
         "name": "Combat Training",
         "traits": "Saves, Weapons",
-        "description": "Your have seen combat or trained in a army.  \nYour proficiency level in Fortitude Saves increases (max Trained)\nYou become trained in one weapon group of your choice.",
+        "description": "Your have seen combat or trained in a army.  \nYour proficiency level in Fortitude Saves increases (max Trained).\nYou become trained in one weapon group of your choice.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -138,7 +138,7 @@
     {
         "name": "Dedicated Student",
         "traits": "",
-        "description": "You have put practicing magic as your focus ahead of all else. \nGain one level 1 [Arcane Feats]",
+        "description": "You have put practicing magic as your focus ahead of all else. \nGain one level 1 [Arcane Feats].",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -172,7 +172,7 @@
     {
         "name": "Duelist",
         "traits": "",
-        "description": "You experience has you always ready for combat.\nWhen you roll initiative, you may Strike, Cast a Spell that costs 1 action or Step as a free action.\nIf you get a critical hit a creature with an attack or spells that only target them, they have -1 penalty on D20 rolls until the start of next turn. ",
+        "description": "You experience has you always ready for combat.\nWhen you roll initiative, you may Strike, Cast a Spell that costs 1 action or Step as a free action.\nIf you get a critical hit a creature with an attack or spells that only target them, they have -1 penalty on D20 rolls until the start of next turn.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -206,7 +206,7 @@
     {
         "name": "Expert Pilot",
         "traits": "Lore",
-        "description": "Your skill in piloting vehicles is well known.\nYour proficiency level in Airship Lore, Ship Lore or Land Vehicles Lore increases (max Expert).\nYou count as two people when it comes to operating a vehicle",
+        "description": "Your skill in piloting vehicles is well known.\nYour proficiency level in Airship Lore, Ship Lore or Land Vehicles Lore increases (max Expert).\nYou count as two people when it comes to operating a vehicle.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -223,7 +223,7 @@
     {
         "name": "Heavy Armor Training",
         "traits": "Armor",
-        "description": "Unlike most mages you have experience in fighting in heavy armor. \nYou are trained with heavy armor",
+        "description": "Unlike most mages you have experience in fighting in heavy armor. \nYou are trained with heavy armor.",
         "unlockedAction": "",
         "prerequisites": "Trained in light armor",
         "level": "1",
@@ -240,7 +240,7 @@
     {
         "name": "Inspiring Leader",
         "traits": "Skills",
-        "description": "You have a way with words and can inspire those around you. \nYou can use the Inspire Courage action once per day. \nYour proficiency level in persuasion or warfare lore increases (max Expert). ",
+        "description": "You have a way with words and can inspire those around you. \nYou can use the Inspire Courage action once per day. \nYour proficiency level in persuasion or warfare lore increases (max Expert).",
         "unlockedAction": "Inspire Courage",
         "prerequisites": "",
         "level": "1",
@@ -274,7 +274,7 @@
     {
         "name": "Linguist",
         "traits": "Skills",
-        "description": "You know how to speak with people and master any language you come across.\nLearn two extra languages. \nYou have advantage on checks to decipher languages\nYour proficiency level in Society or Persuasion increases (max Expert)",
+        "description": "You know how to speak with people and master any language you come across.\nLearn two extra languages.\nYou have advantage on checks to decipher languages.\nYour proficiency level in Society or Persuasion increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -291,7 +291,7 @@
     {
         "name": "Lore Mastery",
         "traits": "Lore",
-        "description": "There is one type of lore that you know better than almost anyone.\nChoose one Lore skill to become expert in.\nAt level 5 you become master in the chosen lore\nAt level 12 you become legendary in it.",
+        "description": "There is one type of lore that you know better than almost anyone.\nChoose one Lore skill to become expert in.\nAt level 5 you become master in the chosen lore.\nAt level 12 you become legendary in it.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -325,7 +325,7 @@
     {
         "name": "Martial Arts Training",
         "traits": "Skills",
-        "description": "You know how to fight unarmed, from time spent scrapping or formal martial arts training. \nYou become trained with unarmed attacks. \nYour unarmed attacks use a one step larger dice (1d2 -> 1d4 -> 1d6 -> 1d8). \nYour proficiency level in Brawling increases one step (max Expert).",
+        "description": "You know how to fight unarmed, from time spent scrapping or formal martial arts training. \nYou become trained with unarmed attacks.\nYour unarmed attacks use a one step larger dice (1d2 -> 1d4 -> 1d6 -> 1d8).\nYour proficiency level in Brawling increases one step (max Expert).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -342,7 +342,7 @@
     {
         "name": "Martial Gun Arts",
         "traits": "",
-        "description": "You've learned to fight in close range with your firearm.\nYou can use runeguns as melee weapons, dealing 1d4 bludgeoning damage or 1d6 if you are holding them in two hands.\nYou no longer take a penalty to attacks with bayonets",
+        "description": "You've learned to fight in close range with your firearm.\nYou can use runeguns as melee weapons, dealing 1d4 bludgeoning damage or 1d6 if you are holding them in two hands.\nYou no longer take a penalty to attacks with bayonets.",
         "unlockedAction": "",
         "prerequisites": "Trained with Runeguns",
         "level": "1",
@@ -359,7 +359,7 @@
     {
         "name": "Nerves of Steel",
         "traits": "Saves",
-        "description": "You let nothing scare you\nYour proficiency level in Will saves steel increases (max Trained).\nYou have advantage on Will saves against Fear effects",
+        "description": "You let nothing scare you.\nYour proficiency level in Will saves steel increases (max Trained).\nYou have advantage on Will saves against Fear effects.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -376,7 +376,7 @@
     {
         "name": "Opportunist",
         "traits": "",
-        "description": "Your good at striking enemies when a moment of opportunity appears. \nYour penalty on Opportunity Attacks is -2 less (-1 without agile, 0 with)",
+        "description": "Your good at striking enemies when a moment of opportunity appears. \nYour penalty on Opportunity Attacks is -2 less (-1 without agile, 0 with).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -393,7 +393,7 @@
     {
         "name": "Quick Witted",
         "traits": "Skills",
-        "description": "You're good at quickly coming up with comebacks and retorts.\nIf another creature fails to intimidate or persuade you, you may intimidate or persuade them as a reaction.\nYour proficiency level in Intimidation or Persuasion increases (max Expert). ",
+        "description": "You're good at quickly coming up with comebacks and retorts.\nIf another creature fails to intimidate or persuade you, you may intimidate or persuade them as a reaction.\nYour proficiency level in Intimidation or Persuasion increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -410,7 +410,7 @@
     {
         "name": "Quip",
         "traits": "Skills",
-        "description": "You've learn to banter and quip in the middle of battle to distract your enemies.\nYou have the Quip action \nYour proficiency level in Persuasion increases (max Expert). ",
+        "description": "You've learn to banter and quip in the middle of battle to distract your enemies.\nYou have the Quip action.\nYour proficiency level in Persuasion increases (max Expert).",
         "unlockedAction": "Quip",
         "prerequisites": "",
         "level": "1",
@@ -461,7 +461,7 @@
     {
         "name": "Staff Training",
         "traits": "Weapons",
-        "description": "You have trained with staves, a traditional weapon for mages.\nYou are trained with the staff weapon group\nYou can turn wood into a battlestaff or longstaff during a short rest. \nIf you have the Shape Metal spell you can use it to create a battlestaff as a three action activity",
+        "description": "You have trained with staves, a traditional weapon for mages.\nYou are trained with the staff weapon group.\nYou can turn wood into a battlestaff or longstaff during a short rest.\nIf you have the Shape Metal spell you can use it to create a battlestaff as a three action activity.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -478,7 +478,7 @@
     {
         "name": "Surveyor",
         "traits": "Lore",
-        "description": "You have studied maps and the land, learning how to read the terrain. \nYou become trained in geography lore. \nYour exploration speed is two steps faster than what it would normally be.\nYou can always find north.",
+        "description": "You have studied maps and the land, learning how to read the terrain. \nYou become trained in geography lore.\nYour exploration speed is two steps faster than what it would normally be.\nYou can always find north.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -495,7 +495,7 @@
     {
         "name": "Survivor",
         "traits": "",
-        "description": "You have survived against the elements. \nYou gain resistance 3 to one type of elemental damage: fire, cold, electricity, acid or sonic. \nYou have a +3 bonus on survival checks to avoid natural hazards and extreme weather.\nYour proficiency level in Survival or Perception increases (max Expert). ",
+        "description": "You have survived against the elements. \nYou gain resistance 3 to one type of elemental damage: fire, cold, electricity, acid or thunder. \nYou have a +3 bonus on survival checks to avoid natural hazards and extreme weather.\nYour proficiency level in Survival or Perception increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -512,7 +512,7 @@
     {
         "name": "Tactical Combatant",
         "traits": "",
-        "description": "You can make the best of the heat of combat. \nYour proficiency level in Warfare Lore increases (max Expert). \nYou have the Combat Assessment action¨",
+        "description": "You can make the best of the heat of combat.\nYour proficiency level in Warfare Lore increases (max Expert).\nYou have the Combat Assessment action.",
         "unlockedAction": "Combat Assessment",
         "prerequisites": "",
         "level": "1",
@@ -529,7 +529,7 @@
     {
         "name": "Underhanded Striker",
         "traits": "",
-        "description": "You know how to strike opponents when their weakened. \nWhen you attack an opponent that is off-guard you deal 1d6 more damage. \nAlternatively you may instead reduce the Precision attack penalty against such opponents by 2 (to a minimum of 1)",
+        "description": "You know how to strike opponents when their weakened.\nWhen you attack an opponent that is off-guard you deal 1d6 more damage.\nAlternatively you may instead reduce the Precision attack penalty against such opponents by 2 (to a minimum of 1).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -563,7 +563,7 @@
     {
         "name": "Weapons Training",
         "traits": "Weapons",
-        "description": "You have trained in a variety of weapons. \nBecome trained in two weapon groups of your choice. \nInstead of picking a weapon group you may pick all Simple Weapons or a single Advanced Weapon\nYou may choose this feat multiple times",
+        "description": "You have trained in a variety of weapons.\nBecome trained in two weapon groups of your choice.\nInstead of picking a weapon group you may pick all Simple Weapons or a single Advanced Weapon.\nYou may choose this feat multiple times.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -580,7 +580,7 @@
     {
         "name": "Will to Live",
         "traits": "",
-        "description": "Taking your down is harder than most and you don't stay down.\nYou may add your PHY or WIL to death saving throws.\nWhen you would be critically hit you may spend a focus point to add your PHY or WIL to your save, potentially reducing it to a normal hit",
+        "description": "Taking your down is harder than most and you don't stay down.\nYou may add your PHY or WIL to death saving throws.\nWhen you would be critically hit you may spend a focus point to add your PHY or WIL to your save, potentially reducing it to a normal hit.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -597,7 +597,7 @@
     {
         "name": "You're Next",
         "traits": "Skills",
-        "description": "You know the perfect line for when you defeat your foes\nWhen you kill or defeat a foe you may use your reaction to use Intimidate.\nYour proficiency level in Intimidation increases (max Expert). ",
+        "description": "You know the perfect line for when you defeat your foes.\nWhen you kill or defeat a foe you may use your reaction to use Intimidate.\nYour proficiency level in Intimidation increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -614,7 +614,7 @@
     {
         "name": "Aerialist",
         "traits": "",
-        "description": "The sky is your calling\nWhen you have a flight or glide speed it increases by 1. \nYou have a +2 bonus to any acrobatics or athletics check you make in the air.",
+        "description": "The sky is your calling.\nWhen you have a flight or glide speed it increases by 1.\nYou have a +2 bonus to any acrobatics or athletics check you make in the air.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "2",
@@ -648,7 +648,7 @@
     {
         "name": "Emergency Aura Block",
         "traits": "",
-        "description": "Your experience of dangers allow you shield yourself with your aura before your sometimes even aware of the threat.\nOnce per hour you may Aura Block as free action",
+        "description": "Your experience of dangers allow you shield yourself with your aura before your sometimes even aware of the threat.\nOnce per hour you may Aura Block as free action.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "2",
@@ -665,7 +665,7 @@
     {
         "name": "Focused",
         "traits": "",
-        "description": "Your focus is steady, even in battle.\nIncrease your focus pool amount by 1",
+        "description": "Your focus is steady, even in battle.\nIncrease your focus pool amount by 1.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "2",
@@ -682,7 +682,7 @@
     {
         "name": "Like Shooting Fish in a Barrel",
         "traits": "",
-        "description": "You can keep reloading as you deal with your foes\nOnce per turn, when you kill or knock out a creature your may reload an held weapon as a free action",
+        "description": "You can keep reloading as you deal with your foes.\nOnce per turn, when you kill or knock out a creature your may reload an held weapon as a free action.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "2",
@@ -699,7 +699,7 @@
     {
         "name": "Skilled Fencer",
         "traits": "",
-        "description": "You've trained in the arts of fencing \nYou have +1 bonus when Parrying\nYou learn the Cut Down Projectile and Riposte techniques",
+        "description": "You've trained in the arts of fencing .\nYou have +1 bonus when Parrying.\nYou learn the Cut Down Projectile and Riposte techniques.",
         "unlockedAction": "Cut Down Projectile, Riposte",
         "prerequisites": "",
         "level": "2",
@@ -716,7 +716,7 @@
     {
         "name": "Armor Expertize",
         "traits": "",
-        "description": "You know how to make the most of your armor\nWhen wearing armor the resistances it grants increases by 1, or 2 if its heavy armor.\nAdditionally your unarmed attacks when wearing heavy armor with gauntlets deal 1d4 bludgeoning damage.",
+        "description": "You know how to make the most of your armor.\nWhen wearing armor the resistances it grants increases by 1, or 2 if its heavy armor.\nAdditionally your unarmed attacks when wearing heavy armor with gauntlets deal 1d4 bludgeoning damage.",
         "unlockedAction": "",
         "prerequisites": "Trained with Armor",
         "level": "3",
@@ -733,7 +733,7 @@
     {
         "name": "Strike The Unwary",
         "traits": "",
-        "description": "Your always taking every opportunity to strike your foes\nYou can use Opportunity Attacks on creatures using casting spells using somatic component, and actions with the Manipulate Trait",
+        "description": "Your always taking every opportunity to strike your foes.\nYou can use Opportunity Attacks on creatures using casting spells using somatic component, and actions with the Manipulate Trait.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "3",
@@ -750,7 +750,7 @@
     {
         "name": "Always Ready",
         "traits": "Skills",
-        "description": "Always ready.\nWhen you roll initiative and aren't surprised you may add your INT or WIL to your roll.\nYour proficiency level in perception or insight increases (max Master). ",
+        "description": "Always ready.\nWhen you roll initiative and aren't surprised you may add your INT or WIL to your roll.\nYour proficiency level in perception or insight increases (max Master).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -767,7 +767,7 @@
     {
         "name": "Commanding Presence",
         "traits": "Saves",
-        "description": "Your strong mind steadies your allies\nYour proficiency level in Will saves increases (max Expert). \nAllied creatures within 6 tiles have a +1 bonus to their Will saves",
+        "description": "Your strong mind steadies your allies.\nYour proficiency level in Will saves increases (max Expert).\nAllied creatures within 6 tiles have a +1 bonus to their Will saves.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -784,7 +784,7 @@
     {
         "name": "Evasion Expertize",
         "traits": "Saves",
-        "description": "You know how evade even wide area attacks\nYour proficiency level in Reflex saves increases (max Expert). \nWhen you get a success on a reflex save you may use your reaction to turn it into a critical success ",
+        "description": "You know how evade even wide area attacks.\nYour proficiency level in Reflex saves increases (max Expert).\nWhen you get a success on a reflex save you may use your reaction to turn it into a critical success. ",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -801,7 +801,7 @@
     {
         "name": "Expert Brawler",
         "traits": "Skills, Weapons",
-        "description": "Brawling comes to you naturally\nYour proficiency level in Brawling increases (max Expert).\nYour proficiency level in unarmed attacks increases (max Expert).\nYou learn 2 techniques with the Brawling trait",
+        "description": "Brawling comes to you naturally.\nYour proficiency level in Brawling increases (max Expert).\nYour proficiency level in unarmed attacks increases (max Expert).\nYou learn 2 techniques with the Brawling trait.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -818,7 +818,7 @@
     {
         "name": "Fleet",
         "traits": "",
-        "description": "You've trained to be faster than most.\nYou move speed increases by 1",
+        "description": "You've trained to be faster than most.\nYou move speed increases by 1.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -835,7 +835,7 @@
     {
         "name": "Magical Master",
         "traits": "",
-        "description": "You've focused even more on your magical skills\nGain one level 6 [Arcane Feat]",
+        "description": "You've focused even more on your magical skills.\nGain one level 6 [Arcane Feat].",
         "unlockedAction": "",
         "prerequisites": "INT 2 or higher",
         "level": "4",
@@ -852,7 +852,7 @@
     {
         "name": "Martial Expertize",
         "traits": "Weapons",
-        "description": "Your martial experience has only increased with time. \nYour proficiency level in two weapon groups increases (max Expert). \nYou may learn one techniques instead of picking a weapon group.\nYou may choose this feat multiple times",
+        "description": "Your martial experience has only increased with time. \nYour proficiency level in two weapon groups increases (max Expert). \nYou may learn one techniques instead of picking a weapon group.\nYou may choose this feat multiple times.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -869,7 +869,7 @@
     {
         "name": "Move Together",
         "traits": "",
-        "description": "You move together with your companion.\nWhen you stride you may have your golem, soulbond or other familiar stride in the same direction",
+        "description": "You move together with your companion.\nWhen you Stride you may have your golem, soulbond or other familiar Stride in the same direction.",
         "unlockedAction": "",
         "prerequisites": "You have a golem, soulbond or other familiar",
         "level": "4",
@@ -886,7 +886,7 @@
     {
         "name": "Perfect Condition",
         "traits": "",
-        "description": "You always keep you body in a healthy state\nIncrease your health by your PHY\nYour proficiency level in Fortitude saving throws increases (max Expert). ",
+        "description": "You always keep you body in a healthy state\nIncrease your health by your PHY.\nYour proficiency level in Fortitude saving throws increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -903,7 +903,7 @@
     {
         "name": "Rolling Landing",
         "traits": "Skills",
-        "description": "You can land on your feet like a cat\nYou learn the Cat Fall reaction\nYour proficiency level in Acrobatics increases (max Master).",
+        "description": "You can land on your feet like a cat.\nYou learn the Cat Fall reaction.\nYour proficiency level in Acrobatics increases (max Master).",
         "unlockedAction": "Cat Fall",
         "prerequisites": "",
         "level": "4",
@@ -920,26 +920,9 @@
     {
         "name": "Scrappy Survivalist",
         "traits": "",
-        "description": "Though you may not be physically imposing, you've learnt to survive.\nIncrease your health by 5\nYour proficiency level in Fortitude saves increases (max Expert)",
+        "description": "Though you may not be physically imposing, you've learnt to survive.\nIncrease your health by 5.\nYour proficiency level in Fortitude saves increases (max Expert).",
         "unlockedAction": "",
         "prerequisites": "Phy 0 or less",
-        "level": "4",
-        "repeatable": "",
-        "unlockedFeats": "",
-        "speeds": "",
-        "resistances": "",
-        "combatManeuversLearned": "",
-        "health": "",
-        "choice": "",
-        "quickAccessSlots": "",
-        "focusPoints": ""
-    },
-    {
-        "name": "Sniper",
-        "traits": "",
-        "description": "You're an expert at hitting foes from range.\nYour proficiency level with two of the Crossbow, Runeguns or Bows weapon groups increases (max Expert).\nYou learn the Deadshot action",
-        "unlockedAction": "Deadshot",
-        "prerequisites": "",
         "level": "4",
         "repeatable": "",
         "unlockedFeats": "",
@@ -971,7 +954,7 @@
     {
         "name": "Titan Grappler",
         "traits": "Skills",
-        "description": "You've grappled with bigger monsters.\nYour proficiency level in brawling increases (max Master). \nYou count as one size bigger when determining penalties and bonuses from grappling",
+        "description": "You've grappled with bigger monsters.\nYour proficiency level in brawling increases (max Master). \nYou count as one size bigger when determining penalties and bonuses from grappling.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "4",
@@ -988,7 +971,7 @@
     {
         "name": "Battlefield Awareness",
         "traits": "Skills",
-        "description": "Taking you off guard is harder than most\nYour proficiency level in perception increases (max Master). \nWhile off-guard you reduce the penalty by one",
+        "description": "Taking you off guard is harder than most.\nYour proficiency level in perception increases (max Master).\nWhile off-guard you reduce the penalty by one.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "6",
@@ -1005,7 +988,7 @@
     {
         "name": "Defensive Duelist",
         "traits": "",
-        "description": "Nothing can get past your guard\nYour bonus when parrying increases to +2.\nWhen you succeed on a Parry you get a +1 bonus to the next attack until the end of your next turn (Stacks up to 3 times).",
+        "description": "Nothing can get past your guard.\nYour bonus when parrying increases to +2.\nWhen you succeed on a Parry you get a +1 bonus to the next attack until the end of your next turn (Stacks up to 3 times).",
         "unlockedAction": "",
         "prerequisites": "[Skilled Fencer]",
         "level": "6",
@@ -1022,7 +1005,7 @@
     {
         "name": "Flash Of Genius",
         "traits": "Skills",
-        "description": "Your mind works at a greater speed\nOnce per turn you may spend a focus point to reduce action cost of an action with the Mental trait by 1.\nYour proficiency level in Arcana, Nature, History or a Lore Skill increases (max Master). ",
+        "description": "Your mind works at a greater speed.\nOnce per turn you may spend a focus point to reduce action cost of an action with the Mental trait by 1.\nYour proficiency level in Arcana, Nature, History or a Lore Skill increases (max Master).",
         "unlockedAction": "",
         "prerequisites": "INT 3 or higher",
         "level": "6",
@@ -1039,7 +1022,7 @@
     {
         "name": "Impactful Strikes",
         "traits": "",
-        "description": "Your strikes carry enough weight to impact creatures through armor.\nYour melee strikes ignore physical resistances up to half your PHY or your full PHY if you use a two handed weapon",
+        "description": "Your strikes carry enough weight to impact creatures through armor.\nYour melee strikes ignore physical resistances up to half your PHY or your full PHY if you use a two handed weapon.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "6",
@@ -1056,7 +1039,7 @@
     {
         "name": "In The Thick of It",
         "traits": "",
-        "description": "You fight the best while in midst of combat\nIf you start of your turn adjacent to 2 or more enemies, gain a temporary focus point that last until the end of your turn.",
+        "description": "You fight the best while in midst of combat.\nIf you start of your turn adjacent to 2 or more enemies, gain a temporary focus point that last until the end of your turn.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "6",
@@ -1073,7 +1056,7 @@
     {
         "name": "Second Wind",
         "traits": "",
-        "description": "You take a breath and let energy return to you.\nOnce per day you spend an action to lose one level of exhaustion and get back a focus point",
+        "description": "You take a breath and let energy return to you.\nOnce per day you spend an action to lose one level of exhaustion and get back a focus point.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "6",
@@ -1090,8 +1073,8 @@
     {
         "name": "Shield Specialization",
         "traits": "Weapons",
-        "description": "You know how to use shields to their fullest extent.\nYour proficiency level with shields is Expert\nWhile you are holding bucklers you may cast spells as normal with that hand. \nYou learn the Block Spell action\nYou learn the Steady Shield action",
-        "unlockedAction": "Steady Shield, Block Spell",
+        "description": "You know how to use shields to their fullest extent.\nYour proficiency level with shields is Expert.\nWhile you are holding bucklers you may cast spells as normal with that hand.\nYou learn two simple or advanced techniques with the Defensive trait.",
+        "unlockedAction": "",
         "prerequisites": "",
         "level": "6",
         "repeatable": "",
@@ -1107,7 +1090,7 @@
     {
         "name": "Strike Together",
         "traits": "",
-        "description": "You attack together with your companion.\nWhen you strike you may have your golem, soulbond or other familiar strike the same target",
+        "description": "You attack together with your companion.\nWhen you strike you may have your golem, soulbond or other familiar strike the same target.",
         "unlockedAction": "",
         "prerequisites": "You have a golem, soulbond or other familiar",
         "level": "6",
@@ -1124,7 +1107,7 @@
     {
         "name": "Rapid Striker",
         "traits": "",
-        "description": "You have trained to rapidly strike targets without error.\nYou multiple attack penalty is 1 lower per step. (-4 normally, -3 with agile weapons)",
+        "description": "You have trained to rapidly strike targets without error.\nYou multiple attack penalty is 1 lower per step. (-4 normally, -3 with agile weapons).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "8",
@@ -1141,7 +1124,7 @@
     {
         "name": "Versatile Wielder",
         "traits": "Weapons",
-        "description": "You're ready to fight with whatever weapon comes your way.\nYour proficiency level with all weapons and improvised attacks is Expert",
+        "description": "You're ready to fight with whatever weapon comes your way.\nYour proficiency level with all weapons and improvised attacks is Expert.",
         "unlockedAction": "",
         "prerequisites": "Expert in 2 weapon groups",
         "level": "8",
@@ -1158,7 +1141,7 @@
     {
         "name": "Aspect Infusion",
         "traits": "",
-        "description": "Your connection to an aspect has changed you physically and provided with some elemental abilities.\nGain a bonus depending on the aspect\nYou require 3 mana per hour",
+        "description": "Your connection to an aspect has changed you physically and provided with some elemental abilities.\nGain a bonus depending on the aspect.\nYou require 3 mana per hour.",
         "unlockedAction": "",
         "prerequisites": "[Attunement] or [Pseudo-Attunement]",
         "level": "10",
@@ -1175,7 +1158,7 @@
     {
         "name": "Instinctive Aura Block",
         "traits": "",
-        "description": "Using your aura to shield yourself comes naturally to you after this many battles\nOnce per turn you may Aura Block as free action",
+        "description": "Using your aura to shield yourself comes naturally to you after this many battles.\nOnce per turn you may Aura Block as free action.",
         "unlockedAction": "",
         "prerequisites": "[Emergency Aura Block]",
         "level": "10",
@@ -1192,7 +1175,7 @@
     {
         "name": "Master Sprinter",
         "traits": "",
-        "description": "You can run even faster\nYou move speed increases by 1\nWhen you take a move action you move one extra tile if your last action was also move action",
+        "description": "You can run even faster.\nYou move speed increases by 1.\nWhen you take a move action you move one extra tile if your last action was also move action.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "10",
@@ -1209,7 +1192,7 @@
     {
         "name": "Weapon Master",
         "traits": "Weapons",
-        "description": "Mastery at arms\nYour proficiency level in a weapon group increases (max Master).\nYou learn two advanced techniques.\nYou may choose this feat multiple times.",
+        "description": "Mastery at arms.\nYour proficiency level in a weapon group increases (max Master).\nYou learn two advanced techniques.\nYou may choose this feat multiple times.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "10",
@@ -1243,7 +1226,7 @@
     {
         "name": "Parrying Master",
         "traits": "",
-        "description": "You feel ready to take on the world with a blade your hand.\nYour bonus when parrying melee attacks increases to +3.\nWhile Parrying you have an extra reaction",
+        "description": "You feel ready to take on the world with a blade your hand.\nYour bonus when parrying melee attacks increases to +3.\nWhile Parrying you have an extra reaction.",
         "unlockedAction": "",
         "prerequisites": "[Defensive Duelist]",
         "level": "12",
@@ -1260,7 +1243,7 @@
     {
         "name": "Elementalization",
         "traits": "",
-        "description": "The connection to your aspect is so strong you now have become partly elemental in nature\nGain a bonus depending on your aspect\nYou require 10 mana per hour\nYou learn all the apprentice spells connected to your element\nYou gain the elemental trait",
+        "description": "The connection to your aspect is so strong you now have become partly elemental in nature.\nGain a bonus depending on your aspect.\nYou require 10 mana per hour.\nYou learn all the apprentice spells connected to your element.\nYou gain the elemental trait.",
         "unlockedAction": "",
         "prerequisites": "[Aspect Infusion]",
         "level": "16",
@@ -1277,7 +1260,7 @@
     {
         "name": "Legendary Weapon Master",
         "traits": "",
-        "description": "Your skills with weapons is legendary\nYour proficiency level in a weapon group increases (max Legendary).\nYou learn an masterwork technique\nYou may choose this feat multiple times",
+        "description": "Your skills with weapons is legendary.\nYour proficiency level in a weapon group increases (max Legendary).\nYou learn an masterwork technique.\nYou may choose this feat multiple times.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "16",
@@ -1294,7 +1277,7 @@
     {
         "name": "Mythic Champion",
         "traits": "",
-        "description": "Your training and experience allows you repeatedly go beyond normal limits\nYou recharge your Blade Arts after 1 hour.\nAdditionally the first time each day you are reduced to below half health, you recharge a Blade Arts",
+        "description": "Your training and experience allows you repeatedly go beyond normal limits.\nYou recharge your Blade Arts after 1 hour.\nAdditionally the first time each day you are reduced to below half health, you recharge a Blade Arts.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "18",

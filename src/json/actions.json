@@ -35,11 +35,11 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You carefully aim your next ranged attack, gaining a +2 bonus to the attack roll. \nAdditionally, you ignore the obscured condition on the attack if the target is obscured.\nThe bonus lasts until you move or the start of your next turn.",
-        "traits": "Item",
+        "traits": "Item, Technique",
         "skill": "",
-        "sourceType": "General Feat",
-        "source": "Marksman",
-        "techniqueRank": ""
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Simple"
     },
     {
         "name": "Aura Block",
@@ -147,11 +147,11 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You position your shield in front of the blast. Make your save with a -4 penalty.\nIf you succeed the allies you a providing cover to automatically succeed their save",
-        "traits": "Defensive",
+        "traits": "Defensive, Technique",
         "skill": "",
-        "sourceType": "General Feat",
-        "source": "Shield Specialization",
-        "techniqueRank": ""
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Advanced"
     },
     {
         "name": "Cast a Spell",
@@ -217,7 +217,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You rush forward, attacking your opponent with your momentum.\nStride twice, then make a melee Strike.",
-        "traits": "Attack",
+        "traits": "Attack, Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -245,11 +245,11 @@
         "manaCost": "",
         "focusCost": "",
         "description": "As you strike an enemy you quickly assess its capabilities. \nMake a Recall Knowledge check against the creature. ",
-        "traits": "Mental",
+        "traits": "Mental, Technique",
         "skill": "",
-        "sourceType": "General Feat",
-        "source": "Tactical Combatant",
-        "techniqueRank": ""
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Simple"
     },
     {
         "name": "Combat Regeneration",
@@ -275,7 +275,7 @@
         "description": "Your weapon slams into the ground, creating a shockwave from the impact\nStrike a tile within range, all creatures on and adjacent from it must make a basic Reflex save against the attack.\nCreatures on the slammed tile take an additional 2d10 bludgeoning damage. \nThis damage bonus is doubled if you were falling or jumping as you did the attack",
         "traits": "Attack, Blade Art",
         "skill": "",
-        "sourceType": "Technique",
+        "sourceType": "Blade Art",
         "source": "",
         "techniqueRank": "Masterwork"
     },
@@ -301,10 +301,10 @@
         "manaCost": "",
         "focusCost": "",
         "description": "Attempt to cut down the projectile. \nMake a melee attack against it, instead of a Reflex saving throw",
-        "traits": "Defensive",
+        "traits": "Defensive, Technique",
         "skill": "",
-        "sourceType": "General Feat",
-        "source": "Skilled Fencer",
+        "sourceType": "Technique",
+        "source": "",
         "techniqueRank": "Simple"
     },
     {
@@ -331,8 +331,8 @@
         "description": "You take a moment to focus and take a perfectly aimed shot.\nMake a ranged strike, dealing an additional weapon dice.",
         "traits": "Attack, Technique",
         "skill": "",
-        "sourceType": "General Feat",
-        "source": "Sniper",
+        "sourceType": "Technique",
+        "source": "",
         "techniqueRank": "Complex"
     },
     {
@@ -343,7 +343,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You order your allies to take cover.\nUp to three allies can use their reactions to Step or Traverse into Cover or use an action with the Defensive trait",
-        "traits": "Tactical, Verbal",
+        "traits": "Tactical, Verbal, Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -357,7 +357,7 @@
         "manaCost": "",
         "focusCost": "1",
         "description": "You draw two arrows at once and loose them at separate targets.\nMake two attacks on two different targets in range.\nYou have a -2 penalty on both attacks, but your multiple attack penalty increases first after both shots",
-        "traits": "Attack",
+        "traits": "Attack, Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "Master Archer",
@@ -469,11 +469,11 @@
         "manaCost": "",
         "focusCost": "",
         "description": "Block or Parry with the Light weapon",
-        "traits": "Defensive",
+        "traits": "Defensive, Technique",
         "skill": "",
-        "sourceType": "General Feat",
+        "sourceType": "Technique",
         "source": "",
-        "techniqueRank": ""
+        "techniqueRank": "Advanced"
     },
     {
         "name": "Elemental Aura",
@@ -553,7 +553,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You make a shot beyond the normal range of the weapon.\nMake a ranged strike at two range increments above the default at no penalty.",
-        "traits": "Attack",
+        "traits": "Attack, Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -1057,7 +1057,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You draw a weapon and strike with it in the same motion.\nDraw a weapon and Strike with it.",
-        "traits": "Attack",
+        "traits": "Attack, Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -1253,11 +1253,11 @@
         "manaCost": "",
         "focusCost": "1",
         "description": "Hit a foe with your shield to stagger them.\nMake a Strike with your shield.\nOn a hit they become off-guard 3 until the start of your next turn.",
-        "traits": "Attack, Item",
+        "traits": "Attack, Item, Technique",
         "skill": "",
-        "sourceType": "General Feat",
-        "source": "Shield Specialization",
-        "techniqueRank": ""
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Advanced"
     },
     {
         "name": "Shove",
@@ -1437,8 +1437,8 @@
         "description": "Stick a tower shield you are holding in the ground in front of you.\nSteadied shields provide greater cover to creatures behind them.\nYou need to spend an action to recover a steadied tower shield.",
         "traits": "Item, Defensive",
         "skill": "",
-        "sourceType": "General Feat",
-        "source": "Shield Specialization",
+        "sourceType": "Technique",
+        "source": "",
         "techniqueRank": ""
     },
     {
