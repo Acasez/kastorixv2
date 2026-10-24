@@ -7,11 +7,12 @@ import type {
 } from "../types/Action";
 import rawActions from "../JSON/actions.json";
 import type { Skill } from "../types/Skills";
+import { toNumber } from "../utils/toNumber";
 
 export const actions: Action[] = rawActions.map((raw) => ({
   ...raw,
-  manaCost: Number(raw.manaCost),
-  focusCost: Number(raw.focusCost),
+  manaCost: toNumber(raw.manaCost),
+  focusCost: toNumber(raw.focusCost),
   skill: raw.skill as unknown as Skill[],
   actions: raw.actions as ActionCost,
   traits: raw.traits as unknown as ActionTrait[],

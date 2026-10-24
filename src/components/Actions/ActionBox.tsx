@@ -29,6 +29,19 @@ export default function ActionBox({ action }: ActionBoxProps) {
         </div>
       </div>
       <div className="text-center text-base max-w-full">
+        <div className="flex flex-row justify-center gap-5">
+          {details.manaCost && details.manaCost > 0 && (
+            <p>
+              <span className="font-bold">Mana cost</span>: {details.manaCost}
+            </p>
+          )}
+          {details.focusCost && details.focusCost > 0 && (
+            <p>
+              <span className="font-bold">Focus point cost</span>:{" "}
+              {details.focusCost}
+            </p>
+          )}
+        </div>
         {details.trigger && (
           <p>
             <span className="font-bold">Trigger</span>: {details.trigger}
