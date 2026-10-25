@@ -1,18 +1,17 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useCharacter } from "../../../hooks/useCharacter";
 import type { SomaticComponent, VerbalComponent } from "../../../types/Spells";
 import { SPELL_RANKS } from "../../../constants/SpellRanks";
 import SpellRankSection from "./SpellRankSection";
-import ModalWrapper from "../../ModalViews/ModalWrapper";
-import type { ModalRequest } from "../../ModalViews/modalTypes";
 import spells from "../../../data/spells";
 import metamagics from "../../../JSON/metamagic.json";
 import MetamagicsSection from "./MetamagicsSection";
 import { MultiOptionSwitch } from "../../CommonCreatureComponents/MultiOptionSwitch";
+import { useModal } from "../../../hooks/useModal";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
-  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const { openModal } = useModal();
   const { verbal, somatic } = character.spellShaping;
 
   // Derived, never stored in local state
@@ -49,7 +48,7 @@ export default function SpellsSection() {
     rankName: string,
     replaceSpell?: string,
   ) => {
-    setModalRequest({
+    openModal({
       type: "spell",
       title: replaceSpell
         ? `Replace ${replaceSpell}`
@@ -78,7 +77,7 @@ export default function SpellsSection() {
   };
 
   const openMetamagicModalForReplacement = (replaceMetamagic?: string) => {
-    setModalRequest({
+    openModal({
       type: "metamagic",
       title: replaceMetamagic
         ? `Replace ${replaceMetamagic}`
@@ -142,12 +141,6 @@ export default function SpellsSection() {
           character.metamagics.includes(metamagic.name),
         )}
       />
-      {modalRequest && (
-        <ModalWrapper
-          request={modalRequest}
-          closeModal={() => setModalRequest(null)}
-        />
-      )}
     </div>
   );
 }

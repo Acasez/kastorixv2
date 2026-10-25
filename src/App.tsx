@@ -6,6 +6,8 @@ import Header from "./components/PageStructure/Header.tsx";
 import Footer from "./components/PageStructure/Footer.tsx";
 import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 import { HelmetProvider } from "react-helmet-async";
+import ModalWrapper from "./components/ModalViews/ModalWrapper.tsx";
+import { useModal } from "./hooks/useModal.ts";
 
 function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (
@@ -24,6 +26,7 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
 
 export default function App() {
   const { pathname } = useLocation();
+  const { request, closeModal } = useModal();
 
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top on route change
@@ -31,6 +34,7 @@ export default function App() {
 
   return (
     <>
+      {request && <ModalWrapper request={request} closeModal={closeModal} />}
       <HelmetProvider>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Header />
