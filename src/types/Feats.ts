@@ -69,3 +69,10 @@ export type AncestryFeat = {
 };
 
 export type AncestryFeatType = "Cultural" | "Biological";
+
+export type FeatTypes =
+  | "generalFeat"
+  | "arcaneFeat"
+  | "golemUpgrade"
+  | "runegunUpgrade"
+  | "advantage";
