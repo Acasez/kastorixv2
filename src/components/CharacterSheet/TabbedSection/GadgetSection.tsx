@@ -1,15 +1,13 @@
-import { useState } from "react";
-import type { ModalRequest } from "../../ModalViews/modalTypes";
 import { useCharacter } from "../../../hooks/useCharacter";
 import gadgets from "../../../data/gadgets";
-import ModalWrapper from "../../ModalViews/ModalWrapper";
 import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
 import GadgetComponent from "./GadgetComponent";
 import { skillModifier } from "../../../constants/Proficiency";
+import { useModal } from "../../../hooks/useModal";
 
 export default function GadgetSection() {
   const { character, updateCharacter } = useCharacter();
-  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const { openModal } = useModal();
   const maxKnownGadgets = getCharacterGadgetGrant(character);
 
   const openGadgetModal = () => {
@@ -17,7 +15,7 @@ export default function GadgetSection() {
   };
 
   const openGadgetModalForReplacement = (replaceGadget?: string) => {
-    setModalRequest({
+    openModal({
       type: "gadget",
       title: replaceGadget ? `Replace ${replaceGadget}` : `Select Gadget`,
       selectionKey: "",
@@ -77,12 +75,6 @@ export default function GadgetSection() {
             ))}
         </div>
       </div>
-      {modalRequest && (
-        <ModalWrapper
-          request={modalRequest}
-          closeModal={() => setModalRequest(null)}
-        />
-      )}
     </div>
   );
 }

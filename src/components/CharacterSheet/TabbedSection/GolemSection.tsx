@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useState } from "react";
 import { useCharacter } from "../../../hooks/useCharacter";
 import TrackBar from "../../CommonCreatureComponents/TrackBar";
 import golemModels from "../../../JSON/golem_models.json";
@@ -8,12 +7,11 @@ import weapons from "../../../data/weapons";
 import WeaponComponent from "../../CommonCreatureComponents/WeaponComponent";
 import ActionBox from "../../Actions/ActionBox";
 import type { StatKey } from "../../../types/StatKey";
-import ModalWrapper from "../../ModalViews/ModalWrapper";
-import type { ModalRequest } from "../../ModalViews/modalTypes";
+import { useModal } from "../../../hooks/useModal";
 
 export default function GolemSection() {
   const { character, updateCharacter } = useCharacter();
-  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const { openModal } = useModal();
   const model = golemModels.find(
     (golemModel) => golemModel.name === character.golemModel,
   );
@@ -132,7 +130,7 @@ export default function GolemSection() {
     ).values(),
   ];
   const openGolemWeaponModal = (replaceWeapon?: string) => {
-    setModalRequest({
+    openModal({
       type: "weapon",
       title: replaceWeapon ? `Replace ${replaceWeapon}` : "Add Golem Weapon",
       selectionKey: "golemWeapons",
@@ -334,12 +332,6 @@ export default function GolemSection() {
           )}
         </section>
       </div>
-      {modalRequest && (
-        <ModalWrapper
-          request={modalRequest}
-          closeModal={() => setModalRequest(null)}
-        />
-      )}
     </div>
   );
 }
