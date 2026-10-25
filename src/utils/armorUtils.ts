@@ -11,5 +11,5 @@ export function getArmorPenalty(
       ? armorPenalties === "Light" || armorPenalties === "Heavy"
       : armorPenalties === armor.type;
 
-  return applies ? armor.penalties : 0;
+  return applies ? (armor?.penalties ?? 0) : 0;
 }

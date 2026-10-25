@@ -20,7 +20,7 @@ export default function CreatureSavingThrows({
   const { creature, updateCreature } = useCreature(blockId);
   const selectedArmor = armors.find((armor) => armor.name === creature.armor);
   const reflexPenalty =
-    selectedArmor?.type === "Heavy" ? selectedArmor.penalties : 0;
+    selectedArmor?.type === "Heavy" ? (selectedArmor?.penalties ?? 0) : 0;
 
   return (
     <section>

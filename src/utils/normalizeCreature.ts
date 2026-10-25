@@ -9,6 +9,7 @@ import type { VerbalComponent, SomaticComponent } from "../types/Spells";
 import type { Weapon } from "../types/Weapons";
 import { parseWeaponTrait, parseWeaponTraits } from "../data/weapons";
 import { createDamageInstances, damageTypesByName } from "../data/damageTypes";
+import { parsePrice } from "../data/prices";
 
 // If constants/Proficiency already exports the tier names, import that instead.
 const PROFICIENCY_TIERS: readonly string[] = [
@@ -170,7 +171,7 @@ const weapons = (value: unknown): Weapon[] =>
             range: numeric(entry.range, 1),
             traits: weaponTraitList(entry.traits),
             description: str(entry.description),
-            price: numeric(entry.price, 0),
+            price: parsePrice(str(entry.price)),
             type: str(entry.type, "Simple") as Weapon["type"],
             weaponGroup: str(
               entry.weaponGroup,

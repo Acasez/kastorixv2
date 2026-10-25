@@ -10,7 +10,7 @@ export default function SavingThrowDisplay() {
   const { character } = useCharacter();
   const selectedArmor = armors.find((armor) => armor.name === character.armor);
   const heavyArmorPenalty =
-    selectedArmor?.type === "Heavy" ? selectedArmor.penalties : 0;
+    selectedArmor?.type === "Heavy" ? (selectedArmor?.penalties ?? 0) : 0;
   return (
     <div>
       <h1 className="text-3xl text-striking text-center underline mb-2">

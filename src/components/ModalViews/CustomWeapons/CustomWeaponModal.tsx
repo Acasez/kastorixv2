@@ -6,6 +6,7 @@ import DamageEditor from "./DamageEditor";
 import TraitPicker from "./TraitPicker";
 import { INPUT_CLASS } from "./formBits";
 import weapons from "../../../data/weapons";
+import { formatPrice, parsePrice } from "../../../data/prices";
 
 type CustomWeaponModalProps = {
   initialWeapon?: Weapon;
@@ -20,7 +21,7 @@ const EMPTY_WEAPON: Weapon = {
   range: 1,
   traits: [],
   description: "",
-  price: 0,
+  price: parsePrice("0 gp"),
   type: "Simple",
   weaponGroup: "Unarmed",
 };
@@ -144,8 +145,10 @@ export default function CustomWeaponModal({
               type="number"
               min={0}
               step={0.01}
-              value={weapon.price}
-              onChange={(e) => updateWeapon({ price: Number(e.target.value) })}
+              value={String(formatPrice(weapon.price) ?? "")}
+              onChange={(e) =>
+                updateWeapon({ price: parsePrice(e.target.value) })
+              }
               className={INPUT_CLASS}
             />
           </label>
