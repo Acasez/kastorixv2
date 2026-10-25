@@ -242,7 +242,7 @@ function createAncestryFeatHandler(): ModalHandler {
 // ============================================
 function createSpellHandler(): ModalHandler {
   return {
-    getCurrentValue: (character, request) => {
+    getCurrentValue: (_character, request) => {
       if (request.type !== "spell" || !request.rank) return null;
       return request.replaceSpell ?? null;
     },
@@ -275,7 +275,7 @@ function createSpellHandler(): ModalHandler {
 // ============================================
 function createWeaponHandler(): ModalHandler {
   return {
-    getCurrentValue: (character, request) => {
+    getCurrentValue: (_character, request) => {
       if (request.type !== "weapon") return null;
       return request.replaceWeapon ?? null;
     },
@@ -317,7 +317,7 @@ function createWeaponHandler(): ModalHandler {
 // ============================================
 function createGadgetHandler(): ModalHandler {
   return {
-    getCurrentValue: (character, request) => {
+    getCurrentValue: (_character, request) => {
       if (request.type !== "gadget") return null;
       return request.replaceGadget ?? null;
     },
@@ -347,7 +347,7 @@ function createGadgetHandler(): ModalHandler {
 // ============================================
 function createMetamagicHandler(): ModalHandler {
   return {
-    getCurrentValue: (character, request) => {
+    getCurrentValue: (_character, request) => {
       if (request.type !== "metamagic") return null;
       return request.replaceMetamagic ?? null;
     },
@@ -386,7 +386,7 @@ function createArmorHandler(): ModalHandler {
 
     getBlockedChoices: () => [],
 
-    onConfirm: (character, updateCharacter, request, value) => {
+    onConfirm: (_character, updateCharacter, request, value) => {
       if (request.type !== "armor") return;
       updateCharacter({ armor: value });
     },

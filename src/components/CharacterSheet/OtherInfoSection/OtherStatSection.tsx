@@ -1,19 +1,17 @@
-import { useState } from "react";
 import { useCharacter } from "../../../hooks/useCharacter";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import OpenModalButton from "../OpenModalButton";
 import ConditionDisplay from "./ConditionDisplay";
-import type { ModalRequest } from "../../ModalViews/modalTypes";
-import ModalWrapper from "../../ModalViews/ModalWrapper";
 import { getCompactResistances } from "../../../utils/characterResistances";
 import RestMenu from "./RestMenu";
+import { useModal } from "../../../hooks/useModal";
+import ResistanceMarker from "./ResistanceMarker";
 
 export default function OtherStatSection() {
   const { character, passivePerception, passiveManasense } = useCharacter();
-  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const { openModal } = useModal();
 
-  const closeModal = () => setModalRequest(null);
   return (
     <div className="flex flex-col bg-gray-800 h-90 w-165 gap-3 border-x-2 rounded-lg">
       <h1 className="text-striking text-center text-3xl underline">
@@ -43,17 +41,12 @@ export default function OtherStatSection() {
               <h1 className="text-striking text-center text-3xl underline">
                 Resistances
               </h1>
-              <div className="m-2 h-7 overflow-x-auto scrollbar-none">
-                <div className="flex w-max flex-nowrap gap-2">
+              <div className="m-2 overflow-x-auto scrollbar-none">
+                <div className="flex flex-wrap w-max max-w-150 gap-2">
                   {Object.entries(getCompactResistances(character.resistances))
                     .filter(([, value]) => value > 0)
                     .map(([type, value]) => (
-                      <h2
-                        key={type}
-                        className="whitespace-nowrap text-text-light text-lg"
-                      >
-                        {type}: {value}
-                      </h2>
+                      <ResistanceMarker damageType={type} value={value} />
                     ))}
                 </div>
               </div>
@@ -71,7 +64,7 @@ export default function OtherStatSection() {
                 : undefined
             }
             onClick={() =>
-              setModalRequest({
+              openModal({
                 type: "armor",
                 title: "Select Armor",
                 selectionKey: "Armor",
@@ -95,9 +88,6 @@ export default function OtherStatSection() {
           <RestMenu />
         </div>
       </div>
-      {modalRequest && (
-        <ModalWrapper request={modalRequest} closeModal={closeModal} />
-      )}
     </div>
   );
 }
