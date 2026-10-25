@@ -12,6 +12,7 @@ import {
   getMAPFromWeapon,
 } from "../../data/weapons";
 import { formatDamageInstances } from "../../utils/damage";
+import { formatPrice } from "../../data/prices";
 
 interface WeaponComponentProps {
   weapon: Weapon;
@@ -91,7 +92,7 @@ export default function WeaponComponent({
             <strong>Description:</strong> {weapon.description}
           </p>
           <p className="mt-2 whitespace-pre-line">
-            <strong>Price:</strong> {weapon.price}
+            <strong>Price:</strong> {formatPrice(weapon.price)}
           </p>
           <p className="mt-2 whitespace-pre-line">
             <strong>Type:</strong> {weapon.type}

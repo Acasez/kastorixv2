@@ -1,20 +1,18 @@
-import { useState } from "react";
-import type { ModalRequest } from "../../ModalViews/modalTypes";
 import { useCharacter } from "../../../hooks/useCharacter";
 import WeaponComponent from "../../CommonCreatureComponents/WeaponComponent";
 import weapons from "../../../data/weapons";
-import ModalWrapper from "../../ModalViews/ModalWrapper";
+import { useModal } from "../../../hooks/useModal";
 
 export default function StrikesSection() {
   const { character, updateCharacter } = useCharacter();
-  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const { openModal } = useModal();
 
   const openWeaponModal = () => {
     openWeaponModalForReplacement();
   };
 
   const openWeaponModalForReplacement = (replaceWeapon?: string) => {
-    setModalRequest({
+    openModal({
       type: "weapon",
       title: replaceWeapon ? `Replace ${replaceWeapon}` : `Select Weapon`,
       selectionKey: "",
@@ -56,12 +54,6 @@ export default function StrikesSection() {
             ))}
         </div>
       </div>
-      {modalRequest && (
-        <ModalWrapper
-          request={modalRequest}
-          closeModal={() => setModalRequest(null)}
-        />
-      )}
     </div>
   );
 }
