@@ -1,6 +1,4 @@
-import { useState } from "react";
 import OpenModalButton from "../OpenModalButton";
-import ModalWrapper from "../../ModalViews/ModalWrapper";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import { getLevelActions } from "../../../utils/LevelCardUtils";
 import { useCharacter } from "../../../hooks/useCharacter";
@@ -18,6 +16,7 @@ import armors from "../../../data/armors";
 import gadgets from "../../../JSON/gadgets.json";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
+import { useModal } from "../../../hooks/useModal";
 
 type ChoiceType = Exclude<
   ModalRequest["type"],
@@ -104,9 +103,7 @@ interface LevelCardProps {
 export default function LevelCard({ level }: LevelCardProps) {
   const actions = getLevelActions(level);
   const { character, updateCharacter } = useCharacter();
-  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
-
-  const closeModal = () => setModalRequest(null);
+  const { openModal } = useModal();
 
   const openChoiceModal = (
     type: ChoiceType,
@@ -115,7 +112,7 @@ export default function LevelCard({ level }: LevelCardProps) {
     choiceLevel: number,
   ) => {
     if (type === "ancestryFeat") {
-      setModalRequest({
+      openModal({
         type,
         title,
         selectionKey,
@@ -125,7 +122,7 @@ export default function LevelCard({ level }: LevelCardProps) {
       return;
     }
 
-    setModalRequest({ type, title, selectionKey, level: choiceLevel });
+    openModal({ type, title, selectionKey, level: choiceLevel });
   };
 
   const clearSelection = (selectionKey: string, type: ChoiceType) => {
@@ -187,9 +184,9 @@ export default function LevelCard({ level }: LevelCardProps) {
   const openActionModal = (action: string) => {
     const type = actionTypes[action];
     if (type === "baseStats") {
-      setModalRequest({ type, title: action });
+      openModal({ type, title: action });
     } else if (type === "statIncrease") {
-      setModalRequest({
+      openModal({
         type,
         title: action,
         selectionKey: `${type}:${level}`,
@@ -393,10 +390,6 @@ export default function LevelCard({ level }: LevelCardProps) {
           );
         })}
       </div>
-      {/* Modal Overlay */}
-      {modalRequest && (
-        <ModalWrapper request={modalRequest} closeModal={closeModal} />
-      )}
     </div>
   );
 }

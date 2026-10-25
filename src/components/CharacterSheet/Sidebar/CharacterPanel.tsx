@@ -1,16 +1,14 @@
-import { useState } from "react";
 import OpenModalButton from "../OpenModalButton";
 import { useCharacter } from "../../../hooks/useCharacter";
-import ModalWrapper from "../../ModalViews/ModalWrapper";
-import type { ModalRequest } from "../../ModalViews/modalTypes";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import species from "../../../JSON/species.json";
+import { useModal } from "../../../hooks/useModal";
 
 export default function CharacterPanel() {
   const { character, handleNameChange, handleLevelChange, updateCharacter } =
     useCharacter();
-  const [modalRequest, setModalRequest] = useState<ModalRequest | null>(null);
+  const { openModal } = useModal();
   const speciesFeatKey = "species:unlocked:0";
   const selectedSpecies = species.find(
     (item) => item.name === character.species,
@@ -19,8 +17,6 @@ export default function CharacterPanel() {
     .split(",")
     .some((feat) => /^General Feat\s*-\s*Level 1$/i.test(feat.trim()));
   const selectedSpeciesFeat = character.selections[speciesFeatKey];
-
-  const closeModal = () => setModalRequest(null);
 
   return (
     <div className="bg-blue-100 rounded-lg p-2 mb-4 shadow-sm border border-blue-300 w-full">
@@ -47,7 +43,7 @@ export default function CharacterPanel() {
               : undefined
           }
           onClick={() =>
-            setModalRequest({ type: "species", title: "Select Species" })
+            openModal({ type: "species", title: "Select Species" })
           }
         />
         {hasGeneralFeatUnlock && (
@@ -55,7 +51,7 @@ export default function CharacterPanel() {
             label={selectedSpeciesFeat ?? "Select General Feat - Level 1"}
             itemChosen={Boolean(selectedSpeciesFeat)}
             onClick={() =>
-              setModalRequest({
+              openModal({
                 type: "generalFeat",
                 title: "Select General Feat",
                 selectionKey: speciesFeatKey,
@@ -88,7 +84,7 @@ export default function CharacterPanel() {
           label={character.baseStatsSet ? "Base Stats Set" : "Set Base Stats"}
           itemChosen={character.baseStatsSet}
           onClick={() =>
-            setModalRequest({ type: "baseStats", title: "Set Base Stats" })
+            openModal({ type: "baseStats", title: "Set Base Stats" })
           }
         />
       </div>
@@ -104,11 +100,6 @@ export default function CharacterPanel() {
           className="w-20 px-2 py-2 rounded-md border-2 border-blue-400 text-xl font-bold text-center bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
-
-      {/* Modal Overlay */}
-      {modalRequest && (
-        <ModalWrapper request={modalRequest} closeModal={closeModal} />
-      )}
     </div>
   );
 }
