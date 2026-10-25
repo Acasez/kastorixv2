@@ -18,12 +18,12 @@ export default function OtherStatSection() {
         Status effects
       </h1>
       <ConditionDisplay />
-      <div className="flex flex-row justify-between mx-5">
-        <div className="max-w-100">
+      <div className="flex flex-row justify-between mx-3">
+        <div className="max-w-105">
           <h1 className="text-striking text-center text-3xl underline">
             Speed
           </h1>
-          <div className="flex flex-row m-2 gap-2">
+          <div className="flex flex-row gap-2">
             <div className="flex flex-row m-2 gap-2">
               {Object.entries(character.speeds)
                 .filter(([, value]) => value > 0)
@@ -37,18 +37,16 @@ export default function OtherStatSection() {
 
           {Object.keys(getCompactResistances(character.resistances)).length >
             0 && (
-            <div>
-              <h1 className="text-striking text-center text-3xl underline">
+            <div className=" mb-2">
+              <h1 className="text-striking text-center text-3xl underline mb-2">
                 Resistances
               </h1>
-              <div className="m-2 overflow-x-auto scrollbar-none">
-                <div className="flex flex-wrap w-max max-w-150 gap-2">
-                  {Object.entries(getCompactResistances(character.resistances))
-                    .filter(([, value]) => value > 0)
-                    .map(([type, value]) => (
-                      <ResistanceMarker damageType={type} value={value} />
-                    ))}
-                </div>
+              <div className="flex flex-wrap w-max max-w-120 gap-1">
+                {Object.entries(getCompactResistances(character.resistances))
+                  .filter(([, value]) => value > 0)
+                  .map(([type, value]) => (
+                    <ResistanceMarker damageType={type} value={value} />
+                  ))}
               </div>
             </div>
           )}
