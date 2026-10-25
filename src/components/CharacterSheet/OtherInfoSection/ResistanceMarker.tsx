@@ -8,7 +8,7 @@ export default function ResistanceMarker({
   value,
 }: ResistanceMarkerProps) {
   return (
-    <div className="border border-dashed border-bg-quartz p-1">
+    <div className="border border-dashed rounded-md border-bg-quartz px-1">
       <h2 key={damageType} className=" text-text-light text">
         {damageType}: {value}
       </h2>
