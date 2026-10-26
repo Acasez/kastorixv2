@@ -4,6 +4,7 @@ import { getCharacterMetamagicGrant } from "../../../utils/characterSpellGrants"
 import { useMetamagicModal } from "../../../hooks/useModalActions";
 import metamagics from "../../../JSON/metamagic.json";
 import SectionLimitText from "./SectionLimitText";
+import AddButton from "./AddButton";
 
 export default function MetamagicsSection() {
   const { character, updateCharacter } = useCharacter();
@@ -29,13 +30,7 @@ export default function MetamagicsSection() {
             current={selectedMetamagics.length}
             max={maxKnownMetamagics}
           />
-          <button
-            type="button"
-            className="bg-gray-600 text-white px-3 py-1 rounded border-2 border-button-add"
-            onClick={() => openMetamagicModal(character)}
-          >
-            +
-          </button>
+          <AddButton onClick={() => openMetamagicModal(character)} />
         </div>
       </div>
 

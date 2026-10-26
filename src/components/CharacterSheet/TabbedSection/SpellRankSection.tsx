@@ -3,6 +3,7 @@ import type { Spell } from "../../../types/Spells";
 import SpellComponent from "../../CommonCreatureComponents/SpellComponent";
 import { getCharacterSpellGrant } from "../../../utils/characterSpellGrants";
 import SectionLimitText from "./SectionLimitText";
+import AddButton from "./AddButton";
 
 interface SpellRankSectionProps {
   rankName: string;
@@ -49,13 +50,7 @@ export default function SpellRankSection({
             max={maxKnownSpells}
           />
 
-          <button
-            type="button"
-            className="bg-gray-600 text-white px-3 py-1 rounded border-2 border-button-add"
-            onClick={() => onAddSpell(rankName)}
-          >
-            +
-          </button>
+          <AddButton onClick={() => onAddSpell(rankName)} variable={rankName} />
         </div>
       </div>
 

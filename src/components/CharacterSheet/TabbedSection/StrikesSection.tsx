@@ -2,6 +2,7 @@ import { useCharacter } from "../../../hooks/useCharacter";
 import WeaponComponent from "../../CommonCreatureComponents/WeaponComponent";
 import weapons from "../../../data/weapons";
 import { useWeaponModal } from "../../../hooks/useModalActions";
+import AddButton from "./AddButton";
 
 export default function StrikesSection() {
   const { character, updateCharacter } = useCharacter();
@@ -16,13 +17,7 @@ export default function StrikesSection() {
     <div className="p-4 text-white">
       <div className="flex flex-row gap-4">
         <h2 className="text-xl mb-2">Weapons and Strikes</h2>
-        <button
-          type="button"
-          className="bg-button-add text-white px-3 py-1 rounded border-2"
-          onClick={() => openWeaponModal()}
-        >
-          +
-        </button>
+        <AddButton onClick={() => openWeaponModal()} />
       </div>
 
       <div className="flex justify-between items-center mb-4">

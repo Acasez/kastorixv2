@@ -5,6 +5,7 @@ import GadgetComponent from "./GadgetComponent";
 import { skillModifier } from "../../../constants/Proficiency";
 import { useGadgetModal } from "../../../hooks/useModalActions";
 import SectionLimitText from "./SectionLimitText";
+import AddButton from "./AddButton";
 
 export default function GadgetSection() {
   const { character, updateCharacter } = useCharacter();
@@ -31,14 +32,7 @@ export default function GadgetSection() {
             current={character.gadgets.length}
             max={maxKnownGadgets}
           />
-          <button
-            type="button"
-            className="bg-button-add text-white px-3 py-1 rounded border-2"
-            onClick={() => openGadgetModal(character)}
-            aria-label="Add gadget"
-          >
-            +
-          </button>
+          <AddButton onClick={() => openGadgetModal(character)} />
         </div>
       </div>
 
