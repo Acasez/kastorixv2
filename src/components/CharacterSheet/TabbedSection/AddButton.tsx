@@ -8,7 +8,7 @@ export default function AddButton({ onClick, variable }: AddButtonProps) {
     <>
       <button
         type="button"
-        className="bg-gray-600 text-white px-3 py-1 rounded border-2 border-button-add"
+        className="bg-bg-stone text-text-light px-3 py-1 rounded border-2 border-button-add"
         onClick={() => onClick(variable ?? "")}
       >
         +

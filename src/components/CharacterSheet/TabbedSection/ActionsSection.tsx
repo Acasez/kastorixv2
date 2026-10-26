@@ -107,83 +107,81 @@ export default function ActionsSection() {
   );
 
   return (
-    <section className="bg-[#20262f] px-4 py-5 text-white">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-5 flex flex-col gap-3 border-b border-[#3a4350] pb-4 lg:flex-row lg:items-end">
-          <label className="flex-1 text-sm text-gray-300">
-            Search actions
-            <input
-              type="search"
-              value={search}
-              onChange={(event) => setSearch(event.target.value)}
-              placeholder="Search by name, trait, or text"
-              className="mt-1 block w-full border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none placeholder:text-gray-400 focus:border-text-calm"
-            />
-          </label>
-          <label className="text-sm text-gray-300">
-            Sort
-            <select
-              value={sortDescending ? "descending" : "ascending"}
-              onChange={(event) =>
-                setSortDescending(event.target.value === "descending")
-              }
-              className="mt-1 block border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none focus:border-text-calm"
-            >
-              <option value="ascending">Names A-Z</option>
-              <option value="descending">Names Z-A</option>
-            </select>
-          </label>
-        </div>
-
-        <div
-          className="mb-4 flex flex-wrap items-center gap-2"
-          aria-label="Filter by action cost"
-        >
-          <span className="mr-1 text-sm text-gray-300">Cost</span>
-          {ACTION_COSTS.map((cost) => (
-            <button
-              key={cost}
-              type="button"
-              onClick={() => setCostFilter(cost)}
-              aria-pressed={costFilter === cost}
-              className={`border px-3 py-1 text-sm transition-colors ${
-                costFilter === cost
-                  ? "border-text-calm bg-[#33475d] text-white"
-                  : "border-[#3a4350] text-gray-300 hover:border-text-calm"
-              }`}
-            >
-              {cost === "All"
-                ? cost
-                : cost === "Reaction"
-                  ? cost
-                  : `${cost} action${cost === "1" ? "" : "s"}`}
-            </button>
-          ))}
-          <span className="ml-auto text-sm text-gray-400">
-            {filteredActions.length}{" "}
-            {filteredActions.length === 1 ? "action" : "actions"}
-          </span>
-        </div>
-
-        <div className="divide-y divide-[#343d49] border-y border-[#343d49]">
-          {filteredActions.map((action) => (
-            <ActionRow
-              key={action.name}
-              action={action}
-              isExpanded={expandedAction === action.name}
-              onToggle={(name) =>
-                setExpandedAction((current) => (current === name ? null : name))
-              }
-            />
-          ))}
-        </div>
-
-        {filteredActions.length === 0 && (
-          <p className="py-8 text-center text-gray-400">
-            No available actions match these filters.
-          </p>
-        )}
+    <div className="bg-bg-obsidian text-text-light px-5 py-2">
+      <h1 className="text-2xl font-bold underline">Available Actions List</h1>
+      <div className="mb-5 flex flex-col gap-3 border-b border-[#3a4350] pb-4 lg:flex-row lg:items-end">
+        <label className="flex-1 text-sm text-text-light">
+          <input
+            type="search"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="Search by name, trait, or text"
+            className="mt-1 block w-full border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none placeholder:text-gray-400 focus:border-text-calm"
+          />
+        </label>
+        <label className="text-sm text-text-light">
+          Sort
+          <select
+            value={sortDescending ? "descending" : "ascending"}
+            onChange={(event) =>
+              setSortDescending(event.target.value === "descending")
+            }
+            className="mt-1 block border border-[#3a4350] bg-[#293340] px-3 py-2 text-base text-white outline-none focus:border-text-calm"
+          >
+            <option value="ascending">Names A-Z</option>
+            <option value="descending">Names Z-A</option>
+          </select>
+        </label>
       </div>
-    </section>
+
+      <div
+        className="mb-4 flex flex-wrap items-center gap-2"
+        aria-label="Filter by action cost"
+      >
+        <span className="mr-1 text-sm text-gray-300">Cost</span>
+        {ACTION_COSTS.map((cost) => (
+          <button
+            key={cost}
+            type="button"
+            onClick={() => setCostFilter(cost)}
+            aria-pressed={costFilter === cost}
+            className={`border px-3 py-1 text-sm transition-colors ${
+              costFilter === cost
+                ? "border-text-calm bg-[#33475d] text-white"
+                : "border-[#3a4350] text-gray-300 hover:border-text-calm"
+            }`}
+          >
+            {cost === "All"
+              ? cost
+              : cost === "Reaction"
+                ? cost
+                : `${cost} action${cost === "1" ? "" : "s"}`}
+          </button>
+        ))}
+        <span className="ml-auto text-sm text-gray-400">
+          {filteredActions.length}{" "}
+          {filteredActions.length === 1 ? "action" : "actions"}
+        </span>
+      </div>
+
+      <div className="divide-y divide-[#343d49] border-y border-[#343d49]">
+        {filteredActions.map((action) => (
+          <ActionRow
+            key={action.name}
+            action={action}
+            isExpanded={expandedAction === action.name}
+            onToggle={(name) =>
+              setExpandedAction((current) => (current === name ? null : name))
+            }
+          />
+        ))}
+      </div>
+
+      {filteredActions.length === 0 && (
+        <p className="py-8 text-center text-gray-400">
+          No available actions match these filters.
+        </p>
+      )}
+    </div>
   );
 }
