@@ -1,23 +1,23 @@
-import type { Metamagic } from "../../../types/Spells";
 import MetamagicComponent from "./MetamagicComponent";
 import { useCharacter } from "../../../hooks/useCharacter";
 import { getCharacterMetamagicGrant } from "../../../utils/characterSpellGrants";
+import { useMetamagicModal } from "../../../hooks/useModalActions";
+import metamagics from "../../../JSON/metamagic.json";
 
-interface MetamagicProps {
-  onAddMetamagic: () => void;
-  onReplaceMetamagic: (metamagicName: string) => void;
-  onRemoveMetamagic: (metamagicName: string) => void;
-  selectedMetamagics: Metamagic[];
-}
-
-export default function MetamagicsSection({
-  onAddMetamagic,
-  onReplaceMetamagic,
-  onRemoveMetamagic,
-  selectedMetamagics,
-}: MetamagicProps) {
-  const { character } = useCharacter();
+export default function MetamagicsSection() {
+  const { character, updateCharacter } = useCharacter();
+  const { openMetamagicModal } = useMetamagicModal();
   const maxKnownMetamagics = getCharacterMetamagicGrant(character);
+  const selectedMetamagics = metamagics.filter((metamagic) =>
+    character.metamagics.includes(metamagic.name),
+  );
+
+  const removeMetamagic = (metamagic: string) => {
+    updateCharacter({
+      metamagics: character.metamagics.filter((name) => name !== metamagic),
+    });
+  };
+
   return (
     <div className="bg-gray-800 p-4 rounded-lg mt-3">
       <div className="flex justify-between items-center mb-4">
@@ -37,7 +37,7 @@ export default function MetamagicsSection({
           <button
             type="button"
             className="bg-gray-600 text-white px-3 py-1 rounded border-2 border-button-add"
-            onClick={() => onAddMetamagic()}
+            onClick={() => openMetamagicModal(character)}
           >
             +
           </button>
@@ -48,8 +48,8 @@ export default function MetamagicsSection({
         {selectedMetamagics.map((metamagic) => (
           <MetamagicComponent
             metamagic={metamagic}
-            onReplaceMetamagic={onReplaceMetamagic}
-            onRemoveMetamagic={onRemoveMetamagic}
+            onReplaceMetamagic={() => openMetamagicModal(character)}
+            onRemoveMetamagic={removeMetamagic}
           />
         ))}
       </div>

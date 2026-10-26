@@ -4,16 +4,13 @@ import type { SomaticComponent, VerbalComponent } from "../../../types/Spells";
 import { SPELL_RANKS } from "../../../constants/SpellRanks";
 import SpellRankSection from "./SpellRankSection";
 import spells from "../../../data/spells";
-import metamagics from "../../../JSON/metamagic.json";
 import MetamagicsSection from "./MetamagicsSection";
 import { MultiOptionSwitch } from "../../CommonCreatureComponents/MultiOptionSwitch";
-import { useModal } from "../../../hooks/useModal";
 import { useSpellModal } from "../../../hooks/useModalActions";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
   const { openSpellModal } = useSpellModal();
-  const { openModal } = useModal();
   const { verbal, somatic } = character.spellShaping;
 
   // Derived, never stored in local state
@@ -45,28 +42,6 @@ export default function SpellsSection() {
   const removeSpell = (spellName: string) => {
     updateCharacter({
       knownSpells: character.knownSpells.filter((name) => name !== spellName),
-    });
-  };
-
-  const removeMetamagic = (metamagic: string) => {
-    updateCharacter({
-      metamagics: character.metamagics.filter((name) => name !== metamagic),
-    });
-  };
-
-  const openMetamagicModal = () => {
-    openMetamagicModalForReplacement();
-  };
-
-  const openMetamagicModalForReplacement = (replaceMetamagic?: string) => {
-    openModal({
-      type: "metamagic",
-      title: replaceMetamagic
-        ? `Replace ${replaceMetamagic}`
-        : `Select Metamagic`,
-      selectionKey: "",
-      level: character.level,
-      replaceMetamagic: replaceMetamagic,
     });
   };
 
@@ -117,14 +92,7 @@ export default function SpellsSection() {
           />
         ))}
       </div>
-      <MetamagicsSection
-        onRemoveMetamagic={removeMetamagic}
-        onAddMetamagic={openMetamagicModal}
-        onReplaceMetamagic={openMetamagicModalForReplacement}
-        selectedMetamagics={metamagics.filter((metamagic) =>
-          character.metamagics.includes(metamagic.name),
-        )}
-      />
+      <MetamagicsSection />
     </div>
   );
 }
