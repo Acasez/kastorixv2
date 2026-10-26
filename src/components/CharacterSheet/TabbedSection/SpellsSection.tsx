@@ -8,9 +8,11 @@ import metamagics from "../../../JSON/metamagic.json";
 import MetamagicsSection from "./MetamagicsSection";
 import { MultiOptionSwitch } from "../../CommonCreatureComponents/MultiOptionSwitch";
 import { useModal } from "../../../hooks/useModal";
+import { useSpellModal } from "../../../hooks/useModalActions";
 
 export default function SpellsSection() {
   const { character, updateCharacter } = useCharacter();
+  const { openSpellModal } = useSpellModal();
   const { openModal } = useModal();
   const { verbal, somatic } = character.spellShaping;
 
@@ -39,26 +41,6 @@ export default function SpellsSection() {
       spellShaping: { ...character.spellShaping, totalBonus: bonusStr },
     });
   }, [bonusStr, character.spellShaping, updateCharacter]);
-
-  const openSpellModal = (rankName: string) => {
-    openSpellModalForReplacement(rankName);
-  };
-
-  const openSpellModalForReplacement = (
-    rankName: string,
-    replaceSpell?: string,
-  ) => {
-    openModal({
-      type: "spell",
-      title: replaceSpell
-        ? `Replace ${replaceSpell}`
-        : `Select ${rankName} Spell`,
-      selectionKey: "",
-      level: 0,
-      rank: rankName,
-      replaceSpell,
-    });
-  };
 
   const removeSpell = (spellName: string) => {
     updateCharacter({
@@ -127,8 +109,10 @@ export default function SpellsSection() {
                 spell.rank === `(${rank.rank}) ${rank.name}` &&
                 character.knownSpells.includes(spell.name),
             )}
-            onAddSpell={openSpellModal}
-            onReplaceSpell={openSpellModalForReplacement}
+            onAddSpell={(rankName) => openSpellModal(rankName)}
+            onReplaceSpell={(rankName, replaceSpell) =>
+              openSpellModal(rankName, replaceSpell)
+            }
             onRemoveSpell={removeSpell}
           />
         ))}
