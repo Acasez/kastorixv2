@@ -3,7 +3,7 @@ import weaponTraits from "../../../data/weaponTraits";
 import { parseWeaponTrait } from "../../../data/weapons";
 import type { WeaponTrait } from "../../../types/Weapons";
 import WeaponTraitComponent from "../../CommonCreatureComponents/WeaponTraitComponent";
-import { RemoveButton, INPUT_CLASS } from "./formBits";
+import { RemoveButton, INPUT_CLASS } from "./RemoveButton";
 import { traitLabel } from "./TraitLabel";
 
 type TraitPickerProps = {

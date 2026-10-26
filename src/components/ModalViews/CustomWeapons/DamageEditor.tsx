@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createDamageInstances, damageTypes } from "../../../data/damageTypes";
 import type { DamageInstance } from "../../../types/DamageTypes"; // adjust to your actual type name
-import { INPUT_CLASS, RemoveButton } from "./formBits";
+import { INPUT_CLASS, RemoveButton } from "./RemoveButton";
 
 type DamageEditorProps = {
   weaponName: string;

@@ -4,7 +4,7 @@ import type { Weapon, WeaponGroup, WeaponType } from "../../../types/Weapons";
 import ChoiceModalFrame from "../ChoiceModalFrame";
 import DamageEditor from "./DamageEditor";
 import TraitPicker from "./TraitPicker";
-import { INPUT_CLASS } from "./formBits";
+import { INPUT_CLASS } from "./RemoveButton";
 import weapons from "../../../data/weapons";
 import { formatPrice, parsePrice } from "../../../data/prices";
 
