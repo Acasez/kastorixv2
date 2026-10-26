@@ -4,6 +4,7 @@ import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
 import GadgetComponent from "./GadgetComponent";
 import { skillModifier } from "../../../constants/Proficiency";
 import { useGadgetModal } from "../../../hooks/useModalActions";
+import SectionLimitText from "./SectionLimitText";
 
 export default function GadgetSection() {
   const { character, updateCharacter } = useCharacter();
@@ -25,17 +26,11 @@ export default function GadgetSection() {
             character.baseStats.DEX}
         </p>
         <div className="flex items-center gap-3">
-          <p
-            className={`text-right ${
-              character.gadgets.length > maxKnownGadgets
-                ? "text-red-500"
-                : character.gadgets.length < maxKnownGadgets
-                  ? "text-green-500"
-                  : "text-text-light"
-            }`}
-          >
-            Gadgets Crafted ({character.gadgets.length}/{maxKnownGadgets})
-          </p>
+          <SectionLimitText
+            text="Gadgets Crafted"
+            current={character.gadgets.length}
+            max={maxKnownGadgets}
+          />
           <button
             type="button"
             className="bg-button-add text-white px-3 py-1 rounded border-2"

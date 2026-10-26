@@ -2,6 +2,7 @@ import { useCharacter } from "../../../hooks/useCharacter";
 import type { Spell } from "../../../types/Spells";
 import SpellComponent from "../../CommonCreatureComponents/SpellComponent";
 import { getCharacterSpellGrant } from "../../../utils/characterSpellGrants";
+import SectionLimitText from "./SectionLimitText";
 
 interface SpellRankSectionProps {
   rankName: string;
@@ -42,17 +43,11 @@ export default function SpellRankSection({
           DC {baseDC}, Complex DC {baseDC + 3}, Mana Cost {manaCost}
         </p>
         <div className="flex flex-row gap-2">
-          <p
-            className={`text-right ${
-              selectedSpells.length > maxKnownSpells
-                ? "text-red-500"
-                : selectedSpells.length < maxKnownSpells
-                  ? "text-green-500"
-                  : "text-text-light"
-            }`}
-          >
-            Selected Spells ({selectedSpells.length}/{maxKnownSpells})
-          </p>
+          <SectionLimitText
+            text="Selected Spells"
+            current={selectedSpells.length}
+            max={maxKnownSpells}
+          />
 
           <button
             type="button"

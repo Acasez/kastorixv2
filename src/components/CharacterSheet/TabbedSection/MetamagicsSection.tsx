@@ -3,6 +3,7 @@ import { useCharacter } from "../../../hooks/useCharacter";
 import { getCharacterMetamagicGrant } from "../../../utils/characterSpellGrants";
 import { useMetamagicModal } from "../../../hooks/useModalActions";
 import metamagics from "../../../JSON/metamagic.json";
+import SectionLimitText from "./SectionLimitText";
 
 export default function MetamagicsSection() {
   const { character, updateCharacter } = useCharacter();
@@ -23,17 +24,11 @@ export default function MetamagicsSection() {
       <div className="flex justify-between items-center mb-4">
         <span className="text-lg underline">Metamagics</span>
         <div className="flex flex-row gap-2">
-          <p
-            className={`text-right ${
-              selectedMetamagics.length > maxKnownMetamagics
-                ? "text-red-500"
-                : selectedMetamagics.length < maxKnownMetamagics
-                  ? "text-green-500"
-                  : "text-text-light"
-            }`}
-          >
-            Metamagics Chosen ({selectedMetamagics.length}/{maxKnownMetamagics})
-          </p>
+          <SectionLimitText
+            text="Metamagics Chosen"
+            current={selectedMetamagics.length}
+            max={maxKnownMetamagics}
+          />
           <button
             type="button"
             className="bg-gray-600 text-white px-3 py-1 rounded border-2 border-button-add"
