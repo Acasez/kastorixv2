@@ -1,4 +1,6 @@
 // src/hooks/useModalActions.ts
+import type { ModalRequest } from "../components/ModalViews/modalTypes";
+import type { Character } from "../stores/useCharacterStore";
 import { useModal } from "./useModal";
 
 export function useSpellModal() {
@@ -37,4 +39,39 @@ export function useWeaponModal() {
   return { openWeaponModal };
 }
 
-// ... etc for gadget, metamagic, etc.
+export function useGadgetModal() {
+  const { openModal } = useModal();
+
+  const openGadgetModal = (character: Character, replaceGadget?: string) => {
+    openModal({
+      type: "gadget",
+      title: replaceGadget ? `Replace ${replaceGadget}` : "Select Gadget",
+      selectionKey: "",
+      level: character.level,
+      replaceGadget,
+    } as ModalRequest);
+  };
+
+  return { openGadgetModal };
+}
+
+export function useMetamagicModal() {
+  const { openModal } = useModal();
+
+  const openMetamagicModal = (
+    character: Character,
+    replaceMetamagic?: string,
+  ) => {
+    openModal({
+      type: "metamagic",
+      title: replaceMetamagic
+        ? `Replace ${replaceMetamagic}`
+        : "Select Metamagic",
+      selectionKey: "",
+      level: character.level,
+      replaceMetamagic,
+    } as ModalRequest);
+  };
+
+  return { openMetamagicModal };
+}

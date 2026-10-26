@@ -1,26 +1,11 @@
 import { useCharacter } from "../../../hooks/useCharacter";
 import WeaponComponent from "../../CommonCreatureComponents/WeaponComponent";
 import weapons from "../../../data/weapons";
-import { useModal } from "../../../hooks/useModal";
+import { useWeaponModal } from "../../../hooks/useModalActions";
 
 export default function StrikesSection() {
   const { character, updateCharacter } = useCharacter();
-  const { openModal } = useModal();
-
-  const openWeaponModal = () => {
-    openWeaponModalForReplacement();
-  };
-
-  const openWeaponModalForReplacement = (replaceWeapon?: string) => {
-    openModal({
-      type: "weapon",
-      title: replaceWeapon ? `Replace ${replaceWeapon}` : `Select Weapon`,
-      selectionKey: "",
-      level: 0,
-      replaceWeapon,
-      excludedTypes: ["Golem"],
-    });
-  };
+  const { openWeaponModal } = useWeaponModal();
 
   const onRemoveWeapon = (weapon: string) => {
     updateCharacter({
@@ -48,7 +33,7 @@ export default function StrikesSection() {
               <WeaponComponent
                 key={weapon.name}
                 weapon={weapon}
-                onReplaceWeapon={openWeaponModalForReplacement}
+                onReplaceWeapon={openWeaponModal}
                 onRemoveWeapon={onRemoveWeapon}
               />
             ))}

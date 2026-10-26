@@ -3,26 +3,12 @@ import gadgets from "../../../data/gadgets";
 import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
 import GadgetComponent from "./GadgetComponent";
 import { skillModifier } from "../../../constants/Proficiency";
-import { useModal } from "../../../hooks/useModal";
+import { useGadgetModal } from "../../../hooks/useModalActions";
 
 export default function GadgetSection() {
   const { character, updateCharacter } = useCharacter();
-  const { openModal } = useModal();
   const maxKnownGadgets = getCharacterGadgetGrant(character);
-
-  const openGadgetModal = () => {
-    openGadgetModalForReplacement();
-  };
-
-  const openGadgetModalForReplacement = (replaceGadget?: string) => {
-    openModal({
-      type: "gadget",
-      title: replaceGadget ? `Replace ${replaceGadget}` : `Select Gadget`,
-      selectionKey: "",
-      level: character.level,
-      replaceGadget,
-    });
-  };
+  const { openGadgetModal } = useGadgetModal();
 
   const onRemoveGadget = (gadget: string) => {
     updateCharacter({
@@ -53,7 +39,7 @@ export default function GadgetSection() {
           <button
             type="button"
             className="bg-button-add text-white px-3 py-1 rounded border-2"
-            onClick={openGadgetModal}
+            onClick={() => openGadgetModal(character)}
             aria-label="Add gadget"
           >
             +
@@ -69,7 +55,10 @@ export default function GadgetSection() {
               <GadgetComponent
                 key={gadget.name}
                 gadget={gadget}
-                onReplaceGadget={openGadgetModalForReplacement}
+                character={character}
+                onReplaceGadget={(character, gadgetName) =>
+                  openGadgetModal(character, gadgetName)
+                }
                 onRemoveGadget={onRemoveGadget}
               />
             ))}

@@ -1,13 +1,16 @@
+import type { Character } from "../../../stores/useCharacterStore";
 import type { Gadget } from "../../../types/Gadgets";
 
 interface GadgetComponentProps {
   gadget: Gadget;
-  onReplaceGadget: (gadgetName: string) => void;
+  character: Character;
+  onReplaceGadget: (character: Character, gadgetName: string) => void;
   onRemoveGadget: (gadgetName: string) => void;
 }
 
 export default function GadgetComponent({
   gadget,
+  character,
   onReplaceGadget,
   onRemoveGadget,
 }: GadgetComponentProps) {
@@ -15,11 +18,11 @@ export default function GadgetComponent({
     <div
       role="button"
       tabIndex={0}
-      onClick={() => onReplaceGadget(gadget.name)}
+      onClick={() => onReplaceGadget(character, gadget.name)}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          onReplaceGadget(gadget.name);
+          onReplaceGadget(character, gadget.name);
         }
       }}
       onContextMenu={(event) => {
