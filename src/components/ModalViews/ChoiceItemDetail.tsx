@@ -71,6 +71,9 @@ export default function ChoiceItemDetail({
                     "No description available."}
                 </p>
               )}
+              {selectedItem.unlockedAction && (
+                <ActionBox action={selectedItem.unlockedAction} />
+              )}
               {selectedItem.choiceOptions && (
                 <div className="mt-4">
                   <p className="font-bold">
@@ -100,9 +103,6 @@ export default function ChoiceItemDetail({
                 </div>
               )}
             </div>
-            {selectedItem.unlockedAction && (
-              <ActionBox action={selectedItem.unlockedAction} />
-            )}
             <button
               type="button"
               disabled={
