@@ -25,8 +25,8 @@ export default function RulesBox({ name, rules, maxWidth }: RulesProp) {
       )}
       {rules.map(({ rule, ruleIcon, description }) => (
         <div
-          className={`flex flex-row gap-1 text-lg justify-center`}
-          key={rule}
+          className="flex flex-row gap-1 text-lg justify-center"
+          key={rule + description}
         >
           {ruleIcon && <ActionIcon icon={ruleIcon} />}
           <div className="">

@@ -27,7 +27,6 @@ export function parseWeaponTrait(traitString: string): WeaponTrait {
     damageStat: null,
     MAPChange: null,
   };
-
   return { ...baseTrait, parameter: parameter || baseTrait.parameter };
 }
 
