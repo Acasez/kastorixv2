@@ -3,14 +3,20 @@ import conditions from "../../../json/conditions.json";
 import ConditionMarker from "./ConditionMarker";
 import type { Condition } from "../../../types/Condition";
 import Tooltip from "../../Tooltip";
+import AddDropDown from "../../CommonCreatureComponents/AddDropdown";
 
 export default function ConditionDisplay() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [selectedConditions, setSelectedConditions] = useState<Condition[]>([]);
+  const possibleConditions = conditions.filter(
+    (condition) =>
+      !selectedConditions.some((selected) => selected.name === condition.name),
+  );
 
-  const handleAddCondition = (condition: Condition) => {
-    if (!selectedConditions.some((c) => c.name === condition.name)) {
-      setSelectedConditions([...selectedConditions, condition]);
+  const handleAddCondition = (conditionName: string) => {
+    const condition = conditions.find((c) => c.name === conditionName);
+    if (condition) {
+      setSelectedConditions([...selectedConditions, condition as Condition]);
     }
     setIsDropdownOpen(false);
   };
@@ -39,17 +45,11 @@ export default function ConditionDisplay() {
           +
         </button>
         {isDropdownOpen && (
-          <div className="absolute z-10 w-38 bg-gray-700 rounded-lg shadow-lg border border-gray-600">
-            {conditions.map((condition) => (
-              <button
-                key={condition.name}
-                onClick={() => handleAddCondition(condition as Condition)}
-                className="w-full text-left px-4 py-2 text-text-light hover:bg-gray-600 rounded-lg"
-              >
-                {condition.name}
-              </button>
-            ))}
-          </div>
+          <AddDropDown
+            availableTypes={possibleConditions.map((c) => c.name)}
+            itemLabel="Condition"
+            onSelect={handleAddCondition}
+          />
         )}
       </div>
       <div className="flex flex-wrap gap-1">
@@ -60,7 +60,7 @@ export default function ConditionDisplay() {
             key={condition.name}
           >
             <ConditionMarker
-              key={condition.name} // Use condition.name as the key
+              key={condition.name}
               condition={condition}
               onRemove={handleRemoveCondition}
               onLevelChange={handleLevelChange}

@@ -3,7 +3,7 @@ import skills from "../../data/skills";
 import armors from "../../data/armors";
 import { useCreature } from "../../hooks/useCreature";
 import CreatureSectionHeader from "./CreatureSectionHeader";
-import CreatureAddDropdown from "./CreatureAddDropdownProps";
+import AddDropDown from "../CommonCreatureComponents/AddDropdown";
 import CreatureSkillComponent from "./CreatureSkillComponent";
 
 const skillNames = skills.map(({ name }) => name);
@@ -53,7 +53,7 @@ export default function CreatureSkillList({ blockId }: CreatureSkillListProps) {
         isAdding={isAdding}
       >
         {isAdding && (
-          <CreatureAddDropdown
+          <AddDropDown
             availableTypes={availableSkills}
             itemLabel="Skill"
             onSelect={addSkill}

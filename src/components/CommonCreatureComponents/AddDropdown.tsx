@@ -1,14 +1,14 @@
-interface CreatureAddDropdownProps<T extends string> {
+interface AddDropdownProps<T extends string> {
   availableTypes: readonly T[];
   itemLabel: string;
   onSelect: (type: T) => void;
 }
 
-export default function CreatureAddDropdown<T extends string>({
+export default function AddDropDown<T extends string>({
   availableTypes,
   itemLabel,
   onSelect,
-}: CreatureAddDropdownProps<T>) {
+}: AddDropdownProps<T>) {
   return (
     <div
       role="listbox"

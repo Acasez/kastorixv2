@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CreatureAddDropdown from "./CreatureAddDropdownProps";
+import AddDropDown from "../CommonCreatureComponents/AddDropdown";
 import CreatureSectionHeader from "./CreatureSectionHeader";
 import ComponentDeleteButton from "../CommonCreatureComponents/ComponentDeleteButton";
 
@@ -64,7 +64,7 @@ export default function NumericTypeList<T extends string>({
         isAdding={isAdding}
       >
         {isAdding && (
-          <CreatureAddDropdown
+          <AddDropDown
             availableTypes={availableTypes}
             itemLabel={itemLabel}
             onSelect={addType}

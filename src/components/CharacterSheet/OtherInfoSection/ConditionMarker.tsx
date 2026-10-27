@@ -17,7 +17,7 @@ export default function ConditionMarker({
   };
 
   return (
-    <span className="bg-gray-600 text-text-light px-3 py-1 rounded-lg text-sm flex items-center gap-1">
+    <span className="bg-bg-stone text-text-light px-3 py-1 rounded-lg text-sm flex items-center gap-1">
       {condition.name}
       {condition.type === "Numeric" && (
         <NumberInput
@@ -29,7 +29,7 @@ export default function ConditionMarker({
       )}
       <button
         onClick={() => onRemove(condition)}
-        className="text-text-light hover:text-white focus:outline-none"
+        className="text-text-light hover:text-white focus:outline-none text-md"
       >
         ×
       </button>
