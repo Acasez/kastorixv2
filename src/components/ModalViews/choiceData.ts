@@ -35,6 +35,7 @@ import {
   WEAPON_FIELDS,
 } from "../../constants/DetailFields";
 import { formatPrice } from "../../data/prices";
+import type { Spell, SpellTrait } from "../../types/Spells";
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -69,6 +70,10 @@ function isWeaponTrait(v: unknown): v is WeaponTrait {
   return typeof v === "object" && v !== null && "name" in v && !("amount" in v);
 }
 
+function isSpellTrait(v: unknown): v is SpellTrait {
+  return typeof v === "object" && v !== null && "name" in v && !("amount" in v);
+}
+
 function formatValue(value: unknown): string | null {
   if (isArrayOf(value, isDamageInstance)) {
     return formatDamageInstances(value);
@@ -80,6 +85,10 @@ function formatValue(value: unknown): string | null {
       .join(", ");
   }
 
+  if (isArrayOf(value, isSpellTrait)) {
+    return value.map((t) => `${t.name}`).join(", ");
+  }
+
   if (Array.isArray(value)) {
     return value.map((v) => String(v)).join(", ");
   }
@@ -87,7 +96,6 @@ function formatValue(value: unknown): string | null {
   if (typeof value === "object" && value !== null) {
     return null;
   }
-
   return String(value);
 }
 
@@ -306,6 +314,28 @@ export function weaponToChoiceItem(weapon: Weapon): ChoiceItem {
       { label: "Price", valueKey: `${formatPrice(weapon.price)}` },
       { label: "Type", valueKey: weapon.type },
       { label: "Weapon Group", valueKey: weapon.weaponGroup },
+    ].filter(({ valueKey }) => valueKey.trim() !== ""),
+  };
+}
+//Not really useful now, might be useful later
+export function spellToChoiceItem(spell: Spell): ChoiceItem {
+  const traits = spell.traits.map((trait) => trait.name).join(", ");
+
+  const aspects = spell.aspects.map((aspect) => aspect.name).join(", ");
+
+  return {
+    name: spell.name,
+    traits,
+    aspects,
+    details: [
+      { label: "Actions", valueKey: String(spell.actions) },
+      { label: "Aspects", valueKey: aspects },
+      { label: "Traits", valueKey: traits },
+      { label: "Range", valueKey: String(spell.range) },
+      { label: "Duration", valueKey: spell.duration },
+      { label: "Effect", valueKey: spell.effect },
+      { label: "Rank", valueKey: spell.rank },
+      { label: "Upcast", valueKey: spell.upcast },
     ].filter(({ valueKey }) => valueKey.trim() !== ""),
   };
 }

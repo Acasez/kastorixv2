@@ -157,7 +157,6 @@ export default function ChoiceModal({
             <p className="text-gray-600">No matching choices.</p>
           )}
         </div>
-        {/* Description panel - NO scroll, static height */}
         <ChoiceItemDetail
           selectedItem={selectedItem}
           selectedChoiceName={selectedChoiceName}
