@@ -17,9 +17,9 @@ export default function CoreStatSection() {
           })
         }
       />
-      <hr className="border-red-500/70 mx-4" />
+      <hr className="border-striking opacity-70 mx-4" />
       <SavingThrowDisplay />
-      <hr className="mx-4 border-red-500/70" />
+      <hr className="border-striking opacity-70 mx-4" />
       <CharacterHealthManaAuraBars />
     </div>
   );

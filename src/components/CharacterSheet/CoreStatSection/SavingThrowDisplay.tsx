@@ -33,9 +33,9 @@ export default function SavingThrowDisplay() {
           return (
             <div
               key={save.name}
-              className="flex items-center gap-1.5 rounded border-2 border-red-500 px-2 py-1 text-lg"
+              className="flex items-center gap-1.5 rounded border-2 border-striking px-2 py-1 text-lg"
             >
-              <span className="text-sky-500 font-semibold">
+              <span className="text-aquamarine font-semibold">
                 {save.name} ({save.stat}):
               </span>
               <ProficiencyMarker skillName={save.name} category="saves" />

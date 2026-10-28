@@ -1,5 +1,4 @@
 import type { StatKey } from "../../types/StatKey";
-import { STAT_COLORS } from "../../constants/Stats";
 import NumberInput from "./NumberInput";
 
 const STATS: { key: StatKey; name: string }[] = [
@@ -26,15 +25,13 @@ export default function StatsGrid({
         {STATS.map(({ key, name }) => (
           <div
             key={key}
-            className="rounded-md border-2 border-orange-400 bg-sky-100 p-2 text-center"
+            className="rounded-md border-2 border-striking bg-sky-100 p-2 text-center"
           >
-            <div className="mb-1 font-semibold text-sky-600 text-xl">
+            <div className="mb-1 font-semibold text-xl text-aquamarine">
               {name}
             </div>
             <div className="flex items-center justify-between gap-2 rounded bg-white px-2 py-1">
-              <span className={`font-bold text-lg ${STAT_COLORS[key]}`}>
-                {key}
-              </span>
+              <span className={`font-bold text-lg text-${key}`}>{key}</span>
               <NumberInput
                 value={stats[key] ?? 0}
                 onChange={(value) => onStatChange(key, value)}

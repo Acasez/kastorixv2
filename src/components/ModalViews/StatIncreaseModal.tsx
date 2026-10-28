@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { STAT_COLORS } from "../../constants/Stats";
 import type { StatKey } from "../../types/StatKey";
 import { useCharacter } from "../../hooks/useCharacter";
 
@@ -93,9 +92,7 @@ export function StatIncreaseModal({
             }`}
           >
             <span className="font-semibold text-gray-800">
-              <span className={`mr-2 font-bold ${STAT_COLORS[key]}`}>
-                {key}
-              </span>
+              <span className={`mr-2 font-bold text-${key}`}>{key}</span>
               {label}
             </span>
             <span className="rounded-md bg-white px-3 py-1 text-lg font-bold text-gray-800">

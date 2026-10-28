@@ -5,7 +5,6 @@ import skills from "../../data/skills";
 import { useCharacter } from "../../hooks/useCharacter";
 import { getProficiency, signed } from "../../constants/Proficiency";
 import ProficiencyMarker from "../CommonCreatureComponents/ProficiencyMarker";
-import { STAT_COLORS } from "../../constants/Stats";
 import { STRING_TO_STATKEY } from "../../types/StatKey";
 import Tooltip from "../Tooltip";
 import armors from "../../data/armors";
@@ -126,14 +125,13 @@ export default function SkillsTable() {
     <div>
       <table className="w-70 border-collapse rounded-lg">
         <thead>
-          <tr className="bg-gray-900 text-white">
+          <tr className="bg-gray-900 text-text-light">
             <th className="px-3 py-2 text-left">Skill</th>
             <th className="px-2 py-2 text-left">Stat</th>
             <th className="px-3 py-2 text-left">Mod</th>
           </tr>
         </thead>
         <tbody>
-          {/* ONLY render skillRows - removed the duplicate skills/loreSkills maps */}
           {skillRows.map((row) => (
             <tr
               key={row.skillName}
@@ -154,7 +152,7 @@ export default function SkillsTable() {
               }
             >
               <td
-                className={`px-2 ${row.index % 2 === 0 ? "text-gray-700" : "text-gray-200"}`}
+                className={`px-2 ${row.index % 2 === 0 ? "text-text-black" : "text-text-light"}`}
                 title={
                   row.isLoreSkill
                     ? "Right-click to remove this Lore skill"
@@ -163,9 +161,7 @@ export default function SkillsTable() {
               >
                 {row.skillName}
               </td>
-              <td
-                className={`px-2 py-2 font-semibold ${STAT_COLORS[row.stat] ?? ""}`}
-              >
+              <td className={`px-2 py-2 font-semibold text-${row.stat}`}>
                 {row.stat}
               </td>
               <td className="w-20 px-3 py-2">
@@ -197,7 +193,6 @@ export default function SkillsTable() {
         </tbody>
       </table>
 
-      {/* Add Lore Skill Form (unchanged) */}
       {isAddingLoreSkill ? (
         <form
           className="mt-3 flex flex-wrap items-center gap-2"
@@ -214,7 +209,7 @@ export default function SkillsTable() {
           />
           <button
             type="submit"
-            className="rounded bg-blue-600 px-3 py-1 text-white"
+            className="rounded bg-aquamarine px-3 py-1 text-text-light"
           >
             Add
           </button>
@@ -224,7 +219,7 @@ export default function SkillsTable() {
               setNewLoreSkillName("");
               setIsAddingLoreSkill(false);
             }}
-            className="rounded bg-gray-600 px-3 py-1 text-white"
+            className="rounded bg-gray-600 px-3 py-1 text-text-light"
           >
             Cancel
           </button>
@@ -233,7 +228,7 @@ export default function SkillsTable() {
         <button
           type="button"
           onClick={() => setIsAddingLoreSkill(true)}
-          className="mt-3 rounded bg-blue-600 px-3 py-1 text-white"
+          className="mt-3 rounded bg-aquamarine px-3 py-1 text-white"
         >
           + Add Lore Skill
         </button>
