@@ -28,23 +28,25 @@ export default function TrackBar({
     (track.current / Math.max(1, track.max)) * 100,
   );
 
+  console.log(color);
+
   return (
     <div className="flex flex-col items-center gap-2 p-1">
-      <div className="h-4 w-9/10 overflow-hidden rounded-full bg-gray-700 mb-1">
+      <div className="h-4 w-9/10 overflow-hidden rounded-full bg-bg-creature mb-1">
         <div
-          className="h-full rounded-full transition-all duration-200"
-          style={{ width: `${percentage}%`, backgroundColor: color }}
+          className={`h-full rounded-full transition-all duration-200 ${color}`}
+          style={{ width: `${percentage}%` }}
         />
       </div>
       <div>
-        <span className="font-bold text-gray-200 pr-1 text-xl">{label}:</span>
+        <span className="font-bold text-text-light pr-1 text-xl">{label}:</span>
         <NumberInput
           value={track.current}
           min={0}
           max={track.max}
           onChange={(v) => onChange({ ...track, current: v })}
         />
-        <span className="text-gray-400">/</span>
+        <span className="text-text-light text-xl">/</span>
         {maxEditable ? (
           <NumberInput
             value={track.max}
@@ -53,7 +55,7 @@ export default function TrackBar({
             onChange={(v) => onChange({ ...track, max: v })}
           />
         ) : (
-          <span className="inline-block w-16 text-center font-bold border-2 border-orange-300 bg-white text-text-flavor">
+          <span className="inline-block w-16 text-center font-bold border-2 border-striking bg-white text-text-flavor">
             {track.max}
           </span>
         )}

@@ -22,21 +22,21 @@ export default function HealthManaAuraBars({
     <div className="flex flex-wrap items-end justify-center gap-3">
       <TrackBar
         label="Health"
-        color="#ef4444"
+        color="bg-health"
         track={tracks.health}
         max={maxValues?.health}
         onChange={(health) => onTrackChange("health", health)}
       />
       <TrackBar
         label="Aura"
-        color="#38bdf8"
+        color="bg-aura"
         track={tracks.aura}
         max={maxValues?.aura}
         onChange={(aura) => onTrackChange("aura", aura)}
       />
       <TrackBar
         label="Mana"
-        color="#a855f7"
+        color="bg-mana"
         track={tracks.mana}
         max={maxValues?.mana}
         onChange={(mana) => onTrackChange("mana", mana)}
