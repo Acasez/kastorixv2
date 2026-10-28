@@ -20,7 +20,7 @@ export default function FocusPointsDisplay() {
 
   return (
     <>
-      <span className=" text-text-light">Focus Points:</span>
+      <span className="text-lg text-text-light">Focus Points:</span>
       <NumberInput
         value={character.focusPoints.current}
         min={0}
