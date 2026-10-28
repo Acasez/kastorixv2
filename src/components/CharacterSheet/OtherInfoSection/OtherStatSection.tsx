@@ -4,9 +4,9 @@ import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import OpenModalButton from "../OpenModalButton";
 import ConditionDisplay from "./ConditionDisplay";
 import { getCompactResistances } from "../../../utils/characterResistances";
-import RestMenu from "./RestMenu";
 import { useModal } from "../../../hooks/useModal";
 import ResistanceMarker from "./ResistanceMarker";
+import FocusPointsDisplay from "./FocusPointsDisplay";
 
 export default function OtherStatSection() {
   const { character, passivePerception, passiveManasense } = useCharacter();
@@ -83,7 +83,15 @@ export default function OtherStatSection() {
               Passive Manasense: {passiveManasense}
             </h2>
           </div>
-          <RestMenu />
+          <h1 className="text-striking text-center text-3xl underline">
+            Others
+          </h1>
+          <div className="flex flex-col m-2 gap-2">
+            <h2 className="text-text-light text-lg">
+              Initiative: {character.baseStats.DEX}
+            </h2>
+          </div>
+          <FocusPointsDisplay />
         </div>
       </div>
     </div>

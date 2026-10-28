@@ -1,3 +1,5 @@
+import TrackBar from "./TrackBar";
+
 type ResourceTrack = {
   current: number;
   max: number;
@@ -10,8 +12,6 @@ type HealthManaAuraBarsProps = {
   maxValues?: Partial<Record<ResourceKey, number>>;
   onTrackChange: (key: ResourceKey, track: ResourceTrack) => void;
 };
-
-import TrackBar from "./TrackBar";
 
 export default function HealthManaAuraBars({
   tracks,

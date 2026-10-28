@@ -47,6 +47,7 @@ export type Character = {
   inventory: string;
   quickAccessSlots: number;
   quickAccessItems: string[];
+  focusPoints: Track;
 };
 
 type CharacterState = {
@@ -101,6 +102,7 @@ const defaultCharacter: Character = {
   inventory: "",
   quickAccessSlots: 3,
   quickAccessItems: ["", "", ""],
+  focusPoints: { current: 1, max: 1 },
 };
 
 function isCharacter(value: unknown): value is Character {
