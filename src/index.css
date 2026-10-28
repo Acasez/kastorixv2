@@ -26,7 +26,22 @@
     --color-traits: #868582;
     --color-remove: #fb2c36;
 
-    --color-button-add: #4caf50
+    --color-button-add: #4caf50;
+    --color-button-aquamarine: #2b7fff;
+
+    --color-prof-trained: #47d147;
+    --color-prof-expertize: #66b3ff;
+    --color-prof-master: #cc66ff;
+    --color-prof-legendary: #ff9966;
+
+    --color-health: #ef4444;
+    --color-aura: #a855f7;
+    --color-mana: #38bdf8;
+
+    --color-PHY: #cd18e1;
+    --color-DEX: #fe9a00;
+    --color-INT: #2b7fff;
+    --color-WIL: #b4e1d2;
 }
 
 body {
