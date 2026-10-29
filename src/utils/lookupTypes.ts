@@ -9,3 +9,11 @@ export function lookup<T>(
     .map((name) => table[name])
     .filter(Boolean) as T[];
 }
+
+export function lookupOne<T>(
+  table: Record<string, T>,
+  name: string | undefined | null,
+): T | undefined {
+  if (!name) return undefined;
+  return table[name.trim()];
+}

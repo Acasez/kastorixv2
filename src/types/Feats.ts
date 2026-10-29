@@ -6,7 +6,7 @@ import type { Speed } from "./SpeedTypes";
 export type Background = {
   name: string;
   description: string;
-  generalFeat: GeneralFeat;
+  generalFeat: GeneralFeat | null;
 };
 
 export type GeneralFeat = {

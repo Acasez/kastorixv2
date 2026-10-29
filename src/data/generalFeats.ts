@@ -1,6 +1,7 @@
 // data/feats.ts
 import rawGeneralFeats from "../JSON/general_feats.json";
 import type { GeneralFeat } from "../types/Feats";
+import { lookup, lookupOne } from "../utils/lookupTypes";
 import { parseResistances, parseSpeeds } from "../utils/parseNamedUtils";
 import { lookupActions } from "./actions";
 
@@ -20,3 +21,12 @@ export const generalFeats: GeneralFeat[] = rawGeneralFeats.map((raw) => {
 });
 
 export default generalFeats;
+
+export const generalFeatsByName: Record<string, GeneralFeat> =
+  Object.fromEntries(generalFeats.map((a) => [a.name, a]));
+
+export const lookupGeneralFeats = (raw?: string | string[] | null) =>
+  lookup(generalFeatsByName, raw);
+
+export const lookupGeneralFeat = (name?: string | null) =>
+  lookupOne(generalFeatsByName, name);

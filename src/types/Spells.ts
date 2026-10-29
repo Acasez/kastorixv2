@@ -55,8 +55,9 @@ export type AspectType = "Fundamental" | "Primal" | "Lesser";
 
 export type Metamagic = {
   name: string;
-  spellType: string;
+  traits: SpellTrait[];
+  aspects: Aspect[];
   effect: string;
-  dc: string;
-  level: string;
+  dc: number;
+  level: number;
 };
