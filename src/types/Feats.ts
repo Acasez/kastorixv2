@@ -30,7 +30,7 @@ export type GeneralFeat = {
 export type ArcaneFeat = {
   name: string;
   description: string;
-  unlockedAction: Action;
+  unlockedActions: Action[];
   prerequisites: string;
   level: number;
   repeatable: boolean;
