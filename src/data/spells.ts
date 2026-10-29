@@ -3,7 +3,8 @@ import type { Spell, SpellRank } from "../types/Spells";
 import rawSpells from "../JSON/spells.json";
 import { createDamageInstances } from "./damageTypes";
 import type { Saves } from "../types/StatKey";
-import { lookupAspects, lookupSpellTraits } from "../utils/lookupTypes";
+import { lookupSpellTraits } from "./spellTraits";
+import { lookupAspects } from "./aspects";
 
 export const spells: Spell[] = rawSpells.map((raw) => {
   return {

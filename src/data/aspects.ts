@@ -1,6 +1,7 @@
 // data/aspects.ts
 import type { Aspect, AspectType } from "../types/Spells";
 import rawAspects from "../JSON/aspects.json";
+import { lookup } from "../utils/lookupTypes";
 
 // Step 1: Create all aspect objects in a map (opposite is null for now)
 const aspectObjects: Record<string, Aspect> = {};
@@ -29,3 +30,6 @@ for (const raw of rawAspects) {
 export const aspects: Aspect[] = Object.values(aspectObjects);
 export const aspectsByName: Record<string, Aspect> = aspectObjects;
 export default aspects;
+
+export const lookupAspects = (raw?: string | string[] | null) =>
+  lookup(aspectsByName, raw);

@@ -1,7 +1,8 @@
 import type { AncestryFeat, AncestryFeatType } from "../types/Feats";
 import rawAncestryFeats from "../JSON/ancestry_feats.json";
 import { parseSpeeds, parseResistances } from "../utils/parseNamedUtils";
-import { lookupActions, lookupSpecies } from "../utils/lookupTypes";
+import { lookupActions } from "./actions";
+import { lookupSpecies } from "./species";
 
 export const ancestryFeats: AncestryFeat[] = rawAncestryFeats.map((raw) => {
   return {

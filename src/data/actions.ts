@@ -7,7 +7,8 @@ import type {
 } from "../types/Action";
 import rawActions from "../JSON/actions.json";
 import { toNumber } from "../utils/toNumber";
-import { lookupSkills } from "../utils/lookupTypes";
+import { lookup } from "../utils/lookupTypes";
+import { lookupSkills } from "./skills";
 
 export const actions: Action[] = rawActions.map((raw) => ({
   ...raw,
@@ -24,3 +25,6 @@ export default actions;
 export const actionsByName: Record<string, Action> = Object.fromEntries(
   actions.map((a) => [a.name, a]),
 );
+
+export const lookupActions = (raw?: string | string[] | null) =>
+  lookup(actionsByName, raw);

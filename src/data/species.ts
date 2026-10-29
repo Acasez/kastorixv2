@@ -2,7 +2,8 @@ import rawSpecies from "../JSON/species.json";
 import type { Species } from "../types/Species";
 import type { CreatureSizes } from "../constants/CreatureSizes";
 import { parseSpeeds, parseResistances } from "../utils/parseNamedUtils";
-import { lookupActions } from "../utils/lookupTypes";
+import { lookup } from "../utils/lookupTypes";
+import { lookupActions } from "./actions";
 
 export const species: Species[] = rawSpecies.map((raw) => {
   return {
@@ -21,3 +22,6 @@ export const speciesByName: Record<string, Species> = Object.fromEntries(
 );
 
 export default species;
+
+export const lookupSpecies = (raw?: string | string[] | null) =>
+  lookup(speciesByName, raw);
