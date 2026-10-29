@@ -1,24 +1,18 @@
 import { useMemo, useState } from "react";
-import { useCharacter } from "../../../hooks/useCharacter";
 import actions from "../../../data/actions";
-import advantages from "../../../JSON/advantages.json";
-import ancestryFeats from "../../../JSON/ancestry_feats.json";
-import arcaneFeats from "../../../JSON/arcane_feats.json";
-import generalFeats from "../../../JSON/general_feats.json";
-import species from "../../../JSON/species.json";
 import ActionRow from "./ActionComponent";
 
 const ACTION_COSTS = ["All", "0", "1", "2", "3", "Reaction"] as const;
 type ActionCost = (typeof ACTION_COSTS)[number];
 
 export default function ActionsSection() {
-  const { character } = useCharacter();
   const [search, setSearch] = useState("");
   const [costFilter, setCostFilter] = useState<ActionCost>("All");
   const [sortDescending, setSortDescending] = useState(false);
   const [expandedAction, setExpandedAction] = useState<string | null>(null);
 
-  const unlockedActionNames = useMemo(() => {
+  //Currently not showing unlocked actions, want to do by just getting them from the character store
+  /* const unlockedActionNames = useMemo(() => {
     const selectedNamesByType = {
       "General Feat": new Set([
         ...character.generalFeats,
@@ -59,13 +53,13 @@ export default function ActionsSection() {
     const unlockedFeatActions = featSources.flatMap(([sourceType, featList]) =>
       featList
         .filter((feat) => selectedNamesByType[sourceType].has(feat.name))
-        .map((feat) => feat.unlockedAction)
+        .map((feat) => feat.unlockedActions)
         .filter(Boolean),
     );
 
     return new Set(
-      selectedSpecies?.unlockedAction
-        ? [...unlockedFeatActions, selectedSpecies.unlockedAction]
+      selectedSpecies?.unlockedActions
+        ? [...unlockedFeatActions, selectedSpecies.unlockedActions]
         : unlockedFeatActions,
     );
   }, [
@@ -75,15 +69,11 @@ export default function ActionsSection() {
     character.generalFeats,
     character.selections,
     character.species,
-  ]);
+  ]); */
 
   const availableActions = useMemo(
-    () =>
-      actions.filter(
-        (action) =>
-          action.sourceType === "Base" || unlockedActionNames.has(action.name),
-      ),
-    [unlockedActionNames],
+    () => actions.filter((action) => action.sourceType === "Base"),
+    [],
   );
 
   const filteredActions = useMemo(

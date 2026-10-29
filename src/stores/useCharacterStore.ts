@@ -48,6 +48,7 @@ export type Character = {
   quickAccessSlots: number;
   quickAccessItems: string[];
   focusPoints: Track;
+  unlockedActions: string[];
 };
 
 type CharacterState = {
@@ -103,6 +104,7 @@ const defaultCharacter: Character = {
   quickAccessSlots: 3,
   quickAccessItems: ["", "", ""],
   focusPoints: { current: 1, max: 1 },
+  unlockedActions: [],
 };
 
 function isCharacter(value: unknown): value is Character {

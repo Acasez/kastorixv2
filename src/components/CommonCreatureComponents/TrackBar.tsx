@@ -28,8 +28,6 @@ export default function TrackBar({
     (track.current / Math.max(1, track.max)) * 100,
   );
 
-  console.log(color);
-
   return (
     <div className="flex flex-col items-center gap-2 p-1">
       <div className="h-4 w-9/10 overflow-hidden rounded-full bg-bg-creature mb-1">
