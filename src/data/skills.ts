@@ -2,10 +2,12 @@
 import type { Skill } from "../types/Skills";
 import type { StatKey } from "../types/StatKey";
 import rawSkills from "../JSON/skills.json";
+import type { ArmorType } from "../types/Armor";
 
 export const skills: Skill[] = rawSkills.map((raw) => ({
   ...raw,
   stat: raw.stat as StatKey,
+  armorPenalties: raw.armorPenalties as ArmorType,
 }));
 
 export const skillsByName: Record<string, Skill> = Object.fromEntries(

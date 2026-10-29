@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import species from "../../../JSON/species.json";
+import species from "../../../data/species";
 import { useCharacter } from "../../../hooks/useCharacter";
 import type { Character } from "../../../stores/useCharacterStore";
 import { getCharacterResourceBonuses } from "../../../utils/characterResourceBonuses";

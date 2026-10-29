@@ -2,7 +2,7 @@ import OpenModalButton from "../OpenModalButton";
 import { useCharacter } from "../../../hooks/useCharacter";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
-import species from "../../../JSON/species.json";
+import species from "../../../data/species";
 import { useModal } from "../../../hooks/useModal";
 
 export default function CharacterPanel() {

@@ -1,6 +1,6 @@
 // SkillsTable.tsx
 import { useState, useMemo } from "react";
-import type { Skill } from "../../types/Skills"; // Make sure this type exists
+import type { Skill } from "../../types/Skills";
 import skills from "../../data/skills";
 import { useCharacter } from "../../hooks/useCharacter";
 import { getProficiency, signed } from "../../constants/Proficiency";
@@ -65,7 +65,6 @@ export default function SkillsTable() {
   // Normalize all skills into a consistent format
   const allSkillsData = useMemo(() => {
     return [
-      // Regular skills (from JSON)
       ...skills.map((skill: Skill) => ({
         type: "regular" as const,
         name: skill.name,
@@ -96,7 +95,6 @@ export default function SkillsTable() {
       const tier = getProficiency(tierName);
       const statValue = character.baseStats[statKey] ?? 0;
 
-      // Armor only applies to regular skills
       const armorApplies =
         !isLoreSkill &&
         selectedArmor &&
