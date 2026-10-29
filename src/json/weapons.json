@@ -24,6 +24,18 @@
         "weaponGroup": "Sling"
     },
     {
+        "name": "Dancer's Spear",
+        "dice": "1d8",
+        "damageType": "piercing",
+        "hands": "2",
+        "range": "1",
+        "traits": "Agile, Parry, Finesse, Precision, Trip",
+        "description": "Dancer's Spears are long, but graceful spears used by skilled wielders that seem to dance on the battlefield.",
+        "price": "2 gp",
+        "type": "Advanced",
+        "weaponGroup": "Spear"
+    },
+    {
         "name": "Flail",
         "dice": "2d6",
         "damageType": "bludgeoning",

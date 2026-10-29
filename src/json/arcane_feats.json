@@ -13,6 +13,19 @@
         "gadgets": ""
     },
     {
+        "name": "Apprentice Spellcraft",
+        "description": "You've studied spells here and there, picking up any that seemed interesting.\nYou learn 2 + your INT apprentice spells of your choosing.\nYou can choose this feat multiple times.",
+        "unlockedAction": "",
+        "prerequisites": "",
+        "level": "1",
+        "repeatable": "1",
+        "unlockedFeats": "",
+        "spellsLearned": "(2 + INT) Apprentice",
+        "metamagicsLearned": "",
+        "choice": "",
+        "gadgets": ""
+    },
+    {
         "name": "Attunement Shortcut",
         "description": "Your attunement lets you learn spells that would normally be too advanced for you.\nLearn two Adept Spells from your attunement.\nBefore Level 4 you you need to spend a focus point when you cast these spells due to their complexity.",
         "unlockedAction": "",
@@ -27,7 +40,7 @@
     },
     {
         "name": "Aura Hardening",
-        "description": "Your aura is tougher and you are trained in using it for defense.\nWhen succeed with an Aura Block, the damage it takes is reduced by your WIL.\nYour proficiency level in Will saves increases (max Trained).",
+        "description": "Your aura is tougher and you are trained in using it for defense.\nWhen you use Aura Block, reduce the damage by your WIL.\nYour proficiency level in Will saves increases (max Trained).",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -78,21 +91,8 @@
         "gadgets": ""
     },
     {
-        "name": "Apprentice Spellcraft",
-        "description": "You've studied spells here and there, picking up any that seemed interesting.\nYou learn 2 + your INT apprentice spells of your choosing.\nYou can choose this feat multiple times.",
-        "unlockedAction": "",
-        "prerequisites": "",
-        "level": "1",
-        "repeatable": "1",
-        "unlockedFeats": "",
-        "spellsLearned": "(2 + INT) Apprentice",
-        "metamagicsLearned": "",
-        "choice": "",
-        "gadgets": ""
-    },
-    {
         "name": "Gadget Crafting",
-        "description": "You've trained to craft gadgets that provide different benefits.\nYour proficiency level in crafting increases (max Expert). \nEach morning you can make one temporary gadget. \nThe gadget only breaks apart after the day and only works for you (unless specified).\nYou can choose this feat multiple times, letting you craft one more gadget each time.",
+        "description": "You've trained to craft gadgets that provide different benefits.\nYour proficiency level in crafting increases (max Expert). \nEach morning you can make two temporary gadgets. \nThe gadget only breaks apart after the day and only works for you (unless specified).\nYou can choose this feat multiple times, letting you craft one more gadget each time.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -101,7 +101,7 @@
         "spellsLearned": "",
         "metamagicsLearned": "",
         "choice": "",
-        "gadgets": "(1) Gadget"
+        "gadgets": "(2) Gadget"
     },
     {
         "name": "Knowledge Is Power",
@@ -171,6 +171,19 @@
     {
         "name": "Siphon Mana",
         "description": "You've learned to reuse magic from failed spells.\nYou learn the Siphon Mana action which you can use if your last action was a failed spellshape.\nYour proficiency level in channeling or mana sensing increases (max Expert). ",
+        "unlockedAction": "",
+        "prerequisites": "",
+        "level": "1",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "choice": "",
+        "gadgets": ""
+    },
+    {
+        "name": "Spellblade",
+        "description": "You are trained in using magic and weaponry together.\nWhen a creature fails or critically fails a save against one your spells takes a -2 penalty to saves against your strikes for the rest of the turn.\nWhen you hit a creature with a Strike it takes a -2 penalty to saves against your spells for the rest of the turn.",
         "unlockedAction": "",
         "prerequisites": "",
         "level": "1",
@@ -404,7 +417,7 @@
     },
     {
         "name": "Quick Tinkerer",
-        "description": "You can quickly modify gadgets for when the situation changes.\nYour proficiency level in Crafting increases (max Master).\nIncrease the amount of gadgets you can craft each day by 1.\nYou may spend 1 minute turning one crafted gadget into another gadget.",
+        "description": "You can quickly modify gadgets for when the situation changes.\nYour proficiency level in Crafting increases (max Master).\nIncrease the amount of gadgets you can craft each day by 2.\nYou may spend 1 minute turning one crafted gadget into another gadget.",
         "unlockedAction": "",
         "prerequisites": "[Gadget Crafting]",
         "level": "4",
@@ -413,7 +426,7 @@
         "spellsLearned": "",
         "metamagicsLearned": "",
         "choice": "",
-        "gadgets": "(1) Gadget"
+        "gadgets": "(2) Gadget"
     },
     {
         "name": "Runegun Smith",
@@ -520,32 +533,6 @@
         "gadgets": ""
     },
     {
-        "name": "Steal Attuned Spell",
-        "description": "When others attempt to use spells of your element, you can take control.\nYou have the Steal Attuned Spell action.",
-        "unlockedAction": "Steal Attuned Spell",
-        "prerequisites": "[Attunement]",
-        "level": "6",
-        "repeatable": "",
-        "unlockedFeats": "",
-        "spellsLearned": "",
-        "metamagicsLearned": "",
-        "choice": "",
-        "gadgets": ""
-    },
-    {
-        "name": "Master Tinker",
-        "description": "You have gadgets for every situation.\nYour proficiency level in crafting or arcana increases (max Master). \nIncrease the amount of gadgets you can craft each day by 2.",
-        "unlockedAction": "",
-        "prerequisites": "[Gadget Crafting]",
-        "level": "6",
-        "repeatable": "",
-        "unlockedFeats": "",
-        "spellsLearned": "",
-        "metamagicsLearned": "",
-        "choice": "",
-        "gadgets": "(2) Gadget"
-    },
-    {
         "name": "Enchanter",
         "description": "You've trained with spells that enhance your or others physical abilities.\nYou become expert in casting spells with the enhancement trait.\nIf you get a critical success on spellshaping a spell with the enhancement trait, recover mana equal to its rank.",
         "unlockedAction": "",
@@ -611,6 +598,19 @@
         "gadgets": ""
     },
     {
+        "name": "Master Tinker",
+        "description": "You have gadgets for every situation.\nYour proficiency level in crafting or arcana increases (max Master). \nIncrease the amount of gadgets you can craft each day by 3.",
+        "unlockedAction": "",
+        "prerequisites": "[Gadget Crafting]",
+        "level": "6",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "choice": "",
+        "gadgets": "(3) Gadget"
+    },
+    {
         "name": "Multi-Aspect Mastery",
         "description": "Your skills extends to all aspects of magic.\nYou count as having [Basic Elemental Magic] Feat for all aspects of magic.\nLearn 5 Apprentice or Adept rank Spells, all from different aspects.",
         "unlockedAction": "",
@@ -667,6 +667,19 @@
         "description": "You're good at spells that target foes at range.\nYou become expert in casting spells with the targeting trait.\nWhen casting spells with the targeting trait you add 1 to their range.",
         "unlockedAction": "",
         "prerequisites": "",
+        "level": "6",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "choice": "",
+        "gadgets": ""
+    },
+    {
+        "name": "Steal Attuned Spell",
+        "description": "When others attempt to use spells of your element, you can take control.\nYou have the Steal Attuned Spell action.",
+        "unlockedAction": "Steal Attuned Spell",
+        "prerequisites": "[Attunement]",
         "level": "6",
         "repeatable": "",
         "unlockedFeats": "",
@@ -767,6 +780,19 @@
         "gadgets": ""
     },
     {
+        "name": "Master of Many Magics",
+        "description": "You have practiced many types of magic. \nGain three level 4 or lower Arcane Feats.",
+        "unlockedAction": "",
+        "prerequisites": "",
+        "level": "10",
+        "repeatable": "",
+        "unlockedFeats": "Arcane Feat - Level 4, Arcane Feat - Level 4, Arcane Feat - Level 4",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "choice": "",
+        "gadgets": ""
+    },
+    {
         "name": "Rapid Spellbreak",
         "description": "Spellbreaking comes naturally to you, and you do it swift as the wind.\nYou have one additional reaction per round, which you may only use to Spellbreak or Recognize spell.",
         "unlockedAction": "",
@@ -840,19 +866,6 @@
         "repeatable": "1",
         "unlockedFeats": "",
         "spellsLearned": "(2 + INT) GrandMagus",
-        "metamagicsLearned": "",
-        "choice": "",
-        "gadgets": ""
-    },
-    {
-        "name": "Master of Many Magics",
-        "description": "You have practiced many types of magic. \nGain three level 4 or lower Arcane Feats.",
-        "unlockedAction": "",
-        "prerequisites": "",
-        "level": "10",
-        "repeatable": "",
-        "unlockedFeats": "Arcane Feat - Level 4, Arcane Feat - Level 4, Arcane Feat - Level 4",
-        "spellsLearned": "",
         "metamagicsLearned": "",
         "choice": "",
         "gadgets": ""

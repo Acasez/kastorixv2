@@ -8,7 +8,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Ballista",
@@ -19,7 +20,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Elemental Ward",
@@ -30,7 +32,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "3"
+        "elementalResistance": "3",
+        "techniques": ""
     },
     {
         "name": "Feathersteel Wings",
@@ -41,7 +44,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Golem Mount",
@@ -52,7 +56,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Integrated Weapon",
@@ -63,18 +68,20 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Programmed Tactics",
-        "description": "You program in two tactical maneuvers for your golem.\nYour golem learns two simple combat maneuvers.\nThis upgrade can be taken multiple times, choosing new combat maneuvers",
+        "description": "You program in two tactical maneuvers for your golem.\nYour golem learns two simple techniques.\nThis upgrade can be taken multiple times, choosing new techniques",
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": "2"
     },
     {
         "name": "Raise Guard",
@@ -85,7 +92,8 @@
         "unlockedAction": "Protect Ally",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Soul Link",
@@ -96,7 +104,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Specialized Armory",
@@ -107,18 +116,20 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Defense Protocol",
-        "description": "You've set up your golem to provide great defence to you and your allies.\nAfter your Golem uses the Block action adjacent allies have +1 to all saving throws.\nAdditionally you may Take Cover behind your golem as a part it taking the Block action.",
+        "description": "You've set up your golem to provide great defence to you and your allies.\nAfter your Golem uses the Block or Parry action adjacent allies have +1 to all saving throws until the start of next turn.\nAdditionally you may Take Cover behind your golem as a part it taking the Block action.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Fire Capacitor",
@@ -129,7 +140,8 @@
         "unlockedAction": "Fire Capacitor",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Frost Capacitor",
@@ -140,7 +152,8 @@
         "unlockedAction": "Frost Capacitor",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Lightning Capacitor",
@@ -151,7 +164,8 @@
         "unlockedAction": "Lightning Capacitor",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Project Aura",
@@ -162,7 +176,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Reinforced Armor",
@@ -173,7 +188,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "PHY",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Sentry Protocol",
@@ -184,7 +200,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Size-Up Golem",
@@ -195,7 +212,8 @@
         "unlockedAction": "",
         "healthBase": "4",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Soul Channel Spell",
@@ -206,7 +224,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Tail Strike",
@@ -217,7 +236,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Upgraded Components",
@@ -228,18 +248,20 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Advanced Programmed Tactics",
-        "description": "You've program in more advanced maneuvers\nYour golem learns two advanced combat maneuvers.\nThis upgrade can be taken multiple times, choosing new combat maneuvers",
+        "description": "You've program in more advanced maneuvers\nYour golem learns two advanced techniques.\nThis upgrade can be taken multiple times, choosing new techniques.",
         "prerequisites": "[Programmed Tactics]",
         "level": "8",
         "golemWeapon": "",
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Battlefield Stomp",
@@ -250,7 +272,8 @@
         "unlockedAction": "Battlefield Stomp",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": "2"
     },
     {
         "name": "Greater Elemental Ward",
@@ -261,18 +284,20 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "6"
+        "elementalResistance": "6",
+        "techniques": ""
     },
     {
         "name": "Capacitor Upcharge",
-        "description": "You have upgraded your golems capacitors, allowing to channel more mana into destructive magic.\nWhen using the an capacitor action you may overcharge them, increase the damage and size.\nIf you do, your golem becomes Stunned 1 and needs 15 mana before the capacitor can be recharged.\nFire Capacitor, 8d6 damage, 7 tile cone.\nLightning Capacitor, 5d12 damage, 2 tile wide, 12 tile long line\nFrost Capacitor, 6d4 damage, 5 tile cone. Frozen status works on large creatures",
+        "description": "You have upgraded your golems capacitors, allowing to channel more mana into destructive magic.\nWhen using the an capacitor action you may overcharge them, increase the damage and size.\nIf you do, your golem becomes Stunned 1 and needs 15 mana before the capacitor can be recharged.\nFire Capacitor, 8d6 damage, 7 tile cone.\nLightning Capacitor, 5d12 damage, 2 tile wide, 12 tile long line\nFrost Capacitor, 7d4 damage, 5 tile cone. Frozen status works on large creatures",
         "prerequisites": "",
         "level": "12",
         "golemWeapon": "",
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "Perfected Spell Channeling",
@@ -283,7 +308,8 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     },
     {
         "name": "War Walker",
@@ -294,7 +320,20 @@
         "unlockedAction": "",
         "healthBase": "5",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
+    },
+    {
+        "name": "Calculating Golem",
+        "description": "You've improved your golem's runic circuits to give it greater intelligence\nIncrease your golems INT by 1.\nYour golem learns two complex techniques.",
+        "prerequisites": "[Advanced Programmed Tactics]",
+        "level": "12",
+        "golemWeapon": "",
+        "unlockedAction": "",
+        "healthBase": "",
+        "healthIncrease": "",
+        "elementalResistance": "",
+        "techniques": "2"
     },
     {
         "name": "Winged Golem",
@@ -305,6 +344,7 @@
         "unlockedAction": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": ""
+        "elementalResistance": "",
+        "techniques": ""
     }
 ]

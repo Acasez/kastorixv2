@@ -100,7 +100,7 @@
     },
     {
         "name": "Finesse",
-        "effect": "You can use your DEX instead of PHY when making attacks with this weapon. PHY is still added to the damage roll (even if its negative)",
+        "effect": "You can use your DEX instead of PHY when making attacks with this weapon. \nPHY is still added to the damage roll (even if its negative)",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",
@@ -221,7 +221,7 @@
     },
     {
         "name": "Sluggish",
-        "effect": "The multiple attack penalty you take with this weapon -6 per attack instead of -5. The penalty on opportunity attacks is 1 more",
+        "effect": "The multiple attack penalty you take with this weapon -6 per attack instead of -5. \nThe penalty on opportunity attacks is 1 more",
         "specialAction": "",
         "type": "Normal",
         "modifiable": "",

@@ -3,12 +3,8 @@ export type Gadget = {
   type: GadgetType;
   effect: string;
   level: number;
-  requirement: string;
+  upgrade: string;
+  upgradeLevel: number;
 };
 
-export type GadgetType =
-  | "Bomb"
-  | "Equipment"
-  | "Thrown Device"
-  | "Upgrade"
-  | "Held Item";
+export type GadgetType = "Bomb" | "Equipment" | "Thrown Device" | "Held Item";

@@ -636,7 +636,7 @@
         "target": "One Creature",
         "duration": "",
         "flavor": "The darkness itself coils and strikes.",
-        "effect": "You make the shadows attack. \nChoose a tile of darkness or shadow within range with a creature adjacent to it; that creature must attempt a Reflex save.\nFailure: The target takes 2d8 piercing damage.\nThis spell deals an extra 1d8 damage on a critical hit.",
+        "effect": "You make the shadows attack. \nChoose a tile of darkness or shadow within range with a creature adjacent to it; that creature must attempt a Reflex save.\nFailure: The target takes 2d6 piercing damage.\nThis spell deals an extra 1d6 damage on a critical hit.",
         "upcast": "",
         "rank": "(1) Apprentice",
         "save": "Reflex",

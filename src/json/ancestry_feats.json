@@ -1,13 +1,13 @@
 [
     {
-        "name": "Advanced Weapon Training",
-        "description": "You've always been fascinated with unique, advanced weapons. \nYour proficiency level with one advanced weapon increases (max Trained)\nYour proficiency level with Warfare Lore or Crafting increases (max Trained)",
+        "name": "Unorthodox Wielder",
+        "description": "You've always been fascinated with unique, advanced weapons. \nLearn the Advanced Weapon Fighter general feat",
         "unlockedAction": "",
         "type": "Cultural",
         "species": "Human",
         "prerequisites": "",
         "level": "1",
-        "unlockedFeats": "",
+        "unlockedFeats": "General Feat - Level 3",
         "speeds": "",
         "resistances": ""
     },

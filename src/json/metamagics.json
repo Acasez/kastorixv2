@@ -1,5 +1,12 @@
 [
     {
+        "name": "Focused Spell",
+        "spellType": "",
+        "effect": "Spend 1 Focus point",
+        "dc": "-2",
+        "level": "1"
+    },
+    {
         "name": "Careful Spell",
         "spellType": "",
         "effect": "Increase the action cost of the spell by 1",

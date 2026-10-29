@@ -7,11 +7,11 @@
         "manaCost": "15",
         "focusCost": "3",
         "description": "You move faster than what should be possible, cutting into an enemy.\nMake a melee Strike with an agile weapon.\nIf you hit, you may attack again at a -2 penalty, or -1 if you attack with an agile weapon in your other hand\nYou may keep attacking until you miss, with the multi attack penalty increasing as described above every time",
-        "traits": "Attack, Blade Art",
+        "traits": "Attack, Blade Art, Technique",
         "skill": "",
-        "sourceType": "Blade Art",
+        "sourceType": "Technique",
         "source": "",
-        "techniqueRank": ""
+        "techniqueRank": "Masterwork"
     },
     {
         "name": "Absorb Magic",
@@ -54,6 +54,20 @@
         "sourceType": "Base",
         "source": "",
         "techniqueRank": ""
+    },
+    {
+        "name": "Ínstant Strike",
+        "actions": "Free",
+        "trigger": "At the start of your turn",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "You make an attack so quickly that it almost seems like it took no time at all.\nMake a melee Strike",
+        "traits": "Attack, Technique",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Complex"
     },
     {
         "name": "Avert Eyes",
@@ -119,11 +133,11 @@
         "manaCost": "",
         "focusCost": "2",
         "description": "You move gracefully like a dancer in the flow of combat\nStrike, then Step, then Strike another creature",
-        "traits": "Blade Art",
+        "traits": "Technique",
         "skill": "",
-        "sourceType": "Blade Art",
+        "sourceType": "Technique",
         "source": "",
-        "techniqueRank": ""
+        "techniqueRank": "Masterwork"
     },
     {
         "name": "Block",
@@ -221,7 +235,7 @@
         "skill": "",
         "sourceType": "Technique",
         "source": "",
-        "techniqueRank": "Complex"
+        "techniqueRank": "Simple"
     },
     {
         "name": "Coil Up",
@@ -273,9 +287,9 @@
         "manaCost": "15",
         "focusCost": "3",
         "description": "Your weapon slams into the ground, creating a shockwave from the impact\nStrike a tile within range, all creatures on and adjacent from it must make a basic Reflex save against the attack.\nCreatures on the slammed tile take an additional 2d10 bludgeoning damage. \nThis damage bonus is doubled if you were falling or jumping as you did the attack",
-        "traits": "Attack, Blade Art",
+        "traits": "Attack, Blade Art, Technique",
         "skill": "",
-        "sourceType": "Blade Art",
+        "sourceType": "Technique",
         "source": "",
         "techniqueRank": "Masterwork"
     },
@@ -328,12 +342,12 @@
         "requirement": "You are holding a weapon with the Ranged trait",
         "manaCost": "",
         "focusCost": "",
-        "description": "You take a moment to focus and take a perfectly aimed shot.\nMake a ranged strike, dealing an additional weapon dice.",
+        "description": "You take a moment to focus and take a perfectly aimed shot.\nMake a ranged strike, dealing an additional weapon dice on a hit.",
         "traits": "Attack, Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
-        "techniqueRank": "Complex"
+        "techniqueRank": "Advanced"
     },
     {
         "name": "Defensive Positions",
@@ -356,11 +370,11 @@
         "requirement": "You are holding a weapon in the Bow weapon group",
         "manaCost": "",
         "focusCost": "1",
-        "description": "You draw two arrows at once and loose them at separate targets.\nMake two attacks on two different targets in range.\nYou have a -2 penalty on both attacks, but your multiple attack penalty increases first after both shots",
+        "description": "You draw two arrows at once and loose them at separate targets.\nMake two attacks on two different targets in range.\nYou have a -2 penalty on both attacks, but your multiple attack penalty increases first after both shots.",
         "traits": "Attack, Technique",
         "skill": "",
         "sourceType": "Technique",
-        "source": "Master Archer",
+        "source": "",
         "techniqueRank": "Advanced"
     },
     {
@@ -854,6 +868,20 @@
         "techniqueRank": ""
     },
     {
+        "name": "Line Ender Shot",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "10",
+        "focusCost": "2",
+        "description": "With mighty force you fire or throw a projectile, causing it to hit all foes in a line.\nMake a ranged strike, against all creatures in a 1 tile wide line along your weapons first and second range increments.\nCreatures hit need to make a basic Reflex saving throw, taking 1d10 + normal weapon damage damage.",
+        "traits": "Attack, Technique, Blade Art",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Masterwork"
+    },
+    {
         "name": "Lunge",
         "actions": "1",
         "trigger": "",
@@ -987,7 +1015,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You know how to outmaneuver your enemies.\nChoose two allies; they can use their reactions to Step, Stride or Traverse next to an enemy.\nIf they end their movement on opposite sides of an enemy, one of them can make a Strike against that enemy.",
-        "traits": "Technique, Tactical",
+        "traits": "Technique, Tactical, Verbal",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -1029,7 +1057,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "Attempt to predict a foe's next move.\nMake a Tactics Lore roll against the Tactics Lore or Deception of a creature you can see within 10 tiles.\nSuccess: You learn the next action the creature is planning to take next turn.\nIt can either choose to do that or take a -2 penalty to all actions next turn as it scrambles to adapt.",
-        "traits": "Technique, Tactical",
+        "traits": "Technique, Tactical, Mental",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -1099,7 +1127,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You order an ally to flee from danger.\nChoose an ally and an enemy; the ally can use their reaction to Stride or Traverse to move away from that enemy.\nThey move with a +1 move speed bonus, and the chosen enemy has disadvantage on Reactive Strikes from the movement.",
-        "traits": "Tactical, Technique",
+        "traits": "Tactical, Technique, Verbal",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -1176,6 +1204,20 @@
         "techniqueRank": ""
     },
     {
+        "name": "Rend",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "You tear through a creatures armor.\nMake a melee strike with a weapon that does slashing damage.\nOn a hit you deal no damage, but reduce the creatures physical resistance by 1d4.\nThis lasts for 1 hour or until the creature repairs it with a DC 10 crafting check.",
+        "traits": "Attack, Technique",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Advanced"
+    },
+    {
         "name": "Riposte",
         "actions": "Reaction",
         "trigger": "You are currently parrying and a creature missed you with a melee Strike",
@@ -1244,6 +1286,20 @@
         "sourceType": "Technique",
         "source": "",
         "techniqueRank": "Simple"
+    },
+    {
+        "name": "Sharpshooters Stance",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "With an eye on your weapon you enter a stance to hit any target.\nWhile in this stance you may add 1d4 to any ranged weapon attacks and perception checks.\nHowever, while in this stance you are off-guard 2.\nThe stance ends if you move or would be moved against your will.",
+        "traits": "Stance",
+        "skill": "",
+        "sourceType": "General Feat",
+        "source": "",
+        "techniqueRank": ""
     },
     {
         "name": "Shield Bash",
@@ -1439,7 +1495,7 @@
         "skill": "",
         "sourceType": "Technique",
         "source": "",
-        "techniqueRank": ""
+        "techniqueRank": "Simple"
     },
     {
         "name": "Steal Attuned Spell",
@@ -1505,7 +1561,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "You order an ally to strike at an opportune moment.\nChoose an ally; they can use a reaction to make a Strike at a target you both can see.",
-        "traits": "Technique, Tactical",
+        "traits": "Technique, Tactical, Verbal",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -1518,7 +1574,7 @@
         "requirement": "",
         "manaCost": "",
         "focusCost": "1",
-        "description": "Make a forceful strike against an enemy.\nOn a hit, they must make a Fortitude save or be Stunned 1, or Stunned 2 on a Critical Failure.\nYou can only use Stunning Strike once per turn.",
+        "description": "Make a forceful strike against an enemy.\nOn a hit, they must make a Fortitude save or be Stunned 1, or Stunned 2 on a Critical Failure.",
         "traits": "Attack, Technique",
         "skill": "",
         "sourceType": "Technique",
@@ -1532,7 +1588,7 @@
         "requirement": "",
         "manaCost": "",
         "focusCost": "",
-        "description": "Extend the duration of a spell you are sustaining by 1 turn.\nWhen you sustain a spell, make a spellshaping roll as if you were casting it. You cannot fail the spell when sustaining it, but its DC changes to the new spellshaping result.\nSome spells have effects that happen when you sustain them, such as moving the spell.\nYou cannot sustain a spell more than once per turn, but you can sustain multiple spells in the same turn by using multiple Sustain actions.",
+        "description": "Extend the duration of a spell you are sustaining by 1 turn.\nWhen you sustain a spell, make a spellshaping roll as if you were casting it. You cannot fail the spell when sustaining it, but it's DC changes to the new spellshaping result.\nSome spells have effects that happen when you sustain them, such as moving the spell.\nYou cannot sustain a spell more than once per turn, but you can sustain multiple spells in the same turn by using multiple Sustain actions.",
         "traits": "Spellcasting, Magic",
         "skill": "",
         "sourceType": "Base",
@@ -1706,6 +1762,20 @@
         "sourceType": "Technique",
         "source": "",
         "techniqueRank": "Simple"
+    },
+    {
+        "name": "Whirlwind Strike",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "You strike all foes around you with your weapon.\nMake a melee strike against all creatures within reach.\nCreatures that succeed on their save still take half the damage they would take from a normal attack.\nYou have a -2 penalty this attack and your multiple attack penalty by two steps afterwards.",
+        "traits": "Attack, Technique",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Advanced"
     },
     {
         "name": "Wild Strike",

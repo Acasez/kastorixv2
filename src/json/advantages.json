@@ -11,7 +11,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Attunement",
@@ -25,7 +26,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Crafting Prodigy",
@@ -39,7 +41,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Experienced",
@@ -53,7 +56,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Large Mana Well",
@@ -67,7 +71,8 @@
         "health": "",
         "mana": "2 * Level",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Remnant Connection",
@@ -81,7 +86,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Soulsight",
@@ -95,7 +101,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Swift",
@@ -109,7 +116,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Tough",
@@ -123,7 +131,8 @@
         "health": "3 + PHY",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Voidchild",
@@ -137,7 +146,23 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
+    },
+    {
+        "name": "Danger Sense",
+        "description": "You have an unnatural sense for incoming danger\nYour proficiency level in Reflex saves increases one step (max Master).\nWhile off-guard you reduce the penalty by two.",
+        "unlockedAction": "",
+        "level": "4",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Force of Personality",
@@ -151,7 +176,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Golemcrafter",
@@ -165,7 +191,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Magical Genius",
@@ -179,7 +206,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "(INT) Apprentice, (INT) Adept",
-        "metamagicsLearned": "(INT) Metamagic"
+        "metamagicsLearned": "(INT) Metamagic",
+        "gadgets": ""
     },
     {
         "name": "Nimble as a Fox",
@@ -193,7 +221,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Physical Might",
@@ -207,7 +236,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Protective Aura",
@@ -221,7 +251,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Reactive",
@@ -235,7 +266,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Soulbond",
@@ -249,7 +281,8 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
     },
     {
         "name": "Faster Than The Eye",
@@ -263,6 +296,37 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
-        "metamagicsLearned": ""
+        "metamagicsLearned": "",
+        "gadgets": ""
+    },
+    {
+        "name": "Legendary Gadgetsmith",
+        "description": "You make gadgets as you breathe.\nWhen you make gadgets, you always make them upgraded without spending gadgets.\nYou can make two extra gadgets.\nYour proficiency level in gadgets increases one step (max Legendary).",
+        "unlockedAction": "",
+        "level": "12",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "gadgets": "(2) Gadget"
+    },
+    {
+        "name": "Brutal Critical",
+        "description": "You strike with the fury of ancient berserkers\nWhen attacking a roll of 19 also counts as a critical success (improves the degree of success)",
+        "unlockedAction": "",
+        "level": "12",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "gadgets": ""
     }
 ]
