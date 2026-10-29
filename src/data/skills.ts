@@ -8,4 +8,7 @@ export const skills: Skill[] = rawSkills.map((raw) => ({
   stat: raw.stat as StatKey,
 }));
 
+export const skillsByName: Record<string, Skill> = Object.fromEntries(
+  skills.map((s) => [s.name, s]),
+);
 export default skills;

@@ -1,49 +1,27 @@
+//utils/lookupTypes.ts
 import { actionsByName } from "../data/actions";
 import { aspectsByName } from "../data/aspects";
+import { skillsByName } from "../data/skills";
 import { speciesByName } from "../data/species";
 import { spellTraitsByName } from "../data/spellTraits";
-import type { Action } from "../types/Action";
-import type { Species } from "../types/Species";
-import type { Aspect, SpellTrait } from "../types/Spells";
+import { splitList } from "./strings";
 
-export function splitList(raw: string | string[] | undefined | null): string[] {
-  if (!raw) return [];
-  return Array.isArray(raw)
-    ? raw
-    : raw
-        .split(",")
-        .map((s) => s.trim())
-        .filter(Boolean);
-}
-
-export function lookupActions(
+export function lookup<T>(
+  table: Record<string, T>,
   raw: string | string[] | undefined | null,
-): Action[] {
+): T[] {
   return splitList(raw)
-    .map((name) => actionsByName[name])
-    .filter(Boolean) as Action[];
+    .map((name) => table[name])
+    .filter(Boolean) as T[];
 }
 
-export function lookupSpecies(
-  raw: string | string[] | undefined | null,
-): Species[] {
-  return splitList(raw)
-    .map((name) => speciesByName[name])
-    .filter(Boolean) as Species[];
-}
-
-export function lookupAspects(
-  raw: string | string[] | undefined | null,
-): Aspect[] {
-  return splitList(raw)
-    .map((name) => aspectsByName[name])
-    .filter(Boolean) as Aspect[];
-}
-
-export function lookupSpellTraits(
-  raw: string | string[] | undefined | null,
-): SpellTrait[] {
-  return splitList(raw)
-    .map((name) => spellTraitsByName[name])
-    .filter(Boolean) as SpellTrait[];
-}
+export const lookupActions = (raw?: string | string[] | null) =>
+  lookup(actionsByName, raw);
+export const lookupSpecies = (raw?: string | string[] | null) =>
+  lookup(speciesByName, raw);
+export const lookupAspects = (raw?: string | string[] | null) =>
+  lookup(aspectsByName, raw);
+export const lookupSpellTraits = (raw?: string | string[] | null) =>
+  lookup(spellTraitsByName, raw);
+export const lookupSkills = (raw?: string | string[] | null) =>
+  lookup(skillsByName, raw);
