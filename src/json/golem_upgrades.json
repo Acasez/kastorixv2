@@ -73,7 +73,7 @@
     },
     {
         "name": "Programmed Tactics",
-        "description": "You program in two tactical maneuvers for your golem.\nYour golem learns two simple techniques.\nThis upgrade can be taken multiple times, choosing new techniques",
+        "description": "You program in two tactical maneuvers for your golem.\nYour golem learns two basic techniques.\nThis upgrade can be taken multiple times, choosing new techniques",
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
@@ -81,7 +81,7 @@
         "healthBase": "",
         "healthIncrease": "",
         "elementalResistance": "",
-        "techniques": "2"
+        "techniques": "(2) Basic"
     },
     {
         "name": "Raise Guard",
@@ -261,7 +261,7 @@
         "healthBase": "",
         "healthIncrease": "",
         "elementalResistance": "",
-        "techniques": ""
+        "techniques": "(2) Advanced"
     },
     {
         "name": "Battlefield Stomp",
@@ -273,7 +273,7 @@
         "healthBase": "",
         "healthIncrease": "",
         "elementalResistance": "",
-        "techniques": "2"
+        "techniques": ""
     },
     {
         "name": "Greater Elemental Ward",
@@ -333,7 +333,7 @@
         "healthBase": "",
         "healthIncrease": "",
         "elementalResistance": "",
-        "techniques": "2"
+        "techniques": "(2) Complex"
     },
     {
         "name": "Winged Golem",

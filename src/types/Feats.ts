@@ -13,13 +13,14 @@ export type GeneralFeat = {
   name: string;
   description: string;
   unlockedAction: Action;
+  techniques: Action;
   prerequisites: string;
   level: number;
   repeatable: boolean;
   unlockedFeats: string;
   speeds: Speed[];
   resistances: Resistance[];
-  combatManeuversLearned: string;
+  techniquesLearned: number;
   health: string;
   choice: string;
   quickAccessSlots: number;
@@ -44,6 +45,7 @@ export type Advantage = {
   name: string;
   description: string;
   unlockedAction: Action;
+  prerequisites: string;
   level: number;
   unlockedFeats: string;
   speeds: Speed[];
@@ -53,6 +55,7 @@ export type Advantage = {
   choice: string;
   health: string;
   mana: string;
+  gadgets: string;
 };
 
 export type AncestryFeat = {

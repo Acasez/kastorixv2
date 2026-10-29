@@ -1,12 +1,5 @@
 [
     {
-        "name": "Focused Spell",
-        "spellType": "",
-        "effect": "Spend 1 Focus point",
-        "dc": "-2",
-        "level": "1"
-    },
-    {
         "name": "Careful Spell",
         "spellType": "",
         "effect": "Increase the action cost of the spell by 1",
@@ -35,6 +28,13 @@
         "level": "1"
     },
     {
+        "name": "Empowered Spell",
+        "spellType": "",
+        "effect": "Increase the power of the spell. Add your INT (or WIL if cast as an Attuned Spell) to the first damage roll of the spell.",
+        "dc": "2",
+        "level": "1"
+    },
+    {
         "name": "Expand Spell",
         "spellType": "Area",
         "effect": "Increase the amount of the tiles the spell effects by one row or column. (4x4 to 4x5 for example)",
@@ -42,9 +42,16 @@
         "level": "1"
     },
     {
+        "name": "Focused Spell",
+        "spellType": "",
+        "effect": "Spend 1 Focus point",
+        "dc": "-2",
+        "level": "1"
+    },
+    {
         "name": "Fuel Spell",
         "spellType": "Fire",
-        "effect": "Increase the amount of dice dealt by the spell. You take that dice's damage as Vital damage.",
+        "effect": "Increase the amount of dice dealt by the spell by one. You take half that dice's damage as Vital damage.",
         "dc": "0",
         "level": "1"
     },
@@ -58,7 +65,7 @@
     {
         "name": "Recolor Spell",
         "spellType": "",
-        "effect": "Add a flair to spell, with a splash of color. \nYou can give the spell any color you want, though if you want to try to make it look like another spell you need to make a channeling roll\n",
+        "effect": "Add a flair to spell, with a splash of color. \nYou can give the spell any color you want, though if you want to try to make it look like another spell you need to make a channeling roll",
         "dc": "0",
         "level": "1"
     },
@@ -93,7 +100,7 @@
     {
         "name": "Homing Spell",
         "spellType": "Targeting",
-        "effect": "Increase the initial Save of the spell by 3.",
+        "effect": "Increase the initial Save of the spell by 3. \nAdditionally the spell ignores lesser cover",
         "dc": "4",
         "level": "4"
     },
@@ -119,7 +126,21 @@
         "level": "4"
     },
     {
-        "name": "Ride the lightning",
+        "name": "Forceful Spell",
+        "spellType": "Targeting",
+        "effect": "Infuse some more force into the spell. \nIn addition to the other effects of the spell, one creature hit by it fall prone or are pushed back 2 tiles (your choice)",
+        "dc": "2",
+        "level": "6"
+    },
+    {
+        "name": "Resistant Spell",
+        "spellType": "",
+        "effect": "Weave the spell in way that makes it hard for others to threaten.\nAny attempts to Spellbreak, Unweave or otherwise magically disrupt the spell have disadvantage.",
+        "dc": "3",
+        "level": "6"
+    },
+    {
+        "name": "Ride the Lightning",
         "spellType": "Lightning",
         "effect": "Move to any location the spell hits",
         "dc": "4",
@@ -128,7 +149,7 @@
     {
         "name": "Twin Spell",
         "spellType": "Targeting",
-        "effect": "Casts the spell at two targets within range, use the same spellshaping for both. \nGives the spell the Draining Trait (it costs twice the mana)",
+        "effect": "Casts the spell at two targets within range, use the same spellshaping for both. \nThis gives the spell the Draining Trait",
         "dc": "6",
         "level": "8"
     },

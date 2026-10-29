@@ -41,7 +41,7 @@ export type ActionTrait =
   | "Golem"
   | "Creature";
 
-export type TechniqueRank = "Simple" | "Complex" | "Advanced" | "Masterwork";
+export type TechniqueRank = "Simple" | "Advanced" | "Complex" | "Masterwork";
 
 /* export type ActionTrait = {
   name: string;
