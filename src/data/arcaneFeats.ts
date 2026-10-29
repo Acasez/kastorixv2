@@ -22,3 +22,5 @@ export const arcaneFeats: ArcaneFeat[] = rawArcaneFeats.map((raw) => {
     repeatable: Boolean(raw.repeatable),
   };
 });
+
+export default arcaneFeats;

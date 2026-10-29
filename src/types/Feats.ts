@@ -44,7 +44,7 @@ export type ArcaneFeat = {
 export type Advantage = {
   name: string;
   description: string;
-  unlockedAction: Action;
+  unlockedActions: Action[];
   prerequisites: string;
   level: number;
   unlockedFeats: string;
