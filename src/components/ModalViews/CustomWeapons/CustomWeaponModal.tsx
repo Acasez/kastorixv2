@@ -6,7 +6,7 @@ import DamageEditor from "./DamageEditor";
 import TraitPicker from "./TraitPicker";
 import { INPUT_CLASS } from "./RemoveButton";
 import weapons from "../../../data/weapons";
-import { formatPrice, parsePrice } from "../../../data/prices";
+import { formatPrice, parsePrice } from "../../../utils/prices";
 
 type CustomWeaponModalProps = {
   initialWeapon?: Weapon;

@@ -3,7 +3,7 @@ import rawArmors from "../JSON/armors.json";
 import type { Armor, ArmorType } from "../types/Armor";
 import { parseResistances } from "../utils/parseNamedUtils";
 import { toNumber } from "../utils/toNumber";
-import { parsePrice } from "./prices";
+import { parsePrice } from "../utils/prices";
 
 export const armors: Armor[] = rawArmors.map((raw) => ({
   ...raw,

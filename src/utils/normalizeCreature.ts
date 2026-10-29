@@ -9,7 +9,7 @@ import type { VerbalComponent, SomaticComponent } from "../types/Spells";
 import type { Weapon } from "../types/Weapons";
 import { parseWeaponTrait, parseWeaponTraits } from "../data/weapons";
 import { createDamageInstances, damageTypesByName } from "../data/damageTypes";
-import { parsePrice } from "../data/prices";
+import { parsePrice } from "./prices";
 
 // If constants/Proficiency already exports the tier names, import that instead.
 const PROFICIENCY_TIERS: readonly string[] = [

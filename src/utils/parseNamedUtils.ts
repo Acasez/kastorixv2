@@ -1,3 +1,5 @@
+import { actionsByName } from "../data/actions";
+import type { Action } from "../types/Action";
 import type { SpeedTypes } from "../types/SpeedTypes";
 
 function parseNamedAmounts<T extends string>(
@@ -32,4 +34,12 @@ export function splitList(raw: string | string[] | undefined | null): string[] {
         .split(",")
         .map((s) => s.trim())
         .filter(Boolean);
+}
+
+export function lookupActions(
+  raw: string | string[] | undefined | null,
+): Action[] {
+  return splitList(raw)
+    .map((name) => actionsByName[name])
+    .filter(Boolean) as Action[];
 }

@@ -34,7 +34,7 @@ import {
   UPGRADE_FIELDS,
   WEAPON_FIELDS,
 } from "../../constants/DetailFields";
-import { formatPrice } from "../../data/prices";
+import { formatPrice } from "../../utils/prices";
 import type { Spell, SpellTrait } from "../../types/Spells";
 
 export type ChoiceData = Record<

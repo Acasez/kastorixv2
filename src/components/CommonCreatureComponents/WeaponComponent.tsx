@@ -12,7 +12,7 @@ import {
   getMAPFromWeapon,
 } from "../../data/weapons";
 import { formatDamageInstances } from "../../utils/damage";
-import { formatPrice } from "../../data/prices";
+import { formatPrice } from "../../utils/prices";
 
 interface WeaponComponentProps {
   weapon: Weapon;

@@ -8,7 +8,7 @@ import type {
   WeaponType,
 } from "../types/Weapons";
 import { createDamageInstances } from "./damageTypes";
-import { parsePrice } from "./prices";
+import { parsePrice } from "../utils/prices";
 import { weaponTraitsByName } from "./weaponTraits";
 
 export function parseWeaponTrait(traitString: string): WeaponTrait {
