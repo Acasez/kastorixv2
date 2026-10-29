@@ -1,4 +1,5 @@
 import type { CreatureSizes } from "../constants/CreatureSizes";
+import type { Action } from "./Action";
 import type { Resistance } from "./DamageTypes";
 import type { Speed } from "./SpeedTypes";
 
@@ -20,4 +21,5 @@ export type Species = {
   speeds: Speed[];
   resistances: Resistance[];
   gadgets: string;
+  unlockedActions: Action[];
 };

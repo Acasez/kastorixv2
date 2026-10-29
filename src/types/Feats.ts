@@ -61,7 +61,7 @@ export type Advantage = {
 export type AncestryFeat = {
   name: string;
   description: string;
-  unlockedAction: Action;
+  unlockedActions: Action[];
   type: AncestryFeatType;
   species: Species[];
   prerequisites: string;
