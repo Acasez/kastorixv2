@@ -1,3 +1,8 @@
+import type { Action } from "./Action";
+import type { Resistance } from "./DamageTypes";
+import type { Speed } from "./SpeedTypes";
+import type { Weapon } from "./Weapons";
+
 export type GolemModel = {
   name: string;
   description: string;
@@ -5,14 +10,14 @@ export type GolemModel = {
   dex: number;
   int: number;
   wil: number;
-  resistances: number;
-  landSpeed: number;
+  resistances: Resistance[];
+  speeds: Speed[];
   featureOne: string;
   featureOneDesc: string;
   skills: string;
   saves: string;
-  weapons: string;
-  naturalWeapon: string;
+  weaponsProfs: string;
+  naturalWeapons: Weapon[];
 };
 
 export type GolemUpgrade = {
@@ -20,9 +25,11 @@ export type GolemUpgrade = {
   description: string;
   prerequisites: string;
   level: number;
-  golemWeapon: string;
-  unlockedAction: string;
+  golemWeapon: Weapon[];
+  unlockedActions: Action[];
   healthBase: number;
   healthIncrease: string;
-  elementalResistance: number;
+  resistances: Resistance[];
+  speeds: Speed[];
+  techniques: number;
 };

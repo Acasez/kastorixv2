@@ -6,14 +6,14 @@
         "dex": "0",
         "int": "-3",
         "wil": "-5",
-        "resistances": "6",
-        "landSpeed": "4",
+        "resistances": "(5) Physical, (5) Elemental",
+        "speeds": "(4) Land",
         "featureOne": "",
         "featureOneDesc": "",
         "skills": "Brawling",
         "saves": "Fortitude",
-        "weapons": "",
-        "naturalWeapon": "Slam"
+        "weaponsProfs": "",
+        "naturalWeapons": "Slam"
     },
     {
         "name": "Soldier",
@@ -22,14 +22,14 @@
         "dex": "2",
         "int": "-3",
         "wil": "-5",
-        "resistances": "4",
-        "landSpeed": "4",
+        "resistances": "(4) Physical, (4) Elemental",
+        "speeds": "(4) Land",
         "featureOne": "",
         "featureOneDesc": "",
         "skills": "Two of Athletics, Brawling, Intimidation and Stealth",
         "saves": "Reflex",
-        "weapons": "Simple weapons, shields and one weapon group",
-        "naturalWeapon": ""
+        "weaponsProfs": "Simple weapons, shields and one weapon group",
+        "naturalWeapons": ""
     },
     {
         "name": "Quadruped",
@@ -38,14 +38,14 @@
         "dex": "1",
         "int": "-3",
         "wil": "-5",
-        "resistances": "4",
-        "landSpeed": "6",
+        "resistances": "(4) Physical, (4) Elemental",
+        "speeds": "(6) Land",
         "featureOne": "",
         "featureOneDesc": "",
         "skills": "Athletics",
         "saves": "Fortitude or Reflex",
-        "weapons": "",
-        "naturalWeapon": "Stomp, Metal Claw"
+        "weaponsProfs": "",
+        "naturalWeapons": "Stomp, Metal Claw"
     },
     {
         "name": "Scout",
@@ -54,13 +54,13 @@
         "dex": "3",
         "int": "-3",
         "wil": "-5",
-        "resistances": "2",
-        "landSpeed": "5",
+        "resistances": "(2) Physical, (2) Elemental",
+        "speeds": "(5) Land",
         "featureOne": "Nimble",
         "featureOneDesc": "Ignores difficult terrain and treats greater difficult terrain as difficult terrain",
         "skills": "Two of Acrobatics, Performance, Sleight of hand or Stealth",
         "saves": "Reflex",
-        "weapons": "Simple weapons and one weapon group",
-        "naturalWeapon": ""
+        "weaponsProfs": "Simple weapons and one weapon group",
+        "naturalWeapons": ""
     }
 ]

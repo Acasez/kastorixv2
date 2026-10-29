@@ -5,10 +5,11 @@
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -17,10 +18,11 @@
         "prerequisites": "Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "Ballista",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -29,22 +31,24 @@
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "3",
+        "resistances": "(3) Elemental",
+        "speeds": "",
         "techniques": ""
     },
     {
         "name": "Feathersteel Wings",
-        "description": "You've equipped your golem with feathersteel wings that lets it glide down and perform acrobatic maneuvers.\nYour golem has a glide speed equal to its movespeed.\nYour golem is trained in acrobatics and stealth.",
+        "description": "You've equipped your golem with feathersteel wings that lets it glide down and perform acrobatic maneuvers.\nYour golem has a 4 tile glide speed (while its Medium or smaller).\nYour golem is trained in acrobatics and stealth.",
         "prerequisites": "Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "(4) Glide",
         "techniques": ""
     },
     {
@@ -53,10 +57,11 @@
         "prerequisites": "Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -65,10 +70,11 @@
         "prerequisites": "Soldier or Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -77,10 +83,11 @@
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": "(2) Basic"
     },
     {
@@ -89,10 +96,11 @@
         "prerequisites": "Brawler or Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "Protect Ally",
+        "unlockedActions": "Protect Ally",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -101,10 +109,11 @@
         "prerequisites": "Trained in Souls Lore or Expert in Arcana",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -113,10 +122,11 @@
         "prerequisites": "Soldier or Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -125,10 +135,11 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -137,10 +148,11 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "Fire Capacitor",
+        "unlockedActions": "Fire Capacitor",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -149,10 +161,11 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "Frost Capacitor",
+        "unlockedActions": "Frost Capacitor",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -161,10 +174,11 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "Lightning Capacitor",
+        "unlockedActions": "Lightning Capacitor",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -173,10 +187,11 @@
         "prerequisites": "[Soul Link]",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -185,10 +200,11 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "PHY",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -197,10 +213,11 @@
         "prerequisites": "[Soul Link]",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -209,10 +226,24 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "4",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
+        "techniques": ""
+    },
+    {
+        "name": "Swift Golem",
+        "description": "Swiftness isn't what many expect when it comes to golems.\nYour Golems speeds increase by 1",
+        "prerequisites": "",
+        "level": "6",
+        "golemWeapon": "",
+        "unlockedActions": "",
+        "healthBase": "",
+        "healthIncrease": "",
+        "resistances": "",
+        "speeds": "(1) Land",
         "techniques": ""
     },
     {
@@ -221,10 +252,11 @@
         "prerequisites": "[Soul Link]",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -233,10 +265,11 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "Agile Tail, Sweeping Tail",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -245,10 +278,11 @@
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -257,10 +291,11 @@
         "prerequisites": "[Programmed Tactics]",
         "level": "8",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": "(2) Advanced"
     },
     {
@@ -269,10 +304,11 @@
         "prerequisites": "[Size Up Golem]",
         "level": "8",
         "golemWeapon": "",
-        "unlockedAction": "Battlefield Stomp",
+        "unlockedActions": "Battlefield Stomp",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -281,10 +317,11 @@
         "prerequisites": "[Elemental Ward]",
         "level": "10",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "6",
+        "resistances": "(6) Elemental",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -293,10 +330,11 @@
         "prerequisites": "",
         "level": "12",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -305,10 +343,11 @@
         "prerequisites": "[Soul Channel Spell]",
         "level": "12",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -317,10 +356,11 @@
         "prerequisites": "[Size Up Golem]",
         "level": "12",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "5",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": ""
     },
     {
@@ -329,22 +369,24 @@
         "prerequisites": "[Advanced Programmed Tactics]",
         "level": "12",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "",
         "techniques": "(2) Complex"
     },
     {
         "name": "Winged Golem",
-        "description": "You've improved your golems wings and given it magical propulsion.\nYour golem has a flight speed equal to its movespeed.",
+        "description": "You've improved your golems wings and given it magical propulsion.\nYour golem has a 5 tile flight speed (while its Medium or smaller).",
         "prerequisites": "[Feathersteel Wings]",
         "level": "12",
         "golemWeapon": "",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "healthBase": "",
         "healthIncrease": "",
-        "elementalResistance": "",
+        "resistances": "",
+        "speeds": "(5) Fly",
         "techniques": ""
     }
 ]

@@ -10,6 +10,7 @@ import type {
 import { createDamageInstances } from "./damageTypes";
 import { parsePrice } from "../utils/prices";
 import { weaponTraitsByName } from "./weaponTraits";
+import { lookup } from "../utils/lookupTypes";
 
 export function parseWeaponTrait(traitString: string): WeaponTrait {
   // Parse "Deadly (d12)" into {name: "Deadly", parameter: "d12"}
@@ -49,6 +50,13 @@ export const weapons: Weapon[] = rawWeapons.map((raw) => {
 });
 
 export default weapons;
+
+export const weaponsByName: Record<string, Weapon> = Object.fromEntries(
+  weapons.map((t) => [t.name, t]),
+);
+
+export const lookupWeapons = (raw?: string | string[] | null) =>
+  lookup(weaponsByName, raw);
 
 export function getAttackStatFromWeapon(
   weapon: Weapon,
