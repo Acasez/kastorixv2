@@ -1,25 +1,9 @@
 // data/armors.ts
 import rawArmors from "../JSON/armors.json";
 import type { Armor, ArmorType } from "../types/Armor";
-import type { Resistance } from "../types/DamageTypes";
+import { parseResistances } from "../utils/parseNamedUtils";
 import { toNumber } from "../utils/toNumber";
 import { parsePrice } from "./prices";
-
-function parseResistances(resistancesString: string): Resistance[] {
-  if (!resistancesString?.trim()) return [];
-
-  return resistancesString
-    .split(",")
-    .map((part) => {
-      const match = part.trim().match(/\((\d+)\)\s*([\w\s]+)/);
-      if (!match) return null;
-      return {
-        name: match[2].trim(),
-        amount: Number(match[1]),
-      };
-    })
-    .filter(Boolean) as Resistance[];
-}
 
 export const armors: Armor[] = rawArmors.map((raw) => ({
   ...raw,

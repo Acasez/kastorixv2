@@ -5,6 +5,7 @@ import rawGadgets from "../JSON/gadgets.json";
 export const gadgets: Gadget[] = rawGadgets.map((raw) => ({
   ...raw,
   level: Number(raw.level),
+  upgradeLevel: Number(raw.upgradeLevel),
   type: raw.type as GadgetType,
 }));
 

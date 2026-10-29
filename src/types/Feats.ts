@@ -12,8 +12,8 @@ export type Background = {
 export type GeneralFeat = {
   name: string;
   description: string;
-  unlockedAction: Action;
-  techniques: Action;
+  unlockedActions: Action[];
+  techniques: Action[];
   prerequisites: string;
   level: number;
   repeatable: boolean;
