@@ -1,11 +1,8 @@
 import rawSpecies from "../JSON/species.json";
 import type { Species } from "../types/Species";
 import type { CreatureSizes } from "../constants/CreatureSizes";
-import {
-  parseSpeeds,
-  parseResistances,
-  lookupActions,
-} from "../utils/parseNamedUtils";
+import { parseSpeeds, parseResistances } from "../utils/parseNamedUtils";
+import { lookupActions } from "../utils/lookupTypes";
 
 export const species: Species[] = rawSpecies.map((raw) => {
   return {

@@ -1,10 +1,7 @@
 import type { Advantage } from "../types/Feats";
 import rawAdvantages from "../JSON/advantages.json";
-import {
-  parseSpeeds,
-  parseResistances,
-  lookupActions,
-} from "../utils/parseNamedUtils";
+import { parseSpeeds, parseResistances } from "../utils/parseNamedUtils";
+import { lookupActions } from "../utils/lookupTypes";
 
 export const advantages: Advantage[] = rawAdvantages.map((raw) => {
   return {

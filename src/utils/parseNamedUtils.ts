@@ -1,5 +1,3 @@
-import { actionsByName } from "../data/actions";
-import type { Action } from "../types/Action";
 import type { SpeedTypes } from "../types/SpeedTypes";
 
 function parseNamedAmounts<T extends string>(
@@ -25,21 +23,3 @@ export const parseSpeeds = (raw?: string | string[] | null) =>
   parseNamedAmounts<SpeedTypes>(raw);
 export const parseResistances = (raw?: string | null) =>
   parseNamedAmounts<string>(raw);
-
-export function splitList(raw: string | string[] | undefined | null): string[] {
-  if (!raw) return [];
-  return Array.isArray(raw)
-    ? raw
-    : raw
-        .split(",")
-        .map((s) => s.trim())
-        .filter(Boolean);
-}
-
-export function lookupActions(
-  raw: string | string[] | undefined | null,
-): Action[] {
-  return splitList(raw)
-    .map((name) => actionsByName[name])
-    .filter(Boolean) as Action[];
-}
