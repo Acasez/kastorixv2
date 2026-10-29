@@ -17,7 +17,7 @@
         "speeds": "(-1) Land",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedActions": ""
     },
     {
         "name": "Yirte",
@@ -37,7 +37,7 @@
         "speeds": "(1) Land, (4) Climb",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedActions": ""
     },
     {
         "name": "Gnome",
@@ -57,7 +57,7 @@
         "speeds": "",
         "resistances": "",
         "gadgets": "(1) Gadget",
-        "unlockedAction": "Absorb Magic"
+        "unlockedActions": "Absorb Magic"
     },
     {
         "name": "Vesper",
@@ -77,7 +77,7 @@
         "speeds": "(5) Fly",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedActions": ""
     },
     {
         "name": "Human",
@@ -97,7 +97,7 @@
         "speeds": "",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedActions": ""
     },
     {
         "name": "Dragonkin",
@@ -117,7 +117,7 @@
         "speeds": "",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": "Steady by Tail"
+        "unlockedActions": "Steady by Tail"
     },
     {
         "name": "Aruna",
@@ -137,7 +137,7 @@
         "speeds": "(6) Glide, (4) Swim",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedActions": ""
     },
     {
         "name": "Troll",
@@ -157,7 +157,7 @@
         "speeds": "",
         "resistances": "(2) Physical",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedActions": ""
     },
     {
         "name": "Brannur",
@@ -177,6 +177,6 @@
         "speeds": "",
         "resistances": "",
         "gadgets": "",
-        "unlockedAction": ""
+        "unlockedActions": ""
     }
 ]

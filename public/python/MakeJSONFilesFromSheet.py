@@ -29,7 +29,6 @@ SHEETS = [
     "Aspects",
     "Weapons",
     "Weapon Traits",
-    "Combat Maneuvers",
     "Actions",
     "Armors",
     "Golem Models",

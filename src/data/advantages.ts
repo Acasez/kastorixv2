@@ -6,7 +6,7 @@ import { lookupActions } from "../utils/lookupTypes";
 export const advantages: Advantage[] = rawAdvantages.map((raw) => {
   return {
     ...raw,
-    unlockedActions: lookupActions(raw.unlockedAction),
+    unlockedActions: lookupActions(raw.unlockedActions),
     level: Number(raw.level),
     speeds: parseSpeeds(raw.speeds),
     resistances: parseResistances(raw.speeds),

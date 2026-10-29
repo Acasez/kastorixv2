@@ -5,7 +5,7 @@ import { lookupActions } from "../utils/lookupTypes";
 export const arcaneFeats: ArcaneFeat[] = rawArcaneFeats.map((raw) => {
   return {
     ...raw,
-    unlockedActions: lookupActions(raw.unlockedAction),
+    unlockedActions: lookupActions(raw.unlockedActions),
     level: Number(raw.level),
     repeatable: Boolean(raw.repeatable),
   };

@@ -12,7 +12,7 @@ export const species: Species[] = rawSpecies.map((raw) => {
     mana: Number(raw.mana),
     speeds: parseSpeeds(raw.speeds),
     resistances: parseResistances(raw.resistances),
-    unlockedActions: lookupActions(raw.unlockedAction),
+    unlockedActions: lookupActions(raw.unlockedActions),
   };
 });
 

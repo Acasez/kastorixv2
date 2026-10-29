@@ -2,7 +2,7 @@
     {
         "name": "Arcane Training",
         "description": "You have spend your time studying magic to compete with those that have magical gifts. \nLearn two level 2 [Arcane Feats]. \nYour proficiency level in arcana increases (max Expert)",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "Arcane Feat - Level 2, Arcane Feat - Level 2",
@@ -18,7 +18,7 @@
     {
         "name": "Attunement",
         "description": "You have an attunement, a magical connection through your soul to one aspect of magic. \nThis makes it easier to cast that type of magic, but prevents you from casting the opposite aspect. \nSpells from your attuned aspect are called attuned spells  \n-While casting attuned spells, reduce their mana cost by their rank\n-While casting attuned spells, you may also use your WIL instead of INT for the spellshaping check.\n-You cannot learn or cast spells of the opposite aspect from your attunement\nGet the [Basic Elemental Magic] arcane feat for your attuned aspect",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "Arcane Feat - Level 1",
@@ -34,7 +34,7 @@
     {
         "name": "Crafting Prodigy",
         "description": "You are specialized in one field of crafting above everything else and are able to craft things that would normally be above your level of knowledge. \nYou learn one of the [Armor Artificer], [Artificer´s Weapon] or [Runegun Smith] feats, ignoring their level requirements. \nWhen picking new feats you treat feats from your chosen archetype as if their level requirements were 2 levels lower. \nAdditionally you become trained in crafting and have a +3 bonus to any checks regarding your field.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "Arcane Feat - Level 4",
@@ -50,7 +50,7 @@
     {
         "name": "Experienced",
         "description": "You've spent your time doing a variety of things. \nGain one more background and one level 1 [General Feat]",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "General Feat - Level 1, Background - Level 1",
@@ -66,7 +66,7 @@
     {
         "name": "Large Mana Well",
         "description": "You have an larger than average mana well, allowing you to cast more spells and increasing the strength of your aura. \nIncrease your maximum mana by your WIL\nEvery time you level up your maximum mana increases by 2 more",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "",
@@ -82,7 +82,7 @@
     {
         "name": "Remnant Connection",
         "description": "You have a rare and mysterious connection to the Remnant, an ancient civilization which left ruins all of Kastorix, which helps you in small ways.\nOnce per day you may choose to reroll a failed roll, you must keep the new one even if its worse.\nCertain artifacts and creatures may treat you differently. ",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "",
@@ -98,7 +98,7 @@
     {
         "name": "Soulsight",
         "description": "You posses the rare gift of natural soulsight, allowing you to see souls. Souls appear as tiny dots of light in the center of living creatures. \nYou have a soulsight as an impressive sense up to 10 tiles. \nYou have the Inspect Soul action. You may spend a focus point to use it as a free action",
-        "unlockedAction": "Inspect Soul",
+        "unlockedActions": "Inspect Soul",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "",
@@ -114,7 +114,7 @@
     {
         "name": "Swift",
         "description": "Few can match your incredible speed\nYou have 1 tile extra movement speed and may add your DEX again to initiative checks. \nYour proficiency level in reflex saves increases one step (max Expert)",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "",
@@ -130,7 +130,7 @@
     {
         "name": "Tough",
         "description": "Your tougher than most. \nIncrease your maximum health by 3 + your PHY.  \nTwice per day when you reduce your exhaustion you may also restore your health equal to your PHY\nYour proficiency level in fortitude saves increases one step (max Expert)",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "",
@@ -146,7 +146,7 @@
     {
         "name": "Voidchild",
         "description": "Marked by the void, feared by living.\nYou ignore the Complex trait on spells with the Void trait.\nYou learn spells equal to your INT\nYou have +3 bonus on saves against effects with the Void or Soul traits.\nYou have low-light vision.\nVoid Children have starry purple eyes and faintly glowing skin.\nNOTE: Void Children are outlawed in the Draconium and some other countries and will be hunted on sight.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "",
@@ -162,7 +162,7 @@
     {
         "name": "Danger Sense",
         "description": "You have an unnatural sense for incoming danger\nYour proficiency level in Reflex saves increases one step (max Master).\nWhile off-guard you reduce the penalty by two.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -178,7 +178,7 @@
     {
         "name": "Force of Personality",
         "description": "Your willpower can increase their strength of you spells\nYour proficiency level in persuasion and intimidation increases one step (max Master).\nYou may use WIL for intimidation checks.\nWhen you cast spells you may spend mana equal to their rank to increase their initial DC's by that much.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -194,7 +194,7 @@
     {
         "name": "Golemcrafter",
         "description": "You have created a golem companion that follows you around.\nYour proficiency level in golem lore and crafting increases (max Expert). \nSee the golem companion page for more information. \nIf it is reduced to 0 hit points it is disabled and can be repaired with an hours work at a workbench.\nOnce per turn, when you or your Golem takes an action, the other one can take one as a free action",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -210,7 +210,7 @@
     {
         "name": "Magical Genius",
         "description": "You have an innate aptitude for learning magic.\nYou learn extra spells of all ranks you know equal to your INT. \nYou also learn Metamagics equal to your INT.\nYou may attempt to copy a spell (of a rank you can cast) you saw last turn,  casting the spell even without being proficient with it.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -226,7 +226,7 @@
     {
         "name": "Nimble as a Fox",
         "description": "Few can catch to you\nOnce per turn you may use a focus point to take on of the Step, Stand Up, Hide, Take Cover, Tumble Through or Steal as a free actions. \nYour proficiency level in Reflex saves increases one step (max Master).",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -242,7 +242,7 @@
     {
         "name": "Physical Might",
         "description": "Your strength makes you an imposing threat on the battlefield.\nYou add half your PHY again on weapon damage rolls, or if the weapon is two handed you add your full PHY again instead. \nYour proficiency level in athletics or brawling increases one step (max Master).",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -258,7 +258,7 @@
     {
         "name": "Protective Aura",
         "description": "Your aura absorbs more of the energy of incoming attacks.\nWhile you aura has above half health you can aura block without using your reaction",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -274,7 +274,7 @@
     {
         "name": "Reactive",
         "description": "Your reaction speed is faster than others. \nYou have two reactions per round. \nYou can only use one reaction for each creatures turn.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -290,7 +290,7 @@
     {
         "name": "Soulbond",
         "description": "You have a soulbonded with a magical creature giving you a direct connection to it.\nThe creature you can soulbond with depends on your level, as more powerful creatures require stronger magical power.\nSee the soulbonding page for more information. \nYou can only have one soulbond at a time, and if your soulbond dies you take 2d6 vital damage.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "4",
         "unlockedFeats": "",
@@ -306,7 +306,7 @@
     {
         "name": "Faster Than The Eye",
         "description": "Your so fast your movements can't even be perceived by some.\nYour movespeed increases by 1.\nIf your movespeed + 5 is higher than a creature's passive perception, they can't see you move and take reactions to it.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "8",
         "unlockedFeats": "",
@@ -322,7 +322,7 @@
     {
         "name": "Mana Blooded",
         "description": "Exposure to magic has made your very blood infused with mana.\nYou have a +1 bonus to all spellshaping checks if you lost health since the end your last turn.\nIncrease your health by 3 + your WIL.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "8",
         "unlockedFeats": "",
@@ -338,7 +338,7 @@
     {
         "name": "Brutal Critical",
         "description": "You strike with the fury of ancient berserkers.\nWhile attacking, a roll of 19 also counts as a critical success (improves the degree of success).",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "12",
         "unlockedFeats": "",
@@ -354,7 +354,7 @@
     {
         "name": "Darkvision",
         "description": "Weather with magic, training or artifice, you can now see in darkness as clear as light.\nYou have Darkvision, allowing you see in darkness.\nYour proficiency level in perception increases one step (max Legendary).",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "Low-Light Vision",
         "level": "12",
         "unlockedFeats": "",
@@ -370,7 +370,7 @@
     {
         "name": "Legendary Gadgetsmith",
         "description": "You make gadgets as you breathe.\nWhen you make gadgets, you always make them upgraded at no cost.\nYou can make two extra gadgets.\nYour proficiency level in gadgets increases one step (max Legendary).",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "Trained in Crafting",
         "level": "12",
         "unlockedFeats": "",
@@ -386,7 +386,7 @@
     {
         "name": "Elementalization",
         "description": "The connection to your aspect is so strong you now have become partly elemental in nature.\nGain a bonus depending on your aspect.\nYou require 10 mana per hour.\nYou learn all the apprentice spells connected to your element.\nYou gain the elemental trait.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "[Aspect Infusion]",
         "level": "16",
         "unlockedFeats": "",
@@ -402,7 +402,7 @@
     {
         "name": "Unyielding Focus",
         "description": "You allways keep your mind clear and focused in battle.\nAt the start of each turn you regain one focus point.\nYou have advantage on saves with the Mental trait.",
-        "unlockedAction": "",
+        "unlockedActions": "",
         "prerequisites": "",
         "level": "16",
         "unlockedFeats": "",

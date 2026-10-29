@@ -7,7 +7,7 @@ import { parseResistances, parseSpeeds } from "../utils/parseNamedUtils";
 export const generalFeats: GeneralFeat[] = rawGeneralFeats.map((raw) => {
   return {
     ...raw,
-    unlockedActions: lookupActions(raw.unlockedAction),
+    unlockedActions: lookupActions(raw.unlockedActions),
     techniques: lookupActions(raw.techniques),
     level: Number(raw.level),
     repeatable: Boolean(raw.repeatable),

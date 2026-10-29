@@ -7,7 +7,7 @@ export const ancestryFeats: AncestryFeat[] = rawAncestryFeats.map((raw) => {
   return {
     ...raw,
 
-    unlockedActions: lookupActions(raw.unlockedAction),
+    unlockedActions: lookupActions(raw.unlockedActions),
     level: Number(raw.level),
     speeds: parseSpeeds(raw.speeds),
     resistances: parseResistances(raw.resistances),
