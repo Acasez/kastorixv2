@@ -92,7 +92,7 @@ function GolemPanel({ initialGolem, golemModel }: GolemPanelProps) {
         <div className="min-w-64 flex-1 sm:max-w-md">
           <TrackBar
             label="Health"
-            color="#dc2626"
+            color="bg-health"
             track={golemHealth}
             maxEditable={false}
             onChange={(newHealth) => updateGolem({ health: newHealth })}

@@ -4,8 +4,7 @@ import type { ModalRequest } from "../modalTypes";
 import backgrounds from "../../../JSON/backgrounds.json";
 import { getChoiceData } from "../choiceData";
 import type { FeatTypes } from "../../../types/Feats";
-import { golemModels } from "../../../data/golemModels";
-import type { Golem } from "../../../stores/useCharacterStore";
+import { createGolemFromModel } from "./createGolem";
 
 // Define the handler type
 type UpdateFn = (updates: Partial<Character>) => void;
@@ -104,37 +103,10 @@ function createSelectionHandler(
       );
 
       // Special handling for Golemcrafter advantage
-      const isGolemCrafter =
-        type === "advantage" && value === "Golemcrafter" && choice;
-
       const golemUpdate: Partial<Character> = {};
-      if (isGolemCrafter) {
-        // Find the selected golem model
-        const selectedModel = golemModels.find(
-          (model) => model.name === choice,
-        );
-
-        if (selectedModel) {
-          // Create the golem object
-          const golem: Golem = {
-            model: selectedModel.name,
-            weapons: selectedModel.naturalWeapons.map((w) => w.name),
-            weaponGroups: selectedModel.weaponsProfs
-              ? selectedModel.weaponsProfs
-                  .split(",")
-                  .map((wg) => wg.trim())
-                  .filter(Boolean)
-              : [],
-            health: { current: 10, max: 10 }, // Default health, can be customized
-            actions: [],
-            upgrades: [],
-            baseStats: {
-              PHY: selectedModel.phy,
-              DEX: selectedModel.dex,
-              INT: selectedModel.int,
-              WIL: selectedModel.wil,
-            },
-          };
+      if (type === "advantage" && value === "Golemcrafter" && choice) {
+        const golem = createGolemFromModel(choice);
+        if (golem) {
           golemUpdate.golem = golem;
         }
       }
