@@ -12,8 +12,12 @@ import { useModal } from "../../../hooks/useModal";
 export default function GolemSection() {
   const { character, updateCharacter } = useCharacter();
   const { openModal } = useModal();
+  const golem = character.golem;
+  if (!golem) {
+    return null;
+  }
   const model = golemModels.find(
-    (golemModel) => golemModel.name === character.golemModel,
+    (golemModel) => golemModel.name === golem?.golemModel,
   );
   const selectedUpgrades = Object.entries(character.selections).flatMap(
     ([selectionKey, selectedName]) => {
@@ -21,6 +25,7 @@ export default function GolemSection() {
       return upgrade ? [{ ...upgrade, selectionKey }] : [];
     },
   );
+
   const modelPhy = Number(model?.phy ?? 0);
   const modelDex = Number(model?.dex ?? 0);
   const modelInt = Number(model?.int ?? 0);
@@ -59,13 +64,13 @@ export default function GolemSection() {
   useEffect(() => {
     if (!model) return;
 
-    const current = Math.min(character.golemHealth.current, maxGolemHealth);
+    const current = Math.min(golem.golemHealth.current, maxGolemHealth);
     if (
-      character.golemHealth.max !== maxGolemHealth ||
-      character.golemHealth.current !== current
+      golem.golemHealth.max !== maxGolemHealth ||
+      golem.golemHealth.current !== current
     ) {
       updateCharacter({
-        golemHealth: { current, max: maxGolemHealth },
+        golem.golemHealth: { current, max: maxGolemHealth },
       });
     }
   }, [character.golemHealth, maxGolemHealth, model, updateCharacter]);

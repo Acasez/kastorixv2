@@ -19,7 +19,7 @@ type TabKey =
 export default function TabbedSection() {
   const { character } = useCharacter();
   const hasGadgetAccess = getCharacterGadgetGrant(character) > 0;
-  const hasGolem = Boolean(character.golemModel);
+  const hasGolem = Boolean(character.golem);
   // State to track the active tab
   const [activeTab, setActiveTab] = useState<TabKey>("Spells");
 

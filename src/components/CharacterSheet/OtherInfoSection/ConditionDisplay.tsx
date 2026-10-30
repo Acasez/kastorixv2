@@ -1,5 +1,4 @@
 import { useState } from "react";
-import conditions from "../../../json/conditions.json";
 import ConditionMarker from "./ConditionMarker";
 import type { Condition } from "../../../types/Condition";
 import Tooltip from "../../Tooltip";

@@ -1,7 +1,17 @@
+import type { Price } from "./Item";
+
 export type Potion = {
   name: string;
   effect: string;
   duration: string;
-  price: number;
+  category: PotionCategory;
+  price?: Price;
   level: number;
 };
+
+export type PotionCategory =
+  | "Healing"
+  | "Enhancement"
+  | "Mana"
+  | "Cleansing"
+  | "Poison";

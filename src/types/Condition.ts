@@ -4,7 +4,7 @@ export type Condition = {
   type: ConditionTypes;
   disappears: string;
   neutrality: ConditionNeutrality;
-  level: number;
+  level: number; //Set in game,
 };
 
 export type ConditionTypes = "Binary" | "Numeric";
