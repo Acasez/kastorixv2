@@ -23,10 +23,7 @@ export type Character = {
   metamagics: string[];
   weapons: string[];
   gadgets: string[];
-  golemModel: string | null;
-  golemWeapons: string[];
-  golemWeaponGroups: string[];
-  golemHealth: Track;
+  golem: Golem | null;
   armor: string;
   selections: Record<string, string>;
   background: string | null;
@@ -49,6 +46,14 @@ export type Character = {
   quickAccessItems: string[];
   focusPoints: Track;
   unlockedActions: string[];
+};
+
+export type Golem = {
+  golemModel: string | null;
+  golemWeapons: string[];
+  golemWeaponGroups: string[];
+  golemHealth: Track;
+  golemActions: string[];
 };
 
 type CharacterState = {
@@ -79,10 +84,7 @@ const defaultCharacter: Character = {
   metamagics: [],
   weapons: [],
   gadgets: [],
-  golemModel: null,
-  golemWeapons: [],
-  golemWeaponGroups: [],
-  golemHealth: { current: 10, max: 10 },
+  golem: null,
   armor: "",
   selections: {},
   background: null,
@@ -115,28 +117,21 @@ function isCharacter(value: unknown): value is Character {
   );
 }
 
-// Merge logic moved from SaveLoadButtons
 function mergeCharacter(current: Character, saved: Character): Character {
-  const legacyGolemCrafterKey = Object.entries(saved.selections ?? {}).find(
-    ([key, value]) =>
-      key.startsWith("advantage:") &&
-      !key.endsWith(":choice") &&
-      value === "Golemcrafter",
-  )?.[0];
-
   return {
     ...current,
     ...saved,
-    golemWeapons: saved.golemWeapons ?? current.golemWeapons,
-    golemWeaponGroups: saved.golemWeaponGroups ?? current.golemWeaponGroups,
-    golemModel:
-      saved.golemModel ??
-      (legacyGolemCrafterKey
-        ? (saved.selections[`${legacyGolemCrafterKey}:choice`] ?? null)
-        : null),
+    golem: saved.golem
+      ? {
+          ...saved.golem,
+          golemHealth: {
+            ...current.golem?.golemHealth,
+            ...saved.golem.golemHealth,
+          },
+        }
+      : (current.golem ?? null),
     baseStats: { ...current.baseStats, ...saved.baseStats },
     health: { ...current.health, ...saved.health },
-    golemHealth: { ...current.golemHealth, ...saved.golemHealth },
     aura: { ...current.aura, ...saved.aura },
     mana: { ...current.mana, ...saved.mana },
     speeds: { ...current.speeds, ...saved.speeds },

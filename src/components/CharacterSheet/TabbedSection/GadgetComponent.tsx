@@ -41,13 +41,8 @@ export default function GadgetComponent({
         </span>
         <span className="text-sm text-gray-300">
           Level <strong className="text-white">{gadget.level}</strong>
-        </span>
-        {gadget.requirement && (
-          <span className="text-sm text-gray-300">
-            Requirement{" "}
-            <strong className="text-white">{gadget.requirement}</strong>
-          </span>
-        )}
+        </span>{" "}
+        {/* TODO Show Upgrade */}
       </div>
       <p className="whitespace-pre-line text-sm text-gray-300">
         {gadget.effect}
