@@ -20,11 +20,11 @@ export default function MetamagicComponent({
           <h3 className="mb-2 text-base font-normal text-yellow-300 underline">
             {metamagic.name}
           </h3>
-          {metamagic.spellType && (
+          {/* {metamagic.traits && ( //TODO fix display
             <p>
-              <strong>Type:</strong> {metamagic.spellType}
+              <strong>Type:</strong> {metamagic.traits}
             </p>
-          )}
+          )} */}
           <p className="mt-2 whitespace-pre-line">
             <strong>Effect:</strong> {metamagic.effect}
           </p>
