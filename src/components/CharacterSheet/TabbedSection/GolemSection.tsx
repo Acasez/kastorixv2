@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useMemo } from "react";
 import { useCharacter } from "../../../hooks/useCharacter";
 import golemModels from "../../../data/golemModels";
 import golemUpgrades from "../../../data/golemUpgrades";
@@ -19,7 +19,7 @@ export default function GolemSection() {
 
   if (!model) return null;
 
-  return <GolemPanel golem={character.golem} golemModel={model} />;
+  return <GolemPanel initialGolem={golem} golemModel={model} />;
 }
 
 interface GolemPanelProps {
@@ -59,24 +59,28 @@ function GolemPanel({ initialGolem, golemModel }: GolemPanelProps) {
       healthIncrease,
   );
 
-  const golemHealth: Track = {
-    current: Math.min(golem.health.current, maxGolemHealth),
-    max: maxGolemHealth,
-  };
+  const updateGolem = useCallback(
+    (patch: Partial<Golem>) =>
+      updateCharacter({ golem: { ...golem, ...patch } }),
+    [golem, updateCharacter],
+  );
+
+  const golemHealth: Track = useMemo(
+    () => ({
+      current: Math.min(golem.health.current, maxGolemHealth),
+      max: maxGolemHealth,
+    }),
+    [golem.health, maxGolemHealth],
+  );
 
   useEffect(() => {
     if (
       golem.health.max !== golemHealth.max ||
       golem.health.current !== golemHealth.current
     ) {
-      updateCharacter({
-        golem: {
-          ...golem,
-          health: golemHealth,
-        },
-      });
+      updateGolem({ health: golemHealth });
     }
-  }, [golem, golemHealth, updateCharacter]);
+  }, [golem, golemHealth, updateGolem]);
 
   return (
     <div className="p-4 text-white">
@@ -91,7 +95,7 @@ function GolemPanel({ initialGolem, golemModel }: GolemPanelProps) {
             color="#dc2626"
             track={golemHealth}
             maxEditable={false}
-            onChange={(golemHealth) => updateCharacter({ golemHealth })}
+            onChange={(newHealth) => updateGolem({ health: newHealth })}
           />
         </div>
       </div>
@@ -104,8 +108,6 @@ function GolemPanel({ initialGolem, golemModel }: GolemPanelProps) {
             ["DEX", golemModel.dex],
             ["INT", golemModel.int],
             ["WIL", golemModel.wil],
-            ["Physical Resistance", golemModel.resistances],
-            ["Speed", golemModel.speeds],
             ["Skills", golemModel.skills],
             ["Saves", golemModel.saves],
             ["Weapon Proficiencies", golemModel.weaponsProfs],
@@ -116,94 +118,28 @@ function GolemPanel({ initialGolem, golemModel }: GolemPanelProps) {
             </div>
           ))}
         </dl>
-        {weaponGroupSlots > 0 && (
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <span className="text-sm text-gray-300">
-              Weapon groups ({character.golemWeaponGroups.length}/
-              {weaponGroupSlots})
-            </span>
-            {character.golemWeaponGroups.map((group) => (
-              <button
-                type="button"
-                key={group}
-                title={`Remove ${group} proficiency`}
-                onClick={() =>
-                  updateCharacter({
-                    golemWeaponGroups: character.golemWeaponGroups.filter(
-                      (selectedGroup) => selectedGroup !== group,
-                    ),
-                    golemWeapons: character.golemWeapons.filter(
-                      (weaponName) => {
-                        const weapon = weapons.find(
-                          (item) => item.name === weaponName,
-                        );
-                        return weapon?.weaponGroup !== group;
-                      },
-                    ),
-                  })
-                }
-                className="rounded border border-gray-500 px-2 py-1 text-sm hover:border-gray-300"
-              >
-                {group} ×
-              </button>
-            ))}
-            {character.golemWeaponGroups.length < weaponGroupSlots && (
-              <select
-                key={character.golemWeaponGroups.length}
-                defaultValue=""
-                aria-label="Add golem weapon group proficiency"
-                onChange={(event) => {
-                  const group = event.target.value;
-                  if (group && !character.golemWeaponGroups.includes(group)) {
-                    updateCharacter({
-                      golemWeaponGroups: [
-                        ...character.golemWeaponGroups,
-                        group,
-                      ],
-                    });
-                  }
-                }}
-                className="rounded border border-gray-400 bg-white px-2 py-1 text-sm text-gray-900"
-              >
-                <option value="">Add weapon group</option>
-                {weaponGroups
-                  .filter(
-                    (group) => !character.golemWeaponGroups.includes(group),
-                  )
-                  .map((group) => (
-                    <option key={group} value={group}>
-                      {group}
-                    </option>
-                  ))}
-              </select>
-            )}
-          </div>
-        )}
       </section>
 
       <div className="grid gap-6 md:grid-cols-2">
         <section>
           <h2 className="mb-2 text-lg font-semibold">Features & Upgrades</h2>
-          {model.featureOne && (
+          {golemModel.featureOne && (
             <div className="border-b border-gray-600 py-2">
-              <h3 className="font-semibold">{model.featureOne}</h3>
+              <h3 className="font-semibold">{golemModel.featureOne}</h3>
               <p className="whitespace-pre-line text-gray-300">
-                {model.featureOneDesc}
+                {golemModel.featureOneDesc}
               </p>
             </div>
           )}
           {selectedUpgrades.map((upgrade) => (
-            <div
-              key={upgrade.selectionKey}
-              className="border-b border-gray-600 py-2"
-            >
+            <div key={upgrade.name} className="border-b border-gray-600 py-2">
               <h3 className="font-semibold">{upgrade.name}</h3>
               <p className="whitespace-pre-line text-gray-300">
                 {upgrade.description}
               </p>
             </div>
           ))}
-          {!model.featureOne && selectedUpgrades.length === 0 && (
+          {!golemModel.featureOne && selectedUpgrades.length === 0 && (
             <p className="text-gray-400">No model features or upgrades.</p>
           )}
         </section>
@@ -211,43 +147,7 @@ function GolemPanel({ initialGolem, golemModel }: GolemPanelProps) {
         <section>
           <div className="mb-2 flex items-center gap-3">
             <h2 className="text-lg font-semibold">Strikes & Attacks</h2>
-            {(includedTypes.length > 0 || includedWeaponGroups.length > 0) && (
-              <button
-                type="button"
-                className="rounded border border-white px-2 py-0.5 text-lg leading-none hover:bg-gray-600"
-                onClick={() => openGolemWeaponModal()}
-                aria-label="Add weapon to golem"
-              >
-                +
-              </button>
-            )}
           </div>
-          {allGolemStrikes.map((weapon) => {
-            const isAddedWeapon = character.golemWeapons.includes(weapon.name);
-            return (
-              <WeaponComponent
-                key={weapon.name}
-                weapon={weapon}
-                fixedProficiency="Trained"
-                creatureStats={modelStats}
-                onReplaceWeapon={
-                  isAddedWeapon ? openGolemWeaponModal : undefined
-                }
-                onRemoveWeapon={isAddedWeapon ? removeGolemWeapon : undefined}
-              />
-            );
-          })}
-          {allGolemStrikes.length === 0 && (
-            <p className="text-gray-400">No strikes or attacks listed.</p>
-          )}
-          {golemActions.length > 0 && (
-            <div className="mt-5 border-t border-gray-600 pt-4">
-              <h3 className="mb-2 text-lg font-semibold">Golem Actions</h3>
-              {golemActions.map((action) => (
-                <ActionBox key={action} action={action} />
-              ))}
-            </div>
-          )}
         </section>
       </div>
     </div>
