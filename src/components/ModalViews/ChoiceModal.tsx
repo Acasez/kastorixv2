@@ -19,7 +19,7 @@ export interface ChoiceItem {
   requirement?: string;
   level?: number | string;
   repeatable?: string | number | boolean;
-  unlockedAction?: Action[];
+  unlockedActions?: Action[];
   actionCost?: string;
   choice?: string;
   choiceOptions?: ChoiceItem[];

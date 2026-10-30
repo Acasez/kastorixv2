@@ -22,6 +22,8 @@ export default function ChoiceItemDetail({
   onConfirm,
   confirmLabel,
 }: ChoiceItemDetailProps) {
+  const actionNames: string[] =
+    selectedItem?.unlockedActions?.map((a) => a.name) ?? [];
   return (
     <>
       <div className="border-amber-200 border-2 p-3 flex-1 overflow-hidden  text-text-black">
@@ -71,9 +73,9 @@ export default function ChoiceItemDetail({
                     "No description available."}
                 </p>
               )}
-              {selectedItem.unlockedAction && (
-                <ActionBox action={selectedItem.unlockedAction} />
-              )}
+              {actionNames.map((action) => (
+                <ActionBox key={action} action={action} />
+              ))}
               {selectedItem.choiceOptions && (
                 <div className="mt-4">
                   <p className="font-bold">

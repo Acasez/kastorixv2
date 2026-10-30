@@ -42,7 +42,9 @@ export default function ChoiceTooltip({ item }: ChoiceTooltipProps) {
             : detail.valueKey}
         </p>
       ))}
-      {item.unlockedAction && <ActionBox action={item.unlockedAction} />}
+      {item.unlockedActions?.map((a) => (
+        <ActionBox key={a.name} action={a.name} />
+      ))}
     </div>
   );
 }

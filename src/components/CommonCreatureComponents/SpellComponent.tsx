@@ -39,8 +39,6 @@ export default function SpellComponent({
   const proficiencyTier =
     proficiency ?? character?.skillProficiencies[spell.name] ?? "Trained";
 
-  console.log("Rendering spell", spell);
-
   return (
     <Tooltip
       key={spell.name}
