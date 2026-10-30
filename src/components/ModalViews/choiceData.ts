@@ -1,19 +1,19 @@
 import { type ChoiceItem } from "./ChoiceModal";
 import type { ModalRequest } from "./modalTypes";
-import backgrounds from "../../JSON/backgrounds.json";
-import generalFeats from "../../JSON/general_feats.json";
-import arcaneFeats from "../../JSON/arcane_feats.json";
-import advantages from "../../JSON/advantages.json";
-import ancestryFeats from "../../JSON/ancestry_feats.json";
-import golemUpgrades from "../../JSON/golem_upgrades.json";
-import runegunUpgrades from "../../JSON/runegun_upgrades.json";
+import backgrounds from "../../data/backgrounds";
+import generalFeats from "../../data/generalFeats";
+import arcaneFeats from "../../data/arcaneFeats";
+import advantages from "../../data/advantages";
+import ancestryFeats from "../../data/ancestryFeats";
+import golemUpgrades from "../../data/golemUpgrades";
+import runegunUpgrades from "../../data/runegunUpgrades";
 import spells from "../../data/spells";
 import weapons from "../../data/weapons";
-import species from "../../JSON/species.json";
-import metamagics from "../../JSON/metamagic.json";
+import species from "../../data/species";
+import metamagics from "../../data/metamagics";
 import armors from "../../data/armors";
-import gadgets from "../../JSON/gadgets.json";
-import golemModels from "../../JSON/golem_models.json";
+import gadgets from "../../data/gadgets";
+import golemModels from "../../data/golemModels";
 import aspects from "../../data/aspects";
 import { getActionIcons } from "../../utils/actionUtils";
 import type { Weapon, WeaponTrait } from "../../types/Weapons";
@@ -199,7 +199,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
         ]);
       }),
     ],
-    unlockedAction: speciesItem.unlockedAction,
+    unlockedAction: speciesItem.unlockedActions,
   }));
 
   const generalFeatItems = createChoiceItems(generalFeats, GENERAL_FEAT_FIELDS);

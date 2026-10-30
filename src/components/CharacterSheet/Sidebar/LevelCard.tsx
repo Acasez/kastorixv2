@@ -6,17 +6,18 @@ import generalFeats from "../../../data/generalFeats";
 import arcaneFeats from "../../../data/arcaneFeats";
 import advantages from "../../../data/advantages";
 import ancestryFeats from "../../../data/ancestryFeats";
-import backgrounds from "../../../JSON/backgrounds.json";
-import golemUpgrades from "../../../JSON/golem_upgrades.json";
-import runegunUpgrades from "../../../JSON/runegun_upgrades.json";
+import backgrounds from "../../../data/backgrounds";
+import golemUpgrades from "../../../data/golemModels";
+import runegunUpgrades from "../../../data/runegunUpgrades";
 import spells from "../../../data/spells";
 import weapons from "../../../data/weapons";
 import metamagics from "../../../data/metamagics";
 import armors from "../../../data/armors";
-import gadgets from "../../../JSON/gadgets.json";
+import gadgets from "../../../data/gadgets";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import { useModal } from "../../../hooks/useModal";
+import type { GeneralFeat } from "../../../types/Feats";
 
 type ChoiceType = Exclude<
   ModalRequest["type"],
@@ -26,7 +27,7 @@ type ChoiceType = Exclude<
 type UnlockableItem = {
   name: string;
   unlockedFeats?: string;
-  generalFeat?: string;
+  generalFeat?: GeneralFeat | null;
   choice?: string;
 };
 
@@ -142,7 +143,7 @@ export default function LevelCard({ level }: LevelCardProps) {
       selections,
       ...(type === "advantage" &&
       selectedItem?.choice === "Golem Model - Choice"
-        ? { golemModel: null }
+        ? { golem: null }
         : {}),
       ...(type === "background" ? { background: null } : {}),
     });
@@ -240,7 +241,7 @@ export default function LevelCard({ level }: LevelCardProps) {
         title: "Select General Feat",
         level: 1,
         selectionKey: `${selectionKey}:unlocked:0`,
-        fixedValue: selectedItem.generalFeat,
+        fixedValue: selectedItem.generalFeat.name,
       });
     } else if (selectedItem.unlockedFeats) {
       selectedItem.unlockedFeats
