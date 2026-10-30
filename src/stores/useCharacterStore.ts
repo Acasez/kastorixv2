@@ -49,11 +49,13 @@ export type Character = {
 };
 
 export type Golem = {
-  golemModel: string | null;
-  golemWeapons: string[];
-  golemWeaponGroups: string[];
-  golemHealth: Track;
-  golemActions: string[];
+  model: string;
+  weapons: string[];
+  weaponGroups: string[];
+  health: Track;
+  actions: string[];
+  upgrades: string[];
+  baseStats: Record<StatKey, number>;
 };
 
 type CharacterState = {
@@ -124,9 +126,9 @@ function mergeCharacter(current: Character, saved: Character): Character {
     golem: saved.golem
       ? {
           ...saved.golem,
-          golemHealth: {
-            ...current.golem?.golemHealth,
-            ...saved.golem.golemHealth,
+          health: {
+            ...current.golem?.health,
+            ...saved.golem.health,
           },
         }
       : (current.golem ?? null),

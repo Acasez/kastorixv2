@@ -2,7 +2,7 @@ import MetamagicComponent from "./MetamagicComponent";
 import { useCharacter } from "../../../hooks/useCharacter";
 import { getCharacterMetamagicGrant } from "../../../utils/characterSpellGrants";
 import { useMetamagicModal } from "../../../hooks/useModalActions";
-import metamagics from "../../../JSON/metamagic.json";
+import metamagics from "../../../data/metamagics";
 import SectionLimitText from "./SectionLimitText";
 import AddButton from "./AddButton";
 

@@ -3,6 +3,7 @@ import ConditionMarker from "./ConditionMarker";
 import type { Condition } from "../../../types/Condition";
 import Tooltip from "../../Tooltip";
 import AddDropDown from "../../CommonCreatureComponents/AddDropdown";
+import conditions from "../../../data/conditions";
 
 export default function ConditionDisplay() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
