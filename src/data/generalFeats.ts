@@ -1,4 +1,4 @@
-// data/feats.ts
+// data/generalFeats.ts
 import rawGeneralFeats from "../JSON/general_feats.json";
 import type { GeneralFeat } from "../types/Feats";
 import { lookup, lookupOne } from "../utils/lookupTypes";

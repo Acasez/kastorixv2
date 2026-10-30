@@ -4,6 +4,7 @@ import ChoiceItemDetail from "./ChoiceItemDetail";
 import SearchField from "../SearchField";
 import DropDownMenu from "../DropDownMenu";
 import ModalItemButton from "./ModalItemButton";
+import type { Action } from "../../types/Action";
 
 export interface ChoiceItem {
   name: string;
@@ -18,7 +19,7 @@ export interface ChoiceItem {
   requirement?: string;
   level?: number | string;
   repeatable?: string | number | boolean;
-  unlockedAction?: string;
+  unlockedAction?: Action[];
   actionCost?: string;
   choice?: string;
   choiceOptions?: ChoiceItem[];

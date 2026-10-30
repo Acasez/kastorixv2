@@ -282,8 +282,7 @@ function createWeaponHandler(): ModalHandler {
 
     getBlockedChoices: (character, request) => {
       if (request.type !== "weapon") return [];
-      const ownedWeapons =
-        request.owner === "golem" ? character.golemWeapons : character.weapons;
+      const ownedWeapons = character.weapons;
       return ownedWeapons.filter(
         (weaponName) => weaponName !== request.replaceWeapon,
       );
@@ -292,22 +291,16 @@ function createWeaponHandler(): ModalHandler {
     onConfirm: (character, updateCharacter, request, value) => {
       if (request.type !== "weapon") return;
 
-      const currentWeapons =
-        request.owner === "golem" ? character.golemWeapons : character.weapons;
+      const currentWeapons = character.weapons;
       const weapons = currentWeapons.filter(
         (weaponName) => weaponName !== request.replaceWeapon,
       );
 
-      const isGolem = request.owner === "golem";
       const updatedWeapons = weapons.includes(value)
         ? weapons
         : [...weapons, value];
 
-      updateCharacter(
-        isGolem
-          ? { golemWeapons: updatedWeapons }
-          : { weapons: updatedWeapons },
-      );
+      updateCharacter({ weapons: updatedWeapons });
     },
   };
 }

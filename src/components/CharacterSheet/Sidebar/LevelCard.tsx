@@ -17,7 +17,12 @@ import gadgets from "../../../data/gadgets";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import { useModal } from "../../../hooks/useModal";
-import type { GeneralFeat } from "../../../types/Feats";
+import type {
+  Advantage,
+  AncestryFeat,
+  ArcaneFeat,
+  GeneralFeat,
+} from "../../../types/Feats";
 
 type ChoiceType = Exclude<
   ModalRequest["type"],
@@ -26,7 +31,7 @@ type ChoiceType = Exclude<
 
 type UnlockableItem = {
   name: string;
-  unlockedFeats?: string;
+  unlockedFeats?: string; // Keep as string for now, or make it generic
   generalFeat?: GeneralFeat | null;
   choice?: string;
 };
@@ -82,6 +87,31 @@ function parseUnlockedChoice(
   fallbackLevel: number,
 ): ParsedUnlockedChoice | null {
   const match = value.trim().match(/^(.+?)\s*-\s*Level\s*(\d+|X)$/i);
+  if (!match) return null;
+
+  const type = Object.entries(choiceConfig).find(
+    ([, config]) => config.title.replace(/^Select\s+/i, "") === match[1].trim(),
+  )?.[0] as ChoiceType | undefined;
+
+  if (!type) return null;
+
+  return {
+    type,
+    title: choiceConfig[type].title,
+    level: match[2].toUpperCase() === "X" ? fallbackLevel : Number(match[2]),
+  };
+}
+
+function parseUnlockedChoiceFromFeat(
+  feat: AncestryFeat | Advantage | GeneralFeat | ArcaneFeat,
+  fallbackLevel: number,
+): ParsedUnlockedChoice | null {
+  if (!feat.unlockedFeats) return null;
+
+  // Parse the unlockedFeats string to determine type and level
+  const match = feat.unlockedFeats
+    .trim()
+    .match(/^(.+?)\s*-\s*Level\s*(\d+|X)$/i);
   if (!match) return null;
 
   const type = Object.entries(choiceConfig).find(
@@ -244,9 +274,20 @@ export default function LevelCard({ level }: LevelCardProps) {
         fixedValue: selectedItem.generalFeat.name,
       });
     } else if (selectedItem.unlockedFeats) {
-      selectedItem.unlockedFeats
-        .split(",")
-        .map((unlockedFeat) => parseUnlockedChoice(unlockedFeat, level))
+      // Handle both string and typed array of feats
+      const unlockedFeatsList =
+        typeof selectedItem.unlockedFeats === "string"
+          ? selectedItem.unlockedFeats.split(",")
+          : [selectedItem.unlockedFeats];
+
+      unlockedFeatsList
+        .map((unlockedFeat) => {
+          if (typeof unlockedFeat === "string") {
+            return parseUnlockedChoice(unlockedFeat, level);
+          }
+          // If it's already typed, extract the info
+          return parseUnlockedChoiceFromFeat(unlockedFeat, level);
+        })
         .forEach((choice, index) => {
           if (choice) {
             choices.push({

@@ -36,6 +36,7 @@ import {
 } from "../../constants/DetailFields";
 import { formatPrice } from "../../utils/prices";
 import type { Spell, SpellTrait } from "../../types/Spells";
+import type { Species } from "../../types/Species";
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -160,14 +161,12 @@ export function getArmorChoiceItems(): ChoiceItem[] {
 }
 
 function featIsAvailableForSpecies(
-  featSpecies: string,
+  featSpecies: Species[],
   selectedSpecies: string | null,
 ): boolean {
   if (!selectedSpecies) return false;
 
-  return featSpecies
-    .split(/[,/]/)
-    .some((speciesName) => speciesName.trim() === selectedSpecies);
+  return featSpecies.some((s) => s.name === selectedSpecies);
 }
 
 export function getChoiceData(request: ModalRequest): ChoiceData {
