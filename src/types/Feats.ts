@@ -89,6 +89,6 @@ export type ChoiceType =
 
 export type Unlock = {
   type: ChoiceType;
-  level: number | "X";
+  level: number | "X"; // "X" = use parent level
   preset?: string;
 };

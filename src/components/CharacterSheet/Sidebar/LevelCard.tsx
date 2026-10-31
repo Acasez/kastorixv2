@@ -2,34 +2,15 @@ import OpenModalButton from "../OpenModalButton";
 import type { ModalRequest } from "../../ModalViews/modalTypes";
 import { getLevelActions } from "../../../utils/LevelCardUtils";
 import { useCharacter } from "../../../hooks/useCharacter";
-import generalFeats from "../../../data/generalFeats";
-import arcaneFeats from "../../../data/arcaneFeats";
-import advantages from "../../../data/advantages";
-import ancestryFeats from "../../../data/ancestryFeats";
-import backgrounds from "../../../data/backgrounds";
-import golemUpgrades from "../../../data/golemModels";
-import runegunUpgrades from "../../../data/runegunUpgrades";
-import spells from "../../../data/spells";
-import weapons from "../../../data/weapons";
-import metamagics from "../../../data/metamagics";
-import armors from "../../../data/armors";
-import gadgets from "../../../data/gadgets";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import { useModal } from "../../../hooks/useModal";
-import type { GeneralFeat, Unlock } from "../../../types/Feats";
+import { choiceConfig } from "../../../utils/choiceConfig";
 
 type ChoiceType = Exclude<
   ModalRequest["type"],
   "species" | "baseStats" | "statIncrease"
 >;
-
-type UnlockableItem = {
-  name: string;
-  unlockedFeats?: Unlock[];
-  generalFeat?: GeneralFeat | null;
-  choice?: string;
-};
 
 type UnlockedChoice = {
   type: ChoiceType;
@@ -44,24 +25,6 @@ type ChoiceNode = UnlockedChoice & {
 };
 
 const MAX_UNLOCK_DEPTH = 3;
-
-const choiceConfig: Record<
-  ChoiceType,
-  { title: string; items: UnlockableItem[] }
-> = {
-  background: { title: "Select Background", items: backgrounds },
-  generalFeat: { title: "Select General Feat", items: generalFeats },
-  arcaneFeat: { title: "Select Arcane Feat", items: arcaneFeats },
-  advantage: { title: "Select Advantage", items: advantages },
-  ancestryFeat: { title: "Select Ancestry Feat", items: ancestryFeats },
-  golemUpgrade: { title: "Select Golem Upgrade", items: golemUpgrades },
-  runegunUpgrade: { title: "Select Runegun Upgrade", items: runegunUpgrades },
-  spell: { title: "Select Spell", items: spells },
-  weapon: { title: "Select Weapon", items: weapons },
-  metamagic: { title: "Select Metamagic", items: metamagics },
-  armor: { title: "Select Armor", items: armors },
-  gadget: { title: "Select Gadget", items: gadgets },
-};
 
 const actionTypes: Record<string, ChoiceType | "baseStats" | "statIncrease"> = {
   "Select Background": "background",
