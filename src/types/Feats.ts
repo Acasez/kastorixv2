@@ -73,17 +73,22 @@ export type AncestryFeat = {
 
 export type AncestryFeatType = "Cultural" | "Biological";
 
-export type FeatTypes =
+export type ChoiceType =
   | "generalFeat"
   | "arcaneFeat"
   | "golemUpgrade"
   | "runegunUpgrade"
   | "advantage"
   | "ancestryFeat"
-  | "background";
+  | "background"
+  | "spell"
+  | "weapon"
+  | "metamagic"
+  | "armor"
+  | "gadget";
 
 export type Unlock = {
-  type: FeatTypes;
+  type: ChoiceType;
   level: number | "X";
   preset?: string;
 };

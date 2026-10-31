@@ -1,16 +1,6 @@
-import type { FeatTypes, Unlock } from "../types/Feats";
+import type { ChoiceType, Unlock } from "../types/Feats";
 
-const FEAT_TYPES: FeatTypes[] = [
-  "generalFeat",
-  "arcaneFeat",
-  "golemUpgrade",
-  "runegunUpgrade",
-  "advantage",
-  "ancestryFeat",
-  "background",
-];
-
-const STRING_TO_UNLOCK: Record<string, FeatTypes> = {
+const STRING_TO_UNLOCK: Record<string, ChoiceType> = {
   "General Feat": "generalFeat",
   "Arcane Feat": "arcaneFeat",
   "Golem Upgrade": "golemUpgrade",
@@ -28,9 +18,8 @@ export function parseUnlocks(input: string): Unlock[] {
     .map((part): Unlock => {
       const segments = part.split(/\s+-\s+/);
       const type = STRING_TO_UNLOCK[segments[0]];
-      if (!FEAT_TYPES.includes(type)) {
-        throw new Error(`Unknown feat type: "${type}" in "${part}"`);
-      }
+      if (!type)
+        throw new Error(`Unknown feat type: "${segments[0]}" in "${part}"`);
 
       // Extract and normalize the level part
       const levelSegment = segments[1]

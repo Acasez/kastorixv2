@@ -2,7 +2,7 @@
 import type { Character } from "../../../stores/useCharacterStore";
 import type { ModalRequest } from "../modalTypes";
 import { getChoiceData } from "../choiceData";
-import type { FeatTypes } from "../../../types/Feats";
+import type { ChoiceType } from "../../../types/Feats";
 import { createGolemFromModel } from "./createGolem";
 
 // Define the handler type
@@ -48,7 +48,7 @@ export const handlers: Record<ModalRequest["type"], ModalHandler> = {
 // FACTORY: Selection-based handlers (generalFeat, arcaneFeat, golemUpgrade, runegunUpgrade)
 // ============================================
 function createSelectionHandler(
-  type: Extract<ModalRequest["type"], FeatTypes>,
+  type: Extract<ModalRequest["type"], ChoiceType>,
 ): ModalHandler {
   return {
     getCurrentValue: (character, request) => {
