@@ -57,11 +57,11 @@ export default function ModalWrapper({
         confirmLabel={request.title}
         initialValue={currentValue}
         initialChoice={
-          request.type === "species"
+          request.type === "Species"
             ? null
             : (character.selections[`${request.selectionKey}:choice`] ?? null)
         }
-        maxLevel={request.type === "species" ? Infinity : request.level}
+        maxLevel={request.type === "Species" ? Infinity : request.level}
         disabledNames={blockedChoices}
         filterFields={
           request.type === "spell"

@@ -56,8 +56,8 @@ const choiceConfig: Record<
   ChoiceType,
   { title: string; items: UnlockableItem[] }
 > = {
-  background: { title: "Select Background", items: backgrounds },
-  generalFeat: { title: "Select General Feat", items: generalFeats },
+  Background: { title: "Select Background", items: backgrounds },
+  "General Feat": { title: "Select General Feat", items: generalFeats },
   arcaneFeat: { title: "Select Arcane Feat", items: arcaneFeats },
   advantage: { title: "Select Advantage", items: advantages },
   ancestryFeat: { title: "Select Ancestry Feat", items: ancestryFeats },
@@ -74,11 +74,11 @@ const choiceConfig: Record<
 };
 
 const actionTypes: Record<string, ChoiceType | "baseStats" | "statIncrease"> = {
-  "Select Background": "background",
-  "Select Advantage": "advantage",
-  "Select Ancestry Feat": "ancestryFeat",
-  "Select Arcane Feat": "arcaneFeat",
-  "Select General Feat": "generalFeat",
+  "Select Background": "Background",
+  "Select Advantage": "Advantage",
+  "Select Ancestry Feat": "Ancestry Feat",
+  "Select Arcane Feat": "Arcane Feat",
+  "Select General Feat": "General Feat",
   "Increase One Stat": "statIncrease",
 };
 
@@ -142,7 +142,7 @@ export default function LevelCard({ level }: LevelCardProps) {
     selectionKey: string,
     choiceLevel: number,
   ) => {
-    if (type === "ancestryFeat") {
+    if (type === "Ancestry Feat") {
       openModal({
         type,
         title,
@@ -171,11 +171,11 @@ export default function LevelCard({ level }: LevelCardProps) {
 
     updateCharacter({
       selections,
-      ...(type === "advantage" &&
+      ...(type === "Advantage" &&
       selectedItem?.choice === "Golem Model - Choice"
         ? { golem: null }
         : {}),
-      ...(type === "background" ? { background: null } : {}),
+      ...(type === "Background" ? { background: null } : {}),
     });
   };
 
@@ -265,9 +265,9 @@ export default function LevelCard({ level }: LevelCardProps) {
     if (!selectedItem) return [];
 
     const choices: UnlockedChoice[] = [];
-    if (type === "background" && selectedItem.generalFeat) {
+    if (type === "Background" && selectedItem.generalFeat) {
       choices.push({
-        type: "generalFeat",
+        type: "General Feat",
         title: "Select General Feat",
         level: 1,
         selectionKey: `${selectionKey}:unlocked:0`,

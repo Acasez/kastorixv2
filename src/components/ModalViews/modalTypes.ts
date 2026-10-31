@@ -1,19 +1,24 @@
 export type ModalRequest =
-  | { type: "species"; title: string }
-  | { type: "background"; title: string; selectionKey: string; level: number }
-  | { type: "generalFeat"; title: string; selectionKey: string; level: number }
-  | { type: "arcaneFeat"; title: string; selectionKey: string; level: number }
-  | { type: "advantage"; title: string; selectionKey: string; level: number }
+  | { type: "Species"; title: string }
+  | { type: "Background"; title: string; selectionKey: string; level: number }
+  | { type: "General Feat"; title: string; selectionKey: string; level: number }
+  | { type: "Arcane Feat"; title: string; selectionKey: string; level: number }
+  | { type: "Advantage"; title: string; selectionKey: string; level: number }
   | {
-      type: "ancestryFeat";
+      type: "Ancestry Feat";
       title: string;
       selectionKey: string;
       level: number;
       species: string | null;
     }
-  | { type: "golemUpgrade"; title: string; selectionKey: string; level: number }
   | {
-      type: "runegunUpgrade";
+      type: "Golem Upgrade";
+      title: string;
+      selectionKey: string;
+      level: number;
+    }
+  | {
+      type: "Runegun Upgrade";
       title: string;
       selectionKey: string;
       level: number;

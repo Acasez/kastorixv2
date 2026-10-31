@@ -17,7 +17,7 @@ export type GeneralFeat = {
   prerequisites: string;
   level: number;
   repeatable: boolean;
-  unlockedFeats: string;
+  unlockedFeats: Unlock[];
   speeds: Speed[];
   resistances: Resistance[];
   techniquesLearned: number;
@@ -34,7 +34,7 @@ export type ArcaneFeat = {
   prerequisites: string;
   level: number;
   repeatable: boolean;
-  unlockedFeats: string;
+  unlockedFeats: Unlock[];
   spellsLearned: string;
   metamagicsLearned: string;
   choice: string;
@@ -47,7 +47,7 @@ export type Advantage = {
   unlockedActions: Action[];
   prerequisites: string;
   level: number;
-  unlockedFeats: string;
+  unlockedFeats: Unlock[];
   speeds: Speed[];
   resistances: Resistance[];
   spellsLearned: string;
@@ -66,7 +66,7 @@ export type AncestryFeat = {
   species: Species[];
   prerequisites: string;
   level: number;
-  unlockedFeats: string;
+  unlockedFeats: Unlock[];
   speeds: Speed[];
   resistances: Resistance[];
 };
@@ -74,8 +74,15 @@ export type AncestryFeat = {
 export type AncestryFeatType = "Cultural" | "Biological";
 
 export type FeatTypes =
-  | "generalFeat"
-  | "arcaneFeat"
-  | "golemUpgrade"
-  | "runegunUpgrade"
-  | "advantage";
+  | "General Feat"
+  | "Arcane Feat"
+  | "Golem Upgrade"
+  | "Runegun Upgrade"
+  | "Advantage"
+  | "Ancestry Feat";
+
+export type Unlock = {
+  type: FeatTypes;
+  level: number;
+  preset?: string;
+};

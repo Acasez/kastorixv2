@@ -3,6 +3,7 @@ import rawAncestryFeats from "../JSON/ancestry_feats.json";
 import { parseSpeeds, parseResistances } from "../utils/parseNamedUtils";
 import { lookupActions } from "./actions";
 import { lookupSpecies } from "./species";
+import { parseUnlocks } from "../utils/parseUnlocks";
 
 export const ancestryFeats: AncestryFeat[] = rawAncestryFeats.map((raw) => {
   return {
@@ -14,6 +15,7 @@ export const ancestryFeats: AncestryFeat[] = rawAncestryFeats.map((raw) => {
     resistances: parseResistances(raw.resistances),
     type: raw.type as AncestryFeatType,
     species: lookupSpecies(raw.species),
+    unlockedFeats: parseUnlocks(raw.unlockedFeats),
   };
 });
 

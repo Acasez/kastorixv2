@@ -28,14 +28,14 @@ export interface ModalHandler {
 // HANDLER REGISTRY
 // ============================================
 export const handlers: Record<ModalRequest["type"], ModalHandler> = {
-  species: createSpeciesHandler(),
-  background: createBackgroundHandler(),
-  generalFeat: createSelectionHandler("generalFeat"),
-  arcaneFeat: createSelectionHandler("arcaneFeat"),
-  advantage: createSelectionHandler("advantage"),
-  ancestryFeat: createAncestryFeatHandler(),
-  golemUpgrade: createSelectionHandler("golemUpgrade"),
-  runegunUpgrade: createSelectionHandler("runegunUpgrade"),
+  Species: createSpeciesHandler(),
+  Background: createBackgroundHandler(),
+  "General Feat": createSelectionHandler("General Feat"),
+  "Arcane Feat": createSelectionHandler("Arcane Feat"),
+  Advantage: createSelectionHandler("Advantage"),
+  "Ancestry Feat": createAncestryFeatHandler(),
+  "Golem Upgrade": createSelectionHandler("Golem Upgrade"),
+  "Runegun Upgrade": createSelectionHandler("Runegun Upgrade"),
   spell: createSpellHandler(),
   weapon: createWeaponHandler(),
   gadget: createGadgetHandler(),
@@ -104,7 +104,7 @@ function createSelectionHandler(
 
       // Special handling for Golemcrafter advantage
       const golemUpdate: Partial<Character> = {};
-      if (type === "advantage" && value === "Golemcrafter" && choice) {
+      if (type === "Advantage" && value === "Golemcrafter" && choice) {
         const golem = createGolemFromModel(choice);
         if (golem) {
           golemUpdate.golem = golem;
@@ -129,14 +129,14 @@ function createSelectionHandler(
 function createSpeciesHandler(): ModalHandler {
   return {
     getCurrentValue: (character, request) => {
-      if (request.type !== "species") return null;
+      if (request.type !== "Species") return null;
       return character.species;
     },
 
     getBlockedChoices: () => [],
 
     onConfirm: (character, updateCharacter, request, value) => {
-      if (request.type !== "species") return;
+      if (request.type !== "Species") return;
 
       const selections =
         character.species === value
@@ -158,14 +158,14 @@ function createSpeciesHandler(): ModalHandler {
 function createBackgroundHandler(): ModalHandler {
   return {
     getCurrentValue: (character, request) => {
-      if (request.type !== "background") return null;
+      if (request.type !== "Background") return null;
       return character.background;
     },
 
     getBlockedChoices: () => [],
 
     onConfirm: (character, updateCharacter, request, value) => {
-      if (request.type !== "background") return;
+      if (request.type !== "Background") return;
 
       const selectedBackground = backgrounds.find((bg) => bg.name === value);
       const backgroundFeatKey = `${request.selectionKey}:unlocked:0`;
@@ -190,16 +190,16 @@ function createBackgroundHandler(): ModalHandler {
 function createAncestryFeatHandler(): ModalHandler {
   return {
     getCurrentValue: (character, request) => {
-      if (request.type !== "ancestryFeat") return null;
+      if (request.type !== "Ancestry Feat") return null;
       return character.selections[request.selectionKey] ?? null;
     },
 
     getBlockedChoices: (character, request) => {
-      if (request.type !== "ancestryFeat") return [];
+      if (request.type !== "Ancestry Feat") return [];
 
       const choiceData = getChoiceData(request);
       const choiceNames = new Set(
-        choiceData.ancestryFeat.map((item) => item.name),
+        choiceData["Ancestry Feat"].map((item) => item.name),
       );
       const ownedNames = new Set<string>();
 
@@ -215,7 +215,7 @@ function createAncestryFeatHandler(): ModalHandler {
         }
       });
 
-      return choiceData.ancestryFeat
+      return choiceData["Ancestry Feat"]
         .filter((item) => {
           const repeatableValue = item.repeatable;
           const isRepeatable =
@@ -228,7 +228,7 @@ function createAncestryFeatHandler(): ModalHandler {
     },
 
     onConfirm: (character, updateCharacter, request, value, choice) => {
-      if (request.type !== "ancestryFeat") return;
+      if (request.type !== "Ancestry Feat") return;
 
       const choiceKey = `${request.selectionKey}:choice`;
       const selections = Object.fromEntries(

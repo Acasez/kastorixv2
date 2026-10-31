@@ -3,6 +3,7 @@ import rawGeneralFeats from "../JSON/general_feats.json";
 import type { GeneralFeat } from "../types/Feats";
 import { lookup, lookupOne } from "../utils/lookupTypes";
 import { parseResistances, parseSpeeds } from "../utils/parseNamedUtils";
+import { parseUnlocks } from "../utils/parseUnlocks";
 import { lookupActions } from "./actions";
 
 export const generalFeats: GeneralFeat[] = rawGeneralFeats.map((raw) => {
@@ -17,6 +18,7 @@ export const generalFeats: GeneralFeat[] = rawGeneralFeats.map((raw) => {
     techniquesLearned: Number(raw.techniquesLearned),
     quickAccessSlots: Number(raw.quickAccessSlots),
     focusPoints: Number(raw.focusPoints),
+    unlockedFeats: parseUnlocks(raw.unlockedFeats),
   };
 });
 
