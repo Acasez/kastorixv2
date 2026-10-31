@@ -228,7 +228,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
       return choiceOptions ? { ...item, choiceOptions } : item;
     });
   const availableAncestryFeats =
-    request.type === "Ancestry Feat"
+    request.type === "ancestryFeat"
       ? ancestryFeats.filter((feat) =>
           featIsAvailableForSpecies(feat.species, request.species),
         )
@@ -253,14 +253,14 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
 
   return {
-    Species: speciesItems,
-    Background: backgroundItems,
-    "General Feat": generalFeatItems,
-    "Arcane Feat": addChoiceOptions(arcaneFeatItems),
-    Advantage: addChoiceOptions(advantageItems),
-    "Ancestry Feat": ancestryFeatItems,
-    "Golem Upgrade": golemUpgradeItems,
-    "Runegun Upgrade": runegunUpgradeItems,
+    species: speciesItems,
+    background: backgroundItems,
+    generalFeat: generalFeatItems,
+    arcaneFeat: addChoiceOptions(arcaneFeatItems),
+    advantage: addChoiceOptions(advantageItems),
+    ancestryFeat: ancestryFeatItems,
+    golemUpgrade: golemUpgradeItems,
+    runegunUpgrade: runegunUpgradeItems,
     spell: spellItems,
     weapon: weaponItems,
     metamagic: metamagicItems,
@@ -273,15 +273,15 @@ export function getChoiceItem(
   type: ChoiceType,
   name: string,
 ): ChoiceItem | undefined {
-  if (type === "Ancestry Feat") {
+  if (type === "ancestryFeat") {
     return createChoiceItems(ancestryFeats, ANCESTRY_FEAT_FIELDS).find(
       (item) => item.name === name,
     );
   }
 
   const request =
-    type === "Species"
-      ? { type: "Species" as const, title: "Select Species" }
+    type === "species"
+      ? { type: "species" as const, title: "Select Species" }
       : {
           type,
           title: "",

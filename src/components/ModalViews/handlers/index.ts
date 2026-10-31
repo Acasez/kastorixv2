@@ -1,7 +1,6 @@
 // src/components/ModalViews/handlers/index.ts
 import type { Character } from "../../../stores/useCharacterStore";
 import type { ModalRequest } from "../modalTypes";
-import backgrounds from "../../../JSON/backgrounds.json";
 import { getChoiceData } from "../choiceData";
 import type { FeatTypes } from "../../../types/Feats";
 import { createGolemFromModel } from "./createGolem";
@@ -61,6 +60,11 @@ function createSelectionHandler(
       if (request.type !== type) return [];
 
       const choiceData = getChoiceData(request);
+      const items = choiceData[request.type as keyof typeof choiceData];
+      if (!items || !Array.isArray(items)) {
+        console.warn(`No valid choice items for type: ${request.type}`);
+        return [];
+      }
       const choiceNames = new Set(
         choiceData[request.type].map((item) => item.name),
       );
@@ -167,17 +171,11 @@ function createBackgroundHandler(): ModalHandler {
     onConfirm: (character, updateCharacter, request, value) => {
       if (request.type !== "background") return;
 
-      const selectedBackground = backgrounds.find((bg) => bg.name === value);
-      const backgroundFeatKey = `${request.selectionKey}:unlocked:0`;
-
       updateCharacter({
         background: value,
         selections: {
           ...character.selections,
           [request.selectionKey]: value,
-          ...(selectedBackground?.generalFeat
-            ? { [backgroundFeatKey]: selectedBackground.generalFeat }
-            : {}),
         },
       });
     },
