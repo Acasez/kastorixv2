@@ -211,6 +211,9 @@ export default function LevelCard({ level }: LevelCardProps) {
 
     const choices: UnlockedChoice[] = [];
 
+    const parentLevelMatch = selectionKey.match(/:(\d+)(?:$|:)/);
+    const parentLevel = parentLevelMatch ? Number(parentLevelMatch[1]) : level;
+
     // Handle background's auto-granted general feat
     if (type === "background" && selectedItem.generalFeat) {
       choices.push({
@@ -224,12 +227,14 @@ export default function LevelCard({ level }: LevelCardProps) {
     // Use parseUnlocks for everything else
     else if (selectedItem.unlockedFeats) {
       selectedItem.unlockedFeats.forEach((unlock, index) => {
-        // Convert FeatTypes to ChoiceType (they should match)
         const choiceType = unlock.type as ChoiceType;
+
+        const resolvedLevel = unlock.level === "X" ? parentLevel : unlock.level;
+
         choices.push({
           type: choiceType,
           title: choiceConfig[choiceType].title,
-          level: unlock.level,
+          level: resolvedLevel,
           selectionKey: `${selectionKey}:unlocked:${index}`,
           fixedValue: unlock.preset,
         });

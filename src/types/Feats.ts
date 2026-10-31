@@ -79,10 +79,11 @@ export type FeatTypes =
   | "golemUpgrade"
   | "runegunUpgrade"
   | "advantage"
-  | "ancestryFeat";
+  | "ancestryFeat"
+  | "background";
 
 export type Unlock = {
   type: FeatTypes;
-  level: number;
+  level: number | "X";
   preset?: string;
 };
