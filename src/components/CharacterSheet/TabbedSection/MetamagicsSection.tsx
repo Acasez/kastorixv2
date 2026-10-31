@@ -37,6 +37,7 @@ export default function MetamagicsSection() {
       <div className="flex flex-wrap gap-2 mt-3">
         {selectedMetamagics.map((metamagic) => (
           <MetamagicComponent
+            key={metamagic.name}
             metamagic={metamagic}
             onReplaceMetamagic={() => openMetamagicModal(character)}
             onRemoveMetamagic={removeMetamagic}
