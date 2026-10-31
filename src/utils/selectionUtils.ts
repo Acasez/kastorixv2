@@ -7,7 +7,6 @@ import type { ChoiceType } from "../types/Feats";
  */
 export function getCurrentSelection(
   character: Character,
-  type: ChoiceType,
   selectionKey: string,
 ): string | null {
   return character.selections[selectionKey] ?? null;
