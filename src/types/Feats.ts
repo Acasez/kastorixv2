@@ -74,12 +74,12 @@ export type AncestryFeat = {
 export type AncestryFeatType = "Cultural" | "Biological";
 
 export type FeatTypes =
-  | "General Feat"
-  | "Arcane Feat"
-  | "Golem Upgrade"
-  | "Runegun Upgrade"
-  | "Advantage"
-  | "Ancestry Feat";
+  | "generalFeat"
+  | "arcaneFeat"
+  | "golemUpgrade"
+  | "runegunUpgrade"
+  | "advantage"
+  | "ancestryFeat";
 
 export type Unlock = {
   type: FeatTypes;

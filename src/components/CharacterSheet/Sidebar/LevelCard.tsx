@@ -17,12 +17,7 @@ import gadgets from "../../../data/gadgets";
 import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import { useModal } from "../../../hooks/useModal";
-import type {
-  Advantage,
-  AncestryFeat,
-  ArcaneFeat,
-  GeneralFeat,
-} from "../../../types/Feats";
+import type { GeneralFeat, Unlock } from "../../../types/Feats";
 
 type ChoiceType = Exclude<
   ModalRequest["type"],
@@ -31,7 +26,7 @@ type ChoiceType = Exclude<
 
 type UnlockableItem = {
   name: string;
-  unlockedFeats?: string; // Keep as string for now, or make it generic
+  unlockedFeats?: Unlock[];
   generalFeat?: GeneralFeat | null;
   choice?: string;
 };
@@ -44,8 +39,6 @@ type UnlockedChoice = {
   fixedValue?: string;
 };
 
-type ParsedUnlockedChoice = Omit<UnlockedChoice, "selectionKey">;
-
 type ChoiceNode = UnlockedChoice & {
   children: ChoiceNode[];
 };
@@ -56,16 +49,13 @@ const choiceConfig: Record<
   ChoiceType,
   { title: string; items: UnlockableItem[] }
 > = {
-  Background: { title: "Select Background", items: backgrounds },
-  "General Feat": { title: "Select General Feat", items: generalFeats },
+  background: { title: "Select Background", items: backgrounds },
+  generalFeat: { title: "Select General Feat", items: generalFeats },
   arcaneFeat: { title: "Select Arcane Feat", items: arcaneFeats },
   advantage: { title: "Select Advantage", items: advantages },
   ancestryFeat: { title: "Select Ancestry Feat", items: ancestryFeats },
   golemUpgrade: { title: "Select Golem Upgrade", items: golemUpgrades },
-  runegunUpgrade: {
-    title: "Select Runegun Upgrade",
-    items: runegunUpgrades,
-  },
+  runegunUpgrade: { title: "Select Runegun Upgrade", items: runegunUpgrades },
   spell: { title: "Select Spell", items: spells },
   weapon: { title: "Select Weapon", items: weapons },
   metamagic: { title: "Select Metamagic", items: metamagics },
@@ -74,58 +64,13 @@ const choiceConfig: Record<
 };
 
 const actionTypes: Record<string, ChoiceType | "baseStats" | "statIncrease"> = {
-  "Select Background": "Background",
-  "Select Advantage": "Advantage",
-  "Select Ancestry Feat": "Ancestry Feat",
-  "Select Arcane Feat": "Arcane Feat",
-  "Select General Feat": "General Feat",
+  "Select Background": "background",
+  "Select Advantage": "advantage",
+  "Select Ancestry Feat": "ancestryFeat",
+  "Select Arcane Feat": "arcaneFeat",
+  "Select General Feat": "generalFeat",
   "Increase One Stat": "statIncrease",
 };
-
-function parseUnlockedChoice(
-  value: string,
-  fallbackLevel: number,
-): ParsedUnlockedChoice | null {
-  const match = value.trim().match(/^(.+?)\s*-\s*Level\s*(\d+|X)$/i);
-  if (!match) return null;
-
-  const type = Object.entries(choiceConfig).find(
-    ([, config]) => config.title.replace(/^Select\s+/i, "") === match[1].trim(),
-  )?.[0] as ChoiceType | undefined;
-
-  if (!type) return null;
-
-  return {
-    type,
-    title: choiceConfig[type].title,
-    level: match[2].toUpperCase() === "X" ? fallbackLevel : Number(match[2]),
-  };
-}
-
-function parseUnlockedChoiceFromFeat(
-  feat: AncestryFeat | Advantage | GeneralFeat | ArcaneFeat,
-  fallbackLevel: number,
-): ParsedUnlockedChoice | null {
-  if (!feat.unlockedFeats) return null;
-
-  // Parse the unlockedFeats string to determine type and level
-  const match = feat.unlockedFeats
-    .trim()
-    .match(/^(.+?)\s*-\s*Level\s*(\d+|X)$/i);
-  if (!match) return null;
-
-  const type = Object.entries(choiceConfig).find(
-    ([, config]) => config.title.replace(/^Select\s+/i, "") === match[1].trim(),
-  )?.[0] as ChoiceType | undefined;
-
-  if (!type) return null;
-
-  return {
-    type,
-    title: choiceConfig[type].title,
-    level: match[2].toUpperCase() === "X" ? fallbackLevel : Number(match[2]),
-  };
-}
 
 interface LevelCardProps {
   level: number;
@@ -142,7 +87,7 @@ export default function LevelCard({ level }: LevelCardProps) {
     selectionKey: string,
     choiceLevel: number,
   ) => {
-    if (type === "Ancestry Feat") {
+    if (type === "ancestryFeat") {
       openModal({
         type,
         title,
@@ -171,11 +116,11 @@ export default function LevelCard({ level }: LevelCardProps) {
 
     updateCharacter({
       selections,
-      ...(type === "Advantage" &&
+      ...(type === "advantage" &&
       selectedItem?.choice === "Golem Model - Choice"
         ? { golem: null }
         : {}),
-      ...(type === "Background" ? { background: null } : {}),
+      ...(type === "background" ? { background: null } : {}),
     });
   };
 
@@ -265,37 +210,30 @@ export default function LevelCard({ level }: LevelCardProps) {
     if (!selectedItem) return [];
 
     const choices: UnlockedChoice[] = [];
-    if (type === "Background" && selectedItem.generalFeat) {
+
+    // Handle background's auto-granted general feat
+    if (type === "background" && selectedItem.generalFeat) {
       choices.push({
-        type: "General Feat",
-        title: "Select General Feat",
+        type: "generalFeat",
+        title: choiceConfig.generalFeat.title,
         level: 1,
         selectionKey: `${selectionKey}:unlocked:0`,
         fixedValue: selectedItem.generalFeat.name,
       });
-    } else if (selectedItem.unlockedFeats) {
-      // Handle both string and typed array of feats
-      const unlockedFeatsList =
-        typeof selectedItem.unlockedFeats === "string"
-          ? selectedItem.unlockedFeats.split(",")
-          : [selectedItem.unlockedFeats];
-
-      unlockedFeatsList
-        .map((unlockedFeat) => {
-          if (typeof unlockedFeat === "string") {
-            return parseUnlockedChoice(unlockedFeat, level);
-          }
-          // If it's already typed, extract the info
-          return parseUnlockedChoiceFromFeat(unlockedFeat, level);
-        })
-        .forEach((choice, index) => {
-          if (choice) {
-            choices.push({
-              ...choice,
-              selectionKey: `${selectionKey}:unlocked:${index}`,
-            });
-          }
+    }
+    // Use parseUnlocks for everything else
+    else if (selectedItem.unlockedFeats) {
+      selectedItem.unlockedFeats.forEach((unlock, index) => {
+        // Convert FeatTypes to ChoiceType (they should match)
+        const choiceType = unlock.type as ChoiceType;
+        choices.push({
+          type: choiceType,
+          title: choiceConfig[choiceType].title,
+          level: unlock.level,
+          selectionKey: `${selectionKey}:unlocked:${index}`,
+          fixedValue: unlock.preset,
         });
+      });
     }
 
     return choices.map((choice) => {

@@ -1,12 +1,12 @@
 import type { FeatTypes, Unlock } from "../types/Feats";
 
 const FEAT_TYPES: FeatTypes[] = [
-  "General Feat",
-  "Arcane Feat",
-  "Golem Upgrade",
-  "Runegun Upgrade",
-  "Advantage",
-  "Ancestry Feat",
+  "generalFeat",
+  "arcaneFeat",
+  "golemUpgrade",
+  "runegunUpgrade",
+  "advantage",
+  "ancestryFeat",
 ];
 
 export function parseUnlocks(input: string): Unlock[] {
