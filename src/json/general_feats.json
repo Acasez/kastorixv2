@@ -1002,7 +1002,7 @@
         "speeds": "",
         "resistances": "",
         "techniquesLearned": "",
-        "health": "",
+        "health": "5",
         "choice": "",
         "quickAccessSlots": "",
         "focusPoints": ""

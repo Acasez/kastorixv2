@@ -6,7 +6,7 @@
         "hands": "2",
         "range": "5",
         "traits": "Deadly (d8), Propulsive, Ranged, Reload (1)",
-        "description": "Atlats are specialized spearthrowers used by Brannur huntmaster. They can propel deadly spears impressive distances",
+        "description": "Atlats are specialized spearthrowers used by Brannur huntmasters. They can propel deadly spears impressive distances.",
         "price": "2 gp",
         "type": "Advanced",
         "weaponGroup": "Spear"
@@ -30,7 +30,7 @@
         "hands": "2",
         "range": "1",
         "traits": "Agile, Parry, Finesse, Precision, Trip",
-        "description": "Dancer's Spears are long, but graceful spears used by skilled wielders that seem to dance on the battlefield.",
+        "description": "Dancer's Spears are long and graceful spears used by skilled wielders that seem to dance on the battlefield.",
         "price": "2 gp",
         "type": "Advanced",
         "weaponGroup": "Spear"
@@ -42,7 +42,7 @@
         "hands": "2",
         "range": "2",
         "traits": "Unwieldy, Agile, Swing Around",
-        "description": "Flails are complex weapons, but can in the right hand be wielded with devastating force",
+        "description": "Flails are hard to use correctly, but can in the right hand be wielded with devastating force",
         "price": "8 gp",
         "type": "Advanced",
         "weaponGroup": "Flail"
@@ -53,7 +53,7 @@
         "damageType": "slashing",
         "hands": "1",
         "range": "1",
-        "traits": "Thrown (6), Agile, Finesse, Deadly (d8), Light",
+        "traits": "Thrown (6), Agile, Finesse, Deadly (d8), Light, Precision",
         "description": "Shurikens are rare weapons which see use by Vesper assassins",
         "price": "2 sp",
         "type": "Advanced",
@@ -68,7 +68,7 @@
         "traits": "Deadly (d12), Sluggish",
         "description": "War picks are unorthodox weapons, but when they hit, they hit hard.",
         "price": "2 gp",
-        "type": "Advanced",
+        "type": "Martial",
         "weaponGroup": "Hammer"
     },
     {
@@ -173,7 +173,7 @@
         "damageType": "slashing",
         "hands": "2",
         "range": "1",
-        "traits": "Heavy",
+        "traits": "Heavy, Sweep",
         "description": "A large two handed axe, capable of cleaving through armor and bone alike",
         "price": "6 gp",
         "type": "Martial",
@@ -294,7 +294,7 @@
         "hands": "2",
         "range": "8",
         "traits": "Deadly (d10), Heavy, Loud, Ranged, Reload (2), Slowing (1)",
-        "description": "Runegun Cannons are weapons made for war, but their size and weight make them generally unfit for adventurers",
+        "description": "Runegun Cannons are devasting weapons made for war, but their size and weight make them generally unfit for adventurers",
         "price": "18 gp",
         "type": "Martial",
         "weaponGroup": "Runegun"
@@ -401,7 +401,7 @@
         "damageType": "piercing",
         "hands": "1",
         "range": "1",
-        "traits": "Precision, Finesse, Versatile (Slashing), Agile, Thrown (3), Light",
+        "traits": "Precision, Finesse, Versatile (Slashing), Agile, Thrown (3), Light, Aquatic",
         "description": "A simple fallback weapon that can also be thrown in a pitch",
         "price": "2 sp",
         "type": "Simple",

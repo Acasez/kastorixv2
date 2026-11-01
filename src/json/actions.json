@@ -1140,11 +1140,25 @@
         "requirement": "",
         "manaCost": "",
         "focusCost": "",
-        "description": "You take advantage of a creature moving within your reach.\nMake an attack against the creature with a -3 penalty, or -2 if you are wielding an agile weapon.",
+        "description": "You take advantage of a creature moving within your reach.\nMake an attack against the creature with a -3 penalty.\nThis penalty is -2 if you are wielding an agile weapon, or -4 if you are wielding a sluggish weapon.",
         "traits": "Attack",
         "skill": "",
         "sourceType": "Base",
         "source": "",
+        "techniqueRank": ""
+    },
+    {
+        "name": "Reactive Spell",
+        "actions": "Reaction",
+        "trigger": "A creature takes a move action within reach of your touch spells",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "You quickly cast a spell on the creature as it moves by.\nCast a 1 action spell with the targeting trait on creature.",
+        "traits": "Spellcasting",
+        "skill": "",
+        "sourceType": "Arcane Feat",
+        "source": "Reactive Spell",
         "techniqueRank": ""
     },
     {

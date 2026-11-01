@@ -144,6 +144,14 @@
         "level": "4"
     },
     {
+        "name": "Overchannel Spell",
+        "trait": "",
+        "aspect": "",
+        "effect": "Overchannel a spell to levels beyond that you would normally be capable of.\nUpcast the spell to one rank higher than your current highest rank.\nAfterwards you gain one level of mana poisoning.",
+        "dc": "2",
+        "level": "4"
+    },
+    {
         "name": "Forceful Spell",
         "trait": "Targeting",
         "aspect": "",
@@ -171,7 +179,7 @@
         "name": "Twin Spell",
         "trait": "Targeting",
         "aspect": "",
-        "effect": "Casts the spell at two targets within range, use the same spellshaping for both. \nThis gives the spell the Draining Trait",
+        "effect": "Casts the spell at two targets within range, use the same spellshaping for both. \nThis gives the spell the Draining Trait.",
         "dc": "6",
         "level": "8"
     },
