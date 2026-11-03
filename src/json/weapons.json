@@ -60,18 +60,6 @@
         "weaponGroup": "Knife"
     },
     {
-        "name": "War Pick",
-        "dice": "1d10",
-        "damageType": "piercing",
-        "hands": "2",
-        "range": "1",
-        "traits": "Deadly (d12), Sluggish",
-        "description": "War picks are unorthodox weapons, but when they hit, they hit hard.",
-        "price": "2 gp",
-        "type": "Martial",
-        "weaponGroup": "Hammer"
-    },
-    {
         "name": "Whip",
         "dice": "1d4",
         "damageType": "slashing",
@@ -118,6 +106,114 @@
         "price": "20 gp",
         "type": "Artificers",
         "weaponGroup": "Sword"
+    },
+    {
+        "name": "Creature Claw",
+        "dice": "1d10",
+        "damageType": "slashing",
+        "hands": "1",
+        "range": "0",
+        "traits": "Finesse",
+        "description": "Many creatures fight with their claws",
+        "price": "",
+        "type": "Creature",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Jaws",
+        "dice": "1d8",
+        "damageType": "piercing",
+        "hands": "0",
+        "range": "0",
+        "traits": "",
+        "description": "You don't want to get stuck in the jaws of a large creature",
+        "price": "",
+        "type": "Creature",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Peck",
+        "dice": "1d6",
+        "damageType": "piercing",
+        "hands": "0",
+        "range": "1",
+        "traits": "Finesse, Precision, Deadly (d8)",
+        "description": "Avian creatures can deliver precise strikes with the beak",
+        "price": "",
+        "type": "Creature",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Agile Tail",
+        "dice": "1d8",
+        "damageType": "slashing",
+        "hands": "0",
+        "range": "2",
+        "traits": "Agile, Finesse",
+        "description": "An agile tail can often take foes that expect your golem to have slow lumbering attacks off-guard",
+        "price": "",
+        "type": "Golem",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Ballista",
+        "dice": "1d10",
+        "damageType": "piercing",
+        "hands": "0",
+        "range": "10",
+        "traits": "Ranged, Reload (1), Propulsive",
+        "description": "You mount a ballista on your golem, giving it a ranged weapon.",
+        "price": "",
+        "type": "Golem",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Metal Claw",
+        "dice": "1d8",
+        "damageType": "slashing",
+        "hands": "1",
+        "range": "1",
+        "traits": "Finesse",
+        "description": "Quadruped golems can attack foes with their sharp claws",
+        "price": "",
+        "type": "Golem",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Slam",
+        "dice": "1d10",
+        "damageType": "bludgeoning",
+        "hands": "0",
+        "range": "1",
+        "traits": "",
+        "description": "Brawler type golems use their fists as simple, but effective weapons",
+        "price": "",
+        "type": "Golem",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Stomp",
+        "dice": "1d8",
+        "damageType": "bludgeoning",
+        "hands": "0",
+        "range": "1",
+        "traits": "Deadly (d6)",
+        "description": "The legs of quadruped golems is another deadly weapon",
+        "price": "",
+        "type": "Golem",
+        "weaponGroup": "Unarmed"
+    },
+    {
+        "name": "Sweeping Tail",
+        "dice": "1d8",
+        "damageType": "bludgeoning",
+        "hands": "0",
+        "range": "2",
+        "traits": "Sweep, Shove",
+        "description": "Golems can push around foes and hit multiple targets with a sweeping tail attack",
+        "price": "",
+        "type": "Golem",
+        "weaponGroup": "Unarmed"
     },
     {
         "name": "Arbalest",
@@ -336,6 +432,18 @@
         "weaponGroup": "Shield"
     },
     {
+        "name": "War Pick",
+        "dice": "1d10",
+        "damageType": "piercing",
+        "hands": "2",
+        "range": "1",
+        "traits": "Deadly (d12), Sluggish",
+        "description": "War picks are unorthodox weapons, but when they hit, they hit hard.",
+        "price": "2 gp",
+        "type": "Martial",
+        "weaponGroup": "Hammer"
+    },
+    {
         "name": "Warhammer",
         "dice": "1d8",
         "damageType": "bludgeoning",
@@ -504,78 +612,6 @@
         "weaponGroup": "Axe"
     },
     {
-        "name": "Agile Tail",
-        "dice": "1d8",
-        "damageType": "slashing",
-        "hands": "0",
-        "range": "2",
-        "traits": "Agile, Finesse",
-        "description": "An agile tail can often take foes that expect your golem to have slow lumbering attacks off-guard",
-        "price": "",
-        "type": "Golem",
-        "weaponGroup": "Unarmed"
-    },
-    {
-        "name": "Metal Claw",
-        "dice": "1d8",
-        "damageType": "slashing",
-        "hands": "1",
-        "range": "1",
-        "traits": "Finesse",
-        "description": "Quadruped golems can attack foes with their sharp claws",
-        "price": "",
-        "type": "Golem",
-        "weaponGroup": "Unarmed"
-    },
-    {
-        "name": "Slam",
-        "dice": "1d10",
-        "damageType": "bludgeoning",
-        "hands": "0",
-        "range": "1",
-        "traits": "",
-        "description": "Brawler type golems use their fists as simple, but effective weapons",
-        "price": "",
-        "type": "Golem",
-        "weaponGroup": "Unarmed"
-    },
-    {
-        "name": "Stomp",
-        "dice": "1d8",
-        "damageType": "bludgeoning",
-        "hands": "0",
-        "range": "1",
-        "traits": "Deadly (d6)",
-        "description": "The legs of quadruped golems is another deadly weapon",
-        "price": "",
-        "type": "Golem",
-        "weaponGroup": "Unarmed"
-    },
-    {
-        "name": "Ballista",
-        "dice": "1d10",
-        "damageType": "piercing",
-        "hands": "0",
-        "range": "10",
-        "traits": "Ranged, Reload (1), Propulsive",
-        "description": "You mount a ballista on your golem, giving it a ranged weapon.",
-        "price": "",
-        "type": "Golem",
-        "weaponGroup": "Unarmed"
-    },
-    {
-        "name": "Sweeping Tail",
-        "dice": "1d8",
-        "damageType": "bludgeoning",
-        "hands": "0",
-        "range": "2",
-        "traits": "Sweep, Shove",
-        "description": "Golems can push around foes and hit multiple targets with a sweeping tail attack",
-        "price": "",
-        "type": "Golem",
-        "weaponGroup": "Unarmed"
-    },
-    {
         "name": "Claw",
         "dice": "1d4",
         "damageType": "slashing",
@@ -612,39 +648,15 @@
         "weaponGroup": "Unarmed"
     },
     {
-        "name": "Peck",
-        "dice": "1d6",
-        "damageType": "piercing",
+        "name": "Tail Strike",
+        "dice": "1d4",
+        "damageType": "bludgeoning",
         "hands": "0",
         "range": "1",
-        "traits": "Finesse, Precision, Deadly (d8)",
-        "description": "Avian creatures can deliver precise strikes with the beak",
+        "traits": "Block (1), Shove, Trip",
+        "description": "Some Naga and Dragonkin learn to fight using their tails as suprise weapons",
         "price": "",
-        "type": "Creature",
-        "weaponGroup": "Unarmed"
-    },
-    {
-        "name": "Creature Claw",
-        "dice": "1d10",
-        "damageType": "slashing",
-        "hands": "1",
-        "range": "0",
-        "traits": "Finesse",
-        "description": "Many creatures fight with their claws",
-        "price": "",
-        "type": "Creature",
-        "weaponGroup": "Unarmed"
-    },
-    {
-        "name": "Jaws",
-        "dice": "1d8",
-        "damageType": "piercing",
-        "hands": "0",
-        "range": "0",
-        "traits": "",
-        "description": "You don't want to get stuck in the jaws of a large creature",
-        "price": "",
-        "type": "Creature",
+        "type": "Unarmed",
         "weaponGroup": "Unarmed"
     }
 ]

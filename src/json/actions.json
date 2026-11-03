@@ -210,6 +210,20 @@
         "techniqueRank": "Simple"
     },
     {
+        "name": "Copy Cast",
+        "actions": "1-3",
+        "trigger": "",
+        "requirement": "Within the last turn you've seen the spellshaping of a spell (of a rank you can cast).",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "Attempt to cast the spell even without being proficient with it.",
+        "traits": "Spellcasting",
+        "skill": "",
+        "sourceType": "Advantage",
+        "source": "Magical Genius",
+        "techniqueRank": ""
+    },
+    {
         "name": "Coil Up",
         "actions": "1",
         "trigger": "",
@@ -1190,6 +1204,20 @@
         "techniqueRank": ""
     },
     {
+        "name": "Refocus",
+        "actions": "10 Minutes",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "You catch your breath and focus. Refill your focus pool",
+        "traits": "",
+        "skill": "",
+        "sourceType": "",
+        "source": "",
+        "techniqueRank": ""
+    },
+    {
         "name": "Reinforce Aura",
         "actions": "1",
         "trigger": "",
@@ -1372,6 +1400,20 @@
         "techniqueRank": "Simple"
     },
     {
+        "name": "Snap Out of It",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "You can attempt to snap your allies of fright\nMake a persuasion check against the spell or creature that frightens them, reducing their frightened value by 1 on a success or 2 on a critical success.",
+        "traits": "Skill, Verbal",
+        "skill": "Persuasion",
+        "sourceType": "General Feat",
+        "source": "Encouraging Words",
+        "techniqueRank": ""
+    },
+    {
         "name": "Snap Shot",
         "actions": "1",
         "trigger": "",
@@ -1529,7 +1571,7 @@
         "name": "Step",
         "actions": "1",
         "trigger": "",
-        "requirement": "",
+        "requirement": "You have a speed of two or more",
         "manaCost": "",
         "focusCost": "",
         "description": "Move one tile without triggering reactions. \nYou cannot Step into difficult terrain.",

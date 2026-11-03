@@ -47,7 +47,7 @@
         "basicMagic": "After you cast an earth spell you have a +3 bonus to saving throws against being knocked prone, off-guard or moved against your will until the start of your next turn",
         "aura": "Also gain half that resistance to physical damage",
         "infusion": "You have resistance equal to a third of your level to physical damage. ",
-        "elementalization": "You have a burrow speed of 3. \nYour resistance increases to half your level"
+        "elementalization": "You have a burrow speed of 4 and can burrow through stone and earth.\nYour resistance increases to half your level"
     },
     {
         "name": "Air",
@@ -77,7 +77,7 @@
         "basicMagic": "After you cast a lightning spell you deal 1d6 lightning damage to the first creature that hits you with a melee attack until the start of the next turn",
         "aura": "You can spend a focus point to increase the range of the damaging aura to 3 tiles for the turn",
         "infusion": "You have resistance equal to your level to lightning damage. You can choose to add 1d4 lightning damage on unarmed strikes and melee attacks with metal weapons. When you succeed on grapple check you can deal 1d6 lightning  damage",
-        "elementalization": "Increase your movespeed by 1. \nWhen you Step you move one more tile."
+        "elementalization": "Your permanently Hastened 1. You can only use this action to take Move actions or Strike."
     },
     {
         "name": "Light",
@@ -87,7 +87,7 @@
         "basicMagic": "After you cast an light spell you may emit bright light in a radius of 2 + the spells rank until the start of the next turn",
         "aura": "Your aura emits bright light for 4 tiles, and dim light for 4 more",
         "infusion": "You emit bright light for 2 tiles, and dim light for 2 more. You can toggle this as an action",
-        "elementalization": "You cannot be blinded or dazzled. \nThe range of your light is doubled and you can choose to emit as a cone or line instead"
+        "elementalization": "You cannot be blinded or dazzled. \nThe range of your light is doubled and you can choose to emit as a cone or line instead.\nCreatures have disadvantage on effects you make that would blind or dazzle them. "
     },
     {
         "name": "Darkness",
