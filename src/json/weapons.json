@@ -6,7 +6,7 @@
         "hands": "2",
         "range": "5",
         "traits": "Deadly (d8), Propulsive, Ranged, Reload (1)",
-        "description": "Atlats are specialized spearthrowers used by Brannur huntmasters. They can propel deadly spears impressive distances.",
+        "description": "Atlatls are specialized spearthrowers used by Brannur huntmasters. They can propel deadly spears impressive distances.",
         "price": "2 gp",
         "type": "Advanced",
         "weaponGroup": "Spear"
@@ -18,7 +18,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Thrown (4), Ranged Trip, Light",
-        "description": "Bolas are composed of weights tied to a metal rope. They can trip foes at range",
+        "description": "Bolas are composed of weights tied to a metal rope. They can trip foes at range.",
         "price": "5 sp",
         "type": "Advanced",
         "weaponGroup": "Sling"
@@ -42,7 +42,7 @@
         "hands": "2",
         "range": "2",
         "traits": "Unwieldy, Agile, Swing Around",
-        "description": "Flails are hard to use correctly, but can in the right hand be wielded with devastating force",
+        "description": "Flails are hard to use correctly, but in the right hands can be wielded with devastating force.",
         "price": "8 gp",
         "type": "Advanced",
         "weaponGroup": "Flail"
@@ -54,7 +54,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Thrown (6), Agile, Finesse, Deadly (d8), Light, Precision",
-        "description": "Shurikens are rare weapons which see use by Vesper assassins",
+        "description": "Shurikens are rare weapons which see use by Vesper assassins.",
         "price": "2 sp",
         "type": "Advanced",
         "weaponGroup": "Knife"
@@ -66,7 +66,7 @@
         "hands": "1",
         "range": "3",
         "traits": "Finesse, Disarm, Trip, Light",
-        "description": "Whips may seem simple, but are complicated weapons to wield effectively. ",
+        "description": "Whips may seem simple, but are complicated weapons to wield effectively.",
         "price": "1 sp",
         "type": "Advanced",
         "weaponGroup": "Flail"
@@ -78,9 +78,9 @@
         "hands": "1",
         "range": "1",
         "traits": "Agile, Channeling, Deadly (d8), Finesse, Light, Aquatic",
-        "description": "Impact Gauntlets lets their wielders punch with extraordinary force",
+        "description": "Impact Gauntlets let their wielders punch with extraordinary force.",
         "price": "12 gp",
-        "type": "Artificers",
+        "type": "Artificer",
         "weaponGroup": "Unarmed"
     },
     {
@@ -90,9 +90,9 @@
         "hands": "2",
         "range": "1",
         "traits": "Heavy, Shove",
-        "description": "Powered hammers bring intense power from careful runeword",
+        "description": "Powered hammers bring intense power from careful runework.",
         "price": "15 gp",
-        "type": "Artificers",
+        "type": "Artificer",
         "weaponGroup": "Hammer"
     },
     {
@@ -102,9 +102,9 @@
         "hands": "1",
         "range": "1",
         "traits": "Agile, Finesse, Parry, Extend (5)",
-        "description": "Whip swords are advanced weapons which can extend to have surprising reach. ",
+        "description": "Whip swords are advanced weapons which can extend to have surprising reach.",
         "price": "20 gp",
-        "type": "Artificers",
+        "type": "Artificer",
         "weaponGroup": "Sword"
     },
     {
@@ -112,9 +112,9 @@
         "dice": "1d10",
         "damageType": "slashing",
         "hands": "1",
-        "range": "0",
+        "range": "1",
         "traits": "Finesse",
-        "description": "Many creatures fight with their claws",
+        "description": "Many creatures fight with their claws.",
         "price": "",
         "type": "Creature",
         "weaponGroup": "Unarmed"
@@ -124,9 +124,9 @@
         "dice": "1d8",
         "damageType": "piercing",
         "hands": "0",
-        "range": "0",
+        "range": "1",
         "traits": "",
-        "description": "You don't want to get stuck in the jaws of a large creature",
+        "description": "You don't want to get stuck in the jaws of a large creature.",
         "price": "",
         "type": "Creature",
         "weaponGroup": "Unarmed"
@@ -138,7 +138,7 @@
         "hands": "0",
         "range": "1",
         "traits": "Finesse, Precision, Deadly (d8)",
-        "description": "Avian creatures can deliver precise strikes with the beak",
+        "description": "Avian creatures can deliver precise strikes with the beak.",
         "price": "",
         "type": "Creature",
         "weaponGroup": "Unarmed"
@@ -150,7 +150,7 @@
         "hands": "0",
         "range": "2",
         "traits": "Agile, Finesse",
-        "description": "An agile tail can often take foes that expect your golem to have slow lumbering attacks off-guard",
+        "description": "An agile tail can often take foes that expect your golem to have slow, lumbering attacks off-guard.",
         "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
@@ -174,7 +174,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Finesse",
-        "description": "Quadruped golems can attack foes with their sharp claws",
+        "description": "Quadruped golems can attack foes with their sharp claws.",
         "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
@@ -186,7 +186,7 @@
         "hands": "0",
         "range": "1",
         "traits": "",
-        "description": "Brawler type golems use their fists as simple, but effective weapons",
+        "description": "Brawler model golems use their fists as simple, but effective weapons.",
         "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
@@ -198,7 +198,7 @@
         "hands": "0",
         "range": "1",
         "traits": "Deadly (d6)",
-        "description": "The legs of quadruped golems is another deadly weapon",
+        "description": "The legs of quadruped golems are another deadly weapon.",
         "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
@@ -210,7 +210,7 @@
         "hands": "0",
         "range": "2",
         "traits": "Sweep, Shove",
-        "description": "Golems can push around foes and hit multiple targets with a sweeping tail attack",
+        "description": "Golems can push around foes and hit multiple targets with a sweeping tail attack.",
         "price": "",
         "type": "Golem",
         "weaponGroup": "Unarmed"
@@ -234,7 +234,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Channeling, Aiming Focus, Aquatic",
-        "description": "A special staff used by mages to focus and aim their spells",
+        "description": "A special staff used by mages to focus and aim their spells.",
         "price": "10 gp",
         "type": "Martial",
         "weaponGroup": "Staff"
@@ -246,7 +246,7 @@
         "hands": "2",
         "range": "10",
         "traits": "Precision, Reload (1), Ranged",
-        "description": "A ranged weapon that fires bolts with great force",
+        "description": "A ranged weapon that fires bolts with great force.",
         "price": "5 gp",
         "type": "Martial",
         "weaponGroup": "Crossbow"
@@ -270,7 +270,7 @@
         "hands": "2",
         "range": "1",
         "traits": "Heavy, Sweep",
-        "description": "A large two handed axe, capable of cleaving through armor and bone alike",
+        "description": "A large two-handed axe, capable of cleaving through armor and bone alike.",
         "price": "6 gp",
         "type": "Martial",
         "weaponGroup": "Axe"
@@ -282,7 +282,7 @@
         "hands": "2",
         "range": "1",
         "traits": "Heavy, Parry, Sweep, Versatile (Piercing)",
-        "description": "A large two handed sword that can cleave through multiple enemies in one swing",
+        "description": "A large twohanded sword that can cleave through multiple enemies in one swing.",
         "price": "10 gp",
         "type": "Martial",
         "weaponGroup": "Sword"
@@ -318,7 +318,7 @@
         "hands": "2",
         "range": "2",
         "traits": "Channeling, Aiming Focus",
-        "description": "Longstaffs are longer battlestaves to channel magic in battle",
+        "description": "Longstaves are longer battlestaves to channel magic in battle.",
         "price": "2 gp",
         "type": "Martial",
         "weaponGroup": "Staff"
@@ -330,7 +330,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Parry, Sweep, Versatile (Piercing)",
-        "description": "The standard sword of choice for many soldiers and adventurers",
+        "description": "The standard sword of choice for many soldiers and adventurers.",
         "price": "4 gp",
         "type": "Martial",
         "weaponGroup": "Sword"
@@ -342,7 +342,7 @@
         "hands": "2",
         "range": "1",
         "traits": "Shove, Heavy",
-        "description": "A large two handed hammer, capable of crushing armor and bone alike",
+        "description": "A large two handed hammer, capable of crushing armor and bone alike.",
         "price": "8 gp",
         "type": "Martial",
         "weaponGroup": "Hammer"
@@ -354,7 +354,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Precision, Finesse, Versatile (Slashing), Agile, Parry, Light",
-        "description": "Parrying daggers are specialized weapons for duelists",
+        "description": "Parrying daggers are specialized weapons for duelists.",
         "price": "1 gp",
         "type": "Martial",
         "weaponGroup": "Knife"
@@ -378,7 +378,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Agile, Precision, Finesse, Parry",
-        "description": "A duelists weapon, for outmaneuvering their foes on the battlefield",
+        "description": "A duelist's weapon, for outmaneuvering your foes on the battlefield.",
         "price": "4 gp",
         "type": "Martial",
         "weaponGroup": "Sword"
@@ -390,7 +390,7 @@
         "hands": "2",
         "range": "8",
         "traits": "Deadly (d10), Heavy, Loud, Ranged, Reload (2), Slowing (1)",
-        "description": "Runegun Cannons are devasting weapons made for war, but their size and weight make them generally unfit for adventurers",
+        "description": "Runegun Cannons are devastating weapons made for war, but their size and weight make them generally unfit for adventurers.",
         "price": "18 gp",
         "type": "Martial",
         "weaponGroup": "Runegun"
@@ -402,7 +402,7 @@
         "hands": "2",
         "range": "12",
         "traits": "Deadly (d10), Precision, Loud, Ranged, Reload (1), Volley (4)",
-        "description": "Sharpshots are specialized runeguns that are cumbersome to use, but extremely accurate a long range",
+        "description": "Sharpshots are specialized runeguns that are cumbersome to use, but extremely accurate at long range.",
         "price": "8 gp",
         "type": "Martial",
         "weaponGroup": "Runegun"
@@ -414,7 +414,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Finesse, Agile, Versatile (Slashing), Parry",
-        "description": "A light and easy to handle sword, favored by rogues and scouts",
+        "description": "A light and easy to handle sword, favored by rogues and scouts.",
         "price": "1 gp",
         "type": "Martial",
         "weaponGroup": "Sword"
@@ -426,7 +426,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Block (3), Slowing (1), Sluggish",
-        "description": "Tower Shields are heavy and cumbersome, but very effective protection",
+        "description": "Tower Shields are heavy and cumbersome, but very effective protection.",
         "price": "5 gp",
         "type": "Martial",
         "weaponGroup": "Shield"
@@ -450,7 +450,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Shove",
-        "description": "A solid hammer, effective against armored foes",
+        "description": "A solid hammer, effective against armored foes.",
         "price": "4 gp",
         "type": "Martial",
         "weaponGroup": "Hammer"
@@ -462,7 +462,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Channeling",
-        "description": "A sturdy wooden staff, which can be used in somantic components",
+        "description": "A sturdy wooden staff, which can be used for somatic components.",
         "price": "2 sp",
         "type": "Simple",
         "weaponGroup": "Staff"
@@ -474,7 +474,7 @@
         "hands": "2",
         "range": "1",
         "traits": "Bayonet, Aquatic",
-        "description": "Bayonets can fastened to rifles for a good but inaccurate reserve melee weapon",
+        "description": "Bayonets can be fastened to rifles for a good but inaccurate backup melee weapon.",
         "price": "1 gp",
         "type": "Simple",
         "weaponGroup": "Spear"
@@ -486,7 +486,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Block (1), Light",
-        "description": "Bucklers are light shields that allows the wearer to also use the hand for interacting with objects, though they can't their shield hand to perform somatic components or wield weapons",
+        "description": "Bucklers are light shields that allow the wearer to use their shield hand to interact with objects, though they can't use that hand to perform somatic components or wield weapons.",
         "price": "1 gp",
         "type": "Simple",
         "weaponGroup": "Shield"
@@ -498,7 +498,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Shove",
-        "description": "A simple wooden club, easy to make and use",
+        "description": "A simple wooden club, easy to make and use.",
         "price": "1 sp",
         "type": "Simple",
         "weaponGroup": "Club"
@@ -510,7 +510,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Precision, Finesse, Versatile (Slashing), Agile, Thrown (3), Light, Aquatic",
-        "description": "A simple fallback weapon that can also be thrown in a pitch",
+        "description": "A simple fallback weapon that can also be thrown in a pinch.",
         "price": "2 sp",
         "type": "Simple",
         "weaponGroup": "Knife"
@@ -522,7 +522,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Shove",
-        "description": "A simple club with a heavy head, effective against armored foes",
+        "description": "A simple club with a heavy head, effective against armored foes.",
         "price": "1 gp",
         "type": "Simple",
         "weaponGroup": "Club"
@@ -558,7 +558,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Block (2)",
-        "description": "Shields can protect the user from spells and attacks",
+        "description": "Shields can protect the user from spells and attacks.",
         "price": "6 sp",
         "type": "Simple",
         "weaponGroup": "Shield"
@@ -570,7 +570,7 @@
         "hands": "2",
         "range": "8",
         "traits": "Precision, Agile, Ranged, Volley (1)",
-        "description": "A light and easy to handle bow, favored by rangers and scouts",
+        "description": "A light and easy to handle bow, favored by rangers and scouts.",
         "price": "1 gp",
         "type": "Simple",
         "weaponGroup": "Bow"
@@ -582,7 +582,7 @@
         "hands": "1",
         "range": "8",
         "traits": "Propulsive, Agile, Ranged, Light",
-        "description": "Slings are simple weapons, but underestimating them have lead to many a leaders downfall",
+        "description": "Slings are simple weapons, but underestimating them has led to many a leader's downfall.",
         "price": "1 sp",
         "type": "Simple",
         "weaponGroup": "Sling"
@@ -594,7 +594,7 @@
         "hands": "1",
         "range": "2",
         "traits": "Precision, Thrown (4), Aquatic",
-        "description": "A long pole weapon that can be thrown or used to keep enemies at bay",
+        "description": "A long pole weapon that can be thrown or used to keep enemies at bay.",
         "price": "5 sp",
         "type": "Simple",
         "weaponGroup": "Spear"
@@ -606,7 +606,7 @@
         "hands": "1",
         "range": "1",
         "traits": "Agile, Finesse, Thrown (4)",
-        "description": "A small axe designed for throwing, but can also be used in melee combat",
+        "description": "A small axe designed for throwing, but can also be used in melee combat.",
         "price": "6 sp",
         "type": "Simple",
         "weaponGroup": "Axe"
@@ -618,7 +618,7 @@
         "hands": "0",
         "range": "1",
         "traits": "Finesse, Agile, Aquatic",
-        "description": "Naga and Yirte posses sharp claws that can serve as emergency weapons",
+        "description": "Naga and Yirte possess sharp claws that can serve as emergency weapons.",
         "price": "",
         "type": "Unarmed",
         "weaponGroup": "Unarmed"
@@ -630,7 +630,7 @@
         "hands": "0",
         "range": "1",
         "traits": "Agile, Aquatic",
-        "description": "Dragonkin's sharp claws can cut through many things, but their not as dexterous as a nagas or yirtes",
+        "description": "Dragonkin's sharp claws can cut through many things, but they're not as dexterous as a naga's or yirte's.",
         "price": "",
         "type": "Unarmed",
         "weaponGroup": "Unarmed"
@@ -642,7 +642,7 @@
         "hands": "0",
         "range": "1",
         "traits": "Agile, Finesse, Aquatic",
-        "description": "Punching people has always been a way to fight",
+        "description": "Punching people has always been a way to fight.",
         "price": "",
         "type": "Unarmed",
         "weaponGroup": "Unarmed"
@@ -654,7 +654,7 @@
         "hands": "0",
         "range": "1",
         "traits": "Block (1), Shove, Trip",
-        "description": "Some Naga and Dragonkin learn to fight using their tails as suprise weapons",
+        "description": "Some naga and dragonkin learn to fight using their tails as surprise weapons.",
         "price": "",
         "type": "Unarmed",
         "weaponGroup": "Unarmed"

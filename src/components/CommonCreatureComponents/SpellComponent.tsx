@@ -108,7 +108,9 @@ export default function SpellComponent({
           if ((event.target as HTMLElement).closest("button")) return;
           onRemoveSpell(spell.name);
         }}
-        className="flex items-center gap-1 border border-gray-400 rounded px-2 py-1"
+        className={
+          "flex items-center gap-1 border border-gray-400 rounded px-2 py-1"
+        }
       >
         <span>{spell.name}</span>
         {getActionIcons(spell.actions).map((icon, index) => (

@@ -1,41 +1,17 @@
-import type { Action } from "./Action";
 import type { DamageInstance } from "./DamageTypes";
 import type { Price } from "./Item";
-import type { StatKey } from "./StatKey";
+import type { Trait } from "./Trait";
 
 export type Weapon = {
   name: string;
   dice: DamageInstance[];
   hands: number;
   range: number;
-  traits: WeaponTrait[];
+  traits: Trait[];
   description: string;
   price?: Price;
   type: WeaponType;
   weaponGroup: WeaponGroup;
-};
-
-export type WeaponTrait = {
-  name: string;
-  parameter?: string;
-  effect: string;
-  specialAction: Action | null;
-  type: string;
-  modifiable: string;
-  attackStat: StatKey | "DEX/PHY" | null;
-  damageStat: StatKey | "None" | null;
-  MAPChange: number | null;
-};
-
-export type RawWeaponTrait = {
-  name: string;
-  effect: string;
-  specialAction: string;
-  type: string;
-  modifiable: string;
-  attackStat: string;
-  damageStat: string;
-  MAPChange: string;
 };
 
 export type WeaponType =

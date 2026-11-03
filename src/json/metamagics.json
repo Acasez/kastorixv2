@@ -17,7 +17,7 @@
     },
     {
         "name": "Close-range Cast",
-        "trait": "Targeting",
+        "trait": "Attack",
         "aspect": "",
         "effect": "You cast the spell in a way to weave in the flow of combat. \nAdjacent creatures have a -1 penalty to their saving throw of the spell instead of a +2 bonus",
         "dc": "2",
@@ -89,7 +89,7 @@
     },
     {
         "name": "Tracing Spell",
-        "trait": "Targeting",
+        "trait": "Attack",
         "aspect": "",
         "effect": "You attach a thread of mana to the target with the spell\nIf the target is in range of a mana thread attach one",
         "dc": "2",
@@ -113,7 +113,7 @@
     },
     {
         "name": "Homing Spell",
-        "trait": "Targeting",
+        "trait": "Attack",
         "aspect": "",
         "effect": "Increase the initial Save of the spell by 3. \nAdditionally the spell ignores lesser cover",
         "dc": "4",
@@ -153,7 +153,7 @@
     },
     {
         "name": "Forceful Spell",
-        "trait": "Targeting",
+        "trait": "Attack",
         "aspect": "",
         "effect": "Infuse some more force into the spell. \nIn addition to the other effects of the spell, one creature hit by it fall prone or are pushed back 2 tiles (your choice)",
         "dc": "2",
@@ -177,7 +177,7 @@
     },
     {
         "name": "Twin Spell",
-        "trait": "Targeting",
+        "trait": "Attack",
         "aspect": "",
         "effect": "Casts the spell at two targets within range, use the same spellshaping for both. \nThis gives the spell the Draining Trait.",
         "dc": "6",

@@ -1,5 +1,6 @@
 import type { DamageInstance } from "./DamageTypes";
 import type { Saves } from "./StatKey";
+import type { Trait } from "./Trait";
 
 export type Spellshaping = {
   verbal: VerbalComponent;
@@ -15,7 +16,7 @@ export type Spell = {
   name: string;
   actions: string;
   aspects: Aspect[];
-  traits: SpellTrait[];
+  traits: Trait[];
   range: number | string;
   target: string;
   duration: string;
@@ -34,12 +35,6 @@ export type SpellRank =
   | "Grand Magus"
   | "Archmage";
 
-export type SpellTrait = {
-  name: string;
-  flavor: string;
-  effect: string;
-};
-
 export type Aspect = {
   name: string;
   type: AspectType;
@@ -55,7 +50,7 @@ export type AspectType = "Fundamental" | "Primal" | "Lesser";
 
 export type Metamagic = {
   name: string;
-  traits: SpellTrait[];
+  traits: Trait[];
   aspects: Aspect[];
   effect: string;
   dc: number;

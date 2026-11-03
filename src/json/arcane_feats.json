@@ -664,7 +664,7 @@
     },
     {
         "name": "Spell Sharpshooter",
-        "description": "You're good at spells that target foes at range.\nYou become Expert in casting spells with the Targeting trait.\nWhen casting spells with the Targeting trait you increase their range by 1 tile.",
+        "description": "You're good at spells that target foes at range.\nYou become Expert in casting spells with the Attack trait.\nWhen casting spells with the Targeting trait you increase their range by 3 tiles.",
         "unlockedActions": "",
         "prerequisites": "",
         "level": "6",
@@ -859,7 +859,7 @@
     },
     {
         "name": "Master Spellslinger",
-        "description": "Your spellslinging skills are renowned.\nYour proficiency level with Targeting spells increases (max Master).\nTargeting spells have the Agile trait for you.",
+        "description": "Your spellslinging skills are renowned.\nYour proficiency level with Attack spells increases (max Master).\nAttack spells have the Agile trait for you.",
         "unlockedActions": "",
         "prerequisites": "",
         "level": "11",

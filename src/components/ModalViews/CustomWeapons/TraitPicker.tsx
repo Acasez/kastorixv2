@@ -1,5 +1,5 @@
 import { useMemo, useState, type KeyboardEvent } from "react";
-import weaponTraits from "../../../data/weaponTraits";
+import traits from "../../../data/traits";
 import { parseWeaponTrait } from "../../../data/weapons";
 import type { WeaponTrait } from "../../../types/Weapons";
 import WeaponTraitComponent from "../../CommonCreatureComponents/WeaponTraitComponent";
@@ -19,7 +19,7 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
 
   const matchingTraits = useMemo(() => {
     const base = query.trim().split("(")[0].trim().toLowerCase();
-    return weaponTraits.filter(
+    return traits.filter(
       (trait) =>
         trait.name.toLowerCase().includes(base) &&
         !traits.some((selected) => selected.name === trait.name),

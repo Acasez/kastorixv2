@@ -1,24 +1,20 @@
 // data/weapons.ts
 import rawWeapons from "../JSON/weapons.json";
 import type { StatKey } from "../types/StatKey";
-import type {
-  Weapon,
-  WeaponGroup,
-  WeaponTrait,
-  WeaponType,
-} from "../types/Weapons";
+import type { Weapon, WeaponGroup, WeaponType } from "../types/Weapons";
 import { createDamageInstances } from "./damageTypes";
 import { parsePrice } from "../utils/prices";
-import { weaponTraitsByName } from "./weaponTraits";
+import { traitsByName } from "./traits";
 import { lookup } from "../utils/lookupTypes";
+import type { Trait } from "../types/Trait";
 
-export function parseWeaponTrait(traitString: string): WeaponTrait {
+export function parseWeaponTrait(traitString: string): Trait {
   // Parse "Deadly (d12)" into {name: "Deadly", parameter: "d12"}
   const match = traitString.trim().match(/^([\w\s]+)(?:\s*\(([^)]+)\))?$/);
   const baseName = match ? match[1].trim() : traitString.trim();
   const parameter = match ? match[2]?.trim() : undefined;
 
-  const baseTrait = weaponTraitsByName[baseName] || {
+  const baseTrait = traitsByName[baseName] || {
     name: baseName,
     effect: "",
     specialAction: null,
@@ -31,7 +27,7 @@ export function parseWeaponTrait(traitString: string): WeaponTrait {
   return { ...baseTrait, parameter: parameter || baseTrait.parameter };
 }
 
-export function parseWeaponTraits(traitsString: string): WeaponTrait[] {
+export function parseWeaponTraits(traitsString: string): Trait[] {
   if (!traitsString?.trim()) return [];
   return traitsString.split(",").map(parseWeaponTrait);
 }
