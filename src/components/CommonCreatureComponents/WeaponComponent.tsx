@@ -5,7 +5,7 @@ import type { Weapon } from "../../types/Weapons";
 import type { StatKey } from "../../types/StatKey";
 import ProficiencyMarker from "./ProficiencyMarker";
 import Tooltip from "../Tooltip";
-import WeaponTraitComponent from "./WeaponTraitComponent";
+import TraitComponent from "./TraitComponent";
 import {
   getAttackStatFromWeapon,
   getDamageStatFromWeapon,
@@ -74,10 +74,9 @@ export default function WeaponComponent({
             {weapon.name}
           </h3>
           <p className="mt-2 whitespace-pre-line">
-            <strong>Traits:</strong>{" "}
-            {weaponTraits
-              .map((t) => (t.parameter ? `${t.name} (${t.parameter})` : t.name))
-              .join(", ")}
+            {weaponTraits.map((trait) => (
+              <TraitComponent trait={trait} key={trait.name} />
+            ))}
           </p>
           <p className="mt-2 whitespace-pre-line">
             <strong>Damage:</strong> {formatDamageInstances(weapon.dice)}
@@ -194,7 +193,7 @@ export default function WeaponComponent({
         </div>
         <div className="flex flex-wrap gap-1">
           {weaponTraits.map((trait) => (
-            <WeaponTraitComponent trait={trait} key={trait.name} />
+            <TraitComponent trait={trait} key={trait.name} />
           ))}
         </div>
       </div>

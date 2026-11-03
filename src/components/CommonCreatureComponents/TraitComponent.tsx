@@ -1,13 +1,11 @@
+import type { Trait } from "../../types/Trait";
 import Tooltip from "../Tooltip";
-import type { WeaponTrait } from "../../types/Weapons";
 
-type WeaponTraitComponentProps = {
-  trait: WeaponTrait;
+type TraitComponentProps = {
+  trait: Trait;
 };
 
-export default function WeaponTraitComponent({
-  trait,
-}: WeaponTraitComponentProps) {
+export default function TraitComponent({ trait }: TraitComponentProps) {
   const content = trait.parameter
     ? trait.effect.replace(/X/g, trait.parameter)
     : trait.effect;

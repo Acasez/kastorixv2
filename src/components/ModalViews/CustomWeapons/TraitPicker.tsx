@@ -2,7 +2,7 @@ import { useMemo, useState, type KeyboardEvent } from "react";
 import traits from "../../../data/traits";
 import { parseWeaponTrait } from "../../../data/weapons";
 import type { WeaponTrait } from "../../../types/Weapons";
-import WeaponTraitComponent from "../../CommonCreatureComponents/WeaponTraitComponent";
+import TraitComponent from "../../CommonCreatureComponents/TraitComponent";
 import { RemoveButton, INPUT_CLASS } from "./RemoveButton";
 import { traitLabel } from "./TraitLabel";
 
@@ -164,7 +164,7 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
               key={`${trait.name}-${trait.parameter ?? ""}-${index}`}
               className="inline-flex items-center gap-1"
             >
-              <WeaponTraitComponent trait={trait} />
+              <TraitComponent trait={trait} />
               <RemoveButton
                 label={`Remove ${traitLabel(trait)} trait`}
                 onClick={() => onChange(traits.filter((_, i) => i !== index))}

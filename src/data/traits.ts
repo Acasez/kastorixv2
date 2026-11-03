@@ -34,7 +34,7 @@ export const traitsByName: Record<string, Trait> = Object.fromEntries(
   traits.map((t) => [t.name, t]),
 );
 
-export const lookupTrait = (raw?: string | string[] | null) =>
+export const lookupTraits = (raw?: string | string[] | null) =>
   lookup(traitsByName, raw);
 
 export default traits;

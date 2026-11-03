@@ -6,6 +6,7 @@ import { getActionIcons } from "../../utils/actionUtils";
 import ActionIcon from "../Actions/ActionIcon";
 import ProficiencyMarker from "./ProficiencyMarker";
 import Tooltip from "../Tooltip";
+import TraitComponent from "./TraitComponent";
 
 interface SpellComponentProps {
   spell: Spell;
@@ -61,8 +62,9 @@ export default function SpellComponent({
             {spell.aspects?.map((a) => a.name).join(", ")}
           </p>
           <p>
-            <strong>Traits:</strong>{" "}
-            {spell.traits.map((t) => t.name).join(", ")}
+            {spell.traits.map((trait) => (
+              <TraitComponent trait={trait} key={trait.name} />
+            ))}
           </p>
           <p>
             <strong>Range:</strong> {spell.range}
