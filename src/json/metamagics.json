@@ -3,7 +3,7 @@
         "name": "Careful Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Increase the action cost of the spell by 1",
+        "effect": "Increase the action cost of the spell by 1.",
         "dc": "-3",
         "level": "1"
     },
@@ -11,7 +11,7 @@
         "name": "Channeled Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Reduce the mana cost of the spell by its rank times your WIL",
+        "effect": "Reduce the mana cost of the spell by an amount equal to its rank × your WIL.",
         "dc": "3",
         "level": "1"
     },
@@ -19,7 +19,7 @@
         "name": "Close-range Cast",
         "trait": "Attack",
         "aspect": "",
-        "effect": "You cast the spell in a way to weave in the flow of combat. \nAdjacent creatures have a -1 penalty to their saving throw of the spell instead of a +2 bonus",
+        "effect": "You cast the spell in a way that weaves it into the flow of combat.\nAdjacent creatures take a -1 penalty on their saving throws against the spell instead of a +2 bonus.",
         "dc": "2",
         "level": "1"
     },
@@ -27,7 +27,7 @@
         "name": "Distant Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Double the range of the spell.\nIf the spell had a range of touch, it's instead 3 tiles",
+        "effect": "Double the range of the spell.\nIf the spell has a range of touch, it instead has a range of 3 tiles.",
         "dc": "3",
         "level": "1"
     },
@@ -35,7 +35,7 @@
         "name": "Empowered Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Increase the power of the spell. Add your INT (or WIL if cast as an Attuned Spell) to the first damage roll of the spell.",
+        "effect": "Increase the power of the spell.\nAdd your INT (or WIL if cast as an Attuned Spell) to the first damage roll of the spell.",
         "dc": "2",
         "level": "1"
     },
@@ -43,7 +43,7 @@
         "name": "Expand Spell",
         "trait": "Area",
         "aspect": "",
-        "effect": "Increase the amount of the tiles the spell effects by one row or column. (4x4 to 4x5 for example)",
+        "effect": "Increase the amount of the radius or width the spell effects by one tile.",
         "dc": "3",
         "level": "1"
     },
@@ -51,7 +51,7 @@
         "name": "Focused Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Spend 1 Focus point",
+        "effect": "Spend 1 Focus point.",
         "dc": "-2",
         "level": "1"
     },
@@ -59,7 +59,7 @@
         "name": "Fuel Spell",
         "trait": "",
         "aspect": "Fire",
-        "effect": "Increase the amount of dice dealt by the spell by one. You take half that dice's damage as Vital damage.",
+        "effect": "Increase the number of dice dealt by the spell by one.\nYou take half the damage of that extra die as Vital damage.",
         "dc": "0",
         "level": "1"
     },
@@ -67,7 +67,7 @@
         "name": "Obscure Spell",
         "trait": "",
         "aspect": "",
-        "effect": "You weave the mana in an unorthodox fashion for the spell, giving any attempts to Identify it a -5 penalty.\nAlternatively you may attempt to make the spell appear as another spell you know. ",
+        "effect": "You weave the mana in an unorthodox fashion for the spell, giving any attempts to Identify it a -5 penalty.\nAlternatively, you may attempt to make the spell appear as another spell you are trained in.",
         "dc": "2",
         "level": "1"
     },
@@ -75,7 +75,7 @@
         "name": "Recolor Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Add a flair to spell, with a splash of color. \nYou can give the spell any color you want, though if you want to try to make it look like another spell you need to make a channeling roll",
+        "effect": "Add flair to spell, with a splash of color. \nYou can give the spell any color you want, though you can't make it look like another spell.",
         "dc": "0",
         "level": "1"
     },
@@ -83,7 +83,7 @@
         "name": "Sculpted Spell",
         "trait": "Area",
         "aspect": "",
-        "effect": "Choose one creature in the area of the spell to not be affected by the spell.\n You may choose more than one creature, increasing the Spellshaping DC by one for each extra creature.",
+        "effect": "Choose one creature in the area of the spell to not be affected by it.\nYou may choose more than one creature, increasing the Spellshaping DC by 1 for each extra creature.",
         "dc": "2",
         "level": "1"
     },
@@ -91,7 +91,7 @@
         "name": "Tracing Spell",
         "trait": "Attack",
         "aspect": "",
-        "effect": "You attach a thread of mana to the target with the spell\nIf the target is in range of a mana thread attach one",
+        "effect": "You attach a thread of mana to the target with the spell.\nIf the target is in range of a mana thread, attach one.",
         "dc": "2",
         "level": "2"
     },
@@ -99,7 +99,7 @@
         "name": "Armor Breaking Spell",
         "trait": "",
         "aspect": "",
-        "effect": "You infuse the spell with more force to overwhelm and shatter armor.\nThe instant damage done by the spell ignores resistance equal to its rank + your INT or WIL",
+        "effect": "You infuse the spell with more force to overwhelm and shatter armor.\nThe instant damage done by the spell ignores resistance equal to its rank + your INT (or WIL if cast as an Attuned Spell).",
         "dc": "3",
         "level": "4"
     },
@@ -107,7 +107,7 @@
         "name": "Elemental Shift",
         "trait": "",
         "aspect": "",
-        "effect": "Shift the spell's damage type to an aspect you have [Basic Elemental Magic] with",
+        "effect": "Shift the spell's damage type to an aspect you have the Basic Elemental Magic feat with.",
         "dc": "3",
         "level": "4"
     },
@@ -115,7 +115,7 @@
         "name": "Homing Spell",
         "trait": "Attack",
         "aspect": "",
-        "effect": "Increase the initial Save of the spell by 3. \nAdditionally the spell ignores lesser cover",
+        "effect": "Increase the initial Save of the spell by 3. \nAdditionally, the spell ignores lesser cover.",
         "dc": "4",
         "level": "4"
     },
@@ -123,7 +123,7 @@
         "name": "Quick Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Reduce the action cost of the spell by 1 (minimum one action)",
+        "effect": "Reduce the action cost of the spell by 1 (minimum one action).",
         "dc": "5",
         "level": "4"
     },
@@ -131,7 +131,7 @@
         "name": "Running Cast",
         "trait": "",
         "aspect": "",
-        "effect": "You cast the spell on the move, weaving the spell mid motion.\nStride or Traverse, and cast the spell at any point during the movement",
+        "effect": "You cast the spell on the move, weaving the spell mid-motion.\nStride or Traverse, then cast the spell at any point during the movement.",
         "dc": "4",
         "level": "4"
     },
@@ -139,7 +139,7 @@
         "name": "Sustaining Spell",
         "trait": "",
         "aspect": "",
-        "effect": "The first three turns the spell sustains itself, needing no action from you",
+        "effect": "For the first three turns, the spell sustains itself and needs no action from you.",
         "dc": "5",
         "level": "4"
     },
@@ -147,7 +147,7 @@
         "name": "Overchannel Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Overchannel a spell to levels beyond that you would normally be capable of.\nUpcast the spell to one rank higher than your current highest rank.\nAfterwards you gain one level of mana poisoning.",
+        "effect": "Overchannel a spell to levels beyond those you would normally be capable of.\nUpcast the spell to one rank higher than your current highest rank.\nAfterwards, you gain one level of Mana Poisoning.",
         "dc": "2",
         "level": "4"
     },
@@ -155,7 +155,7 @@
         "name": "Forceful Spell",
         "trait": "Attack",
         "aspect": "",
-        "effect": "Infuse some more force into the spell. \nIn addition to the other effects of the spell, one creature hit by it fall prone or are pushed back 2 tiles (your choice)",
+        "effect": "Infuse some more force into the spell.\nIn addition to the other effects of the spell, one creature hit by it falls prone or is pushed back 2 tiles (your choice).",
         "dc": "2",
         "level": "6"
     },
@@ -163,7 +163,7 @@
         "name": "Resistant Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Weave the spell in way that makes it hard for others to threaten.\nAny attempts to Spellbreak, Unweave or otherwise magically disrupt the spell have disadvantage.",
+        "effect": "Weave the spell in a way that makes it hard for others to disrupt.\nAny attempts to Spellbreak, Unweave, or otherwise magically disrupt the spell have disadvantage.",
         "dc": "3",
         "level": "6"
     },
@@ -171,7 +171,7 @@
         "name": "Ride the Lightning",
         "trait": "",
         "aspect": "Lightning",
-        "effect": "Move to any location the spell hits",
+        "effect": "You move to any location the spell hits.",
         "dc": "4",
         "level": "8"
     },
@@ -179,7 +179,7 @@
         "name": "Twin Spell",
         "trait": "Attack",
         "aspect": "",
-        "effect": "Casts the spell at two targets within range, use the same spellshaping for both. \nThis gives the spell the Draining Trait.",
+        "effect": "Cast the spell at two targets within range, using the same Spellshaping roll for both.\nThis gives the spell the Draining trait.",
         "dc": "6",
         "level": "8"
     },
@@ -187,7 +187,7 @@
         "name": "Compressed Spell",
         "trait": "",
         "aspect": "",
-        "effect": "Instead of being cast immediately, the spell is prepared and stored in a dimensional bubble. \nIt can be released later as reaction to any trigger\nAt the end of each turn you hold a Compressed Spell, you pay a third of its mana cost or its cast automatically, centered on you",
+        "effect": "Instead of being cast immediately, the spell is prepared and stored in a dimensional bubble.\nIt can be released later as a reaction to any trigger.\nAt the end of each turn you hold a Compressed Spell, you pay a third of its mana cost or it casts automatically, centered on you.",
         "dc": "4",
         "level": "10"
     }

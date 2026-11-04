@@ -1,6 +1,9 @@
+import type { Action } from "./Action";
+
 export type RunegunUpgrades = {
   name: string;
   description: string;
+  unlockedActions: Action[];
   prerequisites: string;
   level: number;
 };

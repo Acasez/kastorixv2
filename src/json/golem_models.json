@@ -26,9 +26,9 @@
         "speeds": "(4) Land",
         "featureOne": "",
         "featureOneDesc": "",
-        "skills": "Two of Athletics, Brawling, Intimidation and Stealth",
+        "skills": "Two of Athletics, Brawling, Intimidation, and Stealth",
         "saves": "Reflex",
-        "weaponsProfs": "Simple weapons, shields and one weapon group",
+        "weaponsProfs": "Simple weapons, shields and one other weapon group",
         "naturalWeapons": ""
     },
     {
@@ -58,7 +58,7 @@
         "speeds": "(5) Land",
         "featureOne": "Nimble",
         "featureOneDesc": "Ignores difficult terrain and treats greater difficult terrain as difficult terrain",
-        "skills": "Two of Acrobatics, Performance, Sleight of hand or Stealth",
+        "skills": "Two of Acrobatics, Performance, Sleight of Hand, or Stealth.",
         "saves": "Reflex",
         "weaponsProfs": "Simple weapons and one weapon group",
         "naturalWeapons": ""

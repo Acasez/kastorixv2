@@ -1,7 +1,7 @@
 [
     {
         "name": "Aura Cleaving Weapon",
-        "description": "You have improved your golems offence by allowing it to energize its weapon to punch through auras.\nYour golems natural attacks does an extra damage dice to auras",
+        "description": "You have improved your golem's offense by allowing it to energize its weapon to punch through auras.\nYour golem's natural attacks deal an extra damage die against auras.",
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
@@ -14,7 +14,7 @@
     },
     {
         "name": "Ballista",
-        "description": "You mounted a ballista on your golem, giving it a ranged weapon.\nYour golem has a ranged attack (DEX + trained), 1d10 + PHY piercing damage, with the Reload 1 trait and a range of 10 tiles. \nWhile adjacent to your golem you may use your DEX instead of it's own DEX for the attack.",
+        "description": "You mounted a ballista on your golem, giving it a ranged weapon.\nYour golem has a ranged attack (DEX + trained), 1d10 + PHY piercing damage, with the Reload 1 trait and a range of 10 tiles.\nWhile adjacent to your golem you may use your DEX instead of its own DEX for the attack.",
         "prerequisites": "Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "Ballista",
@@ -27,7 +27,7 @@
     },
     {
         "name": "Elemental Ward",
-        "description": "With the right runes and spellwork your golem is now resistant to elemental damage\nYour Golem has resistance 3 to elemental damage",
+        "description": "With the right runes and spellwork your golem is now resistant to elemental damage.\nYour golem has resistance 3 to elemental damage.",
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
@@ -40,7 +40,7 @@
     },
     {
         "name": "Feathersteel Wings",
-        "description": "You've equipped your golem with feathersteel wings that lets it glide down and perform acrobatic maneuvers.\nYour golem has a 4 tile glide speed (while its Medium or smaller).\nYour golem is trained in acrobatics and stealth.",
+        "description": "You've equipped your golem with feathersteel wings that let it glide down and perform acrobatic maneuvers.\nYour golem has a 4-tile glide speed (while it's Medium or smaller).\nYour golem is trained in Acrobatics and Stealth.",
         "prerequisites": "Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -53,7 +53,7 @@
     },
     {
         "name": "Golem Mount",
-        "description": "You design your golem to serve as a suitable mount.\nYou can mount your golem as 1 action.\nYou have a +2 bonus to Reflex saves against strikes and targeted attacks while mounted on your golem",
+        "description": "You design your golem to serve as a suitable mount.\nYou can mount your golem as 1 action.\nYou have a +2 bonus to Reflex saves against strikes and targeted attacks while mounted on your golem.",
         "prerequisites": "Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -66,7 +66,7 @@
     },
     {
         "name": "Integrated Weapon",
-        "description": "You've designed your golem to allow it to integrate a weapon into one of its arm\nYou can spend a minute to attach a weapon to the golem.\nWhile attached it cannot be disarmed and has +1 bonus to attack rolls",
+        "description": "You've designed your golem to allow it to integrate a weapon into one of its arms.\nYou can spend a minute to attach a weapon to the golem.\nWhile attached it cannot be disarmed and has a +1 bonus to attack rolls.",
         "prerequisites": "Soldier or Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -79,7 +79,7 @@
     },
     {
         "name": "Programmed Tactics",
-        "description": "You program in two tactical maneuvers for your golem.\nYour golem learns two basic techniques.\nThis upgrade can be taken multiple times, choosing new techniques",
+        "description": "You program in two tactical maneuvers for your golem.\nYour golem learns two basic techniques.\nThis upgrade can be taken multiple times, choosing new techniques.",
         "prerequisites": "",
         "level": "4",
         "golemWeapon": "",
@@ -92,7 +92,7 @@
     },
     {
         "name": "Raise Guard",
-        "description": "Your golem can raise its hands or appendages to guard itself.\nYour Golems natural strikes has the Block 2 trait, giving an option to defend itself.\nIt also learns the Protect Ally",
+        "description": "Your golem can raise its hands or appendages to guard itself.\nYour golem's natural strikes have the Block 2 trait, giving it an option to defend itself.\nIt also learns the Protect Ally action.",
         "prerequisites": "Brawler or Quadruped Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -105,7 +105,7 @@
     },
     {
         "name": "Soul Link",
-        "description": "You set up a crystal connection to connect the golem to your soul, giving you a few benefits.\nYou can see and hear through your golems location\nYou can command your golem without verbal commands and the range of command is now 20 tiles \nYou can recharge Capacitor Upgrades within that range.",
+        "description": "You set up a crystal connection to connect the golem to your soul, giving you a few benefits.\nYou can see and hear from your golem's location.\nYou can command your golem without verbal commands, and the range of your commands is now 20 tiles.\nYou can recharge Capacitor Upgrades within that range.",
         "prerequisites": "Trained in Souls Lore or Expert in Arcana",
         "level": "4",
         "golemWeapon": "",
@@ -118,7 +118,7 @@
     },
     {
         "name": "Specialized Armory",
-        "description": "You program in specialized weapon training into your golem.\nYour golem becomes trained in two weapon groups.\nYou may choose an Advanced Weapon instead of a weapon group",
+        "description": "You program in specialized weapon training into your golem.\nYour golem becomes trained in two weapon groups.\nYou may choose an Advanced Weapon instead of a weapon group.",
         "prerequisites": "Soldier or Scout Golem Model",
         "level": "4",
         "golemWeapon": "",
@@ -131,7 +131,7 @@
     },
     {
         "name": "Defense Protocol",
-        "description": "You've set up your golem to provide great defence to you and your allies.\nAfter your Golem uses the Block or Parry action adjacent allies have +1 to all saving throws until the start of next turn.\nAdditionally you may Take Cover behind your golem as a part it taking the Block action.",
+        "description": "You've set up your golem to provide great defense to you and your allies.\nAfter your golem uses the Block or Parry action, adjacent allies have +1 to all saving throws until the start of the next turn.\nAdditionally, you may Take Cover behind your golem as part of it taking the Block action.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -144,7 +144,7 @@
     },
     {
         "name": "Fire Capacitor",
-        "description": "You install a flame throwing projector in your golem.\nYour golem gets the Fire Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
+        "description": "You install a flame throwing projector in your golem.\nYour golem gets the Fire Capacitor action.\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -157,7 +157,7 @@
     },
     {
         "name": "Frost Capacitor",
-        "description": "You install a chilling projector in your golem.\nYour golem gets the Frost Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
+        "description": "You install a chilling projector in your golem.\nYour golem gets the Frost Capacitor action.\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -170,7 +170,7 @@
     },
     {
         "name": "Lightning Capacitor",
-        "description": "You install a lightning projecting device into your golem.\nYour golem gets the Lightning Capacitor action\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
+        "description": "You install a lightning projecting device into your golem.\nYour golem gets the Lightning Capacitor action.\nAfter use, you must then recharge the capacitor with 5 mana as an action while adjacent to your golem.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -196,7 +196,7 @@
     },
     {
         "name": "Reinforced Armor",
-        "description": "You have improved the defenses of your golem, making it even tougher.\nIncrease it's resistance to physical damage by 2.\nIts health increases by its PHY",
+        "description": "You have improved the defenses of your golem, making it even tougher.\nIncrease its resistance to physical damage by 2.\nIts health increases by an amount equal to its PHY.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -209,7 +209,7 @@
     },
     {
         "name": "Sentry Protocol",
-        "description": "You set up a polished lens to allow your golem to watch as if it were an alert sentry.\nYour golem becomes trained in Perception and can your INT modifier for Perception\nWhen your golem detects a threat you will be alerted to as long as its within Soul Link range.",
+        "description": "You set up a polished lens to allow your golem to watch as if it were an alert sentry.\nYour golem becomes trained in Perception and can use your INT modifier for Perception.\nWhen your golem detects a threat you are alerted, as long as it is within Soul Link range.",
         "prerequisites": "[Soul Link]",
         "level": "6",
         "golemWeapon": "",
@@ -222,7 +222,7 @@
     },
     {
         "name": "Size-Up Golem",
-        "description": "You've sized up your golem.\nYour Golem is large. \nIt's health is (4 x your level) + your INT + its PHY",
+        "description": "You've sized up your golem.\nYour golem is Large.\nIts health is (4 × your level) + your INT + its PHY.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -235,7 +235,7 @@
     },
     {
         "name": "Swift Golem",
-        "description": "Swiftness isn't what many expect when it comes to golems.\nYour Golems speeds increase by 1",
+        "description": "Swiftness isn't what many expect when it comes to golems.\nYour golem's speeds increase by 1.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -248,7 +248,7 @@
     },
     {
         "name": "Soul Channel Spell",
-        "description": "Using your Soul Link you can now channel spells through your golem.\nWhen casting spells you may choose to cast spells as if you were in your golems space.\nThis gives the spell the Complex trait. \nYou cannot cast spells that already have the Complex trait with this",
+        "description": "Using your Soul Link you can now channel spells through your golem.\nWhen casting spells you may choose to cast them as if you were in your golem's space.\nThis gives the spell the Complex trait.\nYou cannot cast spells that already have the Complex trait with this upgrade.",
         "prerequisites": "[Soul Link]",
         "level": "6",
         "golemWeapon": "",
@@ -261,7 +261,7 @@
     },
     {
         "name": "Tail Strike",
-        "description": "A tail or tentacle is an unorthodox weapon for a golem, but it can it hit foes that aren't expecting it\nYour Golem has a Tail natural weapon, with a reach of 2. It does 1d8 damage.\nWhen you design your golem you can choose weather it it's an Agile tail or Shoving tail.\nAn agile tail also has the Agile and Finesse trait and does slashing damage\nA shoving tail also has the Shove and Sweep trait and does bludgeoning damage.",
+        "description": "A tail or tentacle is an unorthodox weapon for a golem, but it can hit foes that aren't expecting it.\nYour golem has a Tail natural weapon with a reach of 2. It does 1d8 damage.\nWhen you design your golem you choose whether it's an Agile tail or a Shoving tail.\nAn Agile tail also has the Agile and Finesse traits and does slashing damage.\nA Sweeping tail also has the Shove and Sweep traits and does bludgeoning damage.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "Agile Tail, Sweeping Tail",
@@ -274,7 +274,7 @@
     },
     {
         "name": "Upgraded Components",
-        "description": "With some upgraded components, your golem is now stronger or faster than before.\nIncrease your golems PHY or DEX by 1. \nYou may choose this upgrade multiple times.",
+        "description": "With some upgraded components, your golem is now stronger or faster than before.\nIncrease your golem's PHY or DEX by 1. \nYou may choose this upgrade multiple times.",
         "prerequisites": "",
         "level": "6",
         "golemWeapon": "",
@@ -287,7 +287,7 @@
     },
     {
         "name": "Advanced Programmed Tactics",
-        "description": "You've program in more advanced maneuvers\nYour golem learns two advanced techniques.\nThis upgrade can be taken multiple times, choosing new techniques.",
+        "description": "You've programmed in more advanced maneuvers\nYour golem learns two advanced techniques.\nThis upgrade can be taken multiple times, choosing new techniques.",
         "prerequisites": "[Programmed Tactics]",
         "level": "8",
         "golemWeapon": "",
@@ -313,7 +313,7 @@
     },
     {
         "name": "Greater Elemental Ward",
-        "description": "Stronger wards have improved your golems resistance to magic.\nIncrease your golems resistance to elemental damage to 9",
+        "description": "Stronger wards have improved your golem's resistance to magic.\nIncrease your golem's resistance to elemental damage by 6.",
         "prerequisites": "[Elemental Ward]",
         "level": "10",
         "golemWeapon": "",
@@ -326,7 +326,7 @@
     },
     {
         "name": "Capacitor Upcharge",
-        "description": "You have upgraded your golems capacitors, allowing to channel more mana into destructive magic.\nWhen using the an capacitor action you may overcharge them, increase the damage and size.\nIf you do, your golem becomes Stunned 1 and needs 15 mana before the capacitor can be recharged.\nFire Capacitor, 8d6 damage, 7 tile cone.\nLightning Capacitor, 5d12 damage, 2 tile wide, 12 tile long line\nFrost Capacitor, 7d4 damage, 5 tile cone. Frozen status works on large creatures",
+        "description": "You have upgraded your golem's capacitors, allowing you to channel more mana into destructive magic.\nWhen using a capacitor action you may overcharge it, increasing the damage and size.\nIf you do, your golem becomes Stunned 1 and needs 15 mana before the capacitor can be recharged.\nFire Capacitor: 8d6 damage, 7-tile cone.\nLightning Capacitor: 5d12 damage, 2-tile-wide, 12-tile-long line.\nFrost Capacitor: 7d4 damage, 5-tile cone. The Frozen condition works on Large creatures.",
         "prerequisites": "",
         "level": "12",
         "golemWeapon": "",
@@ -339,7 +339,7 @@
     },
     {
         "name": "Perfected Spell Channeling",
-        "description": "You've set up the perfected resonating link to channel your spells\nWhen channeling spells though your golem you no longer give the spells the Complex trait and you can cast Complex spells\nYou can also target your golem with spells that would normally only target you",
+        "description": "You've set up a perfected resonating link to channel your spells.\nWhen channeling spells through your golem you no longer give the spells the Complex trait, and you can cast Complex spells.\nYou can also target your golem with spells that would normally only target you.",
         "prerequisites": "[Soul Channel Spell]",
         "level": "12",
         "golemWeapon": "",
@@ -352,7 +352,7 @@
     },
     {
         "name": "War Walker",
-        "description": "You've built your golem as true war walker, a machine of battlefield prowess\nYour Golem is huge. \nIt's health is (5 x your level) + your INT + its PHY\nIt does an extra dice of damage with its attacks",
+        "description": "You've built your golem as a true war walker, a machine of battlefield prowess.\nYour golem is Huge.\nIts health is (5 × your level) + your INT + its PHY.\nIt does an extra die of damage with its attacks.",
         "prerequisites": "[Size Up Golem]",
         "level": "12",
         "golemWeapon": "",
@@ -365,7 +365,7 @@
     },
     {
         "name": "Calculating Golem",
-        "description": "You've improved your golem's runic circuits to give it greater intelligence\nIncrease your golems INT by 1.\nYour golem learns two complex techniques.",
+        "description": "You've improved your golem's runic circuits to give it greater intelligence.\nIncrease your golem's INT by 1.\nYour golem learns two complex techniques.",
         "prerequisites": "[Advanced Programmed Tactics]",
         "level": "12",
         "golemWeapon": "",
@@ -378,7 +378,7 @@
     },
     {
         "name": "Winged Golem",
-        "description": "You've improved your golems wings and given it magical propulsion.\nYour golem has a 5 tile flight speed (while its Medium or smaller).",
+        "description": "You've improved your golem's wings and given it magical propulsion.\nYour golem has a 5-tile flight speed (while it's Medium or smaller).",
         "prerequisites": "[Feathersteel Wings]",
         "level": "12",
         "golemWeapon": "",

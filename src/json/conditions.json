@@ -56,6 +56,13 @@
         "neutrality": "Negative"
     },
     {
+        "name": "Frozen",
+        "effect": "You are Stunned. ",
+        "type": "Binary",
+        "disappears": "You would take fire damage",
+        "neutrality": "Negative"
+    },
+    {
         "name": "Grappled",
         "effect": "You cannot move and are Off-Guard 2",
         "type": "Binary",
