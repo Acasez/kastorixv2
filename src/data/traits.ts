@@ -13,6 +13,7 @@ function parseTrait(raw: RawTrait): Trait {
   return {
     name: baseName,
     parameter,
+    appliesTo: raw.appliesTo.split(",").map((category) => category.trim()) as Trait["appliesTo"],
     flavor: raw.flavor,
     effect: raw.effect,
     specialAction: raw.specialAction

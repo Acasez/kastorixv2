@@ -3,6 +3,7 @@ import type { StatKey } from "./StatKey";
 
 export type Trait = {
   name: string;
+  appliesTo: TraitCategory[];
   parameter?: string;
   flavor: string;
   effect: string;
@@ -17,6 +18,7 @@ export type Trait = {
 
 export type RawTrait = {
   name: string;
+  appliesTo: string;
   effect: string;
   flavor: string;
   specialAction: string;
@@ -27,3 +29,5 @@ export type RawTrait = {
   MAPChange: string;
   spellshapingDCChange: number;
 };
+
+export type TraitCategory = "Weapons" | "Spells" | "Actions" | "Creatures";

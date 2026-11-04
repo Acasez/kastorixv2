@@ -124,7 +124,7 @@ export default function CustomWeaponModal({
           onChange={(dice) => updateWeapon({ dice })}
         />
         <TraitPicker
-          traits={weapon.traits}
+          existingTraits={weapon.traits}
           onChange={(traits) => updateWeapon({ traits })}
         />
 

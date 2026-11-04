@@ -1,20 +1,23 @@
 import { useMemo, useState, type KeyboardEvent } from "react";
-import traits from "../../../data/traits";
 import { parseWeaponTrait } from "../../../data/weapons";
-import type { WeaponTrait } from "../../../types/Weapons";
 import TraitComponent from "../../CommonCreatureComponents/TraitComponent";
 import { RemoveButton, INPUT_CLASS } from "./RemoveButton";
 import { traitLabel } from "./TraitLabel";
+import type { Trait } from "../../../types/Trait";
+import traits from "../../../data/traits";
 
 type TraitPickerProps = {
-  traits: WeaponTrait[];
-  onChange: (traits: WeaponTrait[]) => void;
+  existingTraits: Trait[];
+  onChange: (traits: Trait[]) => void;
 };
 
-export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
+export default function TraitPicker({
+  existingTraits,
+  onChange,
+}: TraitPickerProps) {
   const [query, setQuery] = useState("");
   // The trait currently awaiting a parameter value, e.g. the "Volley (X)" definition
-  const [pendingTrait, setPendingTrait] = useState<WeaponTrait | null>(null);
+  const [pendingTrait, setPendingTrait] = useState<Trait | null>(null);
   const [parameterInput, setParameterInput] = useState("");
 
   const matchingTraits = useMemo(() => {
@@ -22,22 +25,23 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
     return traits.filter(
       (trait) =>
         trait.name.toLowerCase().includes(base) &&
-        !traits.some((selected) => selected.name === trait.name),
+        trait.appliesTo.includes("Weapons") &&
+        !existingTraits.some((selected) => selected.name === trait.name),
     );
-  }, [query, traits]);
+  }, [query, existingTraits]);
 
-  const isParameterized = (trait: WeaponTrait) => trait.parameter === "X";
+  const isParameterized = (trait: Trait) => trait.parameter === "X";
 
-  const addParsedTrait = (trait: WeaponTrait) => {
+  const addParsedTrait = (trait: Trait) => {
     if (
       !trait.name ||
-      traits.some(
+      existingTraits.some(
         (t) => t.name === trait.name && t.parameter === trait.parameter,
       )
     ) {
       return;
     }
-    onChange([...traits, trait]);
+    onChange([...existingTraits, trait]);
     setQuery("");
     setPendingTrait(null);
     setParameterInput("");
@@ -47,7 +51,7 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
     addParsedTrait(parseWeaponTrait(raw));
   };
 
-  const selectTrait = (trait: WeaponTrait) => {
+  const selectTrait = (trait: Trait) => {
     if (isParameterized(trait)) {
       setPendingTrait(trait);
       setParameterInput("");
@@ -157,9 +161,9 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
         </div>
       )}
 
-      {traits.length > 0 && (
+      {existingTraits.length > 0 && (
         <div className="flex flex-wrap gap-2 rounded border border-stone-600 bg-stone-900 p-2">
-          {traits.map((trait, index) => (
+          {existingTraits.map((trait, index) => (
             <span
               key={`${trait.name}-${trait.parameter ?? ""}-${index}`}
               className="inline-flex items-center gap-1"
@@ -167,7 +171,9 @@ export default function TraitPicker({ traits, onChange }: TraitPickerProps) {
               <TraitComponent trait={trait} />
               <RemoveButton
                 label={`Remove ${traitLabel(trait)} trait`}
-                onClick={() => onChange(traits.filter((_, i) => i !== index))}
+                onClick={() =>
+                  onChange(existingTraits.filter((_, i) => i !== index))
+                }
               />
             </span>
           ))}

@@ -16,7 +16,7 @@ import gadgets from "../../data/gadgets";
 import golemModels from "../../data/golemModels";
 import aspects from "../../data/aspects";
 import { getActionIcons } from "../../utils/actionUtils";
-import type { Weapon, WeaponTrait } from "../../types/Weapons";
+import type { Weapon } from "../../types/Weapons";
 import { formatDamageInstances } from "../../utils/damage";
 import type { DamageInstance } from "../../types/DamageTypes";
 import {
@@ -35,8 +35,9 @@ import {
   WEAPON_FIELDS,
 } from "../../constants/DetailFields";
 import { formatPrice } from "../../utils/prices";
-import type { Spell, SpellTrait } from "../../types/Spells";
+import type { Spell } from "../../types/Spells";
 import type { Species } from "../../types/Species";
+import type { Trait } from "../../types/Trait";
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -67,11 +68,7 @@ function isDamageInstance(v: unknown): v is DamageInstance {
   return typeof v === "object" && v !== null && "name" in v && "amount" in v;
 }
 
-function isWeaponTrait(v: unknown): v is WeaponTrait {
-  return typeof v === "object" && v !== null && "name" in v && !("amount" in v);
-}
-
-function isSpellTrait(v: unknown): v is SpellTrait {
+function isTrait(v: unknown): v is Trait {
   return typeof v === "object" && v !== null && "name" in v && !("amount" in v);
 }
 
@@ -80,14 +77,10 @@ function formatValue(value: unknown): string | null {
     return formatDamageInstances(value);
   }
 
-  if (isArrayOf(value, isWeaponTrait)) {
+  if (isArrayOf(value, isTrait)) {
     return value
       .map((t) => (t.parameter ? `${t.name} (${t.parameter})` : t.name))
       .join(", ");
-  }
-
-  if (isArrayOf(value, isSpellTrait)) {
-    return value.map((t) => `${t.name}`).join(", ");
   }
 
   if (Array.isArray(value)) {
