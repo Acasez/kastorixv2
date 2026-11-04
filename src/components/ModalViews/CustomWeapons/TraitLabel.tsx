@@ -1,4 +1,4 @@
-import type { WeaponTrait } from "../../../types/Weapons";
+import type { Trait } from "../../../types/Trait";
 
-export const traitLabel = (trait: WeaponTrait) =>
+export const traitLabel = (trait: Trait) =>
   trait.parameter ? `${trait.name} (${trait.parameter})` : trait.name;
