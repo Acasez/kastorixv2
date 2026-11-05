@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import actions from "../../../data/actions";
 import ActionRow from "./ActionComponent";
+import { useCharacter } from "../../../hooks/useCharacter";
 
 const ACTION_COSTS = ["All", "0", "1", "2", "3", "Reaction"] as const;
 type ActionCost = (typeof ACTION_COSTS)[number];
@@ -10,71 +11,18 @@ export default function ActionsSection() {
   const [costFilter, setCostFilter] = useState<ActionCost>("All");
   const [sortDescending, setSortDescending] = useState(false);
   const [expandedAction, setExpandedAction] = useState<string | null>(null);
+  const { character } = useCharacter();
 
-  //Currently not showing unlocked actions, want to do by just getting them from the character store
-  /* const unlockedActionNames = useMemo(() => {
-    const selectedNamesByType = {
-      "General Feat": new Set([
-        ...character.generalFeats,
-        ...Object.entries(character.selections)
-          .filter(([key]) => key.startsWith("generalFeat:"))
-          .map(([, value]) => value),
-      ]),
-      "Arcane Feat": new Set([
-        ...character.arcaneFeats,
-        ...Object.entries(character.selections)
-          .filter(([key]) => key.startsWith("arcaneFeat:"))
-          .map(([, value]) => value),
-      ]),
-      Advantage: new Set([
-        ...character.advantages,
-        ...Object.entries(character.selections)
-          .filter(([key]) => key.startsWith("advantage:"))
-          .map(([, value]) => value),
-      ]),
-      "Ancestry Feat": new Set([
-        ...character.ancestryFeats,
-        ...Object.entries(character.selections)
-          .filter(([key]) => key.startsWith("ancestryFeat:"))
-          .map(([, value]) => value),
-      ]),
-    };
+  const availableActions = useMemo(() => {
+    // Create a Set for fast lookup of unlocked action names
+    const unlockedActionNames = new Set(character.unlockedActions);
 
-    const featSources = [
-      ["General Feat", generalFeats],
-      ["Arcane Feat", arcaneFeats],
-      ["Advantage", advantages],
-      ["Ancestry Feat", ancestryFeats],
-    ] as const;
-
-    const selectedSpecies = species.find(
-      (speciesOption) => speciesOption.name === character.species,
+    // Show actions that are either Base OR in unlockedActions
+    return actions.filter(
+      (action) =>
+        action.sourceType === "Base" || unlockedActionNames.has(action.name),
     );
-    const unlockedFeatActions = featSources.flatMap(([sourceType, featList]) =>
-      featList
-        .filter((feat) => selectedNamesByType[sourceType].has(feat.name))
-        .map((feat) => feat.unlockedActions)
-        .filter(Boolean),
-    );
-
-    return new Set(
-      selectedSpecies?.unlockedActions
-        ? [...unlockedFeatActions, selectedSpecies.unlockedActions]
-        : unlockedFeatActions,
-    );
-  }, [
-    character.advantages,
-    character.arcaneFeats,
-    character.ancestryFeats,
-    character.generalFeats,
-    character.selections,
-    character.species,
-  ]); */
-
-  const availableActions = useMemo(
-    () => actions.filter((action) => action.sourceType === "Base"),
-    [],
-  );
+  }, [character.unlockedActions]);
 
   const filteredActions = useMemo(
     () =>

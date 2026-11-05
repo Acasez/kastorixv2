@@ -4,6 +4,12 @@ import type { ModalRequest } from "../modalTypes";
 import { getChoiceData } from "../choiceData";
 import type { ChoiceType } from "../../../types/Feats";
 import { createGolemFromModel } from "./createGolem";
+import { typeToData, type UnlockableItem } from "../../../utils/selectionUtils";
+
+// Properly typed helper
+function getUnlockedActionNames(item: UnlockableItem): string[] {
+  return item.unlockedActions?.map((a) => a.name) ?? [];
+}
 
 // Define the handler type
 type UpdateFn = (updates: Partial<Character>) => void;
@@ -43,9 +49,8 @@ export const handlers: Record<ModalRequest["type"], ModalHandler> = {
   baseStats: createBaseStatsHandler(),
   statIncrease: createStatIncreaseHandler(),
 };
-
 // ============================================
-// FACTORY: Selection-based handlers (generalFeat, arcaneFeat, golemUpgrade, runegunUpgrade)
+// FACTORY: Selection-based handlers
 // ============================================
 function createSelectionHandler(
   type: Extract<ModalRequest["type"], ChoiceType>,
@@ -65,9 +70,7 @@ function createSelectionHandler(
         console.warn(`No valid choice items for type: ${request.type}`);
         return [];
       }
-      const choiceNames = new Set(
-        choiceData[request.type].map((item) => item.name),
-      );
+      const choiceNames = new Set(items.map((item) => item.name));
       const ownedNames = new Set<string>();
 
       Object.entries(character.selections).forEach(([key, selectedValue]) => {
@@ -84,7 +87,7 @@ function createSelectionHandler(
         }
       });
 
-      return choiceData[request.type]
+      return items
         .filter((item) => {
           const repeatableValue = item.repeatable;
           const isRepeatable =
@@ -106,7 +109,16 @@ function createSelectionHandler(
         ),
       );
 
-      // Special handling for Golemcrafter advantage
+      // Find the selected item from the appropriate data array
+      const dataArray = typeToData[type];
+      const selectedItem = dataArray.find((item) => item.name === value);
+
+      // Get unlocked action names
+      const unlockedActionNames = selectedItem
+        ? getUnlockedActionNames(selectedItem)
+        : [];
+
+      // Special handling for Golemcrafter
       const golemUpdate: Partial<Character> = {};
       if (type === "advantage" && value === "Golemcrafter" && choice) {
         const golem = createGolemFromModel(choice);
@@ -122,11 +134,14 @@ function createSelectionHandler(
           ...(choice ? { [choiceKey]: choice } : {}),
         },
         ...golemUpdate,
+        // Add unlocked actions to character
+        unlockedActions: [
+          ...new Set([...character.unlockedActions, ...unlockedActionNames]),
+        ],
       });
     },
   };
 }
-
 // ============================================
 // HANDLER: Species
 // ============================================

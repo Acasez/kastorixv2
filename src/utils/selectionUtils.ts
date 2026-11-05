@@ -1,6 +1,41 @@
 //utils/selectionUtils.ts
 import type { Character } from "../stores/useCharacterStore";
 import type { ChoiceType } from "../types/Feats";
+import generalFeats from "../data/generalFeats";
+import arcaneFeats from "../data/arcaneFeats";
+import advantages from "../data/advantages";
+import ancestryFeats from "../data/ancestryFeats";
+import golemUpgrades from "../data/golemUpgrades";
+import runegunUpgrades from "..//data/runegunUpgrades";
+import backgrounds from "..//data/backgrounds";
+import spells from "../data/spells";
+import weapons from "../data/weapons";
+import metamagics from "../data/metamagics";
+import armors from "../data/armors";
+import gadgets from "../data/gadgets";
+import type { Action } from "../types/Action";
+
+// Type for items that can have unlocked actions
+export type UnlockableItem = {
+  name: string;
+  unlockedActions?: Action[];
+};
+
+// Mapping from ChoiceType to data array
+export const typeToData: Record<ChoiceType, UnlockableItem[]> = {
+  generalFeat: generalFeats,
+  arcaneFeat: arcaneFeats,
+  advantage: advantages,
+  ancestryFeat: ancestryFeats,
+  golemUpgrade: golemUpgrades,
+  runegunUpgrade: runegunUpgrades,
+  background: backgrounds,
+  spell: spells,
+  weapon: weapons,
+  metamagic: metamagics,
+  armor: armors,
+  gadget: gadgets,
+};
 
 /**
  * Gets the current selection for a given type and key
@@ -39,27 +74,3 @@ export function clearSelection(
     ...(type === "background" ? { background: null } : {}),
   };
 }
-/* 
-  const clearSelection = (selectionKey: string, type: ChoiceType) => {
-    const selectedItem = choiceConfig[type].items.find(
-      (item) => item.name === character.selections[selectionKey],
-    );
-    const selections = Object.fromEntries(
-      Object.entries(character.selections).filter(
-        ([key]) =>
-          key !== selectionKey &&
-          key !== `${selectionKey}:choice` &&
-          !key.startsWith(`${selectionKey}:unlocked:`),
-      ),
-    );
-
-    updateCharacter({
-      selections,
-      ...(type === "advantage" &&
-      selectedItem?.choice === "Golem Model - Choice"
-        ? { golem: null }
-        : {}),
-      ...(type === "background" ? { background: null } : {}),
-    });
-  };
- */

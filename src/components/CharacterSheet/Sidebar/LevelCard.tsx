@@ -6,6 +6,7 @@ import ChoiceTooltip from "../../ModalViews/ChoiceTooltip";
 import { getChoiceItem } from "../../ModalViews/choiceData";
 import { useModal } from "../../../hooks/useModal";
 import { choiceConfig } from "../../../utils/choiceConfig";
+import { getUnlockedActionNames } from "../../../utils/actionUtils";
 
 type ChoiceType = Exclude<
   ModalRequest["type"],
@@ -76,9 +77,15 @@ export default function LevelCard({ level }: LevelCardProps) {
           !key.startsWith(`${selectionKey}:unlocked:`),
       ),
     );
+    const unlockedActionNames = selectedItem
+      ? getUnlockedActionNames(selectedItem)
+      : [];
 
     updateCharacter({
       selections,
+      unlockedActions: character.unlockedActions.filter(
+        (actionName) => !unlockedActionNames.includes(actionName),
+      ),
       ...(type === "advantage" &&
       selectedItem?.choice === "Golem Model - Choice"
         ? { golem: null }

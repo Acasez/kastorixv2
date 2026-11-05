@@ -1,3 +1,5 @@
+import type { Action } from "../types/Action";
+
 // src/utils/actionUtils.ts
 export const getActionIcons = (actionCost: string): string[] => {
   const cost = actionCost.trim().toLowerCase();
@@ -51,3 +53,29 @@ export const getActionIcons = (actionCost: string): string[] => {
 
   return icons;
 };
+
+/**
+ * Extracts action names from an item that may have unlockedActions
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function getUnlockedActionNames(item: any): string[] {
+  if (!item || !item.unlockedActions) return [];
+
+  // Handle both Action[] and string (for backwards compatibility)
+  if (typeof item.unlockedActions === "string") {
+    return item.unlockedActions
+      .split(",")
+      .map((s: string) => s.trim())
+      .filter(Boolean);
+  }
+
+  if (Array.isArray(item.unlockedActions)) {
+    return item.unlockedActions
+      .map((action: Action | string) =>
+        typeof action === "string" ? action : action.name,
+      )
+      .filter(Boolean);
+  }
+
+  return [];
+}
