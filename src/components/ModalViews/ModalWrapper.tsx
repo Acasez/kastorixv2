@@ -64,18 +64,22 @@ export default function ModalWrapper({
         maxLevel={request.type === "species" ? Infinity : request.level}
         disabledNames={blockedChoices}
         filterFields={
-          request.type === "spell"
-            ? [
-                { label: "Aspects", value: "aspects" },
-                { label: "Traits", value: "traits" },
-              ]
-            : request.type === "weapon"
+          request.type === "generalFeat" ||
+          request.type === "arcaneFeat" ||
+          request.type === "advantage"
+            ? [{ label: "Traits", value: "traits" }]
+            : request.type === "spell"
               ? [
+                  { label: "Aspects", value: "aspects" },
                   { label: "Traits", value: "traits" },
-                  { label: "Types", value: "type" },
-                  { label: "Weapon Groups", value: "weaponGroup" },
                 ]
-              : undefined
+              : request.type === "weapon"
+                ? [
+                    { label: "Traits", value: "traits" },
+                    { label: "Types", value: "type" },
+                    { label: "Weapon Groups", value: "weaponGroup" },
+                  ]
+                : undefined
         }
         onConfirm={onConfirm}
       />
