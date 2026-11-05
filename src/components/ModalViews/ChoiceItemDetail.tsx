@@ -24,6 +24,8 @@ export default function ChoiceItemDetail({
 }: ChoiceItemDetailProps) {
   const actionNames: string[] =
     selectedItem?.unlockedActions?.map((a) => a.name) ?? [];
+  const techniques: string[] =
+    selectedItem?.techniques?.map((t) => t.name) ?? [];
   return (
     <>
       <div className="border-amber-200 border-2 p-3 flex-1 overflow-hidden  text-text-black">
@@ -75,6 +77,9 @@ export default function ChoiceItemDetail({
               )}
               {actionNames.map((action) => (
                 <ActionBox key={action} action={action} />
+              ))}
+              {techniques.map((technique) => (
+                <ActionBox key={technique} action={technique} />
               ))}
               {selectedItem.choiceOptions && (
                 <div className="mt-4">

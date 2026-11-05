@@ -19,7 +19,16 @@ import type { Action } from "../types/Action";
 export type UnlockableItem = {
   name: string;
   unlockedActions?: Action[];
+  techniques?: Action[];
 };
+
+export function getUnlockedActionNames(item: UnlockableItem): string[] {
+  return item.unlockedActions?.map((a) => a.name) ?? [];
+}
+
+export function getUnlockedTechniques(item: UnlockableItem): string[] {
+  return item.techniques?.map((a) => a.name) ?? [];
+}
 
 // Mapping from ChoiceType to data array
 export const typeToData: Record<ChoiceType, UnlockableItem[]> = {

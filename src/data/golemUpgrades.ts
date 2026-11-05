@@ -12,7 +12,7 @@ export const golemUpgrades: GolemUpgrade[] = rawGolemUpgrades.map((raw) => {
     golemWeapon: lookupWeapons(raw.golemWeapon),
     unlockedActions: lookupActions(raw.unlockedActions),
     level: Number(raw.level),
-    techniques: Number(raw.techniques),
+    techniquesLearned: Number(raw.techniques),
     healthBase: Number(raw.healthBase),
   };
 });

@@ -20,6 +20,7 @@ export interface ChoiceItem {
   level?: number | string;
   repeatable?: string | number | boolean;
   unlockedActions?: Action[];
+  techniques?: Action[];
   actionCost?: string;
   choice?: string;
   choiceOptions?: ChoiceItem[];

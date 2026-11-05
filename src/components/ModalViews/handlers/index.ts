@@ -4,12 +4,11 @@ import type { ModalRequest } from "../modalTypes";
 import { getChoiceData } from "../choiceData";
 import type { ChoiceType } from "../../../types/Feats";
 import { createGolemFromModel } from "./createGolem";
-import { typeToData, type UnlockableItem } from "../../../utils/selectionUtils";
-
-// Properly typed helper
-function getUnlockedActionNames(item: UnlockableItem): string[] {
-  return item.unlockedActions?.map((a) => a.name) ?? [];
-}
+import {
+  getUnlockedActionNames,
+  getUnlockedTechniques,
+  typeToData,
+} from "../../../utils/selectionUtils";
 
 // Define the handler type
 type UpdateFn = (updates: Partial<Character>) => void;
@@ -117,6 +116,11 @@ function createSelectionHandler(
       const unlockedActionNames = selectedItem
         ? getUnlockedActionNames(selectedItem)
         : [];
+      const unlockedTechniques = selectedItem
+        ? getUnlockedTechniques(selectedItem)
+        : [];
+      const newActions: string[] =
+        unlockedActionNames.concat(unlockedTechniques);
 
       // Special handling for Golemcrafter
       const golemUpdate: Partial<Character> = {};
@@ -136,7 +140,7 @@ function createSelectionHandler(
         ...golemUpdate,
         // Add unlocked actions to character
         unlockedActions: [
-          ...new Set([...character.unlockedActions, ...unlockedActionNames]),
+          ...new Set([...character.unlockedActions, ...newActions]),
         ],
       });
     },

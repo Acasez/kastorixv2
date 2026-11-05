@@ -31,5 +31,5 @@ export type GolemUpgrade = {
   healthIncrease: string;
   resistances: Resistance[];
   speeds: Speed[];
-  techniques: number;
+  techniquesLearned: number;
 };
