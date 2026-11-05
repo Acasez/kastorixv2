@@ -10,7 +10,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Ballista",
@@ -23,7 +23,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Elemental Ward",
@@ -36,7 +36,7 @@
         "healthIncrease": "",
         "resistances": "(3) Elemental",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Feathersteel Wings",
@@ -49,7 +49,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "(4) Glide",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Golem Mount",
@@ -62,7 +62,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Integrated Weapon",
@@ -75,7 +75,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Programmed Tactics",
@@ -88,7 +88,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": "(2) Basic"
+        "techniquesLearned": "(2) Basic"
     },
     {
         "name": "Raise Guard",
@@ -101,7 +101,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Soul Link",
@@ -114,7 +114,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Specialized Armory",
@@ -127,7 +127,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Defense Protocol",
@@ -140,7 +140,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Fire Capacitor",
@@ -153,7 +153,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Frost Capacitor",
@@ -166,7 +166,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Lightning Capacitor",
@@ -179,7 +179,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Project Aura",
@@ -192,7 +192,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Reinforced Armor",
@@ -205,7 +205,7 @@
         "healthIncrease": "PHY",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Sentry Protocol",
@@ -218,7 +218,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Size-Up Golem",
@@ -231,7 +231,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Swift Golem",
@@ -244,7 +244,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "(1) Land",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Soul Channel Spell",
@@ -257,7 +257,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Tail Strike",
@@ -270,7 +270,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Upgraded Components",
@@ -283,7 +283,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Advanced Programmed Tactics",
@@ -296,7 +296,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": "(2) Advanced"
+        "techniquesLearned": "(2) Advanced"
     },
     {
         "name": "Battlefield Stomp",
@@ -309,7 +309,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Greater Elemental Ward",
@@ -322,7 +322,7 @@
         "healthIncrease": "",
         "resistances": "(6) Elemental",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Capacitor Upcharge",
@@ -335,7 +335,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Perfected Spell Channeling",
@@ -348,7 +348,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "War Walker",
@@ -361,7 +361,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": ""
+        "techniquesLearned": ""
     },
     {
         "name": "Calculating Golem",
@@ -374,7 +374,7 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "",
-        "techniques": "(2) Complex"
+        "techniquesLearned": "(2) Complex"
     },
     {
         "name": "Winged Golem",
@@ -387,6 +387,6 @@
         "healthIncrease": "",
         "resistances": "",
         "speeds": "(5) Fly",
-        "techniques": ""
+        "techniquesLearned": ""
     }
 ]

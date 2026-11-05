@@ -280,6 +280,20 @@
         "techniqueRank": ""
     },
     {
+        "name": "Covering Strike",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "With an attack you give an ally an oppertunity to escape from an enemy.\nMake a melee Strike. On a hit, an ally adjecant to creature can use its reaction to Stride away from the creature. \nThe creature attacked has disadvantage on Reactive Strikes against this movement.",
+        "traits": "Technique, Tactical",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Advanced"
+    },
+    {
         "name": "Crash of the Titan",
         "actions": "2",
         "trigger": "You are holding a melee weapon that does bludgeoning damage",
