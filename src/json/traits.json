@@ -52,6 +52,32 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Armor",
+        "appliesTo": "Progression",
+        "flavor": "Armor may limit mana recovery, but having non magical protection is very useful.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
+        "name": "Aspect",
+        "appliesTo": "Progression",
+        "flavor": "The eight elemental aspects are what makes up most spells. ",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Attack",
         "appliesTo": "Spells, Actions",
         "flavor": "",
@@ -66,7 +92,7 @@
     },
     {
         "name": "Attunement",
-        "appliesTo": "Actions",
+        "appliesTo": "Actions, Progression",
         "flavor": "",
         "effect": "An attunement action uses your innate connection to an aspect of magic and can only be used by creatures with an attunement.",
         "specialAction": "",
@@ -79,8 +105,8 @@
     },
     {
         "name": "Aura",
-        "appliesTo": "Actions",
-        "flavor": "This action involves the user's aura.",
+        "appliesTo": "Actions, Progression",
+        "flavor": "Aura's are magical fields created by mana wells from living creatures.",
         "effect": "Golems and other creatures without a Soul or a Mana Well can't take Aura actions.",
         "specialAction": "",
         "modifiable": "",
@@ -105,7 +131,7 @@
     },
     {
         "name": "Blade Art",
-        "appliesTo": "Actions",
+        "appliesTo": "Actions, Progression",
         "flavor": "Blade Arts are attacks that break the limits of the mundane.",
         "effect": "Blade Arts are not spells and are not affected by modifiers that affect spells. They are magical effects, and they cost mana to use.",
         "specialAction": "",
@@ -131,7 +157,7 @@
     },
     {
         "name": "Brawling",
-        "appliesTo": "Actions",
+        "appliesTo": "Actions, Progression",
         "flavor": "",
         "effect": "You can't attempt Brawling actions on creatures more than one size larger than you.\nIf you attempt a Brawling action on a creature one size larger than you, it gets a +4 bonus on its Save.\nIf you attempt a Brawling action on a smaller creature, you get a +1 bonus for each size it is smaller than you.",
         "specialAction": "",
@@ -172,7 +198,7 @@
         "name": "Conjured Weapon",
         "appliesTo": "Spells",
         "flavor": "The spell creates a weapon out of magic that you can use while you maintain the spell.",
-        "effect": "Your proffiency with a conjure weapon equals your proffiency with the spell or the weapon group of conjured weapons, whichever is higher.",
+        "effect": "Your proficiency with a conjure weapon equals your proficiency with the spell or the weapon group of conjured weapons, whichever is higher.",
         "specialAction": "",
         "modifiable": "",
         "attackStat": "",
@@ -325,9 +351,22 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Gadgets",
+        "appliesTo": "Progression",
+        "flavor": "Gadgets are small magical devices that can do all manner of things.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Golem",
-        "appliesTo": "Actions",
-        "flavor": "",
+        "appliesTo": "Actions, Progression",
+        "flavor": "Golems are advanced constructs powered by mana. Golems aren't living creatures, and don't have souls or mana wells.",
         "effect": "Actions with the golem trait can only be taken by golems",
         "specialAction": "",
         "modifiable": "",
@@ -442,6 +481,19 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Lore",
+        "appliesTo": "Progression",
+        "flavor": "Lore skills are specialized skills for niche topics.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Loud",
         "appliesTo": "Weapons",
         "flavor": "",
@@ -471,6 +523,19 @@
         "name": "Mana",
         "appliesTo": "Actions",
         "flavor": "",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
+        "name": "Mana Threads",
+        "appliesTo": "Progression",
+        "flavor": "Mana threads are thin lines of of mana you can connect to creatures and objects, which you can channel mana and cast spells through.",
         "effect": "",
         "specialAction": "",
         "modifiable": "",
@@ -637,6 +702,32 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Runeguns",
+        "appliesTo": "Progression, Weapons",
+        "flavor": "Runeguns use acceleration runes to propel bullets to high speeds.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
+        "name": "Save",
+        "appliesTo": "Progression",
+        "flavor": "Saving throws are how you dodge or resist threats.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Sensing",
         "appliesTo": "Spells",
         "flavor": "The spell helps the caster detect creatures or objects.",
@@ -702,6 +793,19 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Spellbreaking",
+        "appliesTo": "Progression",
+        "flavor": "Spellbreaking is the art of breaking spells before they are cast, disrupting the spellshaping.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Spellcasting",
         "appliesTo": "Actions",
         "flavor": "This action involves casting a spell, and making a Spellshaping check.",
@@ -729,7 +833,7 @@
     },
     {
         "name": "Stance",
-        "appliesTo": "Actions",
+        "appliesTo": "Actions, Progression",
         "flavor": "",
         "effect": "A stance is a style of fighting that stays active until you are knocked unconscious, you no longer meet its requirements, or you enter a new stance.",
         "specialAction": "",
@@ -768,7 +872,7 @@
     },
     {
         "name": "Tactical",
-        "appliesTo": "Actions",
+        "appliesTo": "Actions, Progression",
         "flavor": "",
         "effect": "Tactical actions are based on moving and giving orders to willing allies.\nYour allies must be able to hear or see you and the target or destination of your order.",
         "specialAction": "",
@@ -820,7 +924,7 @@
     },
     {
         "name": "Technique",
-        "appliesTo": "Actions",
+        "appliesTo": "Actions, Progression",
         "flavor": "Technique actions involve skilled maneuvers in combat.",
         "effect": "",
         "specialAction": "",
@@ -916,6 +1020,19 @@
         "effect": "While attacking with this weapon you have a -3 penalty if the target is within X tiles",
         "specialAction": "",
         "modifiable": "Yes",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
+        "name": "Weapon",
+        "appliesTo": "Progression",
+        "flavor": "Spells don't always cut it, mixing it up with weaponry makes you more versatile.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
         "attackStat": "",
         "damageStat": "",
         "MAPChange": "",

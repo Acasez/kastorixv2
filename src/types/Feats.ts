@@ -2,6 +2,7 @@ import type { Action } from "./Action";
 import type { Resistance } from "./DamageTypes";
 import type { Species } from "./Species";
 import type { Speed } from "./SpeedTypes";
+import type { Trait } from "./Trait";
 
 export type Background = {
   name: string;
@@ -11,6 +12,7 @@ export type Background = {
 
 export type GeneralFeat = {
   name: string;
+  traits: Trait[];
   description: string;
   unlockedActions: Action[];
   techniques: Action[];
@@ -29,6 +31,7 @@ export type GeneralFeat = {
 
 export type ArcaneFeat = {
   name: string;
+  traits: Trait[];
   description: string;
   unlockedActions: Action[];
   prerequisites: string;
@@ -43,6 +46,7 @@ export type ArcaneFeat = {
 
 export type Advantage = {
   name: string;
+  traits: Trait[];
   description: string;
   unlockedActions: Action[];
   prerequisites: string;

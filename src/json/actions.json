@@ -196,6 +196,20 @@
         "techniqueRank": ""
     },
     {
+        "name": "Catch Projectile",
+        "actions": "Reaction",
+        "trigger": "You have a hand free and are forced to make Reflex save against a smaller or tiny non-magical projectile.",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "Attempt to catch the projectile.\nMake a Sleight of Hand against it, instead of a Reflex saving throw.\nOn a success you catch the projectile.",
+        "traits": "Skill, Defensive, Technique",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Advanced"
+    },
+    {
         "name": "Charge",
         "actions": "2",
         "trigger": "",
@@ -530,6 +544,20 @@
         "sourceType": "Arcane Feat",
         "source": "Extend Aura",
         "techniqueRank": ""
+    },
+    {
+        "name": "Fan of Knives",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "2",
+        "description": "Throw a burst of light weapons in a cone.\nChoose up to five creatures you can see in a 6 tile cone.\nMake a thrown Strike against each using weapons with the Light and Thrown traits that you are holding or have in quick access slots.\nYour multiple attack penalty increases after all attacks are done.",
+        "traits": "Technique",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Complex"
     },
     {
         "name": "Fan The Hammer",
@@ -910,6 +938,20 @@
         "techniqueRank": "Simple"
     },
     {
+        "name": "Magazine Reload",
+        "actions": "2",
+        "trigger": "",
+        "requirement": "You are holding your runegun with the Magazine trait",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "Reload all ammo in your magazine.",
+        "traits": "",
+        "skill": "",
+        "sourceType": "Runegun Upgrade",
+        "source": "Magazine Reload",
+        "techniqueRank": ""
+    },
+    {
         "name": "Measured Strike",
         "actions": "1",
         "trigger": "",
@@ -1076,6 +1118,20 @@
         "sourceType": "Technique",
         "source": "",
         "techniqueRank": "Advanced"
+    },
+    {
+        "name": "Push Beyond",
+        "actions": "Free",
+        "trigger": "You just made a D20 roll",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "Take level of exhaustion, then reroll the D20 roll. \nYou must use the new roll, even if its worse. \nYou can only use Push Beyond once per turn.",
+        "traits": "",
+        "skill": "",
+        "sourceType": "Base",
+        "source": "",
+        "techniqueRank": ""
     },
     {
         "name": "Protect Ally",

@@ -5,10 +5,12 @@ import { lookup, lookupOne } from "../utils/lookupTypes";
 import { parseResistances, parseSpeeds } from "../utils/parseNamedUtils";
 import { parseUnlocks } from "../utils/parseUnlocks";
 import { lookupActions } from "./actions";
+import { lookupTraits } from "./traits";
 
 export const generalFeats: GeneralFeat[] = rawGeneralFeats.map((raw) => {
   return {
     ...raw,
+    traits: lookupTraits(raw.traits),
     unlockedActions: lookupActions(raw.unlockedActions),
     techniques: lookupActions(raw.techniques),
     level: Number(raw.level),

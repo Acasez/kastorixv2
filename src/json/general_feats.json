@@ -1,7 +1,7 @@
 [
     {
         "name": "Academic",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You are learned in many scholarly matters.\nYour proficiency level in three of Arcana, Crafting, History, Nature, Society or a Lore skill increases (max Expert).",
         "unlockedActions": "",
         "techniques": "",
@@ -19,7 +19,7 @@
     },
     {
         "name": "Alert",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "With a watchful eye you are ready for danger.\nYour proficiency level in Perception increases (max Expert).\nYou can choose to roll initiative with your Perception score instead of your DEX.",
         "unlockedActions": "",
         "techniques": "",
@@ -55,7 +55,7 @@
     },
     {
         "name": "Army Training",
-        "traits": "Weapons",
+        "traits": "Weapon",
         "description": "You have served in one of the armies, and trained with its equipment.\nYou become trained in Light Armor and two weapon groups depending on the army:\nDraconic Legions. Polearms and Runeguns.\nThezan Armies. Swords and Runeguns.\nSpellshield Formations. Shields and Swords.\nEl-Shavrian Armies. Swords and Crossbows.\nYirte Militias. Bows and Knives.",
         "unlockedActions": "",
         "techniques": "",
@@ -73,7 +73,7 @@
     },
     {
         "name": "Athlete",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You've trained your body.\nIncrease the distance you can move without making a check when you take the Leap or High Jump action by 2 tiles.\nYour proficiency level in Athletics or Acrobatics increases (max Expert). ",
         "unlockedActions": "",
         "techniques": "",
@@ -91,7 +91,7 @@
     },
     {
         "name": "Battlefield Medic",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You've trained to practice medicine even in the heat of combat.\nYour proficiency level in medicine or athletics increases (max Expert). \nYou can spend a focus point to take the Treat Wounds action as a single action.",
         "unlockedActions": "",
         "techniques": "",
@@ -127,7 +127,7 @@
     },
     {
         "name": "Combat Training",
-        "traits": "Saves, Weapons",
+        "traits": "Save, Weapon",
         "description": "You have seen combat or trained in an army.\nYour proficiency level in Fortitude saves increases (max Trained).\nYou become trained in one weapon group of your choice.",
         "unlockedActions": "",
         "techniques": "",
@@ -163,7 +163,7 @@
     },
     {
         "name": "Defensive Training",
-        "traits": "Saves",
+        "traits": "Save",
         "description": "You've trained your defense.\nYour proficiency level in one type of saving throws increases (max Trained). \nYou may choose this feat multiple times.",
         "unlockedActions": "",
         "techniques": "",
@@ -199,7 +199,7 @@
     },
     {
         "name": "Encouraging Words",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You may attempt to shake your allies out of fright.\nYou have the Snap Out of It action\nYour proficiency level in Persuasion increases (max Expert). ",
         "unlockedActions": "Snap out of it",
         "techniques": "",
@@ -253,7 +253,7 @@
     },
     {
         "name": "Inspiring Leader",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You have a way with words and can inspire those around you.\nYou can use the Inspire Courage action once per day.\nYour proficiency level in Persuasion or Warfare Lore increases (max Expert).",
         "unlockedActions": "Inspire Courage",
         "techniques": "",
@@ -289,7 +289,7 @@
     },
     {
         "name": "Linguist",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You know how to speak with people and master any language you come across.\nLearn two extra languages.\nYou have advantage on checks to decipher languages.\nYour proficiency level in Society or Persuasion increases (max Expert).",
         "unlockedActions": "",
         "techniques": "",
@@ -325,7 +325,7 @@
     },
     {
         "name": "Marksman",
-        "traits": "",
+        "traits": "Technique",
         "description": "You've trained in the art of aiming and shooting. \nYou learn the Aim technique.\nYou don't take a penalty when attacking with runeguns or crossbows while prone.",
         "unlockedActions": "",
         "techniques": "Aim",
@@ -343,7 +343,7 @@
     },
     {
         "name": "Martial Arts Training",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You know how to fight unarmed, from time spent scrapping or formal martial arts training.\nYou become trained with unarmed attacks.\nYour unarmed attacks use a one-step-larger die (1d2 → 1d4 → 1d6 → 1d8).\nYour proficiency level in Brawling increases one step (max Expert).",
         "unlockedActions": "",
         "techniques": "",
@@ -379,7 +379,7 @@
     },
     {
         "name": "Nerves of Steel",
-        "traits": "Saves",
+        "traits": "Save",
         "description": "You let nothing scare you.\nYour proficiency level in Will saves increases (max Trained).\nYou have advantage on Will saves against fear effects.",
         "unlockedActions": "",
         "techniques": "",
@@ -415,7 +415,7 @@
     },
     {
         "name": "Quick Witted",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You're good at quickly coming up with comebacks and retorts.\nIf another creature fails to intimidate or persuade you, you may intimidate or persuade them as a reaction.\nYour proficiency level in Intimidation or Persuasion increases (max Expert).",
         "unlockedActions": "",
         "techniques": "",
@@ -433,7 +433,7 @@
     },
     {
         "name": "Quip",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You've learned to banter and quip in the middle of battle to distract your enemies.\nYou have the Quip action.\nYour proficiency level in Persuasion increases (max Expert).",
         "unlockedActions": "Quip",
         "techniques": "",
@@ -451,7 +451,7 @@
     },
     {
         "name": "Skilled",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You have practiced three skills of your choice.\nYour proficiency level in the three skills increases (max Expert).\nYou may choose this feat multiple times.",
         "unlockedActions": "",
         "techniques": "",
@@ -469,7 +469,7 @@
     },
     {
         "name": "Sneaky",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You can move silently and hide in shadows.\nWhen sneaking, you can move at full speed while remaining in stealth.\nYour proficiency level in the Stealth increases (max Expert).",
         "unlockedActions": "",
         "techniques": "",
@@ -487,7 +487,7 @@
     },
     {
         "name": "Staff Training",
-        "traits": "Weapons",
+        "traits": "Weapon",
         "description": "You have trained with staves, a traditional weapon for mages.\nYou are trained with the staff weapon group.\nYou can turn wood into a battlestaff or longstaff during a short rest.\nIf you have the Shape Metal spell you can use it to create a battlestaff as a three-action activity.",
         "unlockedActions": "",
         "techniques": "",
@@ -541,7 +541,7 @@
     },
     {
         "name": "Tactical Combatant",
-        "traits": "",
+        "traits": "Tactical, Technique",
         "description": "You can make the best of the heat of combat.\nYour proficiency level in Warfare Lore increases (max Expert).\nYou have the Combat Assessment technique.",
         "unlockedActions": "",
         "techniques": "Combat Assessment",
@@ -595,7 +595,7 @@
     },
     {
         "name": "Weapons Training",
-        "traits": "Weapons",
+        "traits": "Weapon",
         "description": "You have trained in a variety of weapons.\nBecome trained in two weapon groups of your choice.\nInstead of picking a weapon group you may pick all Simple Weapons or a single Advanced Weapon.\nYou may choose this feat multiple times.",
         "unlockedActions": "",
         "techniques": "",
@@ -631,7 +631,7 @@
     },
     {
         "name": "You're Next",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You know the perfect line for when you defeat your foes.\nWhen you kill or defeat a foe you may use your reaction to use Intimidate.\nYour proficiency level in Intimidation increases (max Expert).",
         "unlockedActions": "",
         "techniques": "",
@@ -667,7 +667,7 @@
     },
     {
         "name": "Bob and Weave",
-        "traits": "Saves",
+        "traits": "Save",
         "description": "You've learned how to dodge blows in the thick of it.\nYour proficiency level in Reflex saving throws increases (max Trained).\nWhen you hit a creature with an unarmed strike, you gain a +1 bonus to saving throws against them until the start of your next turn.",
         "unlockedActions": "",
         "techniques": "",
@@ -685,7 +685,7 @@
     },
     {
         "name": "Emergency Aura Block",
-        "traits": "",
+        "traits": "Aura",
         "description": "Your experience with danger allows you to shield yourself with your aura, even before you're aware of the threat.\nOnce per hour you may Aura Block as a free action.",
         "unlockedActions": "",
         "techniques": "",
@@ -811,7 +811,7 @@
     },
     {
         "name": "Always Ready",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You are always ready.\nWhen you roll initiative and aren't surprised, you may add your INT or WIL to your roll.\nYour proficiency level in Perception or Insight increases (max Master).",
         "unlockedActions": "",
         "techniques": "",
@@ -829,7 +829,7 @@
     },
     {
         "name": "Commanding Presence",
-        "traits": "Saves",
+        "traits": "Save",
         "description": "Your strong mind steadies your allies.\nYour proficiency level in Will saves increases (max Expert).\nAllied creatures within 6 tiles have a +1 bonus to their Will saves.",
         "unlockedActions": "",
         "techniques": "",
@@ -847,7 +847,7 @@
     },
     {
         "name": "Evasion Expertise",
-        "traits": "Saves",
+        "traits": "Save",
         "description": "You know how to evade even wide area attacks.\nYour proficiency level in Reflex saves increases (max Expert).\nWhen you get a success on a Reflex save, you may use your reaction to turn it into a critical success.",
         "unlockedActions": "",
         "techniques": "",
@@ -865,7 +865,7 @@
     },
     {
         "name": "Expert Brawler",
-        "traits": "Skills, Weapons",
+        "traits": "Skill, Technique, Weapon",
         "description": "Brawling comes to you naturally.\nYour proficiency level in Brawling increases (max Expert).\nYour proficiency level in unarmed attacks increases (max Expert).\nYou learn two simple or advanced techniques with the Brawling trait.",
         "unlockedActions": "",
         "techniques": "",
@@ -919,7 +919,7 @@
     },
     {
         "name": "Martial Expertise",
-        "traits": "Weapons",
+        "traits": "Technique, Weapon",
         "description": "Your martial experience has only increased with time.\nYour proficiency level in two weapon groups increases (max Expert).\nYou may learn a simple or advanced technique instead of picking a weapon group.\nYou may choose this feat multiple times.",
         "unlockedActions": "",
         "techniques": "",
@@ -955,7 +955,7 @@
     },
     {
         "name": "Perfect Condition",
-        "traits": "",
+        "traits": "Save",
         "description": "You always keep your body in a healthy state.\nIncrease your health by your PHY.\nYour proficiency level in Fortitude saving throws increases (max Expert).",
         "unlockedActions": "",
         "techniques": "",
@@ -973,7 +973,7 @@
     },
     {
         "name": "Rolling Landing",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You can land on your feet like a cat.\nYou learn the Cat Fall reaction.\nYour proficiency level in Acrobatics increases (max Master).",
         "unlockedActions": "Cat Fall",
         "techniques": "",
@@ -1009,7 +1009,7 @@
     },
     {
         "name": "Sharpshooter",
-        "traits": "",
+        "traits": "Weapon",
         "description": "You're an expert ranged combatant.\nYour proficiency level in the Bows, Crossbows or Runegun weapon groups increases (max Expert).\nYou learn the Sharpshooter's Stance action.",
         "unlockedActions": "Sharpshooter's Stance",
         "techniques": "",
@@ -1027,7 +1027,7 @@
     },
     {
         "name": "Spot Weak Point",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "Your knowlegde in medicine allows you to spot weak points on creatures.\nYou have the Spot Weak Point action.\nYour proficiency level in Medicine increases (max Master).",
         "unlockedActions": "Spot Weak Point",
         "techniques": "",
@@ -1045,7 +1045,7 @@
     },
     {
         "name": "Tactician",
-        "traits": "",
+        "traits": "Tactical, Technique",
         "description": "You lead with strategic insight in combat encounters.\nWhen you roll initiative you may swap your place in initiative with a willing ally.\nYou learn two simple or advanced techniques with the Tactical trait.",
         "unlockedActions": "",
         "techniques": "",
@@ -1063,7 +1063,7 @@
     },
     {
         "name": "Titan Grappler",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "You've grappled with bigger monsters.\nYour proficiency level in Brawling increases (max Master).\nYou count as one size bigger when determining penalties and bonuses from grappling.",
         "unlockedActions": "",
         "techniques": "",
@@ -1081,7 +1081,7 @@
     },
     {
         "name": "Battlefield Awareness",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "Taking you off guard is harder than most.\nYour proficiency level in Perception increases (max Master).\nWhile off-guard, you reduce the penalty by 1.",
         "unlockedActions": "",
         "techniques": "",
@@ -1117,7 +1117,7 @@
     },
     {
         "name": "Flash Of Genius",
-        "traits": "Skills",
+        "traits": "Skill",
         "description": "Your mind works at a greater speed.\nOnce per turn you may spend a focus point to reduce action cost of an action with the Mental trait by 1.\nYour proficiency level in Arcana, Nature, History or a Lore Skill increases (max Master).",
         "unlockedActions": "",
         "techniques": "",
@@ -1189,7 +1189,7 @@
     },
     {
         "name": "Shield Specialization",
-        "traits": "Weapons",
+        "traits": "Technique, Weapon",
         "description": "You know how to use shields to their fullest extent.\nYour proficiency level with shields is Expert.\nWhile you are holding a buckler you may cast spells as normal with that hand.\nYou learn two simple or advanced techniques with the Defensive trait.",
         "unlockedActions": "",
         "techniques": "",
@@ -1243,7 +1243,7 @@
     },
     {
         "name": "Versatile Wielder",
-        "traits": "Weapons",
+        "traits": "Weapon",
         "description": "You're ready to fight with whatever weapon comes your way.\nYour proficiency level with all weapons and improvised attacks is Expert.",
         "unlockedActions": "",
         "techniques": "",
@@ -1260,12 +1260,12 @@
         "focusPoints": ""
     },
     {
-        "name": "Aspect Infusion",
+        "name": "Bloodthirsty",
         "traits": "",
-        "description": "Your connection to an aspect has changed you physically and provided you with some elemental abilities.\nGain a bonus depending on the aspect.\nIt requires 3 mana per hour.",
+        "description": "You hunger for the thrill of battle.\nThe first time each turn you get a critical hit with a melee Strike, gain 1 focus point.",
         "unlockedActions": "",
         "techniques": "",
-        "prerequisites": "[Attunement] or [Pseudo-Attunement]",
+        "prerequisites": "",
         "level": "10",
         "repeatable": "",
         "unlockedFeats": "",
@@ -1273,13 +1273,13 @@
         "resistances": "",
         "techniquesLearned": "",
         "health": "",
-        "choice": "Aspects",
+        "choice": "",
         "quickAccessSlots": "",
         "focusPoints": ""
     },
     {
         "name": "Instinctive Aura Block",
-        "traits": "",
+        "traits": "Aura",
         "description": "Using your aura to shield yourself comes naturally to you after this many battles.\nOnce per turn you may Aura Block as a free action.",
         "unlockedActions": "",
         "techniques": "",
@@ -1315,7 +1315,7 @@
     },
     {
         "name": "Weapon Master",
-        "traits": "Weapons",
+        "traits": "Technique, Weapon",
         "description": "Mastery at arms.\nYour proficiency level in a weapon group increases (max Master).\nYou learn two simple, advanced or complex techniques.\nYou may choose this feat multiple times.",
         "unlockedActions": "",
         "techniques": "",
@@ -1333,7 +1333,7 @@
     },
     {
         "name": "Blade Artist",
-        "traits": "",
+        "traits": "Blade Art",
         "description": "You've learned to do the impossible with your weapon.\nYou learn one Blade Art technique.\nIncrease your focus pool by 1.",
         "unlockedActions": "",
         "techniques": "",
@@ -1348,24 +1348,6 @@
         "choice": "",
         "quickAccessSlots": "",
         "focusPoints": "1"
-    },
-    {
-        "name": "Bloodthirsty",
-        "traits": "",
-        "description": "You hunger for the thrill of battle.\nThe first time each turn you get a critical hit with a melee Strike, gain 1 focus point.",
-        "unlockedActions": "",
-        "techniques": "",
-        "prerequisites": "",
-        "level": "12",
-        "repeatable": "",
-        "unlockedFeats": "",
-        "speeds": "",
-        "resistances": "",
-        "techniquesLearned": "",
-        "health": "",
-        "choice": "",
-        "quickAccessSlots": "",
-        "focusPoints": ""
     },
     {
         "name": "Parrying Master",
@@ -1405,7 +1387,7 @@
     },
     {
         "name": "Mythic Champion",
-        "traits": "",
+        "traits": "Blade Art",
         "description": "Your training and experience allows you to repeatedly go beyond normal limits.\nBlade Arts cost one less focus point for you.\nYou learn two more Blade Art techniques.",
         "unlockedActions": "",
         "techniques": "",

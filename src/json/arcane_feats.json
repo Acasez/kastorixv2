@@ -1,6 +1,7 @@
 [
     {
         "name": "Alchemy Training",
+        "traits": "Alchemy",
         "description": "You know your way around brewing potions and can do the simple types by heart.\nYour proficiency level in Crafting or Alchemy Lore increases (max Expert).\nEach morning you can make two temporary potions.\nFor each potion you prepare you lock away 1 mana from your mana well for the day, and the potions expire at the end of the day.\nThe potions can be Lesser Health Potions, Lesser Mana Potions or Lesser Elemental Resistance Potions.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -14,6 +15,7 @@
     },
     {
         "name": "Apprentice Spellcraft",
+        "traits": "",
         "description": "You've studied spells here and there, picking up any that seemed interesting.\nYou learn 2 + your INT apprentice spells of your choosing.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -27,6 +29,7 @@
     },
     {
         "name": "Attunement Shortcut",
+        "traits": "Attunement",
         "description": "Your attunement lets you learn spells that would normally be too advanced for you.\nLearn two Adept spells from your attunement.\nBefore level 4, you need to spend a focus point when you cast these spells due to their complexity.",
         "unlockedActions": "",
         "prerequisites": "[Attunement]",
@@ -40,6 +43,7 @@
     },
     {
         "name": "Aura Hardening",
+        "traits": "Aura",
         "description": "Your aura is tougher and you are trained in using it for defense.\nWhen you use Aura Block, reduce the damage by your WIL.\nYour proficiency level in Will saves increases (max Trained).",
         "unlockedActions": "",
         "prerequisites": "",
@@ -53,6 +57,7 @@
     },
     {
         "name": "Aura Reinforcement",
+        "traits": "Aura",
         "description": "You have trained your aura and can reinforce it faster.\nWhen you use the Reinforce Aura action you can spend mana up to 3 times your level + your WIL.\nYou can also raise and lower your aura as a single action.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -66,6 +71,7 @@
     },
     {
         "name": "Basic Elemental Magic",
+        "traits": "Attunement",
         "description": "Your skills with one aspect of magic have grown.\nChoose one aspect and learn two apprentice rank spells from that aspect.\nYou gain a bonus depending on the aspect.\nYou can choose this feat multiple times, once for each aspect.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -79,6 +85,7 @@
     },
     {
         "name": "Focused Spellshaping",
+        "traits": "",
         "description": "You've trained with complex spells that take longer to cast.\nYou have a +1 bonus to spellshaping checks when casting spells that cost 3 actions or more.\nLearn two apprentice spells that cost 3 actions or more.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -92,6 +99,7 @@
     },
     {
         "name": "Gadget Crafting",
+        "traits": "Gadget",
         "description": "You've trained to craft gadgets that provide different benefits.\nYour proficiency level in Crafting increases (max Expert).\nEach morning you can make two temporary gadgets.\nThe gadgets break apart after the day and only work for you (unless specified).\nYou can choose this feat multiple times, letting you craft two more gadgets each time.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -105,6 +113,7 @@
     },
     {
         "name": "Knowledge Is Power",
+        "traits": "",
         "description": "Knowing how a spell works allows you to move to its edges and weak points.\nWhen you make saving throws against spells you know, or spells you successfully identify, you may add half your INT to the saving throw.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -118,6 +127,7 @@
     },
     {
         "name": "Metamagic Novice",
+        "traits": "",
         "description": "You've studied metamagics, ways of modifying spells you cast.\nYou learn 2 + your INT metamagics.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -131,6 +141,7 @@
     },
     {
         "name": "Monster Hunting",
+        "traits": "",
         "description": "You are trained in Monster Hunting Lore, which can be used to Recall Knowledge against monsters and elementals.\nWhen you succeed on a Recall Knowledge check with Monster Hunting Lore, the creature takes a -2 penalty to the next save you impose on it.\nYou learn the Combat Assessment technique.",
         "unlockedActions": "Combat Assessment",
         "prerequisites": "",
@@ -144,6 +155,7 @@
     },
     {
         "name": "Physical Sort",
+        "traits": "",
         "description": "You have forgone some of your arcane training to focus on the practical. \nGain one level 1 General Feats.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -157,6 +169,7 @@
     },
     {
         "name": "Runed Ammo",
+        "traits": "",
         "description": "You can inscribe runes in mundane ammunition.\nYour proficiency level with Crafting increases (max Expert).\nEach morning you can inscribe 5 pieces of mundane ammunition — arrows, crossbow bolts, runegun ammo or sling stones — with magic.\nYou can make them into:\nDisruptor Ammo - If it hits a target's aura, their aura gains 2 weakness to all damage until the end of your next turn.\nTracer Rounds - On a hit, the target glows. It has a -3 penalty to Stealth checks until the end of your next turn.\nIncendiary Ammo - The attack deals an extra 1d4 fire damage, but reduces the weapon damage die by 2 (1d8 to 1d6 for example).\nHeavy Rounds - On a hit the target becomes off-guard 1 until the end of your next turn. You have -1 range when attacking with these.\nYou can give the ammo to others, though the runes fade at the end of the day.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -170,6 +183,7 @@
     },
     {
         "name": "Siphon Mana",
+        "traits": "",
         "description": "You've learned to reuse magic from failed spells.\nYou learn the Siphon Mana action, which you can use if your last action was a failed spellshaping check.\nYour proficiency level in Channeling or Mana Sensing increases (max Expert).",
         "unlockedActions": "Siphon Mana",
         "prerequisites": "",
@@ -183,6 +197,7 @@
     },
     {
         "name": "Spellblade",
+        "traits": "",
         "description": "You are trained in using magic and weaponry together.\nWhen a creature fails or critically fails a save against one of your spells, it takes a -2 penalty to saves against your strikes for the rest of the turn.\nWhen you hit a creature with a Strike, it takes a -2 penalty to saves against your spells for the rest of the turn.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -196,6 +211,7 @@
     },
     {
         "name": "Spellcraft Scholar",
+        "traits": "",
         "description": "A scholar in magic, you don't just know how to cast spells, but why they work.\nYour proficiency level in Arcana increases (max Expert).\nYou have a +2 bonus to identify spells.\nLearn one Apprentice Spell.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -209,6 +225,7 @@
     },
     {
         "name": "Studied Ahead",
+        "traits": "",
         "description": "You have studied ahead to get to the cool spells.\nLearn two Adept spells without the Complex trait.\nBefore level 4, you need to spend a focus point when you cast these spells due to their complexity.",
         "unlockedActions": "",
         "prerequisites": "INT 3 or higher",
@@ -222,6 +239,7 @@
     },
     {
         "name": "Tools of the Trade",
+        "traits": "",
         "description": "You've learned a few tricks to vary your magic.\nYou learn one apprentice rank spell.\nYou learn one metamagic.\nYour proficiency level with Arcana, Crafting, Channeling, Mana Sensing, Alchemy Lore, Soul Lore or Dimensionalism Lore increases (max Trained).\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -235,6 +253,7 @@
     },
     {
         "name": "Extend Aura",
+        "traits": "Aura",
         "description": "You have learned to protect others with your aura.\nYou have the Extend Aura reaction.",
         "unlockedActions": "Extend Aura",
         "prerequisites": "",
@@ -248,6 +267,7 @@
     },
     {
         "name": "Mana Thread",
+        "traits": "Mana Threads",
         "description": "You've figured out how to draw a thread of mana to a target, allowing you to target them with magic at a range.\nYou have the Draw Mana Thread action.",
         "unlockedActions": "Draw Mana Thread",
         "prerequisites": "Trained in Channeling",
@@ -261,6 +281,7 @@
     },
     {
         "name": "Adept Elemental Magic",
+        "traits": "Aspect",
         "description": "Your experience in one aspect of magic grows.\nChoose one aspect and learn two adept rank spells from that aspect.\nYou become Expert in casting spells of your chosen aspect.\nYou can choose this feat multiple times, once for each aspect.",
         "unlockedActions": "",
         "prerequisites": "[Basic Elemental Magic], for the same aspect",
@@ -274,6 +295,7 @@
     },
     {
         "name": "Adept Spellcraft",
+        "traits": "",
         "description": "Adept spells bring more facets of magic and more potent spells.\nYou learn 2 + your INT adept spells of your choosing.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -287,6 +309,7 @@
     },
     {
         "name": "Armor Artificer",
+        "traits": "",
         "description": "You have constructed an enchanted suit of armor, designed for you specifically.\nYou can choose between Leather Laminar, Half Plate and Full Plate.\nYou are trained in this armor and can ignore its PHY requirements.\nIt has Anti Tampering runes, preventing it from being affected by hostile magic, and can be improved by future feats.\nYour proficiency level in Crafting increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "Trained in Crafting",
@@ -300,6 +323,7 @@
     },
     {
         "name": "Artificer's Weapon",
+        "traits": "",
         "description": "You create a custom weapon powered through artifice.\nIt is a Whip Sword, Powered Hammer or a pair of Impact Gauntlets.\nYou are trained in the weapon.\nIt has Anti Tampering runes, preventing it from being affected by hostile magic, and can be improved by future feats.\nYour proficiency level in Crafting increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "Trained in Crafting",
@@ -313,6 +337,7 @@
     },
     {
         "name": "Combat Mana Threads",
+        "traits": "Mana Threads",
         "description": "Whether with a strike or a spell, you know how to attach mana threads in combat.\nAfter you succeed on an unarmed melee Strike, you can spend an action to attach a mana thread without making a check.\nYou learn the Tracing Spell metamagic.\nYour proficiency level in Channeling increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "[Mana Thread]",
@@ -326,6 +351,7 @@
     },
     {
         "name": "Elemental Aura",
+        "traits": "Aspect, Aura",
         "description": "You've learned to infuse elemental magic into your aura.\nYou learn the Elemental Aura action, which you can use with any aspect you have Basic Elemental Magic for.",
         "unlockedActions": "Elemental Aura",
         "prerequisites": "",
@@ -339,6 +365,7 @@
     },
     {
         "name": "Enhancement Brewer",
+        "traits": "Alchemy",
         "description": "You've learned to make enhancement potions to temporarily enhance your and your allies' abilities.\nYour proficiency level in Crafting or Alchemy Lore increases (max Master).\nYou can make Yeti's Strength, Griffin's Agility, Drake's Cunning and Diratheen's Will potions as temporary potions.",
         "unlockedActions": "",
         "prerequisites": "[Alchemy Training]",
@@ -352,6 +379,7 @@
     },
     {
         "name": "Golem Upgrade",
+        "traits": "Golem",
         "description": "You've tinkered with your golem to upgrade it.\nAdd one golem upgrade to it.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -365,6 +393,7 @@
     },
     {
         "name": "Incanter's Stance",
+        "traits": "",
         "description": "You've learned how to enter a stance where you put all your focus on your magic, ignoring the outside world.\nYou have the Incanter's Stance action.",
         "unlockedActions": "Incanter's Stance",
         "prerequisites": "",
@@ -378,6 +407,7 @@
     },
     {
         "name": "Manafuel Aura",
+        "traits": "Aura",
         "description": "You've learned how to infuse some of the mana from spells into your aura.\nIf you use the Reinforce Aura action after casting a spell, you may add twice the spell's rank worth of mana to your aura for free.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -391,6 +421,7 @@
     },
     {
         "name": "Metamagic Adept",
+        "traits": "Metamagic",
         "description": "Your skills in metamagics have grown, allowing you to use multiple on a single spell.\nYou learn three metamagics of your choice.\nYou may use two metamagics on a single spell.",
         "unlockedActions": "",
         "prerequisites": "[Metamagic Novice]",
@@ -404,6 +435,7 @@
     },
     {
         "name": "Overload Golem",
+        "traits": "Golem",
         "description": "You've learned how to put some extra power into your Golem.\nAt the start of your turn you can choose to give your Golem an action for the turn.\nAfter using this ability your golem takes 1d4 vital damage and is stunned 2 next turn as it overloads the runework.\nYou can also use this ability on other allied golems by making a Golem Lore or Crafting check.",
         "unlockedActions": "",
         "prerequisites": "[Golemcrafter]",
@@ -417,6 +449,7 @@
     },
     {
         "name": "Quick Tinkerer",
+        "traits": "Gadget",
         "description": "You can quickly modify gadgets for when the situation changes.\nYour proficiency level in Crafting increases (max Master).\nIncrease the amount of gadgets you can craft each day by 2.\nYou may spend 1 minute turning one crafted gadget into another gadget.",
         "unlockedActions": "",
         "prerequisites": "[Gadget Crafting]",
@@ -430,6 +463,7 @@
     },
     {
         "name": "Runegun Smith",
+        "traits": "Runegun",
         "description": "You have created a runegun of your own design that you are proficient with and can modify.\nYour proficiency level with Runeguns increases (max Expert).\nIt is a runegun rifle, sharpshot, pistol or cannon.\nIt has an Anti Tampering rune.\nYour proficiency level in Crafting increases (max Expert).",
         "unlockedActions": "",
         "prerequisites": "Trained in Crafting",
@@ -443,6 +477,7 @@
     },
     {
         "name": "Runegun Upgrade",
+        "traits": "Runegun",
         "description": "You've upgraded your Runegun.\nPick a Runegun Upgrade.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "[Runegun Smith]",
@@ -456,6 +491,7 @@
     },
     {
         "name": "Sensing Threads",
+        "traits": "Mana Threads",
         "description": "Through your mana threads you can sense enemies' weaknesses and detect when they are about to cast spells.\nYou can use Channeling to Recall Knowledge on weaknesses and abilities of creatures in your Mana Threads.\nWhen creatures in your Mana Threads cast spells, you have a +1 bonus on saving throws against them.\nYour proficiency level in Channeling increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "[Mana Thread]",
@@ -469,6 +505,7 @@
     },
     {
         "name": "Spellbreaking",
+        "traits": "Spellbreaking",
         "description": "You have studied the art of Spellbreaking, tearing apart spells before they get formed. \nYou learn the Spellbreak reaction.",
         "unlockedActions": "Spellbreak",
         "prerequisites": "Trained in Arcana",
@@ -482,6 +519,7 @@
     },
     {
         "name": "Stabilize Spell",
+        "traits": "",
         "description": "When you fail at spellcasting you can put some extra effort in to stabilize it.\nYou learn the Stabilize Spell reaction.",
         "unlockedActions": "Stabilize Spell",
         "prerequisites": "",
@@ -495,6 +533,7 @@
     },
     {
         "name": "Threaded Spellbreak",
+        "traits": "Mana Threads, Spellbreaking",
         "description": "You can perform Spellbreaking through your mana threads.\nYou can use the Spellbreak reaction from any of your Mana Threads.\nIf the caster of the spell is the target of your thread, you have a +2 bonus to the Spellbreak roll and recover mana equal to the rank of the spell on a successful Spellbreak.",
         "unlockedActions": "",
         "prerequisites": "[Mana Thread], [Spellbreaking]",
@@ -508,6 +547,7 @@
     },
     {
         "name": "Absorb Mana",
+        "traits": "",
         "description": "You have experience sensing and harnessing mana, allowing you to get more mana faster.\nYour proficiency level in Mana Sensing increases (max Master).\nWhen you harness mana you can choose to increase the DC by 5 to gain one more die.\nIf you are Master in Mana Sensing you can increase the DC by 10 to get two more dice, and if you are Legendary you can increase the DC by 15 for three more dice of mana.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -521,6 +561,7 @@
     },
     {
         "name": "Double Runegun",
+        "traits": "Runegun",
         "description": "You've made another runegun.\nYou have another custom Runegun, which can be the same type as your main one or different.\nThey both get upgrades from the Runegun Upgrade feats; those upgrades can be the same or different.",
         "unlockedActions": "",
         "prerequisites": "[Runegun Smith]",
@@ -534,6 +575,7 @@
     },
     {
         "name": "Enchanter",
+        "traits": "",
         "description": "You've trained with spells that enhance your or others' physical abilities.\nYou become Expert in casting spells with the Enhancement trait.\nIf you get a critical success on spellshaping a spell with the Enhancement trait, you recover mana equal to its rank.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -547,6 +589,7 @@
     },
     {
         "name": "Evoker",
+        "traits": "",
         "description": "You've trained with spells that hit a wide area.\nYour proficiency level in spells with the Area trait increases (max Expert).\nLearn the Expand Spell metamagic, or another level 1 metamagic if you already know that one.\nThe Expand Spell metamagic doesn't count to the limits of metamagics you can use when casting Area spells.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -560,6 +603,7 @@
     },
     {
         "name": "Expand Aura",
+        "traits": "Aura",
         "description": "You can now expand your aura to protect your allies from a distance. \nYou learn the Expand Aura action.",
         "unlockedActions": "Expand Aura",
         "prerequisites": "[Extend Aura]",
@@ -573,6 +617,7 @@
     },
     {
         "name": "Expanded Soulsight",
+        "traits": "",
         "description": "With some practice observing souls, the range you can use your soulsight on expands.\nIncrease the range of your Inspect Soul action to 7 tiles.\nYour proficiency level in Soul Lore increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "[Soulsight]",
@@ -586,6 +631,7 @@
     },
     {
         "name": "Incanter's Flow",
+        "traits": "",
         "description": "Using Incanter's Stance you've figured out how to weave spells into one another.\nWhen you cast a spell in Incanter's Stance and your last action was to cast another spell, you may spend a focus point to reduce its action cost by 1.",
         "unlockedActions": "",
         "prerequisites": "[Incanaters Stance]",
@@ -599,6 +645,7 @@
     },
     {
         "name": "Master Tinker",
+        "traits": "Gadget",
         "description": "You have gadgets for every situation.\nYour proficiency level in Crafting or Arcana increases (max Master).\nIncrease the amount of gadgets you can craft each day by 3.",
         "unlockedActions": "",
         "prerequisites": "[Gadget Crafting]",
@@ -612,6 +659,7 @@
     },
     {
         "name": "Multi-Aspect Mastery",
+        "traits": "Aspect",
         "description": "Your skills extend to all aspects of magic.\nYou count as having the Basic Elemental Magic feat for all aspects of magic.\nLearn 3 Apprentice and 3 Adept rank spells, all from different aspects.",
         "unlockedActions": "",
         "prerequisites": "[Basic Elemental Magic], for two different aspects",
@@ -625,6 +673,7 @@
     },
     {
         "name": "Reactive Spell",
+        "traits": "",
         "description": "You cast spells so quickly you can hit creatures as they move past you.\nYou learn the Reactive Spell reaction",
         "unlockedActions": "Reactive Spell",
         "prerequisites": "",
@@ -638,6 +687,7 @@
     },
     {
         "name": "Reinforce Elemental Aura",
+        "traits": "Aspect, Aura",
         "description": "Using the energy of your spells, you can maintain your elemental aura without effort.\nWhen you use Elemental Aura and cast a spell of the same aspect as the aura, you may Sustain the aura as a free action for no cost.",
         "unlockedActions": "",
         "prerequisites": "[Elemental Aura]",
@@ -651,6 +701,7 @@
     },
     {
         "name": "Remote Activation",
+        "traits": "Mana Threads",
         "description": "You can activate magical devices at range using your mana threads.\nYou can attach mana threads to objects and activate magical devices at range.\nIf you have a mana thread attached to a creature, you can activate gadgets and runeguns they are carrying by making a Channeling roll against 10 + their Crafting.\nYour proficiency level in Crafting or Channeling increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "[Mana Thread]",
@@ -664,6 +715,7 @@
     },
     {
         "name": "Spell Sharpshooter",
+        "traits": "",
         "description": "You're good at spells that target foes at range.\nYou become Expert in casting spells with the Attack trait.\nWhen casting spells with the Targeting trait you increase their range by 3 tiles.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -677,6 +729,7 @@
     },
     {
         "name": "Steal Attuned Spell",
+        "traits": "Attunement",
         "description": "When others attempt to use spells of your attunement, you can take control.\nYou have the Steal Attuned Spell action.",
         "unlockedActions": "Steal Attuned Spell",
         "prerequisites": "[Attunement]",
@@ -690,6 +743,7 @@
     },
     {
         "name": "Compress Spell",
+        "traits": "",
         "description": "Your dimensionalism studies have led to a way to compress spells in \"dimensional bubbles\" and keep them for later.\nYou learn the Compress Spell metamagic, ignoring its normal level requirement.\nYour proficiency level in Arcana or Channeling increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "Trained in Arcana",
@@ -703,6 +757,7 @@
     },
     {
         "name": "Ethereal Threads",
+        "traits": "Mana Threads",
         "description": "Your mana threads are more durable and can go through objects.\nYour mana threads have a max range of 12 tiles and no longer break if the target has full cover, as they phase through matter.\nSolid Adamantium and special wards may still block your threads.\nYour proficiency level in Channeling increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "[Mana Thread]",
@@ -716,6 +771,7 @@
     },
     {
         "name": "Forceful Spellbreaking",
+        "traits": "Spellbreaking",
         "description": "By pouring more mana into the Spellbreaking you've learned to amplify your chances.\nWhen you attempt to break a spell you may spend mana equal to its full cost.\nIf you do, add your WIL to the Spellbreaking check.",
         "unlockedActions": "",
         "prerequisites": "[Spellbreaking]",
@@ -729,6 +785,7 @@
     },
     {
         "name": "Magus Spellcraft",
+        "traits": "",
         "description": "Magus spells bring dimensionalism and soul magic, as well as enough power to serve as staples for battlemages\nYou learn 2 + your INT magus spells of your choosing.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -742,7 +799,8 @@
     },
     {
         "name": "Spellcasting Savant",
-        "description": "Complex spells aren't as complicated as some say. At least for you.\nThe Complex trait only increases the spellshaping DC by 2 for you (instead of 3).\nYou learn 3 complex spells.",
+        "traits": "",
+        "description": "Complex spells aren't as complicated as some say. At least for you.\nThe Complex trait only increases the spellshaping DC by 2 for you (instead of 3).\nYou learn 3 magus spells.",
         "unlockedActions": "",
         "prerequisites": "INT 4 or higher",
         "level": "8",
@@ -755,6 +813,7 @@
     },
     {
         "name": "Teleportation Expertise",
+        "traits": "",
         "description": "You're a master at teleporting yourself and others.\nWhen you cast a spell with the Teleportation trait, increase its range by 2 tiles.\nYour proficiency level in spells with Teleportation increases (max Expert).\nYour proficiency level in Arcana or Dimensionalism Lore increases (max Master)",
         "unlockedActions": "",
         "prerequisites": "Trained in Dimensionalism Lore",
@@ -768,6 +827,7 @@
     },
     {
         "name": "Expert Caster",
+        "traits": "",
         "description": "Your magical expertise makes it easier to cast any spell.\nYour proficiency level with all spells you know is at least Expert.",
         "unlockedActions": "",
         "prerequisites": "INT 3 or higher",
@@ -781,6 +841,7 @@
     },
     {
         "name": "Improved Design",
+        "traits": "",
         "description": "You've improved your golem's skillset.\nAll of its proficiency levels increase (max Expert).\nYour proficiency level in Crafting or Arcana increases (max Master).",
         "unlockedActions": "",
         "prerequisites": "[Golemcrafter]",
@@ -794,6 +855,7 @@
     },
     {
         "name": "Master of Many Magics",
+        "traits": "",
         "description": "You have practiced many types of magic. \nGain three level 4 or lower Arcane Feats.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -807,6 +869,7 @@
     },
     {
         "name": "Rapid Spellbreak",
+        "traits": "",
         "description": "Spellbreaking comes naturally to you, and you do it as swiftly as the wind.\nYou have one additional reaction per round, which you may only use to Spellbreak or Identify Spell.",
         "unlockedActions": "",
         "prerequisites": "[Spellbreaking]",
@@ -820,6 +883,7 @@
     },
     {
         "name": "Strengthened Elemental Aura",
+        "traits": "Aura, Aspect",
         "description": "When you use your Elemental Aura you may strengthen it.\nThis doubles the mana cost to infuse it and sustain it, but increases any resistances it provides by 5 and makes it deal an additional die of damage.",
         "unlockedActions": "",
         "prerequisites": "[Elemental Aura]",
@@ -833,6 +897,7 @@
     },
     {
         "name": "Master Enchanter",
+        "traits": "",
         "description": "Enhancement spells become second nature to you and you can strengthen them to speed up allies.\nYour proficiency level with Enhancement spells increases (max Master).\nCreatures (including you) affected by your Enhancement spells may spend a focus point at the start of their turn to become Hastened 1 for that turn.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -846,6 +911,7 @@
     },
     {
         "name": "Master Evoker",
+        "traits": "",
         "description": "Your spells can devastate all large areas.\nYour proficiency level with Area spells increases (max Master).\nWhen you cast Area spells you may increase the size of their damage dice by 1 (d8 to d10, etc.).",
         "unlockedActions": "",
         "prerequisites": "",
@@ -859,6 +925,7 @@
     },
     {
         "name": "Master Spellslinger",
+        "traits": "",
         "description": "Your spellslinging skills are renowned.\nYour proficiency level with Attack spells increases (max Master).\nAttack spells have the Agile trait for you.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -872,6 +939,7 @@
     },
     {
         "name": "Grand Magus Spellcraft",
+        "traits": "",
         "description": "Grand Magus spells have enough power to devastate cities, and the finesse to transmute living creatures.\nYou learn 2 + your INT grand magus spells of your choosing.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -885,6 +953,7 @@
     },
     {
         "name": "Metamagic Master",
+        "traits": "Metamagic",
         "description": "Modifying spells comes naturally to you.\nYou learn four metamagics of your choice.\nYou may use any amount of metamagics on a single spell, taking a -1 penalty for each one beyond 3.",
         "unlockedActions": "",
         "prerequisites": "[Metamagic Adept]",
@@ -898,6 +967,7 @@
     },
     {
         "name": "Master of Threads",
+        "traits": "Mana Threads",
         "description": "With your mana threads you can ensure no one escapes your spells.\nYou learn the Hold By Thread action.\nYour proficiency level in Channeling increases (max Legendary).",
         "unlockedActions": "Hold By Thread",
         "prerequisites": "[Ethereal Threads]",
@@ -911,6 +981,7 @@
     },
     {
         "name": "Masterwork Golem",
+        "traits": "Golem",
         "description": "Your golem has no imperfections.\nAll of its proficiency levels increase (max Master).\nYour proficiency level in Crafting or Arcana increases (max Legendary).",
         "unlockedActions": "",
         "prerequisites": "[Improved Design]",
@@ -924,6 +995,7 @@
     },
     {
         "name": "Archmage Spellcraft",
+        "traits": "",
         "description": "Archmage spells bring the greatest magic most people see in their lives.\nYou learn 2 + your INT archmage spells of your choosing.\nYou can choose this feat multiple times.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -937,6 +1009,7 @@
     },
     {
         "name": "Detonate Spell",
+        "traits": "Spellbreaking",
         "description": "You do not just disrupt spells, you detonate them.\nWhen you attempt a Spellbreak, you can spend a focus point to attempt to detonate the spell.\nOn a success you detonate the spell in a burst of mana.\nThe caster and adjacent creatures must make a PHY save or take 1d8 unraveling damage per rank of the spell.\nCreatures that fail the save also suffer one level of mana poisoning, or two on a critical failure.\nYou cannot get back any mana or other resources from Spellbreaking when you do this.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -950,6 +1023,7 @@
     },
     {
         "name": "Signature Spell",
+        "traits": "",
         "description": "You've mastered a spell beyond any other.\nYour proficiency level with a spell increases (max Legendary).\nYou may enhance that spell in some way (Talk with your DM, roughly equivalent to upcasting it one level).\nYou may use one extra metamagic when casting that spell.",
         "unlockedActions": "",
         "prerequisites": "",
@@ -963,6 +1037,7 @@
     },
     {
         "name": "Archmage's Versatility",
+        "traits": "",
         "description": "You have a renowned ability to cast spells of different types with masterful precision.\nYour proficiency level with all spells you know is at least Master.",
         "unlockedActions": "",
         "prerequisites": "INT 3 or higher",
@@ -976,6 +1051,7 @@
     },
     {
         "name": "Legendary Evoker",
+        "traits": "",
         "description": "Bring forth devastation.\nYour proficiency level with Area spells increases (max Legendary).\nYou learn the Expand Spell metamagic and can use it without modifying spell DCs.\nYou can spend a focus point to reroll the damage of an Area spell (as many times as you want).",
         "unlockedActions": "",
         "prerequisites": "",
@@ -989,6 +1065,7 @@
     },
     {
         "name": "Legendary Golemsmith",
+        "traits": "Golem",
         "description": "Your golem will be studied for generations.\nAll of its proficiency levels increase (max Legendary).\nYour proficiency level in Crafting or Arcana increases (max Legendary).",
         "unlockedActions": "",
         "prerequisites": "[Masterwork Golem]",

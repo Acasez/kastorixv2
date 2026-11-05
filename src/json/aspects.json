@@ -24,10 +24,10 @@
         "type": "Primal",
         "opposite": "Water",
         "attuneable": "",
-        "basicMagic": "After you cast a fire spell you may increase the amount of damage dice dealt by the spell by one. You take that much damage as Vital damage.",
+        "basicMagic": "After you cast a fire spell you may increase the amount of damage dice dealt by the spell by one.",
         "aura": "Increase the damage dice to d8s",
         "infusion": "You have resistance equal to your level to fire damage and ignore environmental effects based on fire, smoke and heat",
-        "elementalization": "You are immune to fire damage. \nYour unarmed melee attacks deal an additional d6 of fire damage\nYou take a d6 of vital damage if you start your turn with the wet condition, or 2d6 if you are underwater"
+        "elementalization": "You are immune to fire damage. \nYour unarmed melee attacks deal an additional 2d6 of fire damage. \nYou can also do this damage to creatures you are grappling or grappled by.\nYou take a d6 of vital damage if you start your turn with the wet condition, or 2d6 if you are underwater"
     },
     {
         "name": "Water",
@@ -57,7 +57,7 @@
         "basicMagic": "After you cast an air spell you ignore difficult terrain for the rest of the turn",
         "aura": "Gain a +1 bonus to reflex saving throws against ranged attacks",
         "infusion": "When you jump the distance and height you can jump is doubled. You treat difficult terrain from harsh winds as one step less.",
-        "elementalization": "You have a fly speed (hover) of 5"
+        "elementalization": "You have a fly speed (hover) of 7"
     },
     {
         "name": "Metal",
@@ -74,7 +74,7 @@
         "type": "Lesser",
         "opposite": "Metal",
         "attuneable": "",
-        "basicMagic": "After you cast a lightning spell you deal 1d6 lightning damage to the first creature that hits you with a melee attack until the start of the next turn",
+        "basicMagic": "After you cast a lightning spell you deal 1d8 lightning damage to the first creature that hits you with a melee attack until the start of the next turn",
         "aura": "You can spend a focus point to increase the range of the damaging aura to 3 tiles for the turn",
         "infusion": "You have resistance equal to your level to lightning damage. You can choose to add 1d4 lightning damage on unarmed strikes and melee attacks with metal weapons. When you succeed on grapple check you can deal 1d6 lightning  damage",
         "elementalization": "Your permanently Hastened 1. You can only use this action to take Move actions or Strike."
@@ -97,6 +97,6 @@
         "basicMagic": "After you cast an darkness spell, you gain darkvision until the start of your next turn",
         "aura": "Creatures that fail their saving throw are blinded next turn unless they take an action to blink",
         "infusion": "You gain darkvision. You have a +3 bonus to visual stealth checks",
-        "elementalization": "Once per turn you can spend an action to emit a cloud of magical darkness covering adjoining four tiles starting from you. \nYou have +1 movespeed and a +1 bonus to all D20 rolls while in darkness"
+        "elementalization": "Once per turn you can spend an action to emit a cloud of magical darkness covering adjoining five tiles starting from you. \nYou have +1 movespeed and a +1 bonus to all D20 rolls while in darkness"
     }
 ]
