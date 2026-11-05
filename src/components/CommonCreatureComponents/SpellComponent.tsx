@@ -62,9 +62,8 @@ export default function SpellComponent({
             {spell.aspects?.map((a) => a.name).join(", ")}
           </p>
           <p>
-            {spell.traits.map((trait) => (
-              <TraitComponent trait={trait} key={trait.name} />
-            ))}
+            <strong>Traits:</strong>{" "}
+            {spell.traits?.map((a) => a.name).join(", ")}
           </p>
           <p>
             <strong>Range:</strong> {spell.range}
@@ -111,27 +110,38 @@ export default function SpellComponent({
           onRemoveSpell(spell.name);
         }}
         className={
-          "flex items-center gap-1 border border-gray-400 rounded px-2 py-1"
+          "flex flex-col gap-1 border border-gray-400 rounded px-2 py-1"
         }
       >
-        <span>{spell.name}</span>
-        {getActionIcons(spell.actions).map((icon, index) => (
-          <ActionIcon icon={icon} key={`${spell.name}-action-${index}`} />
-        ))}
-        {onProficiencyChange ? (
-          <ProficiencyMarker
-            skillName={spell.name}
-            proficiency={proficiencyTier}
-            onProficiencyChange={onProficiencyChange}
-          />
-        ) : (
-          <ProficiencyMarker skillName={spell.name} defaultTier="Trained" />
-        )}
-        <span>
-          {`(+${
-            baseSpellshapingBonus + getProficiency(proficiencyTier).bonus
-          })`}
-        </span>
+        <div className="flex items-center gap-1">
+          <span>{spell.name}</span>
+          {getActionIcons(spell.actions).map((icon, index) => (
+            <ActionIcon icon={icon} key={`${spell.name}-action-${index}`} />
+          ))}
+          {onProficiencyChange ? (
+            <ProficiencyMarker
+              skillName={spell.name}
+              proficiency={proficiencyTier}
+              onProficiencyChange={onProficiencyChange}
+            />
+          ) : (
+            <ProficiencyMarker skillName={spell.name} defaultTier="Trained" />
+          )}
+          <span>
+            {`(+${
+              baseSpellshapingBonus + getProficiency(proficiencyTier).bonus
+            })`}
+          </span>
+        </div>
+        <div className="flex flex-wrap items-center gap-1">
+          {spell.traits.map((trait) => (
+            <TraitComponent
+              trait={trait}
+              key={trait.name}
+              className="flex-1 text-center"
+            />
+          ))}
+        </div>
       </div>
     </Tooltip>
   );
