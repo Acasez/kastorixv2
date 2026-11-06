@@ -5,6 +5,7 @@ import SearchField from "../SearchField";
 import DropDownMenu from "../DropDownMenu";
 import ModalItemButton from "./ModalItemButton";
 import type { Action } from "../../types/Action";
+import type { UnlockableItem } from "../../utils/selectionUtils";
 
 export interface ChoiceItem {
   name: string;
@@ -33,7 +34,7 @@ interface ChoiceModalProps {
   maxLevel: number;
   disabledNames?: string[];
   filterFields?: { label: string; value: string }[];
-  onConfirm: (value: string, choice?: string) => void;
+  onConfirm: (value: UnlockableItem, choice?: string) => void;
 }
 
 function getFilterValues(value: unknown): string[] {

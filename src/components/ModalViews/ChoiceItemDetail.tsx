@@ -2,6 +2,7 @@ import type { SetStateAction } from "react";
 import ActionBox from "../Actions/ActionBox";
 import type { ChoiceItem } from "./ChoiceModal";
 import ActionIcon from "../Actions/ActionIcon";
+import type { UnlockableItem } from "../../utils/selectionUtils";
 
 interface ChoiceItemDetailProps {
   selectedItem: ChoiceItem | undefined;
@@ -9,7 +10,7 @@ interface ChoiceItemDetailProps {
   setSelectedChoiceName: (value: SetStateAction<string>) => void;
   selectedChoice: ChoiceItem | undefined;
   isDisabled: (item: ChoiceItem) => boolean;
-  onConfirm: (value: string, choice?: string | undefined) => void;
+  onConfirm: (value: UnlockableItem, choice?: string | undefined) => void;
   confirmLabel: string;
 }
 
@@ -120,7 +121,7 @@ export default function ChoiceItemDetail({
               }
               className="bg-lime-300 p-1 rounded-md mt-4 disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed self-start"
               onClick={() =>
-                onConfirm(selectedItem.name, selectedChoiceName || undefined)
+                onConfirm(selectedItem, selectedChoiceName || undefined)
               }
             >
               {confirmLabel}

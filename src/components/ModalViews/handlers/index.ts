@@ -7,7 +7,7 @@ import { createGolemFromModel } from "./createGolem";
 import {
   getUnlockedActionNames,
   getUnlockedTechniques,
-  typeToData,
+  type UnlockableItem,
 } from "../../../utils/selectionUtils";
 
 // Define the handler type
@@ -23,7 +23,7 @@ export interface ModalHandler {
     character: Character,
     updateCharacter: UpdateFn,
     request: ModalRequest,
-    value: string,
+    chosenItem: UnlockableItem,
     choice?: string,
   ) => void;
 }
@@ -98,7 +98,7 @@ function createSelectionHandler(
         .map((item) => item.name);
     },
 
-    onConfirm: (character, updateCharacter, request, value, choice) => {
+    onConfirm: (character, updateCharacter, request, chosenItem, choice) => {
       if (request.type !== type) return;
 
       const choiceKey = `${request.selectionKey}:choice`;
@@ -108,23 +108,23 @@ function createSelectionHandler(
         ),
       );
 
-      // Find the selected item from the appropriate data array
-      const dataArray = typeToData[type];
-      const selectedItem = dataArray.find((item) => item.name === value);
-
       // Get unlocked action names
-      const unlockedActionNames = selectedItem
-        ? getUnlockedActionNames(selectedItem)
+      const unlockedActionNames = chosenItem
+        ? getUnlockedActionNames(chosenItem)
         : [];
-      const unlockedTechniques = selectedItem
-        ? getUnlockedTechniques(selectedItem)
+      const unlockedTechniques = chosenItem
+        ? getUnlockedTechniques(chosenItem)
         : [];
       const newActions: string[] =
         unlockedActionNames.concat(unlockedTechniques);
 
       // Special handling for Golemcrafter
       const golemUpdate: Partial<Character> = {};
-      if (type === "advantage" && value === "Golemcrafter" && choice) {
+      if (
+        type === "advantage" &&
+        chosenItem.name === "Golemcrafter" &&
+        choice
+      ) {
         const golem = createGolemFromModel(choice);
         if (golem) {
           golemUpdate.golem = golem;
@@ -134,7 +134,7 @@ function createSelectionHandler(
       updateCharacter({
         selections: {
           ...selections,
-          [request.selectionKey]: value,
+          [request.selectionKey]: chosenItem.name,
           ...(choice ? { [choiceKey]: choice } : {}),
         },
         ...golemUpdate,
@@ -158,11 +158,11 @@ function createSpeciesHandler(): ModalHandler {
 
     getBlockedChoices: () => [],
 
-    onConfirm: (character, updateCharacter, request, value) => {
+    onConfirm: (character, updateCharacter, request, chosenSpecies) => {
       if (request.type !== "species") return;
 
       const selections =
-        character.species === value
+        character.species === chosenSpecies.name
           ? character.selections
           : Object.fromEntries(
               Object.entries(character.selections).filter(
@@ -170,7 +170,7 @@ function createSpeciesHandler(): ModalHandler {
               ),
             );
 
-      updateCharacter({ species: value, selections });
+      updateCharacter({ species: chosenSpecies.name, selections });
     },
   };
 }
@@ -187,14 +187,14 @@ function createBackgroundHandler(): ModalHandler {
 
     getBlockedChoices: () => [],
 
-    onConfirm: (character, updateCharacter, request, value) => {
+    onConfirm: (character, updateCharacter, request, chosenBackground) => {
       if (request.type !== "background") return;
 
       updateCharacter({
-        background: value,
+        background: chosenBackground.name,
         selections: {
           ...character.selections,
-          [request.selectionKey]: value,
+          [request.selectionKey]: chosenBackground.name,
         },
       });
     },
@@ -244,7 +244,7 @@ function createAncestryFeatHandler(): ModalHandler {
         .map((item) => item.name);
     },
 
-    onConfirm: (character, updateCharacter, request, value, choice) => {
+    onConfirm: (character, updateCharacter, request, chosenFeat, choice) => {
       if (request.type !== "ancestryFeat") return;
 
       const choiceKey = `${request.selectionKey}:choice`;
@@ -257,7 +257,7 @@ function createAncestryFeatHandler(): ModalHandler {
       updateCharacter({
         selections: {
           ...selections,
-          [request.selectionKey]: value,
+          [request.selectionKey]: chosenFeat.name,
           ...(choice ? { [choiceKey]: choice } : {}),
         },
       });
@@ -282,7 +282,7 @@ function createSpellHandler(): ModalHandler {
       );
     },
 
-    onConfirm: (character, updateCharacter, request, value) => {
+    onConfirm: (character, updateCharacter, request, chosenSpell) => {
       if (request.type !== "spell" || !request.rank) return;
 
       const knownSpells = character.knownSpells.filter(
@@ -290,9 +290,9 @@ function createSpellHandler(): ModalHandler {
       );
 
       updateCharacter({
-        knownSpells: knownSpells.includes(value)
+        knownSpells: knownSpells.includes(chosenSpell.name)
           ? knownSpells
-          : [...knownSpells, value],
+          : [...knownSpells, chosenSpell.name],
       });
     },
   };
@@ -316,7 +316,7 @@ function createWeaponHandler(): ModalHandler {
       );
     },
 
-    onConfirm: (character, updateCharacter, request, value) => {
+    onConfirm: (character, updateCharacter, request, chosenWeapon) => {
       if (request.type !== "weapon") return;
 
       const currentWeapons = character.weapons;
@@ -324,9 +324,9 @@ function createWeaponHandler(): ModalHandler {
         (weaponName) => weaponName !== request.replaceWeapon,
       );
 
-      const updatedWeapons = weapons.includes(value)
+      const updatedWeapons = weapons.includes(chosenWeapon.name)
         ? weapons
-        : [...weapons, value];
+        : [...weapons, chosenWeapon.name];
 
       updateCharacter({ weapons: updatedWeapons });
     },
@@ -350,14 +350,16 @@ function createGadgetHandler(): ModalHandler {
       );
     },
 
-    onConfirm: (character, updateCharacter, request, value) => {
+    onConfirm: (character, updateCharacter, request, chosenGadget) => {
       if (request.type !== "gadget") return;
 
       const gadgets = character.gadgets.filter(
         (gadgetName) => gadgetName !== request.replaceGadget,
       );
       updateCharacter({
-        gadgets: gadgets.includes(value) ? gadgets : [...gadgets, value],
+        gadgets: gadgets.includes(chosenGadget.name)
+          ? gadgets
+          : [...gadgets, chosenGadget.name],
       });
     },
   };
@@ -380,16 +382,16 @@ function createMetamagicHandler(): ModalHandler {
       );
     },
 
-    onConfirm: (character, updateCharacter, request, value) => {
+    onConfirm: (character, updateCharacter, request, chosenMetamagic) => {
       if (request.type !== "metamagic") return;
 
       const metamagics = character.metamagics.filter(
         (name) => name !== request.replaceMetamagic,
       );
       updateCharacter({
-        metamagics: metamagics.includes(value)
+        metamagics: metamagics.includes(chosenMetamagic.name)
           ? metamagics
-          : [...metamagics, value],
+          : [...metamagics, chosenMetamagic.name],
       });
     },
   };
@@ -407,9 +409,9 @@ function createArmorHandler(): ModalHandler {
 
     getBlockedChoices: () => [],
 
-    onConfirm: (_character, updateCharacter, request, value) => {
+    onConfirm: (_character, updateCharacter, request, chosenArmor) => {
       if (request.type !== "armor") return;
-      updateCharacter({ armor: value });
+      updateCharacter({ armor: chosenArmor.name });
     },
   };
 }

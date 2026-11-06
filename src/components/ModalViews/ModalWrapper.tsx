@@ -7,6 +7,7 @@ import { BaseStatsEditor } from "./BaseStatModal";
 import { StatIncreaseModal } from "./StatIncreaseModal";
 import ChoiceModalFrame from "./ChoiceModalFrame";
 import ChoiceModal from "./ChoiceModal";
+import type { UnlockableItem } from "../../utils/selectionUtils";
 
 interface ModalWrapperProps {
   request: ModalRequest;
@@ -24,7 +25,7 @@ export default function ModalWrapper({
   const currentValue = handler.getCurrentValue(character, request);
   const blockedChoices = handler.getBlockedChoices(character, request);
 
-  const onConfirm = (value: string, choice?: string) => {
+  const onConfirm = (value: UnlockableItem, choice?: string) => {
     handler.onConfirm(character, updateCharacter, request, value, choice);
     closeModal();
   };
