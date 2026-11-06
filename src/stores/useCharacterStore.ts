@@ -26,6 +26,7 @@ export type Character = {
   golem: Golem | null;
   armor: string;
   selections: Record<string, string>;
+  selectionLevels: Record<string, number>;
   background: string | null;
   species: string | null;
   baseStats: Record<StatKey, number>;
@@ -89,6 +90,7 @@ const defaultCharacter: Character = {
   golem: null,
   armor: "",
   selections: {},
+  selectionLevels: {},
   background: null,
   species: null,
   baseStats: { PHY: 0, DEX: 0, INT: 0, WIL: 0 },

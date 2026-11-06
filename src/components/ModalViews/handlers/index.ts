@@ -137,8 +137,11 @@ function createSelectionHandler(
           [request.selectionKey]: chosenItem.name,
           ...(choice ? { [choiceKey]: choice } : {}),
         },
+        selectionLevels: {
+          ...character.selectionLevels,
+          [request.selectionKey]: request.level,
+        },
         ...golemUpdate,
-        // Add unlocked actions to character
         unlockedActions: [
           ...new Set([...character.unlockedActions, ...newActions]),
         ],

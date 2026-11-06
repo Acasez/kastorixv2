@@ -72,14 +72,21 @@ export default function LevelCard({ level }: LevelCardProps) {
     const selectedItem = choiceConfig[type].items.find(
       (item) => item.name === character.selections[selectionKey],
     );
+    const isRemoved = (key: string) =>
+      key !== selectionKey &&
+      key !== `${selectionKey}:choice` &&
+      !key.startsWith(`${selectionKey}:unlocked:`);
+
     const selections = Object.fromEntries(
-      Object.entries(character.selections).filter(
-        ([key]) =>
-          key !== selectionKey &&
-          key !== `${selectionKey}:choice` &&
-          !key.startsWith(`${selectionKey}:unlocked:`),
-      ),
+      Object.entries(character.selections).filter(([key]) => isRemoved(key)),
     );
+    const selectionLevels = character.selectionLevels
+      ? Object.fromEntries(
+          Object.entries(character.selectionLevels).filter(([key]) =>
+            isRemoved(key),
+          ),
+        )
+      : undefined;
     const unlockedActionNames = selectedItem
       ? getUnlockedActionNames(selectedItem)
       : [];
@@ -90,6 +97,7 @@ export default function LevelCard({ level }: LevelCardProps) {
 
     updateCharacter({
       selections,
+      selectionLevels,
       unlockedActions: character.unlockedActions.filter(
         (actionName) => !newActions.includes(actionName),
       ),
