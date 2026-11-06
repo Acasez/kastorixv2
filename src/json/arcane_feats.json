@@ -28,15 +28,15 @@
         "gadgets": ""
     },
     {
-        "name": "Attunement Shortcut",
+        "name": "Attunement ShortcutTest",
         "traits": "Attunement",
-        "description": "Your attunement lets you learn spells that would normally be too advanced for you.\nLearn two Adept spells from your attunement.\nBefore level 4, you need to spend a focus point when you cast these spells due to their complexity.",
+        "description": "Your attunement lets you learn spells that would normally be too advanced for you.\nLearn two attuned spells of the spells of the rank above this feats level.\nBefore you could cast them normally, you need to spend a focus point when you cast these spells due to their complexity.",
         "unlockedActions": "",
         "prerequisites": "[Attunement]",
         "level": "1",
         "repeatable": "",
         "unlockedFeats": "",
-        "spellsLearned": "(2) Adept",
+        "spellsLearned": "(2) Next",
         "metamagicsLearned": "",
         "choice": "",
         "gadgets": ""
@@ -226,13 +226,13 @@
     {
         "name": "Studied Ahead",
         "traits": "",
-        "description": "You have studied ahead to get to the cool spells.\nLearn two Adept spells without the Complex trait.\nBefore level 4, you need to spend a focus point when you cast these spells due to their complexity.",
+        "description": "You have studied ahead to get to the cool spells.\nLearn two spells without the Complex trait of the spells of the rank above this feats level.\nBefore level 4, you need to spend a focus point when you cast these spells due to their complexity.",
         "unlockedActions": "",
         "prerequisites": "INT 3 or higher",
         "level": "1",
         "repeatable": "",
         "unlockedFeats": "",
-        "spellsLearned": "(2) Adept",
+        "spellsLearned": "(2) Next",
         "metamagicsLearned": "",
         "choice": "",
         "gadgets": ""

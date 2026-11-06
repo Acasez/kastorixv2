@@ -6,6 +6,7 @@ const RANKS: SpellRank[] = [
   "Magus",
   "Grand Magus",
   "Archmage",
+  "Next",
 ];
 
 export function parseSpellsLearned(input: string): SpellUnlock[] {

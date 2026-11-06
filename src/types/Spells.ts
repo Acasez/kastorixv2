@@ -33,7 +33,8 @@ export type SpellRank =
   | "Adept" //Lvl 4
   | "Magus" //Lvl 8
   | "Grand Magus" //Lvl 12
-  | "Archmage"; //Lvl 16
+  | "Archmage" //Lvl 16
+  | "Next"; //The rank above the current level.
 
 export type Aspect = {
   name: string;
