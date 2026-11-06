@@ -12,6 +12,7 @@ import {
 } from "../ModalViews/choiceData";
 import CreatureSectionHeader from "./CreatureSectionHeader";
 import CreatureWeaponModal from "../ModalViews/CustomWeapons/CustomWeaponModal";
+import type { UnlockableItem } from "../../utils/selectionUtils";
 
 const weaponChoiceItems = getWeaponChoiceItems();
 const weaponFilters = [
@@ -113,31 +114,31 @@ export default function CreatureStrikeList({
     return true;
   };
 
-  const confirmWeapon = (weaponName: string) => {
+  const confirmWeapon = (weapon: UnlockableItem) => {
     const strikesProficiencies = { ...(creature.strikesProficiencies ?? {}) };
     if (weaponToReplace) {
       if (
-        weaponName !== weaponToReplace &&
-        creature.strikes.includes(weaponName)
+        weapon.name !== weaponToReplace &&
+        creature.strikes.includes(weapon.name)
       ) {
         return;
       }
       const proficiency = strikesProficiencies[weaponToReplace] ?? "Trained";
       delete strikesProficiencies[weaponToReplace];
-      strikesProficiencies[weaponName] = proficiency;
+      strikesProficiencies[weapon.name] = proficiency;
       updateCreature({
         strikes: creature.strikes.map((name) =>
-          name === weaponToReplace ? weaponName : name,
+          name === weaponToReplace ? weapon.name : name,
         ),
         strikesProficiencies,
       });
     } else {
-      if (creature.strikes.includes(weaponName)) return;
+      if (creature.strikes.includes(weapon.name)) return;
       updateCreature({
-        strikes: [...creature.strikes, weaponName],
+        strikes: [...creature.strikes, weapon.name],
         strikesProficiencies: {
           ...strikesProficiencies,
-          [weaponName]: "Trained",
+          [weapon.name]: "Trained",
         },
       });
     }
@@ -167,27 +168,6 @@ export default function CreatureStrikeList({
 
   return (
     <section className="space-y-3">
-      {/* <div className="flex items-center gap-2">
-        <div className="min-w-0 flex-1">
-          <CreatureSectionHeader title="Weapons" />
-        </div>
-        <button
-          type="button"
-          className="flex size-8 shrink-0 items-center justify-center rounded bg-bg-wood text-lg text-white hover:bg-bg-redwood"
-          onClick={() => openWeaponModal()}
-          aria-label="Add weapon"
-          title="Add weapon"
-        >
-          +
-        </button>
-        <button
-          type="button"
-          className="shrink-0 rounded border border-stone-500 px-2 py-1.5 text-sm text-white hover:bg-stone-700"
-          onClick={() => openCustomWeaponModal()}
-        >
-          Custom
-        </button>
-      </div> */}
       <CreatureSectionHeader
         title="Weapons"
         onAdd={() => openWeaponModal()}

@@ -9,6 +9,7 @@ import SpellComponent from "../CommonCreatureComponents/SpellComponent";
 import { MultiOptionSwitch } from "../CommonCreatureComponents/MultiOptionSwitch";
 import type { SomaticComponent, VerbalComponent } from "../../types/Spells";
 import CreatureSectionHeader from "./CreatureSectionHeader";
+import type { UnlockableItem } from "../../utils/selectionUtils";
 
 const spellChoiceItems = getSpellChoiceItems();
 const spellFilters = [
@@ -50,24 +51,27 @@ export default function CreatureSpellList({ blockId }: CreatureSkillListProps) {
     setIsSpellModalOpen(true);
   };
 
-  const confirmSpell = (spellName: string) => {
+  const confirmSpell = (spell: UnlockableItem) => {
     const spellProficiencies = { ...(creature.spellProficiencies ?? {}) };
     if (spellToReplace) {
-      if (spellName !== spellToReplace && creature.spells.includes(spellName)) {
+      if (
+        spell.name !== spellToReplace &&
+        creature.spells.includes(spell.name)
+      ) {
         return;
       }
       const proficiency = spellProficiencies[spellToReplace] ?? "Trained";
       delete spellProficiencies[spellToReplace];
-      spellProficiencies[spellName] = proficiency;
+      spellProficiencies[spell.name] = proficiency;
       updateCreature({
         spells: creature.spells.map((name) =>
-          name === spellToReplace ? spellName : name,
+          name === spellToReplace ? spell.name : name,
         ),
         spellProficiencies,
       });
     } else {
-      if (creature.spells.includes(spellName)) return;
-      updateCreature({ spells: [...creature.spells, spellName] });
+      if (creature.spells.includes(spell.name)) return;
+      updateCreature({ spells: [...creature.spells, spell.name] });
     }
 
     closeSpellModal();

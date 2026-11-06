@@ -50,15 +50,16 @@ export default function CreatureArmorSelector({
             initialValue={creature.armor || null}
             maxLevel={Infinity}
             onConfirm={(armor) => {
+              const armorName = armor.name;
               const armorResistances = getCharacterResistances({
-                armor,
+                armor: armorName,
                 species: null,
                 selections: {},
               });
               const compactResistances =
                 getCompactResistances(armorResistances);
               updateCreature({
-                armor,
+                armor: armorName,
                 resistances: Object.fromEntries(
                   Object.entries(compactResistances).filter(
                     ([, value]) => value > 0,
