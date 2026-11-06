@@ -29,11 +29,11 @@ export type Spell = {
 };
 
 export type SpellRank =
-  | "Apprentice"
-  | "Adept"
-  | "Magus"
-  | "Grand Magus"
-  | "Archmage";
+  | "Apprentice" //Lvl 0
+  | "Adept" //Lvl 4
+  | "Magus" //Lvl 8
+  | "Grand Magus" //Lvl 12
+  | "Archmage"; //Lvl 16
 
 export type Aspect = {
   name: string;
@@ -55,4 +55,10 @@ export type Metamagic = {
   effect: string;
   dc: number;
   level: number;
+};
+
+export type SpellUnlock = {
+  rank: SpellRank;
+  amount: number;
+  addInt: boolean;
 };

@@ -155,7 +155,7 @@
     {
         "name": "Voidchild",
         "traits": "",
-        "description": "Marked by the void, feared by the living.\nYou ignore the Complex trait on spells with the Void trait.\nYou learn 1 + your INT or WIL apprentice spells of your choosing.\nYou have a +3 bonus on saves against effects with the Void or Soul traits.\nYou have low-light vision.\nVoid Children have starry purple eyes and faintly glowing skin.\nNOTE: Void Children are outlawed in the Draconium and some other countries and will be hunted on sight.",
+        "description": "Marked by the void, feared by the living.\nYou ignore the Complex trait on spells with the Void trait.\nYou learn 3 apprentice spells with the Arcane trait.\nYou have a +3 bonus on saves against effects with the Void or Soul traits.\nYou have low-light vision.\nVoid Children have starry purple eyes and faintly glowing skin.\nNOTE: Void Children are outlawed in the Draconium and some other countries and will be hunted on sight.",
         "unlockedActions": "",
         "prerequisites": "",
         "level": "1",
@@ -165,7 +165,7 @@
         "choice": "",
         "health": "",
         "mana": "",
-        "spellsLearned": "",
+        "spellsLearned": "(3) Apprentice",
         "metamagicsLearned": "",
         "gadgets": ""
     },
@@ -182,7 +182,7 @@
         "choice": "",
         "health": "",
         "mana": "",
-        "spellsLearned": "(1 + INT/WIL) Apprentice",
+        "spellsLearned": "",
         "metamagicsLearned": "",
         "gadgets": ""
     },
@@ -357,9 +357,26 @@
         "gadgets": ""
     },
     {
+        "name": "All Rounded",
+        "traits": "",
+        "description": "You're versatile and dedicated. \nLearn a level 10 Arcane Feat and a level 10 General Feat.",
+        "unlockedActions": "",
+        "prerequisites": "",
+        "level": "8",
+        "unlockedFeats": "Arcane Feat - Level 10, General Feat - Level 10",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "gadgets": ""
+    },
+    {
         "name": "Mana Blooded",
         "traits": "",
-        "description": "Exposure to magic has made your very blood infused with mana.\nYou have a +1 bonus to all spellshaping checks if you lost health since the end of your last turn.\nIncrease your health by 3 + your WIL.",
+        "description": "Exposure to magic has made your very blood infused with mana.\nYou have a +2 bonus to all spellshaping checks if you lost health since the end of your last turn.\nIncrease your health by 3 + your WIL.",
         "unlockedActions": "",
         "prerequisites": "",
         "level": "8",
@@ -437,14 +454,14 @@
         "choice": "Aspects",
         "health": "",
         "mana": "",
-        "spellsLearned": "",
+        "spellsLearned": "(3) Apprentice, (3) Adept",
         "metamagicsLearned": "",
         "gadgets": ""
     },
     {
         "name": "Mana Hungry",
         "traits": "",
-        "description": "Your mana well hungers, never satisfied.\nAt the start of each turn you can spend 1 focus point to regain mana as if you had taken a succesful (one action) Harness Mana action.",
+        "description": "Your mana well hungers, never satisfied.\nAt the start of each turn you can spend 1 focus point to regain mana as if you had done a successful (one action) Harness Mana action.",
         "unlockedActions": "",
         "prerequisites": "",
         "level": "16",

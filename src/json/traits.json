@@ -1015,7 +1015,7 @@
     },
     {
         "name": "Volley (X)",
-        "appliesTo": "Weapons",
+        "appliesTo": "Spells, Weapons",
         "flavor": "",
         "effect": "While attacking with this weapon you have a -3 penalty if the target is within X tiles",
         "specialAction": "",

@@ -4,6 +4,7 @@ import { parseSpeeds, parseResistances } from "../utils/parseNamedUtils";
 import { lookupActions } from "./actions";
 import { parseUnlocks } from "../utils/parseUnlocks";
 import { lookupTraits } from "./traits";
+import { parseSpellsLearned } from "../utils/parseSpellsLearned";
 
 export const advantages: Advantage[] = rawAdvantages.map((raw) => {
   return {
@@ -14,6 +15,7 @@ export const advantages: Advantage[] = rawAdvantages.map((raw) => {
     speeds: parseSpeeds(raw.speeds),
     resistances: parseResistances(raw.speeds),
     unlockedFeats: parseUnlocks(raw.unlockedFeats),
+    spellsLearned: parseSpellsLearned(raw.spellsLearned),
   };
 });
 

@@ -3,6 +3,7 @@ import rawArcaneFeats from "../JSON/arcane_feats.json";
 import { lookupActions } from "./actions";
 import { parseUnlocks } from "../utils/parseUnlocks";
 import { lookupTraits } from "./traits";
+import { parseSpellsLearned } from "../utils/parseSpellsLearned";
 
 export const arcaneFeats: ArcaneFeat[] = rawArcaneFeats.map((raw) => {
   return {
@@ -12,6 +13,7 @@ export const arcaneFeats: ArcaneFeat[] = rawArcaneFeats.map((raw) => {
     level: Number(raw.level),
     repeatable: Boolean(raw.repeatable),
     unlockedFeats: parseUnlocks(raw.unlockedFeats),
+    spellsLearned: parseSpellsLearned(raw.spellsLearned),
   };
 });
 

@@ -19,8 +19,8 @@
         "name": "Close-range Cast",
         "trait": "Attack",
         "aspect": "",
-        "effect": "You cast the spell in a way that weaves it into the flow of combat.\nAdjacent creatures take a -1 penalty on their saving throws against the spell instead of a +2 bonus.",
-        "dc": "2",
+        "effect": "You cast the spell in a way that weaves it into the flow of combat.\nIgnore the Volley trait of a spell.",
+        "dc": "1",
         "level": "1"
     },
     {

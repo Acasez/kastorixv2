@@ -224,20 +224,6 @@
         "techniqueRank": "Simple"
     },
     {
-        "name": "Copy Cast",
-        "actions": "1-3",
-        "trigger": "",
-        "requirement": "Within the last turn you've seen the spellshaping of a spell (of a rank you can cast).",
-        "manaCost": "",
-        "focusCost": "1",
-        "description": "Attempt a Cast the Spell on the spell even without being proficient with it.",
-        "traits": "Spellcasting",
-        "skill": "",
-        "sourceType": "Advantage",
-        "source": "Magical Genius",
-        "techniqueRank": ""
-    },
-    {
         "name": "Coil Up",
         "actions": "1",
         "trigger": "",
@@ -280,14 +266,28 @@
         "techniqueRank": ""
     },
     {
+        "name": "Copy Cast",
+        "actions": "1-3",
+        "trigger": "",
+        "requirement": "Within the last turn you've seen the spellshaping of a spell (of a rank you can cast).",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "Attempt a Cast the Spell on the spell even without being proficient with it.",
+        "traits": "Spellcasting",
+        "skill": "",
+        "sourceType": "Advantage",
+        "source": "Magical Genius",
+        "techniqueRank": ""
+    },
+    {
         "name": "Covering Strike",
         "actions": "1",
         "trigger": "",
         "requirement": "",
         "manaCost": "",
         "focusCost": "",
-        "description": "With an attack you give an ally an oppertunity to escape from an enemy.\nMake a melee Strike. On a hit, an ally adjecant to creature can use its reaction to Stride away from the creature. \nThe creature attacked has disadvantage on Reactive Strikes against this movement.",
-        "traits": "Technique, Tactical",
+        "description": "With an attack, you give an ally an opportunity to escape from an enemy.\nMake a melee Strike. On a hit, an ally adjacent to creature can use its reaction to Stride away from the creature. \nThe creature attacked has disadvantage on Reactive Strikes against this movement.",
+        "traits": "Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -370,7 +370,7 @@
         "requirement": "",
         "manaCost": "",
         "focusCost": "",
-        "description": "You order your allies to take cover.\nUp to three allies can use their reactions to Step or Traverse into Cover or use an action with the Defensive trait",
+        "description": "You order your allies to take cover.\nUp to three allies can use their reactions to Step or Traverse into Cover.\nAlternatively they can use an one action spell or action with the Defensive trait",
         "traits": "Tactical, Verbal, Technique",
         "skill": "",
         "sourceType": "Technique",
@@ -1134,20 +1134,6 @@
         "techniqueRank": "Advanced"
     },
     {
-        "name": "Push Beyond",
-        "actions": "Free",
-        "trigger": "You just made a D20 roll",
-        "requirement": "",
-        "manaCost": "",
-        "focusCost": "",
-        "description": "Take level of exhaustion, then reroll the D20 roll. \nYou must use the new roll, even if its worse. \nYou can only use Push Beyond once per turn.",
-        "traits": "",
-        "skill": "",
-        "sourceType": "Base",
-        "source": "",
-        "techniqueRank": ""
-    },
-    {
         "name": "Protect Ally",
         "actions": "1",
         "trigger": "",
@@ -1160,6 +1146,20 @@
         "sourceType": "Technique",
         "source": "",
         "techniqueRank": "Simple"
+    },
+    {
+        "name": "Push Beyond",
+        "actions": "Free",
+        "trigger": "You just made a D20 roll",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "Take level of exhaustion, then reroll the D20 roll. \nYou must use the new roll, even if its worse. \nYou can only use Push Beyond once per turn.",
+        "traits": "",
+        "skill": "",
+        "sourceType": "Base",
+        "source": "",
+        "techniqueRank": ""
     },
     {
         "name": "Quick Draw",
@@ -1218,20 +1218,6 @@
         "techniqueRank": "Simple"
     },
     {
-        "name": "Reactive Strike",
-        "actions": "Reaction",
-        "trigger": "A creature takes a move action within the reach of your weapon. ",
-        "requirement": "",
-        "manaCost": "",
-        "focusCost": "",
-        "description": "You take advantage of a creature moving within your reach.\nMake an Strike against the creature with a -3 penalty.\nThis penalty is -2 if you are wielding an agile weapon, or -4 if you are wielding a sluggish weapon.",
-        "traits": "Attack",
-        "skill": "",
-        "sourceType": "Base",
-        "source": "",
-        "techniqueRank": ""
-    },
-    {
         "name": "Reactive Spell",
         "actions": "Reaction",
         "trigger": "A creature takes a move action within reach of your touch spells",
@@ -1243,6 +1229,20 @@
         "skill": "",
         "sourceType": "Arcane Feat",
         "source": "Reactive Spell",
+        "techniqueRank": ""
+    },
+    {
+        "name": "Reactive Strike",
+        "actions": "Reaction",
+        "trigger": "A creature takes a move action within the reach of your weapon. ",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "You take advantage of a creature moving within your reach.\nMake an Strike against the creature with a -3 penalty.\nThis penalty is -2 if you are wielding an agile weapon, or -4 if you are wielding a sluggish weapon.",
+        "traits": "Attack",
+        "skill": "",
+        "sourceType": "Base",
+        "source": "",
         "techniqueRank": ""
     },
     {

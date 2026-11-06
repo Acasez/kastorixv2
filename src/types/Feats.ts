@@ -2,6 +2,7 @@ import type { Action } from "./Action";
 import type { Resistance } from "./DamageTypes";
 import type { Species } from "./Species";
 import type { Speed } from "./SpeedTypes";
+import type { SpellUnlock } from "./Spells";
 import type { Trait } from "./Trait";
 
 export type Background = {
@@ -38,7 +39,7 @@ export type ArcaneFeat = {
   level: number;
   repeatable: boolean;
   unlockedFeats: Unlock[];
-  spellsLearned: string;
+  spellsLearned: SpellUnlock[];
   metamagicsLearned: string;
   choice: string;
   gadgets: string;
@@ -54,7 +55,7 @@ export type Advantage = {
   unlockedFeats: Unlock[];
   speeds: Speed[];
   resistances: Resistance[];
-  spellsLearned: string;
+  spellsLearned: SpellUnlock[];
   metamagicsLearned: string;
   choice: string;
   health: string;
