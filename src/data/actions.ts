@@ -22,6 +22,10 @@ export const actions: Action[] = rawActions.map((raw) => ({
 
 export default actions;
 
+export const techniques = actions.filter(
+  (action) => action.sourceType === "technique",
+);
+
 export const actionsByName: Record<string, Action> = Object.fromEntries(
   actions.map((a) => [a.name, a]),
 );

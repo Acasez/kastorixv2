@@ -90,7 +90,8 @@ export type ChoiceType =
   | "weapon"
   | "metamagic"
   | "armor"
-  | "gadget";
+  | "gadget"
+  | "technique";
 
 export type Unlock = {
   type: ChoiceType;

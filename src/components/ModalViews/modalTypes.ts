@@ -63,4 +63,10 @@ export type ModalRequest =
       title: string;
       selectionKey: string;
       level: number;
+    }
+  | {
+      type: "technique";
+      title: string;
+      selectionKey: string;
+      rank: string;
     };

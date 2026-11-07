@@ -36,6 +36,7 @@ const actionTypes: Record<string, ChoiceType | "baseStats" | "statIncrease"> = {
   "Select Ancestry Feat": "ancestryFeat",
   "Select Arcane Feat": "arcaneFeat",
   "Select General Feat": "generalFeat",
+  "Select Technique": "technique",
   "Increase One Stat": "statIncrease",
 };
 
@@ -65,7 +66,7 @@ export default function LevelCard({ level }: LevelCardProps) {
       return;
     }
 
-    openModal({ type, title, selectionKey, level: choiceLevel });
+    openModal({ type, title, selectionKey, level: choiceLevel } as ModalRequest);
   };
 
   const clearSelection = (selectionKey: string, type: ChoiceType) => {

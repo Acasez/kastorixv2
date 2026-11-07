@@ -1,4 +1,5 @@
 // In a new file: utils/choiceConfig.ts
+import { techniques } from "../data/actions";
 import advantages from "../data/advantages";
 import ancestryFeats from "../data/ancestryFeats";
 import arcaneFeats from "../data/arcaneFeats";
@@ -35,4 +36,5 @@ export const choiceConfig: Record<
   metamagic: { title: "Select Metamagic", items: metamagics },
   armor: { title: "Select Armor", items: armors },
   gadget: { title: "Select Gadget", items: gadgets },
+  technique: { title: "Select Technique", items: techniques },
 };

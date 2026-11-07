@@ -42,8 +42,3 @@ export type ActionTrait =
   | "Creature";
 
 export type TechniqueRank = "Simple" | "Advanced" | "Complex" | "Masterwork";
-
-/* export type ActionTrait = {
-  name: string;
-  effect: string;
-}; */
