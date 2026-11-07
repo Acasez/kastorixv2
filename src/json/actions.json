@@ -44,7 +44,7 @@
     {
         "name": "Aura Block",
         "actions": "Reaction",
-        "trigger": "When you would partially block damage with your aura.",
+        "trigger": "You would partially block damage with your aura.",
         "requirement": "",
         "manaCost": "",
         "focusCost": "",
@@ -700,6 +700,20 @@
         "techniqueRank": "Simple"
     },
     {
+        "name": "Fortify Aura",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "Form your Aura into a structured barriers.\nYour Aura gains resistance to all damage equal to your INT.\nYou lose that amount of mana each turn.\nIf you run out of mana this stance ends.",
+        "traits": "Aura, Defensive, Stance",
+        "skill": "",
+        "sourceType": "Arcane Feat",
+        "source": "Fortify Aura",
+        "techniqueRank": ""
+    },
+    {
         "name": "Frost Capacitor",
         "actions": "2",
         "trigger": "",
@@ -1064,6 +1078,20 @@
         "techniqueRank": ""
     },
     {
+        "name": "Perfect Aura Block",
+        "actions": "Reaction",
+        "trigger": "You would partially block damage with your aura.",
+        "requirement": "You are in Fortify Aura stance",
+        "manaCost": "",
+        "focusCost": "3",
+        "description": "Block the force of the attack with a perfect counter from your aura. \nReduce the incoming damage by your Level, then Aura Block as normal.",
+        "traits": "Aura, Magic, Defensive",
+        "skill": "",
+        "sourceType": "Base",
+        "source": "",
+        "techniqueRank": ""
+    },
+    {
         "name": "Piercing Thrust",
         "actions": "1",
         "trigger": "",
@@ -1322,7 +1350,7 @@
         "requirement": "You are holding a weapon that does slashing damage",
         "manaCost": "",
         "focusCost": "1",
-        "description": "You tear through a creatures armor.\nMake a melee Strike with a weapon that does slashing damage.\nOn a hit you deal no damage, but reduce the creatures physical resistance by 1d4.\nThis lasts for 1 hour or until the creature repairs it with a DC 10 crafting check.",
+        "description": "You tear through a creatures armor.\nMake a melee Strike with a weapon that does slashing damage.\nOn a hit you deal no damage, but reduce the creature's physical resistance by 1d4.\nThis lasts for 1 hour or until the creature repairs it with a DC 10 crafting check.",
         "traits": "Technique",
         "skill": "",
         "sourceType": "Technique",

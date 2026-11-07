@@ -216,7 +216,7 @@
         "resistances": ""
     },
     {
-        "name": "Subterranean Experise",
+        "name": "Subterranean Expertise",
         "description": "You've learned all you can about the depths you call home and can navigate them with ease.\nYour proficiency level with Depths Below Lore increases (max Expert).\nYou ignore difficult terrain from natural rocks and earthen formations.",
         "unlockedActions": "",
         "type": "Cultural",

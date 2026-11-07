@@ -1402,5 +1402,23 @@
         "choice": "",
         "quickAccessSlots": "",
         "focusPoints": ""
+    },
+    {
+        "name": "Skilled Combatant",
+        "traits": "Technique",
+        "description": "You've learned some manuevers to improve your tactical fighting.\nYou learn three simple techniques.",
+        "unlockedActions": "",
+        "techniques": "",
+        "prerequisites": "",
+        "level": "",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "techniquesLearned": "(3) Basic",
+        "health": "",
+        "choice": "",
+        "quickAccessSlots": "",
+        "focusPoints": ""
     }
 ]

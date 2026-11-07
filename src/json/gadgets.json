@@ -50,7 +50,7 @@
     {
         "name": "Boots of Jumping",
         "type": "Equipment",
-        "effect": "When you Leap or High Jump you jump an addtional 3 tiles.\nAdditionally when calculating fall damage from that jump, reduce the fall distance by 5. \nYou can use Boots of Jumping 3 times per day",
+        "effect": "When you Leap or High Jump you jump an additional 3 tiles.\nAdditionally when calculating fall damage from that jump, reduce the fall distance by 5. \nYou can use Boots of Jumping 3 times per day",
         "level": "3",
         "upgrade": "When you use your Boots of Jumping you can spend an extra charge to stay in the air. \nAt the end your turn you fall 10 tiles, taking no fall damage, and landing standing.\nIf you are still in the air at the start of your next turn you fall as normal.",
         "upgradeLevel": "9"

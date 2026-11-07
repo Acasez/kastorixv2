@@ -1,12 +1,13 @@
-import type { SpellRank, SpellUnlock } from "../types/Spells";
+import type { SpellGrantRank, SpellUnlock } from "../types/Spells";
 
-const RANKS: SpellRank[] = [
+const RANKS: SpellGrantRank[] = [
   "Apprentice",
   "Adept",
   "Magus",
   "Grand Magus",
   "Archmage",
   "Next",
+  "Unlocked",
 ];
 
 export function parseSpellsLearned(input: string): SpellUnlock[] {
@@ -19,7 +20,7 @@ export function parseSpellsLearned(input: string): SpellUnlock[] {
       if (!match || (!match[1] && !match[2])) {
         throw new Error(`Malformed spellsLearned entry: "${entry}"`);
       }
-      const rank = match[3].trim() as SpellRank;
+      const rank = match[3].trim() as SpellGrantRank;
       if (!RANKS.includes(rank)) {
         throw new Error(`Unknown spell rank: "${rank}" in "${entry}"`);
       }

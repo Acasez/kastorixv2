@@ -66,7 +66,12 @@ export default function LevelCard({ level }: LevelCardProps) {
       return;
     }
 
-    openModal({ type, title, selectionKey, level: choiceLevel } as ModalRequest);
+    openModal({
+      type,
+      title,
+      selectionKey,
+      level: choiceLevel,
+    } as ModalRequest);
   };
 
   const clearSelection = (selectionKey: string, type: ChoiceType) => {

@@ -378,6 +378,20 @@
         "gadgets": ""
     },
     {
+        "name": "Fortify Aura",
+        "traits": "Aura",
+        "description": "You have learned a method to drastically increase the resistance of your Aura, at the cost of draining mana.\nYou learn the Fortify Aura action.",
+        "unlockedActions": "Fortify Aura",
+        "prerequisites": "",
+        "level": "4",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "choice": "",
+        "gadgets": ""
+    },
+    {
         "name": "Golem Upgrade",
         "traits": "Golem",
         "description": "You've tinkered with your golem to upgrade it.\nAdd one golem upgrade to it.\nYou can choose this feat multiple times.",
@@ -962,6 +976,20 @@
         "unlockedFeats": "",
         "spellsLearned": "",
         "metamagicsLearned": "(4) Metamagic",
+        "choice": "",
+        "gadgets": ""
+    },
+    {
+        "name": "Perfect Aura Block",
+        "traits": "Aura",
+        "description": "By sending of a carefully calculated bit of your aura to meet a spell, you can perfectly block even devastating attacks.\nYou learn the Perfect Aura Block reaction.",
+        "unlockedActions": "Perfect Aura Block",
+        "prerequisites": "[Fortify Aura]",
+        "level": "12",
+        "repeatable": "",
+        "unlockedFeats": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
         "choice": "",
         "gadgets": ""
     },
