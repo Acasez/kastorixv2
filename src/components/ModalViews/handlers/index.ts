@@ -46,6 +46,7 @@ export const handlers: Record<ModalRequest["type"], ModalHandler> = {
   metamagic: createMetamagicHandler(),
   armor: createArmorHandler(),
   baseStats: createBaseStatsHandler(),
+  technique: createTechniqueHandler(),
   statIncrease: createStatIncreaseHandler(),
 };
 // ============================================
@@ -131,6 +132,9 @@ function createSelectionHandler(
         }
       }
 
+      const requestLevel =
+        type === "background" ? 0 : "level" in request ? request.level : 0;
+
       updateCharacter({
         selections: {
           ...selections,
@@ -139,7 +143,7 @@ function createSelectionHandler(
         },
         selectionLevels: {
           ...character.selectionLevels,
-          [request.selectionKey]: request.level,
+          [request.selectionKey]: requestLevel,
         },
         ...golemUpdate,
         unlockedActions: [
@@ -276,6 +280,39 @@ function createSpellHandler(): ModalHandler {
     getCurrentValue: (_character, request) => {
       if (request.type !== "spell" || !request.rank) return null;
       return request.replaceSpell ?? null;
+    },
+
+    getBlockedChoices: (character, request) => {
+      if (request.type !== "spell" || !request.rank) return [];
+      return character.knownSpells.filter(
+        (spellName) => spellName !== request.replaceSpell,
+      );
+    },
+
+    onConfirm: (character, updateCharacter, request, chosenSpell) => {
+      if (request.type !== "spell" || !request.rank) return;
+
+      const knownSpells = character.knownSpells.filter(
+        (spellName) => spellName !== request.replaceSpell,
+      );
+
+      updateCharacter({
+        knownSpells: knownSpells.includes(chosenSpell.name)
+          ? knownSpells
+          : [...knownSpells, chosenSpell.name],
+      });
+    },
+  };
+}
+
+// ============================================
+// HANDLER: Technique
+// ============================================
+function createTechniqueHandler(): ModalHandler {
+  return {
+    getCurrentValue: (_character, request) => {
+      if (request.type !== "technique" || !request.rank) return null;
+      return request.replaceTechnique ?? null;
     },
 
     getBlockedChoices: (character, request) => {

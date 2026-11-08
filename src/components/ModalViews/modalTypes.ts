@@ -69,4 +69,5 @@ export type ModalRequest =
       title: string;
       selectionKey: string;
       rank: string;
+      replaceTechnique?: string;
     };

@@ -279,12 +279,12 @@ export function getChoiceItem(
   const request =
     type === "species"
       ? { type: "species" as const, title: "Select Species" }
-      : {
+      : ({
           type,
           title: "",
           selectionKey: "",
           level: 0,
-        };
+        } as ModalRequest);
 
   return getChoiceData(request)[type].find((item) => item.name === name);
 }

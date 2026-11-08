@@ -62,7 +62,13 @@ export default function ModalWrapper({
             ? null
             : (character.selections[`${request.selectionKey}:choice`] ?? null)
         }
-        maxLevel={request.type === "species" ? Infinity : request.level}
+        maxLevel={
+          request.type === "species" ||
+          request.type === "background" ||
+          request.type === "technique"
+            ? Infinity
+            : request.level
+        }
         disabledNames={blockedChoices}
         filterFields={
           request.type === "generalFeat" ||

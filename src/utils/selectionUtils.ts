@@ -14,6 +14,7 @@ import metamagics from "../data/metamagics";
 import armors from "../data/armors";
 import gadgets from "../data/gadgets";
 import type { Action } from "../types/Action";
+import { techniques } from "../data/actions";
 
 // Type for items that can have unlocked actions
 export type UnlockableItem = {
@@ -44,6 +45,7 @@ export const typeToData: Record<ChoiceType, UnlockableItem[]> = {
   metamagic: metamagics,
   armor: armors,
   gadget: gadgets,
+  technique: techniques,
 };
 
 /**
