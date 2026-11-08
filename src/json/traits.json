@@ -509,7 +509,7 @@
     {
         "name": "Magic",
         "appliesTo": "Actions",
-        "flavor": "",
+        "flavor": "This action is undoubtedly magical",
         "effect": "",
         "specialAction": "",
         "modifiable": "",

@@ -11,7 +11,7 @@
         "skill": "",
         "sourceType": "Technique",
         "source": "",
-        "techniqueRank": "Masterwork"
+        "techniqueRank": "Blade Art"
     },
     {
         "name": "Absorb Magic",
@@ -305,7 +305,7 @@
         "skill": "",
         "sourceType": "Technique",
         "source": "",
-        "techniqueRank": "Masterwork"
+        "techniqueRank": "Blade Art"
     },
     {
         "name": "Crawl",
@@ -949,7 +949,7 @@
         "skill": "",
         "sourceType": "Technique",
         "source": "",
-        "techniqueRank": "Masterwork"
+        "techniqueRank": "Blade Art"
     },
     {
         "name": "Lunge",
@@ -1047,7 +1047,7 @@
         "skill": "",
         "sourceType": "Technique",
         "source": "",
-        "techniqueRank": "Masterwork"
+        "techniqueRank": "Blade Art"
     },
     {
         "name": "Open Dimensional Net",

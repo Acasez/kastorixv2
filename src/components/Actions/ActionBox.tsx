@@ -1,6 +1,7 @@
 import { getActionIcons } from "../../utils/actionUtils";
 import ActionIcon from "./ActionIcon";
 import actions from "../../data/actions";
+import TraitComponent from "../CommonCreatureComponents/TraitComponent";
 
 interface ActionBoxProps {
   action: string;
@@ -50,11 +51,11 @@ export default function ActionBox({ action }: ActionBoxProps) {
         <p className="mt-2.5 leading-normal whitespace-pre-line">
           {details.description}
         </p>
-        {details.traits && (
-          <p className="italic text-text-trait mt-2.5">
-            Traits: {details.traits}
-          </p>
-        )}
+        <div className="flex flex-wrap justify-center items-center gap-2 mt-1">
+          {details.traits.map((trait) => (
+            <TraitComponent trait={trait} key={trait.name} className="" />
+          ))}
+        </div>
       </div>
     </div>
   );

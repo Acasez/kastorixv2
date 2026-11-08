@@ -1,9 +1,9 @@
-import type { ActionCore } from "../../../types/Action";
+import type { Action } from "../../../types/Action";
 import { getActionIcons } from "../../../utils/actionUtils";
 import ActionIcon from "../../Actions/ActionIcon";
 
 interface ActionRowProps {
-  action: ActionCore;
+  action: Action;
   isExpanded: boolean;
   onToggle: (name: string) => void;
 }
@@ -63,8 +63,9 @@ export default function ActionRow({
           )}
           <div className="mt-2 whitespace-pre-line">{action.description}</div>
           {action.traits && (
-            <p className="mt-3">
-              <span className="font-bold">Traits:</span> {action.traits}
+            <p>
+              <strong>Traits:</strong>{" "}
+              {action.traits?.map((a) => a.name).join(", ")}
             </p>
           )}
           {action.sourceType !== "Base" && action.source && (

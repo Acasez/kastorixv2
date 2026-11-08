@@ -48,6 +48,14 @@
         "level": "1"
     },
     {
+        "name": "Contract Spell",
+        "trait": "Area",
+        "aspect": "",
+        "effect": "Decrease the amount of the radius or width the spell effects by one tile.",
+        "dc": "0",
+        "level": "1"
+    },
+    {
         "name": "Focused Spell",
         "trait": "",
         "aspect": "",
