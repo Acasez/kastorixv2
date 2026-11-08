@@ -5,7 +5,7 @@ import generalFeats from "../JSON/general_feats.json";
 import species from "../JSON/species.json";
 import type { Character } from "../stores/useCharacterStore";
 import { evaluateCharacterExpression } from "./evaluateCharacterExpression";
-import { SPELL_RANKS } from "../constants/SpellRanks"; // wherever it lives
+import { SPELL_RANKS } from "../constants/SpellRanks";
 
 type SpellGrantSource = {
   name: string;
@@ -34,6 +34,12 @@ const grantIndex = new Map<
   string,
   Partial<Record<GrantField, ParsedGrant[]>>
 >();
+
+function unlockedRankNamesAtLevel(playerLevel: number): string[] {
+  return SPELL_RANKS.filter((r) => r.unlockedAtLevel <= playerLevel).map(
+    (r) => r.name,
+  );
+}
 
 for (const source of spellGrantSources) {
   const parsed: Partial<Record<GrantField, ParsedGrant[]>> = {};
@@ -80,6 +86,21 @@ function getSelectedSources(character: Character): SelectedSource[] {
   return sources;
 }
 
+function resolveEntryNames(
+  entry: ParsedGrant,
+  character: Character,
+  source: SelectedSource,
+): string[] {
+  if (entry.name === "Next") {
+    const rank = nextRankNameAtLevel(source.level); // feat's selection level
+    return rank ? [rank] : [];
+  }
+  if (entry.name === "Unlocked") {
+    return unlockedRankNamesAtLevel(character.level); // player's current level
+  }
+  return [entry.name];
+}
+
 function getCharacterGrant(
   character: Character,
   grantField: GrantField,
@@ -92,10 +113,11 @@ function getCharacterGrant(
     const entries = grantIndex.get(source.name)?.[grantField];
     if (!entries) return total;
     return entries.reduce((sum, entry) => {
-      const resolved =
-        entry.name === "Next" ? nextRankNameAtLevel(source.level) : entry.name;
-      if (!resolved) return sum; // "(2) Next" with no rank above Archmage: grants nothing
-      return resolved.replace(/\s+/g, "").toLowerCase() === normalizedGrantName
+      const names = resolveEntryNames(entry, character, source);
+      const matches = names.some(
+        (n) => n.replace(/\s+/g, "").toLowerCase() === normalizedGrantName,
+      );
+      return matches
         ? sum + evaluateCharacterExpression(entry.amountExpression, variables)
         : sum;
     }, total);
