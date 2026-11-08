@@ -1,7 +1,7 @@
 import { useCharacter } from "../../../hooks/useCharacter";
 import type { Spell } from "../../../types/Spells";
 import SpellComponent from "../../CommonCreatureComponents/SpellComponent";
-import { getCharacterSpellGrant } from "../../../utils/characterSpellGrants";
+import { getCharacterTechniqueGrant } from "../../../utils/characterSpellGrants";
 import SectionLimitText from "./SectionLimitText";
 import AddButton from "./AddButton";
 
@@ -31,7 +31,7 @@ export default function SpellRankSection({
   const { character } = useCharacter();
   const maxKnownSpells = Math.max(
     (character.level >= unlockedAtLevel ? character.baseStats.INT : 0) +
-      getCharacterSpellGrant(character, rankName),
+      getCharacterTechniqueGrant(character, rankName),
     0,
   );
 

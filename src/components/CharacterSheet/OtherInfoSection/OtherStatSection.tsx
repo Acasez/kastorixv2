@@ -45,7 +45,11 @@ export default function OtherStatSection() {
                 {Object.entries(getCompactResistances(character.resistances))
                   .filter(([, value]) => value > 0)
                   .map(([type, value]) => (
-                    <ResistanceMarker damageType={type} value={value} />
+                    <ResistanceMarker
+                      key={type}
+                      damageType={type}
+                      value={value}
+                    />
                   ))}
               </div>
             </div>

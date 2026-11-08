@@ -22,6 +22,24 @@ export function useSpellModal() {
   return { openSpellModal };
 }
 
+export function useTechniqueModal() {
+  const { openModal } = useModal();
+
+  const openTechniqueModal = (rankName: string, replaceTechnique?: string) => {
+    openModal({
+      type: "technique",
+      title: replaceTechnique
+        ? `Replace ${replaceTechnique}`
+        : `Select ${rankName} Spell`,
+      selectionKey: "",
+      rank: rankName,
+      replaceTechnique,
+    });
+  };
+
+  return { openTechniqueModal };
+}
+
 export function useWeaponModal() {
   const { openModal } = useModal();
 

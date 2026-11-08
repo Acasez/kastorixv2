@@ -7,10 +7,12 @@ import GadgetSection from "./GadgetSection";
 import { useCharacter } from "../../../hooks/useCharacter";
 import { getCharacterGadgetGrant } from "../../../utils/characterSpellGrants";
 import GolemSection from "./GolemSection";
+import TechniqueSection from "./TechniqueSection";
 
 type TabKey =
   | "Spells"
   | "Strikes"
+  | "Techniques"
   | "Actions"
   | "Inventory"
   | "Gadgets"
@@ -26,6 +28,7 @@ export default function TabbedSection() {
   // Tab labels and their corresponding content
   const tabs: { label: string; key: TabKey }[] = [
     { label: "Spells", key: "Spells" },
+    { label: "Techniques", key: "Techniques" },
     { label: "Strikes", key: "Strikes" },
     { label: "Actions", key: "Actions" },
     { label: "Inventory", key: "Inventory" },
@@ -41,6 +44,7 @@ export default function TabbedSection() {
   // Content for each tab (replace with your actual content)
   const tabContent = {
     Spells: <SpellsSection />,
+    Techniques: <TechniqueSection />,
     Strikes: <StrikesSection />,
     Actions: <ActionsSection />,
     Inventory: <InventorySection />,

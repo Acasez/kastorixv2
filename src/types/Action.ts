@@ -1,4 +1,5 @@
 import type { Skill } from "./Skills";
+import type { Trait } from "./Trait";
 
 export type Action = {
   name: string;
@@ -8,7 +9,7 @@ export type Action = {
   manaCost?: number;
   focusCost?: number;
   description: string;
-  traits: ActionTrait[];
+  traits: Trait[];
   skill: Skill[];
   sourceType: string;
   source?: string;
@@ -19,26 +20,9 @@ export type ActionCost = "0" | "1" | "2" | "3" | "R";
 
 export type CreatureActionCost = "0" | "1" | "2" | "3" | "R" | "L";
 
-export type ActionTrait =
-  | "Attack"
-  | "Move"
-  | "Traverse"
-  | "Item"
-  | "Skill"
-  | "Magic"
-  | "Spellshaping"
-  | "Aura"
-  | "Mental"
-  | "Defensive"
-  | "Soul"
-  | "Verbal"
-  | "Stance"
-  | "Attunement"
-  | "Brawling"
-  | "Combat Manuever"
-  | "Tactical"
-  | "Blade Art"
-  | "Golem"
-  | "Creature";
-
-export type TechniqueRank = "Simple" | "Advanced" | "Complex" | "Masterwork";
+export type TechniqueRank =
+  | "Simple"
+  | "Advanced"
+  | "Complex"
+  | "Masterwork"
+  | "Blade Art";

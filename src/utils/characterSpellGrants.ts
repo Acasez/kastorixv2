@@ -12,6 +12,7 @@ type SpellGrantSource = {
   spellsLearned?: string;
   metamagicsLearned?: string;
   gadgets?: string;
+  techniquesLearned?: string;
 };
 
 const spellGrantSources: SpellGrantSource[] = [
@@ -22,7 +23,11 @@ const spellGrantSources: SpellGrantSource[] = [
   ...species,
 ];
 
-type GrantField = "spellsLearned" | "metamagicsLearned" | "gadgets";
+type GrantField =
+  | "spellsLearned"
+  | "metamagicsLearned"
+  | "gadgets"
+  | "techniquesLearned";
 
 type ParsedGrant = {
   name: string; // "Apprentice", "Next", "Metamagic", ...
@@ -47,6 +52,7 @@ for (const source of spellGrantSources) {
     "spellsLearned",
     "metamagicsLearned",
     "gadgets",
+    "techniquesLearned",
   ] as GrantField[]) {
     const raw = source[field];
     if (!raw) continue;
@@ -137,4 +143,11 @@ export function getCharacterMetamagicGrant(character: Character): number {
 
 export function getCharacterGadgetGrant(character: Character): number {
   return getCharacterGrant(character, "gadgets", "Gadget");
+}
+
+export function getCharacterTechniqueGrant(
+  character: Character,
+  rankName: string,
+): number {
+  return getCharacterGrant(character, "techniquesLearned", rankName);
 }
