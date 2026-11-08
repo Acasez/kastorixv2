@@ -16,6 +16,8 @@ export type Action = {
   techniqueRank: TechniqueRank;
 };
 
+export type ActionCore = Omit<Action, "traits"> & { traits: string };
+
 export type ActionCost = "0" | "1" | "2" | "3" | "R";
 
 export type CreatureActionCost = "0" | "1" | "2" | "3" | "R" | "L";

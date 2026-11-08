@@ -1,9 +1,9 @@
-import type { Action } from "../../../types/Action";
+import type { ActionCore } from "../../../types/Action";
 import { getActionIcons } from "../../../utils/actionUtils";
 import ActionIcon from "../../Actions/ActionIcon";
 
 interface ActionRowProps {
-  action: Action;
+  action: ActionCore;
   isExpanded: boolean;
   onToggle: (name: string) => void;
 }

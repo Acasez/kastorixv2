@@ -1,9 +1,10 @@
 // data/weaponTraits.ts
 import rawTraits from "../JSON/traits.json";
+import type { Action } from "../types/Action";
 import type { StatKey } from "../types/StatKey";
 import type { RawTrait, Trait } from "../types/Trait";
 import { lookup } from "../utils/lookupTypes";
-import { actionsByName } from "./actions";
+import { actionsByName } from "./actionsCore";
 
 function parseTrait(raw: RawTrait): Trait {
   const match = raw.name.match(/^([\w\s]+)(?:\s*\(([^)]+)\))?$/);
@@ -13,11 +14,14 @@ function parseTrait(raw: RawTrait): Trait {
   return {
     name: baseName,
     parameter,
-    appliesTo: raw.appliesTo.split(",").map((category) => category.trim()) as Trait["appliesTo"],
+    appliesTo: raw.appliesTo
+      .split(",")
+      .map((category) => category.trim()) as Trait["appliesTo"],
     flavor: raw.flavor,
     effect: raw.effect,
     specialAction: raw.specialAction
-      ? actionsByName[raw.specialAction] || null
+      ? ((actionsByName[raw.specialAction] as unknown as Action | undefined) ??
+        null)
       : null,
     type: raw.type,
     modifiable: raw.modifiable,
