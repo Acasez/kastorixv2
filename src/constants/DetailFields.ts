@@ -105,3 +105,16 @@ export const GADGET_FIELDS: DetailField[] = [
   { label: "Requirement", valueKey: "requirement" },
   { label: "Effect", valueKey: "effect" },
 ];
+
+export const TECHNIQUE_FIELDS: DetailField[] = [
+  { label: "Actions", valueKey: "actions" },
+  { label: "Trigger", valueKey: "trigger" },
+  { label: "Requirement", valueKey: "requirement" },
+  { label: "Mana Cost", valueKey: "manaCost" },
+  { label: "Focus Cost", valueKey: "focusCost" },
+  { label: "Description", valueKey: "description" },
+  { label: "Duration", valueKey: "duration" },
+  { label: "Traits", valueKey: "traits" },
+  { label: "Skill", valueKey: "skill" },
+  { label: "Rank", valueKey: "techniqueRank" },
+];

@@ -31,6 +31,7 @@ import {
   GOLEM_MODEL_FIELDS,
   METAMAGIC_FIELDS,
   SPELL_FIELDS,
+  TECHNIQUE_FIELDS,
   UPGRADE_FIELDS,
   WEAPON_FIELDS,
 } from "../../constants/DetailFields";
@@ -38,6 +39,7 @@ import { formatPrice } from "../../utils/prices";
 import type { Spell } from "../../types/Spells";
 import type { Species } from "../../types/Species";
 import type { Trait } from "../../types/Trait";
+import { techniques } from "../../data/actions";
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -244,6 +246,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
   const armorItems = getArmorChoiceItems();
   const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
+  const techniqueItems = createChoiceItems(techniques, TECHNIQUE_FIELDS);
 
   return {
     species: speciesItems,
@@ -259,6 +262,7 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
     metamagic: metamagicItems,
     armor: armorItems,
     gadget: gadgetItems,
+    technique: techniqueItems,
   };
 }
 
