@@ -26,7 +26,7 @@ export default function TechniqueSection() {
             unlockedAtLevel={rank.unlockedAtLevel}
             selectedTechniques={techniques.filter(
               (technique) =>
-                technique.techniqueRank === `(${rank.rank}) ${rank.name}` &&
+                technique.techniqueRank === rank.name &&
                 character.unlockedActions.includes(technique.name),
             )}
             onAddTechnique={(rankName) => openTechniqueModal(rankName)}

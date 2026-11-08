@@ -1,14 +1,10 @@
 // data/actions.ts
-import type {
-  Action,
-  ActionCost,
-  ActionTrait,
-  TechniqueRank,
-} from "../types/Action";
+import type { Action, ActionCost, TechniqueRank } from "../types/Action";
 import rawActions from "../JSON/actions.json";
 import { toNumber } from "../utils/toNumber";
 import { lookup } from "../utils/lookupTypes";
 import { lookupSkills } from "./skills";
+import { lookupTraits } from "./traits";
 
 export const actions: Action[] = rawActions.map((raw) => ({
   ...raw,
@@ -16,14 +12,14 @@ export const actions: Action[] = rawActions.map((raw) => ({
   focusCost: toNumber(raw.focusCost),
   skill: lookupSkills(raw.skill),
   actions: raw.actions as ActionCost,
-  traits: raw.traits as unknown as ActionTrait[],
-  techniqueRank: raw.actions as TechniqueRank,
+  traits: lookupTraits(raw.traits),
+  techniqueRank: (raw.techniqueRank ?? raw.actions) as TechniqueRank,
 }));
 
 export default actions;
 
 export const techniques = actions.filter(
-  (action) => action.sourceType === "technique",
+  (action) => action.sourceType.toLowerCase() === "technique",
 );
 
 export const actionsByName: Record<string, Action> = Object.fromEntries(

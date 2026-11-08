@@ -24,13 +24,13 @@ export function useSpellModal() {
 
 export function useTechniqueModal() {
   const { openModal } = useModal();
-
+  console.log("opening technique modal");
   const openTechniqueModal = (rankName: string, replaceTechnique?: string) => {
     openModal({
       type: "technique",
       title: replaceTechnique
         ? `Replace ${replaceTechnique}`
-        : `Select ${rankName} Spell`,
+        : `Select ${rankName} Technique`,
       selectionKey: "",
       rank: rankName,
       replaceTechnique,

@@ -58,6 +58,14 @@ export type DetailField = {
   flavor?: boolean;
 };
 
+function getTechniqueChoiceItems(rank?: string): ChoiceItem[] {
+  const availableTechniques = rank
+    ? techniques.filter((technique) => technique.techniqueRank === rank)
+    : techniques;
+
+  return createChoiceItems(availableTechniques, TECHNIQUE_FIELDS);
+}
+
 // Narrow arrays by checking every element, not just the first
 function isArrayOf<T>(
   value: unknown,
@@ -246,7 +254,9 @@ export function getChoiceData(request: ModalRequest): ChoiceData {
   const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
   const armorItems = getArmorChoiceItems();
   const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
-  const techniqueItems = createChoiceItems(techniques, TECHNIQUE_FIELDS);
+  const techniqueItems = getTechniqueChoiceItems(
+    request.type === "technique" ? request.rank : undefined,
+  );
 
   return {
     species: speciesItems,
@@ -270,6 +280,10 @@ export function getChoiceItem(
   type: ChoiceType,
   name: string,
 ): ChoiceItem | undefined {
+  if (type === "technique") {
+    return getTechniqueChoiceItems().find((item) => item.name === name);
+  }
+
   if (type === "ancestryFeat") {
     return createChoiceItems(ancestryFeats, ANCESTRY_FEAT_FIELDS).find(
       (item) => item.name === name,

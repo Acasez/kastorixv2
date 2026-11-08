@@ -316,23 +316,23 @@ function createTechniqueHandler(): ModalHandler {
     },
 
     getBlockedChoices: (character, request) => {
-      if (request.type !== "spell" || !request.rank) return [];
-      return character.knownSpells.filter(
-        (spellName) => spellName !== request.replaceSpell,
+      if (request.type !== "technique") return [];
+      return character.unlockedActions.filter(
+        (techniqueName) => techniqueName !== request.replaceTechnique,
       );
     },
 
-    onConfirm: (character, updateCharacter, request, chosenSpell) => {
-      if (request.type !== "spell" || !request.rank) return;
+    onConfirm: (character, updateCharacter, request, chosenTechnique) => {
+      if (request.type !== "technique") return;
 
-      const knownSpells = character.knownSpells.filter(
-        (spellName) => spellName !== request.replaceSpell,
+      const unlockedActions = character.unlockedActions.filter(
+        (techniqueName) => techniqueName !== request.replaceTechnique,
       );
 
       updateCharacter({
-        knownSpells: knownSpells.includes(chosenSpell.name)
-          ? knownSpells
-          : [...knownSpells, chosenSpell.name],
+        unlockedActions: unlockedActions.includes(chosenTechnique.name)
+          ? unlockedActions
+          : [...unlockedActions, chosenTechnique.name],
       });
     },
   };
