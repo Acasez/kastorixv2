@@ -1,4 +1,5 @@
 import ActionBox from "../Actions/ActionBox";
+import ActionIcon from "../Actions/ActionIcon";
 import type { ChoiceItem } from "./ChoiceItem";
 
 interface ChoiceTooltipProps {
@@ -14,13 +15,7 @@ export default function ChoiceTooltip({ item }: ChoiceTooltipProps) {
       {item.actionIcons && item.actionIcons.length > 0 && (
         <p className="mb-1 flex justify-center">
           {item.actionIcons.map((icon, index) => (
-            <img
-              key={`${item.name}-action-${index}`}
-              src={icon}
-              alt=""
-              aria-hidden="true"
-              className="w-5 h-5 object-contain"
-            />
+            <ActionIcon icon={icon} key={`${item.name}-${index}`} />
           ))}
         </p>
       )}
