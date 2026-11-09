@@ -1,5 +1,5 @@
 import ActionBox from "../Actions/ActionBox";
-import type { ChoiceItem } from "./ChoiceModal";
+import type { ChoiceItem } from "./ChoiceItem";
 
 interface ChoiceTooltipProps {
   item: ChoiceItem;

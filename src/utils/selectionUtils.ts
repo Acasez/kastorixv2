@@ -18,6 +18,7 @@ import { techniques } from "../data/actions";
 
 // Type for items that can have unlocked actions
 export type UnlockableItem = {
+  repeatable?: boolean;
   name: string;
   unlockedActions?: Action[];
   techniques?: Action[];

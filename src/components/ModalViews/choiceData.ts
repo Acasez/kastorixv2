@@ -1,4 +1,4 @@
-import { type ChoiceItem } from "./ChoiceModal";
+import { type ChoiceItem } from "./ChoiceItem";
 import type { ModalRequest } from "./modalTypes";
 import backgrounds from "../../data/backgrounds";
 import generalFeats from "../../data/generalFeats";

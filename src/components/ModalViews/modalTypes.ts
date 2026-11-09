@@ -1,5 +1,5 @@
 export type ModalRequest =
-  | { type: "species"; title: string }
+  | { type: "species"; title: string; level: 0 }
   | { type: "background"; title: string; selectionKey: string; level: number }
   | { type: "generalFeat"; title: string; selectionKey: string; level: number }
   | { type: "arcaneFeat"; title: string; selectionKey: string; level: number }

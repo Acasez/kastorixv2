@@ -1,31 +1,11 @@
 import { useState } from "react";
-import type { DetailField } from "./choiceData";
 import ChoiceItemDetail from "./ChoiceItemDetail";
 import SearchField from "../SearchField";
 import DropDownMenu from "../DropDownMenu";
 import ModalItemButton from "./ModalItemButton";
-import type { Action } from "../../types/Action";
 import type { UnlockableItem } from "../../utils/selectionUtils";
+import type { ChoiceItem } from "./ChoiceItem";
 
-export interface ChoiceItem {
-  name: string;
-  description?: string;
-  effect?: string;
-  actionIcons?: string[];
-  details?: DetailField[];
-  aspects?: string;
-  traits?: string;
-  type?: string;
-  weaponGroup?: string;
-  requirement?: string;
-  level?: number | string;
-  repeatable?: string | number | boolean;
-  unlockedActions?: Action[];
-  techniques?: Action[];
-  actionCost?: string;
-  choice?: string;
-  choiceOptions?: ChoiceItem[];
-}
 interface ChoiceModalProps {
   items: ChoiceItem[];
   confirmLabel: string;

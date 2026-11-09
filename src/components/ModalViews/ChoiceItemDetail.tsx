@@ -1,6 +1,6 @@
 import type { SetStateAction } from "react";
 import ActionBox from "../Actions/ActionBox";
-import type { ChoiceItem } from "./ChoiceModal";
+import type { ChoiceItem } from "./ChoiceItem";
 import ActionIcon from "../Actions/ActionIcon";
 import type { UnlockableItem } from "../../utils/selectionUtils";
 

@@ -1,5 +1,5 @@
 import type { SetStateAction } from "react";
-import type { ChoiceItem } from "./ModalViews/ChoiceModal";
+import type { ChoiceItem } from "./ModalViews/ChoiceItem";
 
 interface DropDownMenuProps {
   field: { label: string; value: string };
