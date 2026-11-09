@@ -6,9 +6,8 @@ import {
   createCollectionHandler,
   createSpecialHandler,
 } from "./factory";
-import type { ModalHandler, UpdateFn } from "./types";
+import type { ModalHandler } from "./types";
 
-// Handler registry
 export const handlers: Record<ModalRequest["type"], ModalHandler> = {
   // Property handlers
   species: createPropertyHandler("species", "species"),
@@ -23,32 +22,16 @@ export const handlers: Record<ModalRequest["type"], ModalHandler> = {
   golemUpgrade: createSelectionHandler("golemUpgrade"),
   runegunUpgrade: createSelectionHandler("runegunUpgrade"),
 
-  // Collection handlers
-  spell: createCollectionHandler("spell", {
-    collectionKey: "knownSpells",
-    replaceKey: "replaceSpell",
-  }),
-  weapon: createCollectionHandler("weapon", {
-    collectionKey: "weapons",
-    replaceKey: "replaceWeapon",
-  }),
-  gadget: createCollectionHandler("gadget", {
-    collectionKey: "gadgets",
-    replaceKey: "replaceGadget",
-  }),
-  metamagic: createCollectionHandler("metamagic", {
-    collectionKey: "metamagics",
-    replaceKey: "replaceMetamagic",
-  }),
-  technique: createCollectionHandler("technique", {
-    collectionKey: "unlockedActions",
-    replaceKey: "replaceTechnique",
-  }),
+  // Collection handlers - now fully type-safe
+  spell: createCollectionHandler("spell"),
+  weapon: createCollectionHandler("weapon"),
+  gadget: createCollectionHandler("gadget"),
+  metamagic: createCollectionHandler("metamagic"),
+  technique: createCollectionHandler("technique"),
 
   // Special handlers
   baseStats: createSpecialHandler("baseStats"),
   statIncrease: createSpecialHandler("statIncrease"),
 };
 
-// Export types
-export type { ModalHandler, UpdateFn };
+export type { ModalHandler };

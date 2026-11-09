@@ -1,5 +1,5 @@
 export type ModalRequest =
-  | { type: "species"; title: string; level: 0 }
+  | { type: "species"; title: string }
   | { type: "background"; title: string; selectionKey: string; level: number }
   | { type: "generalFeat"; title: string; selectionKey: string; level: number }
   | { type: "arcaneFeat"; title: string; selectionKey: string; level: number }
@@ -11,12 +11,7 @@ export type ModalRequest =
       level: number;
       species: string | null;
     }
-  | {
-      type: "golemUpgrade";
-      title: string;
-      selectionKey: string;
-      level: number;
-    }
+  | { type: "golemUpgrade"; title: string; selectionKey: string; level: number }
   | {
       type: "runegunUpgrade";
       title: string;
@@ -58,12 +53,7 @@ export type ModalRequest =
     }
   | { type: "armor"; title: string; selectionKey: string; level: number }
   | { type: "baseStats"; title: string }
-  | {
-      type: "statIncrease";
-      title: string;
-      selectionKey: string;
-      level: number;
-    }
+  | { type: "statIncrease"; title: string; selectionKey: string; level: number }
   | {
       type: "technique";
       title: string;

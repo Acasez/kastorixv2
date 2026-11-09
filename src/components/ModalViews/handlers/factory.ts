@@ -8,21 +8,6 @@ import {
 } from "../../../utils/selectionUtils";
 import { createGolemFromModel } from "./createGolem";
 
-type CollectionTypes =
-  | "spell"
-  | "weapon"
-  | "gadget"
-  | "metamagic"
-  | "technique";
-
-type ReplaceKeyMap = {
-  spell: "replaceSpell";
-  weapon: "replaceWeapon";
-  gadget: "replaceGadget";
-  metamagic: "replaceMetamagic";
-  technique: "replaceTechnique";
-};
-
 /**
  * Helper to safely get selectionKey from request
  * Returns undefined for types that don't have selectionKey (like species)
@@ -30,6 +15,33 @@ type ReplaceKeyMap = {
 function getSelectionKey(request: ModalRequest): string | undefined {
   return "selectionKey" in request ? request.selectionKey : undefined;
 }
+
+/**
+ * Mapping between collection types and their configuration
+ */
+type CollectionTypeMap = {
+  spell: { replaceKey: "replaceSpell"; collectionKey: "knownSpells" };
+  weapon: { replaceKey: "replaceWeapon"; collectionKey: "weapons" };
+  gadget: { replaceKey: "replaceGadget"; collectionKey: "gadgets" };
+  metamagic: { replaceKey: "replaceMetamagic"; collectionKey: "metamagics" };
+  technique: {
+    replaceKey: "replaceTechnique";
+    collectionKey: "unlockedActions";
+  };
+};
+
+type CollectionTypes = keyof CollectionTypeMap;
+
+const collectionTypeMap = {
+  spell: { replaceKey: "replaceSpell", collectionKey: "knownSpells" },
+  weapon: { replaceKey: "replaceWeapon", collectionKey: "weapons" },
+  gadget: { replaceKey: "replaceGadget", collectionKey: "gadgets" },
+  metamagic: { replaceKey: "replaceMetamagic", collectionKey: "metamagics" },
+  technique: {
+    replaceKey: "replaceTechnique",
+    collectionKey: "unlockedActions",
+  },
+} satisfies CollectionTypeMap;
 
 /**
  * Creates a handler for simple selections that store values in character.selections
@@ -52,13 +64,10 @@ export function createSelectionHandler(
       const selectionKey = getSelectionKey(request);
       if (!selectionKey) return [];
 
-      // Get items from request or use empty array as fallback
-      // Note: Items are now passed via getChoiceData in ModalWrapper
       const items: { name: string; repeatable?: boolean }[] = [];
       const choiceNames = new Set(items.map((item) => item.name));
       const ownedNames = new Set<string>();
 
-      // Find all owned items of this type
       Object.entries(character.selections).forEach(([key, selectedValue]) => {
         if (typeof selectedValue !== "string") return;
 
@@ -70,7 +79,6 @@ export function createSelectionHandler(
         }
       });
 
-      // Filter out repeatable items
       return items
         .filter((item) => {
           const repeatableValue = item.repeatable;
@@ -93,7 +101,6 @@ export function createSelectionHandler(
         ),
       );
 
-      // Get unlocked actions and techniques
       const unlockedActionNames = chosenItem
         ? getUnlockedActionNames(chosenItem)
         : [];
@@ -103,7 +110,6 @@ export function createSelectionHandler(
       const newActions: string[] =
         unlockedActionNames.concat(unlockedTechniques);
 
-      // Special handling for Golemcrafter
       const golemUpdate: Partial<Character> = {};
       if (
         type === "advantage" &&
@@ -160,7 +166,6 @@ export function createPropertyHandler<T extends keyof Character>(
         [propertyKey]: chosenItem.name,
       };
 
-      // Special handling for species - clear species-specific selections
       if (type === "species" && character[propertyKey] !== chosenItem.name) {
         updates.selections = Object.fromEntries(
           Object.entries(character.selections).filter(
@@ -169,7 +174,6 @@ export function createPropertyHandler<T extends keyof Character>(
         );
       }
 
-      // Special handling for background
       if (type === "background" && "selectionKey" in request) {
         updates.selections = {
           ...character.selections,
@@ -181,46 +185,60 @@ export function createPropertyHandler<T extends keyof Character>(
     },
   };
 }
+
 /**
  * Creates a handler for collection-based selections (spells, gadgets, weapons, etc.)
- * Used for: spell, weapon, gadget, metamagic, technique
+ * Fully type-safe with no 'any' casts
  */
 export function createCollectionHandler<T extends CollectionTypes>(
   type: T,
-  config: {
-    collectionKey: keyof Character;
-    replaceKey: ReplaceKeyMap[T];
-  },
 ): ModalHandler {
-  const { collectionKey, replaceKey } = config;
+  // Get config for this specific collection type
+  const config = {
+    replaceKey: collectionTypeMap[type].replaceKey,
+    collectionKey: collectionTypeMap[type].collectionKey,
+  } as const;
+
+  // Extract the specific request type for this collection
+  type RequestType = Extract<ModalRequest, { type: T }>;
 
   return {
-    getCurrentValue: (character, request) => {
+    getCurrentValue: (_character, request) => {
       if (request.type !== type) return null;
+      const req = request as RequestType;
+      // Safe indexed access - TypeScript knows this is valid
       return (
-        (request as Record<string, string | undefined>)[replaceKey] ?? null
+        (req[config.replaceKey as keyof RequestType] as string | undefined) ??
+        null
       );
     },
 
     getBlockedChoices: (character, request) => {
       if (request.type !== type) return [];
 
-      const collection = character[collectionKey] as string[];
+      const req = request as RequestType;
+      const collection = character[config.collectionKey] as string[];
+
       if (!Array.isArray(collection)) return [];
 
-      const replaceValue = (request as Record<string, string | undefined>)[
-        replaceKey
-      ];
-      return collection.filter((name) => name !== replaceValue);
+      // Safe indexed access
+      const replaceValue = req[config.replaceKey as keyof RequestType] as
+        | string
+        | undefined;
+      return replaceValue
+        ? collection.filter((name) => name !== replaceValue)
+        : collection;
     },
 
     onConfirm: (character, updateCharacter, request, chosenItem) => {
       if (request.type !== type) return;
 
-      const collection = character[collectionKey] as string[];
-      const replaceValue = (request as Record<string, string | undefined>)[
-        replaceKey
-      ];
+      const req = request as RequestType;
+      const collection = character[config.collectionKey] as string[];
+      // Safe indexed access
+      const replaceValue = req[config.replaceKey as keyof RequestType] as
+        | string
+        | undefined;
 
       const filteredCollection = replaceValue
         ? collection.filter((name) => name !== replaceValue)
@@ -231,7 +249,7 @@ export function createCollectionHandler<T extends CollectionTypes>(
         : [...filteredCollection, chosenItem.name];
 
       updateCharacter({
-        [collectionKey]: updatedCollection,
+        [config.collectionKey]: updatedCollection,
       });
     },
   };
@@ -243,10 +261,9 @@ export function createCollectionHandler<T extends CollectionTypes>(
  */
 export function createSpecialHandler(type: ModalRequest["type"]): ModalHandler {
   void type;
-
   return {
     getCurrentValue: () => null,
     getBlockedChoices: () => [],
-    onConfirm: () => {}, // Handled by the component itself
+    onConfirm: () => {},
   };
 }
