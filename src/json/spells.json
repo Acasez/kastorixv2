@@ -1064,6 +1064,25 @@
         "damageTypeTwo": ""
     },
     {
+        "name": "Gravity Pull",
+        "actions": "2",
+        "trigger": "",
+        "aspects": "Arcane",
+        "traits": "Complex",
+        "range": "5",
+        "target": "One creature",
+        "duration": "",
+        "flavor": "",
+        "effect": "You manipulate gravity around a Medium or smaller creature you can see in range to bring them to you.\nThey must make Fortitude save.\nFailure: The target is pulled to a space next to you.\nCritical Failure: The target is also off-guard 3 until the start of its turn.\nIf this spell would cause the target to arrive in the air, you can make a melee attack or grappling check before they fall.",
+        "upcast": "At Magus: You can target Large creatures\nAt Archmage: You can target Huge creatures",
+        "rank": "(2) Adept",
+        "save": "Fortitude",
+        "dice": "",
+        "damageType": "",
+        "diceTwo": "",
+        "damageTypeTwo": ""
+    },
+    {
         "name": "Heat Metal",
         "actions": "2",
         "trigger": "",

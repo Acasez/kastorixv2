@@ -507,6 +507,19 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Magazine (X)",
+        "appliesTo": "Weapons",
+        "flavor": "",
+        "effect": "Magazine weapons can be loaded with X ammo, and can fire that many times before needing to reload\nReloading still only reloads one ammo, so magazine weapons take multiple actions to fully reload.",
+        "specialAction": "",
+        "modifiable": "Yes",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Magic",
         "appliesTo": "Actions",
         "flavor": "This action is undoubtedly magical",
@@ -539,19 +552,6 @@
         "effect": "",
         "specialAction": "",
         "modifiable": "",
-        "attackStat": "",
-        "damageStat": "",
-        "MAPChange": "",
-        "attackPenalty": "",
-        "spellshapingIncrease": ""
-    },
-    {
-        "name": "Magazine (X)",
-        "appliesTo": "Weapons",
-        "flavor": "",
-        "effect": "Magazine weapons can be loaded with X ammo, and can fire that many times before needing to reload\nReloading still only reloads one ammo, so magazine weapons take multiple actions to fully reload.",
-        "specialAction": "",
-        "modifiable": "Yes",
         "attackStat": "",
         "damageStat": "",
         "MAPChange": "",
@@ -793,6 +793,19 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Soul",
+        "appliesTo": "Spells",
+        "flavor": "The spell or ability targets or affects souls",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Spellbreaking",
         "appliesTo": "Progression",
         "flavor": "Spellbreaking is the art of breaking spells before they are cast, disrupting the spellshaping.",
@@ -810,19 +823,6 @@
         "appliesTo": "Actions",
         "flavor": "This action involves casting a spell, and making a Spellshaping check.",
         "effect": "You can use Somatic and Verbal components when casting spells.\nThis gives the action the Manipulate and Verbal traits, respectively.",
-        "specialAction": "",
-        "modifiable": "",
-        "attackStat": "",
-        "damageStat": "",
-        "MAPChange": "",
-        "attackPenalty": "",
-        "spellshapingIncrease": ""
-    },
-    {
-        "name": "Soul",
-        "appliesTo": "Spells",
-        "flavor": "The spell or ability targets or affects souls",
-        "effect": "",
         "specialAction": "",
         "modifiable": "",
         "attackStat": "",
@@ -897,6 +897,19 @@
         "spellshapingIncrease": ""
     },
     {
+        "name": "Technique",
+        "appliesTo": "Actions, Progression",
+        "flavor": "Technique actions involve skilled maneuvers in combat.",
+        "effect": "",
+        "specialAction": "",
+        "modifiable": "",
+        "attackStat": "",
+        "damageStat": "",
+        "MAPChange": "",
+        "attackPenalty": "",
+        "spellshapingIncrease": ""
+    },
+    {
         "name": "Teleportation",
         "appliesTo": "Spells",
         "flavor": "Allows the caster to instantly move to a new position.",
@@ -913,19 +926,6 @@
         "name": "Temporal",
         "appliesTo": "Spells",
         "flavor": "Deals with time, speeding up or slowing down objects or creatures.",
-        "effect": "",
-        "specialAction": "",
-        "modifiable": "",
-        "attackStat": "",
-        "damageStat": "",
-        "MAPChange": "",
-        "attackPenalty": "",
-        "spellshapingIncrease": ""
-    },
-    {
-        "name": "Technique",
-        "appliesTo": "Actions, Progression",
-        "flavor": "Technique actions involve skilled maneuvers in combat.",
         "effect": "",
         "specialAction": "",
         "modifiable": "",

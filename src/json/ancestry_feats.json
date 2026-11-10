@@ -1,17 +1,5 @@
 [
     {
-        "name": "Unorthodox Wielder",
-        "description": "You've always been fascinated with unique, advanced weapons. \nLearn the Advanced Weapon Fighter General Feat.",
-        "unlockedActions": "",
-        "type": "Cultural",
-        "species": "Human",
-        "prerequisites": "",
-        "level": "1",
-        "unlockedFeats": "General Feat - Level 3 - Advanced Weapon Fighter",
-        "speeds": "",
-        "resistances": ""
-    },
-    {
         "name": "Clawfighter",
         "description": "You have trained in fighting with your claws. \nYou gain Martial Arts Training Feat",
         "unlockedActions": "",
@@ -224,6 +212,18 @@
         "prerequisites": "",
         "level": "1",
         "unlockedFeats": "",
+        "speeds": "",
+        "resistances": ""
+    },
+    {
+        "name": "Unorthodox Wielder",
+        "description": "You've always been fascinated with unique, advanced weapons. \nLearn the Advanced Weapon Fighter General Feat.",
+        "unlockedActions": "",
+        "type": "Cultural",
+        "species": "Human",
+        "prerequisites": "",
+        "level": "1",
+        "unlockedFeats": "General Feat - Level 3 - Advanced Weapon Fighter",
         "speeds": "",
         "resistances": ""
     },

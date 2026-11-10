@@ -49,7 +49,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "Block the force of the attack with your Aura, making it take all of the damage. \nIf it breaks your aura, you take the remaining damage.",
-        "traits": "Aura, Magic, Defensive",
+        "traits": "Aura, Defensive, Magic",
         "skill": "",
         "sourceType": "Base",
         "source": "",
@@ -119,7 +119,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "Get ready to block incoming attacks and spells. \nYou have a +X bonus to your Reflex and Fortitude saves against targeted attacks and non-environmental area effects until the start of next turn.",
-        "traits": "Item, Defensive",
+        "traits": "Defensive, Item",
         "skill": "",
         "sourceType": "Item",
         "source": "",
@@ -840,6 +840,20 @@
         "techniqueRank": ""
     },
     {
+        "name": "Imbued Strike",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "Make an attack with your Imbued Weapon.\nThis attack uses your INT for attack rolls, and WIL for damage rolls.\nThis attack has 3 tile range if the weapon is Light, 1 if Heavy and 2 otherwise.",
+        "traits": "Attack, Magic",
+        "skill": "",
+        "sourceType": "Advantage",
+        "source": "Imbued Weapon",
+        "techniqueRank": ""
+    },
+    {
         "name": "Incanter's Stance",
         "actions": "1",
         "trigger": "",
@@ -896,6 +910,20 @@
         "techniqueRank": "Complex"
     },
     {
+        "name": "Intercept Hit",
+        "actions": "Reaction",
+        "trigger": "An adjencent ally is targeted by a strike or attack spell.",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "Step in front of the attack, causing it to target you instead.\nMake a Reflex saving throw against the attack, taking a one degree of success less.",
+        "traits": "Defensive",
+        "skill": "",
+        "sourceType": "Base",
+        "source": "",
+        "techniqueRank": ""
+    },
+    {
         "name": "Intimidate",
         "actions": "1",
         "trigger": "",
@@ -921,6 +949,20 @@
         "skill": "Athletics",
         "sourceType": "Base",
         "source": "",
+        "techniqueRank": ""
+    },
+    {
+        "name": "Levitate Imbued Weapon",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "1",
+        "description": "Levitate your Imbued Weapon in the air. \nIt hovers next to you, allowing you to take the Imbued Strike action.\nAdditionally you can use it to take weapon trait actions like Block and Parry.\nMaintaining this stance costs 5 mana each turn.",
+        "traits": "Magic, Stance",
+        "skill": "",
+        "sourceType": "Advantage",
+        "source": "Imbued Weapon",
         "techniqueRank": ""
     },
     {
@@ -1379,7 +1421,7 @@
         "manaCost": "",
         "focusCost": "",
         "description": "Stride, then Stride or Take Cover, then make a ranged Strike.",
-        "traits": "Technique, Move",
+        "traits": "Move, Technique",
         "skill": "",
         "sourceType": "Technique",
         "source": "",
@@ -1832,6 +1874,20 @@
         "sourceType": "Arcane Feat",
         "source": "Basic Telekinesis",
         "techniqueRank": ""
+    },
+    {
+        "name": "The Battle's Not Over",
+        "actions": "1",
+        "trigger": "",
+        "requirement": "",
+        "manaCost": "",
+        "focusCost": "",
+        "description": "You inspire one dying ally to continue fighting and stand up.\nTarget one dying ally that you can see within 5 tiles.\nIt can make one Death Saving Throw with advantage.\nIf this brings them out Dying, they can spend their reaction to Stand Up from prone.\nYou can only use this once per turn.",
+        "traits": "Technique, Tactical, Verbal",
+        "skill": "",
+        "sourceType": "Technique",
+        "source": "",
+        "techniqueRank": "Advanced"
     },
     {
         "name": "Throw Bomb",

@@ -68,6 +68,23 @@
         "gadgets": ""
     },
     {
+        "name": "Imbued Weapon",
+        "traits": "",
+        "description": "You've constructed an imbued weapon, connected to your soul.\nSelect a non-ranged weapon. It gets an Anti-Tampering Rune. \nYou can use it as a normal weapon, but you also have ways to animate it and strike from range.\nYou have Levitate Imbued Weapon and Imbued Strike actions.",
+        "unlockedActions": "Levitate Imbued Weapon, Imbued Strike",
+        "prerequisites": "",
+        "level": "1",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "",
+        "metamagicsLearned": "",
+        "gadgets": ""
+    },
+    {
         "name": "Large Mana Well",
         "traits": "",
         "description": "You have a larger than average mana well, allowing you to cast more spells and increasing the strength of your aura. \nIncrease your maximum mana by your WIL.\nEvery time you level up your maximum mana increases by 2 more.",
@@ -376,7 +393,7 @@
     {
         "name": "Mana Blooded",
         "traits": "",
-        "description": "Exposure to magic has made your very blood infused with mana.\nYou have a +2 bonus to all spellshaping checks if you lost health since the end of your last turn.\nIncrease your health by 3 + your WIL.",
+        "description": "Exposure to magic has made your very blood infused with mana.\nWhen you lose health you regain 1d4 mana and get a (non stacking) +2 bonus to all spellshaping checks until the end of your next turn. \nIncrease your health by 3 + your WIL.",
         "unlockedActions": "",
         "prerequisites": "",
         "level": "8",
@@ -489,6 +506,23 @@
         "health": "",
         "mana": "",
         "spellsLearned": "",
+        "metamagicsLearned": "",
+        "gadgets": ""
+    },
+    {
+        "name": "Attunement Mastery",
+        "traits": "Attunement",
+        "description": "You have a true mastery over spells from your Attunement.\nYou learn 2 extra attuned spells of all ranks you know.\nYour proficiency level in spells of your Attunement increases one step (max Master).",
+        "unlockedActions": "",
+        "prerequisites": "",
+        "level": "",
+        "unlockedFeats": "",
+        "speeds": "",
+        "resistances": "",
+        "choice": "",
+        "health": "",
+        "mana": "",
+        "spellsLearned": "(2) Unlocked",
         "metamagicsLearned": "",
         "gadgets": ""
     }
