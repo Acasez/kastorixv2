@@ -48,6 +48,12 @@ export default function ActionBox({ action }: ActionBoxProps) {
             <span className="font-bold">Trigger</span>: {details.trigger}
           </p>
         )}
+        {details.requirement && (
+          <p>
+            <span className="font-bold">Requirement</span>:{" "}
+            {details.requirement}
+          </p>
+        )}
         <p className="mt-2.5 leading-normal whitespace-pre-line">
           {details.description}
         </p>
