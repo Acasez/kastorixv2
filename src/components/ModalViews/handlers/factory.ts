@@ -7,6 +7,7 @@ import {
   getUnlockedTechniques,
 } from "../../../utils/selectionUtils";
 import { createGolemFromModel } from "./createGolem";
+import { getChoiceData } from "../choiceData";
 
 /**
  * Helper to safely get selectionKey from request
@@ -64,7 +65,10 @@ export function createSelectionHandler(
       const selectionKey = getSelectionKey(request);
       if (!selectionKey) return [];
 
-      const items: { name: string; repeatable?: boolean }[] = [];
+      // Get actual items from choiceData
+      const choiceData = getChoiceData(request);
+      const items = choiceData[type as keyof typeof choiceData] || [];
+
       const choiceNames = new Set(items.map((item) => item.name));
       const ownedNames = new Set<string>();
 

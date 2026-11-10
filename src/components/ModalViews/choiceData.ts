@@ -40,6 +40,25 @@ import type { Spell } from "../../types/Spells";
 import type { Species } from "../../types/Species";
 import type { Trait } from "../../types/Trait";
 import { techniques } from "../../data/actions";
+import { create } from "zustand";
+
+// Add a cache store
+interface ChoiceDataCache {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  cache: Record<string, any>;
+  getOrCreate: <T>(key: string, creator: () => T) => T;
+}
+
+const useChoiceDataCache = create<ChoiceDataCache>((set, get) => ({
+  cache: {},
+  getOrCreate: (key, creator) => {
+    const cache = get().cache;
+    if (cache[key]) return cache[key];
+    const value = creator();
+    set({ cache: { ...cache, [key]: value } });
+    return value;
+  },
+}));
 
 export type ChoiceData = Record<
   Exclude<ModalRequest["type"], "baseStats" | "statIncrease">,
@@ -173,107 +192,115 @@ function featIsAvailableForSpecies(
 }
 
 export function getChoiceData(request: ModalRequest): ChoiceData {
-  const spellItems = getSpellChoiceItems(
-    request.type === "spell" ? request.rank : undefined,
-  );
+  const cache = useChoiceDataCache.getState();
 
-  const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
-    name: speciesItem.name,
-    details: [
-      ...createDetails(speciesItem, [
-        { label: "Size", valueKey: "size" },
-        { label: "Starting Health", valueKey: "health" },
-        { label: "Starting Mana", valueKey: "mana" },
-      ]),
-      ...[
-        [speciesItem.traitOne, speciesItem.traitOneDesc],
-        [speciesItem.traitTwo, speciesItem.traitTwoDesc],
-        [speciesItem.traitThree, speciesItem.traitThreeDesc],
-        [speciesItem.traitFour, speciesItem.traitFourDesc],
-      ].flatMap(([traitName, traitDescription]) => {
-        if (!traitName) return [];
-        return createDetails({ value: traitDescription }, [
-          {
-            label: String(traitName),
-            valueKey: "value",
-            italicFirstLine: true,
-          },
-        ]);
-      }),
-    ],
-    unlockedAction: speciesItem.unlockedActions,
-  }));
+  return cache.getOrCreate(`choiceData:${request.type}`, () => {
+    // ... existing getChoiceData logic ...
+    const spellItems = getSpellChoiceItems(
+      request.type === "spell" ? request.rank : undefined,
+    );
 
-  const generalFeatItems = createChoiceItems(generalFeats, GENERAL_FEAT_FIELDS);
-  const arcaneFeatItems = createChoiceItems(arcaneFeats, ARCANE_FEAT_FIELDS);
-  const advantageItems = createChoiceItems(advantages, ADVANTAGE_FIELDS);
-  const golemModelItems = createChoiceItems(golemModels, GOLEM_MODEL_FIELDS);
-  const runegunModelItems = createChoiceItems(
-    weapons.filter((weapon) => weapon.weaponGroup === "Runegun"),
-    WEAPON_FIELDS,
-  );
-  const aspectChoiceItems = createChoiceItems(
-    aspects.filter((aspect) => aspect.attuneable !== "No"),
-    ASPECT_FIELDS,
-  );
-  const addChoiceOptions = (items: ChoiceItem[]) =>
-    items.map((item) => {
-      const choiceType = item.choice?.replace(/\s*-\s*Choice$/i, "");
-      const choiceOptions =
-        choiceType === "Golem Model"
-          ? golemModelItems
-          : choiceType === "Runegun Model"
-            ? runegunModelItems
-            : choiceType?.startsWith("Aspects - ")
-              ? aspectChoiceItems
-              : undefined;
+    const speciesItems: ChoiceItem[] = species.map((speciesItem) => ({
+      name: speciesItem.name,
+      details: [
+        ...createDetails(speciesItem, [
+          { label: "Size", valueKey: "size" },
+          { label: "Starting Health", valueKey: "health" },
+          { label: "Starting Mana", valueKey: "mana" },
+        ]),
+        ...[
+          [speciesItem.traitOne, speciesItem.traitOneDesc],
+          [speciesItem.traitTwo, speciesItem.traitTwoDesc],
+          [speciesItem.traitThree, speciesItem.traitThreeDesc],
+          [speciesItem.traitFour, speciesItem.traitFourDesc],
+        ].flatMap(([traitName, traitDescription]) => {
+          if (!traitName) return [];
+          return createDetails({ value: traitDescription }, [
+            {
+              label: String(traitName),
+              valueKey: "value",
+              italicFirstLine: true,
+            },
+          ]);
+        }),
+      ],
+      unlockedAction: speciesItem.unlockedActions,
+    }));
 
-      return choiceOptions ? { ...item, choiceOptions } : item;
-    });
-  const availableAncestryFeats =
-    request.type === "ancestryFeat"
-      ? ancestryFeats.filter((feat) =>
-          featIsAvailableForSpecies(feat.species, request.species),
-        )
-      : ancestryFeats;
-  const ancestryFeatItems = createChoiceItems(
-    availableAncestryFeats,
-    ANCESTRY_FEAT_FIELDS,
-  );
-  const golemUpgradeItems = createChoiceItems(golemUpgrades, UPGRADE_FIELDS);
-  const runegunUpgradeItems = createChoiceItems(
-    runegunUpgrades,
-    UPGRADE_FIELDS,
-  );
-  const backgroundItems = createChoiceItems(backgrounds, BACKGROUND_FIELDS);
-  const weaponItems = getWeaponChoiceItems(
-    request.type === "weapon" ? request.excludedTypes : undefined,
-    request.type === "weapon" ? request.includedTypes : undefined,
-    request.type === "weapon" ? request.includedWeaponGroups : undefined,
-  );
-  const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
-  const armorItems = getArmorChoiceItems();
-  const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
-  const techniqueItems = getTechniqueChoiceItems(
-    request.type === "technique" ? request.rank : undefined,
-  );
+    const generalFeatItems = createChoiceItems(
+      generalFeats,
+      GENERAL_FEAT_FIELDS,
+    );
+    const arcaneFeatItems = createChoiceItems(arcaneFeats, ARCANE_FEAT_FIELDS);
+    const advantageItems = createChoiceItems(advantages, ADVANTAGE_FIELDS);
+    const golemModelItems = createChoiceItems(golemModels, GOLEM_MODEL_FIELDS);
+    const runegunModelItems = createChoiceItems(
+      weapons.filter((weapon) => weapon.weaponGroup === "Runegun"),
+      WEAPON_FIELDS,
+    );
+    const aspectChoiceItems = createChoiceItems(
+      aspects.filter((aspect) => aspect.attuneable !== "No"),
+      ASPECT_FIELDS,
+    );
+    const addChoiceOptions = (items: ChoiceItem[]) =>
+      items.map((item) => {
+        const choiceType = item.choice?.replace(/\s*-\s*Choice$/i, "");
+        const choiceOptions =
+          choiceType === "Golem Model"
+            ? golemModelItems
+            : choiceType === "Runegun Model"
+              ? runegunModelItems
+              : choiceType?.startsWith("Aspects - ")
+                ? aspectChoiceItems
+                : undefined;
 
-  return {
-    species: speciesItems,
-    background: backgroundItems,
-    generalFeat: generalFeatItems,
-    arcaneFeat: addChoiceOptions(arcaneFeatItems),
-    advantage: addChoiceOptions(advantageItems),
-    ancestryFeat: ancestryFeatItems,
-    golemUpgrade: golemUpgradeItems,
-    runegunUpgrade: runegunUpgradeItems,
-    spell: spellItems,
-    weapon: weaponItems,
-    metamagic: metamagicItems,
-    armor: armorItems,
-    gadget: gadgetItems,
-    technique: techniqueItems,
-  };
+        return choiceOptions ? { ...item, choiceOptions } : item;
+      });
+    const availableAncestryFeats =
+      request.type === "ancestryFeat"
+        ? ancestryFeats.filter((feat) =>
+            featIsAvailableForSpecies(feat.species, request.species),
+          )
+        : ancestryFeats;
+    const ancestryFeatItems = createChoiceItems(
+      availableAncestryFeats,
+      ANCESTRY_FEAT_FIELDS,
+    );
+    const golemUpgradeItems = createChoiceItems(golemUpgrades, UPGRADE_FIELDS);
+    const runegunUpgradeItems = createChoiceItems(
+      runegunUpgrades,
+      UPGRADE_FIELDS,
+    );
+    const backgroundItems = createChoiceItems(backgrounds, BACKGROUND_FIELDS);
+    const weaponItems = getWeaponChoiceItems(
+      request.type === "weapon" ? request.excludedTypes : undefined,
+      request.type === "weapon" ? request.includedTypes : undefined,
+      request.type === "weapon" ? request.includedWeaponGroups : undefined,
+    );
+    const metamagicItems = createChoiceItems(metamagics, METAMAGIC_FIELDS);
+    const armorItems = getArmorChoiceItems();
+    const gadgetItems = createChoiceItems(gadgets, GADGET_FIELDS);
+    const techniqueItems = getTechniqueChoiceItems(
+      request.type === "technique" ? request.rank : undefined,
+    );
+
+    return {
+      species: speciesItems,
+      background: backgroundItems,
+      generalFeat: generalFeatItems,
+      arcaneFeat: addChoiceOptions(arcaneFeatItems),
+      advantage: addChoiceOptions(advantageItems),
+      ancestryFeat: ancestryFeatItems,
+      golemUpgrade: golemUpgradeItems,
+      runegunUpgrade: runegunUpgradeItems,
+      spell: spellItems,
+      weapon: weaponItems,
+      metamagic: metamagicItems,
+      armor: armorItems,
+      gadget: gadgetItems,
+      technique: techniqueItems,
+    };
+  });
 }
 
 export function getChoiceItem(

@@ -30,7 +30,7 @@ export default function ModalWrapper({
     closeModal();
   };
 
-  // Special cases that don't use ChoiceModal
+  // Special cases with custom components
   if (request.type === "baseStats") {
     return (
       <ChoiceModalFrame title={request.title} closeModal={closeModal}>
@@ -54,7 +54,7 @@ export default function ModalWrapper({
   return (
     <ChoiceModalFrame title={request.title} closeModal={closeModal}>
       <ChoiceModal
-        items={choiceData[request.type]}
+        items={choiceData[request.type as keyof typeof choiceData] || []}
         confirmLabel={request.title}
         initialValue={currentValue}
         initialChoice={
