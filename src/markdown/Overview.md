@@ -12,8 +12,9 @@ To start making a character, players pick their species, then select feats and s
 
 &nbsp;
 
-The world and magic of Kastorix are inspired by magitech settings like Eberron, Ravnica, Runeterra, and Avishkar,
+The world and magic of Kastorix are inspired by magitech settings like *Eberron*, *Ravnica*, *Runeterra*, and *Avishkar*,
 as well as progression fantasy worlds and stories like _Arcane Ascension_, _Mother of Learning_, and _The Journals of Evander Tailor_.
+Feats and abilities are heavily inspired by TTRPG's like Pathfinder 2e and DND 5e, as well as homebrew content for those games and other TTRPG's like DND 4e. In particular I want to shout out homebrew creator KibblesTasty, whose's Inventor and Warlord classes inspired many feats.
 By design, all powerful characters are magic users and rely on their _auras_ instead of superhuman durability,
 though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.
 
@@ -57,15 +58,15 @@ Skills work similar to Pathfinder 2e, with the proficiency without levels varian
 
 &nbsp;
 
-My current game design principle has been to restrict Master level in a skill to feats level 4 or higher and Legendary level to feats level 10 or higher, with advantages and certain feats sometimes breaking those limits. Skill proficiencies are allowed to go to higher levels faster than other proficiencies since they aren’t used to directly attack and defend in combat.
+My current game design principle has been to restrict Master level in skill proficiencies to feats level 4 or higher and Legendary level to feats level 10 or higher, with advantages and certain feats sometimes breaking those limits. Weapon, saves and spell proficiencies scale slower than skills, being restricted to trained before level 4, expert before level 10 and needing to wait until level 16 to reach legendary. This is to incentivize skill use and promote variety in builds beyond used attacking
 
 &nbsp;
 
-Also taken from pathfinder is the idea of Lore skills. Lore skills are specific skills that aren’t in the main list. They are more narrow and specific than the core skills and therefore more potent. Lore skills can for example be a field of magic (Alchemy Lore, Souls Lore), Lore about a certain nation, place or creature (Draconium Lore, Jungle Lore, Hydra Lore) or specific profession (Legal Lore, Academic Lore, Farming Lore). Making a check with a lore skill will be easier than using a broader skill and perhaps come with extra info, but by design be rarer. Lore skills are Int based by default, but you might make an Alchemy Lore (DEX) check to carefully mix ingredients in a potion or use Mining Lore (PHY) to dig out a secure tunnel.
+Also taken from pathfinder is the idea of Lore skills. Lore skills are specific skills that aren’t in the main list. They are more narrow and specific than the core skills and therefore more potent. Lore skills can for example be a field of magic (Alchemy Lore, Souls Lore, Dimensionalism Lore), Lore about a certain nation, place or creature (Draconium Lore, Jungle Lore, Hydra Lore) or specific profession (Legal Lore, Academic Lore, Farming Lore). Making a check with a lore skill will be easier than using a broader skill and perhaps come with extra info, but the opportunity to do will be be rarer. Lore skills are Int based by default, but you might make an Alchemy Lore (DEX) check to carefully mix ingredients in a potion or use Mining Lore (PHY) to dig out a secure tunnel.
 
 ### MageRanks
 
-There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits. Apprentice and Adept rank mages are fairly common across Kastorix while higher rank mages are rarer and more influential. There are only a few dozen archmages in the world, and Ishyin Academy is the only place you could regularly see multiple archmages at.
+There are up to 20 levels, divided in the five ranks of magic users. Apprentice, Adept, Magus, Grand Magus and Archmage. Each level provides a small increase in mana (and therefore aura), as well as two feats and some other benefits. Apprentice and Adept rank mages are fairly common across Kastorix while higher rank mages are rarer and more influential. There are only a few dozen archmages in the world, and Ishyin Academy is the only place you could regularly see multiple archmages at. Then there are of course stories of spellcasters beyond archmage that could cast mythic spells, but the evidence for such claims is rare.
 
 ### LearnSpells
 
@@ -109,7 +110,13 @@ Many spells can be sustained to maintain them. This is done via the Sustain acti
 
 ### FocusPoints
 
-Focus points are the main non-magical resource in Kastorix. Players gain a new one every four levels, and recover spent ones by simply taking a 10 minute rest. By default they can only be used to gain advantage on Death Saving Throws, but feats and advantages unlock new ways to spend them such as combat maneuvers and other abilities, as well as empowering other actions. Certain feats also provide new ways to recover or gain temporary focus points.
+Focus points are the main non-magical resource in Kastorix. Players gain a new one every four levels, and recover spent ones by simply taking a 10 minute rest. By default they can only be used to do the Won't Fall Now free action to gain advantage on a Death Saving Throw. Many feats and advantages unlock new ways to spend them such as different actions and techniques. Certain feats also provide new ways to increase your max, recover or gain temporary focus points.
+
+### Techniques
+
+Techniques are skilled non-magical manuevers done by adventurers in combat. Techniques come in five ranks; Simple, Advanced, Complex and Masterwork. Like spells, characters learn a number of techniques equal to their INT every 4th level, and can learn more from feats and other sources. Techniques like Charge, offer ways to more things for fewer actions, while others like Feint offer ways to user skills in combat to gain advantages. High level techniques often cost focus points, but provides new ways to move around, manipulate or strike the battlefield.
+
+Blade Art techniques are special and work by channeling mana through a weapon to do the otherwise impossible. They are not spells, but rather a refinement of pure battlefield skills channeled by legendary warriors.
 
 ### OpposedRolls
 

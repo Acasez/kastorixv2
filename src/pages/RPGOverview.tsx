@@ -79,8 +79,15 @@ export default function RPGOverview() {
         <ActionBox action="Cast a Spell" />
         <ActionBox action="Sustain" />
       </Section>
-      <Section title="Focus Points">
+      <Section title="Focus Points" contentReverse={true}>
         <MarkdownSection description={DESC.FocusPoints} />
+        <ActionBox action="Won't Fall Now" />
+      </Section>
+      <Section title="Techniques">
+        <MarkdownSection description={DESC.Techniques} />
+        <ActionBox action="Charge" />
+        <ActionBox action="Feint" />
+        <ActionBox action="Moonlight Crescent" />
       </Section>
       <Section title="Opposed Rolls">
         <MarkdownSection description={DESC.OpposedRolls} />
