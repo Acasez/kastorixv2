@@ -5,6 +5,7 @@ import {
   useCharacterStore,
   type Character,
 } from "../../../stores/useCharacterStore";
+import { toast } from "react-toastify";
 
 // Constants
 const STORAGE_PREFIX = "character_";
@@ -191,6 +192,7 @@ export default function SaveLoadButtons() {
     localStorage.setItem(key, JSON.stringify(character));
     setSelectedCharacterKey(key);
     window.dispatchEvent(new Event(STORAGE_CHANGE_EVENT));
+    toast.success(`Saved Character: ${character.name}`);
   };
 
   return (
