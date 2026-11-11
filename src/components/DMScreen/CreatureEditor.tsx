@@ -23,6 +23,7 @@ import CreatureSenses from "./CreatureSenses";
 import { SPEED_TYPES } from "../../constants/SpeedTypes";
 import { normalizeCreature } from "../../utils/normalizeCreature";
 import CreatureSectionHeader from "./CreatureSectionHeader";
+import { toast } from "react-toastify";
 
 export type CreatureSize = (typeof CREATURE_SIZES)[number];
 
@@ -176,6 +177,7 @@ export default function CreatureEditor({
     localStorage.setItem(key, JSON.stringify(creature));
     handleSelectedKeyChange(key); // Auto-select and load after save
     window.dispatchEvent(new Event(STORAGE_CHANGE_EVENT));
+    toast.success(`Saved Creature: ${creature.name}`);
   };
 
   const deleteCreature = () => {
