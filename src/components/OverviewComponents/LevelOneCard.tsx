@@ -47,15 +47,17 @@ const derivedGains = [
 export default function LevelOneSetup() {
   return (
     <section className="level-one" aria-labelledby="level-one-title">
-      <header className="level-one-header">
-        <div className="level-one-heading">
-          <h2 id="level-one-title">Level One</h2>
-          <p className="level-one-subtitle">
+      <header className="flex flex-row justify-between gap-2 m-3">
+        <div>
+          <h2 className="text-2xl text-text-black underline">Level One</h2>
+          <p className="text-md text-text-flavor">
             All the choices for a level one character
           </p>
         </div>
-        <span className="level-one-rank">Rank I · Apprentice</span>
-        <span className="level-one-level-badge">
+        <span className="text-xl border-2 border-aura rounded-2xl text-aura align-middle p-3 bg-aura/20">
+          Rank I · Apprentice
+        </span>
+        <span className="text-text-light text-lg font-bold bg-aura rounded-xl px-4">
           LV
           <br />
           01
