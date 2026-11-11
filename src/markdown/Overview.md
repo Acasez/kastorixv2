@@ -5,25 +5,19 @@ It's a D20-based system heavily inspired by Pathfinder 2e.
 
 &nbsp;
 
-In Kastorix, magic is commonplace and mages are one of the main sources of power for nations.
-There are no classes; instead, options come from feats and spells.
-In a sense, everyone is a mage, though there is considerable difference between mages based on the feats chosen.
-To start making a character, players pick their species, then select feats and spells.
-
+In Kastorix, magic is commonplace and mages are one of the main sources of power for nations. Mana which is used for casting spells can be found everywhere in the world. Magical creatures absorb mana to grow and use their abilities, artificers use crystallized and liquid to fuel gadgets, golems and inventions and of course mages cast spells with it. There are nine playable sapient species living across Kastorix, and making up its many nations. 
+ 
 &nbsp;
 
-The world and magic of Kastorix are inspired by magitech settings like *Eberron*, *Ravnica*, *Runeterra*, and *Avishkar*,
-as well as progression fantasy worlds and stories like _Arcane Ascension_, _Mother of Learning_, and _The Journals of Evander Tailor_.
-Feats and abilities are heavily inspired by TTRPG's like Pathfinder 2e and DND 5e, as well as homebrew content for those games and other TTRPG's like DND 4e. In particular I want to shout out homebrew creator KibblesTasty, whose's Inventor and Warlord classes inspired many feats.
-By design, all powerful characters are magic users and rely on their _auras_ instead of superhuman durability,
-though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.
+Unlike many TTRPG's are no classes; instead, all options come from feats and spells, giving players full freedom to plot out their builds.
+To start making a character, players pick their species, then select feats and spells. By design, all powerful characters are magic users that cast spells and rely on their _auras_ to take hits instead of superhuman durability, though they need not be traditional mages. There is room to build tinkering artificers, heavily armored magic knights, and rogues with magical tricks.
 
 ### Actions
 
 Kastorix uses a 3-action system similar to Pathfinder 2e.
 On each turn, players (and creatures) have three actions to spend on any activity.
-Common actions include _Stride_, _Step_, and _Strike_, but many more exist.
-Some activities, like spellcasting, cost 2 or 3 actions.
+Common actions include _Stride_, _Step_, and _Strike_, but there exists hundreds of possible actions.
+Some activities, like spellcasting, can cost 2 or 3 actions.
 The _Quickened_ and _Slowed_ status effects modify the number of actions a player starts with.
 
 Creatures also have one reaction per round, usable on other players’ turns.
@@ -120,16 +114,26 @@ Blade Art techniques are special and work by channeling mana through a weapon to
 
 ### OpposedRolls
 
-Kastorix works based on opposed rolls, meaning for every action both combatants roll dice. So there is no more "do I roll a dice? no its a spell so I roll against your saving throw". Every spell cast requires a spellshaping check
+Kastorix works based on opposed rolls, meaning for every action where two creatures are competing they both roll dice. If you attempt to make a Strike against a creature, you roll an attack roll and they make a Reflex saving throw to avoid it. Every spell cast requires a spellshaping check, and the result of that is compared to saving throw of all creatures that would be affected.  
+So there is no more "do I roll a dice? no its a spell so I roll against your saving throw". 
 
 &nbsp;
 
-Basic attacks also use opposed rolls. Instead of having an armor class, characters make Reflex saves against attack rolls. Attacks hit if the attacker rolls higher than the defender. Armor instead provides resistance to different types of damage, making it easier to survive hits and allowing armored characters to shrug off weak attacks.
+There is no Armor class, but armor is of course **very useful** in combat, providing characters with a flat damage resistance, with the number depending on the type of armor. This allows armored characters to shrug off weak attacks. Armor is generally weaker against bludgeoning damage, than other physical damage, giving hammers and mauls, their historical niche of being great against armored foes.
 
 ### TargetedAttacks
 
-When making attacks or casting spells with the Targeting trait, attackers can choose to target a specific part of the body. This can inflict special conditions, like blinding or slowing the target, but makes the attack harder to hit.
+When making attacks or casting spells with the Targeting trait, attackers can choose to target a specific part of the body. This can inflict special conditions, like blinding or slowing the target, but makes the attack harder to hit. Additionally Targeted Strikes can also be used to attempt to strike a weak point in armor, bypassing the armor resistance.  
 
 &nbsp;
 
 Creatures gain a bonus to their Reflex saves based on the part of the body being targeted. Attacks with a weapon or spell with the Precision trait reduce this bonus by 2. On a critical success the penalty is doubled.Some creatures have special body parts that can be targeted, like a dragon's wings or Losungi's venom fangs. But there are some common weak points on most sapient creatures as seen in the table below. Critical hits double the penalties
+
+### Inspiration
+
+The world and magic of Kastorix are inspired by magitech settings like *Eberron*, *Ravnica*, *Runeterra*, and *Avishkar*,
+as well as progression fantasy worlds and stories like _Arcane Ascension_, _Mother of Learning_, and _The Journals of Evander Tailor_.
+Feats and abilities are heavily inspired by TTRPG's like Pathfinder 2e and DND 5e, as well as homebrew content for those games and other TTRPG's like DND 4e. In particular I want to shout out homebrew creator KibblesTasty, whose's Inventor and Warlord classes inspired many feats.
+
+### Else
+Stoic and honorable Dragonkin, cunning and magically talented Nagas, energetic and communal Yirte, intelligent and thrifty Gnomes, adaptive and enduring Humans, 

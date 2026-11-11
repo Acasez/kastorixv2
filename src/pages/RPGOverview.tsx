@@ -96,6 +96,9 @@ export default function RPGOverview() {
         <MarkdownSection description={DESC.TargetedAttacks} />
         <TargetedAttacksTable />
       </Section>
+      <Section title="Inspiration">
+        <MarkdownSection description={DESC.Inspiration} />
+      </Section>
     </>
   );
 }
