@@ -188,6 +188,7 @@ export default function CreatureEditor({
     localStorage.removeItem(selectedKey);
     setSelectedKey("");
     window.dispatchEvent(new Event(STORAGE_CHANGE_EVENT));
+    toast.success(`Deleted Creature: ${creature.name}`);
   };
 
   const exportCreature = () => {
