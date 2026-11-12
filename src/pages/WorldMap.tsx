@@ -8,7 +8,7 @@ export default function WorldMap() {
       </Helmet>
       <div className="">
         <img
-          className="-mt-1.5"
+          className=""
           src="./images/Maps/Kastorix.jpg"
           alt="Kastorix World Map"
         />

@@ -5,7 +5,7 @@ It's a D20-based system heavily inspired by Pathfinder 2e.
 
 &nbsp;
 
-In Kastorix, magic is commonplace and mages are one of the main sources of power for nations. Mana which is used for casting spells can be found everywhere in the world. Magical creatures absorb mana to grow and use their abilities, artificers use crystallized and liquid to fuel gadgets, golems and inventions and of course mages cast spells with it. There are nine playable sapient species living across Kastorix, and making up its many nations. 
+In Kastorix, magic is commonplace and mages are one of the main sources of power for nations. Mana which is used for casting spells can be found everywhere in the world. Magical creatures absorb mana to grow and use their abilities, artificers use it in crystallized and liquid from to fuel gadgets, golems and inventions, and of course mages cast spells with it. There are nine playable species living across Kastorix; Nagas, Yirte, Gnomes, Humans, Vesper, Dragonkin, Aruna, Trolls and Brannur. Joining them are rarer beings like Dragons, Coatls and the arachnoid Shyvarjarna. These species live across the three continents, on the many islands in the grand sea and in the vast cave networks below the surface.
  
 &nbsp;
 
