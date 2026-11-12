@@ -522,7 +522,7 @@
     {
         "name": "Magic",
         "appliesTo": "Actions",
-        "flavor": "This action is undoubtedly magical",
+        "flavor": "Magic is all things that are powered by mana. Spellshaping, magical abilities, artifice.",
         "effect": "",
         "specialAction": "",
         "modifiable": "",
@@ -535,7 +535,7 @@
     {
         "name": "Mana",
         "appliesTo": "Actions",
-        "flavor": "",
+        "flavor": "Mana is the source of all magic, raw magical energy leaking in from mana nodes.",
         "effect": "",
         "specialAction": "",
         "modifiable": "",

@@ -1,6 +1,6 @@
 import ReactMarkdown, { type Components } from "react-markdown";
 import { NavLink } from "react-router-dom";
-import traits from "../../data/traits";
+import tooltips from "../../data/tooltips";
 import TraitTooltip from "./TraitTooltip";
 import React, { type JSX } from "react";
 
@@ -11,7 +11,7 @@ function escapeRegExp(s: string) {
 /** Wrap each trait's FIRST occurrence in %%Name%% markers. Pure function. */
 function markFirstOccurrences(markdown: string): string {
   let result = markdown;
-  const names = traits.map((t) => t.name).sort((a, b) => b.length - a.length);
+  const names = tooltips.map((t) => t.name).sort((a, b) => b.length - a.length);
   for (const name of names) {
     // replace only the first occurrence of this trait
     result = result.replace(new RegExp(escapeRegExp(name)), `%%${name}%%`);
@@ -25,7 +25,7 @@ function renderText(text: string): (string | JSX.Element)[] {
     i % 2 === 1 ? (
       <TraitTooltip
         key={`${part}-${i}`}
-        trait={traits.find((t) => t.name === part)!}
+        tooltip={tooltips.find((t) => t.name === part)!}
       >
         {part}
       </TraitTooltip>

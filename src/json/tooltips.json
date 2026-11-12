@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Aruna",
+        "tooltip": "The aruna are avian sapients who inhabit the The Shattered Isles, an isolated archipelago. Due to the fierce region of storms known as the Galeward near the islands, the Aruna have remained relatively disconnected from the rest of Kastorix. Their wing-arms allow them to glide on wind currents, and they are excellent swimmers. "
+    },
+    {
+        "name": "Brannur",
+        "tooltip": "The brannur are a powerful species with green or gray skin, red eyes, and a single horn on their forehead. They were once known as the greatest mercenaries in Kastorix, but many died in The Breach. Today, the surviving Brannur are searching for a new purpose, as their traditional martial skills become less relevant in the current age."
+    },
+    {
+        "name": "Dragonkin",
+        "tooltip": "The dragonkin are a draconic humanoid people who mostly live in the The Draconium. They have scales, tails and a connection to the dragons that rule their nation. Dragonkin organize themselves in clans with long lineages and are a proud people. They are known to be skilled crafters and disciplined fighters."
+    },
+    {
+        "name": "Gnome",
+        "tooltip": "Gnomes are diminutive in size, even smaller than the yirte, and have a strong connection to magic and artifice. These long-lived sapients often pick up magical traits from their surroundings. Gnomes tend to avoid physical labor, relying instead on magic, golems, or hired workers to accomplish tasks."
+    },
+    {
+        "name": "Human",
+        "tooltip": "Once the most populous species on Kastorix, humans lived primarily on the northern continent of Avijor before it was devastated by The Breach. Known for their adaptability and persistence, humans are skilled at surviving in diverse environments and excel in a variety of tasks, though their numbers have dwindled significantly."
+    },
+    {
+        "name": "Naga",
+        "tooltip": "Nagas are a serpentine people with scaled skin, a snake-like lower body, clawed arms, and humanoid heads. Most nagas live in the tropical regions of Meibor, where they excel in wizardry, mining, and masonry. They were only indirectly affected by The Breach, as most of their population resides far from the event's impact."
+    },
+    {
+        "name": "Troll",
+        "tooltip": "Trolls are a highly diverse species known for their resilience and regenerative abilities. They thrive in small communities and generally avoid large cities and crowds. Trolls are adaptive and often settle in remote or challenging environments."
+    },
+    {
+        "name": "Vesper",
+        "tooltip": "The Vesper are a short lived bat-like species, typically living underground in the vast network known as The Caverns Below. Their society is divided between two major powers: the Emerald Empire and the Crimson Spire, which vie for control of the underworld. Most Vesper prefer the subterranean lifestyle but are formidable both above and below ground."
+    },
+    {
+        "name": "Yirte",
+        "tooltip": "Yirte are small, humanoid sapients with furred skin and features that resemble ferrets. Traditionally living in harmony with nature, yirte reside in generational cities built from natural materials. Recently, many yirte have ventured out of these closed-off communities, adapting to new ways of life."
+    }
+]

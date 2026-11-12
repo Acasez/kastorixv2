@@ -1,12 +1,12 @@
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
-import type { Trait } from "../../types/Trait";
 import { createPortal } from "react-dom";
+import type { Tooltip } from "../../types/tooltip";
 
 export default function TraitTooltip({
-  trait,
+  tooltip,
   children,
 }: {
-  trait: Trait;
+  tooltip: Tooltip;
   children: ReactNode;
 }) {
   const [open, setOpen] = useState(false);
@@ -79,10 +79,9 @@ export default function TraitTooltip({
                        text-sm text-text-light shadow-lg"
           >
             <span className="mb-1 block font-bold text-white">
-              {trait.name}
+              {tooltip.name}
             </span>
-            <span className="block italic">{trait.flavor}</span>
-            <span className="mt-1 block">{trait.effect}</span>
+            <span className="block italic">{tooltip.tooltip}</span>
           </span>,
           document.body,
         )}
