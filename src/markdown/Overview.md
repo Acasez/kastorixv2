@@ -17,10 +17,10 @@ To start making a character, players pick their species, then select feats and s
 Kastorix uses a 3-action system similar to Pathfinder 2e.
 On each turn, players (and creatures) have three actions to spend on any activity.
 Common actions include _Stride_, _Step_, and _Strike_, but there exists hundreds of possible actions.
-Some activities, like spellcasting, can cost 2 or 3 actions.
+Some activities, like spellcasting and techniques, can cost 2 or 3 actions.
 The _Quickened_ and _Slowed_ status effects modify the number of actions a player starts with.
 
-Creatures also have one reaction per round, usable on other players’ turns.
+Creatures also have one reaction per round, usable on other players’ turns in response to a trigger.
 
 &nbsp;
 
