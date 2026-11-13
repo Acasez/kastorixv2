@@ -41,7 +41,7 @@ SHEETS = [
     "Skills",
     "Damage Types",
     "Languages",
-    "Creature Traits",
+    "Tooltips",
 ]
 
 SHEET_CONFIGS = []
