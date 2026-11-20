@@ -1,14 +1,49 @@
 // routes/config.js
 import { lazy } from "react";
+import type { ComponentType, LazyExoticComponent } from "react";
 
-interface RouteConfig {
-  path: string;
-  component: React.LazyExoticComponent<React.ComponentType>;
+/** A lazy-loaded page component */
+export type LazyPage = LazyExoticComponent<ComponentType>;
+
+/** One node of the route tree */
+export interface RouteNode {
+  /** Real routable path. Omitted on pure dropdown triggers. */
+  path?: string;
+  /** Lazy page component. Required for the node to be navigable. */
+  component?: LazyPage;
+  /** Text shown in the nav bar */
   header?: string;
-  createHeader: boolean;
+  /** Wrap the header text in <u> (used on your name) */
+  underline?: boolean;
+  /** false → hidden from the header, still routable */
+  createHeader?: boolean;
+  /** Nested items → rendered as a dropdown menu */
+  children?: RouteNode[];
 }
 
-export const routes: RouteConfig[] = [
+/** A node guaranteed to be a real route (path + component) */
+export interface RoutableRoute {
+  path: string;
+  component: LazyPage;
+}
+
+/** Type guard: node is a real route */
+function isRoutable(node: RouteNode): node is RouteNode & RoutableRoute {
+  return typeof node.path === "string" && typeof node.component !== "undefined";
+}
+
+/** Recursively flattens the tree, keeping only real routes */
+export function flattenRoutes(nodes: RouteNode[]): RoutableRoute[] {
+  return nodes.flatMap((node): RoutableRoute[] => {
+    const self: RoutableRoute[] = isRoutable(node)
+      ? [{ path: node.path, component: node.component }]
+      : [];
+    const nested: RoutableRoute[] = flattenRoutes(node.children ?? []);
+    return [...self, ...nested];
+  });
+}
+
+export const routes: RouteNode[] = [
   {
     path: "/kastorixv2/",
     component: lazy(() => import("../pages/RPGOverview")),
